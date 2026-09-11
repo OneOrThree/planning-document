@@ -16,6 +16,7 @@
   paths.homeExtended='assets/cutscenes/coast-home-extended-v1.png';
   paths.paddle='assets/cutscenes/wooden-paddle-v1.png';
   paths.raftWater='assets/cutscenes/raft-water-rim-v1.png';
+  paths.clothFolded='assets/cutscenes/raft-cloth-folded-v1.png';
   paths.satchelBase='assets/cutscenes/satchel-base-layer-v1.png';
   paths.satchelFlap='assets/cutscenes/satchel-flap-layer-v1.png';
   paths.satchelFlapBack='assets/cutscenes/satchel-flap-back-layer-v1.png';
@@ -57,6 +58,54 @@
       c.save();c.translate(0,-10.5);c.scale(22/573,22.5/311);c.drawImage(images.satchelHandle,-650,-746);c.restore();
     }
     if(layer!=='back'){body(true);if(flat>=0)flap();}c.restore();
+  }
+  function clothFoldAt(progress){
+    const q=clamp(progress);
+    return{q,first:ease((q-.04)/.34),second:ease((q-.36)/.32),gather:ease((q-.64)/.13),carry:ease((q-.66)/.3)};
+  }
+  function clothSource(u,v){return{x:245+650*u+360*v,y:490-210*u+290*v};}
+  function clothVertex(u,v,state,width){
+    const far=Math.max(0,u-.5),near=Math.max(0,v-.5);
+    // 끝자락의 도착을 조금 늦춰 평평한 판처럼 한 번에 뒤집히지 않게 한다.
+    const first=state.first-Math.sin(Math.PI*state.first)*.12*clamp(far*2);
+    const second=state.second-Math.sin(Math.PI*state.second)*.1*clamp(near*2);
+    const fu=u>.5?.5+far*Math.cos(Math.PI*first):u;
+    const fv=v>.5?.5+near*Math.cos(Math.PI*second):v;
+    const p=clothSource(fu,fv),lift=far*260*Math.sin(Math.PI*first)+near*230*Math.sin(Math.PI*second);
+    return{x:(p.x-225)/1090*width*1.04-width*.52,y:(p.y-266-lift)/520*width*.5-width*.22};
+  }
+  function clothTriangle(c,src,dst){
+    const[a,b,d]=src,[p,q,r]=dst,den=(b.x-a.x)*(d.y-a.y)-(d.x-a.x)*(b.y-a.y);
+    const A=((q.x-p.x)*(d.y-a.y)-(r.x-p.x)*(b.y-a.y))/den,B=((q.y-p.y)*(d.y-a.y)-(r.y-p.y)*(b.y-a.y))/den;
+    const C=((r.x-p.x)*(b.x-a.x)-(q.x-p.x)*(d.x-a.x))/den,D=((r.y-p.y)*(b.x-a.x)-(q.y-p.y)*(d.x-a.x))/den;
+    if(Math.abs(A*D-B*C)<.000001)return;
+    c.save();c.beginPath();const center={x:(p.x+q.x+r.x)/3,y:(p.y+q.y+r.y)/3};
+    [p,q,r].forEach((v,i)=>{const dx=v.x-center.x,dy=v.y-center.y,length=Math.hypot(dx,dy)||1,x=v.x+dx/length*.3,y=v.y+dy/length*.3;i?c.lineTo(x,y):c.moveTo(x,y);});c.closePath();c.clip();
+    c.transform(A,B,C,D,p.x-A*a.x-C*a.y,p.y-B*a.x-D*a.y);c.drawImage(images.cloth,0,0);c.restore();
+  }
+  function foldedCloth(c,x,y,width){
+    c.save();c.translate(x,y);c.drawImage(images.clothFolded,150,355,960,575,-width*.5,-width*.39,width,width*575/960);c.restore();
+  }
+  function clothFold(c,width,progress){
+    const state=clothFoldAt(progress),center=clothVertex(.25,.25,{first:1,second:1},width);
+    const destination={x:-width*.31,y:-width*.025};
+    const x=mix(center.x,destination.x,state.carry),y=mix(center.y,destination.y,state.carry)-Math.sin(state.carry*Math.PI)*5;
+    const bundleWidth=width*mix(.45,.24,state.carry);
+    if(state.carry>.6)softShadow(c,destination.x,destination.y+width*.055,bundleWidth*.45,bundleWidth*.12,.16*state.carry,'66,54,40');
+    c.save();c.translate(x,y);
+    if(state.gather<1){
+      c.save();c.globalAlpha*=1-ease((state.gather-.8)/.2);c.translate(-center.x,-center.y);
+      const grid=[-.5,-.25,0,.125,.25,.375,.5,.625,.75,.875,1,1.25,1.5],cells=[];
+      for(let j=0;j<grid.length-1;j++)for(let i=0;i<grid.length-1;i++){
+        const u=grid[i],v=grid[j],uu=grid[i+1],vv=grid[j+1];
+        cells.push({uv:[[u,v],[uu,v],[u,vv],[uu,vv]],depth:(u>=.5?state.first:0)+(v>=.5?state.second*2:0)});
+      }
+      cells.sort((a,b)=>a.depth-b.depth);
+      for(const{uv}of cells){const s=uv.map(p=>clothSource(...p)),d=uv.map(p=>clothVertex(...p,state,width));clothTriangle(c,[s[0],s[1],s[2]],[d[0],d[1],d[2]]);clothTriangle(c,[s[1],s[3],s[2]],[d[1],d[3],d[2]]);}
+      c.restore();
+    }
+    if(state.gather>0){c.save();c.globalAlpha*=ease(state.gather/.8);foldedCloth(c,0,0,bundleWidth);c.restore();}c.restore();
+    return{...state,x,y,width:bundleWidth};
   }
   function waterMask(c,scene){
     if(scene!=='sea'){
@@ -204,6 +253,7 @@
       c.save();c.beginPath();c.rect(-width,-width,width*2,width*2);shape();c.clip('evenodd');deck();c.restore();
       c.save();c.translate(-14*(1-build),-9*(1-build));c.rotate(-.13*(1-build));c.beginPath();shape();c.clip();deck();c.restore();
     }else deck();
+    if(Number.isFinite(options.clothProgress))clothFold(c,width,options.clothProgress);
     const uncover=options.uncover??1;
     if(uncover<1){
       const destination=options.clothDestination||{x:-width*.54,y:-width*.18};
@@ -323,5 +373,5 @@
     c.restore();return {...meta,time:t,revision:S.revision};
   }
   window.GachisupCutscene={ready,render,paths,duration:S.duration};
-  window.CutsceneActors={ready,images,paths,coastWidth,waterMotionIntegrated:true,paddleSprite,paddleRest,paddleWaterAt,background,ellipse,softShadow,satchel,cat,book,islandPlan,raft,ripples,wake,clamp,ease,mix};
+  window.CutsceneActors={ready,images,paths,coastWidth,waterMotionIntegrated:true,paddleSprite,paddleRest,paddleWaterAt,clothFoldAt,clothVertex,clothFold,foldedCloth,background,ellipse,softShadow,satchel,cat,book,islandPlan,raft,ripples,wake,clamp,ease,mix};
 })();

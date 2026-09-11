@@ -1,0 +1,7024 @@
+{
+  "filmId": "folded-promise-journey",
+  "phase": "paddle",
+  "single": false,
+  "water": null,
+  "setting": "tailRig",
+  "cropSize": 300,
+  "anchor": "cat",
+  "duration": 3,
+  "fps": 24,
+  "frames": 72,
+  "videoProfile": {
+    "id": "srgb-bt709-limited-v1",
+    "args": [
+      "-vf",
+      "scale=in_range=pc:out_range=tv:in_color_matrix=bt601:out_color_matrix=bt709,setparams=range=limited:color_primaries=bt709:color_trc=iec61966-2-1:colorspace=bt709",
+      "-color_range",
+      "tv",
+      "-colorspace",
+      "bt709",
+      "-color_primaries",
+      "bt709",
+      "-color_trc",
+      "iec61966-2-1"
+    ],
+    "expected": {
+      "pix_fmt": "yuv420p",
+      "color_range": "tv",
+      "color_space": "bt709",
+      "color_transfer": "iec61966-2-1",
+      "color_primaries": "bt709"
+    }
+  },
+  "fingerprint": "2725722f0358e75ef5fceb882eea96e52ea1f43ef0f5cd58eb1562741a3e0d45",
+  "status": "unreviewed-experiment",
+  "note": "실제 속도의 선택 구간. 전체 컷신이나 동작의 자동 통과 판정이 아니다. 연락표는 24개 시간 표본.",
+  "errors": [],
+  "states": [
+    {
+      "frame": 0,
+      "elapsed": 0,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 13.91,
+          "phase": "depart",
+          "foot": {
+            "x": 467.2941125836976,
+            "y": 820.1478030701056
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.19127231297618114,
+            "cycle": 0.3214285714285716,
+            "weight": {
+              "shear": 0.0002511144031936474,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 45.77900212177369,
+              "y": -28.222661626537562
+            }
+          },
+          "crop": {
+            "x": 299.6370297243849,
+            "y": 569.000022989894,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 13.91,
+          "phase": "depart",
+          "foot": {
+            "x": 467.2941125836976,
+            "y": 820.1478030701056
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.19127231297618114,
+            "cycle": 0.3214285714285716,
+            "weight": {
+              "shear": 0.0002511144031936474,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": -0.023672456862873476,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 45.77900212177369,
+              "y": -28.222661626537562
+            }
+          },
+          "crop": {
+            "x": 299.6370297243849,
+            "y": 569.000022989894,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 1,
+      "elapsed": 0.041666666666666664,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 13.951666666666666,
+          "phase": "depart",
+          "foot": {
+            "x": 469.0544454707793,
+            "y": 821.1263548412455
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.204513092050541,
+            "cycle": 0.3363095238095237,
+            "weight": {
+              "shear": 0.002864426062606773,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 45.37186733879757,
+              "y": -27.931383210646725
+            }
+          },
+          "crop": {
+            "x": 299.4408238174743,
+            "y": 570.1351430444163,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 13.951666666666666,
+          "phase": "depart",
+          "foot": {
+            "x": 469.0544454707793,
+            "y": 821.1263548412455
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.204513092050541,
+            "cycle": 0.3363095238095237,
+            "weight": {
+              "shear": 0.002864426062606773,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": -0.026026134396354927,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 45.37186733879757,
+              "y": -27.931383210646725
+            }
+          },
+          "crop": {
+            "x": 299.4408238174743,
+            "y": 570.1351430444163,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 2,
+      "elapsed": 0.08333333333333333,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 13.993333333333334,
+          "phase": "depart",
+          "foot": {
+            "x": 470.8700212695313,
+            "y": 822.1251223584926
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.21769104682527782,
+            "cycle": 0.3511904761904765,
+            "weight": {
+              "shear": 0.005465338189199567,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 44.964001934842855,
+              "y": -27.646903893069137
+            }
+          },
+          "crop": {
+            "x": 299.28326903982725,
+            "y": 571.2937133644228,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 13.993333333333334,
+          "phase": "depart",
+          "foot": {
+            "x": 470.8700212695313,
+            "y": 822.1251223584926
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.21769104682527782,
+            "cycle": 0.3511904761904765,
+            "weight": {
+              "shear": 0.005465338189199567,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": -0.02834511716963234,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 44.964001934842855,
+              "y": -27.646903893069137
+            }
+          },
+          "crop": {
+            "x": 299.28326903982725,
+            "y": 571.2937133644228,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 3,
+      "elapsed": 0.125,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 14.035,
+          "phase": "depart",
+          "foot": {
+            "x": 472.73843520980597,
+            "y": 823.1406765936983
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.2307488558591283,
+            "cycle": 0.3660714285714288,
+            "weight": {
+              "shear": 0.008042537340617427,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 44.557274656572,
+              "y": -27.370379415671643
+            }
+          },
+          "crop": {
+            "x": 299.16422791027037,
+            "y": 572.4717562772615,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 14.035,
+          "phase": "depart",
+          "foot": {
+            "x": 472.73843520980597,
+            "y": 823.1406765936983
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.2307488558591283,
+            "cycle": 0.3660714285714288,
+            "weight": {
+              "shear": 0.008042537340617427,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": -0.030612654783829206,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 44.557274656572,
+              "y": -27.370379415671643
+            }
+          },
+          "crop": {
+            "x": 299.16422791027037,
+            "y": 572.4717562772615,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 4,
+      "elapsed": 0.16666666666666666,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 14.076666666666666,
+          "phase": "depart",
+          "foot": {
+            "x": 474.6572677313599,
+            "y": 824.1695286145724
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.24362919771083033,
+            "cycle": 0.38095238095238093,
+            "weight": {
+              "shear": 0.010584710074505987,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 44.153591995176605,
+              "y": -27.102879065586805
+            }
+          },
+          "crop": {
+            "x": 299.0835291706933,
+            "y": 573.6652246214754,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 14.076666666666666,
+          "phase": "depart",
+          "foot": {
+            "x": 474.6572677313599,
+            "y": 824.1695286145724
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.24362919771083033,
+            "cycle": 0.38095238095238093,
+            "weight": {
+              "shear": 0.010584710074505987,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": -0.03281193155909259,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 44.153591995176605,
+              "y": -27.102879065586805
+            }
+          },
+          "crop": {
+            "x": 299.0835291706933,
+            "y": 573.6652246214754,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 5,
+      "elapsed": 0.20833333333333334,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 14.118333333333334,
+          "phase": "depart",
+          "foot": {
+            "x": 476.62408744102464,
+            "y": 825.2081374059318
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.2562747509391223,
+            "cycle": 0.3958333333333337,
+            "weight": {
+              "shear": 0.013080542948510975,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 43.754895780093285,
+              "y": -26.845386445694533
+            }
+          },
+          "crop": {
+            "x": 299.0409685634267,
+            "y": 574.8700108194523,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 14.118333333333334,
+          "phase": "depart",
+          "foot": {
+            "x": 476.62408744102464,
+            "y": 825.2081374059318
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.2562747509391223,
+            "cycle": 0.3958333333333337,
+            "weight": {
+              "shear": 0.013080542948510975,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": -0.034926219952331534,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 43.754895780093285,
+              "y": -26.845386445694533
+            }
+          },
+          "crop": {
+            "x": 299.0409685634267,
+            "y": 574.8700108194523,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 6,
+      "elapsed": 0.25,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 14.16,
+          "phase": "depart",
+          "foot": {
+            "x": 478.6364540133609,
+            "y": 826.252917750265
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.2686281941027406,
+            "cycle": 0.4107142857142858,
+            "weight": {
+              "shear": 0.01551872252027775,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 43.36316045102434,
+              "y": -26.598801389060707
+            }
+          },
+          "crop": {
+            "x": 299.0363096209009,
+            "y": 576.0819560188789,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 14.16,
+          "phase": "depart",
+          "foot": {
+            "x": 478.6364540133609,
+            "y": 826.252917750265
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.2686281941027406,
+            "cycle": 0.4107142857142858,
+            "weight": {
+              "shear": 0.01551872252027775,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": -0.03693903457877298,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 43.36316045102434,
+              "y": -26.598801389060707
+            }
+          },
+          "crop": {
+            "x": 299.0363096209009,
+            "y": 576.0819560188789,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 7,
+      "elapsed": 0.2916666666666667,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 14.201666666666666,
+          "phase": "depart",
+          "foot": {
+            "x": 480.69192103353356,
+            "y": 827.3002481565234
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.28063220576042364,
+            "cycle": 0.42559523809523814,
+            "weight": {
+              "shear": 0.017887935347452033,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 42.98039004294267,
+              "y": -26.363943059318053
+            }
+          },
+          "crop": {
+            "x": 299.06928446664887,
+            "y": 577.2968592901385,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 14.201666666666666,
+          "phase": "depart",
+          "foot": {
+            "x": 480.69192103353356,
+            "y": 827.3002481565234
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.28063220576042364,
+            "cycle": 0.42559523809523814,
+            "weight": {
+              "shear": 0.017887935347452033,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": -0.0388342853311783,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 42.98039004294267,
+              "y": -26.363943059318053
+            }
+          },
+          "crop": {
+            "x": 299.06928446664887,
+            "y": 577.2968592901385,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 8,
+      "elapsed": 0.3333333333333333,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 14.243333333333334,
+          "phase": "depart",
+          "foot": {
+            "x": 482.7880387812272,
+            "y": 828.3464788253659
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.29222946447090925,
+            "cycle": 0.4404761904761909,
+            "weight": {
+              "shear": 0.020176867987679457,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 42.60861491612877,
+              "y": -26.141554270751
+            }
+          },
+          "crop": {
+            "x": 299.1395946267397,
+            "y": 578.5104868659959,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 14.243333333333334,
+          "phase": "depart",
+          "foot": {
+            "x": 482.7880387812272,
+            "y": 828.3464788253659
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.29222946447090925,
+            "cycle": 0.4404761904761909,
+            "weight": {
+              "shear": 0.020176867987679457,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": -0.04059642809579295,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 42.60861491612877,
+              "y": -26.141554270751
+            }
+          },
+          "crop": {
+            "x": 299.1395946267397,
+            "y": 578.5104868659959,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 9,
+      "elapsed": 0.375,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 14.285,
+          "phase": "depart",
+          "foot": {
+            "x": 484.92235695449483,
+            "y": 829.3879396384228
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.30336264879293423,
+            "cycle": 0.455357142857143,
+            "weight": {
+              "shear": 0.022374206998605442,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 42.24988825989847,
+              "y": -25.93230705327057
+            }
+          },
+          "crop": {
+            "x": 299.2469118507333,
+            "y": 579.718581409142,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 14.285,
+          "phase": "depart",
+          "foot": {
+            "x": 484.92235695449483,
+            "y": 829.3879396384228
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.30336264879293423,
+            "cycle": 0.455357142857143,
+            "weight": {
+              "shear": 0.022374206998605442,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": -0.04221061158424577,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 42.24988825989847,
+              "y": -25.93230705327057
+            }
+          },
+          "crop": {
+            "x": 299.2469118507333,
+            "y": 579.718581409142,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 10,
+      "elapsed": 0.4166666666666667,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 14.326666666666666,
+          "phase": "depart",
+          "foot": {
+            "x": 487.0924273325128,
+            "y": 830.420948158515
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.3139744372852367,
+            "cycle": 0.4702380952380951,
+            "weight": {
+              "shear": 0.024468638937875663,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 41.90628239452499,
+              "y": -25.736809478706434
+            }
+          },
+          "crop": {
+            "x": 299.390878941259,
+            "y": 580.9168712924488,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 14.326666666666666,
+          "phase": "depart",
+          "foot": {
+            "x": 487.0924273325128,
+            "y": 830.420948158515
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.3139744372852367,
+            "cycle": 0.4702380952380951,
+            "weight": {
+              "shear": 0.024468638937875663,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": -0.043662818835499696,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 41.90628239452499,
+              "y": -25.736809478706434
+            }
+          },
+          "crop": {
+            "x": 299.390878941259,
+            "y": 580.9168712924488,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 11,
+      "elapsed": 0.4583333333333333,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 14.368333333333334,
+          "phase": "depart",
+          "foot": {
+            "x": 489.29580637628925,
+            "y": 831.4418176271738
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.3240075085065547,
+            "cycle": 0.4851190476190479,
+            "weight": {
+              "shear": 0.026448850363135795,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 41.57988489094488,
+              "y": -25.555613756042476
+            }
+          },
+          "crop": {
+            "x": 299.5711105913507,
+            "y": 582.1010798760931,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 14.368333333333334,
+          "phase": "depart",
+          "foot": {
+            "x": 489.29580637628925,
+            "y": 831.4418176271738
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.3240075085065547,
+            "cycle": 0.4851190476190479,
+            "weight": {
+              "shear": 0.026448850363135795,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": -0.04494000199122545,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 41.57988489094488,
+              "y": -25.555613756042476
+            }
+          },
+          "crop": {
+            "x": 299.5711105913507,
+            "y": 582.1010798760931,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 12,
+      "elapsed": 0.5,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 14.41,
+          "phase": "depart",
+          "foot": {
+            "x": 491.53005776644096,
+            "y": 832.4468649452443
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.333404541015625,
+            "cycle": 0.5,
+            "weight": {
+              "shear": 0.028303527832031248,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 41.27279452216713,
+              "y": -25.38922559449245
+            }
+          },
+          "crop": {
+            "x": 299.78719422865925,
+            "y": 583.2669347650549,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 14.41,
+          "phase": "depart",
+          "foot": {
+            "x": 491.53005776644096,
+            "y": 832.4468649452443
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.333404541015625,
+            "cycle": 0.5,
+            "weight": {
+              "shear": 0.028303527832031248,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": -0.04603020901115909,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 41.27279452216713,
+              "y": -25.38922559449245
+            }
+          },
+          "crop": {
+            "x": 299.78719422865925,
+            "y": 583.2669347650549,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 13,
+      "elapsed": 0.5416666666666666,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 14.451666666666666,
+          "phase": "depart",
+          "foot": {
+            "x": 493.7927548772352,
+            "y": 833.4324186218629
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.3421082133711858,
+            "cycle": 0.5148809523809523,
+            "weight": {
+              "shear": 0.030021357902207717,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 40.987117053897194,
+              "y": -25.238114824720377
+            }
+          },
+          "crop": {
+            "x": 300.03869086569813,
+            "y": 584.4101770299324,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 14.451666666666666,
+          "phase": "depart",
+          "foot": {
+            "x": 493.7927548772352,
+            "y": 833.4324186218629
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.3421082133711858,
+            "cycle": 0.5148809523809523,
+            "weight": {
+              "shear": 0.030021357902207717,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": -0.04692270107148014,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 40.987117053897194,
+              "y": -25.238114824720377
+            }
+          },
+          "crop": {
+            "x": 300.03869086569813,
+            "y": 584.4101770299324,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 14,
+      "elapsed": 0.5833333333333334,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 14.493333333333334,
+          "phase": "depart",
+          "foot": {
+            "x": 496.0814831861569,
+            "y": 834.3948266766251
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.3500612041319748,
+            "cycle": 0.5297619047619051,
+            "weight": {
+              "shear": 0.03159102713131081,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 40.72496087475765,
+              "y": -25.102727260081902
+            }
+          },
+          "crop": {
+            "x": 300.32513595528076,
+            "y": 585.5265703734566,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 14.493333333333334,
+          "phase": "depart",
+          "foot": {
+            "x": 496.0814831861569,
+            "y": 834.3948266766251
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.3500612041319748,
+            "cycle": 0.5297619047619051,
+            "weight": {
+              "shear": 0.03159102713131081,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": -0.047608059478258295,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 40.72496087475765,
+              "y": -25.102727260081902
+            }
+          },
+          "crop": {
+            "x": 300.32513595528076,
+            "y": 585.5265703734566,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 15,
+      "elapsed": 0.625,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 14.535,
+          "phase": "depart",
+          "foot": {
+            "x": 498.3938426183324,
+            "y": 835.3304644793618
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.3572061918567291,
+            "cycle": 0.5446428571428572,
+            "weight": {
+              "shear": 0.033001222076986005,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 40.48843245866514,
+              "y": -24.98349777146515
+            }
+          },
+          "crop": {
+            "x": 300.64604025032594,
+            "y": 586.6119102246311,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 14.535,
+          "phase": "depart",
+          "foot": {
+            "x": 498.3938426183324,
+            "y": 835.3304644793618
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.3572061918567291,
+            "cycle": 0.5446428571428572,
+            "weight": {
+              "shear": 0.033001222076986005,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": -0.04807828102868985,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 40.48843245866514,
+              "y": -24.98349777146515
+            }
+          },
+          "crop": {
+            "x": 300.64604025032594,
+            "y": 586.6119102246311,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 16,
+      "elapsed": 0.6666666666666666,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 14.576666666666666,
+          "phase": "depart",
+          "foot": {
+            "x": 500.72744982521266,
+            "y": 836.235742511593
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.36348585510418663,
+            "cycle": 0.5595238095238093,
+            "weight": {
+              "shear": 0.03424062929687894,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 40.279631643438215,
+              "y": -24.880864541054382
+            }
+          },
+          "crop": {
+            "x": 301.0008906672176,
+            "y": 587.6620327420193,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 14.576666666666666,
+          "phase": "depart",
+          "foot": {
+            "x": 500.72744982521266,
+            "y": 836.235742511593
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.36348585510418663,
+            "cycle": 0.5595238095238093,
+            "weight": {
+              "shear": 0.03424062929687894,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": -0.04832686086417315,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 40.279631643438215,
+              "y": -24.880864541054382
+            }
+          },
+          "crop": {
+            "x": 301.0008906672176,
+            "y": 587.6620327420193,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 17,
+      "elapsed": 0.7083333333333334,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 14.618333333333334,
+          "phase": "depart",
+          "foot": {
+            "x": 503.0799403969817,
+            "y": 837.1071140334402
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.3688428724330854,
+            "cycle": 0.5744047619047623,
+            "weight": {
+              "shear": 0.035297935348635276,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 40.100646700607854,
+              "y": -24.795284451970865
+            }
+          },
+          "crop": {
+            "x": 301.3891511519236,
+            "y": 588.6728237073621,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 14.618333333333334,
+          "phase": "depart",
+          "foot": {
+            "x": 503.0799403969817,
+            "y": 837.1071140334402
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.3688428724330854,
+            "cycle": 0.5744047619047623,
+            "weight": {
+              "shear": 0.035297935348635276,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": -0.04834886198016548,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 40.100646700607854,
+              "y": -24.795284451970865
+            }
+          },
+          "crop": {
+            "x": 301.3891511519236,
+            "y": 588.6728237073621,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 18,
+      "elapsed": 0.75,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 14.66,
+          "phase": "depart",
+          "foot": {
+            "x": 505.4489710082227,
+            "y": 837.9410826395466
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.37321992240216234,
+            "cycle": 0.5892857142857144,
+            "weight": {
+              "shear": 0.03616182678990045,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 39.95354916172717,
+              "y": -24.72724956203605
+            }
+          },
+          "crop": {
+            "x": 301.81026354808847,
+            "y": 589.6402272904455,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 14.66,
+          "phase": "depart",
+          "foot": {
+            "x": 505.4489710082227,
+            "y": 837.9410826395466
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.37321992240216234,
+            "cycle": 0.5892857142857144,
+            "weight": {
+              "shear": 0.03616182678990045,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": -0.04814097068701537,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 39.95354916172717,
+              "y": -24.72724956203605
+            }
+          },
+          "crop": {
+            "x": 301.81026354808847,
+            "y": 589.6402272904455,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 19,
+      "elapsed": 0.7916666666666666,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 14.701666666666666,
+          "phase": "depart",
+          "foot": {
+            "x": 507.8322214964432,
+            "y": 838.7342096874086
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.37655968357015535,
+            "cycle": 0.6041666666666665,
+            "weight": {
+              "shear": 0.036820990178320134,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 39.84038835628846,
+              "y": -24.677304600553803
+            }
+          },
+          "crop": {
+            "x": 302.26364846633203,
+            "y": 590.5602546659653,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 14.701666666666666,
+          "phase": "depart",
+          "foot": {
+            "x": 507.8322214964432,
+            "y": 838.7342096874086
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.37655968357015535,
+            "cycle": 0.6041666666666665,
+            "weight": {
+              "shear": 0.036820990178320134,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": -0.04770153745229733,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 39.84038835628846,
+              "y": -24.677304600553803
+            }
+          },
+          "crop": {
+            "x": 302.26364846633203,
+            "y": 590.5602546659653,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 20,
+      "elapsed": 0.8333333333333334,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 14.743333333333334,
+          "phase": "depart",
+          "foot": {
+            "x": 510.2273968731161,
+            "y": 839.4831215814172
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.3788048344958023,
+            "cycle": 0.6190476190476195,
+            "weight": {
+              "shear": 0.037264112071539936,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 39.76318560572315,
+              "y": -24.646065416639907
+            }
+          },
+          "crop": {
+            "x": 302.748706153999,
+            "y": 591.4289924630153,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 14.743333333333334,
+          "phase": "depart",
+          "foot": {
+            "x": 510.2273968731161,
+            "y": 839.4831215814172
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.3788048344958023,
+            "cycle": 0.6190476190476195,
+            "weight": {
+              "shear": 0.037264112071539936,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": -0.047030602697237564,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 39.76318560572315,
+              "y": -24.646065416639907
+            }
+          },
+          "crop": {
+            "x": 302.748706153999,
+            "y": 591.4289924630153,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 21,
+      "elapsed": 0.875,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 14.785,
+          "phase": "depart",
+          "foot": {
+            "x": 512.6322292669619,
+            "y": 840.184516895896
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.3798980537378406,
+            "cycle": 0.6339285714285716,
+            "weight": {
+              "shear": 0.03747987902720538,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 39.72392800695944,
+              "y": -24.634238295776964
+            }
+          },
+          "crop": {
+            "x": 303.26481736461415,
+            "y": 592.2426110278108,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 14.785,
+          "phase": "depart",
+          "foot": {
+            "x": 512.6322292669619,
+            "y": 840.184516895896
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.3798980537378406,
+            "cycle": 0.6339285714285716,
+            "weight": {
+              "shear": 0.03747987902720538,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": -0.04612990726619892,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 39.72392800695944,
+              "y": -24.634238295776964
+            }
+          },
+          "crop": {
+            "x": 303.26481736461415,
+            "y": 592.2426110278108,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 22,
+      "elapsed": 0.9166666666666666,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 14.826666666666666,
+          "phase": "depart",
+          "foot": {
+            "x": 515.0444797992567,
+            "y": 840.8351733204759
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.347071681057709,
+            "cycle": 0.6488095238095237,
+            "weight": {
+              "shear": 0.03736746246046021,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 40.67595459021134,
+              "y": -25.18965085465306
+            }
+          },
+          "crop": {
+            "x": 303.81134422632283,
+            "y": 592.9973724803234,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 14.826666666666666,
+          "phase": "depart",
+          "foot": {
+            "x": 515.0444797992567,
+            "y": 840.8351733204759
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.347071681057709,
+            "cycle": 0.6488095238095237,
+            "weight": {
+              "shear": 0.03736746246046021,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": -0.04500288743743965,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 40.67595459021134,
+              "y": -25.18965085465306
+            }
+          },
+          "crop": {
+            "x": 303.81134422632283,
+            "y": 592.9973724803234,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 23,
+      "elapsed": 0.9583333333333334,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 14.868333333333334,
+          "phase": "depart",
+          "foot": {
+            "x": 517.4619403910071,
+            "y": 841.4319544112609
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.2890668432916666,
+            "cycle": 0.6636904761904767,
+            "weight": {
+              "shear": 0.03656837427215589,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 42.32449020203793,
+              "y": -26.24410016358537
+            }
+          },
+          "crop": {
+            "x": 304.38763110859963,
+            "y": 593.689638545634,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 14.868333333333334,
+          "phase": "depart",
+          "foot": {
+            "x": 517.4619403910071,
+            "y": 841.4319544112609
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.2890668432916666,
+            "cycle": 0.6636904761904767,
+            "weight": {
+              "shear": 0.03656837427215589,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": -0.0436546544939913,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 42.32449020203793,
+              "y": -26.24410016358537
+            }
+          },
+          "crop": {
+            "x": 304.38763110859963,
+            "y": 593.689638545634,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 24,
+      "elapsed": 1,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 14.91,
+          "phase": "depart",
+          "foot": {
+            "x": 519.8824355018958,
+            "y": 841.9718161314506
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.2291308260487997,
+            "cycle": 0.6785714285714288,
+            "weight": {
+              "shear": 0.035101585276967905,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 43.97326853874037,
+              "y": -27.4346612792057
+            }
+          },
+          "crop": {
+            "x": 304.99300548652985,
+            "y": 594.3158781410542,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 14.91,
+          "phase": "depart",
+          "foot": {
+            "x": 519.8824355018958,
+            "y": 841.9718161314506
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.2291308260487997,
+            "cycle": 0.6785714285714288,
+            "weight": {
+              "shear": 0.035101585276967905,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": -0.042091959024022456,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 43.97326853874037,
+              "y": -27.4346612792057
+            }
+          },
+          "crop": {
+            "x": 304.99300548652985,
+            "y": 594.3158781410542,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 25,
+      "elapsed": 1.0416666666666667,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 14.951666666666666,
+          "phase": "depart",
+          "foot": {
+            "x": 522.3038238009552,
+            "y": 842.451813165351
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.16846987849102527,
+            "cycle": 0.6934523809523809,
+            "weight": {
+              "shear": 0.03303066181218521,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 45.58034821418906,
+              "y": -28.739987557129446
+            }
+          },
+          "crop": {
+            "x": 305.6267788019803,
+            "y": 594.8726747003786,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 14.951666666666666,
+          "phase": "depart",
+          "foot": {
+            "x": 522.3038238009552,
+            "y": 842.451813165351
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.16846987849102527,
+            "cycle": 0.6934523809523809,
+            "weight": {
+              "shear": 0.03303066181218521,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": -0.04032314026896729,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 45.58034821418906,
+              "y": -28.739987557129446
+            }
+          },
+          "crop": {
+            "x": 305.6267788019803,
+            "y": 594.8726747003786,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 26,
+      "elapsed": 1.0833333333333333,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 14.993333333333334,
+          "phase": "depart",
+          "foot": {
+            "x": 524.7239997689855,
+            "y": 842.8691049900489
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.10825091090742192,
+            "cycle": 0.7083333333333337,
+            "weight": {
+              "shear": 0.030419170215096714,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 47.11069271361723,
+              "y": -30.13115062756639
+            }
+          },
+          "crop": {
+            "x": 306.28824732099395,
+            "y": 595.3567332170281,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 14.993333333333334,
+          "phase": "depart",
+          "foot": {
+            "x": 524.7239997689855,
+            "y": 842.8691049900489
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.10825091090742192,
+            "cycle": 0.7083333333333337,
+            "weight": {
+              "shear": 0.030419170215096714,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": -0.038358060983531075,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 47.11069271361723,
+              "y": -30.13115062756639
+            }
+          },
+          "crop": {
+            "x": 306.28824732099395,
+            "y": 595.3567332170281,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 27,
+      "elapsed": 1.125,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 15.035,
+          "phase": "depart",
+          "foot": {
+            "x": 527.1408952327828,
+            "y": 843.2209616894577
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.049587267473086394,
+            "cycle": 0.723214285714286,
+            "weight": {
+              "shear": 0.02733067682299159,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 48.53708262190471,
+              "y": -31.57316772688234
+            }
+          },
+          "crop": {
+            "x": 306.9766929867487,
+            "y": 595.7648869883424,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 15.035,
+          "phase": "depart",
+          "foot": {
+            "x": 527.1408952327828,
+            "y": 843.2209616894577
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.049587267473086394,
+            "cycle": 0.723214285714286,
+            "weight": {
+              "shear": 0.02733067682299159,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": -0.036208028412981784,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 48.53708262190471,
+              "y": -31.57316772688234
+            }
+          },
+          "crop": {
+            "x": 306.9766929867487,
+            "y": 595.7648869883424,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 28,
+      "elapsed": 1.1666666666666667,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 15.076666666666666,
+          "phase": "depart",
+          "foot": {
+            "x": 529.5524808313061,
+            "y": 843.5047694959245
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.006474598930980013,
+            "cycle": 0.7380952380952381,
+            "weight": {
+              "shear": 0.023828747973158818,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 49.84039400471208,
+              "y": -33.02698688948552
+            }
+          },
+          "crop": {
+            "x": 307.6913842674551,
+            "y": 596.0941040438439,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 15.076666666666666,
+          "phase": "depart",
+          "foot": {
+            "x": 529.5524808313061,
+            "y": 843.5047694959245
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.006474598930980013,
+            "cycle": 0.7380952380952381,
+            "weight": {
+              "shear": 0.023828747973158818,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": -0.033885702128499166,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 49.84039400471208,
+              "y": -33.02698688948552
+            }
+          },
+          "crop": {
+            "x": 307.6913842674551,
+            "y": 596.0941040438439,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 29,
+      "elapsed": 1.2083333333333333,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 15.118333333333334,
+          "phase": "depart",
+          "foot": {
+            "x": 531.956767413951,
+            "y": 843.718036045161
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.05896732543897237,
+            "cycle": 0.7529761904761909,
+            "weight": {
+              "shear": 0.019976950002887194,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 51.00922652714458,
+              "y": -34.45168071314592
+            }
+          },
+          "crop": {
+            "x": 308.43157699855664,
+            "y": 596.3414932409582,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 15.118333333333334,
+          "phase": "depart",
+          "foot": {
+            "x": 531.956767413951,
+            "y": 843.718036045161
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.05896732543897237,
+            "cycle": 0.7529761904761909,
+            "weight": {
+              "shear": 0.019976950002887194,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": -0.03140498958943922,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 51.00922652714458,
+              "y": -34.45168071314592
+            }
+          },
+          "crop": {
+            "x": 308.43157699855664,
+            "y": 596.3414932409582,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 30,
+      "elapsed": 1.25,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 15.16,
+          "phase": "depart",
+          "foot": {
+            "x": 534.3518073711601,
+            "y": 843.8583953308926
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.10701350603416676,
+            "cycle": 0.767857142857143,
+            "weight": {
+              "shear": 0.015838849249466058,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 52.03894636906028,
+              "y": -35.80660879962673
+            }
+          },
+          "crop": {
+            "x": 309.19651521863614,
+            "y": 596.5043100124068,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 15.16,
+          "phase": "depart",
+          "foot": {
+            "x": 534.3518073711601,
+            "y": 843.8583953308926
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.10701350603416676,
+            "cycle": 0.767857142857143,
+            "weight": {
+              "shear": 0.015838849249466058,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": -0.028780930420898417,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 52.03894636906028,
+              "y": -35.80660879962673
+            }
+          },
+          "crop": {
+            "x": 309.19651521863614,
+            "y": 596.5043100124068,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 31,
+      "elapsed": 1.2916666666666667,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 15.201666666666666,
+          "phase": "depart",
+          "foot": {
+            "x": 536.7356958976479,
+            "y": 843.9236123463314
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.14983504349657611,
+            "cycle": 0.7827380952380953,
+            "weight": {
+              "shear": 0.011478012050184188,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 52.9302750247059,
+              "y": -37.053351527343956
+            }
+          },
+          "crop": {
+            "x": 309.98543199843556,
+            "y": 596.5799617503159,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 15.201666666666666,
+          "phase": "depart",
+          "foot": {
+            "x": 536.7356958976479,
+            "y": 843.9236123463314
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.14983504349657611,
+            "cycle": 0.7827380952380953,
+            "weight": {
+              "shear": 0.011478012050184188,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": -0.02602957050476193,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 52.9302750247059,
+              "y": -37.053351527343956
+            }
+          },
+          "crop": {
+            "x": 309.98543199843556,
+            "y": 596.5799617503159,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 32,
+      "elapsed": 1.3333333333333333,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 15.243333333333334,
+          "phase": "depart",
+          "foot": {
+            "x": 539.1065721885572,
+            "y": 843.9115874003362
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.18676082897618645,
+            "cycle": 0.7976190476190479,
+            "weight": {
+              "shear": 0.006958004742330581,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 53.68759692890034,
+              "y": -38.15728247967674
+            }
+          },
+          "crop": {
+            "x": 310.79755026241,
+            "y": 596.5660128129614,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 15.243333333333334,
+          "phase": "depart",
+          "foot": {
+            "x": 539.1065721885572,
+            "y": 843.9115874003362
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.18676082897618645,
+            "cycle": 0.7976190476190479,
+            "weight": {
+              "shear": 0.006958004742330581,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": -0.02316782708138181,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 53.68759692890034,
+              "y": -38.15728247967674
+            }
+          },
+          "crop": {
+            "x": 310.79755026241,
+            "y": 596.5660128129614,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 33,
+      "elapsed": 1.375,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 15.285,
+          "phase": "depart",
+          "foot": {
+            "x": 541.4626205689251,
+            "y": 843.8203600969715
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.2172326198666953,
+            "cycle": 0.8125000000000002,
+            "weight": {
+              "shear": 0.002342393663194381,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 54.31717378967813,
+              "y": -39.08871943174971
+            }
+          },
+          "crop": {
+            "x": 311.6320836022615,
+            "y": 596.4601891410583,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 15.285,
+          "phase": "depart",
+          "foot": {
+            "x": 541.4626205689251,
+            "y": 843.8203600969715
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.2172326198666953,
+            "cycle": 0.8125000000000002,
+            "weight": {
+              "shear": 0.002342393663194381,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": -0.020213346146195268,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 54.31717378967813,
+              "y": -39.08871943174971
+            }
+          },
+          "crop": {
+            "x": 311.6320836022615,
+            "y": 596.4601891410583,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 34,
+      "elapsed": 1.4166666666666667,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 15.326666666666666,
+          "phase": "depart",
+          "foot": {
+            "x": 543.8020715568758,
+            "y": 843.6481129680564
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.24080901699550308,
+            "cycle": 0.8273809523809523,
+            "weight": {
+              "shear": -0.0023052548499354173,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 54.825444137559415,
+              "y": -39.82366048364848
+            }
+          },
+          "crop": {
+            "x": 312.4882370819096,
+            "y": 596.2603824715168,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 15.326666666666666,
+          "phase": "depart",
+          "foot": {
+            "x": 543.8020715568758,
+            "y": 843.6481129680564
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.24080901699550308,
+            "cycle": 0.8273809523809523,
+            "weight": {
+              "shear": -0.0023052548499354173,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": -0.017184353500064236,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 54.825444137559415,
+              "y": -39.82366048364848
+            }
+          },
+          "crop": {
+            "x": 312.4882370819096,
+            "y": 596.2603824715168,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 35,
+      "elapsed": 1.4583333333333333,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 15.368333333333334,
+          "phase": "depart",
+          "foot": {
+            "x": 546.1232028609973,
+            "y": 843.393174749252
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.2571674741535025,
+            "cycle": 0.8422619047619051,
+            "weight": {
+              "shear": -0.006921374459770077,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 55.217559059485836,
+              "y": -40.34416217762012
+            }
+          },
+          "crop": {
+            "x": 313.3652080333664,
+            "y": 595.9646541377037,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 15.368333333333334,
+          "phase": "depart",
+          "foot": {
+            "x": 546.1232028609973,
+            "y": 843.393174749252
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.2571674741535025,
+            "cycle": 0.8422619047619051,
+            "weight": {
+              "shear": -0.006921374459770077,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": -0.014099500873208094,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 55.217559059485836,
+              "y": -40.34416217762012
+            }
+          },
+          "crop": {
+            "x": 313.3652080333664,
+            "y": 595.9646541377037,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 36,
+      "elapsed": 1.5,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 15.41,
+          "phase": "depart",
+          "foot": {
+            "x": 548.424340312417,
+            "y": 843.0540232912389
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.26610430612389746,
+            "cycle": 0.8571428571428572,
+            "weight": {
+              "shear": -0.01144239882902017,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 55.496266768793134,
+              "y": -40.638444571415825
+            }
+          },
+          "crop": {
+            "x": 314.2621868430194,
+            "y": 595.5712384464085,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 15.41,
+          "phase": "depart",
+          "foot": {
+            "x": 548.424340312417,
+            "y": 843.0540232912389
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.26610430612389746,
+            "cycle": 0.8571428571428572,
+            "weight": {
+              "shear": -0.01144239882902017,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": -0.010977708589639446,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 55.496266768793134,
+              "y": -40.638444571415825
+            }
+          },
+          "crop": {
+            "x": 314.2621868430194,
+            "y": 595.5712384464085,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 37,
+      "elapsed": 1.5416666666666667,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 15.451666666666666,
+          "phase": "depart",
+          "foot": {
+            "x": 550.703858732119,
+            "y": 842.6292880985835
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.26753269507485533,
+            "cycle": 0.8720238095238095,
+            "weight": {
+              "shear": -0.01580476162039696,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 55.661216265113275,
+              "y": -40.70081366308853
+            }
+          },
+          "crop": {
+            "x": 315.17835772781234,
+            "y": 595.0785456229283,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 15.451666666666666,
+          "phase": "depart",
+          "foot": {
+            "x": 550.703858732119,
+            "y": 842.6292880985835
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.26753269507485533,
+            "cycle": 0.8720238095238095,
+            "weight": {
+              "shear": -0.01580476162039696,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": -0.007838006271601826,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 55.661216265113275,
+              "y": -40.70081366308853
+            }
+          },
+          "crop": {
+            "x": 315.17835772781234,
+            "y": 595.0785456229283,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 38,
+      "elapsed": 1.5833333333333333,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 15.493333333333334,
+          "phase": "depart",
+          "foot": {
+            "x": 552.9601827340949,
+            "y": 842.1177524899925
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.26147872888860946,
+            "cycle": 0.8869047619047623,
+            "weight": {
+              "shear": -0.019944896496611516,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 55.70870866163614,
+              "y": -40.53147790300702
+            }
+          },
+          "crop": {
+            "x": 316.1128995008617,
+            "y": 594.4851643169628,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 15.493333333333334,
+          "phase": "depart",
+          "foot": {
+            "x": 552.9601827340949,
+            "y": 842.1177524899925
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.26147872888860946,
+            "cycle": 0.8869047619047623,
+            "weight": {
+              "shear": -0.019944896496611516,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": -0.0046993731012755285,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 55.70870866163614,
+              "y": -40.53147790300702
+            }
+          },
+          "crop": {
+            "x": 316.1128995008617,
+            "y": 594.4851643169628,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 39,
+      "elapsed": 1.625,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 15.535,
+          "phase": "depart",
+          "foot": {
+            "x": 555.1917874649622,
+            "y": 841.5183553747869
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.2480755381421339,
+            "cycle": 0.9017857142857144,
+            "weight": {
+              "shear": -0.02379923712037452,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 55.631886446958696,
+              "y": -40.136309187690884
+            }
+          },
+          "crop": {
+            "x": 317.0649863260453,
+            "y": 593.7898636633242,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 15.535,
+          "phase": "depart",
+          "foot": {
+            "x": 555.1917874649622,
+            "y": 841.5183553747869
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.2480755381421339,
+            "cycle": 0.9017857142857144,
+            "weight": {
+              "shear": -0.02379923712037452,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": -0.0015805791598246452,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 55.631886446958696,
+              "y": -40.136309187690884
+            }
+          },
+          "crop": {
+            "x": 317.0649863260453,
+            "y": 593.7898636633242,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 40,
+      "elapsed": 1.6666666666666667,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 15.576666666666666,
+          "phase": "depart",
+          "foot": {
+            "x": 557.397199280716,
+            "y": 840.8301926416061
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.22755563047346666,
+            "cycle": 0.9166666666666665,
+            "weight": {
+              "shear": -0.027304217154397157,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 55.421316991689714,
+              "y": -39.5265672930625
+            }
+          },
+          "crop": {
+            "x": 318.0337884611183,
+            "y": 592.9915948928345,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 15.576666666666666,
+          "phase": "depart",
+          "foot": {
+            "x": 557.397199280716,
+            "y": 840.8301926416061
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.22755563047346666,
+            "cycle": 0.9166666666666665,
+            "weight": {
+              "shear": -0.027304217154397157,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": 0.001499970648347091,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 55.421316991689714,
+              "y": -39.5265672930625
+            }
+          },
+          "crop": {
+            "x": 318.0337884611183,
+            "y": 592.9915948928345,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 41,
+      "elapsed": 1.7083333333333333,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 15.618333333333334,
+          "phase": "depart",
+          "foot": {
+            "x": 559.5749963613231,
+            "y": 840.0525181565453
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.200241551424058,
+            "cycle": 0.9315476190476195,
+            "weight": {
+              "shear": -0.030396270261390607,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 55.065897244604884,
+              "y": -38.71857753027379
+            }
+          },
+          "crop": {
+            "x": 319.01847298893745,
+            "y": 592.0894924901639,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 15.618333333333334,
+          "phase": "depart",
+          "foot": {
+            "x": 559.5749963613231,
+            "y": 840.0525181565453
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.200241551424058,
+            "cycle": 0.9315476190476195,
+            "weight": {
+              "shear": -0.030396270261390607,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": 0.004524388605326488,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 55.065897244604884,
+              "y": -38.71857753027379
+            }
+          },
+          "crop": {
+            "x": 319.01847298893745,
+            "y": 592.0894924901639,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 42,
+      "elapsed": 1.75,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 15.66,
+          "phase": "depart",
+          "foot": {
+            "x": 561.7238092639036,
+            "y": 839.1847443691651
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.1665350290299082,
+            "cycle": 0.9464285714285716,
+            "weight": {
+              "shear": -0.03301183010406547,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 54.553982195726725,
+              "y": -37.733330529694314
+            }
+          },
+          "crop": {
+            "x": 320.0182045363839,
+            "y": 591.0828748968029,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 15.66,
+          "phase": "depart",
+          "foot": {
+            "x": 561.7238092639036,
+            "y": 839.1847443691651
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.1665350290299082,
+            "cycle": 0.9464285714285716,
+            "weight": {
+              "shear": -0.03301183010406547,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": 0.00747545068427556,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 54.553982195726725,
+              "y": -37.733330529694314
+            }
+          },
+          "crop": {
+            "x": 320.0182045363839,
+            "y": 591.0828748968029,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 43,
+      "elapsed": 1.7916666666666667,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 15.701666666666666,
+          "phase": "depart",
+          "foot": {
+            "x": 563.8423214152803,
+            "y": 838.2264425260529
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.12690478496811003,
+            "cycle": 0.9613095238095237,
+            "weight": {
+              "shear": -0.03508733034513295,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 53.87462146897042,
+              "y": -36.59596442964666
+            }
+          },
+          "crop": {
+            "x": 321.03214598059907,
+            "y": 589.9712447587927,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 15.701666666666666,
+          "phase": "depart",
+          "foot": {
+            "x": 563.8423214152803,
+            "y": 838.2264425260529
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.12690478496811003,
+            "cycle": 0.9613095238095237,
+            "weight": {
+              "shear": -0.03508733034513295,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": 0.010336736165588563,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 53.87462146897042,
+              "y": -36.59596442964666
+            }
+          },
+          "crop": {
+            "x": 321.03214598059907,
+            "y": 589.9712447587927,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 44,
+      "elapsed": 1.8333333333333333,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 15.743333333333334,
+          "phase": "depart",
+          "foot": {
+            "x": 565.929269544705,
+            "y": 837.1773424928824
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.08187321752087359,
+            "cycle": 0.9761904761904767,
+            "weight": {
+              "shear": -0.036559204647304125,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 53.01877829981012,
+              "y": -35.33509480139027
+            }
+          },
+          "crop": {
+            "x": 322.05945914215806,
+            "y": 588.754288720315,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 15.743333333333334,
+          "phase": "depart",
+          "foot": {
+            "x": 565.929269544705,
+            "y": 837.1773424928824
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.08187321752087359,
+            "cycle": 0.9761904761904767,
+            "weight": {
+              "shear": -0.036559204647304125,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": 0.013092759050804337,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 53.01877829981012,
+              "y": -35.33509480139027
+            }
+          },
+          "crop": {
+            "x": 322.05945914215806,
+            "y": 588.754288720315,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 45,
+      "elapsed": 1.875,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 15.785,
+          "phase": "depart",
+          "foot": {
+            "x": 567.9834440576157,
+            "y": 836.0373321871848
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.03200218061781826,
+            "cycle": 0.9910714285714288,
+            "weight": {
+              "shear": -0.0373638866732898,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 51.98040542382241,
+              "y": -33.981975195837755
+            }
+          },
+          "crop": {
+            "x": 323.0993054648323,
+            "y": 587.4318767657059,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 15.785,
+          "phase": "depart",
+          "foot": {
+            "x": 567.9834440576157,
+            "y": 836.0373321871848
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.03200218061781826,
+            "cycle": 0.9910714285714288,
+            "weight": {
+              "shear": -0.0373638866732898,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": 0.0157290900428581,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 51.98040542382241,
+              "y": -33.981975195837755
+            }
+          },
+          "crop": {
+            "x": 323.0993054648323,
+            "y": 587.4318767657059,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 46,
+      "elapsed": 1.9166666666666667,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 15.826666666666666,
+          "phase": "depart",
+          "foot": {
+            "x": 570.0036893512977,
+            "y": 834.8064566253224
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.00009799979312568368,
+            "cycle": 0.005952380952380931,
+            "weight": {
+              "shear": -0.0374806579355673,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 51.26199893187495,
+              "y": -33.14400518589021
+            }
+          },
+          "crop": {
+            "x": 324.1508466816073,
+            "y": 586.0040611139455,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 15.826666666666666,
+          "phase": "depart",
+          "foot": {
+            "x": 570.0036893512977,
+            "y": 834.8064566253224
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.00009799979312568368,
+            "cycle": 0.005952380952380931,
+            "weight": {
+              "shear": -0.0374806579355673,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": 0.01823246795574267,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 51.26199893187495,
+              "y": -33.14400518589021
+            }
+          },
+          "crop": {
+            "x": 324.1508466816073,
+            "y": 586.0040611139455,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 47,
+      "elapsed": 1.9583333333333333,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 15.868333333333334,
+          "phase": "depart",
+          "foot": {
+            "x": 571.9889040733607,
+            "y": 833.4849165884183
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.001181772461643967,
+            "cycle": 0.020833333333333703,
+            "weight": {
+              "shear": -0.037266755435201845,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 51.22179914890189,
+              "y": -33.133157717774274
+            }
+          },
+          "crop": {
+            "x": 325.21324546663703,
+            "y": 584.4710746711366,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 15.868333333333334,
+          "phase": "depart",
+          "foot": {
+            "x": 571.9889040733607,
+            "y": 833.4849165884183
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.001181772461643967,
+            "cycle": 0.020833333333333703,
+            "weight": {
+              "shear": -0.037266755435201845,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": 0.020590899522303835,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 51.22179914890189,
+              "y": -33.133157717774274
+            }
+          },
+          "crop": {
+            "x": 325.21324546663703,
+            "y": 584.4710746711366,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 48,
+      "elapsed": 2,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 15.91,
+          "phase": "depart",
+          "foot": {
+            "x": 573.9380413239688,
+            "y": 832.0730669132729
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.003417935385300902,
+            "cycle": 0.03571428571428581,
+            "weight": {
+              "shear": -0.03682540748974324,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 51.14924603526549,
+              "y": -33.0918424834922
+            }
+          },
+          "crop": {
+            "x": 326.28566607283636,
+            "y": 582.833329047968,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 15.91,
+          "phase": "depart",
+          "foot": {
+            "x": 573.9380413239688,
+            "y": 832.0730669132729
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.003417935385300902,
+            "cycle": 0.03571428571428581,
+            "weight": {
+              "shear": -0.03682540748974324,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": 0.02279374668463633,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 51.14924603526549,
+              "y": -33.0918424834922
+            }
+          },
+          "crop": {
+            "x": 326.28566607283636,
+            "y": 582.833329047968,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 49,
+      "elapsed": 2.0416666666666665,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 15.951666666666666,
+          "phase": "depart",
+          "foot": {
+            "x": 575.8501088027933,
+            "y": 830.5714144155342
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.006749167122834198,
+            "cycle": 0.05059523809523814,
+            "weight": {
+              "shear": -0.03616792754154588,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 51.04589400227465,
+              "y": -33.021653833607814
+            }
+          },
+          "crop": {
+            "x": 327.3672749548432,
+            "y": 581.091412150591,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 15.951666666666666,
+          "phase": "depart",
+          "foot": {
+            "x": 575.8501088027933,
+            "y": 830.5714144155342
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.006749167122834198,
+            "cycle": 0.05059523809523814,
+            "weight": {
+              "shear": -0.03616792754154588,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": 0.024831800576249573,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 51.04589400227465,
+              "y": -33.021653833607814
+            }
+          },
+          "crop": {
+            "x": 327.3672749548432,
+            "y": 581.091412150591,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 50,
+      "elapsed": 2.0833333333333335,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 15.993333333333334,
+          "phase": "depart",
+          "foot": {
+            "x": 577.7241689016763,
+            "y": 828.980615453624
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.011118146232981609,
+            "cycle": 0.06547619047619091,
+            "weight": {
+              "shear": -0.03530562903296415,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 50.913249706177496,
+              "y": -32.924255389435494
+            }
+          },
+          "crop": {
+            "x": 328.4572413770745,
+            "y": 579.2460853547752,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 15.993333333333334,
+          "phase": "depart",
+          "foot": {
+            "x": 577.7241689016763,
+            "y": 828.980615453624
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.011118146232981609,
+            "cycle": 0.06547619047619091,
+            "weight": {
+              "shear": -0.03530562903296415,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": 0.026697341537547045,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 50.913249706177496,
+              "y": -32.924255389435494
+            }
+          },
+          "crop": {
+            "x": 328.4572413770745,
+            "y": 579.2460853547752,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 51,
+      "elapsed": 2.125,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 16.035,
+          "phase": "depart",
+          "foot": {
+            "x": 579.5593387440307,
+            "y": 827.3014731431313
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.016467551274480404,
+            "cycle": 0.08035714285714302,
+            "weight": {
+              "shear": -0.03424982540635255,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 50.75278144865056,
+              "y": -32.80136826202284
+            }
+          },
+          "crop": {
+            "x": 329.5547380066523,
+            "y": 577.2982802746037,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 16.035,
+          "phase": "depart",
+          "foot": {
+            "x": 579.5593387440307,
+            "y": 827.3014731431313
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.016467551274480404,
+            "cycle": 0.08035714285714302,
+            "weight": {
+              "shear": -0.03424982540635255,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": 0.028384184644945853,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 50.75278144865056,
+              "y": -32.80136826202284
+            }
+          },
+          "crop": {
+            "x": 329.5547380066523,
+            "y": 577.2982802746037,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 52,
+      "elapsed": 2.1666666666666665,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 16.076666666666668,
+          "phase": "depart",
+          "foot": {
+            "x": 581.3547901720153,
+            "y": 825.5349342325486
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.022740060806068708,
+            "cycle": 0.09523809523809579,
+            "weight": {
+              "shear": -0.03301183010406539,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 50.56592817943956,
+              "y": -32.65476004523414
+            }
+          },
+          "crop": {
+            "x": 330.658941490963,
+            "y": 575.2490951383278,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 16.076666666666668,
+          "phase": "depart",
+          "foot": {
+            "x": 581.3547901720153,
+            "y": 825.5349342325486
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.022740060806068708,
+            "cycle": 0.09523809523809579,
+            "weight": {
+              "shear": -0.03301183010406539,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": 0.029887710377712366,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 50.56592817943956,
+              "y": -32.65476004523414
+            }
+          },
+          "crop": {
+            "x": 330.658941490963,
+            "y": 575.2490951383278,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 53,
+      "elapsed": 2.2083333333333335,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 16.118333333333332,
+          "phase": "depart",
+          "foot": {
+            "x": 583.1097496825554,
+            "y": 823.6820856523753
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.029878353386483345,
+            "cycle": 0.11011904761904745,
+            "weight": {
+              "shear": -0.031602956568457234,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 50.35410805087798,
+              "y": -32.48623444147002
+            }
+          },
+          "crop": {
+            "x": 331.7690330196644,
+            "y": 573.0997907853268,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 16.118333333333332,
+          "phase": "depart",
+          "foot": {
+            "x": 583.1097496825554,
+            "y": 823.6820856523753
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.029878353386483345,
+            "cycle": 0.11011904761904745,
+            "weight": {
+              "shear": -0.031602956568457234,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": 0.031204880193913077,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 50.35410805087798,
+              "y": -32.48623444147002
+            }
+          },
+          "crop": {
+            "x": 331.7690330196644,
+            "y": 573.0997907853268,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 54,
+      "elapsed": 2.25,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 16.16,
+          "phase": "depart",
+          "foot": {
+            "x": 584.8234983132933,
+            "y": 821.7441507507011
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.03782510757446301,
+            "cycle": 0.12500000000000022,
+            "weight": {
+              "shear": -0.0300345182418823,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 50.11872648201925,
+              "y": -32.297621403885955
+            }
+          },
+          "crop": {
+            "x": 332.884198870937,
+            "y": 570.8517862993848,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 16.16,
+          "phase": "depart",
+          "foot": {
+            "x": 584.8234983132933,
+            "y": 821.7441507507011
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.03782510757446301,
+            "cycle": 0.12500000000000022,
+            "weight": {
+              "shear": -0.0300345182418823,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": 0.032334236936287314,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 50.11872648201925,
+              "y": -32.297621403885955
+            }
+          },
+          "crop": {
+            "x": 332.884198870937,
+            "y": 570.8517862993848,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 55,
+      "elapsed": 2.2916666666666665,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 16.201666666666668,
+          "phase": "depart",
+          "foot": {
+            "x": 586.4953714795834,
+            "y": 819.7224852294423
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.04652300192874484,
+            "cycle": 0.139880952380953,
+            "weight": {
+              "shear": -0.028317828566695097,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 49.86118369747009,
+              "y": -32.090767703496056
+            }
+          },
+          "crop": {
+            "x": 334.0036309418381,
+            "y": 568.5066542947245,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 16.201666666666668,
+          "phase": "depart",
+          "foot": {
+            "x": 586.4953714795834,
+            "y": 819.7224852294423
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.04652300192874484,
+            "cycle": 0.139880952380953,
+            "weight": {
+              "shear": -0.028317828566695097,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": 0.033275890138855097,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 49.86118369747009,
+              "y": -32.090767703496056
+            }
+          },
+          "crop": {
+            "x": 334.0036309418381,
+            "y": 568.5066542947245,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 56,
+      "elapsed": 2.3333333333333335,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 16.243333333333332,
+          "phase": "depart",
+          "foot": {
+            "x": 588.124758763654,
+            "y": 817.6185727963937
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.055914715008065566,
+            "cycle": 0.15476190476190443,
+            "weight": {
+              "shear": -0.02646420098525022,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 49.582881712772696,
+              "y": -31.867527852982228
+            }
+          },
+          "crop": {
+            "x": 335.12652726259273,
+            "y": 566.0661158723881,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 16.243333333333332,
+          "phase": "depart",
+          "foot": {
+            "x": 588.124758763654,
+            "y": 817.6185727963937
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.055914715008065566,
+            "cycle": 0.15476190476190443,
+            "weight": {
+              "shear": -0.02646420098525022,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": 0.03403148645419034,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 49.582881712772696,
+              "y": -31.867527852982228
+            }
+          },
+          "crop": {
+            "x": 335.12652726259273,
+            "y": 566.0661158723881,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 57,
+      "elapsed": 2.375,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 16.285,
+          "phase": "depart",
+          "foot": {
+            "x": 589.7111036570908,
+            "y": 815.4340205492141
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.06594292537116468,
+            "cycle": 0.16964285714285743,
+            "weight": {
+              "shear": -0.024484948939901708,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 49.285230744426094,
+              "y": -31.62975534113103
+            }
+          },
+          "crop": {
+            "x": 336.2520924947195,
+            "y": 563.5320352656598,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 16.285,
+          "phase": "depart",
+          "foot": {
+            "x": 589.7111036570908,
+            "y": 815.4340205492141
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.06594292537116468,
+            "cycle": 0.16964285714285743,
+            "weight": {
+              "shear": -0.024484948939901708,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": 0.0346041655680199,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 49.285230744426094,
+              "y": -31.62975534113103
+            }
+          },
+          "crop": {
+            "x": 336.2520924947195,
+            "y": 563.5320352656598,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 58,
+      "elapsed": 2.4166666666666665,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 16.326666666666668,
+          "phase": "depart",
+          "foot": {
+            "x": 591.2539032577923,
+            "y": 813.1705541083377
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.07655031157677868,
+            "cycle": 0.1845238095238102,
+            "weight": {
+              "shear": -0.022391385873004207,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 48.96965502841852,
+              "y": -31.379294152388976
+            }
+          },
+          "crop": {
+            "x": 337.37953841286026,
+            "y": 560.9064141942432,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 16.326666666666668,
+          "phase": "depart",
+          "foot": {
+            "x": 591.2539032577923,
+            "y": 813.1705541083377
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.07655031157677868,
+            "cycle": 0.1845238095238102,
+            "weight": {
+              "shear": -0.022391385873004207,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": 0.034998502110702503,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 48.96965502841852,
+              "y": -31.379294152388976
+            }
+          },
+          "crop": {
+            "x": 337.37953841286026,
+            "y": 560.9064141942432,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 59,
+      "elapsed": 2.4583333333333335,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 16.368333333333332,
+          "phase": "depart",
+          "foot": {
+            "x": 592.7527079225908,
+            "y": 810.8300125166327
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.08767955218364432,
+            "cycle": 0.19940476190476164,
+            "weight": {
+              "shear": -0.020194825226912304,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 48.637598036510184,
+              "y": -31.117970564894314
+            }
+          },
+          "crop": {
+            "x": 338.5080843702531,
+            "y": 558.1913859478653,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 16.368333333333332,
+          "phase": "depart",
+          "foot": {
+            "x": 592.7527079225908,
+            "y": 810.8300125166327
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.08767955218364432,
+            "cycle": 0.19940476190476164,
+            "weight": {
+              "shear": -0.020194825226912304,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": 0.03522043421276986,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 48.637598036510184,
+              "y": -31.117970564894314
+            }
+          },
+          "crop": {
+            "x": 338.5080843702531,
+            "y": 558.1913859478653,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 60,
+      "elapsed": 2.5,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 16.41,
+          "phase": "depart",
+          "foot": {
+            "x": 594.2071208767213,
+            "y": 808.4143429243741
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.09927332575050118,
+            "cycle": 0.2142857142857144,
+            "weight": {
+              "shear": -0.017906580443980028,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 48.290527084499146,
+              "y": -30.847585237377498
+            }
+          },
+          "crop": {
+            "x": 339.63695774776784,
+            "y": 555.3892092208454,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 16.41,
+          "phase": "depart",
+          "foot": {
+            "x": 594.2071208767213,
+            "y": 808.4143429243741
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.09927332575050118,
+            "cycle": 0.2142857142857144,
+            "weight": {
+              "shear": -0.017906580443980028,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": 0.035277179482706714,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 48.290527084499146,
+              "y": -30.847585237377498
+            }
+          },
+          "crop": {
+            "x": 339.63695774776784,
+            "y": 555.3892092208454,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 61,
+      "elapsed": 2.5416666666666665,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 16.451666666666668,
+          "phase": "depart",
+          "foot": {
+            "x": 595.6167977813442,
+            "y": 805.9255950787841
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.11127431083608601,
+            "cycle": 0.22916666666666718,
+            "weight": {
+              "shear": -0.015537964966561972,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 47.92993733135867,
+              "y": -30.569905610419042
+            }
+          },
+          "crop": {
+            "x": 340.7653943864574,
+            "y": 552.502261719961,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 16.451666666666668,
+          "phase": "depart",
+          "foot": {
+            "x": 595.6167977813442,
+            "y": 805.9255950787841
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.11127431083608601,
+            "cycle": 0.22916666666666718,
+            "weight": {
+              "shear": -0.015537964966561972,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": 0.03517713930820439,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 47.92993733135867,
+              "y": -30.569905610419042
+            }
+          },
+          "crop": {
+            "x": 340.7653943864574,
+            "y": 552.502261719961,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 62,
+      "elapsed": 2.5833333333333335,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 16.493333333333332,
+          "phase": "depart",
+          "foot": {
+            "x": 596.9814462603449,
+            "y": 803.365915637997
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.12362518599913538,
+            "cycle": 0.24404761904761885,
+            "weight": {
+              "shear": -0.013100292237012753,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 47.55735517246507,
+              "y": -30.286658660638096
+            }
+          },
+          "crop": {
+            "x": 341.89263900360777,
+            "y": 549.533033568648,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 16.493333333333332,
+          "phase": "depart",
+          "foot": {
+            "x": 596.9814462603449,
+            "y": 803.365915637997
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.12362518599913538,
+            "cycle": 0.24404761904761885,
+            "weight": {
+              "shear": -0.013100292237012753,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": 0.03492979249602373,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 47.55735517246507,
+              "y": -30.286658660638096
+            }
+          },
+          "crop": {
+            "x": 341.89263900360777,
+            "y": 549.533033568648,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 63,
+      "elapsed": 2.625,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 16.535,
+          "phase": "depart",
+          "foot": {
+            "x": 598.3008253876307,
+            "y": 800.7375423298312
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.13626862979838883,
+            "cycle": 0.2589285714285716,
+            "weight": {
+              "shear": -0.010604875697686414,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 47.17434103416505,
+              "y": -29.999524057416576
+            }
+          },
+          "crop": {
+            "x": 343.01794559227113,
+            "y": 546.4841205311756,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 16.535,
+          "phase": "depart",
+          "foot": {
+            "x": 598.3008253876307,
+            "y": 800.7375423298312
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.13626862979838883,
+            "cycle": 0.2589285714285716,
+            "weight": {
+              "shear": -0.010604875697686414,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": 0.034545579369210974,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 47.17434103416505,
+              "y": -29.999524057416576
+            }
+          },
+          "crop": {
+            "x": 343.01794559227113,
+            "y": 546.4841205311756,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 64,
+      "elapsed": 2.6666666666666665,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 16.576666666666668,
+          "phase": "depart",
+          "foot": {
+            "x": 599.574745136162,
+            "y": 798.042797976211
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.14914732079258314,
+            "cycle": 0.2738095238095244,
+            "weight": {
+              "shear": -0.00806302879093754,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 46.78249158066351,
+              "y": -29.710127780724736
+            }
+          },
+          "crop": {
+            "x": 344.14057780429766,
+            "y": 543.3582170809761,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 16.576666666666668,
+          "phase": "depart",
+          "foot": {
+            "x": 599.574745136162,
+            "y": 798.042797976211
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.14914732079258314,
+            "cycle": 0.2738095238095244,
+            "weight": {
+              "shear": -0.00806302879093754,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": 0.03403577753270261,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 46.78249158066351,
+              "y": -29.710127780724736
+            }
+          },
+          "crop": {
+            "x": 344.14057780429766,
+            "y": 543.3582170809761,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 65,
+      "elapsed": 2.7083333333333335,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 16.618333333333332,
+          "phase": "depart",
+          "foot": {
+            "x": 600.8030657899618,
+            "y": 795.2840844044332
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.16220393754045478,
+            "cycle": 0.28869047619047605,
+            "weight": {
+              "shear": -0.005486064959120768,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 46.38344134764391,
+              "y": -29.420036265521425
+            }
+          },
+          "crop": {
+            "x": 345.2598093168976,
+            "y": 540.1581093377139,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 16.618333333333332,
+          "phase": "depart",
+          "foot": {
+            "x": 600.8030657899618,
+            "y": 795.2840844044332
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.16220393754045478,
+            "cycle": 0.28869047619047605,
+            "weight": {
+              "shear": -0.005486064959120768,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": 0.033412370598412726,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 46.38344134764391,
+              "y": -29.420036265521425
+            }
+          },
+          "crop": {
+            "x": 345.2598093168976,
+            "y": 540.1581093377139,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 66,
+      "elapsed": 2.75,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 16.66,
+          "phase": "depart",
+          "foot": {
+            "x": 601.9856973203521,
+            "y": 792.4638762667681
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.17538115860074344,
+            "cycle": 0.3035714285714288,
+            "weight": {
+              "shear": -0.002885297644590111,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 45.97886382016017,
+              "y": -29.130751143096525
+            }
+          },
+          "crop": {
+            "x": 346.37492418278777,
+            "y": 536.8866678980224,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 16.66,
+          "phase": "depart",
+          "foot": {
+            "x": 601.9856973203521,
+            "y": 792.4638762667681
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.17538115860074344,
+            "cycle": 0.3035714285714288,
+            "weight": {
+              "shear": -0.002885297644590111,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": 0.032687911227930765,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 45.97886382016017,
+              "y": -29.130751143096525
+            }
+          },
+          "crop": {
+            "x": 346.37492418278777,
+            "y": 536.8866678980224,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 67,
+      "elapsed": 2.7916666666666665,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 16.701666666666668,
+          "phase": "depart",
+          "foot": {
+            "x": 603.1225987276677,
+            "y": 789.5847147900788
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.18862166253218582,
+            "cycle": 0.3184523809523816,
+            "weight": {
+              "shear": -0.0002720402897001678,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 45.57047197514631,
+              "y": -28.843704652680305
+            }
+          },
+          "crop": {
+            "x": 347.48521716398875,
+            "y": 533.5468405850628,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 16.701666666666668,
+          "phase": "depart",
+          "foot": {
+            "x": 603.1225987276677,
+            "y": 789.5847147900788
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.18862166253218582,
+            "cycle": 0.3184523809523816,
+            "weight": {
+              "shear": -0.0002720402897001678,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": 0.03187537990430621,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 45.57047197514631,
+              "y": -28.843704652680305
+            }
+          },
+          "crop": {
+            "x": 347.48521716398875,
+            "y": 533.5468405850628,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 68,
+      "elapsed": 2.8333333333333335,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 16.743333333333332,
+          "phase": "depart",
+          "foot": {
+            "x": 604.2137773497066,
+            "y": 786.6492014772538
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.2018681278935182,
+            "cycle": 0.33333333333333304,
+            "weight": {
+              "shear": 0.002342393663194381,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 45.16001831135436,
+              "y": -28.560255797755243
+            }
+          },
+          "crop": {
+            "x": 348.5899940493694,
+            "y": 530.1416451421858,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 16.743333333333332,
+          "phase": "depart",
+          "foot": {
+            "x": 604.2137773497066,
+            "y": 786.6492014772538
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.2018681278935182,
+            "cycle": 0.33333333333333304,
+            "weight": {
+              "shear": 0.002342393663194381,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": 0.03098804088353138,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 45.16001831135436,
+              "y": -28.560255797755243
+            }
+          },
+          "crop": {
+            "x": 348.5899940493694,
+            "y": 530.1416451421858,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 69,
+      "elapsed": 2.875,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 16.785,
+          "phase": "depart",
+          "foot": {
+            "x": 605.2592881381748,
+            "y": 783.6599917822722
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.21506323324348103,
+            "cycle": 0.34821428571428603,
+            "weight": {
+              "shear": 0.004946690771739678,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 44.74929439162959,
+              "y": -28.281687320899998
+            }
+          },
+          "crop": {
+            "x": 349.6885719560437,
+            "y": 526.6741618960071,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 16.785,
+          "phase": "depart",
+          "foot": {
+            "x": 605.2592881381748,
+            "y": 783.6599917822722
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.21506323324348103,
+            "cycle": 0.34821428571428603,
+            "weight": {
+              "shear": 0.004946690771739678,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": 0.03003929680088101,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 44.74929439162959,
+              "y": -28.281687320899998
+            }
+          },
+          "crop": {
+            "x": 349.6885719560437,
+            "y": 526.6741618960071,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 70,
+      "elapsed": 2.9166666666666665,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 16.826666666666668,
+          "phase": "depart",
+          "foot": {
+            "x": 606.2592329043808,
+            "y": 780.619788780665
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.2281496571408101,
+            "cycle": 0.3630952380952388,
+            "weight": {
+              "shear": 0.00752953759358094,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 44.340129924133855,
+              "y": -28.009203568812875
+            }
+          },
+          "crop": {
+            "x": 350.7802796147529,
+            "y": 523.1475264141428,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 16.826666666666668,
+          "phase": "depart",
+          "foot": {
+            "x": 606.2592329043808,
+            "y": 780.619788780665
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.2281496571408101,
+            "cycle": 0.3630952380952388,
+            "weight": {
+              "shear": 0.00752953759358094,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": 0.029042543416981082,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 44.340129924133855,
+              "y": -28.009203568812875
+            }
+          },
+          "crop": {
+            "x": 350.7802796147529,
+            "y": 523.1475264141428,
+            "size": 300
+          }
+        }
+      ]
+    },
+    {
+      "frame": 71,
+      "elapsed": 2.9583333333333335,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": false
+          },
+          "time": 16.868333333333332,
+          "phase": "depart",
+          "foot": {
+            "x": 607.2137595354416,
+            "y": 777.5313368569853
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.2410700781442422,
+            "cycle": 0.37797619047619024,
+            "weight": {
+              "shear": 0.010079620686363588,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": null,
+            "hand": {
+              "x": 43.934391410392685,
+              "y": -27.74392931556523
+            }
+          },
+          "crop": {
+            "x": 351.86445763938013,
+            "y": 519.5649221826743,
+            "size": 300
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "tailRig": true
+          },
+          "time": 16.868333333333332,
+          "phase": "depart",
+          "foot": {
+            "x": 607.2137595354416,
+            "y": 777.5313368569853
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.2410700781442422,
+            "cycle": 0.37797619047619024,
+            "weight": {
+              "shear": 0.010079620686363588,
+              "baseline": 1142,
+              "active": 1
+            },
+            "dock": null,
+            "tail": {
+              "angle": 0.02801102598327771,
+              "root": {
+                "x": 430,
+                "y": 880
+              },
+              "source": {
+                "x": 530,
+                "y": 1010
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.87
+              }
+            },
+            "hand": {
+              "x": 43.934391410392685,
+              "y": -27.74392931556523
+            }
+          },
+          "crop": {
+            "x": 351.86445763938013,
+            "y": 519.5649221826743,
+            "size": 300
+          }
+        }
+      ]
+    }
+  ]
+}

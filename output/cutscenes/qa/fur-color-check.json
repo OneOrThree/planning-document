@@ -751,6 +751,30 @@
       }
     },
     {
+      "file": "paddle-tail-layer-v1.png",
+      "alphaChanges": 0,
+      "furMedian": [
+        77,
+        69,
+        68
+      ],
+      "lineMedian": [
+        43,
+        0,
+        0
+      ],
+      "meanWhiteDifference": 0,
+      "whiteSamples": 0,
+      "profile": {
+        "redMix": 0.8656330058399817,
+        "gamma": [
+          1.420760503006558,
+          1.2418043834293016,
+          1.2821864993755432
+        ]
+      }
+    },
+    {
       "file": "walk-eyes-open-layer-v1.png",
       "alphaChanges": 0,
       "furMedian": [

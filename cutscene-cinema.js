@@ -12,6 +12,7 @@
     if(walk>.1&&CutsceneSettings.actorMode==='poses'&&CutsceneSettings.walkRig)return CutsceneWalkRig.draw(c,x,y,size,t,{...pose,walk,lean,blinkTime:pose.walkBlinkTime??t%4.7-3.2});
     if(walk>.1)return CutsceneSettings.actorMode==='poses'?CutscenePoses.draw(c,x,y,size,pose.gaitTime??t,{lean,travel:pose.travel,stride:pose.stride}):CutsceneSprites.draw(c,x,y,size,'walk',pose.gaitTime??t,{lean});
     if(pose.jump!==undefined)return CutsceneSettings.actorMode==='poses'?CutscenePoses.draw(c,x,y,size,t,{jump:pose.jump,lean}):CutsceneSprites.draw(c,x,y,size,'jump',0,{frame:Math.min(3,Math.floor(pose.jump*4)),lean});
+    if(Number.isFinite(pose.dockProgress)&&CutsceneSettings.actorMode==='poses')return CutscenePaddleRig.draw(c,x,y,size,t,{dockProgress:pose.dockProgress,blinkTime:t%4.7-3.2,lean});
     if(pose.reach!==undefined)return CutsceneSettings.actorMode==='poses'?CutscenePoses.draw(c,x,y,size,t,{reach:pose.reach,lean}):CutsceneSprites.draw(c,x,y,size,'reach',0,{frame:pose.reach,lean});
     const blinkTime=t%4.7-3.2;
     if(!(pose.grip>.02))return CutsceneSettings.actorMode==='poses'?CutscenePoses.draw(c,x,y,size,t,{neutral:true,blinkTime,lean}):CutsceneSprites.draw(c,x,y,size,'blink',blinkTime<0?0:blinkTime,{lean});
@@ -154,7 +155,8 @@
       A.ripples(c,t,journey?'home':'shore');
       if(journey&&f.storyIndex===2)sandDrawing(c,182,520,157,1,null);
       const boat=boatAt(f,t),rx=boat.x,ry=boat.y,progress=boat.progress;scale=boat.scale;
-      const dockStart=k.walkEnd-.95,dockQ=clamp((t-dockStart)/.95),dockCat=walkPathAt(f,Infinity),uncover=ease((dockQ-.08)/.84),build=ease((dockQ-.12)/.73);
+      const clothFold=!!T.clothFold&&f.storyIndex===1,dockDuration=clothFold?1.4:.95;
+      const dockStart=k.walkEnd-dockDuration,dockQ=clamp((t-dockStart)/dockDuration),dockCat=walkPathAt(f,Infinity),uncover=ease((dockQ-.08)/.84),build=ease((dockQ-.12)/.73);
       const clothPoint={x:dockCat.x-28,y:dockCat.y+15};
       const boarded=['settle','depart','sea'].includes(phase),landing=phase==='settle'?Math.sin((t-k.boardingEnd)*7)*Math.exp(-(t-k.boardingEnd)*5):0;
       const raftWidth=T.raftWidth*scale*(journey?.88:1);
@@ -164,14 +166,14 @@
         const loose=ease((t-k.boardingEnd)/(k.departureStart-k.boardingEnd));c.save();c.globalAlpha=1-loose;c.strokeStyle='#806447';c.lineWidth=2.5;c.beginPath();c.moveTo(journey?466:343,journey?699:562);c.quadraticCurveTo(journey?451:389,(journey?751:585)+loose*20,rx-55,ry-45);c.stroke();c.restore();
       }
       const settling=settlingAt(f,t);
-      seat=A.raft(c,rx,ry,raftWidth,t,boarded,atSea?1:progress,{landing,arrival:t-k.boardingEnd,wakeHandled:true,paddleTime:t-k.departureStart,paddleAmplitude:T.paddleAmplitude,book:f.storyIndex,settling,grip:settling.grip,drawCarry:carry,drawCat:actor,uncover:f.storyIndex===1?uncover:1,clothDestination:{x:clothPoint.x-rx,y:clothPoint.y-ry},build:f.storyIndex===2?build:1});
-      if(f.storyIndex===1&&uncover===1){c.save();c.translate(clothPoint.x,clothPoint.y);const rw=T.raftWidth*(journey?.88:1);c.scale(.16,.12);c.drawImage(A.images.cloth,225,266,1090,520,-rw*.52,-rw*.22,rw*1.04,rw*.5);c.restore();}
+      seat=A.raft(c,rx,ry,raftWidth,t,boarded,atSea?1:progress,{landing,arrival:t-k.boardingEnd,wakeHandled:true,paddleTime:t-k.departureStart,paddleAmplitude:T.paddleAmplitude,book:f.storyIndex,settling,grip:settling.grip,drawCarry:carry,drawCat:actor,uncover:f.storyIndex===1&&!clothFold?uncover:1,clothProgress:clothFold?dockQ:undefined,clothDestination:{x:clothPoint.x-rx,y:clothPoint.y-ry},build:f.storyIndex===2?build:1});
+      if(!clothFold&&f.storyIndex===1&&uncover===1){c.save();c.translate(clothPoint.x,clothPoint.y);const rw=T.raftWidth*(journey?.88:1);c.scale(.16,.12);c.drawImage(A.images.cloth,225,266,1090,520,-rw*.52,-rw*.22,rw*1.04,rw*.5);c.restore();}
       if(phase==='walk'){
         const p=clamp((t-k.prepareEnd)/(dockStart-k.prepareEnd));const travel=p<.12?p*p/.24:p>.88?1-(1-p)**2/.24:p-.06;
         const distanceWalked=walkPath(f).total*travel/.94,startSize=journey?(f.storyIndex===2?157:141):T.catSize,size=journey?mix(startSize,155,p):T.catSize,{x,y}=walkPathAt(f,distanceWalked);
         groundShadow(c,x,y,size,T.shadowAlpha);
         // 원화 순서·프레임 길이를 고쳐 결함을 숨기지 않는다. 실제 동선 거리와 보폭으로 캐릭터의 재생 위치를 구한다.
-        const pose=t>=dockStart?{reach:dockQ<.2?1:dockQ<.65?3:2}:{gaitTime:(t-k.prepareEnd)*.8,walkBlinkTime:(t-k.prepareEnd)%4.7-.9,travel:distanceWalked,stride:startSize*.4,rigStride:startSize*.27,rigSize:startSize,pathAtDistance:d=>walkPathAt(f,d)};
+        const pose=t>=dockStart?(T.dockRig?{dockProgress:dockQ}:{reach:dockQ<.2?1:dockQ<.65?3:2}):{gaitTime:(t-k.prepareEnd)*.8,walkBlinkTime:(t-k.prepareEnd)%4.7-.9,travel:distanceWalked,stride:startSize*.4,rigStride:startSize*.27,rigSize:startSize,pathAtDistance:d=>walkPathAt(f,d)};
         carry(c,x,y,size,t,f.storyIndex);actorState=actor(c,x,y,size,t,Math.min(1,p/.1,(1-p)/.1),0,pose);catFoot={x,y};
         if(dockQ>0&&dockQ<.92){
           const hand=actorState?.hand||{x:x+size*(dockQ<.2?.28:dockQ<.65?.402:.229),y:y-size*(dockQ<.2?.057:dockQ<.65?.268:.197)},tie={x:rx-raftWidth*.27,y:ry-raftWidth*.06};

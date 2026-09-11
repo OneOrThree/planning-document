@@ -1,0 +1,13 @@
+{
+  "result": "PASS",
+  "samples": 1001,
+  "finite": true,
+  "maxStep": 0.2822580210605618,
+  "maxHandY": 0.03358467481984534,
+  "headChanges": 0,
+  "endpointError": 0,
+  "blinkHandError": 0,
+  "defaultEnabled": true,
+  "errors": [],
+  "note": "같은 몸체·앞발 파츠의 국소 관절. 전신·양손·밧줄 역학의 자동 승인은 아님."
+}

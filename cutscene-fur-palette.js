@@ -15,7 +15,8 @@
     'jump-touchdown-soft-v2.png':[94,73,75], 'jump-recover-mid-v2.png':[94,74,76], 'jump-recover-late-v1.png':[90,77,78],
     'walk-body-no-eyes-v1.png':[96,84,91], 'walk-leg-soft-root-v2.png':[92,73,79], 'walk-front-paw-layer-v1.png':[84,71,74],
     'paddle-body-base-v1.png':[98,84,83], 'paddle-body-blink-half-v1.png':[100,84,84],
-    'paddle-body-blink-closed-v1.png':[100,84,84], 'paddle-arm-layer-v1.png':[89,72,76]
+    'paddle-body-blink-closed-v1.png':[100,84,84], 'paddle-arm-layer-v1.png':[89,72,76],
+    'paddle-tail-layer-v1.png':[113,89,92]
   };
   const enabled=new URLSearchParams(location.search).get('tone')!=='source',cache=new Map(),ns='http://www.w3.org/2000/svg';
   const outlines={
@@ -26,7 +27,7 @@
     'place-rise-start-v1.png':78,'place-rise-early-v1.png':71,'place-rise-mid-v1.png':62,'place-rise-late-v1.png':67,'place-rise-end-v1.png':50,
     'jump-touchdown-soft-v2.png':52,'jump-recover-mid-v2.png':55,'jump-recover-late-v1.png':60,
     'walk-body-no-eyes-v1.png':74,'walk-leg-soft-root-v2.png':51,'walk-front-paw-layer-v1.png':48,
-    'paddle-body-base-v1.png':71,'paddle-body-blink-half-v1.png':69,'paddle-body-blink-closed-v1.png':69,'paddle-arm-layer-v1.png':61
+    'paddle-body-base-v1.png':71,'paddle-body-blink-half-v1.png':69,'paddle-body-blink-closed-v1.png':69,'paddle-arm-layer-v1.png':61,'paddle-tail-layer-v1.png':84
   };
   const eyeOutlines={'walk-eyes-open-layer-v1.png':96,'walk-eyes-half-layer-v1.png':81,'walk-eyes-closed-layer-v1.png':84};
   const svg=document.createElementNS(ns,'svg');svg.setAttribute('aria-hidden','true');svg.style.cssText='position:absolute;width:0;height:0;overflow:hidden;pointer-events:none';document.body.append(svg);

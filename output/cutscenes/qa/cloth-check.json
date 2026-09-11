@@ -1,0 +1,90 @@
+{
+  "result": "PASS",
+  "samples": 1001,
+  "vertices": 25025,
+  "finite": true,
+  "monotonic": true,
+  "maxStep": 1.6210593777665765,
+  "start": {
+    "q": 0,
+    "first": 0,
+    "second": 0,
+    "gather": 0,
+    "carry": 0
+  },
+  "end": {
+    "q": 1,
+    "first": 1,
+    "second": 1,
+    "gather": 1,
+    "carry": 1
+  },
+  "records": [
+    {
+      "width": 316,
+      "end": {
+        "q": 1,
+        "first": 1,
+        "second": 1,
+        "gather": 1,
+        "carry": 1,
+        "x": -97.96,
+        "y": -7.900000000000001,
+        "width": 75.84
+      },
+      "clamped": true,
+      "colored": 2132,
+      "bounds": {
+        "minX": 225,
+        "maxX": 298,
+        "minY": 324,
+        "maxY": 366
+      }
+    },
+    {
+      "width": 278.08,
+      "end": {
+        "q": 1,
+        "first": 1,
+        "second": 1,
+        "gather": 1,
+        "carry": 1,
+        "x": -86.20479999999999,
+        "y": -6.952000000000001,
+        "width": 66.7392
+      },
+      "clamped": true,
+      "colored": 1652,
+      "bounds": {
+        "minX": 241,
+        "maxX": 305,
+        "minY": 328,
+        "maxY": 366
+      }
+    },
+    {
+      "width": 192.76,
+      "end": {
+        "q": 1,
+        "first": 1,
+        "second": 1,
+        "gather": 1,
+        "carry": 1,
+        "x": -59.755599999999994,
+        "y": -4.819000000000001,
+        "width": 46.2624
+      },
+      "clamped": true,
+      "colored": 802,
+      "bounds": {
+        "minX": 278,
+        "maxX": 322,
+        "minY": 338,
+        "maxY": 364
+      }
+    }
+  ],
+  "defaultEnabled": true,
+  "errors": [],
+  "note": "갑판 로컬 좌표와 접힘 시간표 검사. 전신 상호작용·천 물리·미술적 품질의 자동 승인은 아님."
+}

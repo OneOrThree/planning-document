@@ -568,10 +568,10 @@
       }
     ]
   },
-  "exportedVersion": "draft-v14",
+  "exportedVersion": "draft-v15",
   "exportedPlayback": {
     "duration": 24,
-    "time": 0.65304,
+    "time": 0.653101,
     "width": 1080,
     "height": 1920
   },

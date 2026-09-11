@@ -2,7 +2,7 @@ const path = require('node:path');
 const {spawn} = require('node:child_process');
 const {startServer} = require('./serve.cjs');
 const root = path.resolve(__dirname,'..');
-const tests = ['verify-feature-inventory.cjs','verify-planning-workbench.cjs','verify-journey-routes.cjs','verify-growth-decoration.cjs','verify-feature-story.cjs','scripts/smoke.cjs','scripts/verify-cutscenes.cjs','scripts/verify-cutscene-fur.cjs','scripts/verify-cutscene-video-color.cjs'];
+const tests = ['verify-feature-inventory.cjs','verify-planning-workbench.cjs','verify-journey-routes.cjs','verify-growth-decoration.cjs','verify-feature-story.cjs','scripts/smoke.cjs','scripts/verify-cutscenes.cjs','scripts/verify-cutscene-fur.cjs','scripts/verify-cutscene-cloth.cjs','scripts/verify-cutscene-dock.cjs','scripts/verify-cutscene-video-color.cjs'];
 (async () => {
   const {server,url} = await startServer({prefix:'/planning-document/'});
   try {

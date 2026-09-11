@@ -1,0 +1,118 @@
+{
+  "result": "PASS",
+  "samples": 577,
+  "maxAngle": 0.04836634584384253,
+  "maxStep": 0.0031415428387024987,
+  "headChanges": 0,
+  "handError": 0,
+  "changed": 1796446,
+  "cases": [
+    {
+      "time": 0,
+      "blinkTime": -1,
+      "changedPixels": 86604
+    },
+    {
+      "time": 0,
+      "blinkTime": 0.02,
+      "changedPixels": 84689
+    },
+    {
+      "time": 0,
+      "blinkTime": 0.1,
+      "changedPixels": 85169
+    },
+    {
+      "time": 0.3,
+      "blinkTime": -1,
+      "changedPixels": 86842
+    },
+    {
+      "time": 0.3,
+      "blinkTime": 0.02,
+      "changedPixels": 84700
+    },
+    {
+      "time": 0.3,
+      "blinkTime": 0.1,
+      "changedPixels": 85273
+    },
+    {
+      "time": 1,
+      "blinkTime": -1,
+      "changedPixels": 86915
+    },
+    {
+      "time": 1,
+      "blinkTime": 0.02,
+      "changedPixels": 84873
+    },
+    {
+      "time": 1,
+      "blinkTime": 0.1,
+      "changedPixels": 85364
+    },
+    {
+      "time": 2.4,
+      "blinkTime": -1,
+      "changedPixels": 86580
+    },
+    {
+      "time": 2.4,
+      "blinkTime": 0.02,
+      "changedPixels": 84644
+    },
+    {
+      "time": 2.4,
+      "blinkTime": 0.1,
+      "changedPixels": 85101
+    },
+    {
+      "time": 8,
+      "blinkTime": -1,
+      "changedPixels": 86631
+    },
+    {
+      "time": 8,
+      "blinkTime": 0.02,
+      "changedPixels": 84612
+    },
+    {
+      "time": 8,
+      "blinkTime": 0.1,
+      "changedPixels": 85204
+    },
+    {
+      "time": 16,
+      "blinkTime": -1,
+      "changedPixels": 86830
+    },
+    {
+      "time": 16,
+      "blinkTime": 0.02,
+      "changedPixels": 84729
+    },
+    {
+      "time": 16,
+      "blinkTime": 0.1,
+      "changedPixels": 85288
+    },
+    {
+      "time": 23.5,
+      "blinkTime": -1,
+      "changedPixels": 86630
+    },
+    {
+      "time": 23.5,
+      "blinkTime": 0.02,
+      "changedPixels": 84596
+    },
+    {
+      "time": 23.5,
+      "blinkTime": 0.1,
+      "changedPixels": 85172
+    }
+  ],
+  "errors": [],
+  "note": "고정 원화 얼굴의 불투명 영역과 손 접점 보존. 꼬리 관절 하나이며 전신·물리·다른 자세 꼬리 리깅은 아님."
+}
