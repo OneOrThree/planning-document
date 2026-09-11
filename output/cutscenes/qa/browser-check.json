@@ -1,0 +1,13 @@
+{
+  "result": "PASS",
+  "films": 9,
+  "exportedPlayback": {
+    "duration": 24,
+    "time": 0.653832,
+    "width": 1080,
+    "height": 1920
+  },
+  "catBodies": 6,
+  "range": true,
+  "errors": []
+}

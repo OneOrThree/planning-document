@@ -2,7 +2,7 @@ const http = require('node:http');
 const fs = require('node:fs');
 const path = require('node:path');
 const root = path.resolve(__dirname, '..');
-const types = {'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.md':'text/plain; charset=utf-8','.json':'application/json','.svg':'image/svg+xml','.png':'image/png','.jpg':'image/jpeg','.webp':'image/webp','.pdf':'application/pdf','.woff2':'font/woff2'};
+const types = {'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.md':'text/plain; charset=utf-8','.json':'application/json','.svg':'image/svg+xml','.png':'image/png','.jpg':'image/jpeg','.webp':'image/webp','.pdf':'application/pdf','.woff2':'font/woff2','.mp4':'video/mp4','.webm':'video/webm','.gif':'image/gif'};
 
 function startServer({port = 0, prefix = '/', directory = root} = {}) {
   if (!prefix.startsWith('/') || !prefix.endsWith('/')) throw new Error('prefix는 /로 시작하고 끝나야 합니다.');
@@ -18,8 +18,18 @@ function startServer({port = 0, prefix = '/', directory = root} = {}) {
       if (!fs.existsSync(file) || !fs.statSync(file).isFile()) {res.writeHead(404).end(); return;}
       const real = fs.realpathSync(file);
       if (!real.startsWith(base + path.sep)) {res.writeHead(403).end(); return;}
-      res.writeHead(200, {'Content-Type':types[path.extname(file)] || 'application/octet-stream','Cache-Control':'no-store'});
-      if (req.method === 'HEAD') res.end(); else fs.createReadStream(file).pipe(res);
+      const size=fs.statSync(real).size,headers={'Content-Type':types[path.extname(file)] || 'application/octet-stream','Cache-Control':'no-store','Accept-Ranges':'bytes'};
+      let start=0,end=size-1,status=200;
+      if(req.headers.range){
+        const match=/^bytes=(\d*)-(\d*)$/.exec(req.headers.range);
+        if(!match||(!match[1]&&!match[2])){res.writeHead(416,{'Content-Range':`bytes */${size}`}).end();return;}
+        if(match[1]){start=Number(match[1]);end=match[2]?Math.min(size-1,Number(match[2])):size-1;}
+        else start=Math.max(0,size-Number(match[2]));
+        if(!Number.isSafeInteger(start)||!Number.isSafeInteger(end)||start<0||start>=size||end<start){res.writeHead(416,{'Content-Range':`bytes */${size}`}).end();return;}
+        status=206;headers['Content-Range']=`bytes ${start}-${end}/${size}`;
+      }
+      headers['Content-Length']=Math.max(0,end-start+1);res.writeHead(status,headers);
+      if (req.method === 'HEAD'||size===0) res.end(); else fs.createReadStream(real,{start,end}).pipe(res);
     } catch {res.writeHead(400).end();}
   });
   return new Promise((resolve, reject) => {

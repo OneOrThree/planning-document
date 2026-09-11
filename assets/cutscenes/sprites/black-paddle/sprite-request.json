@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "kind": "sprite-gen-request",
+  "engine": "component-row",
+  "character": {
+    "id": "gachisup-figma-black",
+    "description": "",
+    "base_image": "base-source.png"
+  },
+  "cell": {
+    "shape": "square",
+    "width": 384,
+    "height": 384,
+    "safe_margin_x": 38,
+    "safe_margin_y": 38,
+    "size": 384,
+    "safe_margin": 38
+  },
+  "chroma_key": {
+    "name": "green",
+    "hex": "#00FF00",
+    "rgb": [
+      0,
+      255,
+      0
+    ],
+    "selection": "manual"
+  },
+  "states": {
+    "paddle": {
+      "frames": 4,
+      "fps": 10,
+      "loop": false,
+      "action": "Hold the EXACT bent-forepaw pose of the attached anchor; do not move any paw, tail, torso, head, ear or whisker. Only eyelids blink top-down. Frame 1 both eyes fully open; frame 2 upper eyelids halfway down; frame 3 both eyes fully closed with gentle horizontal curved lines; frame 4 both eyes fully open again. Same body width, head size and baseline in every frame. No paddle or prop drawn."
+    }
+  },
+  "style": "match the attached base/anchor reference image EXACTLY: same pixel density (logical pixel block size), same body proportions, same outline weight, same palette, same shading style, same level of detail. Do not restyle, do not change proportions, do not add or remove detail density.",
+  "layout": "taxonomy/v1",
+  "fit": {
+    "resample": "lanczos",
+    "align_x": "foot-centroid",
+    "align_y": "bottom",
+    "pixel_unfake": false
+  },
+  "chroma": {
+    "mode": "rgb",
+    "unmix_reach": 4,
+    "spill_max_fraction": 0.005
+  }
+}

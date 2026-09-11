@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "kind": "sprite-gen-request",
+  "engine": "component-row",
+  "character": {
+    "id": "gachisup-figma-black",
+    "description": "",
+    "base_image": "base-source.png"
+  },
+  "cell": {
+    "shape": "square",
+    "width": 384,
+    "height": 384,
+    "safe_margin_x": 38,
+    "safe_margin_y": 38,
+    "size": 384,
+    "safe_margin": 38
+  },
+  "chroma_key": {
+    "name": "green",
+    "hex": "#00FF00",
+    "rgb": [
+      0,
+      255,
+      0
+    ],
+    "selection": "manual"
+  },
+  "states": {
+    "reach": {
+      "frames": 6,
+      "fps": 8,
+      "loop": false,
+      "action": "One gentle reach with the far/right front paw while the other three paws stay planted. Six successive poses: 1 original neutral; 2 head glances downward and right forepaw begins lifting; 3 forepaw bent halfway; 4 forepaw extends forward/right, paw at chest height; 5 forepaw lowers toward ground in front; 6 hold lowered reaching paw. Absolutely same head/body size and shared grounded feet across all six poses. No props, no book, no shadow. Right-facing three-quarter original angle. The reach uses a short feline foreleg, never a human arm."
+    }
+  },
+  "style": "match the attached base/anchor reference image EXACTLY: same pixel density (logical pixel block size), same body proportions, same outline weight, same palette, same shading style, same level of detail. Do not restyle, do not change proportions, do not add or remove detail density.",
+  "layout": "taxonomy/v1",
+  "fit": {
+    "resample": "lanczos",
+    "align_x": "foot-centroid",
+    "align_y": "bottom",
+    "pixel_unfake": false
+  },
+  "chroma": {
+    "mode": "rgb",
+    "unmix_reach": 4,
+    "spill_max_fraction": 0.005
+  }
+}

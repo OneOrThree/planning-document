@@ -1,0 +1,327 @@
+{
+  "version": 1,
+  "samples": [
+    1.8,
+    4.8,
+    7.3,
+    8.5,
+    9.1,
+    9.7,
+    11.8,
+    15.9
+  ],
+  "frames": [
+    {
+      "scene": "room",
+      "cat": {
+        "x": 466,
+        "y": 866
+      },
+      "boarded": false,
+      "time": 1.8,
+      "revision": 1
+    },
+    {
+      "scene": "room",
+      "cat": {
+        "x": 466,
+        "y": 866
+      },
+      "boarded": false,
+      "time": 4.8,
+      "revision": 1
+    },
+    {
+      "scene": "shore",
+      "cat": {
+        "x": 160.81481481481478,
+        "y": 616.6296296296297
+      },
+      "boarded": false,
+      "raft": {
+        "x": 481,
+        "y": 651.7196785540294
+      },
+      "time": 7.3,
+      "revision": 1
+    },
+    {
+      "scene": "boarding",
+      "cat": {
+        "x": 326,
+        "y": 587
+      },
+      "boarded": false,
+      "raft": {
+        "x": 481,
+        "y": 653.7126379002797
+      },
+      "time": 8.5,
+      "revision": 1
+    },
+    {
+      "scene": "boarding",
+      "cat": {
+        "x": 403.5,
+        "y": 587.712151401623
+      },
+      "boarded": false,
+      "raft": {
+        "x": 481,
+        "y": 652.424302803246
+      },
+      "time": 9.1,
+      "revision": 1
+    },
+    {
+      "scene": "departure",
+      "cat": {
+        "x": 481,
+        "y": 650.7314933801996
+      },
+      "boarded": true,
+      "raft": {
+        "x": 481,
+        "y": 650.7314933801996
+      },
+      "time": 9.7,
+      "revision": 1
+    },
+    {
+      "scene": "departure",
+      "cat": {
+        "x": 511.3061224489796,
+        "y": 607.6348281374757
+      },
+      "boarded": true,
+      "raft": {
+        "x": 511.3061224489796,
+        "y": 607.6348281374757
+      },
+      "time": 11.8,
+      "revision": 1
+    },
+    {
+      "scene": "sea",
+      "cat": {
+        "x": 385,
+        "y": 682.2049289352705
+      },
+      "boarded": true,
+      "raft": {
+        "x": 385,
+        "y": 682.2049289352705
+      },
+      "time": 15.9,
+      "revision": 1
+    },
+    {
+      "scene": "room",
+      "cat": {
+        "x": 466,
+        "y": 866
+      },
+      "boarded": false,
+      "time": 1.8,
+      "revision": 1
+    },
+    {
+      "scene": "room",
+      "cat": {
+        "x": 466,
+        "y": 866
+      },
+      "boarded": false,
+      "time": 4.8,
+      "revision": 1
+    },
+    {
+      "scene": "shore",
+      "cat": {
+        "x": 160.81481481481478,
+        "y": 616.6296296296297
+      },
+      "boarded": false,
+      "raft": {
+        "x": 481,
+        "y": 651.7196785540294
+      },
+      "time": 7.3,
+      "revision": 1
+    },
+    {
+      "scene": "boarding",
+      "cat": {
+        "x": 326,
+        "y": 587
+      },
+      "boarded": false,
+      "raft": {
+        "x": 481,
+        "y": 653.7126379002797
+      },
+      "time": 8.5,
+      "revision": 1
+    },
+    {
+      "scene": "boarding",
+      "cat": {
+        "x": 403.5,
+        "y": 587.712151401623
+      },
+      "boarded": false,
+      "raft": {
+        "x": 481,
+        "y": 652.424302803246
+      },
+      "time": 9.1,
+      "revision": 1
+    },
+    {
+      "scene": "departure",
+      "cat": {
+        "x": 481,
+        "y": 650.7314933801996
+      },
+      "boarded": true,
+      "raft": {
+        "x": 481,
+        "y": 650.7314933801996
+      },
+      "time": 9.7,
+      "revision": 1
+    },
+    {
+      "scene": "departure",
+      "cat": {
+        "x": 511.3061224489796,
+        "y": 607.6348281374757
+      },
+      "boarded": true,
+      "raft": {
+        "x": 511.3061224489796,
+        "y": 607.6348281374757
+      },
+      "time": 11.8,
+      "revision": 1
+    },
+    {
+      "scene": "sea",
+      "cat": {
+        "x": 385,
+        "y": 682.2049289352705
+      },
+      "boarded": true,
+      "raft": {
+        "x": 385,
+        "y": 682.2049289352705
+      },
+      "time": 15.9,
+      "revision": 1
+    },
+    {
+      "scene": "room",
+      "cat": {
+        "x": 466,
+        "y": 866
+      },
+      "boarded": false,
+      "time": 1.8,
+      "revision": 1
+    },
+    {
+      "scene": "room",
+      "cat": {
+        "x": 466,
+        "y": 866
+      },
+      "boarded": false,
+      "time": 4.8,
+      "revision": 1
+    },
+    {
+      "scene": "shore",
+      "cat": {
+        "x": 160.81481481481478,
+        "y": 616.6296296296297
+      },
+      "boarded": false,
+      "raft": {
+        "x": 481,
+        "y": 651.7196785540294
+      },
+      "time": 7.3,
+      "revision": 1
+    },
+    {
+      "scene": "boarding",
+      "cat": {
+        "x": 326,
+        "y": 587
+      },
+      "boarded": false,
+      "raft": {
+        "x": 481,
+        "y": 653.7126379002797
+      },
+      "time": 8.5,
+      "revision": 1
+    },
+    {
+      "scene": "boarding",
+      "cat": {
+        "x": 403.5,
+        "y": 587.712151401623
+      },
+      "boarded": false,
+      "raft": {
+        "x": 481,
+        "y": 652.424302803246
+      },
+      "time": 9.1,
+      "revision": 1
+    },
+    {
+      "scene": "departure",
+      "cat": {
+        "x": 481,
+        "y": 650.7314933801996
+      },
+      "boarded": true,
+      "raft": {
+        "x": 481,
+        "y": 650.7314933801996
+      },
+      "time": 9.7,
+      "revision": 1
+    },
+    {
+      "scene": "departure",
+      "cat": {
+        "x": 511.3061224489796,
+        "y": 607.6348281374757
+      },
+      "boarded": true,
+      "raft": {
+        "x": 511.3061224489796,
+        "y": 607.6348281374757
+      },
+      "time": 11.8,
+      "revision": 1
+    },
+    {
+      "scene": "sea",
+      "cat": {
+        "x": 385,
+        "y": 682.2049289352705
+      },
+      "boarded": true,
+      "raft": {
+        "x": 385,
+        "y": 682.2049289352705
+      },
+      "time": 15.9,
+      "revision": 1
+    }
+  ]
+}

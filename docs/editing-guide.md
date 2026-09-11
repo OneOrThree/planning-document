@@ -21,6 +21,7 @@
 | 섬의 발전: 시설 순서·조건·비용 | 같은 HTML의 `#growth-view` | `growth-decoration-revision-20260911.md`, 기능 E/F/L, 결정 로그 |
 | 이야기: 8개 큰 기능의 이야기 | `feature-overview.js` | `gachisup-story-and-wrapping.md`, `story-wrapping-notes.md` |
 | 도입 이야기: 고양이가 뗏목에 오르는 3개 후보 | `prologue-scenarios-data.js` | `prologue-scenarios.js`가 표시하며 `prologue-scenarios.md`와 문장을 맞춘다. 사용자 선택 전에는 후보 상태 유지 |
+| 도입 컷신: 이야기 3개 × 연출 3개 | `cutscene-production.js`, `cutscene-cinema.js` | [컷신 제작 하네스](cutscene-production.md). 생성 파생 에셋·실시간 연출·MP4 고정 버전·검토 상태를 구분 |
 | 기능 표현: 기능을 섬의 물건·장소로 표현 | HTML의 `#wrapping-view` | 기능 데이터의 `world`, 위의 이야기 원문 |
 | 세부 기능: 항목·상태·근거·흐름 | `feature-inventory-data.js` | `feature-inventory.js`는 렌더링·검색 담당 |
 | 결정 로그: 확정·논의 중·이전안 | `planning-workbench.js`의 `entries` | `decision-log.md`에도 같은 근거·상태 반영 |
