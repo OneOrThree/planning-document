@@ -172,7 +172,7 @@
       ellipse(c,1,-4,37,10,'#4b3f3529');
       const recovering=S.actorMode==='poses'&&options.arrival>=0&&options.arrival<.22;
       const handling=settling&&settling.elapsed>=.24&&settling.elapsed<1.3,handlingPose=put<.45?'hold':lift<.4?'reach':place<.15?'hold':'place';
-      actorState=(options.drawCat||cat)(c,0,-5,S.catSize,t,0,Math.sin(t*1.2)*-.007,recovering?{jump:1+options.arrival}:handling?{look:handlingPose}:!settling&&unpack>.03&&unpack<1?{look:'reach'}:{grip:options.grip||0});
+      actorState=(options.drawCat||cat)(c,0,-5,S.catSize,t,0,Math.sin(t*1.2)*-.007,recovering?{jump:1+options.arrival}:handling?{look:handlingPose}:!settling&&unpack>.03&&unpack<1?{look:'reach'}:{grip:options.grip||0,paddleTime:options.paddleTime});
       if(options.book!==undefined){
         if(lift>0){
           const bx=mix(mix(54,44,lift),10,place),by=mix(mix(2,-29,lift),18,place);
@@ -186,7 +186,8 @@
     // 당겨 젓는 동안은 물에, 복귀할 때는 손목을 돌려 노 끝을 수면 위로 들어 올린다.
     const returnLift=cycle<.64?0:Math.sin((cycle-.64)/.36*Math.PI),paddleAngle=-1.02+stroke*.39-returnLift*.64;
     const poseScale=.300488*S.catSize/384,defaultHand=S.actorMode==='poses'?{x:(1035-670.218)*poseScale,y:-5+(938-1142)*poseScale}:{x:40,y:-37};
-    const hand=actorState?.hand||defaultHand,paddleX=mix(-34,hand.x,grip),paddleY=mix(2,hand.y,grip);
+    const localPaddle=S.actorMode==='poses'&&S.paddleRig,rest=localPaddle?{x:43,y:-25}:{x:-34,y:2};
+    const hand=actorState?.hand||defaultHand,paddleX=mix(rest.x,hand.x,grip),paddleY=mix(rest.y,hand.y,grip);
     c.save();c.translate(paddleX,paddleY);c.rotate(mix(-1.18,paddleAngle,grip));c.strokeStyle='#68523d';c.lineWidth=5;c.lineCap='round';c.beginPath();c.moveTo(0,-8);c.lineTo(0,136);c.stroke();c.fillStyle='#b79869';c.beginPath();c.roundRect(-8,121,16,41,7);c.fill();c.stroke();c.restore();
     // 힘을 주는 반 주기에만 노 끝과 같은 위치에 물결을 둔다.
     if(onboard&&travel>0&&cycle<.64){

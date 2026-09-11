@@ -7,11 +7,13 @@
       // 세션에서 한 장씩 생성한 파생 자세. 아틀라스 추출물이라고 표시하지 않는다.
       const registration=.300488*size/384,texture=pose.look==='place'?A.images.lookPlace:pose.look==='hold'?A.images.lookHold:pose.look==='reach'?A.images.lookReach:A.images.lookDown;c.save();c.translate(x,y);c.rotate(lean);c.scale(registration,registration);c.drawImage(texture,-670.218,-1141);c.restore();return{state:'look-'+pose.look,frame:0};
     }
+    if(walk>.1&&CutsceneSettings.actorMode==='poses'&&CutsceneSettings.walkRig)return CutsceneWalkRig.draw(c,x,y,size,t,{...pose,walk,lean});
     if(walk>.1)return CutsceneSettings.actorMode==='poses'?CutscenePoses.draw(c,x,y,size,pose.gaitTime??t,{lean,travel:pose.travel,stride:pose.stride}):CutsceneSprites.draw(c,x,y,size,'walk',pose.gaitTime??t,{lean});
     if(pose.jump!==undefined)return CutsceneSettings.actorMode==='poses'?CutscenePoses.draw(c,x,y,size,t,{jump:pose.jump,lean}):CutsceneSprites.draw(c,x,y,size,'jump',0,{frame:Math.min(3,Math.floor(pose.jump*4)),lean});
     if(pose.reach!==undefined)return CutsceneSettings.actorMode==='poses'?CutscenePoses.draw(c,x,y,size,t,{reach:pose.reach,lean}):CutsceneSprites.draw(c,x,y,size,'reach',0,{frame:pose.reach,lean});
     const blinkTime=t%4.7-3.2;
     if(!(pose.grip>.02))return CutsceneSettings.actorMode==='poses'?CutscenePoses.draw(c,x,y,size,t,{neutral:true,blinkTime,lean}):CutsceneSprites.draw(c,x,y,size,'blink',blinkTime<0?0:blinkTime,{lean});
+    if(CutsceneSettings.actorMode==='poses'&&CutsceneSettings.paddleRig)return CutscenePaddleRig.draw(c,x,y,size,t,{...pose,blinkTime,lean});
     if(CutsceneSettings.actorMode==='poses')return CutscenePoses.draw(c,x,y,size,t,{reach:1,blinkTime,lean});
     if(pose.grip<.72)return CutsceneSprites.draw(c,x,y,size,'reach',0,{frame:pose.grip<.35?1:2,lean});
     return CutsceneSprites.draw(c,x,y,size,'paddle',blinkTime<0?0:blinkTime,{lean});
@@ -120,6 +122,16 @@
     }
     return trail;
   }
+  function walkPath(f){
+    const nodes=f.directionId==='journey'?(f.storyIndex===2?[[182,520],[155,598],[178,639],[290,681],[360,713],[407,714]]:[[112,423],[131,478],[165,534],[231,623],[297,681],[360,713],[407,714]]):f.directionId==='emotion'?[[180,606],[312,581]]:[[117,619],[312,581]];
+    const lengths=nodes.slice(1).map((n,i)=>Math.hypot(n[0]-nodes[i][0],n[1]-nodes[i][1])),total=lengths.reduce((a,b)=>a+b,0);
+    return{nodes,lengths,total};
+  }
+  function walkPathAt(f,distance){
+    const{nodes,lengths,total}=walkPath(f);distance=clamp(distance,0,total);let part=0;
+    while(part<lengths.length-1&&distance>lengths[part])distance-=lengths[part++];
+    const q=clamp(distance/lengths[part]);return{x:mix(nodes[part][0],nodes[part+1][0],q),y:mix(nodes[part][1],nodes[part+1][1],q)};
+  }
   function world(c,f,t){
     const k=f.timing,T=f.tuning,phase=phaseAt(f,t);let catFoot,seat=null,scale=1,actorState=null;
     const cam=camera(f,t,phase);if(f.storyIndex===2&&phase==='prepare'&&f.directionId==='emotion')Object.assign(cam,{x:369,y:749,z:1.35});
@@ -147,17 +159,10 @@
       if(f.storyIndex===1&&uncover===1){c.save();c.translate(clothPoint.x,clothPoint.y);const rw=T.raftWidth*(journey?.88:1);c.scale(.16,.12);c.drawImage(A.images.cloth,225,266,1090,520,-rw*.52,-rw*.22,rw*1.04,rw*.5);c.restore();}
       if(phase==='walk'){
         const p=clamp((t-k.prepareEnd)/(dockStart-k.prepareEnd));const travel=p<.12?p*p/.24:p>.88?1-(1-p)**2/.24:p-.06;
-        let x=mix(117,312,travel/.94),y=mix(619,581,travel/.94),size=T.catSize,distanceWalked=Math.hypot(195,38)*travel/.94,startSize=T.catSize;
-        if(journey){
-          const nodes=f.storyIndex===2?[[182,520],[155,598],[178,639],[290,681],[360,713],[407,714]]:[[112,423],[131,478],[165,534],[231,623],[297,681],[360,713],[407,714]];
-          const lengths=nodes.slice(1).map((n,i)=>Math.hypot(n[0]-nodes[i][0],n[1]-nodes[i][1])),total=lengths.reduce((a,b)=>a+b,0);
-          distanceWalked=travel/.94*total;startSize=f.storyIndex===2?157:141;
-          let distance=distanceWalked,part=0;while(part<lengths.length-1&&distance>lengths[part])distance-=lengths[part++];
-          const q=clamp(distance/lengths[part]);x=mix(nodes[part][0],nodes[part+1][0],q);y=mix(nodes[part][1],nodes[part+1][1],q);size=mix(f.storyIndex===2?157:141,155,p);
-        }
+        const distanceWalked=walkPath(f).total*travel/.94,startSize=journey?(f.storyIndex===2?157:141):T.catSize,size=journey?mix(startSize,155,p):T.catSize,{x,y}=walkPathAt(f,distanceWalked);
         groundShadow(c,x,y,size,T.shadowAlpha);
         // 원화 순서·프레임 길이를 고쳐 결함을 숨기지 않는다. 실제 동선 거리와 보폭으로 캐릭터의 재생 위치를 구한다.
-        const pose=t>=dockStart?{reach:dockQ<.2?1:dockQ<.65?3:2}:{gaitTime:(t-k.prepareEnd)*.8,travel:distanceWalked,stride:startSize*.4};
+        const pose=t>=dockStart?{reach:dockQ<.2?1:dockQ<.65?3:2}:{gaitTime:(t-k.prepareEnd)*.8,travel:distanceWalked,stride:startSize*.4,rigStride:startSize*.27,pathAtDistance:d=>walkPathAt(f,d)};
         carry(c,x,y,size,t,f.storyIndex);actorState=actor(c,x,y,size,t,Math.min(1,p/.1,(1-p)/.1),0,pose);catFoot={x,y};
         if(dockQ>0&&dockQ<.92){
           const hand=actorState?.hand||{x:x+size*(dockQ<.2?.28:dockQ<.65?.402:.229),y:y-size*(dockQ<.2?.057:dockQ<.65?.268:.197)},tie={x:rx-raftWidth*.27,y:ry-raftWidth*.06};
@@ -206,15 +211,13 @@
   }
   function render(canvas,filmOrIndex,time){
     const f=typeof filmOrIndex==='number'?CutsceneProduction.films[filmOrIndex]:filmOrIndex;
-    if(!f)throw Error('알 수 없는 영상');const t=clamp(time,0,24);Object.assign(CutsceneSettings,{actorMode:'sprite',...f.tuning,catSize:f.tuning.catSize,raftWidth:f.tuning.raftWidth,headMotion:f.tuning.headMotion,tailMotion:f.tuning.tailMotion,waveOpacity:f.tuning.waveAlpha,wakeOpacity:f.tuning.wakeAlpha});
+    if(!f)throw Error('알 수 없는 영상');const t=clamp(time,0,24);Object.assign(CutsceneSettings,{actorMode:'sprite',paddleRig:false,walkRig:false,...f.tuning,catSize:f.tuning.catSize,raftWidth:f.tuning.raftWidth,headMotion:f.tuning.headMotion,tailMotion:f.tuning.tailMotion,waveOpacity:f.tuning.waveAlpha,wakeOpacity:f.tuning.wakeAlpha});
     const c=canvas.getContext('2d');c.save();c.setTransform(canvas.width/W,0,0,canvas.height/H,0,0);c.fillStyle='#eee8d7';c.fillRect(0,0,W,H);c.imageSmoothingQuality='high';
     const turning=f.directionId==='storybook'&&t>f.timing.prepareEnd-.44&&t<f.timing.prepareEnd+.51;
     const meta=turning?pageTurn(c,f,t):world(c,f,t);
-    for(const boundary of f.directionId==='emotion'?[f.timing.prepareEnd]:[]){
-      const a=clamp(1-Math.abs(t-boundary)/.23);if(a){c.fillStyle=`rgba(246,239,218,${a})`;c.fillRect(0,0,W,H);}
-    }
+    // 감정형은 준비를 마친 얼굴에서 부두의 다음 행동으로 바로 컷한다. 흰 섬광을 끼우지 않는다.
     if(f.directionId==='storybook'){c.strokeStyle='#f3e7ca';c.lineWidth=16;c.strokeRect(8,8,W-16,H-16);}
     const line=caption(c,f,t);c.restore();return{filmId:f.id,time:t,...meta,caption:line};
   }
-  window.GachisupCinema={ready:Promise.all([A.ready,CutsceneSprites.ready,CutsceneRig.ready,CutscenePoses.load()]),render,duration:24,phaseAt,boatAt,wakeTrailAt,preparationAt,settlingAt};
+  window.GachisupCinema={ready:Promise.all([A.ready,CutsceneSprites.ready,CutsceneRig.ready,CutscenePoses.load(),CutscenePaddleRig.ready,CutsceneWalkRig.ready]),render,duration:24,phaseAt,boatAt,wakeTrailAt,preparationAt,settlingAt,walkPathAt};
 })();

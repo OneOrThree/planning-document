@@ -12,6 +12,8 @@
 | 뗏목·책·원본 변형 | `cutscene-renderer.js` | 기존 3편 시험 렌더러도 남아 있으나 현재 재생은 Cinema 사용 |
 | 생성 동작 아틀라스 | `cutscene-sprites.js`, `assets/cutscenes/sprites/black/` | `manifest.json.frame_layout` 좌표로만 샘플링 |
 | 개별 자세·발·손 등록점 | `cutscene-poses.js`, `assets/cutscenes/poses-black/walk-v1.json` | 현재 기본 `poses`. 원화·등록점·실험 상태를 구분 |
+| 노 젓기 국소 관절 | `cutscene-paddle-rig.js`, `poses-black/paddle-*` | 기본 채택. 한 어깨 관절과 고정 몸체·눈 감김. 완성형 전신 리깅과 구분 |
+| 보행 국소 관절 시험 | `cutscene-walk-rig.js`, `poses-black/walk-body-*`, `walk-front-paw-*` | `?walk=rig`에서만 비교. 기본 영상에는 미채택 |
 | 관절 파츠 실험 | `cutscene-rig.js`, `assets/cutscenes/rig-black/` | 기본 재생과 별도. `actorMode: 'rig'`로 비교 |
 | 캐릭터 여섯 종 출처 | `figma-cats.js`, `assets/figma-cats/README.md` | 추출 원본과 생성 파생본 구분 |
 | 생성 프롬프트 | `assets/cutscenes/PROMPTS.md` | 사용 도구·기준 이미지·채택 여부를 정직하게 기록 |
@@ -20,11 +22,13 @@
 
 ## 현재 제공물
 
-`cutscenes.html`에서 9편을 선택하고 실시간 연출과 MP4 초안을 볼 수 있다. `draft-v05`부터 `draft-v01`까지 다섯 버전을 비교한다. 각각 9개 무음 MP4·포스터와 소스·에셋 지문을 가진 `manifest.json`이 있다. 24초·24fps·576프레임의 H.264/yuv420p/faststart이며 v01은 720 × 1280, v02 이후는 1080 × 1920이다. v05는 검토 기록 35번까지의 상태다. 같은 얼굴의 걷기·도약·앞발·눈깜빡임, 앞발 방향의 짐 정리와 순차 동작을 포함한다. v04는 기록 30번까지의 책·가방 동작, 모래 그림→공책, 그림 보존, 고정 바닥, 경로를 따르는 물결이다. 기록 35번 시점의 영상별 실제 검토 횟수는 31~34회다. 적용 대상별로 계산하며 출력·자동 검사는 더하지 않는다. 걷기·도약의 자세 연결은 아직 개선 중이며 완성형 리깅이나 사용자가 선택한 최종 시나리오가 아니다.
+`cutscenes.html`에서 9편을 선택하고 실시간 연출과 MP4 초안을 볼 수 있다. `draft-v06`부터 `draft-v01`까지 여섯 버전을 비교한다. 각각 9개 무음 MP4·포스터와 소스·에셋 지문을 가진 `manifest.json`이 있다. 24초·24fps·576프레임의 H.264/yuv420p/faststart이며 v01은 720 × 1280, v02 이후는 1080 × 1920이다. v06은 검토 기록 38번까지의 상태다. 같은 몸체에서 앞발만 연속 회전하는 노 젓기, 손 옆에서 노 집기, 감정형의 섬광 없는 장면 전환을 포함한다. v05는 기록 35번까지의 같은 얼굴 자세·눈깜빡임과 짐 정리, v04는 기록 30번까지의 모래 그림→공책과 경로 물결이다. 기록 38번 시점의 영상별 실제 검토 횟수는 34~36회다. 적용 대상별로 계산하며 출력·자동 검사는 더하지 않는다. 걷기·도약의 자세 연결은 아직 개선 중이며 완성형 리깅이나 사용자가 선택한 최종 시나리오가 아니다.
 
 실시간 Canvas는 출력 후 수정 사항을 먼저 보여줄 수 있다. 이때 MP4를 같은 최신본이라고 표시하지 않는다. 다음 버전은 별도 폴더로 출력한다.
 
 현재 Canvas의 기본 캐릭터는 개별 원화 방식(`poses`)이다. 걷기 8자세, 도약 5자세, 앞발 3자세, 일반 눈깜빡임과 노를 쥔 눈깜빡임을 기준 얼굴에 맞춰 생성했다. 이전 아틀라스는 `cutscenes.html?actor=sprite`, 관절 파츠 실험은 `?actor=rig`에서 비교한다. 보행 원화의 작은 발 움직임과 주기 경계 높이 차이 때문에 명세의 `experimental` 상태는 유지한다. 기본 채택은 시연 연결이지 완성형 리깅 승인과 다르다.
+
+노 젓기만 `paddleRig: true`를 기본으로 쓴다. 같은 몸체 원화 뒤에서 앞발 하나를 어깨 기준으로 회전하고 그 변환으로 손잡이 접점을 계산한다. `?paddle=pose`로 고정 앞발 방식을 비교할 수 있다. 눈 감김은 몸체 원화만 교체하므로 손의 궤적은 바뀌지 않는다. 주기 폐합·손 이동·눈 감김 독립성은 자동 검사하되 체중 이동이나 미술적 자연스러움 통과로 취급하지 않는다. `?walk=rig`는 발 접지 시험으로, 복부와 다리 연결부가 어색하여 기본에는 넣지 않았다.
 
 부두에 내린 뒤가 아니라 **뗏목에 착지한 뒤** 1.65초 동안 짐을 정리한다. `settlingAt()`의 가방 내려놓기→책 꺼내기→펼치기→내려놓기→노 잡기 순서와 `preparationAt()`의 출발 준비 순서는 각각 4,509개 시간 표본으로 검사한다. 자세별 실제 앞발 좌표에 밧줄·노 회전축을 연결한다. 이 좌표 검사는 접점 보존만 보장하며 어깨·팔 전체의 자연스러움을 판정하지 않는다.
 
@@ -61,6 +65,12 @@ node scripts/review-cutscene-detail.cjs --label=boarding-review --phase=boarding
 
 # 이전 아틀라스와 개별 원화의 같은 시점 비교 MP4·연속 프레임
 node scripts/review-walk-poses.cjs --label=walk-comparison --film=new-morning-emotion --phase=walk --adjacent
+
+# 몸체는 유지하고 앞발만 움직이는 국소 관절 비교
+node scripts/review-walk-poses.cjs --label=paddle-comparison --film=new-morning-emotion --phase=paddle --paddle=rig --adjacent
+
+# 인코딩된 MP4 자체에서 표본 추출. 캔버스 재렌더와 별도
+node scripts/review-video-batch.cjs --version=draft-v06 --label=decoded-version-review
 ```
 
 비교 스크립트의 `phase`는 `walk`, `boarding`, `settle`, `paddle`, `blink`를 지원한다. `blink`는 실제 눈깜빡임 시각을 중심으로 잡는다. 출력한 비교 영상과 순서표를 열어 확인하기 전에는 검토 횟수에 포함하지 않는다.

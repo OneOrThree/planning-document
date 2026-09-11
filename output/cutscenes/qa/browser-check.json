@@ -75,10 +75,216 @@
     "finite": true,
     "status": "experimental"
   },
-  "exportedVersion": "draft-v05",
+  "paddleRigContract": {
+    "state": "paddle-local-rig",
+    "blinkFrames": [
+      -1,
+      0,
+      1,
+      0,
+      -1
+    ],
+    "blinkHandStable": true,
+    "loopClosure": 0,
+    "handRange": 15.908024394945954,
+    "finite": true,
+    "defaultEnabled": true
+  },
+  "walkPathContract": [
+    {
+      "id": "new-morning-emotion",
+      "start": {
+        "x": 180,
+        "y": 606
+      },
+      "end": {
+        "x": 312,
+        "y": 581
+      },
+      "expectedStart": {
+        "x": 180,
+        "y": 606
+      },
+      "expectedEnd": {
+        "x": 312,
+        "y": 581
+      },
+      "continuous": true,
+      "experimentalWalkDisabled": true
+    },
+    {
+      "id": "new-morning-journey",
+      "start": {
+        "x": 112,
+        "y": 423
+      },
+      "end": {
+        "x": 407,
+        "y": 714
+      },
+      "expectedStart": {
+        "x": 112,
+        "y": 423
+      },
+      "expectedEnd": {
+        "x": 407,
+        "y": 714
+      },
+      "continuous": true,
+      "experimentalWalkDisabled": true
+    },
+    {
+      "id": "new-morning-storybook",
+      "start": {
+        "x": 117,
+        "y": 619
+      },
+      "end": {
+        "x": 312,
+        "y": 581
+      },
+      "expectedStart": {
+        "x": 117,
+        "y": 619
+      },
+      "expectedEnd": {
+        "x": 312,
+        "y": 581
+      },
+      "continuous": true,
+      "experimentalWalkDisabled": true
+    },
+    {
+      "id": "folded-promise-emotion",
+      "start": {
+        "x": 180,
+        "y": 606
+      },
+      "end": {
+        "x": 312,
+        "y": 581
+      },
+      "expectedStart": {
+        "x": 180,
+        "y": 606
+      },
+      "expectedEnd": {
+        "x": 312,
+        "y": 581
+      },
+      "continuous": true,
+      "experimentalWalkDisabled": true
+    },
+    {
+      "id": "folded-promise-journey",
+      "start": {
+        "x": 112,
+        "y": 423
+      },
+      "end": {
+        "x": 407,
+        "y": 714
+      },
+      "expectedStart": {
+        "x": 112,
+        "y": 423
+      },
+      "expectedEnd": {
+        "x": 407,
+        "y": 714
+      },
+      "continuous": true,
+      "experimentalWalkDisabled": true
+    },
+    {
+      "id": "folded-promise-storybook",
+      "start": {
+        "x": 117,
+        "y": 619
+      },
+      "end": {
+        "x": 312,
+        "y": 581
+      },
+      "expectedStart": {
+        "x": 117,
+        "y": 619
+      },
+      "expectedEnd": {
+        "x": 312,
+        "y": 581
+      },
+      "continuous": true,
+      "experimentalWalkDisabled": true
+    },
+    {
+      "id": "unfinished-pier-emotion",
+      "start": {
+        "x": 180,
+        "y": 606
+      },
+      "end": {
+        "x": 312,
+        "y": 581
+      },
+      "expectedStart": {
+        "x": 180,
+        "y": 606
+      },
+      "expectedEnd": {
+        "x": 312,
+        "y": 581
+      },
+      "continuous": true,
+      "experimentalWalkDisabled": true
+    },
+    {
+      "id": "unfinished-pier-journey",
+      "start": {
+        "x": 182,
+        "y": 520
+      },
+      "end": {
+        "x": 407,
+        "y": 714
+      },
+      "expectedStart": {
+        "x": 182,
+        "y": 520
+      },
+      "expectedEnd": {
+        "x": 407,
+        "y": 714
+      },
+      "continuous": true,
+      "experimentalWalkDisabled": true
+    },
+    {
+      "id": "unfinished-pier-storybook",
+      "start": {
+        "x": 117,
+        "y": 619
+      },
+      "end": {
+        "x": 312,
+        "y": 581
+      },
+      "expectedStart": {
+        "x": 117,
+        "y": 619
+      },
+      "expectedEnd": {
+        "x": 312,
+        "y": 581
+      },
+      "continuous": true,
+      "experimentalWalkDisabled": true
+    }
+  ],
+  "exportedVersion": "draft-v06",
   "exportedPlayback": {
     "duration": 24,
-    "time": 0.651322,
+    "time": 0.652568,
     "width": 1080,
     "height": 1920
   },

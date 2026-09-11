@@ -14,7 +14,8 @@ const root=path.resolve(__dirname,'..');
   const {server,url}=await startServer({prefix:'/planning-document/'});let browser;
   try{
     browser=await chromium.launch();const page=await browser.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));
-    await page.goto(url+'cutscenes.html'+(actor?'?actor='+actor:''));await page.waitForFunction(()=>window.cutsceneReady);
+    const params=new URLSearchParams();if(actor)params.set('actor',actor);if(value('paddle','')==='rig')params.set('paddle','rig');if(value('walk','')==='rig')params.set('walk','rig');
+    await page.goto(url+'cutscenes.html?'+params);await page.waitForFunction(()=>window.cutsceneReady);
     const data=await page.evaluate(({phase,from,to,selected,samples,cropSize,anchor})=>{
       const source=document.createElement('canvas');source.width=1440;source.height=2560;
       return CutsceneProduction.films.filter(f=>!selected||f.id===selected).map(f=>{
@@ -33,10 +34,10 @@ const root=path.resolve(__dirname,'..');
       });
     },{phase,from,to,selected,samples,cropSize,anchor});
     if(!data.length)throw Error('선택한 영상이 없습니다.');
-    const hash=crypto.createHash('sha256');for(const file of ['cutscene-renderer.js','cutscene-cinema.js','cutscene-production.js','cutscene-sprites.js','cutscene-poses.js'])hash.update(file).update(fs.readFileSync(path.join(root,file)));
+    const hash=crypto.createHash('sha256');for(const file of ['cutscene-renderer.js','cutscene-cinema.js','cutscene-production.js','cutscene-sprites.js','cutscene-poses.js','cutscene-paddle-rig.js','cutscene-walk-rig.js'])hash.update(file).update(fs.readFileSync(path.join(root,file)));
     for(const film of data){fs.writeFileSync(path.join(out,film.id+'.png'),Buffer.from(film.png,'base64'));delete film.png;}
     const assets=dir=>{for(const item of fs.readdirSync(dir,{withFileTypes:true}).sort((a,b)=>a.name.localeCompare(b.name))){const file=path.join(dir,item.name);if(item.isDirectory())assets(file);else hash.update(path.relative(root,file)).update(fs.readFileSync(file));}};assets(path.join(root,'assets/cutscenes'));
-    fs.writeFileSync(path.join(out,'frames.json'),JSON.stringify({label,phase,actor:actor||'production-default',from,to,samples,cropSize,anchor,fingerprint:hash.digest('hex'),errors,films:data},null,2)+'\n');
+    fs.writeFileSync(path.join(out,'frames.json'),JSON.stringify({label,phase,actor:actor||'production-default',paddle:value('paddle','production-default'),walk:value('walk','production-default'),from,to,samples,cropSize,anchor,fingerprint:hash.digest('hex'),errors,films:data},null,2)+'\n');
     console.log(JSON.stringify({label,films:data.length,frames:data.length*samples,errors}));if(errors.length)process.exitCode=1;
   }finally{if(browser)await browser.close();await new Promise(r=>server.close(r));}
 })().catch(e=>{console.error(e);process.exitCode=1;});

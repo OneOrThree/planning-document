@@ -69,6 +69,27 @@ const root=path.resolve(__dirname,'..');
     assert.deepEqual(poseCheck.jumpFrames,[0,1,2,3,4,1,0]);
     assert.ok(poseCheck.reachHands.every(p=>Number.isFinite(p.x)&&Number.isFinite(p.y)));
     assert.deepEqual(poseCheck.gripBlinkFrames,[-1,0,1,0,-1]);assert.ok(poseCheck.gripHandStable);
+    const paddleCheck=await page.evaluate(async()=>{
+      await CutscenePaddleRig.ready;
+      const ctx=document.createElement('canvas').getContext('2d');
+      const options={paddleTime:1.2,grip:1,lean:.08};
+      const blinks=[-.1,.02,.1,.2,.3].map(blinkTime=>CutscenePaddleRig.draw(ctx,80,160,176,0,{...options,blinkTime}));
+      const loop=Array.from({length:169},(_,i)=>CutscenePaddleRig.draw(ctx,80,160,176,i/60,{grip:1,lean:.08}));
+      const start=loop[0],end=loop.at(-1);
+      const pickup=[0,.25,.5,.75,1].map(grip=>CutscenePaddleRig.draw(ctx,80,160,176,0,{grip}));
+      return{state:start.state,blinkFrames:blinks.map(s=>s.blinkFrame),blinkHandStable:blinks.every(s=>Math.hypot(s.hand.x-blinks[0].hand.x,s.hand.y-blinks[0].hand.y)<1e-8),loopClosure:Math.hypot(start.hand.x-end.hand.x,start.hand.y-end.hand.y),handRange:Math.max(...loop.map(s=>s.hand.x))-Math.min(...loop.map(s=>s.hand.x)),finite:[...loop,...pickup].every(s=>Number.isFinite(s.hand.x)&&Number.isFinite(s.hand.y)),defaultEnabled:CutsceneProduction.films.every(f=>f.tuning.paddleRig===true)};
+    });
+    assert.equal(paddleCheck.state,'paddle-local-rig');assert.deepEqual(paddleCheck.blinkFrames,[-1,0,1,0,-1]);
+    assert.ok(paddleCheck.blinkHandStable);assert.ok(paddleCheck.loopClosure<1e-8);assert.ok(paddleCheck.handRange>5);
+    assert.ok(paddleCheck.finite);assert.ok(paddleCheck.defaultEnabled);
+    const pathCheck=await page.evaluate(()=>CutsceneProduction.films.map(f=>{
+      const start=GachisupCinema.walkPathAt(f,-1),end=GachisupCinema.walkPathAt(f,10000);
+      const expectedStart=f.directionId==='journey'?(f.storyIndex===2?{x:182,y:520}:{x:112,y:423}):f.directionId==='emotion'?{x:180,y:606}:{x:117,y:619};
+      const expectedEnd=f.directionId==='journey'?{x:407,y:714}:{x:312,y:581};
+      const points=Array.from({length:701},(_,i)=>GachisupCinema.walkPathAt(f,i));
+      return{id:f.id,start,end,expectedStart,expectedEnd,continuous:points.slice(1).every((p,i)=>Math.hypot(p.x-points[i].x,p.y-points[i].y)<=1.000001),experimentalWalkDisabled:!f.tuning.walkRig};
+    }));
+    for(const p of pathCheck){assert.deepEqual(p.start,p.expectedStart);assert.deepEqual(p.end,p.expectedEnd);assert.ok(p.continuous);assert.ok(p.experimentalWalkDisabled);}
     await page.waitForSelector('#exports video');assert.equal(await page.locator('#exports video').count(),9);
     const playback=await page.evaluate(async()=>{
       const v=document.querySelector('#exports video');v.muted=true;await v.play();
@@ -86,7 +107,7 @@ const root=path.resolve(__dirname,'..');
     await page.waitForFunction(()=>[...document.images].every(i=>i.complete&&i.naturalWidth>0));
     assert.equal(await page.locator('[data-cat="white"] .body').getAttribute('src'),'assets/figma-cats/white-standing-generated.png');
     assert.deepEqual(errors,[]);
-    const report={result:'PASS',films:9,packingTimelineSamples:result.packingSamples,settlingTimelineSamples:result.settlingSamples,backgroundRegistration:result.backgroundChecks,individualPoseContract:poseCheck,exportedVersion,exportedPlayback:playback,catBodies:6,range:true,errors};
+    const report={result:'PASS',films:9,packingTimelineSamples:result.packingSamples,settlingTimelineSamples:result.settlingSamples,backgroundRegistration:result.backgroundChecks,individualPoseContract:poseCheck,paddleRigContract:paddleCheck,walkPathContract:pathCheck,exportedVersion,exportedPlayback:playback,catBodies:6,range:true,errors};
     fs.mkdirSync(path.join(root,'output/cutscenes/qa'),{recursive:true});
     fs.writeFileSync(path.join(root,'output/cutscenes/qa/browser-check.json'),JSON.stringify(report,null,2)+'\n');
     console.log(JSON.stringify(report,null,2));
