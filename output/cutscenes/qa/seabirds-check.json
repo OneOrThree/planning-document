@@ -1,0 +1,105 @@
+{
+  "result": "PASS",
+  "cases": [
+    {
+      "key": "shore",
+      "time": 0,
+      "skyChanged": 228,
+      "belowSkyChanged": 0
+    },
+    {
+      "key": "shore",
+      "time": 8,
+      "skyChanged": 223,
+      "belowSkyChanged": 0
+    },
+    {
+      "key": "shore",
+      "time": 16,
+      "skyChanged": 228,
+      "belowSkyChanged": 0
+    },
+    {
+      "key": "shore",
+      "time": 24,
+      "skyChanged": 231,
+      "belowSkyChanged": 0
+    },
+    {
+      "key": "coastHome",
+      "time": 0,
+      "skyChanged": 228,
+      "belowSkyChanged": 0
+    },
+    {
+      "key": "coastHome",
+      "time": 8,
+      "skyChanged": 221,
+      "belowSkyChanged": 0
+    },
+    {
+      "key": "coastHome",
+      "time": 16,
+      "skyChanged": 239,
+      "belowSkyChanged": 0
+    },
+    {
+      "key": "coastHome",
+      "time": 24,
+      "skyChanged": 230,
+      "belowSkyChanged": 0
+    },
+    {
+      "key": "room",
+      "time": 0,
+      "skyChanged": 0,
+      "belowSkyChanged": 0
+    },
+    {
+      "key": "room",
+      "time": 8,
+      "skyChanged": 0,
+      "belowSkyChanged": 0
+    },
+    {
+      "key": "room",
+      "time": 16,
+      "skyChanged": 0,
+      "belowSkyChanged": 0
+    },
+    {
+      "key": "room",
+      "time": 24,
+      "skyChanged": 0,
+      "belowSkyChanged": 0
+    },
+    {
+      "key": "sand",
+      "time": 0,
+      "skyChanged": 0,
+      "belowSkyChanged": 0
+    },
+    {
+      "key": "sand",
+      "time": 8,
+      "skyChanged": 0,
+      "belowSkyChanged": 0
+    },
+    {
+      "key": "sand",
+      "time": 16,
+      "skyChanged": 0,
+      "belowSkyChanged": 0
+    },
+    {
+      "key": "sand",
+      "time": 24,
+      "skyChanged": 0,
+      "belowSkyChanged": 0
+    }
+  ],
+  "maxStep": 0.5073817139347897,
+  "maxAngleStep": 0.0018957633527860568,
+  "errors": [],
+  "note": "하늘 아래·방·모래 배경 픽셀 불변. 단일 활공 원화이며 날갯짓·비행 물리 승인이 아님."
+}

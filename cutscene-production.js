@@ -11,7 +11,7 @@
       id:story.id+'-'+direction.id,storyId:story.id,storyIndex,directionId:direction.id,directionIndex,
       title:story.title,directionTitle:direction.title,description:direction.description,
       timing:storyIndex===2?{...direction,prepareEnd:direction.prepareEnd+1.7,walkEnd:direction.walkEnd+1.7,boardingEnd:direction.boardingEnd+1.7,departureStart:direction.departureStart+1.7,seaStart:direction.seaStart+.8}:{...direction},duration:24,reviewTarget:30,reviewCompleted:0,status:'draft',
-      tuning:{actorMode:'poses',paddleRig:true,paddleWeight:true,walkRig:true,dockRig:true,raftContact:true,waterMotion:true,clothFold:true,catSize:176,raftWidth:316,jumpHeight:36,landingBounce:5,shadowAlpha:.2,walkStride:15,
+      tuning:{actorMode:'poses',paddleRig:true,paddleWeight:true,tailRig:true,walkRig:true,dockRig:true,raftContact:true,waterMotion:true,clothFold:true,catSize:176,raftWidth:316,jumpHeight:36,landingBounce:5,shadowAlpha:.2,walkStride:15,
         captionSize:30,captionY:1090,waveAlpha:.12,wakeAlpha:.27,paddleAmplitude:.3,
         cameraGain:1,anticipation:.24,bookSize:.64,tailMotion:2.1,headMotion:1.1},
     }))),

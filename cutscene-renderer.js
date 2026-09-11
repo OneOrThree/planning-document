@@ -17,6 +17,7 @@
   paths.paddle='assets/cutscenes/wooden-paddle-v1.png';
   paths.raftWater='assets/cutscenes/raft-water-rim-v1.png';
   paths.clothFolded='assets/cutscenes/raft-cloth-folded-v1.png';
+  paths.seagull='assets/cutscenes/seagull-glide-v1.png';
   paths.satchelBase='assets/cutscenes/satchel-base-layer-v1.png';
   paths.satchelFlap='assets/cutscenes/satchel-flap-layer-v1.png';
   paths.satchelFlapBack='assets/cutscenes/satchel-flap-back-layer-v1.png';
@@ -32,11 +33,21 @@
   }
   const ready=Promise.all(Object.entries(paths).map(([key,src])=>new Promise((resolve,reject)=>{const img=new Image();img.onload=()=>{images[key]=src.includes('/poses-black/')?CutsceneFurPalette.prepare(img,src.split('/').at(-1)):img;resolve();};img.onerror=()=>reject(new Error('컷신 에셋 로드 실패: '+src));img.src=src;})));
   const coastWidth=960;
+  function seabirdsAt(time,scene='shore'){
+    return [0,1].map(i=>({x:(scene==='home'?680:750)-time*11+i*58+Math.sin(time*.31+i)*3,y:(scene==='home'?187:132)-time*(scene==='home'?.55:1.25)-i*(scene==='home'?13:24)+Math.sin(time*.45+i*.8)*3.2,width:i?19:28,angle:Math.sin(time*.7+i*.8)*.065,alpha:i?.62:.76}));
+  }
+  function seabirds(c,time,scene){
+    for(const bird of seabirdsAt(time,scene)){
+      c.save();c.translate(bird.x,bird.y);c.rotate(bird.angle);c.globalAlpha*=bird.alpha;c.filter='saturate(.7)';
+      c.drawImage(images.seagull,-bird.width*.63,-bird.width*.6,bird.width*1.254,bird.width*1.254);c.restore();
+    }
+  }
   function background(c,img,t){
     // 카메라는 world 전체에 적용한다. 바닥만 확대하면 서 있는 발과 소품이 미끄러진다.
     const extra=img===images.shore?images.shoreExtended:img===images.coastHome?images.homeExtended:null;
     c.drawImage(extra||img,0,0,extra?coastWidth:W,H);
     if(extra&&S.waterMotion)CutsceneWaterMotion.draw(c,extra,img===images.coastHome?'home':'shore',t);
+    if(extra&&S.seabirds)seabirds(c,t,img===images.coastHome?'home':'shore');
   }
   function ellipse(c,x,y,rx,ry,color){c.fillStyle=color;c.beginPath();c.ellipse(x,y,rx,ry,0,0,Math.PI*2);c.fill();}
   function softShadow(c,x,y,rx,ry,alpha=.2,color='66,54,40'){
@@ -373,5 +384,5 @@
     c.restore();return {...meta,time:t,revision:S.revision};
   }
   window.GachisupCutscene={ready,render,paths,duration:S.duration};
-  window.CutsceneActors={ready,images,paths,coastWidth,waterMotionIntegrated:true,paddleSprite,paddleRest,paddleWaterAt,clothFoldAt,clothVertex,clothFold,foldedCloth,background,ellipse,softShadow,satchel,cat,book,islandPlan,raft,ripples,wake,clamp,ease,mix};
+  window.CutsceneActors={ready,images,paths,coastWidth,waterMotionIntegrated:true,paddleSprite,paddleRest,paddleWaterAt,clothFoldAt,clothVertex,clothFold,foldedCloth,seabirdsAt,seabirds,background,ellipse,softShadow,satchel,cat,book,islandPlan,raft,ripples,wake,clamp,ease,mix};
 })();

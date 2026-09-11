@@ -11,6 +11,7 @@
   if(query.get('cloth')==='shrink')CutsceneProduction.films.forEach(f=>{f.tuning.clothFold=false;});
   if(query.get('dock')==='pose')CutsceneProduction.films.forEach(f=>{f.tuning.dockRig=false;});
   if(['rig','still'].includes(query.get('tail')))CutsceneProduction.films.forEach(f=>{f.tuning.tailRig=query.get('tail')==='rig';});
+  if(['glide','off'].includes(query.get('birds')))CutsceneProduction.films.forEach(f=>{f.tuning.seabirds=query.get('birds')==='glide';});
   if(query.get('actor')==='sprite')document.querySelector('.status').textContent='이전 아틀라스 자세를 비교하는 모드입니다. 기본 실시간 연출은 같은 얼굴의 개별 자세를 사용합니다. MP4는 표시된 버전의 고정본입니다.';
   const choices=document.getElementById('choices');
   function reviews(f){return CutsceneReviewLog.filter(r=>r.scope==='all-nine'||r.films?.includes(f.id));}
@@ -45,6 +46,7 @@
       if(version==='draft-v11')document.getElementById('export-note').textContent='열한 번째 초안 · 1080 × 1920. 책을 보는 네 자세에도 털색을 맞췄어요. 뗏목과 같은 나뭇결의 노를 낮은 갑판에서 집고, 천 가방은 책을 넣은 뒤 덮개가 닫혀요. 같은 가방이 걷기와 갑판 정리까지 이어져요. 노의 입수와 앞발의 자세 연결은 계속 개선 중이에요.';
       if(version==='draft-v12')document.getElementById('export-note').textContent='열두 번째 초안 · 1080 × 1920. 바다가 넓은 새 배경과 카메라로 노 전체가 화면 안에 들어와요. 부두의 발·밧줄 위치를 다시 맞췄고, 노가 물에 잠겼다가 얇게 돌아 나와요. 수면의 미세 흐름은 아직 별도 실험이에요.';
       if(version==='draft-v13')document.getElementById('export-note').textContent='열세 번째 초안 · 1080 × 1920. v12의 넓은 해안과 노 동작을 유지하면서 MP4의 색 관리도 맞췄어요. 원화보다 붉고 노랗게 보이던 차이를 줄여 낮은 채도의 바다·모래·종이 색이 이어져요. 출력 당시의 색 표본으로 실제 MP4를 검사해요.';
+      if(version==='draft-v16')document.getElementById('export-note').textContent='열여섯 번째 초안 · 1080 × 1920. 같은 얼굴·손 접점을 유지하면서 부두와 노 젓기 장면에서 꼬리가 작게 움직여요. 먼 하늘의 갈매기는 별도 실험으로, 이 MP4에는 없어요.';
       if(version==='draft-v15')document.getElementById('export-note').textContent='열다섯 번째 초안 · 1080 × 1920. 덮개를 두 번 접어 갑판 한쪽에 싣고, 부두에서는 같은 얼굴을 유지하며 앞발을 연속으로 움직여요. 꼬리 움직임은 별도 후보로, 이 MP4에는 아직 없어요.';
       if(version==='draft-v14')document.getElementById('export-note').textContent='열네 번째 초안 · 1080 × 1920. 뗏목 가장자리에 작은 물결이 닿고, 물 영역만 잔잔히 움직여요. 노를 당길 때 고양이 상체도 조금 따라가며 발바닥과 손잡이 접점은 유지해요. 덮개를 접는 새 실험은 이 영상에 포함하지 않았어요.';
       if(!batch.videoProfile)document.getElementById('export-note').textContent+=' 색 관리 수정 전 비교본으로, 현재 원화보다 색이 진하게 보일 수 있어요.';
