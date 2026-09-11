@@ -2,7 +2,7 @@
 (() => {
   'use strict';
   const sources={
-    firstDiscovery:{name:'초대 없는 시작 · Plannotator 피드백',path:'no-invite-story-plan.md',basis:'망원경 발견·첫 가입 전망대 예외 확정. 지도에서 기존 섬·빈 섬 선택은 사용자 제안, 세부 표현은 검토 중'},
+    firstDiscovery:{name:'초대 없는 시작 · Plannotator 피드백',path:'no-invite-story-plan.md',basis:'2026-09-12 최종 승인. 지도·공개 섬 합류·최소 생성 설정·초기 초대의 이야기 흐름 확정, 세부 정책과 구현은 별도'},
     growthRevision:{name:'04 함께 도전하고 섬 키우기 · 사용자 수정본',path:'revisions/04-island-growth.html',basis:'최신 확정과 수치·운영 제안을 구분. 실제 앱 구현은 별도'},
     decorationRevision:{name:'07 내 취향은 뗏목에, 우리 살림은 섬에 · 사용자 수정본',path:'revisions/07-personal-shared-decoration.html',basis:'개인/공동 꾸미기·배 단계·고양이 플레이어·공동 음원'},
     revisionNotes:{name:'04·07 반영·충돌·피드백 메모',path:'growth-decoration-revision-20260911.md',basis:'최신 우선순위·미정 사항·Plannotator 피드백과 구현 경계'},
@@ -47,16 +47,16 @@
     ['A10','게스트·계정 전환','체험 계정을 정식 계정으로 바꾸는 흐름을 검토한다.','여행 기록을 계속 보관할 계정 선택.',{decision:'review',proof:'legacy',sources:['account'],note:'gromo 게스트 분기는 있지만 같이숲에 그대로 넣기로 확정하지 않았어요.'}]
   ]);
   group('discover','섬 발견·초대·이동','기러기의 초대 · 첫 뗏목 · 전망대','첫 섬 초대와 전망대 이후 다른 섬 이동을 구분해요.',{sources:['ia','policy']},[
-    ['B01','섬 생성','이름·소개·가입 방식을 정한다.','지도에서 빈 섬 후보를 고르고 새 공유 섬으로 시작.',{screens:['on5a'],sources:['ia','firstDiscovery'],document:'no-invite-story-plan.md',note:'지도 흐름은 사용자 제안을 반영한 초안이다. 빈 섬은 새 공유 섬 생성 후보라는 해석이며 오프라인인 기존 섬이 아니다. 표시·공개 범위·첫 설정은 후속 검토이고 기존 생성 시연과 구분한다.'}],
-    ['B02','공개 섬 검색·필터','조건에 맞는 공개 섬을 찾는다.','망원경으로 볼 섬을 골라주는 조건.',{screens:['hb2'],note:'현재는 검색·필터 UI예요. 첫 발견은 망원경으로 확정했고 지도에서 후보를 고르는 흐름은 사용자 제안이에요. 검색·필터를 어디에 드러낼지는 후속 검토예요.'}],
-    ['B03','망원경 탐색·첫 섬 발견','초대가 없으면 망원경으로 첫 목적지를 찾는다.','망원경 → 지도에서 기존 섬·빈 섬 후보 선택.',{decision:'chosen',proof:'pending',sources:['firstDiscovery'],document:'no-invite-story-plan.md',note:'망원경 발견과 신규 사용자의 첫 공개 섬 발견·가입의 전망대 예외는 확정. 가입 조건·승인은 유지한다. 지도 흐름은 사용자 제안이며 상세 표현은 미정이고, 자유 방문·귀환·탈퇴 후 재가입까지 예외를 넓히지 않는다. 실제 앱·이동 권한은 미구현이다.'}],
+    ["B01","섬 생성","이름·선택 소개·공개 범위를 확인하고 새 공유 섬을 만든다.","빈 섬 후보 → 최소 설정 → 생성 성공 → 짧은 뗏목 이동 → 첫 시간.",{"screens":["on5a"],"sources":["firstDiscovery"],"document":"no-invite-story-plan.md","note":"B1과 B2를 한 흐름으로 확정했다. 빈 섬은 새 공유 섬 후보이며 오프라인인 기존 섬이 아니다. 이름 검증·소개 길이·공개 범위 선택지와 기본값·운영 권한은 후속 명세다. 기존 생성 시연은 새 흐름 구현 완료가 아니다.","decision":"chosen","proof":"pending"}],
+    ['B02','공개 섬 검색·필터','조건에 맞는 공개 섬을 찾는다.','망원경으로 볼 섬을 골라주는 조건.',{screens:['hb2'],note:'현재는 검색·필터 UI예요. 첫 발견은 망원경으로 확정했고 지도에서 후보를 고르는 흐름도 확정했어요. 검색·필터를 어디에 드러낼지는 후속 검토예요.'}],
+    ["B03","망원경 탐색·첫 섬 발견","초대가 없으면 망원경으로 첫 목적지를 찾는다.","망원경 → 지도에서 기존 섬·빈 섬 후보 선택.",{"decision":"chosen","proof":"pending","sources":["firstDiscovery"],"document":"no-invite-story-plan.md","note":"망원경·지도 흐름과 신규 사용자의 첫 공개 섬 발견·가입의 전망대 예외를 확정했다. 첫 발견에 유료 지도를 요구하지 않는다. 다른 섬 보기·돌아가기, 후보가 없을 때 다시 찾기·새 섬 만들기를 제공한다. 가입 조건·승인은 유지하며 자유 방문·귀환·탈퇴 후 재가입까지 예외를 넓히지 않는다. 지도 표식·전환 상세와 실제 앱·이동 권한은 후속 작업이다."}],
     ['B04','공개모집·바람 추천','모집 중인 섬을 선택해서 방문한다.','환영 깃발을 건 섬으로 바람이 길을 알려줘요.',{decision:'proposal',proof:'illustration',sources:['journey'],story:'story-2',note:'초대 없는 첫 발견은 망원경으로 확정했어요. 바람 추천은 그 첫 경로가 아닌 후속 후보로 남겨요. 추천 기준·노출 정보·모집 설정은 미정이고 강제로 이동하지 않아요.'}],
-    ['B05','초대 코드·링크 발급과 공유','친구에게 섬의 초대를 보낸다.','섬 그림과 항로가 담긴 초대 엽서.',{screens:['sh7'],note:'코드·복사 시연은 있으나 실제 외부 초대 서비스는 미연결이에요.'}],
+    ["B05","초대 코드·링크 발급과 공유","친구에게 섬의 초대를 보낸다.","섬 그림 초대장 · 새 섬 도착 초기 안내에서도 동료 부르기.",{"screens":["sh7"],"note":"새 섬은 우체통 건설 전에도 초기 안내에서 초대할 수 있다. 초대 발송이나 답장을 기다려야 집중할 수 있는 구조가 아니다. 우체통의 섬 전체 편지방과는 별개이며 새 우체국은 만들지 않는다. 초대 운영 권한·상시 진입 위치는 후속 명세다. 기존 코드·복사 시연과 실제 외부 초대 서비스는 구분한다.","decision":"chosen","proof":"pending","sources":["firstDiscovery"],"document":"no-invite-story-plan.md"}],
     ['B06','초대 확인·입력 오류','초대가 유효한지 확인하고 잘못된 코드를 고친다.','편지의 목적지를 확인하기.',{screens:['on5b']}],
     ["B07","초대 편지와 첫 섬 진입","초대받은 섬을 확인하고 가입·방문 조건을 따른다.","섬의 모습이 담긴 초대와 짧은 항해.",{"note":"첫 섬 초대 가입은 허용하는 안이다. 이미 소속된 섬에서 다른 섬으로 이동할 때는 전망대 해금이 필요하며 초대로 우회하지 않는다. 우체통의 그룹 전체 편지방과 외부 초대는 다른 흐름이다.","decision":"proposal","proof":"pending","sources":["growthRevision","revisionNotes"],"screens":[],"document":"revisions/04-island-growth.html"}],
-    ['B08','방문자 구경','공개된 풍경을 읽기 전용으로 본다.','가입 전에 선착장과 섬을 먼저 둘러보기.',{screens:['hb3'],note:'집중·게시·금고 사용 권한과 구경 권한은 분리해요.'}],
-    ['B09','즉시 가입·승인 신청','섬의 가입 방식에 맞게 참여한다.','부두에서 함께하고 싶다고 알리기.',{screens:['on5b','hb2'],note:'실제 승인 서비스는 새로 연결해야 해요. 대기는 소속 완료가 아니에요.'}],
-    ['B10','가입 대기·결과 확인','승인 또는 거절 상태를 확인한다.','입항 답장을 기다리는 초대장.',{screens:['on5b','sh8']}],
+    ["B08","가입 전 섬·모임 살펴보기","섬 풍경·모임 소개·참여 조건만 먼저 읽는다.","섬의 풍경 뒤에, 함께할 모임의 약속을 읽기.",{"screens":["hb3"],"note":"A2 중심 이야기를 확정했다. 가입 전 멤버 개인 정보·할 일·편지방은 비공개다. 가입 뒤에도 멤버별 공개 범위와 권한을 따른다. 구경만으로 가입·집중·게시 권한을 얻지 않는다. 기존 방문자 시연의 새 정책 반영은 별도 작업이다.","decision":"chosen","proof":"pending","sources":["firstDiscovery"],"document":"no-invite-story-plan.md"}],
+    ["B09","즉시 가입·승인 신청","바로 합류 가능한지 확인하고 섬의 가입 방식에 맞게 참여한다.","합류 선택 → 가입 성공 또는 승인 완료 → 짧은 뗏목 이동.",{"screens":["on5b","hb2"],"note":"‘바로 합류 가능’을 알아보기 쉽게 표시한다. 승인형 섬을 없애거나 추천 순위를 우선 배치한다는 결정은 아니다. 요청만으로 소속·도착 처리하지 않는다. 가입 실패·정원 초과·비공개 전환은 실제 상태로 안내한다. 실제 승인 서비스는 미연결이다.","decision":"chosen","proof":"pending","sources":["firstDiscovery"],"document":"no-invite-story-plan.md"}],
+    ["B10","가입 대기·결과 확인","요청 상태를 확인하고 기다리기·취소·다른 길을 선택한다.","입항 전 승인 대기 안내 · 실제 결과에 따라 다음 길 선택.",{"screens":["on5b","sh8"],"decision":"chosen","proof":"pending","sources":["firstDiscovery"],"document":"no-invite-story-plan.md","note":"기다리는 사용자에게 새 섬을 자동 생성하거나 승인 전에 입항하지 않는다. 동시 요청·늦은 승인·취소 충돌·재시도 정책은 후속 명세다."}],
     ["B11","소속 섬 확인·전망대에서 전환","내가 속한 섬을 확인하고 전망대에서 이동한다.","전망대에서 목적지를 고르고 부두로 출항.",{"note":"다른 섬 이동은 전망대 해금 후 열린다. 기존 소속 섬 목록으로 잠금을 우회하지 않는 안이다. 배 단계는 이동 권한을 대신하지 않는다.","decision":"chosen","proof":"pending","sources":["growthRevision","revisionNotes"],"screens":["hb1"],"document":"revisions/04-island-growth.html"}],
     ["B12","뗏목부터 시작하는 입항·귀항","내가 보유한 배 모습으로 출항하고 같은 섬에 도착한다.","첫 배는 기본 뗏목, 이후 돛단배·배.",{"note":"이동 수단을 평생 뗏목으로 고정하지 않는다. 배 단계는 개인 외양 성장이고, 다른 섬 이동은 전망대 조건을 따른다. 원화·리깅·앱 적용은 별도다.","decision":"chosen","proof":"pending","sources":["growthRevision","revisionNotes"],"screens":["on6"],"document":"revisions/04-island-growth.html"}],
     ["B13","전망대의 목적지 선택","전망대에서 다른 섬을 탐색하고 목적지를 선택한다.","멀리 바라본 섬으로 떠나기.",{"note":"독립 지도대나 내 배의 이동 메뉴로 해금을 우회하지 않는다. 지도 외형·과금의 이전 제안은 현행 이동 조건을 대체하지 않는다.","decision":"chosen","proof":"pending","sources":["growthRevision","revisionNotes"],"screens":[],"document":"revisions/04-island-growth.html"}],
@@ -241,5 +241,5 @@
   const retiredFeatures={"D13":"04·07의 낚시 집중·독서 휴식으로 노트북 액션을 현행에서 제외. 기존 제작·03 수정본 기록은 보존.","F12":"퀘스트 지난 결과 화면을 제공하지 않는 최신 결정으로 제외.","N05":"사용자 캐릭터는 고양이만. 리트리버 걷기 제작 기록을 플레이어 기능에서 제외하고 에셋은 보존.","P01":"자유 텍스트 섬 전체 편지방을 I06으로 통합. 별도 보류 기능으로 중복 집계하지 않음."};
   // 현재 기능에서 제외한 시연 화면. 과거 IA를 현행 기능으로 집계하지 않는다.
   const retiredScreens={po3:'2026-09-10 사용자 결정: I07 콕찌르기 제외. 함께하자는 초대는 I06 편지로 통합. 기존 시연은 교체 전.'};
-  window.GachisupFeatureInventory={date:'2026-09-11',sources,decisions,proofs,groups,retiredScreens,retiredFeatures,features:groups.flatMap(g=>g.features)};
+  window.GachisupFeatureInventory={date:'2026-09-12',sources,decisions,proofs,groups,retiredScreens,retiredFeatures,features:groups.flatMap(g=>g.features)};
 })();

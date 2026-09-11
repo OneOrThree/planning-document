@@ -107,6 +107,18 @@ html{scroll-padding-top:0}
   .decision-entry{grid-template-columns:160px minmax(0,1fr);gap:var(--space-lg)}
   .decision-meta{display:grid;align-content:start;gap:var(--space-xs)}
 }
+
+/* 도입 후보는 확정 저니와 분리해서 비교한다. */
+.prologue-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:24px 0}
+.prologue-option{min-width:0;border:1px solid #bfc8c3;background:#fafbf7;padding:22px;color:#263b36}
+.prologue-option h3{font-size:22px;line-height:1.4;margin:8px 0 14px}
+.prologue-option p,.prologue-option li,.prologue-option dd{font-size:15px;line-height:1.85;overflow-wrap:anywhere}
+.prologue-option details{border-top:1px solid #cbd3cc;margin:18px 0;padding-top:4px}
+.prologue-option summary{cursor:pointer;min-height:44px;padding:12px 0;font-size:14px;font-weight:700;line-height:1.6}
+.prologue-option ol{padding-left:24px}.prologue-option li+li{margin-top:14px}
+.prologue-option dt{font-size:14px;font-weight:700;margin-top:16px}.prologue-option dd{margin:4px 0 0}
+.prologue-option .prologue-question{border-left:3px solid #638075;padding-left:12px;font-weight:600}
+@media(max-width:1050px){.prologue-options{grid-template-columns:1fr}.prologue-option{padding:20px}}
 @media(min-width:64rem){
   .planning-tabs{grid-template-columns:repeat(6,minmax(0,1fr))}
   .planning-tabs a{border-right:1px solid var(--rule);padding:var(--space-md);font-size:var(--text-planning-body)}

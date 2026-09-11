@@ -10,17 +10,19 @@
   <link rel="stylesheet" href="feature-overview.css">
   <link rel="stylesheet" href="feature-story.css">
   <link rel="stylesheet" href="story-ledger.css">
-  <link rel="stylesheet" href="focus-revision.css?v=20260911">
-  <link rel="stylesheet" href="planning-workbench.css?v=20260911-full-route">
-  <script src="feature-inventory-data.js?v=20260911-first-discovery" defer></script>
+  <link rel="stylesheet" href="focus-revision.css?v=20260912-entry-approved">
+  <link rel="stylesheet" href="planning-workbench.css?v=20260912-entry-approved">
+  <script src="feature-inventory-data.js?v=20260912-entry-approved" defer></script>
   <script src="ia-manifest.js" defer></script>
   <script src="eli5-raft-art.js" defer></script>
   <script src="feature-story.js" defer></script>
-  <script src="feature-overview.js?v=20260911-first-discovery" defer></script>
-  <script src="feature-inventory.js?v=20260911-first-discovery" defer></script>
-  <script src="journey-route-data.js?v=20260911" defer></script>
-  <script src="journey-route.js?v=20260911" defer></script>
-  <script src="planning-workbench.js?v=20260911-growth-tab" defer></script>
+  <script src="feature-overview.js?v=20260912-entry-approved" defer></script>
+  <script src="feature-inventory.js?v=20260912-entry-approved" defer></script>
+  <script src="journey-route-data.js?v=20260912-entry-approved" defer></script>
+  <script src="journey-route.js?v=20260912-entry-approved" defer></script>
+  <script src="prologue-scenarios-data.js?v=20260912" defer></script>
+  <script src="prologue-scenarios.js?v=20260912" defer></script>
+  <script src="planning-workbench.js?v=20260912-entry-approved" defer></script>
 </head>
 <body>
 <a class="skip" href="#catalog">기능 목록으로 건너뛰기</a>
@@ -40,14 +42,14 @@
       <a id="tab-detail" role="tab" href="?mode=detail" data-planning-tab="detail" data-mode="detail" aria-controls="detail-view" aria-selected="false" tabindex="-1"><strong>세부 기능</strong><span>목록 및 표현 · 동작 기준</span></a>
       <a id="tab-decisions" role="tab" href="?tab=decisions" data-planning-tab="decisions" aria-controls="decisions-view" aria-selected="false" tabindex="-1"><strong>결정 로그</strong><span>확정 · 논의 중 · 이전안</span></a>
     </nav>
-    <p class="workbench-latest"><strong>최근 반영</strong><span>섬의 발전을 독립 탭으로 분리했어요. 건설 조건과 비용도 여기서 다듬어요.</span><a href="?tab=growth">섬의 발전 열기 →</a></p>
+    <p class="workbench-latest"><strong>최근 반영 · 09.12</strong><span>초대 없는 합류·생성 흐름을 확정했어요. 고양이의 출발 이야기는 3개 후보로 비교해요.</span><a href="?tab=story#prologue-scenarios">도입 이야기 비교 →</a></p>
     <section id="journey-view" class="planning-panel" role="tabpanel" aria-labelledby="tab-journey" tabindex="0">
       <div id="people-journey" class="panel-heading"><div><h2>들어오는 길은 달라도,<br>함께할 섬으로 이어져요.</h2><p>친구 초대가 없는 첫 시작도 같은 이야기 안에 담아요.</p></div><a href="?tab=story#story-ledger">장면별 이야기 읽기 →</a></div>
-      <div class="journey-entry" data-entry-flow="telescope-map"><strong>초대 없이 시작한다면</strong><p>망원경으로 발견 → 지도에서 기존 섬·빈 섬 후보 보기 → 합류하거나 새 모임 만들기</p><small>망원경과 첫 가입 예외는 확정. 지도 흐름은 사용자 제안을 반영한 초안이며, 상세 표현은 논의 중이에요.</small></div>
+      <div class="journey-entry" data-entry-flow="telescope-map"><strong>초대 없이 시작한다면</strong><p>망원경으로 발견 → 지도에서 기존 섬·빈 섬 후보 보기 → 합류하거나 새 모임 만들기</p><small>발견·선택·합류·생성 흐름 확정. 가입 전 공개 범위와 초기 초대까지 반영했으며, 전환 상세·검증 규칙은 후속 명세예요.</small></div>
       <div class="journey-starts" aria-label="첫 시작의 세 경로">
         <article data-start-path="invite" data-state="confirmed"><span class="planning-status">초대 경로 · 방향 확정</span><h3>친구에게 초대받았다면</h3><p>기러기가 가져온 초대장에 섬의 모습이 담겨 있어요.</p><ol><li>“우리 섬에서 같이하자”</li><li>초대장 펼치기</li><li>합류 선택 → 짧은 뗏목 이동</li></ol><small>초대만으로 자동 가입·집중하지 않아요.</small><a class="journey-choice" href="?tab=journey&route=invite#journey-route" data-journey-choice="invite" aria-controls="journey-route">초대받았을 경우 →</a></article>
-        <article data-start-path="public" data-state="proposal"><span class="planning-status is-open">지도에서 기존 섬 · 합류 장면 논의 중</span><h3>같이할 사람을 찾고 싶다면</h3><p>망원경으로 발견한 뒤, 지도에서 기존 공개 섬을 골라 모임과 참여 조건을 살펴봐요.</p><ol><li>지도에서 기존 공개 섬 선택</li><li>모임 살펴보기 · 합류 선택</li><li>필요한 승인 확인 → 첫 섬으로</li></ol><small>신규 사용자의 첫 공개 섬 발견·가입은 전망대 예외예요. 가입 조건·승인은 그대로 지켜요.</small><a class="journey-choice" href="?tab=journey&route=public#journey-route" data-journey-choice="public" aria-controls="journey-route">공개 섬에 합류할 경우 →</a></article>
-        <article data-start-path="create" data-state="proposal"><span class="planning-status is-open">지도에서 빈 섬 · 생성 장면 논의 중</span><h3>함께할 곳을 만들고 싶다면</h3><p>지도에서 빈 섬 후보를 골라, 앞으로 함께 쓸 새 모임의 섬을 만드는 이야기예요.</p><ol><li>빈 섬 후보 선택 → 새 섬 만들기</li><li>모닥불 · 부두 · 기본 뗏목</li><li>먼저 집중하기 · 나중에 동료 맞기</li></ol><small>빈 섬은 새 공유 섬 후보라는 해석이에요. 오프라인인 기존 섬과 구분하고, 없는 동료를 만들지 않아요.</small><a class="journey-choice" href="?tab=journey&route=create#journey-route" data-journey-choice="create" aria-controls="journey-route">새 섬을 만들 경우 →</a></article>
+        <article data-start-path="public" data-state="confirmed"><span class="planning-status">공개 섬 합류 · 흐름 확정</span><h3>같이할 사람을 찾고 싶다면</h3><p>망원경 → 지도에서 기존 공개 섬을 골라요. 섬의 풍경 뒤에 모임의 약속을 읽고, 함께할 곳인지 살펴봐요.</p><ol><li>지도에서 기존 공개 섬 선택</li><li>풍경·모임 소개·참여 조건 확인</li><li>필요한 승인 확인 → 첫 섬으로</li></ol><small>신규 사용자의 첫 공개 섬 발견·가입은 전망대 예외예요. 가입 조건·승인은 그대로 지켜요.</small><a class="journey-choice" href="?tab=journey&route=public#journey-route" data-journey-choice="public" aria-controls="journey-route">공개 섬에 합류할 경우 →</a></article>
+        <article data-start-path="create" data-state="confirmed"><span class="planning-status">새 섬 만들기 · 흐름 확정</span><h3>함께할 곳을 만들고 싶다면</h3><p>지도에서 새 공유 섬 후보를 골라요. 우리가 모일 섬을 만들고, 방금 이름 붙인 섬에서 첫 시간을 열어요.</p><ol><li>이름·선택 소개·공개 범위 확인</li><li>생성 성공 → 짧은 뗏목 이동</li><li>같은 섬 도착 → 먼저 집중·동료 초대</li></ol><small>빈 섬은 새 공유 섬 후보예요. 우체통 건설 전에도 초기 안내에서 초대할 수 있고, 답을 기다리지 않고 시작해요.</small><a class="journey-choice" href="?tab=journey&route=create#journey-route" data-journey-choice="create" aria-controls="journey-route">새 섬을 만들 경우 →</a></article>
       </div>
       <section id="journey-route" class="journey-route" aria-label="선택한 시작 경로의 전체 이야기" hidden></section>
       <p class="journey-converge">첫 섬이 정해지고 필요한 가입·승인이 끝나면 <span aria-hidden="true">↓</span></p>
@@ -58,8 +60,8 @@
         <li><span>04</span><h3>쉬거나 마무리하기</h3><p>같은 모닥불에서 독서 휴식.<br>마치면 실제 기록을 돌아봐요.</p></li>
       </ol>
       <div class="journey-return"><strong>다시, 함께 만든 곳으로</strong><p>휴식 뒤에는 배로 돌아와 집중을 이어가고, 다음 방문에는 더 짧은 항해로 돌아와요.</p></div>
-      <section id="no-invite-start" class="planning-question" data-state="proposal" aria-labelledby="no-invite-title"><h3 id="no-invite-title">망원경 다음, 지도에서 두 길을 만나요.</h3><p>망원경으로 발견하는 방식과 첫 공개 섬 가입의 전망대 예외를 확정했어요. 지도에서 기존 섬·빈 섬을 함께 고르는 사용자 제안을 이야기 기준으로 반영했으며, 빈 섬 표시·가입 전 공개 정보·승인 대기·새 섬의 초기 초대는 다음에 정해요.</p><p><a href="no-invite-story-plan.md">초대 없는 두 이야기 · Plannotator 검토 초안 ↗</a></p><details><summary>확정한 첫 가입 예외와 남은 경계</summary><p>이미 소속 섬이 있는 사람의 다른 섬 탐색·이동은 전망대 해금 뒤예요. 아직 소속 섬이 없는 신규 사용자의 첫 공개 섬 발견·가입은 전망대 해금의 예외로 확정했어요. 가입 조건·승인은 생략하지 않고, 탈퇴·강퇴 후 재가입과 귀환은 별도 논의예요. 초대 링크나 추천 연출이 이동 권한을 우회하게 만들지 않아요.</p><p>공개 섬이 없거나 승인을 기다리는 경우의 대안, 첫 섬의 동료가 오프라인인 경우도 이어서 정해요. 자동 가입·가짜 동료·자동 답장은 만들지 않아요.</p></details></section>
-      <p class="planning-footnote">흐름 기획도예요. 망원경·첫 가입 예외 외의 지도 표현·가입 순서·측정 경계는 미정이며 모든 단계가 의무 온보딩은 아니에요. <a href="user-journey.html">이전 전체 다이어그램 ↗</a></p>
+      <section id="no-invite-start" class="planning-question" data-state="confirmed" aria-labelledby="no-invite-title"><h3 id="no-invite-title">망원경 다음, 지도에서 두 길을 만나요.</h3><p>초대 없는 두 시작의 흐름을 확정했어요. 기존 공개 섬은 풍경·모임 소개·참여 조건을 읽고 가입 성공 또는 승인 후 이동해요. 빈 섬은 새 공유 섬 후보이며, 최소 설정 → 생성 성공 → 짧은 뗏목 이동 → 같은 섬의 첫 시간으로 이어져요.</p><p><a href="no-invite-story-plan.md">확정한 두 이야기와 후속 명세 ↗</a> · <a href="?tab=story#prologue-scenarios">그전에, 고양이는 어떻게 출발했을까? →</a></p><details><summary>확정한 예외·대안과 후속 명세</summary><p>이미 소속 섬이 있는 사람의 다른 섬 탐색·이동은 전망대 해금 뒤예요. 아직 소속 섬이 없는 신규 사용자의 첫 공개 섬 발견·가입은 예외이며 첫 발견에 유료 지도를 요구하지 않아요. 가입 조건·승인은 유지해요. 탈퇴·강퇴 후 재가입과 귀환까지 예외를 넓히지는 않아요.</p><p>바로 합류 가능 여부를 표시하고, 승인 대기에는 기다리기·취소·다른 길 선택을 제공해요. 후보가 없으면 다시 찾기·새 섬 만들기로 연결해요. 가입 전에는 멤버 개인 정보·할 일·편지방을 공개하지 않고, 가입 후에도 공개 권한을 지켜요.</p><p>이름 검증·공개 범위 기본값·늦은 승인 충돌·재시도 정책·지도 전환 상세·초대 운영 권한은 후속 명세예요. 장면을 확정한 것이 실제 앱 구현 완료를 뜻하지는 않아요.</p></details></section>
+      <p class="planning-footnote">확정한 흐름을 읽는 기획도예요. 대사·전환 시간·측정 경계는 후속 명세이며, 모든 단계가 의무 온보딩은 아니에요. <a href="user-journey.html">이전 전체 다이어그램 ↗</a></p>
       <p class="planning-crosslink">함께한 시간이 어떤 시설로 남는지는 <a href="?tab=growth">섬의 발전 →</a>에서 따로 정리해요.</p>
     </section>
     <section id="growth-view" class="planning-panel" role="tabpanel" aria-labelledby="tab-growth" tabindex="0" hidden>
@@ -116,13 +118,19 @@
           <div class="growth-block-heading"><h3 id="growth-pending-title">다음에 다듬을 결정</h3><span class="planning-status is-open">아직 미정</span></div>
           <p class="growth-section-description">수치를 먼저 잠그지 않고, 아래 항목을 기준으로 성장 속도를 맞춰가요.</p>
           <dl class="growth-polish-list"><div><dt>건설 비용과 성장 속도</dt><dd>1인·소규모·활성 모임별로 첫 건설과 다음 건설이 얼마나 걸리는지 비교해요. 목표 일수·최종 가격은 미정이에요.</dd></div><div><dt>누가 다음 시설을 정하나</dt><dd>전망대·우체통 중 먼저 지을 시설의 선택 주체와 공동 포인트 지출 절차를 정해요.</dd></div><div><dt>보상과 정산의 경계</dt><dd>게시판 완성 순간의 물고기, 초과 기여, 퀘스트 한도와 섬 이동 시 귀속을 검토해요.</dd></div><div><dt>상점 이후의 성장</dt><dd>새 공간·공동 액션 후보를 정해요. “이게 생기면 우리가 같이할 일이 무엇이 늘어날까?”를 기준으로 봐요.</dd></div></dl>
-          <details class="growth-open" data-state="discussing"><summary>초기 기능 예외와 지킬 선</summary><p>신규 사용자의 첫 공개 섬 발견·가입은 전망대 해금 예외로 확정했어요. 회관 이전 필수 운영·우체통 이전 최초 초대·귀환과 재가입은 별도로 정해야 해요.</p><p>기존 재화·완성된 건물을 미접속이나 목표 실패로 빼앗지 않아요. 성장 예상 날짜를 약속하거나 상점 이후 새 건물·행동을 확정한 것은 아니에요.</p></details>
+          <details class="growth-open" data-state="discussing"><summary>초기 기능 예외와 지킬 선</summary><p>신규 사용자의 첫 공개 섬 발견·가입은 전망대 해금 예외로 확정했어요. 우체통 이전 최초 초대는 도착 직후 초기 안내에서 제공해요. 초대 운영 권한·회관 이전 필수 운영·귀환과 재가입의 상세는 후속 명세예요.</p><p>기존 재화·완성된 건물을 미접속이나 목표 실패로 빼앗지 않아요. 성장 예상 날짜를 약속하거나 상점 이후 새 건물·행동을 확정한 것은 아니에요.</p></details>
           <p class="planning-crosslink"><a href="?tab=decisions#decision-growth-tab">이번 구조 변경의 결정 로그 →</a> · <a href="growth-decoration-revision-20260911.md">04·07 확정·제안 원문 ↗</a></p>
         </section>
       </section>
     </section>
     <section id="overview-view" class="planning-panel" role="tabpanel" aria-labelledby="tab-story" tabindex="0" hidden>
       <div class="overview-intro"><h2 id="overview-title">처음엔 섬을 찾아오고,<br>다음엔 우리 장소로 돌아와요.</h2><p>초대받아 오거나, 동료를 찾거나, 함께할 곳을 만들거나.<br><strong>함께 해낸 일이 우리 장소로 남고, 그 장소가 다음 만남의 이유가 돼요.</strong></p><a class="wrapping-jump" href="#wrapping">8개 기능은 어떻게 감쌀까? →</a></div>
+      <section id="prologue-scenarios" class="quest-ideas" data-state="proposal" aria-labelledby="prologue-title">
+        <p class="eyebrow">도입 이야기 · 평가할 후보 3개 · 아직 선택 전</p><h2 id="prologue-title">고양이는 어떻게 뗏목에 올랐을까?</h2>
+        <p class="quest-intro">출발의 이유가 다른 세 이야기예요. 각 안을 펼쳐 집에서 물가로, 물가에서 뗏목으로 이어지는 장면을 읽어봐요. 하나를 고르거나 마음에 드는 장면을 섞을 수 있어요.</p>
+        <div id="prologue-options" class="prologue-options"></div>
+        <p class="quest-scope"><strong>평가할 것:</strong> 가장 끌리는 안 · 남기고 싶은 장면 · 빼고 싶은 설정. 실제 초대가 있으면 섬 그림 초대장으로, 없으면 망원경·지도로 이어져요. 세 안은 확정한 합류 흐름을 바꾸지 않으며 제작·보상 같은 새 기능을 약속하지 않아요. <a href="prologue-scenarios.md">도입 이야기 원문 ↗</a></p>
+      </section>
       <section id="latest-growth-decoration" class="quest-ideas" aria-labelledby="latest-growth-decoration-title" data-state="current">
         <p class="eyebrow">2026.09.11 · 04·07 수정본 + Plannotator 피드백 반영</p><h2 id="latest-growth-decoration-title">함께 낚시해 섬을 만들고, 내 취향과 우리 살림을 나눠요.</h2>
         <div class="reward-paths">
@@ -135,7 +143,7 @@
       </section>
       <section id="story-ledger" class="story-ledger" aria-labelledby="ledger-title">
         <div class="section-label"><div><p class="eyebrow">대화하며 쌓는 기록 · 2026.09.10</p><h2 id="ledger-title">첫 시작부터, 함께 집중하는 루프까지.</h2></div><a href="#quest-ideas">지금 논의 중인 퀘스트 후보 ↓</a></div>
-        <p class="ledger-intro">한 편의 이야기를 한 단계씩 정해요. 확정한 방향과 아직 쓰지 않은 장면을 구분해 두었어요. 아래 단계는 이야기 작성 순서이지, 앱의 의무 온보딩 순서는 아니에요. 2026.09.11부터 <a href="story-loop-plan.md">6단계 계획</a>에 Plannotator 피드백 4개를 반영했어요. 집중·성장·꾸미기의 최신 기준은 <a href="growth-decoration-revision-20260911.md">04·07 반영 메모</a>를 따라요.</p>
+        <p class="ledger-intro">아래는 초대 경로를 처음 정할 때의 기록이에요. 초대 없는 두 경로의 최신 확정 흐름은 유저 저니에서, 출발 전 도입 후보는 위에서 읽어요. 확정한 방향과 아직 쓰지 않은 장면을 구분해 두었어요. 아래 단계는 이야기 작성 순서이지, 앱의 의무 온보딩 순서는 아니에요. 2026.09.11부터 <a href="story-loop-plan.md">6단계 계획</a>에 Plannotator 피드백 4개를 반영했어요. 집중·성장·꾸미기의 최신 기준은 <a href="growth-decoration-revision-20260911.md">04·07 반영 메모</a>를 따라요.</p>
         <ol class="ledger-steps">
           <li data-story-step="invite" data-state="confirmed"><span class="ledger-number">01</span><div><span class="ledger-state">방향 확정</span><h3>우리 섬에서 같이하자는 초대</h3><p>친구가 “우리 섬에서 같이하자”고 초대한다. 특정 퀘스트 가입으로 한정하지 않는다. 아래는 확정된 초대 경로다. 초대 없이 공개 섬에 합류하거나 새 섬을 만드는 이야기도 함께 쓴다.</p></div></li>
           <li data-story-step="letter" data-state="confirmed"><span class="ledger-number">02</span><div><span class="ledger-state">방향 확정</span><h3>기러기가 가져온 초대장</h3><p>기러기가 전달한 편지를 펼치면 섬의 모습이 담겨 있다. 지도부터 시작하지 않는다. 우편 장소는 새 건물 없이 우체통으로 통일한다.</p></div></li>

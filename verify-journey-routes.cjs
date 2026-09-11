@@ -45,6 +45,17 @@ const check = (value, note) => {assert.ok(value, note); checks++;};
       check(await page.locator('#journey-route').getAttribute('data-active-route') === 'public', '뒤로가기 공개 섬 경로');
       await page.goForward();
       check(await page.locator('#journey-route').getAttribute('data-active-route') === 'create', '앞으로가기 새 섬 경로');
+      for(const key of ['public','create']){
+        await page.goto(base+'?tab=journey&route='+key+'#journey-route');
+        check((await page.locator('.route-reading-note').textContent())===routes[key].readingNote,'경로별 확정 안내 '+key);
+        check(routes[key].steps.every(step=>step.state.includes('확정')),'무초대 장면 확정 상태 '+key);
+      }
+      const pub=routes.public.steps.find(step=>step.id==='introduction');
+      check(pub.boundary.includes('가입 전 비공개')&&pub.boundary.includes('공개 범위·권한'),'가입 전후 개인 정보 보호');
+      const create=routes.create.steps.find(step=>step.id==='create');
+      check(create.action.includes('원할 때만')&&create.action.includes('생성 전에'),'선택 소개·생성 전 공개 범위');
+      check(create.next.includes('생성 성공')&&create.next.includes('방금 이름 붙인 섬'),'B1에서 B2의 같은 섬으로');
+      check(routes.create.steps.find(step=>step.id==='arrival').boundary.includes('우체통 건설 전'),'우체통 전 초기 초대');
       await page.goto(base+'?tab=journey&route=invite#route-invite-join');
       await page.locator('#route-invite-join summary').click();
       const joinText = await page.locator('#route-invite-join').textContent();

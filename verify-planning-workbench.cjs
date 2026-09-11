@@ -18,7 +18,8 @@ const check=(value,note)=>{assert.ok(value,note);checks++;};
    check(!(await page.locator('#growth-view').isVisible()),'성장은 기본 저니에서 분리');
    check(await page.locator('#journey-view #island-growth').count()===0,'성장 내용이 저니에 중첩되지 않음');
    check(await page.locator('[data-start-path]').count()===3,'초대/공개 섬/새 섬 경로');
-   check(await page.locator('[data-start-path][data-state=proposal]').count()===2,'무초대 장면은 미확정');
+   check(await page.locator('[data-start-path][data-state=confirmed]').count()===3,'세 시작 경로의 방향과 무초대 흐름 확정');
+   check(!(await page.locator('.journey-entry').textContent()).includes('초안'),'첫 진입 요약의 이전 초안 표시 제거');
    check((await page.locator('#no-invite-start').textContent()).includes('해금 뒤'),'첫 섬과 이후 이동 해금 구분');
    check(await page.locator('[data-growth-step]').count()===5,'성장 다섯 단계');
    check(await page.locator('[data-growth-branch]').count()===2,'전망대/우체통 선택 순서');
@@ -42,7 +43,7 @@ const check=(value,note)=>{assert.ok(value,note);checks++;};
     check(await page.locator('[role=tab] strong').evaluateAll(es=>es.every(e=>{const range=document.createRange();range.selectNodeContents(e);return range.getClientRects().length===1;})),'탭 제목 줄바꿈 없음');
    }
    const entries=await page.evaluate(()=>GachisupDecisionLog);
-   check(entries.length===21,'결정 로그 21건');
+   check(entries.length===26,'결정 로그 26건');
    for(const state of ['confirmed','discussing','superseded']){
     await page.locator('[data-log-filter='+state+']').click();
     check(await page.locator('.decision-entry:visible').count()===entries.filter(e=>e.status===state).length,state+' 필터');
@@ -70,6 +71,30 @@ const check=(value,note)=>{assert.ok(value,note);checks++;};
    await page.locator('#tab-story').click();await page.evaluate(()=>window.scrollTo(0,4000));
    await page.locator('#tab-wrapping').click();
    check(await page.locator('#wrapping').evaluate(e=>{const box=e.getBoundingClientRect();return box.top>=0&&box.bottom<=innerHeight;}),'긴 문서에서 탭 전환하면 새 문서 상단 표시');
+   await page.goto(base+'?tab=story#prologue-scenarios');
+   check(await page.locator('#overview-view').isVisible(),'도입 후보 바로가기는 이야기 탭');
+   check(await page.locator('[data-prologue][data-state=proposal]').count()===3,'도입 후보 세 개는 미확정');
+   const options=await page.evaluate(()=>GachisupPrologues);
+   const prologueMD=fs.readFileSync('prologue-scenarios.md','utf8');
+   check(new Set(options.map(o=>o.id)).size===3,'도입 후보 ID 고유');
+   for(const option of options){
+    const card=page.locator('[data-prologue='+option.id+']');
+    await card.locator('summary').first().click();
+    check(await card.locator('li:visible').count()===4,'도입 장면 네 개 '+option.id);
+    check((await card.textContent()).includes(option.whyRaft),'뗏목 탑승 이유 표시');
+    for(const text of [...option.scenes,option.title,option.whyRaft,option.together,option.invite,option.discover,option.tradeoff,option.production,option.question])check(prologueMD.includes(text),'도입 웹/원문 동일 '+option.id);
+    check(await card.locator('summary').evaluateAll(es=>es.every(e=>e.getBoundingClientRect().height>=44)),'도입 펼침 터치 영역');
+   }
+   check(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),width+' 펼친 도입 가로 넘침 없음');
+   for(const id of ['no-invite-story-approved','prejoin-information','first-island-setup','first-island-invite'])check(entries.find(e=>e.id===id)?.status==='confirmed','최종 승인 로그 '+id);
+   check(entries.find(e=>e.id==='prologue-candidates')?.status==='discussing','새 도입은 평가 전');
+   check(entries.find(e=>e.id==='first-map')?.status==='superseded','지도 제안 이전 기록 보존');
+   const features=await page.evaluate(()=>GachisupFeatureInventory.features);
+   for(const id of ['B01','B03','B05','B08','B09','B10']){
+    const feature=features.find(f=>f.id===id);
+    check(feature.decision==='chosen'&&feature.proof==='pending','문서 확정과 구현 증거 분리 '+id);
+   }
+   if([1440,375].includes(width))await page.screenshot({path:'/tmp/gachisup-prologues-'+width+'.png'});
    check(await page.evaluate(()=>JSON.stringify({...localStorage}))===storage,'제품 localStorage 미변경');
    if([1440,768,414,375,320].includes(width)){
     await page.goto(base);await page.screenshot({path:'/tmp/gachisup-planning-'+width+'.png'});
