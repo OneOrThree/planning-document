@@ -1,5 +1,42 @@
 # 컷신 이미지 생성 프롬프트 기록
 
+## 책을 보는 전신 자세 · 세션 이미지 생성
+
+sprite-gen `prepare`에서 색상 인자 오류가 발생해 사용자 지시대로 복구·디버깅하지 않았다. 아래 세션 내장 이미지 생성으로 한 장씩 만들었다. 최초 투명 요청은 배경 무늬가 픽셀로 들어가 미채택. 단색 녹색판을 다시 생성했고, 기존에 동작하던 `cutout` 유틸리티만 사용해 실제 알파 PNG로 분리했다. 이 두 장은 아틀라스 파이프라인 결과가 아니다. 시선·얼굴·몸의 원본은 Figma 검정 고양이이며 파생 자세로 구분한다.
+
+### prompt-look-mid-v1
+
+```text
+Use case: identity-preserve. Asset type: one full-body animation pose on a genuinely TRANSPARENT alpha background. Image 1 is the EDIT TARGET and exact current production cat; Image 2 is the original Figma identity reference. Make ONE subtle intermediate pose for the cat gently looking at a book near its front paws on screen-right. Change only the gaze and a very slight downward head inclination (about 5 degrees). Keep the body, planted paws, tail, ears, head width, all outlines, fur colors, eye shapes, proportions, stance and three-quarter facing EXACTLY as image 1. The eye pupils shift down-right toward the floor, visibly more downward than the original, but eyes stay fully open. No book, prop, scene, floor, background color, checkerboard, ground shadow, text or markings. One cat only. Full figure comfortably inside a square canvas. The cat must have real transparent pixels outside its silhouette; never a painted transparency pattern. This is an in-between texture for the same character, not a redesign or a different cat.
+```
+
+### prompt-look-mid-key-v1
+
+```text
+Use case: background-extraction. Image 1 is the edit target. Preserve the exact cat, every pixel of its face and body, down-right eye gaze, outlines, head position, stance, scale and canvas size. Replace ONLY the gray/white checkerboard outside the cat with perfectly uniform solid vivid GREEN #00FF00, all the way to every canvas edge. This is a chroma-key production plate, deliberately OPAQUE green, NOT a transparent image. No checkerboard, no gray, no white backdrop, no texture or pattern, no shadow. The interior fur must remain the same charcoal color, no green tint or reflection. One cat on one perfectly flat pure green background.
+```
+
+### prompt-look-reach-v1
+
+```text
+Use case: identity-preserve. Image 1 is the exact edit target: the production cat looking down-right. Keep its exact head, eyes looking down, face proportions, fur colors, outline weight, ears, tail, hind paws, body size, canvas framing and full-body position. Change ONLY the nearest FRONT PAW (the rightmost visible paw) into a gentle reaching pose: bend its elbow and extend the paw diagonally DOWN and to SCREEN RIGHT, a short reach toward an object near the floor. Paw tip should be about half a paw-height above the original foot baseline and only one paw-width beyond the body. Keep all other paws planted; preserve quadruped anatomy, do not add arms. No book, no prop. Retain the perfectly FLAT OPAQUE pure green #00FF00 background. No transparency grid, checkerboard, shadows, text, or outline changes. This is a separate animation pose of the exact same cat, not a new character.
+```
+
+
+## prompt-raft-cloth-v2
+
+초기 v1은 체크무늬가 그려진 결과여서 사용하지 않는다. v2는 녹색 배경으로 생성한 뒤 sprite-gen의 cutout으로 분리한다.
+
+```text
+Use case: precise-object-edit. Edit the attached tarp asset. Keep its exact overall silhouette, position and isometric perspective. Replace the entire checkerboard and all outer shadows with perfectly uniform pure bright green #00FF00. No checkerboard anywhere. Cloth itself remains opaque muted blue-gray. Simplify the cloth surface to clean elegant 2D cel shading: one base color and two flat shadow tones, just 6-8 clear broad fold contours. REMOVE watercolor brush strokes, noisy texture, realistic fabric, tiny highlight streaks. Crisp warm-brown illustration contours matching a cozy mobile cat-game prop. Do not add wood, raft, ropes, poles, objects, or characters. Same composition and generous margins. The green is a temporary extraction background, and must not appear inside the cloth.
+```
+
+## prompt-coastal-home-pier-v3
+
+```text
+Use case: precise-object-edit. Image 1 is the exact EDIT TARGET. Preserve this same portrait cottage / broad sand / turquoise water background unchanged EXCEPT the wooden jetty near 55% height. Make that jetty shorter horizontally so its outer right end is at approximately 65% of image width instead of 80%. Keep its land connection and vertical location exactly where they are. The deck remains a charming shallow diamond with four short rope-topped timber posts and the same warm outlines. The inner left edge adjoining sand stays near 37% width; far right post should be near 65% width (about 615 px if width is 941). This leaves more empty water to the right for a raft to sail around the jetty without being forced off camera. Replace the vacated deck area with perfectly matching turquoise water, broad flat calm wave colors. Do NOT change cottage, wide porch, sandy path, shoreline rocks, trees, horizon, islands, sun, clouds or palette. No cats, people, rafts, boats, objects, text or UI added. Highest-quality clean low-saturation 2D game illustration, crisp warm brown outlines, no watercolor or photorealism. Maintain exact portrait dimensions and coherent perspective.
+```
+
 ## black-paddle-prompt-v1
 
 ```text

@@ -19,7 +19,7 @@
 
 ## 현재 제공물
 
-`cutscenes.html`에서 9편을 선택하고 실시간 연출과 MP4 초안을 볼 수 있다. 출력 버전 선택으로 `draft-v02`와 `draft-v01`을 비교한다. 각각 9개 무음 MP4·포스터와 소스·에셋 지문을 가진 `manifest.json`이 있다. 24초·24fps·576프레임의 H.264/yuv420p/faststart이며 v01은 720 × 1280, v02는 1080 × 1920이다. v02 이후 수정한 노 잡기·출항 경로는 실시간 연출에 먼저 반영되어 있다. 완성형 리깅이나 사용자 선택된 최종 시나리오라는 의미는 아니다.
+`cutscenes.html`에서 9편을 선택하고 실시간 연출과 MP4 초안을 볼 수 있다. `draft-v03`, `draft-v02`, `draft-v01` 세 버전을 비교한다. 각각 9개 무음 MP4·포스터와 소스·에셋 지문을 가진 `manifest.json`이 있다. 24초·24fps·576프레임의 H.264/yuv420p/faststart이며 v01은 720 × 1280, v02·v03은 1080 × 1920이다. v03은 검토 기록 22번까지의 상태로, 새 시선·짧은 부두·이야기별 승선 준비·그림책 전환·자막 개선을 포함한다. 그 이후 가방·밧줄의 앞뒤 겹침 수정은 실시간 연출에 먼저 반영되어 있다. 완성형 리깅이나 사용자 선택된 최종 시나리오라는 의미는 아니다.
 
 실시간 Canvas는 출력 후 수정 사항을 먼저 보여줄 수 있다. 이때 MP4를 같은 최신본이라고 표시하지 않는다. 다음 버전은 별도 폴더로 출력한다.
 
@@ -47,7 +47,15 @@ npm test
 npm run build
 ```
 
-`prepare`, `walk`, `boarding`, `settle`, `depart`, `sea` 구간을 검토할 수 있다. 검토 자료는 `output/cutscenes/reviews/<label>/`에 남는다. 3장 표본은 빠른 장면 점검일 뿐 전체 동작 통과 판정이 아니다. 걷기·눈·승선·소품 연결은 연속 프레임과 실제 재생도 확인한다.
+`intro`, `transition`, `prepare`, `walk`, `boarding`, `settle`, `depart`, `sea` 구간을 검토할 수 있다. 검토 자료는 `output/cutscenes/reviews/<label>/`에 남는다. 3장 표본은 빠른 장면 점검일 뿐 전체 동작 통과 판정이 아니다. 걷기·눈·승선·소품 연결은 연속 프레임과 실제 재생도 확인한다.
+
+더 촘촘한 확대 검토는 아래 명령을 사용한다. `--samples`는 2~24개, `--crop`은 논리 화면의 180~720px이다. 확대 중심은 캐릭터의 발 위치를 따라가므로 화면 전체의 동선 평가는 개요 캡처와 함께 해야 한다. `boarding-link`, `book-lift`, `walk-link`, `paddle-loop` 구간도 제공한다. 파일은 `output/cutscenes/details/<label>/`에 저장하며 기존 이름을 덮어쓰지 않는다.
+
+```sh
+node scripts/review-cutscene-detail.cjs --label=boarding-review --phase=boarding-link --from=0 --to=1 --samples=12 --crop=280
+```
+
+책을 보는 두 자세는 sprite-gen 준비 단계 오류 뒤 사용자 지시대로 세션 이미지 생성으로 전환한 결과다. `poses-black/`의 원본 크기와 발 등록 좌표를 코드에 명시한다. 작동하던 `cutout`만 알파 분리에 썼으며, 이 개별 PNG를 아틀라스 추출물이라고 부르지 않는다. 생성 모델이 그린 체크무늬는 투명도가 아니므로 단색 검사판에서 실제 알파를 확인한다.
 
 ## 공개·이식 경계
 

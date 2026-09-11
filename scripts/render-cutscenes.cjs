@@ -15,6 +15,8 @@ async function main(){
   if(!Number.isInteger(height)||width%2||height%2||width<360||width>2160)throw Error('짝수 9:16 해상도가 필요합니다.');
   if(!/^[a-z0-9-]+$/.test(version))throw Error('안전한 버전 이름이 필요합니다.');
   const out=path.join(root,'output/cutscenes/videos',version);
+  if(fs.existsSync(path.join(out,'manifest.json'))&&!args.includes('--replace'))throw Error('기존 출력 버전 보호: 새 --version을 사용하세요.');
+  if(selected&&fs.existsSync(path.join(out,'manifest.json')))throw Error('단일 영상으로 기존 배치 명세를 덮어쓸 수 없습니다. 새 --version을 사용하세요.');
   fs.mkdirSync(out,{recursive:true});
   const snapshot=fs.mkdtempSync(path.join(os.tmpdir(),'gachisup-film-snapshot-'));
   const hash=crypto.createHash('sha256');
