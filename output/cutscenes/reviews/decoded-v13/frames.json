@@ -1,0 +1,172 @@
+{
+  "version": "draft-v13",
+  "fingerprint": "4ab9ca199544016ba31dbb210399da2051b0e5618fd2c9384c8ce0f6829b0a15",
+  "kind": "decoded-mp4-samples",
+  "status": "awaiting-visual-review",
+  "note": "실제 영상을 디코딩한 표본이다. 생성·규격 검사 자체는 시각 검토 횟수가 아니다.",
+  "errors": [],
+  "films": [
+    {
+      "id": "new-morning-emotion",
+      "sha256": "1abef5999d3db290e1fa0d83f40ceedab171baafab2634d7bfac899819dc34b5",
+      "times": [
+        0.8,
+        2.5,
+        4.2,
+        6.2,
+        8.5,
+        10.5,
+        12.5,
+        14.2,
+        16,
+        18,
+        20.5,
+        23.5
+      ]
+    },
+    {
+      "id": "new-morning-journey",
+      "sha256": "a3f630cbf1af248e211d0e165a5dbb5ef9f21c7dfef824bb97ea03f98d8ade4b",
+      "times": [
+        0.8,
+        2.5,
+        4.2,
+        6.2,
+        8.5,
+        10.5,
+        12.5,
+        14.2,
+        16,
+        18,
+        20.5,
+        23.5
+      ]
+    },
+    {
+      "id": "new-morning-storybook",
+      "sha256": "dde2aed6d98979777493653bf695764a91f418e5792168749afa7d2e17ff3d6c",
+      "times": [
+        0.8,
+        2.5,
+        4.2,
+        6.2,
+        8.5,
+        10.5,
+        12.5,
+        14.2,
+        16,
+        18,
+        20.5,
+        23.5
+      ]
+    },
+    {
+      "id": "folded-promise-emotion",
+      "sha256": "41ab59dcf8b452229fd59e55c60fbaa3f1d64f10dca4d28d4c02611849d50755",
+      "times": [
+        0.8,
+        2.5,
+        4.2,
+        6.2,
+        8.5,
+        10.5,
+        12.5,
+        14.2,
+        16,
+        18,
+        20.5,
+        23.5
+      ]
+    },
+    {
+      "id": "folded-promise-journey",
+      "sha256": "67522c06fb0a9eb4e997c0e1650b56f78f085905e69e64cb919b0d9940ad8548",
+      "times": [
+        0.8,
+        2.5,
+        4.2,
+        6.2,
+        8.5,
+        10.5,
+        12.5,
+        14.2,
+        16,
+        18,
+        20.5,
+        23.5
+      ]
+    },
+    {
+      "id": "folded-promise-storybook",
+      "sha256": "ed4a7fcb980247b79102c6ef82503192e7a37f405860307ec6f541808439fb49",
+      "times": [
+        0.8,
+        2.5,
+        4.2,
+        6.2,
+        8.5,
+        10.5,
+        12.5,
+        14.2,
+        16,
+        18,
+        20.5,
+        23.5
+      ]
+    },
+    {
+      "id": "unfinished-pier-emotion",
+      "sha256": "de54e8a0d18ed8bc33660604b021bdf33a10c1bebe5543b0ceb1fcab5e65806e",
+      "times": [
+        0.8,
+        2.5,
+        4.2,
+        6.2,
+        8.5,
+        10.5,
+        12.5,
+        14.2,
+        16,
+        18,
+        20.5,
+        23.5
+      ]
+    },
+    {
+      "id": "unfinished-pier-journey",
+      "sha256": "4565dc6c33f32d8ebe6fe055c31cce43a326c12f18ee34952a5e89fe3f9468a3",
+      "times": [
+        0.8,
+        2.5,
+        4.2,
+        6.2,
+        8.5,
+        10.5,
+        12.5,
+        14.2,
+        16,
+        18,
+        20.5,
+        23.5
+      ]
+    },
+    {
+      "id": "unfinished-pier-storybook",
+      "sha256": "39988f3e425fe26908acfb7ba4dda7bb7c1b665d6e29466d442426562ecaf6f0",
+      "times": [
+        0.8,
+        2.5,
+        4.2,
+        6.2,
+        8.5,
+        10.5,
+        12.5,
+        14.2,
+        16,
+        18,
+        20.5,
+        23.5
+      ]
+    }
+  ]
+}

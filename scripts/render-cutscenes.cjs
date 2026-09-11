@@ -7,6 +7,7 @@ const {spawn,spawnSync}=require('node:child_process');
 const {once}=require('node:events');
 const {chromium}=require('playwright');
 const {startServer}=require('./serve.cjs');
+const videoProfile=require('./cutscene-video-profile.cjs');
 const root=path.resolve(__dirname,'..');
 const sources=['cutscenes.html','prologue-scenarios-data.js','cutscene-settings.js','cutscene-production.js','cutscene-renderer.js','cutscene-sprites.js','cutscene-fur-palette.js','cutscene-poses.js','cutscene-paddle-rig.js','cutscene-walk-rig.js','cutscene-rig.js','cutscene-cinema.js','cutscene-review-log.js','cutscene-export-catalog.js','cutscene-studio.js'];
 async function main(){
@@ -20,6 +21,7 @@ async function main(){
   fs.mkdirSync(out,{recursive:true});
   const snapshot=fs.mkdtempSync(path.join(os.tmpdir(),'gachisup-film-snapshot-'));
   const hash=crypto.createHash('sha256');
+  hash.update('encoder-profile').update(JSON.stringify(videoProfile));
   for(const file of sources){const bytes=fs.readFileSync(path.join(root,file));hash.update(file).update(bytes);fs.writeFileSync(path.join(snapshot,file),bytes);}
   for(const dir of ['assets/cutscenes','assets/figma-cats'])fs.cpSync(path.join(root,dir),path.join(snapshot,dir),{recursive:true});
   function hashAssets(dir){for(const item of fs.readdirSync(dir,{withFileTypes:true}).sort((a,b)=>a.name.localeCompare(b.name))){const file=path.join(dir,item.name);if(item.isDirectory())hashAssets(file);else hash.update(path.relative(snapshot,file)).update(fs.readFileSync(file));}}
@@ -37,29 +39,39 @@ async function main(){
     for(const film of films.filter(x=>!selected||x.id===selected)){
       const dest=path.join(out,film.id+'.mp4'),partial=path.join(out,film.id+'.partial.mp4');
       if(fs.existsSync(dest)&&!args.includes('--replace'))throw Error('기존 영상 보호: 새 --version을 쓰거나 --replace를 명시하세요.');
-      ff=spawn('ffmpeg',['-hide_banner','-loglevel','error','-y','-f','image2pipe','-vcodec','mjpeg','-framerate',String(fps),'-i','pipe:0','-an','-c:v','libx264','-preset','medium','-crf','18','-pix_fmt','yuv420p','-movflags','+faststart',partial]);
+      ff=spawn('ffmpeg',['-hide_banner','-loglevel','error','-y','-f','image2pipe','-vcodec','mjpeg','-framerate',String(fps),'-i','pipe:0','-an',...videoProfile.args,'-c:v','libx264','-preset','medium','-crf','18','-pix_fmt','yuv420p','-movflags','+faststart',partial]);
       let ffError='';ff.stderr.on('data',d=>{ffError+=d;});
       const completed=new Promise((resolve,reject)=>{ff.once('error',reject);ff.once('close',code=>code?reject(Error(ffError||'ffmpeg '+code)):resolve());});
       completed.catch(()=>{});ff.stdin.on('error',()=>{});
       const frameCount=Math.round(film.duration*fps);
+      const colorReference=[];
       for(let frame=0;frame<frameCount;frame++){
         if(ff.exitCode!==null)throw Error(ffError||'영상 인코더가 중단되었습니다.');
-        const jpeg=await page.evaluate(({film,t})=>{const c=document.getElementById('film');GachisupCinema.render(c,film,t);return c.toDataURL('image/jpeg',.98).split(',')[1];},{film,t:frame/fps});
-        if(!ff.stdin.write(Buffer.from(jpeg,'base64')))await Promise.race([once(ff.stdin,'drain'),completed.then(()=>{throw Error('인코더 조기 종료');})]);
+        const result=await page.evaluate(({film,t,measure})=>{
+          const c=document.getElementById('film');GachisupCinema.render(c,film,t);const points=[];
+          if(measure){const ctx=c.getContext('2d');for(let row=0;row<12;row++)for(let col=0;col<7;col++){
+            const x=Math.round((col+.5)/7*c.width),y=Math.round((row+.5)/12*c.height),data=ctx.getImageData(x-2,y-2,5,5).data,rgb=[0,0,0];
+            for(let i=0;i<data.length;i+=4)for(let ch=0;ch<3;ch++)rgb[ch]+=data[i+ch]/25;points.push({x,y,rgb});
+          }}
+          return{jpeg:c.toDataURL('image/jpeg',.98).split(',')[1],points};
+        },{film,t:frame/fps,measure:[60,384,564].includes(frame)});
+        if(result.points.length)colorReference.push({time:frame/fps,points:result.points});
+        if(!ff.stdin.write(Buffer.from(result.jpeg,'base64')))await Promise.race([once(ff.stdin,'drain'),completed.then(()=>{throw Error('인코더 조기 종료');})]);
         if(frame%144===0)console.log(film.id+' · '+frame+'/'+frameCount);
       }
       ff.stdin.end();await completed;ff=null;
       if(errors.length)throw Error(errors.join('\n'));
-      const probe=spawnSync('ffprobe',['-v','error','-count_frames','-show_entries','stream=codec_name,width,height,nb_read_frames,r_frame_rate,duration','-of','json',partial],{encoding:'utf8'});
+      const probe=spawnSync('ffprobe',['-v','error','-count_frames','-show_entries','stream=codec_name,width,height,nb_read_frames,r_frame_rate,duration,pix_fmt,color_range,color_space,color_transfer,color_primaries','-of','json',partial],{encoding:'utf8'});
       if(probe.status!==0)throw Error(probe.stderr);
       const stream=JSON.parse(probe.stdout).streams[0];
       if(Number(stream.nb_read_frames)!==frameCount||stream.width!==width||stream.height!==height||Math.abs(Number(stream.duration)-film.duration)>.05)throw Error('출력 영상 규격이 일치하지 않습니다.');
+      for(const [key,value]of Object.entries(videoProfile.expected))if(stream[key]!==value)throw Error('출력 색 정보 불일치: '+key);
       fs.renameSync(partial,dest);
       const poster=await page.evaluate(({film})=>{const c=document.getElementById('film');GachisupCinema.render(c,film,film.timing.boardingEnd+.5);return c.toDataURL('image/jpeg',.94).split(',')[1];},{film});
       fs.writeFileSync(path.join(out,film.id+'.jpg'),Buffer.from(poster,'base64'));
-      const record={id:film.id,title:film.title,direction:film.directionTitle,status:'draft',path:path.relative(root,dest),poster:path.relative(root,path.join(out,film.id+'.jpg')),bytes:fs.statSync(dest).size,sha256:crypto.createHash('sha256').update(fs.readFileSync(dest)).digest('hex'),width,height,fps,duration:film.duration,frames:frameCount};
+      const record={id:film.id,title:film.title,direction:film.directionTitle,status:'draft',path:path.relative(root,dest),poster:path.relative(root,path.join(out,film.id+'.jpg')),bytes:fs.statSync(dest).size,sha256:crypto.createHash('sha256').update(fs.readFileSync(dest)).digest('hex'),width,height,fps,duration:film.duration,frames:frameCount,colorReference};
       records.push(record);
-      fs.writeFileSync(path.join(out,'manifest.json'),JSON.stringify({version,createdAt:new Date().toISOString(),fingerprint,reviewTarget:30,reviewNote:'출력과 프레임 수 검증은 시각 검토 완료 횟수가 아닙니다.',films:records},null,2)+'\n');
+      fs.writeFileSync(path.join(out,'manifest.json'),JSON.stringify({version,createdAt:new Date().toISOString(),fingerprint,videoProfile,reviewTarget:30,reviewNote:'출력과 프레임 수 검증은 시각 검토 완료 횟수가 아닙니다.',films:records},null,2)+'\n');
       console.log('완료: '+record.path+' · '+(record.bytes/1048576).toFixed(1)+' MB');
     }
   }finally{

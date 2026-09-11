@@ -110,10 +110,45 @@ const root=path.resolve(__dirname,'..');
       return{samples,waiting,maxWaitingDrift};
     });
     assert.ok(pickupCheck.waiting>0);assert.ok(pickupCheck.maxWaitingDrift<1e-8);
+    const paddleWaterCheck=await page.evaluate(()=>{
+      let maxContactError=0,minFeather=1,maxImmersion=0;const warnings=[];
+      for(let i=0;i<=1000;i++){
+        const cycle=i/1000,m=CutscenePaddleRig.motionAt(cycle*2.8),angle=-1.02+m.stroke*.39-m.lift*.64,pivot={x:42,y:-38};
+        const w=CutsceneActors.paddleWaterAt(cycle,pivot,angle,1),rest=CutsceneActors.paddleWaterAt(cycle,pivot,angle,0);
+        if(![w.wet,w.feather,w.immersion,w.contact.x,w.contact.y].every(Number.isFinite))warnings.push('비정상 수면 값');
+        if(cycle>=.64&&w.immersion!==0)warnings.push('복귀 중 입수');
+        if(rest.immersion!==0||rest.feather!==1)warnings.push('대기 노에 수면 효과');
+        if(w.immersion>0&&w.surfaceY<=pivot.y+50)warnings.push('수면이 손잡이에 접근');
+        const dx=w.contact.x-pivot.x,dy=w.contact.y-pivot.y;
+        maxContactError=Math.max(maxContactError,Math.abs(dx*Math.cos(angle)+dy*Math.sin(angle)));
+        minFeather=Math.min(minFeather,w.feather);maxImmersion=Math.max(maxImmersion,w.immersion);
+      }
+      return{samples:1001,maxContactError,minFeather,maxImmersion,warnings,note:'노 축과 입수 접점·복귀 분리만 검사. 물리 시뮬레이션이나 시각 승인이 아님.'};
+    });
+    assert.deepEqual(paddleWaterCheck.warnings,[]);assert.ok(paddleWaterCheck.maxContactError<1e-8);
+    assert.ok(paddleWaterCheck.minFeather>=.239&&paddleWaterCheck.minFeather<.25);assert.equal(paddleWaterCheck.maxImmersion,16);
+    const coastCameraCheck=await page.evaluate(()=>{
+      const c=document.createElement('canvas');c.width=72;c.height=128;const films=[];
+      for(const f of CutsceneProduction.films){
+        let minRightMargin=720,maxCameraStep=0,previous=null;const warnings=[];
+        for(let i=0;i<=240;i++){
+          const t=f.timing.departureStart+(24-f.timing.departureStart)*i/240,m=GachisupCinema.render(c,f,t),cam=m.camera;
+          const tipX=360+(m.seat.paddle.worldTip.x-cam.x)*cam.z;
+          minRightMargin=Math.min(minRightMargin,720-tipX);
+          if(cam.x-360/cam.z<-.001||cam.x+360/cam.z>CutsceneActors.coastWidth+.001)warnings.push('배경 가로 범위 밖');
+          if(cam.y-640/cam.z<-.001||cam.y+640/cam.z>1280.001)warnings.push('배경 세로 범위 밖');
+          if(previous)maxCameraStep=Math.max(maxCameraStep,Math.hypot(cam.x-previous.x,cam.y-previous.y));previous=cam;
+        }
+        films.push({id:f.id,samples:241,minRightMargin,maxCameraStep,warnings});
+      }
+      return{worldWidth:CutsceneActors.coastWidth,films,note:'입수 기준점의 화면 여유와 카메라 범위 검사. 원화의 부두·발 접촉은 확대 캡처로 별도 확인.'};
+    });
+    assert.equal(coastCameraCheck.worldWidth,960);
+    for(const f of coastCameraCheck.films){assert.deepEqual(f.warnings,[]);assert.ok(f.minRightMargin>16,f.id+' 노 끝이 화면 가장자리에 너무 가깝습니다.');assert.ok(f.maxCameraStep<8,f.id+' 출항 카메라가 튑니다.');}
     const pathCheck=await page.evaluate(()=>CutsceneProduction.films.map(f=>{
       const start=GachisupCinema.walkPathAt(f,-1),end=GachisupCinema.walkPathAt(f,10000);
       const expectedStart=f.directionId==='journey'?(f.storyIndex===2?{x:182,y:520}:{x:112,y:423}):f.directionId==='emotion'?{x:180,y:606}:{x:117,y:619};
-      const expectedEnd=f.directionId==='journey'?{x:407,y:714}:{x:312,y:581};
+      const expectedEnd=f.directionId==='journey'?{x:407,y:714}:{x:284,y:581};
       const points=Array.from({length:701},(_,i)=>GachisupCinema.walkPathAt(f,i));
       return{id:f.id,start,end,expectedStart,expectedEnd,continuous:points.slice(1).every((p,i)=>Math.hypot(p.x-points[i].x,p.y-points[i].y)<=1.000001),localWalkEnabled:f.tuning.walkRig===true};
     }));
@@ -172,7 +207,7 @@ const root=path.resolve(__dirname,'..');
     await page.waitForFunction(()=>[...document.images].every(i=>i.complete&&i.naturalWidth>0));
     assert.equal(await page.locator('[data-cat="white"] .body').getAttribute('src'),'assets/figma-cats/white-standing-generated.png');
     assert.deepEqual(errors,[]);
-    const report={result:'PASS',films:9,packingTimelineSamples:result.packingSamples,settlingTimelineSamples:result.settlingSamples,backgroundRegistration:result.backgroundChecks,individualPoseContract:poseCheck,landingContract:landingCheck,paddleRigContract:paddleCheck,paddlePickupContract:pickupCheck,walkPathContract:pathCheck,walkPlantContract:walkPlantCheck,walkBlinkContract:walkBlinkCheck,exportedVersion,exportedPlayback:playback,catBodies:6,range:true,errors};
+    const report={result:'PASS',films:9,packingTimelineSamples:result.packingSamples,settlingTimelineSamples:result.settlingSamples,backgroundRegistration:result.backgroundChecks,individualPoseContract:poseCheck,landingContract:landingCheck,paddleRigContract:paddleCheck,paddlePickupContract:pickupCheck,paddleWaterContract:paddleWaterCheck,coastCameraContract:coastCameraCheck,walkPathContract:pathCheck,walkPlantContract:walkPlantCheck,walkBlinkContract:walkBlinkCheck,exportedVersion,exportedPlayback:playback,catBodies:6,range:true,errors};
     fs.mkdirSync(path.join(root,'output/cutscenes/qa'),{recursive:true});
     fs.writeFileSync(path.join(root,'output/cutscenes/qa/browser-check.json'),JSON.stringify(report,null,2)+'\n');
     console.log(JSON.stringify(report,null,2));

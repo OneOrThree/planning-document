@@ -1,0 +1,327 @@
+{
+  "label": "mp4-color-profiles-v1",
+  "profiles": [
+    {
+      "id": "legacy",
+      "title": "기존 인코딩",
+      "args": []
+    },
+    {
+      "id": "limited-srgb",
+      "title": "709 행렬 · sRGB",
+      "args": [
+        "-vf",
+        "scale=in_range=pc:out_range=tv:in_color_matrix=bt601:out_color_matrix=bt709",
+        "-color_range",
+        "tv",
+        "-colorspace",
+        "bt709",
+        "-color_primaries",
+        "bt709",
+        "-color_trc",
+        "iec61966-2-1"
+      ]
+    },
+    {
+      "id": "limited-709",
+      "title": "709 행렬 · 709 표기",
+      "args": [
+        "-vf",
+        "scale=in_range=pc:out_range=tv:in_color_matrix=bt601:out_color_matrix=bt709",
+        "-color_range",
+        "tv",
+        "-colorspace",
+        "bt709",
+        "-color_primaries",
+        "bt709",
+        "-color_trc",
+        "bt709"
+      ]
+    },
+    {
+      "id": "managed-709",
+      "title": "sRGB → 709 변환",
+      "args": [
+        "-vf",
+        "colorspace=ispace=bt470bg:iprimaries=bt709:itrc=srgb:irange=pc:space=bt709:primaries=bt709:trc=bt709:range=tv:format=yuv420p",
+        "-color_range",
+        "tv",
+        "-colorspace",
+        "bt709",
+        "-color_primaries",
+        "bt709",
+        "-color_trc",
+        "bt709"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "id": "new-morning-emotion",
+      "metrics": [
+        {
+          "time": 2.5,
+          "profile": "legacy",
+          "meanError": [
+            11.104274691358025,
+            5.7012326388888885,
+            5.229124228395062
+          ],
+          "meanShift": [
+            7.275389660493827,
+            1.1766145833333332,
+            -4.085061728395062
+          ],
+          "stream": {
+            "pix_fmt": "yuvj420p",
+            "color_range": "pc",
+            "color_space": "bt470bg",
+            "side_data_list": [
+              {}
+            ]
+          }
+        },
+        {
+          "time": 2.5,
+          "profile": "limited-srgb",
+          "meanError": [
+            1.831039737654321,
+            0.9437384259259259,
+            1.9349421296296296
+          ],
+          "meanShift": [
+            -1.3816145833333333,
+            0.5686033950617284,
+            0.8041049382716049
+          ],
+          "stream": {
+            "pix_fmt": "yuv420p",
+            "color_range": "tv",
+            "color_space": "bt709",
+            "side_data_list": [
+              {}
+            ]
+          }
+        },
+        {
+          "time": 2.5,
+          "profile": "limited-709",
+          "meanError": [
+            1.831039737654321,
+            0.9437384259259259,
+            1.9349421296296296
+          ],
+          "meanShift": [
+            -1.3816145833333333,
+            0.5686033950617284,
+            0.8041049382716049
+          ],
+          "stream": {
+            "pix_fmt": "yuv420p",
+            "color_range": "tv",
+            "color_space": "bt709",
+            "side_data_list": [
+              {}
+            ]
+          }
+        },
+        {
+          "time": 2.5,
+          "profile": "managed-709",
+          "meanError": [
+            10.704675925925926,
+            12.799295910493827,
+            12.38396412037037
+          ],
+          "meanShift": [
+            -10.679185956790123,
+            -12.785831404320987,
+            -12.33401813271605
+          ],
+          "stream": {
+            "pix_fmt": "yuv420p",
+            "color_range": "tv",
+            "color_space": "bt709",
+            "color_transfer": "bt709",
+            "color_primaries": "bt709"
+          }
+        },
+        {
+          "time": 16,
+          "profile": "legacy",
+          "meanError": [
+            12.155208333333333,
+            4.343869598765432,
+            9.868449074074075
+          ],
+          "meanShift": [
+            -9.750408950617285,
+            -0.10681327160493827,
+            7.872210648148148
+          ],
+          "stream": {
+            "pix_fmt": "yuvj420p",
+            "color_range": "pc",
+            "color_space": "bt470bg",
+            "side_data_list": [
+              {}
+            ]
+          }
+        },
+        {
+          "time": 16,
+          "profile": "limited-srgb",
+          "meanError": [
+            2.0853510802469137,
+            0.8711593364197531,
+            2.9475327932098767
+          ],
+          "meanShift": [
+            -1.6655632716049382,
+            0.25353202160493826,
+            -2.2783815586419753
+          ],
+          "stream": {
+            "pix_fmt": "yuv420p",
+            "color_range": "tv",
+            "color_space": "bt709",
+            "side_data_list": [
+              {}
+            ]
+          }
+        },
+        {
+          "time": 16,
+          "profile": "limited-709",
+          "meanError": [
+            2.0853510802469137,
+            0.8711593364197531,
+            2.9475327932098767
+          ],
+          "meanShift": [
+            -1.6655632716049382,
+            0.25353202160493826,
+            -2.2783815586419753
+          ],
+          "stream": {
+            "pix_fmt": "yuv420p",
+            "color_range": "tv",
+            "color_space": "bt709",
+            "side_data_list": [
+              {}
+            ]
+          }
+        },
+        {
+          "time": 16,
+          "profile": "managed-709",
+          "meanError": [
+            14.280754243827161,
+            9.616836419753087,
+            10.056643518518518
+          ],
+          "meanShift": [
+            -14.191444830246914,
+            -9.595385802469135,
+            -9.925462962962962
+          ],
+          "stream": {
+            "pix_fmt": "yuv420p",
+            "color_range": "tv",
+            "color_space": "bt709",
+            "color_transfer": "bt709",
+            "color_primaries": "bt709"
+          }
+        },
+        {
+          "time": 23.5,
+          "profile": "legacy",
+          "meanError": [
+            11.709809027777778,
+            4.761444830246914,
+            10.019911265432098
+          ],
+          "meanShift": [
+            -9.107035108024691,
+            0.28871720679012347,
+            8.007461419753087
+          ],
+          "stream": {
+            "pix_fmt": "yuvj420p",
+            "color_range": "pc",
+            "color_space": "bt470bg",
+            "side_data_list": [
+              {}
+            ]
+          }
+        },
+        {
+          "time": 23.5,
+          "profile": "limited-srgb",
+          "meanError": [
+            2.1145389660493827,
+            0.8759201388888889,
+            2.8825694444444445
+          ],
+          "meanShift": [
+            -1.688412422839506,
+            0.26394868827160495,
+            -2.1814506172839505
+          ],
+          "stream": {
+            "pix_fmt": "yuv420p",
+            "color_range": "tv",
+            "color_space": "bt709",
+            "side_data_list": [
+              {}
+            ]
+          }
+        },
+        {
+          "time": 23.5,
+          "profile": "limited-709",
+          "meanError": [
+            2.1145389660493827,
+            0.8759201388888889,
+            2.8825694444444445
+          ],
+          "meanShift": [
+            -1.688412422839506,
+            0.26394868827160495,
+            -2.1814506172839505
+          ],
+          "stream": {
+            "pix_fmt": "yuv420p",
+            "color_range": "tv",
+            "color_space": "bt709",
+            "side_data_list": [
+              {}
+            ]
+          }
+        },
+        {
+          "time": 23.5,
+          "profile": "managed-709",
+          "meanError": [
+            14.007883873456791,
+            9.501765046296295,
+            9.898832947530865
+          ],
+          "meanShift": [
+            -13.921383101851852,
+            -9.478998842592592,
+            -9.773663194444444
+          ],
+          "stream": {
+            "pix_fmt": "yuv420p",
+            "color_range": "tv",
+            "color_space": "bt709",
+            "color_transfer": "bt709",
+            "color_primaries": "bt709"
+          }
+        }
+      ]
+    }
+  ],
+  "note": "고정 장면 0.5초 인코딩 비교다. 새 완성 영상이나 검토 회차로 자동 계산하지 않는다."
+}

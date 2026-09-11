@@ -36,6 +36,9 @@
       if(version==='draft-v09')document.getElementById('export-note').textContent='아홉 번째 초안 · 1080 × 1920. 걷는 중 눈을 자연스럽게 깜빡여요. 얼굴 바탕과 눈을 분리해 색 자국을 없애고, 딛는 발 아래의 작은 그림자와 부드러운 몸 그림자로 바닥 접촉을 맞췄어요. 자세 사이의 털색은 계속 보완 중이에요.';
       if(version==='draft-v10')document.getElementById('export-note').textContent='열 번째 초안 · 1080 × 1920. 30개 파츠의 털·외곽선·동공 색을 기준 고양이에 맞춰 걷기·착지·노 젓기 사이의 붉고 밝은 변화를 줄였어요. 원본 그림·알파·등록점은 유지하며, 소품 재질과 자세 연결은 계속 개선 중이에요.';
       if(version==='draft-v11')document.getElementById('export-note').textContent='열한 번째 초안 · 1080 × 1920. 책을 보는 네 자세에도 털색을 맞췄어요. 뗏목과 같은 나뭇결의 노를 낮은 갑판에서 집고, 천 가방은 책을 넣은 뒤 덮개가 닫혀요. 같은 가방이 걷기와 갑판 정리까지 이어져요. 노의 입수와 앞발의 자세 연결은 계속 개선 중이에요.';
+      if(version==='draft-v12')document.getElementById('export-note').textContent='열두 번째 초안 · 1080 × 1920. 바다가 넓은 새 배경과 카메라로 노 전체가 화면 안에 들어와요. 부두의 발·밧줄 위치를 다시 맞췄고, 노가 물에 잠겼다가 얇게 돌아 나와요. 수면의 미세 흐름은 아직 별도 실험이에요.';
+      if(version==='draft-v13')document.getElementById('export-note').textContent='열세 번째 초안 · 1080 × 1920. v12의 넓은 해안과 노 동작을 유지하면서 MP4의 색 관리도 맞췄어요. 원화보다 붉고 노랗게 보이던 차이를 줄여 낮은 채도의 바다·모래·종이 색이 이어져요. 출력 당시의 색 표본으로 실제 MP4를 검사해요.';
+      if(!batch.videoProfile)document.getElementById('export-note').textContent+=' 색 관리 수정 전 비교본으로, 현재 원화보다 색이 진하게 보일 수 있어요.';
       if(archived)document.getElementById('export-note').textContent+=' 초기 버전 보관본입니다. 원본 MP4를 GitHub에서 내려받아 비교할 수 있어요.';
       grid.innerHTML=batch.films.map(f=>{
         const original='https://github.com/OneOrThree/planning-document/blob/main/'+f.path+'?raw=1';

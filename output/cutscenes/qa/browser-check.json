@@ -168,6 +168,83 @@
     "waiting": 171,
     "maxWaitingDrift": 0
   },
+  "paddleWaterContract": {
+    "samples": 1001,
+    "maxContactError": 2.842170943040401e-14,
+    "minFeather": 0.24,
+    "maxImmersion": 16,
+    "warnings": [],
+    "note": "노 축과 입수 접점·복귀 분리만 검사. 물리 시뮬레이션이나 시각 승인이 아님."
+  },
+  "coastCameraContract": {
+    "worldWidth": 960,
+    "films": [
+      {
+        "id": "new-morning-emotion",
+        "samples": 241,
+        "minRightMargin": 48.47738579571342,
+        "maxCameraStep": 4.34242617942067,
+        "warnings": []
+      },
+      {
+        "id": "new-morning-journey",
+        "samples": 241,
+        "minRightMargin": 46.34743362228801,
+        "maxCameraStep": 2.250975068675416,
+        "warnings": []
+      },
+      {
+        "id": "new-morning-storybook",
+        "samples": 241,
+        "minRightMargin": 51.23301295116221,
+        "maxCameraStep": 2.5879632279164753,
+        "warnings": []
+      },
+      {
+        "id": "folded-promise-emotion",
+        "samples": 241,
+        "minRightMargin": 48.47738579571342,
+        "maxCameraStep": 4.34242617942067,
+        "warnings": []
+      },
+      {
+        "id": "folded-promise-journey",
+        "samples": 241,
+        "minRightMargin": 46.34743362228801,
+        "maxCameraStep": 2.250975068675416,
+        "warnings": []
+      },
+      {
+        "id": "folded-promise-storybook",
+        "samples": 241,
+        "minRightMargin": 51.23301295116221,
+        "maxCameraStep": 2.5879632279164753,
+        "warnings": []
+      },
+      {
+        "id": "unfinished-pier-emotion",
+        "samples": 241,
+        "minRightMargin": 45.632372281147354,
+        "maxCameraStep": 4.249609590697453,
+        "warnings": []
+      },
+      {
+        "id": "unfinished-pier-journey",
+        "samples": 241,
+        "minRightMargin": 42.21792596652665,
+        "maxCameraStep": 2.1749830233477496,
+        "warnings": []
+      },
+      {
+        "id": "unfinished-pier-storybook",
+        "samples": 241,
+        "minRightMargin": 43.625807922262425,
+        "maxCameraStep": 2.7368174277209505,
+        "warnings": []
+      }
+    ],
+    "note": "입수 기준점의 화면 여유와 카메라 범위 검사. 원화의 부두·발 접촉은 확대 캡처로 별도 확인."
+  },
   "walkPathContract": [
     {
       "id": "new-morning-emotion",
@@ -176,7 +253,7 @@
         "y": 606
       },
       "end": {
-        "x": 312,
+        "x": 284,
         "y": 581
       },
       "expectedStart": {
@@ -184,7 +261,7 @@
         "y": 606
       },
       "expectedEnd": {
-        "x": 312,
+        "x": 284,
         "y": 581
       },
       "continuous": true,
@@ -218,7 +295,7 @@
         "y": 619
       },
       "end": {
-        "x": 312,
+        "x": 284,
         "y": 581
       },
       "expectedStart": {
@@ -226,7 +303,7 @@
         "y": 619
       },
       "expectedEnd": {
-        "x": 312,
+        "x": 284,
         "y": 581
       },
       "continuous": true,
@@ -239,7 +316,7 @@
         "y": 606
       },
       "end": {
-        "x": 312,
+        "x": 284,
         "y": 581
       },
       "expectedStart": {
@@ -247,7 +324,7 @@
         "y": 606
       },
       "expectedEnd": {
-        "x": 312,
+        "x": 284,
         "y": 581
       },
       "continuous": true,
@@ -281,7 +358,7 @@
         "y": 619
       },
       "end": {
-        "x": 312,
+        "x": 284,
         "y": 581
       },
       "expectedStart": {
@@ -289,7 +366,7 @@
         "y": 619
       },
       "expectedEnd": {
-        "x": 312,
+        "x": 284,
         "y": 581
       },
       "continuous": true,
@@ -302,7 +379,7 @@
         "y": 606
       },
       "end": {
-        "x": 312,
+        "x": 284,
         "y": 581
       },
       "expectedStart": {
@@ -310,7 +387,7 @@
         "y": 606
       },
       "expectedEnd": {
-        "x": 312,
+        "x": 284,
         "y": 581
       },
       "continuous": true,
@@ -344,7 +421,7 @@
         "y": 619
       },
       "end": {
-        "x": 312,
+        "x": 284,
         "y": 581
       },
       "expectedStart": {
@@ -352,7 +429,7 @@
         "y": 619
       },
       "expectedEnd": {
-        "x": 312,
+        "x": 284,
         "y": 581
       },
       "continuous": true,
@@ -426,10 +503,10 @@
       }
     ]
   },
-  "exportedVersion": "draft-v11",
+  "exportedVersion": "draft-v13",
   "exportedPlayback": {
     "duration": 24,
-    "time": 0.653237,
+    "time": 0.653387,
     "width": 1080,
     "height": 1920
   },

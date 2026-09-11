@@ -21,7 +21,7 @@
     return CutsceneSprites.draw(c,x,y,size,'paddle',blinkTime<0?0:blinkTime,{lean});
   }
   function view(c,{x=360,y=640,z=1}){c.translate(W/2,H/2);c.scale(z,z);c.translate(-x,-y);}
-  function camera(f,t,phase){
+  function baseCamera(f,t,phase){
     if(f.directionId==='emotion'){
       if(phase==='prepare')return{x:430,y:802,z:1.42+.07*ease(t/6)};
       if(phase==='sea'){const p=ease((t-f.timing.seaStart)/(24-f.timing.seaStart));return{x:385+25*p,y:640-45*p,z:1.12+.04*p};}
@@ -33,6 +33,16 @@
       return{x:mix(285,405,p),y:mix(500,680,p),z:mix(1.48,1.16,p)};
     }
     return{x:360,y:640,z:1};
+  }
+  function camera(f,t,phase){
+    const cam=baseCamera(f,t,phase);
+    if(phase==='depart'||phase==='sea'){
+      const next=boatAt(f,Math.min(24,t+.45)),widthScale=f.directionId==='journey'?.88:1;
+      // 한 번의 노 동작마다 흔들리지 않도록 노의 전체 활동 범위를 미리 확보한다.
+      const right=next.x+226*next.scale*widthScale,fit=Math.max(cam.x,right-(W/2-42)/cam.z);
+      cam.x=mix(cam.x,fit,ease((t-f.timing.departureStart+.22)/.9));
+    }
+    return cam;
   }
   function groundShadow(c,x,y,size,alpha){A.softShadow(c,x,y+1,size*.24,size*.06,alpha);}
   function floorBook(c,x,y,size,t,story,options={}){c.save();c.transform(1,.11,-.2,.66,x,y);A.book(c,0,0,size,t,story,options);c.restore();}
@@ -121,7 +131,7 @@
     return trail;
   }
   function walkPath(f){
-    const nodes=f.directionId==='journey'?(f.storyIndex===2?[[182,520],[155,598],[178,639],[290,681],[360,713],[407,714]]:[[112,423],[131,478],[165,534],[231,623],[297,681],[360,713],[407,714]]):f.directionId==='emotion'?[[180,606],[312,581]]:[[117,619],[312,581]];
+    const nodes=f.directionId==='journey'?(f.storyIndex===2?[[182,520],[155,598],[178,639],[290,681],[360,713],[407,714]]:[[112,423],[131,478],[165,534],[231,623],[297,681],[360,713],[407,714]]):f.directionId==='emotion'?[[180,606],[284,581]]:[[117,619],[284,581]];
     const lengths=nodes.slice(1).map((n,i)=>Math.hypot(n[0]-nodes[i][0],n[1]-nodes[i][1])),total=lengths.reduce((a,b)=>a+b,0);
     return{nodes,lengths,total};
   }
@@ -133,7 +143,8 @@
   function world(c,f,t){
     const k=f.timing,T=f.tuning,phase=phaseAt(f,t);let catFoot,seat=null,scale=1,actorState=null;
     const cam=camera(f,t,phase);if(f.storyIndex===2&&phase==='prepare'&&f.directionId==='emotion')Object.assign(cam,{x:369,y:749,z:1.35});
-    cam.x=clamp(cam.x,W/(2*cam.z),W-W/(2*cam.z));cam.y=clamp(cam.y,H/(2*cam.z),H-H/(2*cam.z));
+    const worldWidth=phase==='prepare'?W:A.coastWidth;
+    cam.x=clamp(cam.x,W/(2*cam.z),worldWidth-W/(2*cam.z));cam.y=clamp(cam.y,H/(2*cam.z),H-H/(2*cam.z));
     c.save();view(c,cam);
     if(phase==='prepare')catFoot=preparation(c,f,t);
     else{
@@ -143,14 +154,14 @@
       A.ripples(c,t,journey?'home':'shore');
       if(journey&&f.storyIndex===2)sandDrawing(c,182,520,157,1,null);
       const boat=boatAt(f,t),rx=boat.x,ry=boat.y,progress=boat.progress;scale=boat.scale;
-      const dockStart=k.walkEnd-.95,dockQ=clamp((t-dockStart)/.95),dockCat=journey?{x:407,y:714}:{x:312,y:581},uncover=ease((dockQ-.08)/.84),build=ease((dockQ-.12)/.73);
+      const dockStart=k.walkEnd-.95,dockQ=clamp((t-dockStart)/.95),dockCat=walkPathAt(f,Infinity),uncover=ease((dockQ-.08)/.84),build=ease((dockQ-.12)/.73);
       const clothPoint={x:dockCat.x-28,y:dockCat.y+15};
       const boarded=['settle','depart','sea'].includes(phase),landing=phase==='settle'?Math.sin((t-k.boardingEnd)*7)*Math.exp(-(t-k.boardingEnd)*5):0;
       const raftWidth=T.raftWidth*scale*(journey?.88:1);
       A.wake(c,raftWidth,wakeTrailAt(f,t),journey?'home':'shore');
       if(t<k.departureStart&&!(dockQ>0&&dockQ<.92)){
         // 밧줄은 갑판·캐릭터 뒤의 깊이. 얼굴 앞을 지나가지 않는다.
-        const loose=ease((t-k.boardingEnd)/(k.departureStart-k.boardingEnd));c.save();c.globalAlpha=1-loose;c.strokeStyle='#806447';c.lineWidth=2.5;c.beginPath();c.moveTo(journey?466:369,journey?708:575);c.quadraticCurveTo(journey?451:412,(journey?751:585)+loose*20,rx-55,ry-45);c.stroke();c.restore();
+        const loose=ease((t-k.boardingEnd)/(k.departureStart-k.boardingEnd));c.save();c.globalAlpha=1-loose;c.strokeStyle='#806447';c.lineWidth=2.5;c.beginPath();c.moveTo(journey?466:343,journey?699:562);c.quadraticCurveTo(journey?451:389,(journey?751:585)+loose*20,rx-55,ry-45);c.stroke();c.restore();
       }
       const settling=settlingAt(f,t);
       seat=A.raft(c,rx,ry,raftWidth,t,boarded,atSea?1:progress,{landing,arrival:t-k.boardingEnd,wakeHandled:true,paddleTime:t-k.departureStart,paddleAmplitude:T.paddleAmplitude,book:f.storyIndex,settling,grip:settling.grip,drawCarry:carry,drawCat:actor,uncover:f.storyIndex===1?uncover:1,clothDestination:{x:clothPoint.x-rx,y:clothPoint.y-ry},build:f.storyIndex===2?build:1});
@@ -168,7 +179,7 @@
         }
       }else if(phase==='boarding'){
         const p=clamp((t-k.walkEnd)/(k.boardingEnd-k.walkEnd)),anticipation=T.anticipation;
-        const start=journey?{x:407,y:714}:{x:312,y:581};let x=start.x,y=start.y,lean=0;
+        const start=dockCat;let x=start.x,y=start.y,lean=0;
         if(p<anticipation){const q=Math.sin(Math.PI*p/anticipation);if(CutsceneSettings.actorMode!=='poses')y+=q*4;lean=-q*.025;}
         else{const q=(p-anticipation)/(1-anticipation);x=mix(start.x,seat.x,ease(q));y=mix(start.y,seat.y,ease(q))-Math.sin(Math.PI*q)*T.jumpHeight;lean=-Math.sin(Math.PI*q)*.07;}
         const size=journey?155:T.catSize;
