@@ -38,12 +38,8 @@
   function floorBook(c,x,y,size,t,story,options={}){c.save();c.transform(1,.11,-.2,.66,x,y);A.book(c,0,0,size,t,story,options);c.restore();}
   function carry(c,x,y,size,t,story,alpha=1,options={}){
     c.save();c.globalAlpha*=alpha;c.translate(x+size*.23,y-size*.22);c.rotate(-.12+Math.sin(t*2)*.018);c.scale(size/176,size/176);
-    if(options.worn!==false){c.strokeStyle='#786249';c.lineWidth=2.8;c.beginPath();c.moveTo(-55,-25);c.quadraticCurveTo(-33,-20,-8,-10);c.stroke();}
-    const open=options.open||0;c.strokeStyle='#756047';c.lineWidth=2.4;c.beginPath();c.ellipse(0,-20,11,13,0,Math.PI,Math.PI*2);c.stroke();
-    c.strokeStyle='#665441';c.lineWidth=2.2;c.fillStyle='#9e8361';c.beginPath();c.roundRect(-17,-13,32,27,5);c.fill();c.stroke();
-    if(!options.empty){c.fillStyle=story===1?'#788676':'#ebe0be';c.fillRect(-10,-16,21,5);c.strokeRect(-10,-16,21,5);}
-    if(open){c.fillStyle='#65533c';c.beginPath();c.ellipse(-1,-11,14,3*open,0,0,Math.PI*2);c.fill();}
-    arc(c,[[-14,-6],[0,mix(0,-10,open)],[13,-6]],'#68563e',1.5);c.restore();
+    if(options.worn!==false&&options.layer!=='front'){c.strokeStyle='#786249';c.lineWidth=2.8;c.beginPath();c.moveTo(-55,-25);c.quadraticCurveTo(-33,-20,-8,-10);c.stroke();}
+    A.satchel(c,options.open||0,options.layer||'all');c.restore();
   }
   function sandDrawing(c,x,y,size,p,bookTip){
     const progress=ease((p-.06)/.32),tip=A.islandPlan(c,x+size*.56,y+size*.27,size/234,progress,{sand:true});
@@ -64,10 +60,10 @@
   function preparationAt(f,t){
     const p=clamp(t/f.timing.prepareEnd),drawing=f.storyIndex===2,closeAt=f.storyIndex===1?.48:drawing?.54:.36;
     const liftAt=closeAt+(drawing?.12:.13),stowAt=closeAt+(drawing?.21:.25),shoulderAt=closeAt+(drawing?.28:.35);
-    return{p,closeAt,liftAt,stowAt,shoulderAt,closing:ease((p-closeAt)/.12),lift:ease((p-liftAt)/(drawing?.08:.1)),stow:ease((p-stowAt)/(drawing?.06:.08)),shoulder:ease((p-shoulderAt)/.12)};
+    return{p,closeAt,liftAt,stowAt,shoulderAt,closing:ease((p-closeAt)/.12),lift:ease((p-liftAt)/(drawing?.08:.1)),stow:ease((p-stowAt)/(drawing?.06:.08)),bagClosure:ease((p-stowAt-(drawing?.06:.08))/.06),shoulder:ease((p-shoulderAt)/.12)};
   }
   function preparation(c,f,t){
-    const id=f.storyIndex,dir=f.directionId,{p,closeAt,stowAt,shoulderAt,closing,lift,stow,shoulder}=preparationAt(f,t);let x,y,size,bookSize;
+    const id=f.storyIndex,dir=f.directionId,{p,closeAt,stowAt,shoulderAt,closing,lift,stow,bagClosure,shoulder}=preparationAt(f,t);let x,y,size,bookSize;
     if(dir==='journey'){
       A.background(c,A.images.coastHome,t);
       x=id===2?182:112;y=id===2?520:423;size=id===2?157:141;bookSize=id===1?.72:.57;
@@ -90,11 +86,11 @@
     const reach=p<.97?2:0;
     const look=p<(id===2?0:.12)?'down':p<stowAt?(lift<.48?'reach':'hold'):p<shoulderAt?'reach':p<.97?(shoulder<.36?'reach':'hold'):null;
     const bagX=id===2?mix(x-size*.54,x,ease((p-.57)/.13)):x;
-    const drawBag=()=>carry(c,bagX,bagY,size,t,id,1,{open:1-ease((p-stowAt-.07)/.04),worn:shoulder>.85});
-    if(shoulder>.4)drawBag();
+    const drawBag=(layer='all')=>carry(c,bagX,bagY,size,t,id,1,{layer,open:1-bagClosure,worn:shoulder>.85});
+    drawBag(shoulder>.4?'all':'back');
     actor(c,x,y,size,t,0,Math.sin(t*.7)*.004,{reach,look,nod:p<closeAt?.055:0});
     if(lift>0)drawBook();
-    if(shoulder<=.4)drawBag();
+    if(shoulder<=.4)drawBag('front');
     if(dir==='storybook'&&intro<1){
       // 같은 공책 한 권을 크기·원근으로 연결한다. 두 공책을 겹쳐 디졸브하지 않는다.
       const cover=1-ease((t-1.4)/.7);c.save();c.globalAlpha=cover;c.fillStyle='#f4ebd5';c.fillRect(0,0,W,H);c.restore();

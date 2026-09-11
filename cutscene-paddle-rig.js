@@ -11,7 +11,8 @@
     if(!images.body||!images.arm)throw Error('노 젓기 레이어 준비 전 렌더');
     const motion=motionAt(options.paddleTime??time),grip=options.grip??1,angle=.88*(1-grip)+motion.armAngle*grip,scale=.300488*size/384,lean=options.lean||0;
     // 생성 파츠의 실제 등록점. 어깨와 앞발 접점은 같은 변환을 사용한다.
-    const shoulder={x:844,y:895-114*grip},root={x:841,y:851},palm={x:1032,y:1008};
+    const pickupArc=Math.sin(Math.PI*grip);
+    const shoulder={x:844+30*pickupArc,y:895-114*grip+100*pickupArc},root={x:841,y:851},palm={x:1032,y:1008};
     const hx=shoulder.x+(palm.x-root.x)*Math.cos(angle)-(palm.y-root.y)*Math.sin(angle),hy=shoulder.y+(palm.x-root.x)*Math.sin(angle)+(palm.y-root.y)*Math.cos(angle);
     c.save();c.translate(x,y);c.rotate(lean);c.scale(scale,scale);c.translate(-670.218,-1142);
     c.save();c.translate(shoulder.x,shoulder.y);c.rotate(angle);c.drawImage(images.arm,-root.x,-root.y);c.restore();

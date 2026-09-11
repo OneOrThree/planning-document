@@ -32,6 +32,7 @@ const root=path.resolve(__dirname,'..');
           if(p.lift>0&&p.closing<1)warnings.push(f.id+' 표지 닫기 전 들기');
           if(p.stow>0&&p.lift<1)warnings.push(f.id+' 들기 완료 전 가방에 넣기');
           if(p.shoulder>0&&p.stow<1)warnings.push(f.id+' 책 넣기 완료 전 가방 들기');
+          if(p.bagClosure>0&&p.stow<1)warnings.push(f.id+' 책 넣기 완료 전 덮개 닫기');
           const s=GachisupCinema.settlingAt(f,f.timing.boardingEnd+(f.timing.departureStart-f.timing.boardingEnd)*i/500);settlingSamples++;
           if(s.lift>0&&s.put<1)warnings.push(f.id+' 가방 내려놓기 전 책 꺼내기');
           if(s.open>0&&s.lift<1)warnings.push(f.id+' 책 꺼내기 전 펼치기');
@@ -104,7 +105,7 @@ const root=path.resolve(__dirname,'..');
       const c=document.createElement('canvas');c.width=90;c.height=160;let samples=0,waiting=0,maxWaitingDrift=0;
       for(const f of CutsceneProduction.films)for(let i=0;i<=30;i++){
         const t=f.timing.boardingEnd+2.01+i/30*.35,s=GachisupCinema.settlingAt(f,t),m=GachisupCinema.render(c,f,t);samples++;
-        if(s.grip<=.65){waiting++;maxWaitingDrift=Math.max(maxWaitingDrift,Math.hypot(m.seat.paddle.pivot.x-43,m.seat.paddle.pivot.y+25));}
+        if(s.grip<=.65){waiting++;maxWaitingDrift=Math.max(maxWaitingDrift,Math.hypot(m.seat.paddle.pivot.x-46,m.seat.paddle.pivot.y+8));}
       }
       return{samples,waiting,maxWaitingDrift};
     });

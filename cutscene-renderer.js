@@ -12,7 +12,14 @@
     [[0.5,3.5,'모두의 배가 쉬어 갈 부두를 그렸어.'],[3.8,6.6,'혼자 완성할 수는 없겠지만,'],[7,10.6,'함께할 곳으로 갈 뗏목은 만들었어.'],[11,14.1,'첫 조각은 만들었어.'],[14.5,18,'그다음은, 같이 만들자.']],
   ];
   const images={};
-  const ready=Promise.all(Object.entries(paths).map(([key,src])=>new Promise((resolve,reject)=>{const img=new Image();img.onload=()=>{images[key]=img;resolve();};img.onerror=()=>reject(new Error('컷신 에셋 로드 실패: '+src));img.src=src;})));
+  paths.paddle='assets/cutscenes/wooden-paddle-v1.png';
+  paths.satchelBase='assets/cutscenes/satchel-base-layer-v1.png';
+  paths.satchelFlap='assets/cutscenes/satchel-flap-layer-v1.png';
+  paths.satchelFlapBack='assets/cutscenes/satchel-flap-back-layer-v1.png';
+  paths.satchelHandle='assets/cutscenes/satchel-handle-layer-v1.png';
+  const paddleSprite={pivot:{x:627,y:100},scaleX:.115,scaleY:154/1040,waterlineY:1140};
+  const paddleRest={x:46,y:-8};
+  const ready=Promise.all(Object.entries(paths).map(([key,src])=>new Promise((resolve,reject)=>{const img=new Image();img.onload=()=>{images[key]=src.includes('/poses-black/')?CutsceneFurPalette.prepare(img,src.split('/').at(-1)):img;resolve();};img.onerror=()=>reject(new Error('컷신 에셋 로드 실패: '+src));img.src=src;})));
   function background(c,img,t){
     // 카메라는 world 전체에 적용한다. 바닥만 확대하면 서 있는 발과 소품이 미끄러진다.
     c.drawImage(img,0,0,W,H);
@@ -23,6 +30,20 @@
     c.save();c.translate(x,y);c.scale(rx,ry);const g=c.createRadialGradient(0,0,0,0,0,1);
     g.addColorStop(0,`rgba(${color},${alpha})`);g.addColorStop(.42,`rgba(${color},${alpha*.72})`);g.addColorStop(1,`rgba(${color},0)`);
     c.fillStyle=g;c.fillRect(-1,-1,2,2);c.restore();
+  }
+  function satchel(c,open=0,layer='all'){
+    c.save();c.filter='saturate(.68)';
+    const sx=36/717,sy=29/550,flat=Math.cos(clamp(open)*Math.PI*.72);
+    const body=front=>{c.save();c.translate(0,-11);c.scale(sx,sy);c.translate(-635,-535);
+      if(front){c.beginPath();c.moveTo(0,510);c.lineTo(335,510);c.bezierCurveTo(440,572,730,575,950,530);c.lineTo(1254,530);c.lineTo(1254,1254);c.lineTo(0,1254);c.closePath();c.clip();}
+      c.drawImage(images.satchelBase,0,0);c.restore();};
+    const flap=()=>{c.save();c.translate(0,-11+(490-535)*sy);c.scale(sx,sy*flat);c.drawImage(flat<0?images.satchelFlapBack:images.satchelFlap,-635,-490);c.restore();};
+    if(layer!=='front'){
+      if(flat<0)flap();body(false);
+      // 손잡이는 다른 크기로 생성되어 몸체와 독립된 등록점으로 원래 손 위치에 맞춘다.
+      c.save();c.translate(0,-10.5);c.scale(22/573,22.5/311);c.drawImage(images.satchelHandle,-650,-746);c.restore();
+    }
+    if(layer!=='back'){body(true);if(flat>=0)flap();}c.restore();
   }
   function waterMask(c,scene){
     if(scene!=='sea'){
@@ -168,13 +189,18 @@
       c.drawImage(images.cloth,225,266,1090,520,-width*.52,-width*.22,width*1.04,width*.5);c.restore();
     }
     c.save();c.scale(width/S.raftWidth,width/S.raftWidth);
+    const reaching=options.grip||0,grip=S.actorMode==='poses'&&S.paddleRig?ease((reaching-.65)/.35):reaching,paddleTime=options.paddleTime??t,cycle=((paddleTime/2.8)%1+1)%1;
+    const localPaddle=S.actorMode==='poses'&&S.paddleRig,rest=localPaddle?paddleRest:{x:-34,y:2};
+    const drawPaddle=(x,y,angle)=>{c.save();c.translate(x,y);c.rotate(angle);c.scale(paddleSprite.scaleX,paddleSprite.scaleY);c.drawImage(images.paddle,-paddleSprite.pivot.x,-paddleSprite.pivot.y);c.restore();};
+    // 놓인 노는 짐과 고양이 뒤의 갑판에 있다. 실제로 집은 뒤에만 앞발 앞에 그린다.
+    if(grip===0)drawPaddle(rest.x,rest.y,-1.18);
     let actorState=null;
     if(onboard){
       const unpack=options.unpack===undefined?1:options.unpack,settling=options.settling,put=settling?.put??ease(unpack/.58),open=settling?.open??ease((unpack-.58)/.42),lift=settling?.lift??open,place=settling?.place??open;
       // 손이 닿는 오른쪽에 가방을 놓는다. 책은 가방 입구→앞발→가까운 갑판 순서로 연결한다.
       const bagX=mix(0,14,put),bagY=mix(-5,52,put);
-      const drawBag=()=>{if(options.drawCarry)options.drawCarry(c,bagX,bagY,S.catSize,t,options.book,1,{worn:put<.2,empty:lift>=1,open:put*(1-place)});};
-      if(options.book!==undefined&&put<.65)drawBag();
+      const drawBag=(layer='all')=>{if(options.drawCarry)options.drawCarry(c,bagX,bagY,S.catSize,t,options.book,1,{layer,worn:put<.2,empty:lift>=1,open:put*(1-place)});};
+      if(options.book!==undefined)drawBag(put<.65?'all':'back');
       softShadow(c,1,-4,43,12,.2,'75,63,53');
       const recovering=S.actorMode==='poses'&&options.arrival>=0&&options.arrival<.36;
       const handling=settling&&settling.motionElapsed>=.24&&settling.motionElapsed<1.3,handlingPose=put<.45?'hold':lift<.4?'reach':place<.15?'hold':'place';
@@ -185,17 +211,16 @@
           const bx=mix(mix(54,44,lift),10,place),by=mix(mix(2,-29,lift),18,place);
           c.save();if(lift<1){c.beginPath();c.rect(-200,-400,400,402);c.clip();}c.translate(bx,by);c.scale(1,mix(1,.57,place));book(c,-39*.31*(1-open),0,.31,t,options.book,{opening:open});c.restore();
         }
-        if(put>=.65)drawBag();
+        if(put>=.65)drawBag('front');
       }
     }
-    const reaching=options.grip||0,grip=S.actorMode==='poses'&&S.paddleRig?ease((reaching-.65)/.35):reaching,paddleTime=options.paddleTime??t,cycle=((paddleTime/2.8)%1+1)%1;
     const stroke=cycle<.64?ease(cycle/.64):1-ease((cycle-.64)/.36);
     // 당겨 젓는 동안은 물에, 복귀할 때는 손목을 돌려 노 끝을 수면 위로 들어 올린다.
     const returnLift=cycle<.64?0:Math.sin((cycle-.64)/.36*Math.PI),paddleAngle=-1.02+stroke*.39-returnLift*.64;
     const poseScale=.300488*S.catSize/384,defaultHand=S.actorMode==='poses'?{x:(1035-670.218)*poseScale,y:-5+(938-1142)*poseScale}:{x:40,y:-37};
-    const localPaddle=S.actorMode==='poses'&&S.paddleRig,rest=localPaddle?{x:43,y:-25}:{x:-34,y:2};
     const hand=actorState?.hand||defaultHand,paddleX=mix(rest.x,hand.x,grip),paddleY=mix(rest.y,hand.y,grip);
-    c.save();c.translate(paddleX,paddleY);c.rotate(mix(-1.18,paddleAngle,grip));c.strokeStyle='#68523d';c.lineWidth=5;c.lineCap='round';c.beginPath();c.moveTo(0,-8);c.lineTo(0,136);c.stroke();c.fillStyle='#b79869';c.beginPath();c.roundRect(-8,121,16,41,7);c.fill();c.stroke();c.restore();
+    // 그림의 손잡이 아래(627,100)를 실제 앞발에 고정한다. 노 끝의 물결 등록점은 기존 154를 유지한다.
+    if(grip>0)drawPaddle(paddleX,paddleY,mix(-1.18,paddleAngle,grip));
     // 힘을 주는 반 주기에만 노 끝과 같은 위치에 물결을 둔다.
     if(onboard&&travel>0&&cycle<.64){
       const wet=Math.sin(cycle/.64*Math.PI),tipX=paddleX-Math.sin(paddleAngle)*154,tipY=paddleY+Math.cos(paddleAngle)*154;
@@ -265,5 +290,5 @@
     c.restore();return {...meta,time:t,revision:S.revision};
   }
   window.GachisupCutscene={ready,render,paths,duration:S.duration};
-  window.CutsceneActors={ready,images,paths,background,ellipse,softShadow,cat,book,islandPlan,raft,ripples,wake,clamp,ease,mix};
+  window.CutsceneActors={ready,images,paths,paddleSprite,paddleRest,background,ellipse,softShadow,satchel,cat,book,islandPlan,raft,ripples,wake,clamp,ease,mix};
 })();

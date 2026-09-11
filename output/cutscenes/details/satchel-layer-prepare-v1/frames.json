@@ -1,0 +1,435 @@
+{
+  "label": "satchel-layer-prepare-v1",
+  "phase": "prepare",
+  "actor": "production-default",
+  "paddle": "production-default",
+  "walk": "production-default",
+  "from": 0.25,
+  "to": 0.99,
+  "samples": 18,
+  "cropSize": 280,
+  "anchor": "actor",
+  "fingerprint": "5b098e768758bd4c98ceaaf082e25220aed381d37b5237779d19795590a77528",
+  "errors": [],
+  "films": [
+    {
+      "id": "new-morning-emotion",
+      "frames": [
+        {
+          "time": 1.7,
+          "crop": {
+            "x": 185.3436488888889,
+            "y": 513.9151348148148,
+            "size": 280
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 382,
+            "y": 866
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 430,
+            "y": 802,
+            "z": 1.4336739814814814
+          },
+          "actorState": null,
+          "caption": "오늘 할 일은, 어제와 비슷해."
+        },
+        {
+          "time": 1.9959999999999998,
+          "crop": {
+            "x": 185.13187406023113,
+            "y": 514.1975012530252,
+            "size": 280
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 382,
+            "y": 866
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 430,
+            "y": 802,
+            "z": 1.4380859570785185
+          },
+          "actorState": null,
+          "caption": "오늘 할 일은, 어제와 비슷해."
+        },
+        {
+          "time": 2.292,
+          "crop": {
+            "x": 184.90367882496,
+            "y": 514.50176156672,
+            "size": 280
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 382,
+            "y": 866
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 430,
+            "y": 802,
+            "z": 1.44284002448
+          },
+          "actorState": null,
+          "caption": "오늘 할 일은, 어제와 비슷해."
+        },
+        {
+          "time": 2.588,
+          "crop": {
+            "x": 184.66390425912888,
+            "y": 514.8214609878281,
+            "size": 280
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 382,
+            "y": 866
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 430,
+            "y": 802,
+            "z": 1.4478353279348148
+          },
+          "actorState": null,
+          "caption": "오늘 할 일은, 어제와 비슷해."
+        },
+        {
+          "time": 2.8839999999999995,
+          "crop": {
+            "x": 184.4173914387911,
+            "y": 515.1501447482784,
+            "size": 280
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 382,
+            "y": 866
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 430,
+            "y": 802,
+            "z": 1.4529710116918517
+          },
+          "actorState": null,
+          "caption": "오늘 할 일은, 어제와 비슷해."
+        },
+        {
+          "time": 3.18,
+          "crop": {
+            "x": 184.16898144,
+            "y": 515.48135808,
+            "size": 280
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 382,
+            "y": 866
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 430,
+            "y": 802,
+            "z": 1.45814622
+          },
+          "actorState": null,
+          "caption": "오늘 할 일은, 어제와 비슷해."
+        },
+        {
+          "time": 3.4760000000000004,
+          "crop": {
+            "x": 183.92351533880887,
+            "y": 515.8086462149214,
+            "size": 280
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 382,
+            "y": 866
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 430,
+            "y": 802,
+            "z": 1.4632600971081482
+          },
+          "actorState": null,
+          "caption": "그래도 오늘은 같이 시작하고 싶어."
+        },
+        {
+          "time": 3.772,
+          "crop": {
+            "x": 183.6858342112711,
+            "y": 516.1255543849718,
+            "size": 280
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 382,
+            "y": 866
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 430,
+            "y": 802,
+            "z": 1.4682117872651852
+          },
+          "actorState": null,
+          "caption": "그래도 오늘은 같이 시작하고 싶어."
+        },
+        {
+          "time": 4.068,
+          "crop": {
+            "x": 183.46077913344,
+            "y": 516.42562782208,
+            "size": 280
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 382,
+            "y": 866
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 430,
+            "y": 802,
+            "z": 1.4729004347199999
+          },
+          "actorState": null,
+          "caption": "그래도 오늘은 같이 시작하고 싶어."
+        },
+        {
+          "time": 4.364000000000001,
+          "crop": {
+            "x": 183.25319118136886,
+            "y": 516.7024117581748,
+            "size": 280
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 382,
+            "y": 866
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 430,
+            "y": 802,
+            "z": 1.4772251837214814
+          },
+          "actorState": null,
+          "caption": "그래도 오늘은 같이 시작하고 싶어."
+        },
+        {
+          "time": 4.66,
+          "crop": {
+            "x": 183.06791143111113,
+            "y": 516.9494514251852,
+            "size": 280
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 382,
+            "y": 866
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 430,
+            "y": 802,
+            "z": 1.4810851785185184
+          },
+          "actorState": null,
+          "caption": "그래도 오늘은 같이 시작하고 싶어."
+        },
+        {
+          "time": 4.956,
+          "crop": {
+            "x": 182.90978095872,
+            "y": 517.1602920550399,
+            "size": 280
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 382,
+            "y": 866
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 430,
+            "y": 802,
+            "z": 1.4843795633599999
+          },
+          "actorState": null,
+          "caption": "그래도 오늘은 같이 시작하고 싶어."
+        },
+        {
+          "time": 5.252,
+          "crop": {
+            "x": 182.78364084024886,
+            "y": 517.3284788796681,
+            "size": 280
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 382,
+            "y": 866
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 430,
+            "y": 802,
+            "z": 1.4870074824948147
+          },
+          "actorState": null,
+          "caption": "그래도 오늘은 같이 시작하고 싶어."
+        },
+        {
+          "time": 5.547999999999999,
+          "crop": {
+            "x": 182.69433215175113,
+            "y": 517.4475571309985,
+            "size": 280
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 382,
+            "y": 866
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 430,
+            "y": 802,
+            "z": 1.4888680801718517
+          },
+          "actorState": null,
+          "caption": "그래도 오늘은 같이 시작하고 싶어."
+        },
+        {
+          "time": 5.843999999999999,
+          "crop": {
+            "x": 182.64669596928,
+            "y": 517.5110720409599,
+            "size": 280
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 382,
+            "y": 866
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 430,
+            "y": 802,
+            "z": 1.4898605006399999
+          },
+          "actorState": null,
+          "caption": "그래도 오늘은 같이 시작하고 싶어."
+        },
+        {
+          "time": 6.14,
+          "crop": {
+            "x": 182.64000000000001,
+            "y": 517.52,
+            "size": 280
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 382,
+            "y": 866
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 430,
+            "y": 802,
+            "z": 1.49
+          },
+          "actorState": null,
+          "caption": "그래도 오늘은 같이 시작하고 싶어."
+        },
+        {
+          "time": 6.435999999999999,
+          "crop": {
+            "x": 182.64000000000001,
+            "y": 517.52,
+            "size": 280
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 382,
+            "y": 866
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 430,
+            "y": 802,
+            "z": 1.49
+          },
+          "actorState": null,
+          "caption": "그래도 오늘은 같이 시작하고 싶어."
+        },
+        {
+          "time": 6.732,
+          "crop": {
+            "x": 182.64000000000001,
+            "y": 517.52,
+            "size": 280
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 382,
+            "y": 866
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 430,
+            "y": 802,
+            "z": 1.49
+          },
+          "actorState": null,
+          "caption": "그래도 오늘은 같이 시작하고 싶어."
+        }
+      ]
+    }
+  ]
+}

@@ -1,9 +1,107 @@
 {
   "result": "PASS",
   "enabled": true,
+  "rendererLookGraded": true,
+  "backgroundsUnchanged": true,
   "unchangedNeutral": true,
   "unchangedUnlisted": true,
   "records": [
+    {
+      "file": "look-down-v1.png",
+      "alphaChanges": 0,
+      "furMedian": [
+        77,
+        68,
+        68
+      ],
+      "lineMedian": [
+        43,
+        1,
+        0
+      ],
+      "meanWhiteDifference": 0.14842189372752723,
+      "whiteSamples": 5006,
+      "profile": {
+        "redMix": 0.9435948309157993,
+        "gamma": [
+          0.9324833973173651,
+          0.945584140317126,
+          0.945584140317126
+        ]
+      }
+    },
+    {
+      "file": "look-reach-v1.png",
+      "alphaChanges": 0,
+      "furMedian": [
+        77,
+        68,
+        68
+      ],
+      "lineMedian": [
+        43,
+        1,
+        0
+      ],
+      "meanWhiteDifference": 0.0012418300653594767,
+      "whiteSamples": 5100,
+      "profile": {
+        "redMix": 0.9498065915875031,
+        "gamma": [
+          0.984891276170973,
+          0.9889549953330654,
+          0.9889549953330654
+        ]
+      }
+    },
+    {
+      "file": "look-hold-v1.png",
+      "alphaChanges": 0,
+      "furMedian": [
+        76,
+        68,
+        69
+      ],
+      "lineMedian": [
+        42,
+        1,
+        0
+      ],
+      "meanWhiteDifference": 0.27289804378804766,
+      "whiteSamples": 5146,
+      "profile": {
+        "redMix": 1.0247551623622257,
+        "gamma": [
+          1.0136044593797857,
+          0.9889549953330654,
+          1
+        ]
+      }
+    },
+    {
+      "file": "place-down-v1.png",
+      "alphaChanges": 0,
+      "furMedian": [
+        77,
+        68,
+        68
+      ],
+      "lineMedian": [
+        43,
+        0,
+        0
+      ],
+      "meanWhiteDifference": 1.219573400250919,
+      "whiteSamples": 4782,
+      "profile": {
+        "redMix": 0.840352488914732,
+        "gamma": [
+          1.0890933869323705,
+          1.056545971663968,
+          1.056545971663968
+        ]
+      }
+    },
     {
       "file": "neutral-blink-half-v1.png",
       "alphaChanges": 0,

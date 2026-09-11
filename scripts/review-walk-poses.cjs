@@ -5,7 +5,7 @@ const {startServer}=require('./serve.cjs');const root=path.resolve(__dirname,'..
 (async()=>{
   const args=process.argv.slice(2),value=(n,d)=>args.find(a=>a.startsWith('--'+n+'='))?.slice(n.length+3)??d;
   const label=value('label',''),filmId=value('film','new-morning-emotion'),phase=value('phase','walk'),paddle=value('paddle',''),walk=value('walk',''),single=args.includes('--single');
-  if(!['walk','walk-blink','boarding','settle','recovery','paddle','blink'].includes(phase))throw Error('비교 구간은 walk / walk-blink / boarding / settle / recovery / paddle / blink입니다.');
+  if(!['packing','walk','walk-blink','boarding','settle','recovery','paddle','blink'].includes(phase))throw Error('비교 구간은 packing / walk / walk-blink / boarding / settle / recovery / paddle / blink입니다.');
   if(!/^[a-z0-9-]+$/.test(label))throw Error('새 --label이 필요합니다.');
   const out=path.join(root,'output/cutscenes/details',label);if(fs.existsSync(out))throw Error('기존 비교 결과는 덮어쓰지 않습니다.');fs.mkdirSync(out,{recursive:true});
   const {server,url}=await startServer({prefix:'/planning-document/'});let browser,ff;
@@ -15,7 +15,7 @@ const {startServer}=require('./serve.cjs');const root=path.resolve(__dirname,'..
     const duration=await page.evaluate(({filmId,phase,paddle,walk,single})=>{
       const film=CutsceneProduction.films.find(f=>f.id===filmId);if(!film)throw Error('없는 영상 ID');
       const k=film.timing,blinkAt=Math.ceil((k.departureStart+1-3.2)/4.7)*4.7+3.2;
-      const [start,end]={walk:[k.prepareEnd,k.walkEnd],'walk-blink':[k.prepareEnd+.8,k.prepareEnd+1.3],boarding:[k.walkEnd-.25,k.boardingEnd+.45],settle:[k.boardingEnd,k.departureStart],recovery:[k.boardingEnd+1.15,k.departureStart+.2],paddle:[k.departureStart+.9,k.departureStart+3.9],blink:[blinkAt-.1,blinkAt+.4]}[phase];
+      const [start,end]={packing:[k.prepareEnd*.44,k.prepareEnd],walk:[k.prepareEnd,k.walkEnd],'walk-blink':[k.prepareEnd+.8,k.prepareEnd+1.3],boarding:[k.walkEnd-.25,k.boardingEnd+.45],settle:[k.boardingEnd,k.departureStart],recovery:[k.boardingEnd+1.15,k.departureStart+.2],paddle:[k.departureStart+.9,k.departureStart+3.9],blink:[blinkAt-.1,blinkAt+.4]}[phase];
       const source=document.createElement('canvas');source.width=1440;source.height=2560;
       const output=document.createElement('canvas');output.width=single?420:840;output.height=480;const tileWidth=output.width/2;
       const sheet=document.createElement('canvas');sheet.width=tileWidth*3;sheet.height=1920;const sc=sheet.getContext('2d');sc.fillStyle='#f3ecda';sc.fillRect(0,0,sheet.width,sheet.height);

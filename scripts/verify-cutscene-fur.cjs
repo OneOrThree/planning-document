@@ -24,9 +24,10 @@ const {startServer}=require('./serve.cjs');
         records.push({file,alphaChanges,furMedian:fur[0].length?fur.map(median):null,lineMedian:lines.map(median),meanWhiteDifference:whiteSamples?whiteDifference/whiteSamples:0,whiteSamples,profile:palette.profile(file)});
       }
       const neutral=new Image();neutral.src='assets/cutscenes/poses-black/neutral-forward-v1.png';await neutral.decode();
-      return{enabled:palette.enabled,unchangedNeutral:palette.prepare(neutral,'neutral-forward-v1.png')===neutral,unchangedUnlisted:palette.prepare(neutral,'another-cat.png')===neutral,records};
+      const rendererLookKeys=['lookDown','lookReach','lookHold','lookPlace'];
+      return{enabled:palette.enabled,rendererLookGraded:rendererLookKeys.every(key=>CutsceneActors.images[key] instanceof HTMLCanvasElement),backgroundsUnchanged:['room','sand','shore','coastHome','deck','paddle'].every(key=>CutsceneActors.images[key] instanceof HTMLImageElement),unchangedNeutral:palette.prepare(neutral,'neutral-forward-v1.png')===neutral,unchangedUnlisted:palette.prepare(neutral,'another-cat.png')===neutral,records};
     });
-    assert.ok(result.enabled);assert.ok(result.unchangedNeutral);assert.ok(result.unchangedUnlisted);
+    assert.ok(result.enabled);assert.ok(result.unchangedNeutral);assert.ok(result.unchangedUnlisted);assert.ok(result.rendererLookGraded);assert.ok(result.backgroundsUnchanged);
     for(const r of result.records){
       assert.equal(r.alphaChanges,0,r.file+' 알파 변경');
       if(r.furMedian&&!r.file.startsWith('walk-eyes-'))assert.ok(r.furMedian.every((v,i)=>Math.abs(v-[77,69,69][i])<=3),r.file+' 털색 기준 불일치: '+r.furMedian);

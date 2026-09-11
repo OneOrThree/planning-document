@@ -1,0 +1,1732 @@
+{
+  "filmId": "folded-promise-journey",
+  "phase": "settle",
+  "single": true,
+  "duration": 2.375,
+  "fps": 24,
+  "frames": 57,
+  "fingerprint": "a335aec68efa7f80042117f754274ebf7572134962f25146c9c2c60d743657a7",
+  "status": "unreviewed-experiment",
+  "note": "실제 속도의 선택 구간. 전체 컷신이나 동작의 자동 통과 판정이 아니다. 연락표는 24개 시간 표본.",
+  "errors": [],
+  "states": [
+    {
+      "frame": 0,
+      "elapsed": 0,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 10.65,
+          "phase": "settle",
+          "foot": {
+            "x": 447.0111940193243,
+            "y": 808.3802526869075
+          },
+          "actor": {
+            "state": "landing-individual-poses",
+            "frame": 0,
+            "blinkFrame": -1,
+            "phase": 0.1022727272727284,
+            "baseline": 1075,
+            "hand": null,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 288.7329850624162,
+            "y": 570.9210931168127,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 1,
+      "elapsed": 0.041666666666666664,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 10.691666666666666,
+          "phase": "settle",
+          "foot": {
+            "x": 447.03944028036,
+            "y": 809.1775718382163
+          },
+          "actor": {
+            "state": "landing-individual-poses",
+            "frame": 0,
+            "blinkFrame": -1,
+            "phase": 0.14962121212121104,
+            "baseline": 1075,
+            "hand": null,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 288.7657507252176,
+            "y": 571.8459833323309,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 2,
+      "elapsed": 0.08333333333333333,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 10.733333333333334,
+          "phase": "settle",
+          "foot": {
+            "x": 447.05623068687333,
+            "y": 809.6690620339692
+          },
+          "actor": {
+            "state": "landing-individual-poses",
+            "frame": 0,
+            "blinkFrame": -1,
+            "phase": 0.19696969696969724,
+            "baseline": 1075,
+            "hand": null,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 288.78522759677304,
+            "y": 572.4161119594044,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 3,
+      "elapsed": 0.125,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 10.775,
+          "phase": "settle",
+          "foot": {
+            "x": 447.0639690577574,
+            "y": 809.9198232801748
+          },
+          "actor": {
+            "state": "landing-individual-poses",
+            "frame": 1,
+            "blinkFrame": -1,
+            "phase": 0.24431818181818166,
+            "baseline": 1106,
+            "hand": null,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 288.79420410699856,
+            "y": 572.7069950050028,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 4,
+      "elapsed": 0.16666666666666666,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 10.816666666666666,
+          "phase": "settle",
+          "foot": {
+            "x": 447.0651746047639,
+            "y": 809.99817224477
+          },
+          "actor": {
+            "state": "landing-individual-poses",
+            "frame": 1,
+            "blinkFrame": -1,
+            "phase": 0.2916666666666661,
+            "baseline": 1106,
+            "hand": null,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 288.79560254152614,
+            "y": 572.7978798039331,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 5,
+      "elapsed": 0.20833333333333334,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 10.858333333333334,
+          "phase": "settle",
+          "foot": {
+            "x": 447.06218000866414,
+            "y": 809.9673630011386
+          },
+          "actor": {
+            "state": "landing-individual-poses",
+            "frame": 1,
+            "blinkFrame": -1,
+            "phase": 0.33901515151515227,
+            "baseline": 1106,
+            "hand": null,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 288.7921288100504,
+            "y": 572.7621410813207,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 6,
+      "elapsed": 0.25,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 10.9,
+          "phase": "settle",
+          "foot": {
+            "x": 447.0569520798225,
+            "y": 809.8806576906326
+          },
+          "actor": {
+            "state": "landing-individual-poses",
+            "frame": 2,
+            "blinkFrame": -1,
+            "phase": 0.3863636363636367,
+            "baseline": 1121,
+            "hand": null,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 288.7860644125941,
+            "y": 572.6615629211337,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 7,
+      "elapsed": 0.2916666666666667,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 10.941666666666666,
+          "phase": "settle",
+          "foot": {
+            "x": 447.05101155582184,
+            "y": 809.7791211259522
+          },
+          "actor": {
+            "state": "landing-individual-poses",
+            "frame": 2,
+            "blinkFrame": -1,
+            "phase": 0.4337121212121211,
+            "baseline": 1121,
+            "hand": null,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 288.77917340475335,
+            "y": 572.5437805061046,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 8,
+      "elapsed": 0.3333333333333333,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 10.983333333333334,
+          "phase": "settle",
+          "foot": {
+            "x": 447.04542652672643,
+            "y": 809.6914397890362
+          },
+          "actor": {
+            "state": "landing-individual-poses",
+            "frame": 2,
+            "blinkFrame": -1,
+            "phase": 0.4810606060606073,
+            "baseline": 1121,
+            "hand": null,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 288.77269477100265,
+            "y": 572.442070155282,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 9,
+      "elapsed": 0.375,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 11.025,
+          "phase": "settle",
+          "foot": {
+            "x": 447.04085512101295,
+            "y": 809.6350922920215
+          },
+          "actor": {
+            "state": "neutral",
+            "frame": -1,
+            "blinkFrame": -1,
+            "phase": 0.5284090909090917,
+            "baseline": 1142,
+            "hand": null,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 288.76739194037503,
+            "y": 572.3767070587448,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 10,
+      "elapsed": 0.4166666666666667,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 11.066666666666666,
+          "phase": "settle",
+          "foot": {
+            "x": 447.0376162725534,
+            "y": 809.6182873567145
+          },
+          "actor": {
+            "state": "look-hold",
+            "frame": 0
+          },
+          "crop": {
+            "x": 288.763634876162,
+            "y": 572.3572133337889,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 11,
+      "elapsed": 0.4583333333333333,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 11.108333333333334,
+          "phase": "settle",
+          "foot": {
+            "x": 447.0357716635597,
+            "y": 809.6422053280886
+          },
+          "actor": {
+            "state": "look-hold",
+            "frame": 0
+          },
+          "crop": {
+            "x": 288.7614951297292,
+            "y": 572.3849581805828,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 12,
+      "elapsed": 0.5,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 11.15,
+          "phase": "settle",
+          "foot": {
+            "x": 447.0352065201359,
+            "y": 809.7032065563067
+          },
+          "actor": {
+            "state": "look-hold",
+            "frame": 0
+          },
+          "crop": {
+            "x": 288.76083956335765,
+            "y": 572.4557196053157,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 13,
+      "elapsed": 0.5416666666666666,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 11.191666666666666,
+          "phase": "settle",
+          "foot": {
+            "x": 447.03570125014875,
+            "y": 809.7947886577274
+          },
+          "actor": {
+            "state": "look-hold",
+            "frame": 0
+          },
+          "crop": {
+            "x": 288.76141345017254,
+            "y": 572.5619548429638,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 14,
+      "elapsed": 0.5833333333333334,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 11.233333333333334,
+          "phase": "settle",
+          "foot": {
+            "x": 447.03698959510933,
+            "y": 809.9091752786284
+          },
+          "actor": {
+            "state": "look-hold",
+            "frame": 0
+          },
+          "crop": {
+            "x": 288.76290793032683,
+            "y": 572.6946433232089,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 15,
+      "elapsed": 0.625,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 11.275,
+          "phase": "settle",
+          "foot": {
+            "x": 447.03880184606146,
+            "y": 810.0384973140037
+          },
+          "actor": {
+            "state": "look-reach",
+            "frame": 0
+          },
+          "crop": {
+            "x": 288.7650101414313,
+            "y": 572.8446568842444,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 16,
+      "elapsed": 0.6666666666666666,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 11.316666666666666,
+          "phase": "settle",
+          "foot": {
+            "x": 447.04089372101896,
+            "y": 810.1755831316343
+          },
+          "actor": {
+            "state": "look-reach",
+            "frame": 0
+          },
+          "crop": {
+            "x": 288.767436716382,
+            "y": 573.0036764326958,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 17,
+      "elapsed": 0.7083333333333334,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 11.358333333333334,
+          "phase": "settle",
+          "foot": {
+            "x": 447.0430627886216,
+            "y": 810.3144092621492
+          },
+          "actor": {
+            "state": "look-reach",
+            "frame": 0
+          },
+          "crop": {
+            "x": 288.7699528348011,
+            "y": 573.1647147440931,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 18,
+      "elapsed": 0.75,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 11.4,
+          "phase": "settle",
+          "foot": {
+            "x": 447.0451549751244,
+            "y": 810.4502806997559
+          },
+          "actor": {
+            "state": "look-reach",
+            "frame": 0
+          },
+          "crop": {
+            "x": 288.7723797711443,
+            "y": 573.3223256117169,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 19,
+      "elapsed": 0.7916666666666666,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 11.441666666666666,
+          "phase": "settle",
+          "foot": {
+            "x": 447.0470638582179,
+            "y": 810.57981445833
+          },
+          "actor": {
+            "state": "look-reach",
+            "frame": 0
+          },
+          "crop": {
+            "x": 288.7745940755327,
+            "y": 573.4725847716628,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 20,
+      "elapsed": 0.8333333333333334,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 11.483333333333334,
+          "phase": "settle",
+          "foot": {
+            "x": 447.04872527980456,
+            "y": 810.7007953626709
+          },
+          "actor": {
+            "state": "look-reach",
+            "frame": 0
+          },
+          "crop": {
+            "x": 288.7765213245733,
+            "y": 573.6129226206982,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 21,
+      "elapsed": 0.875,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 11.525,
+          "phase": "settle",
+          "foot": {
+            "x": 447.05010943357814,
+            "y": 810.8119628218752
+          },
+          "actor": {
+            "state": "look-reach",
+            "frame": 0
+          },
+          "crop": {
+            "x": 288.7781269429506,
+            "y": 573.7418768733753,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 22,
+      "elapsed": 0.9166666666666666,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 11.566666666666666,
+          "phase": "settle",
+          "foot": {
+            "x": 447.0512121110095,
+            "y": 810.9127744823741
+          },
+          "actor": {
+            "state": "look-hold",
+            "frame": 0
+          },
+          "crop": {
+            "x": 288.77940604877097,
+            "y": 573.8588183995539,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 23,
+      "elapsed": 0.9583333333333334,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 11.608333333333334,
+          "phase": "settle",
+          "foot": {
+            "x": 447.0520463029663,
+            "y": 811.0031794137578
+          },
+          "actor": {
+            "state": "look-hold",
+            "frame": 0
+          },
+          "crop": {
+            "x": 288.7803737114409,
+            "y": 573.9636881199591,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 24,
+      "elapsed": 1,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 11.65,
+          "phase": "settle",
+          "foot": {
+            "x": 447.0526349091049,
+            "y": 811.0834213503125
+          },
+          "actor": {
+            "state": "look-hold",
+            "frame": 0
+          },
+          "crop": {
+            "x": 288.78105649456165,
+            "y": 574.0567687663624,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 25,
+      "elapsed": 1.0416666666666667,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 11.691666666666666,
+          "phase": "settle",
+          "foot": {
+            "x": 447.05300493558957,
+            "y": 811.153882376674
+          },
+          "actor": {
+            "state": "look-hold",
+            "frame": 0
+          },
+          "crop": {
+            "x": 288.7814857252839,
+            "y": 574.1385035569418,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 26,
+      "elapsed": 1.0833333333333333,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 11.733333333333334,
+          "phase": "settle",
+          "foot": {
+            "x": 447.0531832772068,
+            "y": 811.2149696818567
+          },
+          "actor": {
+            "state": "look-hold",
+            "frame": 0
+          },
+          "crop": {
+            "x": 288.7816926015599,
+            "y": 574.2093648309537,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 27,
+      "elapsed": 1.125,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 11.775,
+          "phase": "settle",
+          "foot": {
+            "x": 447.0531939824224,
+            "y": 811.267042612792
+          },
+          "actor": {
+            "state": "look-hold",
+            "frame": 0
+          },
+          "crop": {
+            "x": 288.78170501960994,
+            "y": 574.2697694308388,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 28,
+      "elapsed": 1.1666666666666667,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 11.816666666666666,
+          "phase": "settle",
+          "foot": {
+            "x": 447.0530567802753,
+            "y": 811.3103739900783
+          },
+          "actor": {
+            "state": "look-hold",
+            "frame": 0
+          },
+          "crop": {
+            "x": 288.78154586511937,
+            "y": 574.3200338284909,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 29,
+      "elapsed": 1.2083333333333333,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 11.858333333333334,
+          "phase": "settle",
+          "foot": {
+            "x": 447.05278659210273,
+            "y": 811.3451381211901
+          },
+          "actor": {
+            "state": "look-hold",
+            "frame": 0
+          },
+          "crop": {
+            "x": 288.78123244683917,
+            "y": 574.3603602205804,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 30,
+      "elapsed": 1.25,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 11.9,
+          "phase": "settle",
+          "foot": {
+            "x": 447.05239374303187,
+            "y": 811.3714177256879
+          },
+          "actor": {
+            "state": "look-hold",
+            "frame": 0
+          },
+          "crop": {
+            "x": 288.78077674191695,
+            "y": 574.390844561798,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 31,
+      "elapsed": 1.2916666666666667,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 11.941666666666666,
+          "phase": "settle",
+          "foot": {
+            "x": 447.05188461249344,
+            "y": 811.3892226507371
+          },
+          "actor": {
+            "state": "look-place",
+            "frame": 0
+          },
+          "crop": {
+            "x": 288.7801861504924,
+            "y": 574.411498274855,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 32,
+      "elapsed": 1.3333333333333333,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 11.983333333333334,
+          "phase": "settle",
+          "foot": {
+            "x": 447.0512625061436,
+            "y": 811.3985144330929
+          },
+          "actor": {
+            "state": "look-place",
+            "frame": 0
+          },
+          "crop": {
+            "x": 288.77946450712653,
+            "y": 574.4222767423878,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 33,
+      "elapsed": 1.375,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 12.025,
+          "phase": "settle",
+          "foot": {
+            "x": 447.05052858263844,
+            "y": 811.3992321580645
+          },
+          "actor": {
+            "state": "look-place",
+            "frame": 0
+          },
+          "crop": {
+            "x": 288.77861315586057,
+            "y": 574.4231093033547,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 34,
+      "elapsed": 1.4166666666666667,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 12.066666666666666,
+          "phase": "settle",
+          "foot": {
+            "x": 447.0496827196773,
+            "y": 811.3913164581503
+          },
+          "actor": {
+            "state": "look-place",
+            "frame": 0
+          },
+          "crop": {
+            "x": 288.77763195482567,
+            "y": 574.4139270914543,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 35,
+      "elapsed": 1.4583333333333333,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 12.108333333333334,
+          "phase": "settle",
+          "foot": {
+            "x": 447.0487242493507,
+            "y": 811.3747297401732
+          },
+          "actor": {
+            "state": "look-place",
+            "frame": 0
+          },
+          "crop": {
+            "x": 288.7765201292468,
+            "y": 574.3946864986009,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 36,
+      "elapsed": 1.5,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 12.15,
+          "phase": "settle",
+          "foot": {
+            "x": 447.0476525301766,
+            "y": 811.3494717501535
+          },
+          "actor": {
+            "state": "recovery-individual-poses",
+            "frame": 0,
+            "blinkFrame": -1,
+            "phase": 0.8068181818181817,
+            "baseline": 1142,
+            "hand": null,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 288.77527693500485,
+            "y": 574.365387230178,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 37,
+      "elapsed": 1.5416666666666667,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 12.191666666666666,
+          "phase": "settle",
+          "foot": {
+            "x": 447.04646735122424,
+            "y": 811.3155903508277
+          },
+          "actor": {
+            "state": "recovery-individual-poses",
+            "frame": 0,
+            "blinkFrame": -1,
+            "phase": 0.8541666666666661,
+            "baseline": 1142,
+            "hand": null,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 288.7739021274201,
+            "y": 574.3260848069601,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 38,
+      "elapsed": 1.5833333333333333,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 12.233333333333334,
+          "phase": "settle",
+          "foot": {
+            "x": 447.0451691826699,
+            "y": 811.2731879049522
+          },
+          "actor": {
+            "state": "recovery-individual-poses",
+            "frame": 1,
+            "blinkFrame": -1,
+            "phase": 0.9015151515151523,
+            "baseline": 1142,
+            "hand": null,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 288.7723962518971,
+            "y": 574.2768979697446,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 39,
+      "elapsed": 1.625,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 12.275,
+          "phase": "settle",
+          "foot": {
+            "x": 447.04375929813455,
+            "y": 811.222423958906
+          },
+          "actor": {
+            "state": "recovery-individual-poses",
+            "frame": 1,
+            "blinkFrame": -1,
+            "phase": 0.9488636363636367,
+            "baseline": 1142,
+            "hand": null,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 288.77076078583605,
+            "y": 574.218011792331,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 40,
+      "elapsed": 1.6666666666666667,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 12.316666666666666,
+          "phase": "settle",
+          "foot": {
+            "x": 447.0422397987711,
+            "y": 811.163515048279
+          },
+          "actor": {
+            "state": "recovery-individual-poses",
+            "frame": 2,
+            "blinkFrame": -1,
+            "phase": 0.9962121212121211,
+            "baseline": 1142,
+            "hand": null,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 288.7689981665745,
+            "y": 574.1496774560037,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 41,
+      "elapsed": 1.7083333333333333,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 12.358333333333334,
+          "phase": "settle",
+          "foot": {
+            "x": 447.0406135690035,
+            "y": 811.0967324463629
+          },
+          "actor": {
+            "state": "recovery-individual-poses",
+            "frame": 2,
+            "blinkFrame": -1,
+            "phase": 0.0435606060606073,
+            "baseline": 1142,
+            "hand": null,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 288.767111740044,
+            "y": 574.072209637781,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 42,
+      "elapsed": 1.75,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 12.4,
+          "phase": "settle",
+          "foot": {
+            "x": 447.0388841906702,
+            "y": 811.0223985915094
+          },
+          "actor": {
+            "state": "recovery-individual-poses",
+            "frame": 2,
+            "blinkFrame": -1,
+            "phase": 0.09090909090909172,
+            "baseline": 1142,
+            "hand": null,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 288.7651056611775,
+            "y": 573.9859823661509,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 43,
+      "elapsed": 1.7916666666666667,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 12.441666666666666,
+          "phase": "settle",
+          "foot": {
+            "x": 447.0370558374704,
+            "y": 810.9408827978115
+          },
+          "actor": {
+            "state": "recovery-individual-poses",
+            "frame": 3,
+            "blinkFrame": -1,
+            "phase": 0.13825757575757613,
+            "baseline": 1142,
+            "hand": null,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 288.76298477146565,
+            "y": 573.8914240454612,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 44,
+      "elapsed": 1.8333333333333333,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 12.483333333333334,
+          "phase": "settle",
+          "foot": {
+            "x": 447.0351331661365,
+            "y": 810.8525967051174
+          },
+          "actor": {
+            "state": "recovery-individual-poses",
+            "frame": 3,
+            "blinkFrame": -1,
+            "phase": 0.18560606060606233,
+            "baseline": 1142,
+            "hand": null,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 288.76075447271836,
+            "y": 573.7890121779362,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 45,
+      "elapsed": 1.875,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 12.525,
+          "phase": "settle",
+          "foot": {
+            "x": 447.03312121544616,
+            "y": 810.7579897802905
+          },
+          "actor": {
+            "state": "recovery-individual-poses",
+            "frame": 4,
+            "blinkFrame": -1,
+            "phase": 0.23295454545454497,
+            "baseline": 1142,
+            "hand": null,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 288.75842060991755,
+            "y": 573.6792681451369,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 46,
+      "elapsed": 1.9166666666666667,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 12.566666666666666,
+          "phase": "settle",
+          "foot": {
+            "x": 447.0310253195316,
+            "y": 810.6575450554627
+          },
+          "actor": {
+            "state": "recovery-individual-poses",
+            "frame": 4,
+            "blinkFrame": -1,
+            "phase": 0.2803030303030294,
+            "baseline": 1142,
+            "hand": null,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 288.7559893706566,
+            "y": 573.5627522643367,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 47,
+      "elapsed": 1.9583333333333333,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 12.608333333333334,
+          "phase": "settle",
+          "foot": {
+            "x": 447.0288510382072,
+            "y": 810.55177518788
+          },
+          "actor": {
+            "state": "recovery-individual-poses",
+            "frame": 4,
+            "blinkFrame": -1,
+            "phase": 0.3276515151515156,
+            "baseline": 1142,
+            "hand": null,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 288.7534672043204,
+            "y": 573.4400592179409,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 48,
+      "elapsed": 2,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 12.65,
+          "phase": "settle",
+          "foot": {
+            "x": 447.0266041042972,
+            "y": 810.4412188518413
+          },
+          "actor": {
+            "state": "blink-individual-poses",
+            "frame": -1,
+            "blinkFrame": 0,
+            "phase": 0.375,
+            "baseline": 1142,
+            "hand": null,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 288.7508607609847,
+            "y": 573.3118138681359,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 49,
+      "elapsed": 2.0416666666666665,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 12.691666666666666,
+          "phase": "settle",
+          "foot": {
+            "x": 447.0242903861382,
+            "y": 810.3264374247633
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": 1,
+            "armAngle": 0.8536497277576142,
+            "cycle": 0.8863095238095238,
+            "hand": {
+              "x": 25.227281481421482,
+              "y": -4.426693773489433
+            }
+          },
+          "crop": {
+            "x": 288.7481768479203,
+            "y": 573.1786674127254,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 50,
+      "elapsed": 2.0833333333333335,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 12.733333333333334,
+          "phase": "settle",
+          "foot": {
+            "x": 447.0219158624419,
+            "y": 810.2080119028909
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": 1,
+            "armAngle": 0.7521076461081071,
+            "cycle": 0.9011904761904765,
+            "hand": {
+              "x": 29.818921927402023,
+              "y": -2.3226969011282663
+            }
+          },
+          "crop": {
+            "x": 288.74542240043263,
+            "y": 573.0412938073534,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 51,
+      "elapsed": 2.125,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 12.775,
+          "phase": "settle",
+          "foot": {
+            "x": 447.0194866063393,
+            "y": 810.0865399729548
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": 0,
+            "armAngle": 0.5996214798013703,
+            "cycle": 0.9160714285714288,
+            "hand": {
+              "x": 36.40780566894135,
+              "y": -0.5597407302797057
+            }
+          },
+          "crop": {
+            "x": 288.7426044633536,
+            "y": 572.9003863686276,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 52,
+      "elapsed": 2.1666666666666665,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 12.816666666666666,
+          "phase": "settle",
+          "foot": {
+            "x": 447.01700877552906,
+            "y": 809.9626331692446
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": 0,
+            "armAngle": 0.4239311018283106,
+            "cycle": 0.930952380952381,
+            "hand": {
+              "x": 43.0307567346518,
+              "y": -1.8488366941070136
+            }
+          },
+          "crop": {
+            "x": 288.73973017961373,
+            "y": 572.7566544763237,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 53,
+      "elapsed": 2.2083333333333335,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 12.858333333333334,
+          "phase": "settle",
+          "foot": {
+            "x": 447.0144886058378,
+            "y": 809.8369140566032
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.2518208340558258,
+            "cycle": 0.9458333333333337,
+            "hand": {
+              "x": 47.94813805029405,
+              "y": -7.919585435680802
+            }
+          },
+          "crop": {
+            "x": 288.73680678277185,
+            "y": 572.6108203056597,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 54,
+      "elapsed": 2.25,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 12.9,
+          "phase": "settle",
+          "foot": {
+            "x": 447.0119324060427,
+            "y": 809.7100133949465
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.1076555711864682,
+            "cycle": 0.960714285714286,
+            "hand": {
+              "x": 50.517111088564675,
+              "y": -17.55203469070853
+            }
+          },
+          "crop": {
+            "x": 288.73384159100954,
+            "y": 572.4636155381379,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 55,
+      "elapsed": 2.2916666666666665,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 12.941666666666666,
+          "phase": "settle",
+          "foot": {
+            "x": 447.0093465523877,
+            "y": 809.5825672571204
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.0120947050987925,
+            "cycle": 0.9755952380952381,
+            "hand": {
+              "x": 51.21861647110273,
+              "y": -27.046763012526256
+            }
+          },
+          "crop": {
+            "x": 288.7308420007697,
+            "y": 572.3157780182597,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 56,
+      "elapsed": 2.3333333333333335,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 12.983333333333334,
+          "phase": "settle",
+          "foot": {
+            "x": 447.0067374817792,
+            "y": 809.4552140871839
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.018972486387152154,
+            "cycle": 0.9904761904761908,
+            "hand": {
+              "x": 50.8343641933435,
+              "y": -32.669548937235064
+            }
+          },
+          "crop": {
+            "x": 288.7278154788639,
+            "y": 572.1680483411333,
+            "size": 280
+          }
+        }
+      ]
+    }
+  ]
+}
