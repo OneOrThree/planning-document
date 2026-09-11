@@ -18,6 +18,8 @@
   paths.raftWater='assets/cutscenes/raft-water-rim-v1.png';
   paths.clothFolded='assets/cutscenes/raft-cloth-folded-v1.png';
   paths.seagull='assets/cutscenes/seagull-glide-v1.png';
+  paths.lookBlinkHalf='assets/cutscenes/poses-black/look-reach-blink-half-v1.png';
+  paths.lookBlinkClosed='assets/cutscenes/poses-black/look-reach-blink-closed-v1.png';
   paths.satchelBase='assets/cutscenes/satchel-base-layer-v1.png';
   paths.satchelFlap='assets/cutscenes/satchel-flap-layer-v1.png';
   paths.satchelFlapBack='assets/cutscenes/satchel-flap-back-layer-v1.png';
@@ -242,7 +244,7 @@
   }
   const reflectionSurface=document.createElement('canvas');reflectionSurface.width=720;reflectionSurface.height=720;
   function reflectionAt(width,t){
-    return{waterline:width*.19,height:width*.34,compression:.52,alpha:.14,offset:y=>Math.sin(y*.085-t*1.3)*1.7+Math.sin(y*.18+t*.6)*.7};
+    return{waterline:width*.15,height:width*.34,compression:.48,alpha:.1,offset:y=>Math.sin(y*.085-t*1.3)*1.7+Math.sin(y*.18+t*.6)*.7};
   }
   function raft(c,x,y,width,t,onboard,travel,options={}){
     if(S.raftReflection&&width>0){
@@ -252,7 +254,7 @@
       c.save();
       const boundary=CutsceneWaterMotion.boundaries[options.reflectionScene||'shore'];
       c.beginPath();boundary.forEach(([px,py],i)=>i?c.lineTo(px,py):c.moveTo(px,py));c.closePath();c.clip();
-      c.translate(x,y+bob);c.rotate(tilt);c.filter='saturate(.35) blur(.65px)';
+      c.translate(x,y+bob);c.rotate(tilt);c.filter='saturate(.35) blur(1.8px)';
       // 현재 갑판·짐·고양이의 같은 프레임을 수면 쪽으로 눕힌다. 반사 바깥 배경은 건드리지 않는다.
       for(let dy=0;dy<state.height;dy+=2){
         const sourceHeight=2/(ratio*state.compression),sourceY=440+state.waterline/ratio-dy/(ratio*state.compression)-sourceHeight;

@@ -1,0 +1,604 @@
+{
+  "filmId": "new-morning-emotion",
+  "phase": "reading-blink",
+  "single": false,
+  "water": null,
+  "setting": "readingBlink",
+  "cropSize": 220,
+  "anchor": "cat",
+  "duration": 0.5,
+  "fps": 24,
+  "frames": 12,
+  "videoProfile": {
+    "id": "srgb-bt709-limited-v1",
+    "args": [
+      "-vf",
+      "scale=in_range=pc:out_range=tv:in_color_matrix=bt601:out_color_matrix=bt709,setparams=range=limited:color_primaries=bt709:color_trc=iec61966-2-1:colorspace=bt709",
+      "-color_range",
+      "tv",
+      "-colorspace",
+      "bt709",
+      "-color_primaries",
+      "bt709",
+      "-color_trc",
+      "iec61966-2-1"
+    ],
+    "expected": {
+      "pix_fmt": "yuv420p",
+      "color_range": "tv",
+      "color_space": "bt709",
+      "color_transfer": "iec61966-2-1",
+      "color_primaries": "bt709"
+    }
+  },
+  "fingerprint": "156b72faa0d89898b319aed369f30fff9daa807af3bf10062e4f6907d524874f",
+  "status": "unreviewed-experiment",
+  "note": "실제 속도의 선택 구간. 전체 컷신이나 동작의 자동 통과 판정이 아니다. 연락표는 24개 시간 표본.",
+  "errors": [],
+  "states": [
+    {
+      "frame": 0,
+      "elapsed": 0,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "readingBlink": false
+          },
+          "time": 2.328,
+          "phase": "prepare",
+          "foot": {
+            "x": 382,
+            "y": 866
+          },
+          "actor": null,
+          "crop": {
+            "x": 196.42932459812573,
+            "y": 561.0942338691657,
+            "size": 220
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "readingBlink": true
+          },
+          "time": 2.328,
+          "phase": "prepare",
+          "foot": {
+            "x": 382,
+            "y": 866
+          },
+          "actor": null,
+          "crop": {
+            "x": 196.42932459812573,
+            "y": 561.0942338691657,
+            "size": 220
+          }
+        }
+      ]
+    },
+    {
+      "frame": 1,
+      "elapsed": 0.041666666666666664,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "readingBlink": false
+          },
+          "time": 2.3696666666666664,
+          "phase": "prepare",
+          "foot": {
+            "x": 382,
+            "y": 866
+          },
+          "actor": null,
+          "crop": {
+            "x": 196.39597411975126,
+            "y": 561.1387011736651,
+            "size": 220
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "readingBlink": true
+          },
+          "time": 2.3696666666666664,
+          "phase": "prepare",
+          "foot": {
+            "x": 382,
+            "y": 866
+          },
+          "actor": null,
+          "crop": {
+            "x": 196.39597411975126,
+            "y": 561.1387011736651,
+            "size": 220
+          }
+        }
+      ]
+    },
+    {
+      "frame": 2,
+      "elapsed": 0.08333333333333333,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "readingBlink": false
+          },
+          "time": 2.4113333333333333,
+          "phase": "prepare",
+          "foot": {
+            "x": 382,
+            "y": 866
+          },
+          "actor": null,
+          "crop": {
+            "x": 196.3624193666854,
+            "y": 561.1834408444195,
+            "size": 220
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "readingBlink": true
+          },
+          "time": 2.4113333333333333,
+          "phase": "prepare",
+          "foot": {
+            "x": 382,
+            "y": 866
+          },
+          "actor": null,
+          "crop": {
+            "x": 196.3624193666854,
+            "y": 561.1834408444195,
+            "size": 220
+          }
+        }
+      ]
+    },
+    {
+      "frame": 3,
+      "elapsed": 0.125,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "readingBlink": false
+          },
+          "time": 2.453,
+          "phase": "prepare",
+          "foot": {
+            "x": 382,
+            "y": 866
+          },
+          "actor": null,
+          "crop": {
+            "x": 196.3286738420146,
+            "y": 561.2284348773139,
+            "size": 220
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "readingBlink": true
+          },
+          "time": 2.453,
+          "phase": "prepare",
+          "foot": {
+            "x": 382,
+            "y": 866
+          },
+          "actor": null,
+          "crop": {
+            "x": 196.3286738420146,
+            "y": 561.2284348773139,
+            "size": 220
+          }
+        }
+      ]
+    },
+    {
+      "frame": 4,
+      "elapsed": 0.16666666666666666,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "readingBlink": false
+          },
+          "time": 2.4946666666666664,
+          "phase": "prepare",
+          "foot": {
+            "x": 382,
+            "y": 866
+          },
+          "actor": null,
+          "crop": {
+            "x": 196.29475104882533,
+            "y": 561.2736652682329,
+            "size": 220
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "readingBlink": true
+          },
+          "time": 2.4946666666666664,
+          "phase": "prepare",
+          "foot": {
+            "x": 382,
+            "y": 866
+          },
+          "actor": null,
+          "crop": {
+            "x": 196.29475104882533,
+            "y": 561.2736652682329,
+            "size": 220
+          }
+        }
+      ]
+    },
+    {
+      "frame": 5,
+      "elapsed": 0.20833333333333334,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "readingBlink": false
+          },
+          "time": 2.5363333333333333,
+          "phase": "prepare",
+          "foot": {
+            "x": 382,
+            "y": 866
+          },
+          "actor": null,
+          "crop": {
+            "x": 196.2606644902039,
+            "y": 561.3191140130614,
+            "size": 220
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "readingBlink": true
+          },
+          "time": 2.5363333333333333,
+          "phase": "prepare",
+          "foot": {
+            "x": 382,
+            "y": 866
+          },
+          "actor": null,
+          "crop": {
+            "x": 196.2606644902039,
+            "y": 561.3191140130614,
+            "size": 220
+          }
+        }
+      ]
+    },
+    {
+      "frame": 6,
+      "elapsed": 0.25,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "readingBlink": false
+          },
+          "time": 2.578,
+          "phase": "prepare",
+          "foot": {
+            "x": 382,
+            "y": 866
+          },
+          "actor": null,
+          "crop": {
+            "x": 196.22642766923684,
+            "y": 561.3647631076842,
+            "size": 220
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "readingBlink": true
+          },
+          "time": 2.578,
+          "phase": "prepare",
+          "foot": {
+            "x": 382,
+            "y": 866
+          },
+          "actor": null,
+          "crop": {
+            "x": 196.22642766923684,
+            "y": 561.3647631076842,
+            "size": 220
+          }
+        }
+      ]
+    },
+    {
+      "frame": 7,
+      "elapsed": 0.2916666666666667,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "readingBlink": false
+          },
+          "time": 2.6196666666666664,
+          "phase": "prepare",
+          "foot": {
+            "x": 382,
+            "y": 866
+          },
+          "actor": null,
+          "crop": {
+            "x": 196.19205408901047,
+            "y": 561.410594547986,
+            "size": 220
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "readingBlink": true
+          },
+          "time": 2.6196666666666664,
+          "phase": "prepare",
+          "foot": {
+            "x": 382,
+            "y": 866
+          },
+          "actor": null,
+          "crop": {
+            "x": 196.19205408901047,
+            "y": 561.410594547986,
+            "size": 220
+          }
+        }
+      ]
+    },
+    {
+      "frame": 8,
+      "elapsed": 0.3333333333333333,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "readingBlink": false
+          },
+          "time": 2.6613333333333333,
+          "phase": "prepare",
+          "foot": {
+            "x": 382,
+            "y": 866
+          },
+          "actor": null,
+          "crop": {
+            "x": 196.1575572526113,
+            "y": 561.4565903298517,
+            "size": 220
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "readingBlink": true
+          },
+          "time": 2.6613333333333333,
+          "phase": "prepare",
+          "foot": {
+            "x": 382,
+            "y": 866
+          },
+          "actor": null,
+          "crop": {
+            "x": 196.1575572526113,
+            "y": 561.4565903298517,
+            "size": 220
+          }
+        }
+      ]
+    },
+    {
+      "frame": 9,
+      "elapsed": 0.375,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "readingBlink": false
+          },
+          "time": 2.703,
+          "phase": "prepare",
+          "foot": {
+            "x": 382,
+            "y": 866
+          },
+          "actor": null,
+          "crop": {
+            "x": 196.12295066312572,
+            "y": 561.5027324491657,
+            "size": 220
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "readingBlink": true
+          },
+          "time": 2.703,
+          "phase": "prepare",
+          "foot": {
+            "x": 382,
+            "y": 866
+          },
+          "actor": null,
+          "crop": {
+            "x": 196.12295066312572,
+            "y": 561.5027324491657,
+            "size": 220
+          }
+        }
+      ]
+    },
+    {
+      "frame": 10,
+      "elapsed": 0.4166666666666667,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "readingBlink": false
+          },
+          "time": 2.7446666666666664,
+          "phase": "prepare",
+          "foot": {
+            "x": 382,
+            "y": 866
+          },
+          "actor": null,
+          "crop": {
+            "x": 196.08824782364013,
+            "y": 561.5490029018131,
+            "size": 220
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "readingBlink": true
+          },
+          "time": 2.7446666666666664,
+          "phase": "prepare",
+          "foot": {
+            "x": 382,
+            "y": 866
+          },
+          "actor": null,
+          "crop": {
+            "x": 196.08824782364013,
+            "y": 561.5490029018131,
+            "size": 220
+          }
+        }
+      ]
+    },
+    {
+      "frame": 11,
+      "elapsed": 0.4583333333333333,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "readingBlink": false
+          },
+          "time": 2.7863333333333333,
+          "phase": "prepare",
+          "foot": {
+            "x": 382,
+            "y": 866
+          },
+          "actor": null,
+          "crop": {
+            "x": 196.05346223724092,
+            "y": 561.5953836836788,
+            "size": 220
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "readingBlink": true
+          },
+          "time": 2.7863333333333333,
+          "phase": "prepare",
+          "foot": {
+            "x": 382,
+            "y": 866
+          },
+          "actor": null,
+          "crop": {
+            "x": 196.05346223724092,
+            "y": 561.5953836836788,
+            "size": 220
+          }
+        }
+      ]
+    }
+  ]
+}

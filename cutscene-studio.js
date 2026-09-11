@@ -14,6 +14,7 @@
   if(['glide','off'].includes(query.get('birds')))CutsceneProduction.films.forEach(f=>{f.tuning.seabirds=query.get('birds')==='glide';});
   if(['stroke','even'].includes(query.get('travel')))CutsceneProduction.films.forEach(f=>{f.tuning.oarTravel=query.get('travel')==='stroke';});
   if(['water','off'].includes(query.get('reflection')))CutsceneProduction.films.forEach(f=>{f.tuning.raftReflection=query.get('reflection')==='water';});
+  if(['on','off'].includes(query.get('readingblink')))CutsceneProduction.films.forEach(f=>{f.tuning.readingBlink=query.get('readingblink')==='on';});
   if(query.get('actor')==='sprite')document.querySelector('.status').textContent='이전 아틀라스 자세를 비교하는 모드입니다. 기본 실시간 연출은 같은 얼굴의 개별 자세를 사용합니다. MP4는 표시된 버전의 고정본입니다.';
   const choices=document.getElementById('choices');
   function reviews(f){return CutsceneReviewLog.filter(r=>r.scope==='all-nine'||r.films?.includes(f.id));}
@@ -42,6 +43,7 @@
       window.cutsceneExportBatch=batch;
       document.getElementById('export-note').textContent=({'draft-v07':'일곱 번째 초안 · 1080 × 1920. 책을 놓고 천천히 고개를 든 다음, 앞발을 올려 노를 집어요. 짐 정리와 출항을 구분했어요. 걷기는 기존 개별 자세를 유지하며 관절 보행 시험은 아직 포함하지 않았어요.','draft-v06':'여섯 번째 초안 · 1080 × 1920. 같은 몸체에서 앞발만 움직여 노를 젓고, 손 옆에 내려 둔 노를 집어요. 감정형 장소 전환의 흰 섬광도 없앴어요. 고개 들기·걷기·도약의 연결은 계속 개선 중이에요.','draft-v05':'다섯 번째 초안 · 1080 × 1920. 같은 얼굴의 걷기·도약·앞발·눈깜빡임을 연결했어요. 가방과 책은 앞발 쪽에서 차례로 정리하고 갑판에 남겨요. 발의 주기 연결과 노를 집는 동작은 계속 개선 중이에요.','draft-v04':'네 번째 초안 · 1080 × 1920. 책·가방 동작의 순서와 가림, 모래 그림→공책의 연결, 떠난 자리에 남는 그림, 이동 방향을 따르는 물결을 포함해요. 걷기·도약의 자세 연결은 계속 개선 중이에요.','draft-v03':'세 번째 초안 · 1080 × 1920. 책을 보는 자세·짧은 부두·승선 준비·그림책 전환·자막 개선을 포함해요. 가방·밧줄 겹침은 다음 버전에서 수정했어요.','draft-v02':'두 번째 초안 · 1080 × 1920. 이전 노 잡기·출항 경로를 비교할 수 있어요.','draft-v01':'첫 번째 초안 · 720 × 1280. 초기 상태 비교용으로 보존했어요.'})[version];
       const archived=versions.indexOf(version)>=CutsceneExportCatalog.inlineCount;
+      if(version==='draft-v18')document.getElementById('export-note').textContent='열여덟 번째 초안 · 1080 × 1920 · 60fps. v17과 같은 동작을 초당 60장으로 직접 다시 그렸어요. 24fps 보간 영상이 아니며, 수면 반사와 준비 중 눈 깜빡임은 다음 출력에 포함돼요.';
       if(version==='draft-v08')document.getElementById('export-note').textContent='여덟 번째 초안 · 1080 × 1920. 같은 얼굴을 유지하며 발을 딛고 걸어요. 갑판에 착지한 뒤 앞발로 무게를 받고, 몸을 세운 다음 짐을 정리해요. 보행은 국소 관절, 도약·착지는 개별 원화 방식이에요.';
       if(version==='draft-v09')document.getElementById('export-note').textContent='아홉 번째 초안 · 1080 × 1920. 걷는 중 눈을 자연스럽게 깜빡여요. 얼굴 바탕과 눈을 분리해 색 자국을 없애고, 딛는 발 아래의 작은 그림자와 부드러운 몸 그림자로 바닥 접촉을 맞췄어요. 자세 사이의 털색은 계속 보완 중이에요.';
       if(version==='draft-v10')document.getElementById('export-note').textContent='열 번째 초안 · 1080 × 1920. 30개 파츠의 털·외곽선·동공 색을 기준 고양이에 맞춰 걷기·착지·노 젓기 사이의 붉고 밝은 변화를 줄였어요. 원본 그림·알파·등록점은 유지하며, 소품 재질과 자세 연결은 계속 개선 중이에요.';

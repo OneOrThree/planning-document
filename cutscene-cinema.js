@@ -1,13 +1,28 @@
 (() => {
   const A=window.CutsceneActors,{clamp,ease,mix}=A,W=720,H=1280;
   const arc=(c,points,color,width=2)=>{c.strokeStyle=color;c.lineWidth=width;c.lineCap='round';c.beginPath();points.forEach(([x,y],i)=>i?c.lineTo(x,y):c.moveTo(x,y));c.stroke();};
+  const readingFaces=new Map();
+  function readingBlinkAt(time){return !Number.isFinite(time)||time<0||time>=.22?'open':time<.045||time>=.15?'half':'closed';}
+  function readingFace(state){
+    if(state==='open')return A.images.lookReach;
+    if(readingFaces.has(state))return readingFaces.get(state);
+    // 생성본의 체크무늬 배경은 사용하지 않는다. 원래 얼굴 안의 눈 두 곳만 소비한다.
+    const layer=document.createElement('canvas');layer.width=1254;layer.height=1254;
+    const c=layer.getContext('2d'),patch=document.createElement('canvas');patch.width=1254;patch.height=1254;const p=patch.getContext('2d');
+    for(const [x,y,rx,ry]of [[699,575,114,124],[911,522,94,117]]){
+      p.save();p.translate(x,y);p.scale(rx,ry);const g=p.createRadialGradient(0,0,0,0,0,1);g.addColorStop(0,'#fff');g.addColorStop(.92,'#fff');g.addColorStop(1,'#fff0');p.fillStyle=g;p.fillRect(-1,-1,2,2);p.restore();
+    }
+    p.globalCompositeOperation='source-in';p.drawImage(state==='half'?A.images.lookBlinkHalf:A.images.lookBlinkClosed,0,0);
+    c.drawImage(A.images.lookReach,0,0);c.drawImage(patch,0,0);readingFaces.set(state,layer);return layer;
+  }
   function actor(c,x,y,size,t,walk=0,lean=0,pose={}){
     if(CutsceneSettings.actorMode==='rig')return CutsceneRig.draw(c,x,y,size,t,{...pose,walk,lean});
     if(Number.isFinite(pose.landing)&&CutsceneSettings.actorMode==='poses')return CutscenePoses.draw(c,x,y,size,t,{landing:pose.landing,lean});
     if(Number.isFinite(pose.recovery)&&CutsceneSettings.actorMode==='poses')return CutscenePoses.draw(c,x,y,size,t,{recovery:pose.recovery,lean});
     if(pose.look){
       // 세션에서 한 장씩 생성한 파생 자세. 아틀라스 추출물이라고 표시하지 않는다.
-      const registration=.300488*size/384,texture=pose.look==='place'?A.images.lookPlace:pose.look==='hold'?A.images.lookHold:pose.look==='reach'?A.images.lookReach:A.images.lookDown;c.save();c.translate(x,y);c.rotate(lean);c.scale(registration,registration);c.drawImage(texture,-670.218,-1141);c.restore();return{state:'look-'+pose.look,frame:0};
+      const blink=pose.look==='reach'&&CutsceneSettings.readingBlink?readingBlinkAt(pose.readingBlinkTime):'open';
+      const registration=.300488*size/384,texture=pose.look==='place'?A.images.lookPlace:pose.look==='hold'?A.images.lookHold:pose.look==='reach'?readingFace(blink):A.images.lookDown;c.save();c.translate(x,y);c.rotate(lean);c.scale(registration,registration);c.drawImage(texture,-670.218,-1141);c.restore();return{state:'look-'+pose.look,frame:0,blink};
     }
     if(walk>.1&&CutsceneSettings.actorMode==='poses'&&CutsceneSettings.walkRig)return CutsceneWalkRig.draw(c,x,y,size,t,{...pose,walk,lean,blinkTime:pose.walkBlinkTime??t%4.7-3.2});
     if(walk>.1)return CutsceneSettings.actorMode==='poses'?CutscenePoses.draw(c,x,y,size,pose.gaitTime??t,{lean,travel:pose.travel,stride:pose.stride}):CutsceneSprites.draw(c,x,y,size,'walk',pose.gaitTime??t,{lean});
@@ -99,7 +114,7 @@
     const bagX=id===2?mix(x-size*.54,x,ease((p-.57)/.13)):x;
     const drawBag=(layer='all')=>carry(c,bagX,bagY,size,t,id,1,{layer,open:1-bagClosure,worn:shoulder>.85});
     drawBag(shoulder>.4?'all':'back');
-    actor(c,x,y,size,t,0,Math.sin(t*.7)*.004,{reach,look,nod:p<closeAt?.055:0});
+    actor(c,x,y,size,t,0,Math.sin(t*.7)*.004,{reach,look,nod:p<closeAt?.055:0,readingBlinkTime:t-f.timing.prepareEnd*.36});
     if(lift>0)drawBook();
     if(shoulder<=.4)drawBag('front');
     if(dir==='storybook'&&intro<1){
@@ -235,5 +250,5 @@
     if(f.directionId==='storybook'){c.strokeStyle='#f3e7ca';c.lineWidth=16;c.strokeRect(8,8,W-16,H-16);}
     const line=caption(c,f,t);c.restore();return{filmId:f.id,time:t,...meta,caption:line};
   }
-  window.GachisupCinema={ready:Promise.all([A.ready,CutsceneSprites.ready,CutsceneRig.ready,CutscenePoses.load(),CutscenePaddleRig.ready,CutsceneWalkRig.ready]),render,duration:24,phaseAt,strokeTravel,boatAt,wakeTrailAt,preparationAt,settlingAt,walkPathAt};
+  window.GachisupCinema={ready:Promise.all([A.ready,CutsceneSprites.ready,CutsceneRig.ready,CutscenePoses.load(),CutscenePaddleRig.ready,CutsceneWalkRig.ready]),render,duration:24,phaseAt,strokeTravel,boatAt,wakeTrailAt,preparationAt,settlingAt,walkPathAt,readingBlinkAt,readingFace};
 })();

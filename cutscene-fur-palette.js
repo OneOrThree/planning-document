@@ -4,6 +4,7 @@
   // 각 원본의 불투명 중간톤 표본 중앙값. 근거: output/cutscenes/qa/fur-color-calibration-v1.json.
   const medians={
     'look-down-v1.png':[71,64,64], 'look-reach-v1.png':[76,68,68],
+    'look-reach-blink-half-v1.png':[78,72,72], 'look-reach-blink-closed-v1.png':[82,75,75],
     'look-hold-v1.png':[78,68,69], 'place-down-v1.png':[87,74,74],
     'neutral-blink-half-v1.png':[84,75,75], 'neutral-blink-closed-v1.png':[85,75,76],
     'jump-crouch-mid-v1.png':[87,76,76], 'jump-crouch-v1.png':[85,75,75],
@@ -21,6 +22,7 @@
   const enabled=new URLSearchParams(location.search).get('tone')!=='source',cache=new Map(),ns='http://www.w3.org/2000/svg';
   const outlines={
     'look-down-v1.png':40,'look-reach-v1.png':44,'look-hold-v1.png':43,'place-down-v1.png':59,
+    'look-reach-blink-half-v1.png':47,'look-reach-blink-closed-v1.png':48,
     'neutral-blink-half-v1.png':56,'neutral-blink-closed-v1.png':57,
     'jump-crouch-mid-v1.png':53,'jump-crouch-v1.png':48,'jump-takeoff-v1.png':51,'jump-air-v1.png':47,'jump-landing-reach-v1.png':46,
     'reach-low-v1.png':55,'reach-pull-v1.png':53,'reach-forward-v1.png':54,'reach-low-blink-half-v1.png':52,'reach-low-blink-closed-v1.png':54,

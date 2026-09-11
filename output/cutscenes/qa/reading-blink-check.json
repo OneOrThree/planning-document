@@ -1,0 +1,116 @@
+{
+  "result": "PASS",
+  "states": [
+    {
+      "state": "half",
+      "changed": 72990,
+      "outside": 0,
+      "alpha": 0,
+      "protectedChanges": 0
+    },
+    {
+      "state": "closed",
+      "changed": 73784,
+      "outside": 0,
+      "alpha": 0,
+      "protectedChanges": 0
+    }
+  ],
+  "sequence": [
+    {
+      "time": -0.01,
+      "state": "open"
+    },
+    {
+      "time": 0,
+      "state": "half"
+    },
+    {
+      "time": 0.044,
+      "state": "half"
+    },
+    {
+      "time": 0.045,
+      "state": "closed"
+    },
+    {
+      "time": 0.149,
+      "state": "closed"
+    },
+    {
+      "time": 0.15,
+      "state": "half"
+    },
+    {
+      "time": 0.219,
+      "state": "half"
+    },
+    {
+      "time": 0.22,
+      "state": "open"
+    },
+    {
+      "time": 1,
+      "state": "open"
+    }
+  ],
+  "films": [
+    {
+      "id": "new-morning-emotion",
+      "start": 2.448,
+      "end": 2.668,
+      "prepareEnd": 6.8
+    },
+    {
+      "id": "new-morning-journey",
+      "start": 1.764,
+      "end": 1.984,
+      "prepareEnd": 4.9
+    },
+    {
+      "id": "new-morning-storybook",
+      "start": 2.6999999999999997,
+      "end": 2.92,
+      "prepareEnd": 7.5
+    },
+    {
+      "id": "folded-promise-emotion",
+      "start": 2.448,
+      "end": 2.668,
+      "prepareEnd": 6.8
+    },
+    {
+      "id": "folded-promise-journey",
+      "start": 1.764,
+      "end": 1.984,
+      "prepareEnd": 4.9
+    },
+    {
+      "id": "folded-promise-storybook",
+      "start": 2.6999999999999997,
+      "end": 2.92,
+      "prepareEnd": 7.5
+    },
+    {
+      "id": "unfinished-pier-emotion",
+      "start": 3.06,
+      "end": 3.2800000000000002,
+      "prepareEnd": 8.5
+    },
+    {
+      "id": "unfinished-pier-journey",
+      "start": 2.376,
+      "end": 2.596,
+      "prepareEnd": 6.6000000000000005
+    },
+    {
+      "id": "unfinished-pier-storybook",
+      "start": 3.312,
+      "end": 3.532,
+      "prepareEnd": 9.2
+    }
+  ],
+  "openIsOriginal": true,
+  "errors": [],
+  "note": "두 눈 패치 밖 몸·귀·코·수염·알파 보존. 열린 눈은 원본과 같은 객체. 원본 배경 체크무늬는 패치 범위 밖이므로 소비하지 않는다. 0.22초의 원화 순서이며 연속 눈꺼풀 관절은 아님."
+}

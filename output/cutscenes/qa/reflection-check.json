@@ -4,289 +4,289 @@
     {
       "film": "new-morning-emotion",
       "time": 12.36,
-      "changed": 25874,
+      "changed": 19895,
       "outsideChanged": 0,
-      "maxDifference": 25,
+      "maxDifference": 15,
       "metadataStable": true
     },
     {
       "film": "new-morning-emotion",
       "time": 15.46,
-      "changed": 25390,
+      "changed": 20722,
       "outsideChanged": 0,
-      "maxDifference": 26,
+      "maxDifference": 15,
       "metadataStable": true
     },
     {
       "film": "new-morning-emotion",
       "time": 19.2,
-      "changed": 9756,
+      "changed": 8576,
       "outsideChanged": 0,
-      "maxDifference": 27,
+      "maxDifference": 16,
       "metadataStable": true
     },
     {
       "film": "new-morning-emotion",
       "time": 23.5,
-      "changed": 9149,
+      "changed": 8235,
       "outsideChanged": 0,
-      "maxDifference": 28,
+      "maxDifference": 15,
       "metadataStable": true
     },
     {
       "film": "new-morning-journey",
       "time": 10.81,
-      "changed": 17537,
+      "changed": 14697,
       "outsideChanged": 0,
-      "maxDifference": 29,
+      "maxDifference": 16,
       "metadataStable": true
     },
     {
       "film": "new-morning-journey",
       "time": 13.91,
-      "changed": 17487,
+      "changed": 14959,
       "outsideChanged": 0,
-      "maxDifference": 30,
+      "maxDifference": 18,
       "metadataStable": true
     },
     {
       "film": "new-morning-journey",
       "time": 19.7,
-      "changed": 9563,
+      "changed": 8409,
       "outsideChanged": 0,
-      "maxDifference": 29,
+      "maxDifference": 17,
       "metadataStable": true
     },
     {
       "film": "new-morning-journey",
       "time": 23.5,
-      "changed": 8195,
+      "changed": 7612,
       "outsideChanged": 0,
-      "maxDifference": 28,
+      "maxDifference": 19,
       "metadataStable": true
     },
     {
       "film": "new-morning-storybook",
       "time": 12.96,
-      "changed": 15290,
+      "changed": 12050,
       "outsideChanged": 0,
-      "maxDifference": 24,
+      "maxDifference": 14,
       "metadataStable": true
     },
     {
       "film": "new-morning-storybook",
       "time": 16.06,
-      "changed": 16080,
+      "changed": 13243,
       "outsideChanged": 0,
-      "maxDifference": 27,
+      "maxDifference": 16,
       "metadataStable": true
     },
     {
       "film": "new-morning-storybook",
       "time": 19.8,
-      "changed": 7793,
+      "changed": 6924,
       "outsideChanged": 0,
-      "maxDifference": 25,
+      "maxDifference": 15,
       "metadataStable": true
     },
     {
       "film": "new-morning-storybook",
       "time": 23.5,
-      "changed": 6852,
+      "changed": 6448,
       "outsideChanged": 0,
-      "maxDifference": 24,
+      "maxDifference": 16,
       "metadataStable": true
     },
     {
       "film": "folded-promise-emotion",
       "time": 12.36,
-      "changed": 25874,
+      "changed": 19894,
       "outsideChanged": 0,
-      "maxDifference": 25,
+      "maxDifference": 15,
       "metadataStable": true
     },
     {
       "film": "folded-promise-emotion",
       "time": 15.46,
-      "changed": 25390,
+      "changed": 20721,
       "outsideChanged": 0,
-      "maxDifference": 26,
+      "maxDifference": 15,
       "metadataStable": true
     },
     {
       "film": "folded-promise-emotion",
       "time": 19.2,
-      "changed": 9756,
+      "changed": 8576,
       "outsideChanged": 0,
-      "maxDifference": 27,
+      "maxDifference": 16,
       "metadataStable": true
     },
     {
       "film": "folded-promise-emotion",
       "time": 23.5,
-      "changed": 9149,
+      "changed": 8235,
       "outsideChanged": 0,
-      "maxDifference": 28,
+      "maxDifference": 16,
       "metadataStable": true
     },
     {
       "film": "folded-promise-journey",
       "time": 10.81,
-      "changed": 17537,
+      "changed": 14695,
       "outsideChanged": 0,
-      "maxDifference": 29,
+      "maxDifference": 16,
       "metadataStable": true
     },
     {
       "film": "folded-promise-journey",
       "time": 13.91,
-      "changed": 17487,
+      "changed": 14958,
       "outsideChanged": 0,
-      "maxDifference": 30,
+      "maxDifference": 18,
       "metadataStable": true
     },
     {
       "film": "folded-promise-journey",
       "time": 19.7,
-      "changed": 9563,
+      "changed": 8408,
       "outsideChanged": 0,
-      "maxDifference": 29,
+      "maxDifference": 17,
       "metadataStable": true
     },
     {
       "film": "folded-promise-journey",
       "time": 23.5,
-      "changed": 8194,
+      "changed": 7610,
       "outsideChanged": 0,
-      "maxDifference": 28,
+      "maxDifference": 19,
       "metadataStable": true
     },
     {
       "film": "folded-promise-storybook",
       "time": 12.96,
-      "changed": 15290,
+      "changed": 12049,
       "outsideChanged": 0,
-      "maxDifference": 24,
+      "maxDifference": 14,
       "metadataStable": true
     },
     {
       "film": "folded-promise-storybook",
       "time": 16.06,
-      "changed": 16080,
+      "changed": 13244,
       "outsideChanged": 0,
-      "maxDifference": 27,
+      "maxDifference": 16,
       "metadataStable": true
     },
     {
       "film": "folded-promise-storybook",
       "time": 19.8,
-      "changed": 7793,
+      "changed": 6925,
       "outsideChanged": 0,
-      "maxDifference": 25,
+      "maxDifference": 14,
       "metadataStable": true
     },
     {
       "film": "folded-promise-storybook",
       "time": 23.5,
-      "changed": 6852,
+      "changed": 6448,
       "outsideChanged": 0,
-      "maxDifference": 24,
+      "maxDifference": 16,
       "metadataStable": true
     },
     {
       "film": "unfinished-pier-emotion",
       "time": 14.059999999999999,
-      "changed": 25893,
+      "changed": 19970,
       "outsideChanged": 0,
-      "maxDifference": 27,
+      "maxDifference": 14,
       "metadataStable": true
     },
     {
       "film": "unfinished-pier-emotion",
       "time": 17.16,
-      "changed": 24855,
+      "changed": 20592,
       "outsideChanged": 0,
-      "maxDifference": 31,
+      "maxDifference": 16,
       "metadataStable": true
     },
     {
       "film": "unfinished-pier-emotion",
       "time": 20,
-      "changed": 10340,
+      "changed": 9155,
       "outsideChanged": 0,
-      "maxDifference": 26,
+      "maxDifference": 15,
       "metadataStable": true
     },
     {
       "film": "unfinished-pier-emotion",
       "time": 23.5,
-      "changed": 8589,
+      "changed": 7650,
       "outsideChanged": 0,
-      "maxDifference": 25,
+      "maxDifference": 15,
       "metadataStable": true
     },
     {
       "film": "unfinished-pier-journey",
       "time": 12.51,
-      "changed": 17489,
+      "changed": 14627,
       "outsideChanged": 0,
-      "maxDifference": 31,
+      "maxDifference": 16,
       "metadataStable": true
     },
     {
       "film": "unfinished-pier-journey",
       "time": 15.61,
-      "changed": 17388,
+      "changed": 14898,
       "outsideChanged": 0,
-      "maxDifference": 28,
+      "maxDifference": 18,
       "metadataStable": true
     },
     {
       "film": "unfinished-pier-journey",
       "time": 20.5,
-      "changed": 9941,
+      "changed": 9003,
       "outsideChanged": 0,
-      "maxDifference": 28,
+      "maxDifference": 16,
       "metadataStable": true
     },
     {
       "film": "unfinished-pier-journey",
       "time": 23.5,
-      "changed": 8460,
+      "changed": 7658,
       "outsideChanged": 0,
-      "maxDifference": 28,
+      "maxDifference": 17,
       "metadataStable": true
     },
     {
       "film": "unfinished-pier-storybook",
       "time": 14.66,
-      "changed": 15476,
+      "changed": 12147,
       "outsideChanged": 0,
-      "maxDifference": 24,
+      "maxDifference": 15,
       "metadataStable": true
     },
     {
       "film": "unfinished-pier-storybook",
       "time": 17.759999999999998,
-      "changed": 15675,
+      "changed": 13265,
       "outsideChanged": 0,
-      "maxDifference": 28,
+      "maxDifference": 16,
       "metadataStable": true
     },
     {
       "film": "unfinished-pier-storybook",
       "time": 20.6,
-      "changed": 8273,
+      "changed": 7397,
       "outsideChanged": 0,
-      "maxDifference": 25,
+      "maxDifference": 14,
       "metadataStable": true
     },
     {
       "film": "unfinished-pier-storybook",
       "time": 23.5,
-      "changed": 6684,
+      "changed": 5998,
       "outsideChanged": 0,
-      "maxDifference": 21,
+      "maxDifference": 15,
       "metadataStable": true
     }
   ],

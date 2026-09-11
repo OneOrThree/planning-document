@@ -55,6 +55,54 @@
       }
     },
     {
+      "file": "look-reach-blink-half-v1.png",
+      "alphaChanges": 0,
+      "furMedian": [
+        77,
+        68,
+        68
+      ],
+      "lineMedian": [
+        42,
+        0,
+        0
+      ],
+      "meanWhiteDifference": 0.8394888319700373,
+      "whiteSamples": 60515,
+      "profile": {
+        "redMix": 0.9227408707026825,
+        "gamma": [
+          1.0058316461801036,
+          1.033654674237811,
+          1.033654674237811
+        ]
+      }
+    },
+    {
+      "file": "look-reach-blink-closed-v1.png",
+      "alphaChanges": 0,
+      "furMedian": [
+        77,
+        68,
+        68
+      ],
+      "lineMedian": [
+        42,
+        0,
+        0
+      ],
+      "meanWhiteDifference": 0.8168046556275468,
+      "whiteSamples": 55560,
+      "profile": {
+        "redMix": 0.9808725894429244,
+        "gamma": [
+          1.053934892548843,
+          1.0681347302654447,
+          1.0681347302654447
+        ]
+      }
+    },
+    {
       "file": "look-hold-v1.png",
       "alphaChanges": 0,
       "furMedian": [

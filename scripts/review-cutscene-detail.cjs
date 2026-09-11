@@ -18,12 +18,13 @@ const root=path.resolve(__dirname,'..');
     if(['rig','still'].includes(value('tail','')))params.set('tail',value('tail',''));
     if(['stroke','even'].includes(value('travel','')))params.set('travel',value('travel',''));
     if(['water','off'].includes(value('reflection','')))params.set('reflection',value('reflection',''));
+    if(['on','off'].includes(value('readingblink','')))params.set('readingblink',value('readingblink',''));
     await page.goto(url+'cutscenes.html?'+params);await page.waitForFunction(()=>window.cutsceneReady);
     const data=await page.evaluate(({phase,from,to,selected,samples,cropSize,anchor})=>{
       const source=document.createElement('canvas');source.width=1440;source.height=2560;
       return CutsceneProduction.films.filter(f=>!selected||f.id===selected).map(f=>{
         const k=f.timing,blinkAt=Math.ceil((k.departureStart+1-3.2)/4.7)*4.7+3.2,range={prepare:[0,k.prepareEnd],walk:[k.prepareEnd,k.walkEnd],boarding:[k.walkEnd,k.boardingEnd],'boarding-link':[k.walkEnd-.25,k.boardingEnd+.45],'book-lift':[k.prepareEnd*.46,k.prepareEnd*.85],'walk-link':[k.prepareEnd-.25,k.prepareEnd+.8],'paddle-loop':[k.departureStart+1,k.departureStart+3.8],blink:[blinkAt-.08,blinkAt+.32],settle:[k.boardingEnd,k.departureStart],depart:[k.departureStart,k.seaStart],sea:[k.seaStart,24]}[phase];
-        const selectedRange=phase==='dock'?[k.walkEnd-(f.tuning.clothFold&&f.storyIndex===1?1.4:.95),k.walkEnd]:phase==='walk-blink'?[k.prepareEnd+.8,k.prepareEnd+1.3]:range;
+        const selectedRange=phase==='dock'?[k.walkEnd-(f.tuning.clothFold&&f.storyIndex===1?1.4:.95),k.walkEnd]:phase==='walk-blink'?[k.prepareEnd+.8,k.prepareEnd+1.3]:phase==='reading-blink'?[k.prepareEnd*.36-.12,k.prepareEnd*.36+.38]:range;
         if(!selectedRange)throw Error('없는 검토 구간');
         const sheet=document.createElement('canvas');sheet.width=960;sheet.height=Math.ceil(samples/3)*350;const c=sheet.getContext('2d');c.fillStyle='#f3edde';c.fillRect(0,0,sheet.width,sheet.height);const frames=[];
         for(let i=0;i<samples;i++){
