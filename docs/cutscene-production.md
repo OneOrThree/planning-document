@@ -13,24 +13,30 @@
 | 생성 동작 아틀라스 | `cutscene-sprites.js`, `assets/cutscenes/sprites/black/` | `manifest.json.frame_layout` 좌표로만 샘플링 |
 | 개별 자세·발·손 등록점 | `cutscene-poses.js`, `assets/cutscenes/poses-black/walk-v1.json` | 현재 기본 `poses`. 원화·등록점·실험 상태를 구분 |
 | 노 젓기 국소 관절 | `cutscene-paddle-rig.js`, `poses-black/paddle-*` | 기본 채택. 한 어깨 관절과 고정 몸체·눈 감김. 완성형 전신 리깅과 구분 |
-| 보행 국소 관절 시험 | `cutscene-walk-rig.js`, `poses-black/walk-body-*`, `walk-front-paw-*` | `?walk=rig`에서만 비교. 기본 영상에는 미채택 |
+| 보행 국소 관절 | `cutscene-walk-rig.js`, `poses-black/walk-body-*`, `walk-leg-*` | 검토 40 이후 기본. `?walk=pose`로 이전 8자세 비교 |
+| 착지·자세별 등록선 | `walk-v1.json.jump`, `walk-v1.json.landing` | 실제 원화 발바닥을 읽고 확인. 등록선을 일괄 지정하지 않음 |
 | 관절 파츠 실험 | `cutscene-rig.js`, `assets/cutscenes/rig-black/` | 기본 재생과 별도. `actorMode: 'rig'`로 비교 |
 | 캐릭터 여섯 종 출처 | `figma-cats.js`, `assets/figma-cats/README.md` | 추출 원본과 생성 파생본 구분 |
 | 생성 프롬프트 | `assets/cutscenes/PROMPTS.md` | 사용 도구·기준 이미지·채택 여부를 정직하게 기록 |
 | 선택·재생·다운로드 | `cutscenes.html`, `cutscene-studio.js` | Canvas 최신 연출과 MP4 고정 버전 구분 |
+| 출력 버전·공개 범위 | `cutscene-export-catalog.js` | 최근 세 버전은 Pages 재생, 이전 MP4는 GitHub 원본 링크 |
 | 검토 기록 | `cutscene-review-log.js` | 실제 확인한 범위·발견·수정·근거만 추가 |
 
 ## 현재 제공물
 
-`cutscenes.html`에서 9편을 선택하고 실시간 연출과 MP4 초안을 볼 수 있다. `draft-v07`부터 `draft-v01`까지 일곱 버전을 비교한다. 각각 9개 무음 MP4·포스터와 소스·에셋 지문을 가진 `manifest.json`이 있다. 24초·24fps·576프레임의 H.264/yuv420p/faststart이며 v01은 720 × 1280, v02 이후는 1080 × 1920이다. v07은 검토 기록 39번까지의 상태로, 고개 들기 원화와 바닥에서 앞발을 들어 노를 잡는 동작을 더했다. v06은 기록 38번까지다. 같은 몸체에서 앞발만 연속 회전하는 노 젓기, 손 옆에서 노 집기, 감정형의 섬광 없는 장면 전환을 포함한다. v05는 기록 35번까지의 같은 얼굴 자세·눈깜빡임과 짐 정리, v04는 기록 30번까지의 모래 그림→공책과 경로 물결이다. 기록 39번 시점의 영상별 실제 검토 횟수는 35~37회다. 적용 대상별로 계산하며 출력·자동 검사는 더하지 않는다. 걷기·도약의 자세 연결은 아직 개선 중이며 완성형 리깅이나 사용자가 선택한 최종 시나리오가 아니다.
+`cutscenes.html`에서 9편을 선택하고 실시간 연출과 MP4 초안을 볼 수 있다. `draft-v08`부터 `draft-v01`까지 여덟 버전, 각각 9개 무음 MP4·포스터와 소스·에셋 지문을 가진 `manifest.json`이 있다. 최근 세 버전은 페이지에서 재생하며 이전 버전은 같은 선택기에서 GitHub 원본 다운로드로 연결한다. 24초·24fps·576프레임의 H.264/yuv420p/faststart이며 v01은 720 × 1280, v02 이후는 1080 × 1920이다.
+
+v08은 검토 41번까지다. 같은 몸체의 발 접지 보행, 실제 발바닥을 맞춘 도약과 착지 회복 세 원화를 더했다. v07은 기록 39번까지의 고개 들기와 순차 노 잡기, v06은 기록 38번까지의 앞발 국소 관절·손 옆의 노·감정형 섬광 제거다. v05는 기록 35번까지의 같은 얼굴 자세·눈깜빡임과 짐 정리, v04는 기록 30번까지의 모래 그림→공책과 경로 물결이다. 기록 41번 시점의 영상별 실제 검토 횟수는 37~39회다. 적용 대상별로 계산하며 출력·자동 검사는 더하지 않는다. 아직 완성형 리깅이나 사용자가 선택한 최종 시나리오가 아니다.
 
 실시간 Canvas는 출력 후 수정 사항을 먼저 보여줄 수 있다. 이때 MP4를 같은 최신본이라고 표시하지 않는다. 다음 버전은 별도 폴더로 출력한다.
 
 현재 Canvas의 기본 캐릭터는 개별 원화 방식(`poses`)이다. 걷기 8자세, 도약 5자세, 앞발 3자세, 일반 눈깜빡임과 노를 쥔 눈깜빡임을 기준 얼굴에 맞춰 생성했다. 이전 아틀라스는 `cutscenes.html?actor=sprite`, 관절 파츠 실험은 `?actor=rig`에서 비교한다. 보행 원화의 작은 발 움직임과 주기 경계 높이 차이 때문에 명세의 `experimental` 상태는 유지한다. 기본 채택은 시연 연결이지 완성형 리깅 승인과 다르다.
 
-노 젓기만 `paddleRig: true`를 기본으로 쓴다. 같은 몸체 원화 뒤에서 앞발 하나를 어깨 기준으로 회전하고 그 변환으로 손잡이 접점을 계산한다. `?paddle=pose`로 고정 앞발 방식을 비교할 수 있다. 눈 감김은 몸체 원화만 교체하므로 손의 궤적은 바뀌지 않는다. 주기 폐합·손 이동·눈 감김 독립성은 자동 검사하되 체중 이동이나 미술적 자연스러움 통과로 취급하지 않는다. `?walk=rig`는 발 접지 시험으로, 복부와 다리 연결부가 어색하여 기본에는 넣지 않았다.
+노 젓기는 `paddleRig: true`를 기본으로 쓴다. 같은 몸체 원화 뒤에서 앞발 하나를 어깨 기준으로 회전하고 그 변환으로 손잡이 접점을 계산한다. `?paddle=pose`로 고정 앞발 방식을 비교할 수 있다. 눈 감김은 몸체 원화만 교체하므로 손의 궤적은 바뀌지 않는다. 주기 폐합·손 이동·눈 감김 독립성은 자동 검사하되 체중 이동이나 미술적 자연스러움 통과로 취급하지 않는다.
 
-부두에 내린 뒤가 아니라 **뗏목에 착지한 뒤** 짐을 정리한다. v06 MP4는 1.65초, 검토 39번 이후 실시간 연출은 고개 들기를 더한 2.2초다. `settlingAt()`의 가방 내려놓기→책 꺼내기→펼치기→내려놓기→고개 들기→노 잡기 순서와 `preparationAt()`의 출발 준비 순서는 각각 4,509개 시간 표본으로 검사한다. 고개 들기 원화 다섯 장은 `walk-v1.json.recovery`에 명시한다. 앞발이 접근하는 초기 구간에는 노가 제자리에 남는지 별도 검사한다. 자세별 실제 앞발 좌표에 밧줄·노 회전축을 연결한다. 이 좌표 검사는 접점 보존만 보장하며 어깨·팔 전체의 자연스러움을 판정하지 않는다.
+보행도 검토 40 이후 `walkRig: true`를 쓴다. 같은 얼굴·몸체 뒤와 앞에 세 다리를 합성하고, 실제 동선 위의 접지 목표와 몸의 이동을 분리한다. 복부 밑선과 다리 윗선의 과한 윤곽은 생성 원화에서 정리하고 겹침 경계만 런타임 마스크로 잇는다. 8,109개 거리 표본에서 접지 목표가 고정되는지 검사한다. 고정 상체·단순한 다리이며 전신 체중 이동과 방향 전환은 별도 개선 대상이다. 이전 8자세는 `?walk=pose`로 비교한다.
+
+부두에 내린 뒤가 아니라 **뗏목에 착지한 뒤** 짐을 정리한다. 착지부터 출항 전까지 v06은 1.65초, v07은 2.2초, v08은 착지 회복을 늘린 2.36초다. 첫 0.36초에 무게 받기→몸 세우기 세 원화를 거친다. `settlingAt()`의 `elapsed`는 실제 착지 후 시간, `motionElapsed`는 추가한 0.16초를 제외한 짐 정리 시간이다. 가방 내려놓기→책 꺼내기→펼치기→내려놓기→고개 들기→노 잡기 순서와 `preparationAt()`의 출발 준비 순서는 각각 4,509개 시간 표본으로 검사한다. 고개 들기 원화 다섯 장은 `walk-v1.json.recovery`에 명시한다. 도약·착지 8장의 알파 발바닥과 등록선 일치도 검사한다. 앞발이 접근하는 초기 구간에는 노가 제자리에 남는지 별도 검사한다. 이 좌표 검사는 접점 보존만 보장하며 어깨·팔 전체의 자연스러움을 판정하지 않는다.
 
 ## 검토·출력 명령
 
@@ -74,9 +80,12 @@ node scripts/review-walk-poses.cjs --label=recovery-motion --film=new-morning-em
 
 # 인코딩된 MP4 자체에서 표본 추출. 캔버스 재렌더와 별도
 node scripts/review-video-batch.cjs --version=draft-v06 --label=decoded-version-review
+
+# 원화 알파 경계 읽기. 발바닥인지 직접 확인한 뒤 명세에 등록한다.
+node scripts/inspect-pose-registration.cjs jump-landing-reach-v1 jump-touchdown-soft-v2
 ```
 
-비교 스크립트의 `phase`는 `walk`, `boarding`, `settle`, `paddle`, `blink`를 지원한다. `blink`는 실제 눈깜빡임 시각을 중심으로 잡는다. 출력한 비교 영상과 순서표를 열어 확인하기 전에는 검토 횟수에 포함하지 않는다.
+비교 스크립트의 `phase`는 `walk`, `boarding`, `settle`, `recovery`, `paddle`, `blink`를 지원한다. `blink`는 실제 눈깜빡임 시각을 중심으로 잡는다. `--single`은 현재 기본 보행까지 따르고, `--walk=rig` 비교는 왼쪽 8자세와 오른쪽 관절 보행을 명시한다. 출력한 비교 영상과 순서표를 열어 확인하기 전에는 검토 횟수에 포함하지 않는다.
 
 책을 보는 자세들은 sprite-gen 준비 단계 오류 뒤 사용자 지시대로 세션 이미지 생성으로 전환한 결과다. `poses-black/`의 원본 크기와 발 등록 좌표를 코드에 명시한다. 작동하던 `cutout`만 알파 분리에 썼으며, 이 개별 PNG를 아틀라스 추출물이라고 부르지 않는다. 생성 모델이 그린 체크무늬는 투명도가 아니므로 단색 검사판에서 실제 알파를 확인한다.
 
@@ -86,4 +95,4 @@ node scripts/review-video-batch.cjs --version=draft-v06 --label=decoded-version-
 
 생성 임시 런의 개인 절대 경로·인증·도구 캐시를 공개 저장소에 복사하지 않는다. 아틀라스와 상대경로 명세·선택한 결과·검토 근거만 전달한다.
 
-확대 검토 이미지(`output/cutscenes/details`, `reviews`, `asset-qa`)는 Git에 전부 보존하되 Pages 빌드에는 중복 복사하지 않는다. 공개 검토실은 JSON 기록과 GitHub의 해당 프레임 폴더를 함께 연결한다. 실제 MP4·포스터·앱 에셋은 원본 화질로 배포한다. 빌드는 공개 묶음이 1,000,000,000바이트에 도달하면 중단한다. [GitHub Pages 공식 용량 안내](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits)를 기준으로 삼으며, 용량 때문에 원본이나 검토 이력을 지우지 않는다.
+확대 검토 이미지(`output/cutscenes/details`, `reviews`, `asset-qa`)는 Git에 전부 보존하되 Pages 빌드에는 중복 복사하지 않는다. 공개 검토실은 JSON 기록과 GitHub의 해당 프레임 폴더를 함께 연결한다. 출력 카탈로그의 최근 세 버전 MP4·모든 포스터·앱 에셋은 원본 화질로 배포한다. 이전 MP4는 Git에 그대로 보존하고 선택기에서 원본 다운로드로 연결한다. 빌드는 공개 묶음이 1,000,000,000바이트에 도달하면 중단한다. [GitHub Pages 공식 용량 안내](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits)를 기준으로 삼으며, 용량 때문에 원본이나 검토 이력을 지우지 않는다.

@@ -23,7 +23,7 @@ const {startServer}=require('./serve.cjs');const root=path.resolve(__dirname,'..
       window.walkPoseFrame=(elapsed,sample,frameIndex)=>{
         const c=output.getContext('2d');c.fillStyle='#f3ecda';c.fillRect(0,0,840,480);const time=start+elapsed,states=[];
         for(const [i,mode] of (single?['poses']:paddle==='rig'||walk==='rig'?['poses','poses']:['sprite','poses']).entries()){
-          const f={...film,tuning:{...film.tuning,actorMode:mode,paddleRig:paddle==='rig'?(single||i===1):film.tuning.paddleRig,walkRig:walk==='rig'&&(single||i===1)}},m=GachisupCinema.render(source,f,time),cam=m.camera;
+          const f={...film,tuning:{...film.tuning,actorMode:mode,paddleRig:paddle==='rig'?(single||i===1):film.tuning.paddleRig,walkRig:walk==='rig'?(single||i===1):single?film.tuning.walkRig:false}},m=GachisupCinema.render(source,f,time),cam=m.camera;
           const x=360+(m.catFoot.x-cam.x)*cam.z,y=640+(m.catFoot.y-cam.y)*cam.z;
           const crop={x:Math.max(0,Math.min(440,x-120)),y:Math.max(0,Math.min(1000,y-218)),size:280};
           c.drawImage(source,crop.x*2,crop.y*2,560,560,12+i*420,48,396,396);c.fillStyle='#3c493c';c.font='600 17px system-ui';c.fillText(single?'현재 시연 · '+phase:walk==='rig'?(i?'발 접지 관절 · 실험':'개별 8자세 · 기준'):paddle==='rig'?(i?'앞발 국소 관절 · 실험':'고정 앞발 · 기준'):(i?'개별 자세 · 실험':'기존 아틀라스 · 기준'),15+i*420,29);

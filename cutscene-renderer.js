@@ -170,10 +170,10 @@
       const drawBag=()=>{if(options.drawCarry)options.drawCarry(c,bagX,bagY,S.catSize,t,options.book,1,{worn:put<.2,empty:lift>=1,open:put*(1-place)});};
       if(options.book!==undefined&&put<.65)drawBag();
       ellipse(c,1,-4,37,10,'#4b3f3529');
-      const recovering=S.actorMode==='poses'&&options.arrival>=0&&options.arrival<.22;
-      const handling=settling&&settling.elapsed>=.24&&settling.elapsed<1.3,handlingPose=put<.45?'hold':lift<.4?'reach':place<.15?'hold':'place';
-      const rising=settling&&settling.elapsed>=1.3&&settling.elapsed<1.8;
-      actorState=(options.drawCat||cat)(c,0,-5,S.catSize,t,0,Math.sin(t*1.2)*-.007,recovering?{jump:1+options.arrival}:handling?{look:handlingPose}:rising?{recovery:settling.rise}:!settling&&unpack>.03&&unpack<1?{look:'reach'}:{grip:options.grip||0,paddleTime:options.paddleTime});
+      const recovering=S.actorMode==='poses'&&options.arrival>=0&&options.arrival<.36;
+      const handling=settling&&settling.motionElapsed>=.24&&settling.motionElapsed<1.3,handlingPose=put<.45?'hold':lift<.4?'reach':place<.15?'hold':'place';
+      const rising=settling&&settling.motionElapsed>=1.3&&settling.motionElapsed<1.8;
+      actorState=(options.drawCat||cat)(c,0,-5,S.catSize,t,0,Math.sin(t*1.2)*-.007,recovering?{landing:options.arrival/.36}:handling?{look:handlingPose}:rising?{recovery:settling.rise}:!settling&&unpack>.03&&unpack<1?{look:'reach'}:{grip:options.grip||0,paddleTime:options.paddleTime});
       if(options.book!==undefined){
         if(lift>0){
           const bx=mix(mix(54,44,lift),10,place),by=mix(mix(2,-29,lift),18,place);

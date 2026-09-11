@@ -1,12 +1,18 @@
 # 보행 접지 국소 관절 실험 프롬프트
 
-세션 이미지 생성으로 기준 얼굴·몸체를 유지한 파츠를 만들었다. 아래 실험은 기본 시연 미채택이며 결과를 기존 8자세와 비교한다. 작동 중인 sprite-gen cutout으로 실제 알파를 분리했다.
+세션 이미지 생성으로 기준 얼굴·몸체를 유지한 파츠를 만들었다. 검토 40에서 v6 접합부 합성 방식과 발 접지를 기본 시연에 채택했다. 이전 8자세는 `?walk=pose`로 비교한다. v07 MP4까지는 이전 보행이다. 작동 중인 sprite-gen cutout으로 실제 알파를 분리했다.
 
 ## walk-leg-soft-root-v2.png
 
-몸통과 겹치는 다리 위쪽의 진한 윤곽선을 덜어낸 원화. 같은 위치·발 모양을 유지하며 접합부를 비교한다. 기본 미채택 보행 실험이다.
+몸통과 겹치는 다리 위쪽의 진한 윤곽선을 덜어낸 원화. 같은 위치·발 모양을 유지한다. 가까운 두 다리에 쓰며 몸체와 겹치는 위쪽은 런타임 마스크로 부드럽게 연결한다.
 
 Edit this EXACT isolated charcoal kitten foreleg layer for cleaner cutout-puppet attachment. Keep the same one leg silhouette, paw, two ivory claws, scale, position and 1254 x 1254 canvas. The leg is between about x=540..755 and y=790..1126. Change ONLY the attachment area in its upper half: remove the dark brown outer stroke along BOTH SIDES above y=945 and replace that stroke with the same charcoal-gray fur color. The top edge must also have NO dark outline. The opaque gray top can overlap the identically colored torso without a visible black seam. From y=945 downward, gently resume the original warm dark line toward the ankle and paw, and preserve the bottom foot and claws EXACTLY. Do not add a body, head, joints, skeleton or another limb. Do not move, shrink or enlarge the leg. One isolated solid opaque leg layer; uniform pure #00FF00 chroma green everywhere outside it. No checkerboard, no labels, no shadows, no transparency gradients in the fur.
+
+## walk-body-soft-bottom-v3.png
+
+v4 보행 비교에서 배 아래 윤곽선이 옷자락처럼 보여 제거한 원화. 머리·꼬리·몸체 위치를 유지하며 검토 40에서 채택했다. 그림 원본을 변형 저장하지 않고 합성용 다리 마스크를 런타임에 만든다.
+
+Edit this EXACT isolated kitten puppet body layer. Keep the head, face, eyes, ears, whiskers, tail, upper body, scale, position and entire 1254x1254 registration unchanged. This layer will overlap three moving legs. The current rounded bottom of the torso has a very dark thick curved outline that looks like the hem of a shirt when composited over legs. Remove ONLY that bottom outline along the belly from approximately x=400,y=910 through x=680,y=967 to x=920,y=900. Replace the dark stroke with the same charcoal-gray fur as the immediately adjacent belly; keep the same rounded opaque silhouette, not transparent holes. Keep the outline on both upper sides, head, and tail exactly as it is. The low belly boundary should be a crisp clean charcoal-colored edge without a dark brown hem line, while all other outer edges remain normally outlined. No legs, no paws, no props, no ground shadow, no new marks. This is a cutout animation technical layer; do not redesign, resize or move anything. Flat pure #00FF00 green background outside the silhouette, no checkerboard, no gradients in the background, no text.
 
 ## walk-body-base-v1
 

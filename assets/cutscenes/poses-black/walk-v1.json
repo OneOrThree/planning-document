@@ -25,11 +25,11 @@
     {"file": "reach-low-blink-closed-v1.png", "originY": 1142, "hand": [1035, 938]}
   ],
   "jump": [
-    {"file": "jump-crouch-mid-v1.png", "originY": 1142},
-    {"file": "jump-crouch-v1.png", "originY": 1142},
-    {"file": "jump-takeoff-v1.png", "originY": 1142},
-    {"file": "jump-air-v1.png", "originY": 1142},
-    {"file": "jump-landing-reach-v1.png", "originY": 1142}
+    {"file": "jump-crouch-mid-v1.png", "originY": 1137},
+    {"file": "jump-crouch-v1.png", "originY": 1143},
+    {"file": "jump-takeoff-v1.png", "originY": 1088},
+    {"file": "jump-air-v1.png", "originY": 1010},
+    {"file": "jump-landing-reach-v1.png", "originY": 1074}
   ],
   "recovery": [
     {"file": "place-rise-start-v1.png", "originY": 1142},
@@ -37,6 +37,11 @@
     {"file": "place-rise-mid-v1.png", "originY": 1142},
     {"file": "place-rise-late-v1.png", "originY": 1142},
     {"file": "place-rise-end-v1.png", "originY": 1142}
+  ],
+  "landing": [
+    {"file": "jump-touchdown-soft-v2.png", "originY": 1075},
+    {"file": "jump-recover-mid-v2.png", "originY": 1106},
+    {"file": "jump-recover-late-v1.png", "originY": 1121}
   ],
   "frames": [
     {

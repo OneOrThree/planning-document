@@ -73,6 +73,20 @@ const root=path.resolve(__dirname,'..');
     assert.ok(poseCheck.reachHands.every(p=>Number.isFinite(p.x)&&Number.isFinite(p.y)));
     assert.deepEqual(poseCheck.gripBlinkFrames,[-1,0,1,0,-1]);assert.ok(poseCheck.gripHandStable);
     assert.deepEqual(poseCheck.recoveryFrames,[0,1,2,3,4,-1]);assert.ok(poseCheck.recoveryBaselineStable);
+    const landingCheck=await page.evaluate(async()=>{
+      const data=await CutscenePoses.load(),c=document.createElement('canvas').getContext('2d');
+      const phases=[.01,.34,.68,1.01].map(landing=>CutscenePoses.draw(c,100,180,176,0,{landing}));
+      const registrations=await Promise.all([...data.jump,...data.landing].map(f=>new Promise((resolve,reject)=>{
+        const im=new Image();im.onerror=()=>reject(Error(f.file));im.onload=()=>{
+          const canvas=document.createElement('canvas');canvas.width=im.width;canvas.height=im.height;const ctx=canvas.getContext('2d');ctx.drawImage(im,0,0);const pixels=ctx.getImageData(0,0,im.width,im.height).data;
+          let bottom=-1;for(let y=im.height-1;y>=0&&bottom<0;y--)for(let x=0;x<im.width;x++)if(pixels[(y*im.width+x)*4+3]>128){bottom=y;break;}
+          resolve({file:f.file,originY:f.originY,opaqueBottom:bottom,error:Math.abs(bottom-f.originY)});
+        };im.src='assets/cutscenes/poses-black/'+f.file;
+      })));
+      return{states:phases.map(p=>p.state),frames:phases.map(p=>p.frame),registrations};
+    });
+    assert.ok(landingCheck.states.every(s=>s==='landing-individual-poses'));assert.deepEqual(landingCheck.frames,[0,1,2,-1]);
+    assert.ok(landingCheck.registrations.every(r=>r.error<=1),'승선 자세는 실제 원화 발바닥과 등록선이 일치해야 합니다.');
     const paddleCheck=await page.evaluate(async()=>{
       await CutscenePaddleRig.ready;
       const ctx=document.createElement('canvas').getContext('2d');
@@ -89,7 +103,7 @@ const root=path.resolve(__dirname,'..');
     const pickupCheck=await page.evaluate(()=>{
       const c=document.createElement('canvas');c.width=90;c.height=160;let samples=0,waiting=0,maxWaitingDrift=0;
       for(const f of CutsceneProduction.films)for(let i=0;i<=30;i++){
-        const t=f.timing.boardingEnd+1.85+i/30*.35,s=GachisupCinema.settlingAt(f,t),m=GachisupCinema.render(c,f,t);samples++;
+        const t=f.timing.boardingEnd+2.01+i/30*.35,s=GachisupCinema.settlingAt(f,t),m=GachisupCinema.render(c,f,t);samples++;
         if(s.grip<=.65){waiting++;maxWaitingDrift=Math.max(maxWaitingDrift,Math.hypot(m.seat.paddle.pivot.x-43,m.seat.paddle.pivot.y+25));}
       }
       return{samples,waiting,maxWaitingDrift};
@@ -100,9 +114,31 @@ const root=path.resolve(__dirname,'..');
       const expectedStart=f.directionId==='journey'?(f.storyIndex===2?{x:182,y:520}:{x:112,y:423}):f.directionId==='emotion'?{x:180,y:606}:{x:117,y:619};
       const expectedEnd=f.directionId==='journey'?{x:407,y:714}:{x:312,y:581};
       const points=Array.from({length:701},(_,i)=>GachisupCinema.walkPathAt(f,i));
-      return{id:f.id,start,end,expectedStart,expectedEnd,continuous:points.slice(1).every((p,i)=>Math.hypot(p.x-points[i].x,p.y-points[i].y)<=1.000001),experimentalWalkDisabled:!f.tuning.walkRig};
+      return{id:f.id,start,end,expectedStart,expectedEnd,continuous:points.slice(1).every((p,i)=>Math.hypot(p.x-points[i].x,p.y-points[i].y)<=1.000001),localWalkEnabled:f.tuning.walkRig===true};
     }));
-    for(const p of pathCheck){assert.deepEqual(p.start,p.expectedStart);assert.deepEqual(p.end,p.expectedEnd);assert.ok(p.continuous);assert.ok(p.experimentalWalkDisabled);}
+    for(const p of pathCheck){assert.deepEqual(p.start,p.expectedStart);assert.deepEqual(p.end,p.expectedEnd);assert.ok(p.continuous);assert.ok(p.localWalkEnabled);}
+    const walkPlantCheck=await page.evaluate(()=>{
+      let stancePairs=0,maxPlantDrift=0,maxTargetStep=0,samples=0;const warnings=[];
+      for(const f of CutsceneProduction.films){
+        let previous;const rigSize=f.directionId==='journey'?(f.storyIndex===2?157:141):176;
+        for(let i=0;i<=900;i++){
+          const travel=i*.5,p=GachisupCinema.walkPathAt(f,travel),size=rigSize*(1+.1*i/900);
+          const feet=CutsceneWalkRig.targets(p.x,p.y,size,{travel,rigSize,rigStride:rigSize*.27,walk:1,pathAtDistance:d=>GachisupCinema.walkPathAt(f,d)});samples++;
+          for(const [j,foot]of feet.entries()){
+            if(!Number.isFinite(foot.foot.x)||!Number.isFinite(foot.foot.y))warnings.push(f.id+' 발 좌표 비정상');
+            if(previous){
+              const old=previous[j],drift=Math.hypot(foot.foot.x-old.foot.x,foot.foot.y-old.foot.y);maxTargetStep=Math.max(maxTargetStep,drift);
+              if(foot.stance&&old.stance&&foot.step===old.step){stancePairs++;maxPlantDrift=Math.max(maxPlantDrift,drift);}
+            }
+          }
+          previous=feet;
+        }
+      }
+      return{samples,stancePairs,maxPlantDrift,maxTargetStep,warnings,note:'접지 목표 좌표 검사. 원화의 윤곽·관절 연결을 시각 승인하지 않음.'};
+    });
+    assert.deepEqual(walkPlantCheck.warnings,[]);assert.ok(walkPlantCheck.stancePairs>0);
+    assert.ok(walkPlantCheck.maxPlantDrift<1e-8,'몸체 원근 크기가 변해도 심어 둔 발 목표는 움직이지 않아야 합니다.');
+    assert.ok(walkPlantCheck.maxTargetStep<3,'0.5 거리 이동에서 발 목표가 순간 이동하면 안 됩니다.');
     await page.waitForSelector('#exports video');assert.equal(await page.locator('#exports video').count(),9);
     const playback=await page.evaluate(async()=>{
       const v=document.querySelector('#exports video');v.muted=true;await v.play();
@@ -115,12 +151,13 @@ const root=path.resolve(__dirname,'..');
     const range=await fetch(url+mp4,{headers:{Range:'bytes=0-63'}});assert.equal(range.status,206);assert.equal(range.headers.get('content-type'),'video/mp4');assert.equal((await range.arrayBuffer()).byteLength,64);
     const suffix=await fetch(url+mp4,{headers:{Range:'bytes=-32'}});assert.equal(suffix.status,206);assert.equal((await suffix.arrayBuffer()).byteLength,32);
     const bad=await fetch(url+mp4,{headers:{Range:'bytes=8-2'}});assert.equal(bad.status,416);
-    await page.selectOption('#export-version','draft-v01');await page.waitForFunction(()=>window.cutsceneExportBatch?.version==='draft-v01');assert.equal(await page.locator('#exports video').count(),9);
+    await page.selectOption('#export-version','draft-v01');await page.waitForFunction(()=>window.cutsceneExportBatch?.version==='draft-v01');assert.equal(await page.locator('#exports video').count(),0);
+    assert.equal(await page.locator('#exports .archive-link').count(),9);assert.match(await page.locator('#exports .archive-link').first().getAttribute('href'),/^https:\/\/github\.com\/OneOrThree\/planning-document\/blob\/main\/output\/cutscenes\/videos\/draft-v01\/.*\.mp4\?raw=1$/);
     await page.goto(url+'figma-cats.html');assert.equal(await page.locator('#cat-grid .body').count(),6);
     await page.waitForFunction(()=>[...document.images].every(i=>i.complete&&i.naturalWidth>0));
     assert.equal(await page.locator('[data-cat="white"] .body').getAttribute('src'),'assets/figma-cats/white-standing-generated.png');
     assert.deepEqual(errors,[]);
-    const report={result:'PASS',films:9,packingTimelineSamples:result.packingSamples,settlingTimelineSamples:result.settlingSamples,backgroundRegistration:result.backgroundChecks,individualPoseContract:poseCheck,paddleRigContract:paddleCheck,paddlePickupContract:pickupCheck,walkPathContract:pathCheck,exportedVersion,exportedPlayback:playback,catBodies:6,range:true,errors};
+    const report={result:'PASS',films:9,packingTimelineSamples:result.packingSamples,settlingTimelineSamples:result.settlingSamples,backgroundRegistration:result.backgroundChecks,individualPoseContract:poseCheck,landingContract:landingCheck,paddleRigContract:paddleCheck,paddlePickupContract:pickupCheck,walkPathContract:pathCheck,walkPlantContract:walkPlantCheck,exportedVersion,exportedPlayback:playback,catBodies:6,range:true,errors};
     fs.mkdirSync(path.join(root,'output/cutscenes/qa'),{recursive:true});
     fs.writeFileSync(path.join(root,'output/cutscenes/qa/browser-check.json'),JSON.stringify(report,null,2)+'\n');
     console.log(JSON.stringify(report,null,2));

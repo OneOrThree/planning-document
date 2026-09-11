@@ -84,6 +84,70 @@
     "finite": true,
     "status": "experimental"
   },
+  "landingContract": {
+    "states": [
+      "landing-individual-poses",
+      "landing-individual-poses",
+      "landing-individual-poses",
+      "landing-individual-poses"
+    ],
+    "frames": [
+      0,
+      1,
+      2,
+      -1
+    ],
+    "registrations": [
+      {
+        "file": "jump-crouch-mid-v1.png",
+        "originY": 1137,
+        "opaqueBottom": 1137,
+        "error": 0
+      },
+      {
+        "file": "jump-crouch-v1.png",
+        "originY": 1143,
+        "opaqueBottom": 1143,
+        "error": 0
+      },
+      {
+        "file": "jump-takeoff-v1.png",
+        "originY": 1088,
+        "opaqueBottom": 1088,
+        "error": 0
+      },
+      {
+        "file": "jump-air-v1.png",
+        "originY": 1010,
+        "opaqueBottom": 1010,
+        "error": 0
+      },
+      {
+        "file": "jump-landing-reach-v1.png",
+        "originY": 1074,
+        "opaqueBottom": 1074,
+        "error": 0
+      },
+      {
+        "file": "jump-touchdown-soft-v2.png",
+        "originY": 1075,
+        "opaqueBottom": 1075,
+        "error": 0
+      },
+      {
+        "file": "jump-recover-mid-v2.png",
+        "originY": 1106,
+        "opaqueBottom": 1106,
+        "error": 0
+      },
+      {
+        "file": "jump-recover-late-v1.png",
+        "originY": 1121,
+        "opaqueBottom": 1121,
+        "error": 0
+      }
+    ]
+  },
   "paddleRigContract": {
     "state": "paddle-local-rig",
     "blinkFrames": [
@@ -124,7 +188,7 @@
         "y": 581
       },
       "continuous": true,
-      "experimentalWalkDisabled": true
+      "localWalkEnabled": true
     },
     {
       "id": "new-morning-journey",
@@ -145,7 +209,7 @@
         "y": 714
       },
       "continuous": true,
-      "experimentalWalkDisabled": true
+      "localWalkEnabled": true
     },
     {
       "id": "new-morning-storybook",
@@ -166,7 +230,7 @@
         "y": 581
       },
       "continuous": true,
-      "experimentalWalkDisabled": true
+      "localWalkEnabled": true
     },
     {
       "id": "folded-promise-emotion",
@@ -187,7 +251,7 @@
         "y": 581
       },
       "continuous": true,
-      "experimentalWalkDisabled": true
+      "localWalkEnabled": true
     },
     {
       "id": "folded-promise-journey",
@@ -208,7 +272,7 @@
         "y": 714
       },
       "continuous": true,
-      "experimentalWalkDisabled": true
+      "localWalkEnabled": true
     },
     {
       "id": "folded-promise-storybook",
@@ -229,7 +293,7 @@
         "y": 581
       },
       "continuous": true,
-      "experimentalWalkDisabled": true
+      "localWalkEnabled": true
     },
     {
       "id": "unfinished-pier-emotion",
@@ -250,7 +314,7 @@
         "y": 581
       },
       "continuous": true,
-      "experimentalWalkDisabled": true
+      "localWalkEnabled": true
     },
     {
       "id": "unfinished-pier-journey",
@@ -271,7 +335,7 @@
         "y": 714
       },
       "continuous": true,
-      "experimentalWalkDisabled": true
+      "localWalkEnabled": true
     },
     {
       "id": "unfinished-pier-storybook",
@@ -292,13 +356,21 @@
         "y": 581
       },
       "continuous": true,
-      "experimentalWalkDisabled": true
+      "localWalkEnabled": true
     }
   ],
-  "exportedVersion": "draft-v07",
+  "walkPlantContract": {
+    "samples": 8109,
+    "stancePairs": 14851,
+    "maxPlantDrift": 0,
+    "maxTargetStep": 2.061776594837381,
+    "warnings": [],
+    "note": "접지 목표 좌표 검사. 원화의 윤곽·관절 연결을 시각 승인하지 않음."
+  },
+  "exportedVersion": "draft-v08",
   "exportedPlayback": {
     "duration": 24,
-    "time": 0.65177,
+    "time": 0.653915,
     "width": 1080,
     "height": 1920
   },

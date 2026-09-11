@@ -3,6 +3,7 @@
   const arc=(c,points,color,width=2)=>{c.strokeStyle=color;c.lineWidth=width;c.lineCap='round';c.beginPath();points.forEach(([x,y],i)=>i?c.lineTo(x,y):c.moveTo(x,y));c.stroke();};
   function actor(c,x,y,size,t,walk=0,lean=0,pose={}){
     if(CutsceneSettings.actorMode==='rig')return CutsceneRig.draw(c,x,y,size,t,{...pose,walk,lean});
+    if(Number.isFinite(pose.landing)&&CutsceneSettings.actorMode==='poses')return CutscenePoses.draw(c,x,y,size,t,{landing:pose.landing,lean});
     if(Number.isFinite(pose.recovery)&&CutsceneSettings.actorMode==='poses')return CutscenePoses.draw(c,x,y,size,t,{recovery:pose.recovery,lean});
     if(pose.look){
       // 세션에서 한 장씩 생성한 파생 자세. 아틀라스 추출물이라고 표시하지 않는다.
@@ -103,8 +104,8 @@
   }
   function phaseAt(f,t){const k=f.timing;return t<k.prepareEnd?'prepare':t<k.walkEnd?'walk':t<k.boardingEnd?'boarding':t<k.departureStart?'settle':t<k.seaStart?'depart':'sea';}
   function settlingAt(f,t){
-    const elapsed=t-f.timing.boardingEnd;
-    return{elapsed,put:ease((elapsed-.24)/.4),lift:ease((elapsed-.66)/.22),open:ease((elapsed-.9)/.16),place:ease((elapsed-1.08)/.2),rise:clamp((elapsed-1.3)/.5),grip:ease((elapsed-1.85)/.35)};
+    const elapsed=t-f.timing.boardingEnd,motionElapsed=elapsed-.16;
+    return{elapsed,motionElapsed,put:ease((motionElapsed-.24)/.4),lift:ease((motionElapsed-.66)/.22),open:ease((motionElapsed-.9)/.16),place:ease((motionElapsed-1.08)/.2),rise:clamp((motionElapsed-1.3)/.5),grip:ease((motionElapsed-1.85)/.35)};
   }
   function boatAt(f,t){
     const k=f.timing,journey=f.directionId==='journey',p=ease((t-k.departureStart)/(k.seaStart-k.departureStart));
