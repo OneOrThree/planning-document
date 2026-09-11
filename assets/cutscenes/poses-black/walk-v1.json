@@ -1,0 +1,76 @@
+{
+  "kind": "individual-pose-sequence",
+  "status": "experimental",
+  "note": "세션 내장 이미지 생성으로 한 장씩 만든 자세. 아틀라스 파이프라인 출력이 아님. 실제 알파 분리에 기존 cutout 사용. 비교 검토 후 시연 기본값으로 사용하되 완성형 보행 연속성은 미승인.",
+  "width": 1254,
+  "height": 1254,
+  "originX": 670.218,
+  "scaleTo384": 0.300488,
+  "cycleSeconds": 0.88,
+  "neutral": {
+    "file": "neutral-forward-v1.png",
+    "originY": 1142
+  },
+  "blink": [
+    {"file": "neutral-blink-half-v1.png", "originY": 1142},
+    {"file": "neutral-blink-closed-v1.png", "originY": 1142}
+  ],
+  "reach": [
+    {"file": "reach-low-v1.png", "originY": 1142, "hand": [1035, 938]},
+    {"file": "reach-pull-v1.png", "originY": 1142, "hand": [932, 895]},
+    {"file": "reach-forward-v1.png", "originY": 1142, "hand": [1116, 836]}
+  ],
+  "reachBlink": [
+    {"file": "reach-low-blink-half-v1.png", "originY": 1142, "hand": [1035, 938]},
+    {"file": "reach-low-blink-closed-v1.png", "originY": 1142, "hand": [1035, 938]}
+  ],
+  "jump": [
+    {"file": "jump-crouch-mid-v1.png", "originY": 1142},
+    {"file": "jump-crouch-v1.png", "originY": 1142},
+    {"file": "jump-takeoff-v1.png", "originY": 1142},
+    {"file": "jump-air-v1.png", "originY": 1142},
+    {"file": "jump-landing-reach-v1.png", "originY": 1142}
+  ],
+  "frames": [
+    {
+      "index": 0,
+      "file": "walk-contact-a-v1.png",
+      "originY": 1135
+    },
+    {
+      "index": 1,
+      "file": "walk-between-01-v2.png",
+      "originY": 1129
+    },
+    {
+      "index": 2,
+      "file": "walk-passing-a-v1.png",
+      "originY": 1137
+    },
+    {
+      "index": 3,
+      "file": "walk-between-03-v1.png",
+      "originY": 1113
+    },
+    {
+      "index": 4,
+      "file": "walk-contact-b-v2.png",
+      "originY": 1111
+    },
+    {
+      "index": 5,
+      "file": "walk-between-05-v1.png",
+      "originY": 1095
+    },
+    {
+      "index": 6,
+      "file": "walk-passing-b-v1.png",
+      "originY": 1108
+    },
+    {
+      "index": 7,
+      "file": "walk-between-07-v1.png",
+      "originY": 1095
+    }
+  ]
+}

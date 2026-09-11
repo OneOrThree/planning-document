@@ -2,6 +2,7 @@
   "result": "PASS",
   "films": 9,
   "packingTimelineSamples": 4509,
+  "settlingTimelineSamples": 4509,
   "backgroundRegistration": [
     {
       "key": "room",
@@ -20,10 +21,64 @@
       "stable": true
     }
   ],
-  "exportedVersion": "draft-v04",
+  "individualPoseContract": {
+    "kind": "individual-pose-sequence",
+    "frames": 8,
+    "steps": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "blinkFrames": [
+      -1,
+      0,
+      1,
+      0,
+      -1
+    ],
+    "jumpFrames": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      1,
+      0
+    ],
+    "reachHands": [
+      {
+        "x": 150.239114574,
+        "y": 151.904372
+      },
+      {
+        "x": 136.05357690733334,
+        "y": 145.98225433333334
+      },
+      {
+        "x": 161.394731574,
+        "y": 137.856558
+      }
+    ],
+    "gripBlinkFrames": [
+      -1,
+      0,
+      1,
+      0,
+      -1
+    ],
+    "gripHandStable": true,
+    "finite": true,
+    "status": "experimental"
+  },
+  "exportedVersion": "draft-v05",
   "exportedPlayback": {
     "duration": 24,
-    "time": 0.653125,
+    "time": 0.651322,
     "width": 1080,
     "height": 1920
   },

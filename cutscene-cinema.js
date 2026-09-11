@@ -5,13 +5,14 @@
     if(CutsceneSettings.actorMode==='rig')return CutsceneRig.draw(c,x,y,size,t,{...pose,walk,lean});
     if(pose.look){
       // 세션에서 한 장씩 생성한 파생 자세. 아틀라스 추출물이라고 표시하지 않는다.
-      const registration=.300488*size/384,texture=pose.look==='hold'?A.images.lookHold:pose.look==='reach'?A.images.lookReach:A.images.lookDown;c.save();c.translate(x,y);c.rotate(lean);c.scale(registration,registration);c.drawImage(texture,-670.218,-1141);c.restore();return{state:'look-'+pose.look,frame:0};
+      const registration=.300488*size/384,texture=pose.look==='place'?A.images.lookPlace:pose.look==='hold'?A.images.lookHold:pose.look==='reach'?A.images.lookReach:A.images.lookDown;c.save();c.translate(x,y);c.rotate(lean);c.scale(registration,registration);c.drawImage(texture,-670.218,-1141);c.restore();return{state:'look-'+pose.look,frame:0};
     }
-    if(walk>.1)return CutsceneSprites.draw(c,x,y,size,'walk',pose.gaitTime??t,{lean});
-    if(pose.jump!==undefined)return CutsceneSprites.draw(c,x,y,size,'jump',0,{frame:Math.min(3,Math.floor(pose.jump*4)),lean});
-    if(pose.reach!==undefined)return CutsceneSprites.draw(c,x,y,size,'reach',0,{frame:pose.reach,lean});
+    if(walk>.1)return CutsceneSettings.actorMode==='poses'?CutscenePoses.draw(c,x,y,size,pose.gaitTime??t,{lean,travel:pose.travel,stride:pose.stride}):CutsceneSprites.draw(c,x,y,size,'walk',pose.gaitTime??t,{lean});
+    if(pose.jump!==undefined)return CutsceneSettings.actorMode==='poses'?CutscenePoses.draw(c,x,y,size,t,{jump:pose.jump,lean}):CutsceneSprites.draw(c,x,y,size,'jump',0,{frame:Math.min(3,Math.floor(pose.jump*4)),lean});
+    if(pose.reach!==undefined)return CutsceneSettings.actorMode==='poses'?CutscenePoses.draw(c,x,y,size,t,{reach:pose.reach,lean}):CutsceneSprites.draw(c,x,y,size,'reach',0,{frame:pose.reach,lean});
     const blinkTime=t%4.7-3.2;
-    if(!(pose.grip>.02))return CutsceneSprites.draw(c,x,y,size,'blink',blinkTime<0?0:blinkTime,{lean});
+    if(!(pose.grip>.02))return CutsceneSettings.actorMode==='poses'?CutscenePoses.draw(c,x,y,size,t,{neutral:true,blinkTime,lean}):CutsceneSprites.draw(c,x,y,size,'blink',blinkTime<0?0:blinkTime,{lean});
+    if(CutsceneSettings.actorMode==='poses')return CutscenePoses.draw(c,x,y,size,t,{reach:1,blinkTime,lean});
     if(pose.grip<.72)return CutsceneSprites.draw(c,x,y,size,'reach',0,{frame:pose.grip<.35?1:2,lean});
     return CutsceneSprites.draw(c,x,y,size,'paddle',blinkTime<0?0:blinkTime,{lean});
   }
@@ -98,6 +99,10 @@
     return{x,y};
   }
   function phaseAt(f,t){const k=f.timing;return t<k.prepareEnd?'prepare':t<k.walkEnd?'walk':t<k.boardingEnd?'boarding':t<k.departureStart?'settle':t<k.seaStart?'depart':'sea';}
+  function settlingAt(f,t){
+    const elapsed=t-f.timing.boardingEnd;
+    return{elapsed,put:ease((elapsed-.24)/.4),lift:ease((elapsed-.66)/.22),open:ease((elapsed-.9)/.16),place:ease((elapsed-1.08)/.2),grip:ease((elapsed-1.3)/.35)};
+  }
   function boatAt(f,t){
     const k=f.timing,journey=f.directionId==='journey',p=ease((t-k.departureStart)/(k.seaStart-k.departureStart));
     const bez=(a,b,c,d)=>a*(1-p)**3+3*b*(1-p)**2*p+3*c*(1-p)*p*p+d*p**3;
@@ -116,7 +121,7 @@
     return trail;
   }
   function world(c,f,t){
-    const k=f.timing,T=f.tuning,phase=phaseAt(f,t);let catFoot,seat=null,scale=1;
+    const k=f.timing,T=f.tuning,phase=phaseAt(f,t);let catFoot,seat=null,scale=1,actorState=null;
     const cam=camera(f,t,phase);if(f.storyIndex===2&&phase==='prepare'&&f.directionId==='emotion')Object.assign(cam,{x:369,y:749,z:1.35});
     cam.x=clamp(cam.x,W/(2*cam.z),W-W/(2*cam.z));cam.y=clamp(cam.y,H/(2*cam.z),H-H/(2*cam.z));
     c.save();view(c,cam);
@@ -137,34 +142,37 @@
         // 밧줄은 갑판·캐릭터 뒤의 깊이. 얼굴 앞을 지나가지 않는다.
         const loose=ease((t-k.boardingEnd)/(k.departureStart-k.boardingEnd));c.save();c.globalAlpha=1-loose;c.strokeStyle='#806447';c.lineWidth=2.5;c.beginPath();c.moveTo(journey?466:369,journey?708:575);c.quadraticCurveTo(journey?451:412,(journey?751:585)+loose*20,rx-55,ry-45);c.stroke();c.restore();
       }
-      seat=A.raft(c,rx,ry,raftWidth,t,boarded,atSea?1:progress,{landing,wakeHandled:true,paddleTime:t-k.departureStart,paddleAmplitude:T.paddleAmplitude,book:f.storyIndex,grip:ease((t-k.boardingEnd-.55)/.65),unpack:ease((t-k.boardingEnd-.05)/.6),drawCarry:carry,drawCat:actor,uncover:f.storyIndex===1?uncover:1,clothDestination:{x:clothPoint.x-rx,y:clothPoint.y-ry},build:f.storyIndex===2?build:1});
+      const settling=settlingAt(f,t);
+      seat=A.raft(c,rx,ry,raftWidth,t,boarded,atSea?1:progress,{landing,arrival:t-k.boardingEnd,wakeHandled:true,paddleTime:t-k.departureStart,paddleAmplitude:T.paddleAmplitude,book:f.storyIndex,settling,grip:settling.grip,drawCarry:carry,drawCat:actor,uncover:f.storyIndex===1?uncover:1,clothDestination:{x:clothPoint.x-rx,y:clothPoint.y-ry},build:f.storyIndex===2?build:1});
       if(f.storyIndex===1&&uncover===1){c.save();c.translate(clothPoint.x,clothPoint.y);const rw=T.raftWidth*(journey?.88:1);c.scale(.16,.12);c.drawImage(A.images.cloth,225,266,1090,520,-rw*.52,-rw*.22,rw*1.04,rw*.5);c.restore();}
       if(phase==='walk'){
         const p=clamp((t-k.prepareEnd)/(dockStart-k.prepareEnd));const travel=p<.12?p*p/.24:p>.88?1-(1-p)**2/.24:p-.06;
-        let x=mix(117,312,travel/.94),y=mix(619,581,travel/.94),size=T.catSize;
+        let x=mix(117,312,travel/.94),y=mix(619,581,travel/.94),size=T.catSize,distanceWalked=Math.hypot(195,38)*travel/.94,startSize=T.catSize;
         if(journey){
           const nodes=f.storyIndex===2?[[182,520],[155,598],[178,639],[290,681],[360,713],[407,714]]:[[112,423],[131,478],[165,534],[231,623],[297,681],[360,713],[407,714]];
           const lengths=nodes.slice(1).map((n,i)=>Math.hypot(n[0]-nodes[i][0],n[1]-nodes[i][1])),total=lengths.reduce((a,b)=>a+b,0);
-          let distance=travel/.94*total,part=0;while(part<lengths.length-1&&distance>lengths[part])distance-=lengths[part++];
+          distanceWalked=travel/.94*total;startSize=f.storyIndex===2?157:141;
+          let distance=distanceWalked,part=0;while(part<lengths.length-1&&distance>lengths[part])distance-=lengths[part++];
           const q=clamp(distance/lengths[part]);x=mix(nodes[part][0],nodes[part+1][0],q);y=mix(nodes[part][1],nodes[part+1][1],q);size=mix(f.storyIndex===2?157:141,155,p);
         }
         groundShadow(c,x,y,size,T.shadowAlpha);
-        const pose=t>=dockStart?{reach:dockQ<.2?1:dockQ<.65?3:2}:{gaitTime:(t-k.prepareEnd)*.8};
-        carry(c,x,y,size,t,f.storyIndex);actor(c,x,y,size,t,Math.min(1,p/.1,(1-p)/.1),0,pose);catFoot={x,y};
+        // 원화 순서·프레임 길이를 고쳐 결함을 숨기지 않는다. 실제 동선 거리와 보폭으로 캐릭터의 재생 위치를 구한다.
+        const pose=t>=dockStart?{reach:dockQ<.2?1:dockQ<.65?3:2}:{gaitTime:(t-k.prepareEnd)*.8,travel:distanceWalked,stride:startSize*.4};
+        carry(c,x,y,size,t,f.storyIndex);actorState=actor(c,x,y,size,t,Math.min(1,p/.1,(1-p)/.1),0,pose);catFoot={x,y};
         if(dockQ>0&&dockQ<.92){
-          const hand={x:x+size*(dockQ<.2?.28:dockQ<.65?.402:.229),y:y-size*(dockQ<.2?.057:dockQ<.65?.268:.197)},tie={x:rx-raftWidth*.27,y:ry-raftWidth*.06};
+          const hand=actorState?.hand||{x:x+size*(dockQ<.2?.28:dockQ<.65?.402:.229),y:y-size*(dockQ<.2?.057:dockQ<.65?.268:.197)},tie={x:rx-raftWidth*.27,y:ry-raftWidth*.06};
           c.save();c.strokeStyle='#8b7150';c.lineWidth=2;c.beginPath();c.moveTo(hand.x,hand.y);c.quadraticCurveTo((hand.x+tie.x)/2,(hand.y+tie.y)/2+13*(1-build),tie.x,tie.y);c.stroke();c.restore();
         }
       }else if(phase==='boarding'){
         const p=clamp((t-k.walkEnd)/(k.boardingEnd-k.walkEnd)),anticipation=T.anticipation;
         const start=journey?{x:407,y:714}:{x:312,y:581};let x=start.x,y=start.y,lean=0;
-        if(p<anticipation){const q=Math.sin(Math.PI*p/anticipation);y+=q*4;lean=-q*.025;}
+        if(p<anticipation){const q=Math.sin(Math.PI*p/anticipation);if(CutsceneSettings.actorMode!=='poses')y+=q*4;lean=-q*.025;}
         else{const q=(p-anticipation)/(1-anticipation);x=mix(start.x,seat.x,ease(q));y=mix(start.y,seat.y,ease(q))-Math.sin(Math.PI*q)*T.jumpHeight;lean=-Math.sin(Math.PI*q)*.07;}
         const size=journey?155:T.catSize;
-        groundShadow(c,x,mix(start.y,seat.y,ease(p)),size,T.shadowAlpha*.6);carry(c,x,y,size,t,f.storyIndex);actor(c,x,y,size,t,0,lean,{jump:p});catFoot={x,y};
-      }else catFoot=seat;
+        groundShadow(c,x,mix(start.y,seat.y,ease(p)),size,T.shadowAlpha*.6);carry(c,x,y,size,t,f.storyIndex);actorState=actor(c,x,y,size,t,0,lean,{jump:p});catFoot={x,y};
+      }else{catFoot={x:seat.x,y:seat.y};actorState=seat.actorState;}
     }
-    c.restore();return{phase,catFoot,seat,scale,camera:cam};
+    c.restore();return{phase,catFoot,seat,scale,camera:cam,actorState};
   }
   const copy=[
     ['오늘 할 일은, 어제와 비슷해.','그래도 오늘은 같이 시작하고 싶어.','책 한 권과, 함께하고 싶은 마음.','함께할 곳으로, 한 걸음 더.','오늘은, 같이 시작해볼까.'],
@@ -208,5 +216,5 @@
     if(f.directionId==='storybook'){c.strokeStyle='#f3e7ca';c.lineWidth=16;c.strokeRect(8,8,W-16,H-16);}
     const line=caption(c,f,t);c.restore();return{filmId:f.id,time:t,...meta,caption:line};
   }
-  window.GachisupCinema={ready:Promise.all([A.ready,CutsceneSprites.ready,CutsceneRig.ready]),render,duration:24,phaseAt,boatAt,wakeTrailAt,preparationAt};
+  window.GachisupCinema={ready:Promise.all([A.ready,CutsceneSprites.ready,CutsceneRig.ready,CutscenePoses.load()]),render,duration:24,phaseAt,boatAt,wakeTrailAt,preparationAt,settlingAt};
 })();

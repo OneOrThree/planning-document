@@ -5,7 +5,7 @@
   const ease=x=>{x=clamp(x);return x*x*(3-2*x);};
   const mix=(a,b,x)=>a+(b-a)*x;
   const gauss=(x,y,cx,cy,sx,sy)=>Math.exp(-((x-cx)**2/sx**2+(y-cy)**2/sy**2));
-  const paths={room:'assets/cutscenes/room-v2.png',shore:'assets/cutscenes/shore-v2.png',sea:'assets/cutscenes/sea-v2.png',sand:'assets/cutscenes/sketch-beach.png',cat:'assets/figma-cats/black-standing.png',deck:'assets/cutscenes/raft-deck-v3.png',coastHome:'assets/cutscenes/coastal-home-pier-v3.png',notebook:'assets/cutscenes/notebook-open-v1.png',cloth:'assets/cutscenes/raft-cloth-v2.png',lookDown:'assets/cutscenes/poses-black/look-down-v1.png',lookReach:'assets/cutscenes/poses-black/look-reach-v1.png',lookHold:'assets/cutscenes/poses-black/look-hold-v1.png'};
+  const paths={room:'assets/cutscenes/room-v2.png',shore:'assets/cutscenes/shore-v2.png',sea:'assets/cutscenes/sea-v2.png',sand:'assets/cutscenes/sketch-beach.png',cat:'assets/figma-cats/black-standing.png',deck:'assets/cutscenes/raft-deck-v3.png',coastHome:'assets/cutscenes/coastal-home-pier-v3.png',notebook:'assets/cutscenes/notebook-open-v1.png',cloth:'assets/cutscenes/raft-cloth-v2.png',lookDown:'assets/cutscenes/poses-black/look-down-v1.png',lookReach:'assets/cutscenes/poses-black/look-reach-v1.png',lookHold:'assets/cutscenes/poses-black/look-hold-v1.png',lookPlace:'assets/cutscenes/poses-black/place-down-v1.png'};
   const captions=[
     [[0.5,3.5,'오늘 할 일은, 어제와 비슷해.'],[3.8,6.6,'그래도 오늘은 같이 시작하고 싶어.'],[7,10.6,'책 한 권을 싣고, 뗏목에 올라.'],[11,14.1,'함께할 곳으로, 한 걸음 더.'],[14.5,18,'오늘은, 같이 시작해볼까.']],
     [[0.5,3.5,'오래된 공책에서, 약속을 만났어.'],[3.8,6.6,'함께 만들던 부두. 아직 기억나.'],[7,10.6,'접어 둔 마음과 뗏목을 다시 펴.'],[11,14.1,'다음 이야기는 누구와 쓰게 될까.'],[14.5,18,'이번에는, 어디에서 같이해볼까.']],
@@ -162,20 +162,31 @@
       c.drawImage(images.cloth,225,266,1090,520,-width*.52,-width*.22,width*1.04,width*.5);c.restore();
     }
     c.save();c.scale(width/S.raftWidth,width/S.raftWidth);
+    let actorState=null;
     if(onboard){
-      const unpack=options.unpack===undefined?1:options.unpack,put=ease(unpack/.58),open=ease((unpack-.58)/.42);
-      const drawBag=()=>{if(options.drawCarry)options.drawCarry(c,mix(0,-58,put),mix(-5,64,put),S.catSize,t,options.book,1,{worn:put<.2,empty:open>.3});};
+      const unpack=options.unpack===undefined?1:options.unpack,settling=options.settling,put=settling?.put??ease(unpack/.58),open=settling?.open??ease((unpack-.58)/.42),lift=settling?.lift??open,place=settling?.place??open;
+      // 손이 닿는 오른쪽에 가방을 놓는다. 책은 가방 입구→앞발→가까운 갑판 순서로 연결한다.
+      const bagX=mix(0,14,put),bagY=mix(-5,52,put);
+      const drawBag=()=>{if(options.drawCarry)options.drawCarry(c,bagX,bagY,S.catSize,t,options.book,1,{worn:put<.2,empty:lift>=1,open:put*(1-place)});};
       if(options.book!==undefined&&put<.65)drawBag();
       ellipse(c,1,-4,37,10,'#4b3f3529');
-      (options.drawCat||cat)(c,0,-5,S.catSize,t,0,Math.sin(t*1.2)*-.007,unpack>.15&&unpack<1?{look:'reach'}:{grip:options.grip||0});
+      const recovering=S.actorMode==='poses'&&options.arrival>=0&&options.arrival<.22;
+      const handling=settling&&settling.elapsed>=.24&&settling.elapsed<1.3,handlingPose=put<.45?'hold':lift<.4?'reach':place<.15?'hold':'place';
+      actorState=(options.drawCat||cat)(c,0,-5,S.catSize,t,0,Math.sin(t*1.2)*-.007,recovering?{jump:1+options.arrival}:handling?{look:handlingPose}:!settling&&unpack>.03&&unpack<1?{look:'reach'}:{grip:options.grip||0});
       if(options.book!==undefined){
-        if(open){c.save();c.translate(mix(-18,-72,open),mix(25,14,open)-Math.sin(open*Math.PI)*13);c.scale(1,.57);book(c,-39*.31*(1-open),0,.31,t,options.book,{opening:open});c.restore();}
+        if(lift>0){
+          const bx=mix(mix(54,44,lift),10,place),by=mix(mix(2,-29,lift),18,place);
+          c.save();if(lift<1){c.beginPath();c.rect(-200,-400,400,402);c.clip();}c.translate(bx,by);c.scale(1,mix(1,.57,place));book(c,-39*.31*(1-open),0,.31,t,options.book,{opening:open});c.restore();
+        }
         if(put>=.65)drawBag();
       }
     }
     const grip=options.grip||0,paddleTime=options.paddleTime??t,cycle=((paddleTime/2.8)%1+1)%1;
     const stroke=cycle<.64?ease(cycle/.64):1-ease((cycle-.64)/.36);
-    const paddleAngle=-1.02+stroke*.39,paddleX=mix(-34,40,grip),paddleY=mix(2,-37,grip);
+    // 당겨 젓는 동안은 물에, 복귀할 때는 손목을 돌려 노 끝을 수면 위로 들어 올린다.
+    const returnLift=cycle<.64?0:Math.sin((cycle-.64)/.36*Math.PI),paddleAngle=-1.02+stroke*.39-returnLift*.64;
+    const poseScale=.300488*S.catSize/384,defaultHand=S.actorMode==='poses'?{x:(1035-670.218)*poseScale,y:-5+(938-1142)*poseScale}:{x:40,y:-37};
+    const hand=actorState?.hand||defaultHand,paddleX=mix(-34,hand.x,grip),paddleY=mix(2,hand.y,grip);
     c.save();c.translate(paddleX,paddleY);c.rotate(mix(-1.18,paddleAngle,grip));c.strokeStyle='#68523d';c.lineWidth=5;c.lineCap='round';c.beginPath();c.moveTo(0,-8);c.lineTo(0,136);c.stroke();c.fillStyle='#b79869';c.beginPath();c.roundRect(-8,121,16,41,7);c.fill();c.stroke();c.restore();
     // 힘을 주는 반 주기에만 노 끝과 같은 위치에 물결을 둔다.
     if(onboard&&travel>0&&cycle<.64){
@@ -183,7 +194,7 @@
       c.save();c.globalAlpha=wet*.5;c.strokeStyle='#f6efcf';c.lineWidth=1.8;c.beginPath();c.ellipse(tipX,tipY,12+wet*10,4+wet*3,-.1,0,Math.PI*2);c.stroke();c.restore();
     }
     c.restore();c.restore();
-    return {x:x+5*width/S.raftWidth*Math.sin(tilt),y:y+bob-5*width/S.raftWidth*Math.cos(tilt)};
+    return {x:x+5*width/S.raftWidth*Math.sin(tilt),y:y+bob-5*width/S.raftWidth*Math.cos(tilt),actorState,paddle:{cycle,stroke,returnLift,angle:paddleAngle,pivot:{x:paddleX,y:paddleY},grip}};
   }
   function scene(c,id,t){
     if(t<6.7){

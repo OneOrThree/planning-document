@@ -1,0 +1,4201 @@
+{
+  "filmId": "new-morning-storybook",
+  "duration": 3.7916666666666665,
+  "fps": 24,
+  "frames": 91,
+  "fingerprint": "a178881a7095b378fcfa4a0ec867581fd7a9d38a2dff74ff425221b184f3a0c2",
+  "status": "unreviewed-experiment",
+  "note": "실제 속도의 걷기 구간 비교. 전체 컷신이나 보행의 자동 통과 판정이 아니다. 연락표는 24개 시간 표본.",
+  "errors": [],
+  "states": [
+    {
+      "frame": 0,
+      "elapsed": 0,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 7.5,
+          "phase": "walk",
+          "foot": {
+            "x": 117.00010641572202,
+            "y": 618.9999792625772
+          },
+          "actor": {
+            "state": "blink",
+            "frame": 0
+          },
+          "crop": {
+            "x": 0,
+            "y": 400.9999792625772,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 7.5,
+          "phase": "walk",
+          "foot": {
+            "x": 117.00010641572202,
+            "y": 618.9999792625772
+          },
+          "actor": {
+            "state": "neutral",
+            "frame": -1,
+            "blinkFrame": -1,
+            "phase": 0.523863636363636,
+            "baseline": 1142,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 0,
+            "y": 400.9999792625772,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 1,
+      "elapsed": 0.041666666666666664,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 7.541666666666667,
+          "phase": "walk",
+          "foot": {
+            "x": 117.18474951740015,
+            "y": 618.9639975299425
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 0
+          },
+          "crop": {
+            "x": 0,
+            "y": 400.9639975299425,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 7.541666666666667,
+          "phase": "walk",
+          "foot": {
+            "x": 117.18474951740015,
+            "y": 618.9639975299425
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 0,
+            "blinkFrame": -1,
+            "phase": 0.002673647225228226,
+            "baseline": 1135,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 0,
+            "y": 400.9639975299425,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 2,
+      "elapsed": 0.08333333333333333,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 7.583333333333333,
+          "phase": "walk",
+          "foot": {
+            "x": 117.73899806960061,
+            "y": 618.8559901197701
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 0
+          },
+          "crop": {
+            "x": 0,
+            "y": 400.8559901197701,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 7.583333333333333,
+          "phase": "walk",
+          "foot": {
+            "x": 117.73899806960061,
+            "y": 618.8559901197701
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 0,
+            "blinkFrame": -1,
+            "phase": 0.010694588900912239,
+            "baseline": 1135,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 0,
+            "y": 400.8559901197701,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 3,
+      "elapsed": 0.125,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 7.625,
+          "phase": "walk",
+          "foot": {
+            "x": 118.66274565660137,
+            "y": 618.6759777694828
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 0
+          },
+          "crop": {
+            "x": 0,
+            "y": 400.67597776948276,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 7.625,
+          "phase": "walk",
+          "foot": {
+            "x": 118.66274565660137,
+            "y": 618.6759777694828
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 0,
+            "blinkFrame": -1,
+            "phase": 0.024062825027052703,
+            "baseline": 1135,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 0,
+            "y": 400.67597776948276,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 4,
+      "elapsed": 0.16666666666666666,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 7.666666666666667,
+          "phase": "walk",
+          "foot": {
+            "x": 119.95599227840245,
+            "y": 618.4239604790805
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 1
+          },
+          "crop": {
+            "x": 0,
+            "y": 400.4239604790805,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 7.666666666666667,
+          "phase": "walk",
+          "foot": {
+            "x": 119.95599227840245,
+            "y": 618.4239604790805
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 0,
+            "blinkFrame": -1,
+            "phase": 0.0427783556036494,
+            "baseline": 1135,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 0,
+            "y": 400.4239604790805,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 5,
+      "elapsed": 0.20833333333333334,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 7.708333333333333,
+          "phase": "walk",
+          "foot": {
+            "x": 121.61873793500381,
+            "y": 618.0999382485634
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 1
+          },
+          "crop": {
+            "x": 1.6187379350038213,
+            "y": 400.0999382485634,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 7.708333333333333,
+          "phase": "walk",
+          "foot": {
+            "x": 121.61873793500381,
+            "y": 618.0999382485634
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 0,
+            "blinkFrame": -1,
+            "phase": 0.06684118063070188,
+            "baseline": 1135,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 1.6187379350038213,
+            "y": 400.0999382485634,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 6,
+      "elapsed": 0.25,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 7.75,
+          "phase": "walk",
+          "foot": {
+            "x": 123.6509826264055,
+            "y": 617.7039110779313
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 1
+          },
+          "crop": {
+            "x": 3.6509826264054936,
+            "y": 399.70391107793125,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 7.75,
+          "phase": "walk",
+          "foot": {
+            "x": 123.6509826264055,
+            "y": 617.7039110779313
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 0,
+            "blinkFrame": -1,
+            "phase": 0.09625130010821104,
+            "baseline": 1135,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 3.6509826264054936,
+            "y": 399.70391107793125,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 7,
+      "elapsed": 0.2916666666666667,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 7.791666666666667,
+          "phase": "walk",
+          "foot": {
+            "x": 126.05272635260751,
+            "y": 617.2358789671841
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 1
+          },
+          "crop": {
+            "x": 6.052726352607522,
+            "y": 399.23587896718414,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 7.791666666666667,
+          "phase": "walk",
+          "foot": {
+            "x": 126.05272635260751,
+            "y": 617.2358789671841
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 1,
+            "blinkFrame": -1,
+            "phase": 0.13100871403617642,
+            "baseline": 1129,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 6.052726352607522,
+            "y": 399.23587896718414,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 8,
+      "elapsed": 0.3333333333333333,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 7.833333333333333,
+          "phase": "walk",
+          "foot": {
+            "x": 128.82396911360976,
+            "y": 616.6958419163223
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 2
+          },
+          "crop": {
+            "x": 8.823969113609763,
+            "y": 398.69584191632225,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 7.833333333333333,
+          "phase": "walk",
+          "foot": {
+            "x": 128.82396911360976,
+            "y": 616.6958419163223
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 1,
+            "blinkFrame": -1,
+            "phase": 0.17111342241459693,
+            "baseline": 1129,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 8.823969113609763,
+            "y": 398.69584191632225,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 9,
+      "elapsed": 0.375,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 7.875,
+          "phase": "walk",
+          "foot": {
+            "x": 131.8488241881299,
+            "y": 616.1063829787234
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 2
+          },
+          "crop": {
+            "x": 11.848824188129896,
+            "y": 398.10638297872345,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 7.875,
+          "phase": "walk",
+          "foot": {
+            "x": 131.8488241881299,
+            "y": 616.1063829787234
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 1,
+            "blinkFrame": -1,
+            "phase": 0.21488834259038936,
+            "baseline": 1129,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 11.848824188129896,
+            "y": 398.10638297872345,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 10,
+      "elapsed": 0.4166666666666667,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 7.916666666666667,
+          "phase": "walk",
+          "foot": {
+            "x": 134.88167226577082,
+            "y": 615.5153664302601
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 2
+          },
+          "crop": {
+            "x": 14.881672265770817,
+            "y": 397.5153664302601,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 7.916666666666667,
+          "phase": "walk",
+          "foot": {
+            "x": 134.88167226577082,
+            "y": 615.5153664302601
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 2,
+            "blinkFrame": -1,
+            "phase": 0.2587789354397336,
+            "baseline": 1137,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 14.881672265770817,
+            "y": 397.5153664302601,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 11,
+      "elapsed": 0.4583333333333333,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 7.958333333333333,
+          "phase": "walk",
+          "foot": {
+            "x": 137.91452034341168,
+            "y": 614.9243498817967
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 2
+          },
+          "crop": {
+            "x": 17.91452034341168,
+            "y": 396.92434988179673,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 7.958333333333333,
+          "phase": "walk",
+          "foot": {
+            "x": 137.91452034341168,
+            "y": 614.9243498817967
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 2,
+            "blinkFrame": -1,
+            "phase": 0.30266952828907745,
+            "baseline": 1137,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 17.91452034341168,
+            "y": 396.92434988179673,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 12,
+      "elapsed": 0.5,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 8,
+          "phase": "walk",
+          "foot": {
+            "x": 140.9473684210526,
+            "y": 614.3333333333334
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 3
+          },
+          "crop": {
+            "x": 20.9473684210526,
+            "y": 396.33333333333337,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 8,
+          "phase": "walk",
+          "foot": {
+            "x": 140.9473684210526,
+            "y": 614.3333333333334
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 2,
+            "blinkFrame": -1,
+            "phase": 0.34656012113842194,
+            "baseline": 1137,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 20.9473684210526,
+            "y": 396.33333333333337,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 13,
+      "elapsed": 0.5416666666666666,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 8.041666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 143.9802164986935,
+            "y": 613.74231678487
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 3
+          },
+          "crop": {
+            "x": 23.980216498693494,
+            "y": 395.74231678487,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 8.041666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 143.9802164986935,
+            "y": 613.74231678487
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 3,
+            "blinkFrame": -1,
+            "phase": 0.39045071398776554,
+            "baseline": 1113,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 23.980216498693494,
+            "y": 395.74231678487,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 14,
+      "elapsed": 0.5833333333333334,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 8.083333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 147.01306457633447,
+            "y": 613.1513002364067
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 3
+          },
+          "crop": {
+            "x": 27.01306457633447,
+            "y": 395.15130023640666,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 8.083333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 147.01306457633447,
+            "y": 613.1513002364067
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 3,
+            "blinkFrame": -1,
+            "phase": 0.43434130683711114,
+            "baseline": 1113,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 27.01306457633447,
+            "y": 395.15130023640666,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 15,
+      "elapsed": 0.625,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 8.125,
+          "phase": "walk",
+          "foot": {
+            "x": 150.04591265397534,
+            "y": 612.5602836879433
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 4
+          },
+          "crop": {
+            "x": 30.045912653975336,
+            "y": 394.5602836879433,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 8.125,
+          "phase": "walk",
+          "foot": {
+            "x": 150.04591265397534,
+            "y": 612.5602836879433
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 3,
+            "blinkFrame": -1,
+            "phase": 0.4782318996864545,
+            "baseline": 1113,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 30.045912653975336,
+            "y": 394.5602836879433,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 16,
+      "elapsed": 0.6666666666666666,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 8.166666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 153.0787607316162,
+            "y": 611.9692671394799
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 4
+          },
+          "crop": {
+            "x": 33.0787607316162,
+            "y": 393.96926713947994,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 8.166666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 153.0787607316162,
+            "y": 611.9692671394799
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 4,
+            "blinkFrame": -1,
+            "phase": 0.5221224925357983,
+            "baseline": 1111,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 33.0787607316162,
+            "y": 393.96926713947994,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 17,
+      "elapsed": 0.7083333333333334,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 8.208333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 156.1116088092572,
+            "y": 611.3782505910166
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 4
+          },
+          "crop": {
+            "x": 36.111608809257206,
+            "y": 393.3782505910166,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 8.208333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 156.1116088092572,
+            "y": 611.3782505910166
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 4,
+            "blinkFrame": -1,
+            "phase": 0.5660130853851437,
+            "baseline": 1111,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 36.111608809257206,
+            "y": 393.3782505910166,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 18,
+      "elapsed": 0.75,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 8.25,
+          "phase": "walk",
+          "foot": {
+            "x": 159.14445688689807,
+            "y": 610.7872340425532
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 4
+          },
+          "crop": {
+            "x": 39.14445688689807,
+            "y": 392.7872340425532,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 8.25,
+          "phase": "walk",
+          "foot": {
+            "x": 159.14445688689807,
+            "y": 610.7872340425532
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 4,
+            "blinkFrame": -1,
+            "phase": 0.6099036782344873,
+            "baseline": 1111,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 39.14445688689807,
+            "y": 392.7872340425532,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 19,
+      "elapsed": 0.7916666666666666,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 8.291666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 162.17730496453893,
+            "y": 610.1962174940899
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 5
+          },
+          "crop": {
+            "x": 42.17730496453893,
+            "y": 392.19621749408986,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 8.291666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 162.17730496453893,
+            "y": 610.1962174940899
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 5,
+            "blinkFrame": -1,
+            "phase": 0.6537942710838309,
+            "baseline": 1095,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 42.17730496453893,
+            "y": 392.19621749408986,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 20,
+      "elapsed": 0.8333333333333334,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 8.333333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 165.2101530421799,
+            "y": 609.6052009456265
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 5
+          },
+          "crop": {
+            "x": 45.21015304217991,
+            "y": 391.6052009456265,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 8.333333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 165.2101530421799,
+            "y": 609.6052009456265
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 5,
+            "blinkFrame": -1,
+            "phase": 0.6976848639331763,
+            "baseline": 1095,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 45.21015304217991,
+            "y": 391.6052009456265,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 21,
+      "elapsed": 0.875,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 8.375,
+          "phase": "walk",
+          "foot": {
+            "x": 168.2430011198208,
+            "y": 609.0141843971631
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 5
+          },
+          "crop": {
+            "x": 48.2430011198208,
+            "y": 391.01418439716315,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 8.375,
+          "phase": "walk",
+          "foot": {
+            "x": 168.2430011198208,
+            "y": 609.0141843971631
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 5,
+            "blinkFrame": -1,
+            "phase": 0.7415754567825199,
+            "baseline": 1095,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 48.2430011198208,
+            "y": 391.01418439716315,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 22,
+      "elapsed": 0.9166666666666666,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 8.416666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 171.27584919746167,
+            "y": 608.4231678486998
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 5
+          },
+          "crop": {
+            "x": 51.27584919746167,
+            "y": 390.4231678486998,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 8.416666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 171.27584919746167,
+            "y": 608.4231678486998
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 6,
+            "blinkFrame": -1,
+            "phase": 0.7854660496318637,
+            "baseline": 1108,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 51.27584919746167,
+            "y": 390.4231678486998,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 23,
+      "elapsed": 0.9583333333333334,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 8.458333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 174.30869727510267,
+            "y": 607.8321513002364
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 0
+          },
+          "crop": {
+            "x": 54.30869727510267,
+            "y": 389.83215130023643,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 8.458333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 174.30869727510267,
+            "y": 607.8321513002364
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 6,
+            "blinkFrame": -1,
+            "phase": 0.8293566424812091,
+            "baseline": 1108,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 54.30869727510267,
+            "y": 389.83215130023643,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 24,
+      "elapsed": 1,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 8.5,
+          "phase": "walk",
+          "foot": {
+            "x": 177.34154535274354,
+            "y": 607.2411347517731
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 0
+          },
+          "crop": {
+            "x": 57.34154535274354,
+            "y": 389.2411347517731,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 8.5,
+          "phase": "walk",
+          "foot": {
+            "x": 177.34154535274354,
+            "y": 607.2411347517731
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 6,
+            "blinkFrame": -1,
+            "phase": 0.8732472353305527,
+            "baseline": 1108,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 57.34154535274354,
+            "y": 389.2411347517731,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 25,
+      "elapsed": 1.0416666666666667,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 8.541666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 180.3743934303844,
+            "y": 606.6501182033097
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 0
+          },
+          "crop": {
+            "x": 60.3743934303844,
+            "y": 388.6501182033097,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 8.541666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 180.3743934303844,
+            "y": 606.6501182033097
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 7,
+            "blinkFrame": -1,
+            "phase": 0.9171378281798963,
+            "baseline": 1095,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 60.3743934303844,
+            "y": 388.6501182033097,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 26,
+      "elapsed": 1.0833333333333333,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 8.583333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 183.40724150802538,
+            "y": 606.0591016548464
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 0
+          },
+          "crop": {
+            "x": 63.40724150802538,
+            "y": 388.05910165484636,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 8.583333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 183.40724150802538,
+            "y": 606.0591016548464
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 7,
+            "blinkFrame": -1,
+            "phase": 0.9610284210292419,
+            "baseline": 1095,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 63.40724150802538,
+            "y": 388.05910165484636,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 27,
+      "elapsed": 1.125,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 8.625,
+          "phase": "walk",
+          "foot": {
+            "x": 186.44008958566627,
+            "y": 605.468085106383
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 1
+          },
+          "crop": {
+            "x": 66.44008958566627,
+            "y": 387.468085106383,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 8.625,
+          "phase": "walk",
+          "foot": {
+            "x": 186.44008958566627,
+            "y": 605.468085106383
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 0,
+            "blinkFrame": -1,
+            "phase": 0.004919013878585066,
+            "baseline": 1135,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 66.44008958566627,
+            "y": 387.468085106383,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 28,
+      "elapsed": 1.1666666666666667,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 8.666666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 189.4729376633071,
+            "y": 604.8770685579196
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 1
+          },
+          "crop": {
+            "x": 69.4729376633071,
+            "y": 386.87706855791964,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 8.666666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 189.4729376633071,
+            "y": 604.8770685579196
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 0,
+            "blinkFrame": -1,
+            "phase": 0.04880960672792889,
+            "baseline": 1135,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 69.4729376633071,
+            "y": 386.87706855791964,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 29,
+      "elapsed": 1.2083333333333333,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 8.708333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 192.5057857409481,
+            "y": 604.2860520094563
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 1
+          },
+          "crop": {
+            "x": 72.50578574094811,
+            "y": 386.2860520094563,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 8.708333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 192.5057857409481,
+            "y": 604.2860520094563
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 0,
+            "blinkFrame": -1,
+            "phase": 0.09270019957727449,
+            "baseline": 1135,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 72.50578574094811,
+            "y": 386.2860520094563,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 30,
+      "elapsed": 1.25,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 8.75,
+          "phase": "walk",
+          "foot": {
+            "x": 195.53863381858898,
+            "y": 603.6950354609929
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 2
+          },
+          "crop": {
+            "x": 75.53863381858898,
+            "y": 385.6950354609929,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 8.75,
+          "phase": "walk",
+          "foot": {
+            "x": 195.53863381858898,
+            "y": 603.6950354609929
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 1,
+            "blinkFrame": -1,
+            "phase": 0.13659079242661787,
+            "baseline": 1129,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 75.53863381858898,
+            "y": 385.6950354609929,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 31,
+      "elapsed": 1.2916666666666667,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 8.791666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 198.57148189622984,
+            "y": 603.1040189125296
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 2
+          },
+          "crop": {
+            "x": 78.57148189622984,
+            "y": 385.10401891252957,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 8.791666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 198.57148189622984,
+            "y": 603.1040189125296
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 1,
+            "blinkFrame": -1,
+            "phase": 0.1804813852759617,
+            "baseline": 1129,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 78.57148189622984,
+            "y": 385.10401891252957,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 32,
+      "elapsed": 1.3333333333333333,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 8.833333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 201.60432997387085,
+            "y": 602.5130023640662
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 2
+          },
+          "crop": {
+            "x": 81.60432997387085,
+            "y": 384.5130023640662,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 8.833333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 201.60432997387085,
+            "y": 602.5130023640662
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 1,
+            "blinkFrame": -1,
+            "phase": 0.22437197812530707,
+            "baseline": 1129,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 81.60432997387085,
+            "y": 384.5130023640662,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 33,
+      "elapsed": 1.375,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 8.875,
+          "phase": "walk",
+          "foot": {
+            "x": 204.63717805151174,
+            "y": 601.9219858156029
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 2
+          },
+          "crop": {
+            "x": 84.63717805151174,
+            "y": 383.92198581560285,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 8.875,
+          "phase": "walk",
+          "foot": {
+            "x": 204.63717805151174,
+            "y": 601.9219858156029
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 2,
+            "blinkFrame": -1,
+            "phase": 0.2682625709746509,
+            "baseline": 1137,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 84.63717805151174,
+            "y": 383.92198581560285,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 34,
+      "elapsed": 1.4166666666666667,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 8.916666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 207.67002612915257,
+            "y": 601.3309692671395
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 3
+          },
+          "crop": {
+            "x": 87.67002612915257,
+            "y": 383.3309692671395,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 8.916666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 207.67002612915257,
+            "y": 601.3309692671395
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 2,
+            "blinkFrame": -1,
+            "phase": 0.3121531638239943,
+            "baseline": 1137,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 87.67002612915257,
+            "y": 383.3309692671395,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 35,
+      "elapsed": 1.4583333333333333,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 8.958333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 210.70287420679358,
+            "y": 600.7399527186761
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 3
+          },
+          "crop": {
+            "x": 90.70287420679358,
+            "y": 382.73995271867614,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 8.958333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 210.70287420679358,
+            "y": 600.7399527186761
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 2,
+            "blinkFrame": -1,
+            "phase": 0.3560437566733399,
+            "baseline": 1137,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 90.70287420679358,
+            "y": 382.73995271867614,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 36,
+      "elapsed": 1.5,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 9,
+          "phase": "walk",
+          "foot": {
+            "x": 213.73572228443444,
+            "y": 600.1489361702128
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 3
+          },
+          "crop": {
+            "x": 93.73572228443444,
+            "y": 382.1489361702128,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 9,
+          "phase": "walk",
+          "foot": {
+            "x": 213.73572228443444,
+            "y": 600.1489361702128
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 3,
+            "blinkFrame": -1,
+            "phase": 0.3999343495226835,
+            "baseline": 1113,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 93.73572228443444,
+            "y": 382.1489361702128,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 37,
+      "elapsed": 1.5416666666666667,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 9.041666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 216.7685703620753,
+            "y": 599.5579196217494
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 3
+          },
+          "crop": {
+            "x": 96.76857036207531,
+            "y": 381.5579196217494,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 9.041666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 216.7685703620753,
+            "y": 599.5579196217494
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 3,
+            "blinkFrame": -1,
+            "phase": 0.4438249423720271,
+            "baseline": 1113,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 96.76857036207531,
+            "y": 381.5579196217494,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 38,
+      "elapsed": 1.5833333333333333,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 9.083333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 219.80141843971631,
+            "y": 598.9669030732861
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 4
+          },
+          "crop": {
+            "x": 99.80141843971631,
+            "y": 380.96690307328606,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 9.083333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 219.80141843971631,
+            "y": 598.9669030732861
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 3,
+            "blinkFrame": -1,
+            "phase": 0.48771553522137223,
+            "baseline": 1113,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 99.80141843971631,
+            "y": 380.96690307328606,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 39,
+      "elapsed": 1.625,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 9.125,
+          "phase": "walk",
+          "foot": {
+            "x": 222.83426651735718,
+            "y": 598.3758865248227
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 4
+          },
+          "crop": {
+            "x": 102.83426651735718,
+            "y": 380.3758865248227,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 9.125,
+          "phase": "walk",
+          "foot": {
+            "x": 222.83426651735718,
+            "y": 598.3758865248227
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 4,
+            "blinkFrame": -1,
+            "phase": 0.531606128070716,
+            "baseline": 1111,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 102.83426651735718,
+            "y": 380.3758865248227,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 40,
+      "elapsed": 1.6666666666666667,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 9.166666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 225.86711459499801,
+            "y": 597.7848699763593
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 4
+          },
+          "crop": {
+            "x": 105.86711459499801,
+            "y": 379.78486997635935,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 9.166666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 225.86711459499801,
+            "y": 597.7848699763593
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 4,
+            "blinkFrame": -1,
+            "phase": 0.5754967209200597,
+            "baseline": 1111,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 105.86711459499801,
+            "y": 379.78486997635935,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 41,
+      "elapsed": 1.7083333333333333,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 9.208333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 228.89996267263905,
+            "y": 597.193853427896
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 4
+          },
+          "crop": {
+            "x": 108.89996267263905,
+            "y": 379.193853427896,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 9.208333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 228.89996267263905,
+            "y": 597.193853427896
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 4,
+            "blinkFrame": -1,
+            "phase": 0.619387313769405,
+            "baseline": 1111,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 108.89996267263905,
+            "y": 379.193853427896,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 42,
+      "elapsed": 1.75,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 9.25,
+          "phase": "walk",
+          "foot": {
+            "x": 231.93281075027988,
+            "y": 596.6028368794326
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 5
+          },
+          "crop": {
+            "x": 111.93281075027988,
+            "y": 378.60283687943263,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 9.25,
+          "phase": "walk",
+          "foot": {
+            "x": 231.93281075027988,
+            "y": 596.6028368794326
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 5,
+            "blinkFrame": -1,
+            "phase": 0.6632779066187486,
+            "baseline": 1095,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 111.93281075027988,
+            "y": 378.60283687943263,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 43,
+      "elapsed": 1.7916666666666667,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 9.291666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 234.96565882792075,
+            "y": 596.0118203309693
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 5
+          },
+          "crop": {
+            "x": 114.96565882792075,
+            "y": 378.0118203309693,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 9.291666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 234.96565882792075,
+            "y": 596.0118203309693
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 5,
+            "blinkFrame": -1,
+            "phase": 0.707168499468092,
+            "baseline": 1095,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 114.96565882792075,
+            "y": 378.0118203309693,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 44,
+      "elapsed": 1.8333333333333333,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 9.333333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 237.99850690556173,
+            "y": 595.4208037825059
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 5
+          },
+          "crop": {
+            "x": 117.99850690556173,
+            "y": 377.4208037825059,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 9.333333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 237.99850690556173,
+            "y": 595.4208037825059
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 6,
+            "blinkFrame": -1,
+            "phase": 0.7510590923174376,
+            "baseline": 1108,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 117.99850690556173,
+            "y": 377.4208037825059,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 45,
+      "elapsed": 1.875,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 9.375,
+          "phase": "walk",
+          "foot": {
+            "x": 241.03135498320265,
+            "y": 594.8297872340426
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 0
+          },
+          "crop": {
+            "x": 121.03135498320265,
+            "y": 376.82978723404256,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 9.375,
+          "phase": "walk",
+          "foot": {
+            "x": 241.03135498320265,
+            "y": 594.8297872340426
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 6,
+            "blinkFrame": -1,
+            "phase": 0.7949496851667819,
+            "baseline": 1108,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 121.03135498320265,
+            "y": 376.82978723404256,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 46,
+      "elapsed": 1.9166666666666667,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 9.416666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 244.0642030608435,
+            "y": 594.2387706855792
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 0
+          },
+          "crop": {
+            "x": 124.06420306084351,
+            "y": 376.2387706855792,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 9.416666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 244.0642030608435,
+            "y": 594.2387706855792
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 6,
+            "blinkFrame": -1,
+            "phase": 0.8388402780161253,
+            "baseline": 1108,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 124.06420306084351,
+            "y": 376.2387706855792,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 47,
+      "elapsed": 1.9583333333333333,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 9.458333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 247.0970511384845,
+            "y": 593.6477541371158
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 0
+          },
+          "crop": {
+            "x": 127.09705113848449,
+            "y": 375.64775413711584,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 9.458333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 247.0970511384845,
+            "y": 593.6477541371158
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 7,
+            "blinkFrame": -1,
+            "phase": 0.8827308708654706,
+            "baseline": 1095,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 127.09705113848449,
+            "y": 375.64775413711584,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 48,
+      "elapsed": 2,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 9.5,
+          "phase": "walk",
+          "foot": {
+            "x": 250.12989921612535,
+            "y": 593.0567375886525
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 0
+          },
+          "crop": {
+            "x": 130.12989921612535,
+            "y": 375.0567375886525,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 9.5,
+          "phase": "walk",
+          "foot": {
+            "x": 250.12989921612535,
+            "y": 593.0567375886525
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 7,
+            "blinkFrame": -1,
+            "phase": 0.9266214637148142,
+            "baseline": 1095,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 130.12989921612535,
+            "y": 375.0567375886525,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 49,
+      "elapsed": 2.0416666666666665,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 9.541666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 253.16274729376622,
+            "y": 592.4657210401891
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 1
+          },
+          "crop": {
+            "x": 133.16274729376622,
+            "y": 374.4657210401891,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 9.541666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 253.16274729376622,
+            "y": 592.4657210401891
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 7,
+            "blinkFrame": -1,
+            "phase": 0.9705120565641576,
+            "baseline": 1095,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 133.16274729376622,
+            "y": 374.4657210401891,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 50,
+      "elapsed": 2.0833333333333335,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 9.583333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 256.1955953714072,
+            "y": 591.8747044917258
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 1
+          },
+          "crop": {
+            "x": 136.1955953714072,
+            "y": 373.87470449172577,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 9.583333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 256.1955953714072,
+            "y": 591.8747044917258
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 0,
+            "blinkFrame": -1,
+            "phase": 0.014402649413503,
+            "baseline": 1135,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 136.1955953714072,
+            "y": 373.87470449172577,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 51,
+      "elapsed": 2.125,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 9.625,
+          "phase": "walk",
+          "foot": {
+            "x": 259.2284434490481,
+            "y": 591.2836879432624
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 1
+          },
+          "crop": {
+            "x": 139.2284434490481,
+            "y": 373.2836879432624,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 9.625,
+          "phase": "walk",
+          "foot": {
+            "x": 259.2284434490481,
+            "y": 591.2836879432624
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 0,
+            "blinkFrame": -1,
+            "phase": 0.0582932422628466,
+            "baseline": 1135,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 139.2284434490481,
+            "y": 373.2836879432624,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 52,
+      "elapsed": 2.1666666666666665,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 9.666666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 262.2612915266889,
+            "y": 590.692671394799
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 1
+          },
+          "crop": {
+            "x": 142.26129152668892,
+            "y": 372.69267139479905,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 9.666666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 262.2612915266889,
+            "y": 590.692671394799
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 0,
+            "blinkFrame": -1,
+            "phase": 0.1021838351121902,
+            "baseline": 1135,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 142.26129152668892,
+            "y": 372.69267139479905,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 53,
+      "elapsed": 2.2083333333333335,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 9.708333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 265.2941396043299,
+            "y": 590.1016548463357
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 2
+          },
+          "crop": {
+            "x": 145.29413960432993,
+            "y": 372.1016548463357,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 9.708333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 265.2941396043299,
+            "y": 590.1016548463357
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 1,
+            "blinkFrame": -1,
+            "phase": 0.14607442796153558,
+            "baseline": 1129,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 145.29413960432993,
+            "y": 372.1016548463357,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 54,
+      "elapsed": 2.25,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 9.75,
+          "phase": "walk",
+          "foot": {
+            "x": 268.32698768197076,
+            "y": 589.5106382978723
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 2
+          },
+          "crop": {
+            "x": 148.32698768197076,
+            "y": 371.51063829787233,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 9.75,
+          "phase": "walk",
+          "foot": {
+            "x": 268.32698768197076,
+            "y": 589.5106382978723
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 1,
+            "blinkFrame": -1,
+            "phase": 0.18996502081087918,
+            "baseline": 1129,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 148.32698768197076,
+            "y": 371.51063829787233,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 55,
+      "elapsed": 2.2916666666666665,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 9.791666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 271.3598357596117,
+            "y": 588.919621749409
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 2
+          },
+          "crop": {
+            "x": 151.3598357596117,
+            "y": 370.919621749409,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 9.791666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 271.3598357596117,
+            "y": 588.919621749409
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 1,
+            "blinkFrame": -1,
+            "phase": 0.23385561366022367,
+            "baseline": 1129,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 151.3598357596117,
+            "y": 370.919621749409,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 56,
+      "elapsed": 2.3333333333333335,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 9.833333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 274.39268383725266,
+            "y": 588.3286052009456
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 2
+          },
+          "crop": {
+            "x": 154.39268383725266,
+            "y": 370.3286052009456,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 9.833333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 274.39268383725266,
+            "y": 588.3286052009456
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 2,
+            "blinkFrame": -1,
+            "phase": 0.27774620650956905,
+            "baseline": 1137,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 154.39268383725266,
+            "y": 370.3286052009456,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 57,
+      "elapsed": 2.375,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 9.875,
+          "phase": "walk",
+          "foot": {
+            "x": 277.42553191489355,
+            "y": 587.7375886524823
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 3
+          },
+          "crop": {
+            "x": 157.42553191489355,
+            "y": 369.73758865248226,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 9.875,
+          "phase": "walk",
+          "foot": {
+            "x": 277.42553191489355,
+            "y": 587.7375886524823
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 2,
+            "blinkFrame": -1,
+            "phase": 0.3216367993589122,
+            "baseline": 1137,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 157.42553191489355,
+            "y": 369.73758865248226,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 58,
+      "elapsed": 2.4166666666666665,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 9.916666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 280.45837999253445,
+            "y": 587.1465721040189
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 3
+          },
+          "crop": {
+            "x": 160.45837999253445,
+            "y": 369.1465721040189,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 9.916666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 280.45837999253445,
+            "y": 587.1465721040189
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 2,
+            "blinkFrame": -1,
+            "phase": 0.3655273922082558,
+            "baseline": 1137,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 160.45837999253445,
+            "y": 369.1465721040189,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 59,
+      "elapsed": 2.4583333333333335,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 9.958333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 283.4912280701754,
+            "y": 586.5555555555555
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 3
+          },
+          "crop": {
+            "x": 163.4912280701754,
+            "y": 368.55555555555554,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 9.958333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 283.4912280701754,
+            "y": 586.5555555555555
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 3,
+            "blinkFrame": -1,
+            "phase": 0.4094179850576012,
+            "baseline": 1113,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 163.4912280701754,
+            "y": 368.55555555555554,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 60,
+      "elapsed": 2.5,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 10,
+          "phase": "walk",
+          "foot": {
+            "x": 286.5240761478163,
+            "y": 585.9645390070922
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 4
+          },
+          "crop": {
+            "x": 166.5240761478163,
+            "y": 367.9645390070922,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 10,
+          "phase": "walk",
+          "foot": {
+            "x": 286.5240761478163,
+            "y": 585.9645390070922
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 3,
+            "blinkFrame": -1,
+            "phase": 0.45330857790694523,
+            "baseline": 1113,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 166.5240761478163,
+            "y": 367.9645390070922,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 61,
+      "elapsed": 2.5416666666666665,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 10.041666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 314.3299249378058,
+            "y": 580.5459633454532
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 4
+          },
+          "crop": {
+            "x": 194.3299249378058,
+            "y": 362.5459633454532,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 10.041666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 314.3299249378058,
+            "y": 580.5459633454532
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 6,
+            "blinkFrame": -1,
+            "phase": 0.855707628841655,
+            "baseline": 1108,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 194.3299249378058,
+            "y": 362.5459633454532,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 62,
+      "elapsed": 2.5833333333333335,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 10.083333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 316.879468277928,
+            "y": 580.0491292586602
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 4
+          },
+          "crop": {
+            "x": 196.87946827792803,
+            "y": 362.0491292586602,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 10.083333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 316.879468277928,
+            "y": 580.0491292586602
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 7,
+            "blinkFrame": -1,
+            "phase": 0.892603960549804,
+            "baseline": 1095,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 196.87946827792803,
+            "y": 362.0491292586602,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 63,
+      "elapsed": 2.625,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 10.125,
+          "phase": "walk",
+          "foot": {
+            "x": 319.0595125832498,
+            "y": 579.624300111982
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 4
+          },
+          "crop": {
+            "x": 199.05951258324978,
+            "y": 361.62430011198205,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 10.125,
+          "phase": "walk",
+          "foot": {
+            "x": 319.0595125832498,
+            "y": 579.624300111982
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 7,
+            "blinkFrame": -1,
+            "phase": 0.9241529978074947,
+            "baseline": 1095,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 199.05951258324978,
+            "y": 361.62430011198205,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 64,
+      "elapsed": 2.6666666666666665,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 10.166666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 320.8700578537713,
+            "y": 579.2714759054189
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 5
+          },
+          "crop": {
+            "x": 200.8700578537713,
+            "y": 361.2714759054189,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 10.166666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 320.8700578537713,
+            "y": 579.2714759054189
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 7,
+            "blinkFrame": -1,
+            "phase": 0.9503547406147295,
+            "baseline": 1095,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 200.8700578537713,
+            "y": 361.2714759054189,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 65,
+      "elapsed": 2.7083333333333335,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 10.208333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 322.31110408949246,
+            "y": 578.9906566389707
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 5
+          },
+          "crop": {
+            "x": 202.31110408949246,
+            "y": 360.9906566389707,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 10.208333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 322.31110408949246,
+            "y": 578.9906566389707
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 7,
+            "blinkFrame": -1,
+            "phase": 0.9712091889715095,
+            "baseline": 1095,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 202.31110408949246,
+            "y": 360.9906566389707,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 66,
+      "elapsed": 2.75,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 10.25,
+          "phase": "walk",
+          "foot": {
+            "x": 323.38265129041343,
+            "y": 578.7818423126374
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 5
+          },
+          "crop": {
+            "x": 203.38265129041343,
+            "y": 360.7818423126374,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 10.25,
+          "phase": "walk",
+          "foot": {
+            "x": 323.38265129041343,
+            "y": 578.7818423126374
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 7,
+            "blinkFrame": -1,
+            "phase": 0.9867163428778327,
+            "baseline": 1095,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 203.38265129041343,
+            "y": 360.7818423126374,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 67,
+      "elapsed": 2.7916666666666665,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 10.291666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 324.08469945653394,
+            "y": 578.645032926419
+          },
+          "actor": {
+            "state": "walk",
+            "frame": 5
+          },
+          "crop": {
+            "x": 204.08469945653394,
+            "y": 360.64503292641905,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 10.291666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 324.08469945653394,
+            "y": 578.645032926419
+          },
+          "actor": {
+            "state": "walk-individual-poses",
+            "frame": 7,
+            "blinkFrame": -1,
+            "phase": 0.9968762023336994,
+            "baseline": 1095,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 204.08469945653394,
+            "y": 360.64503292641905,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 68,
+      "elapsed": 2.8333333333333335,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 10.333333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 324.41724858785426,
+            "y": 578.5802284803156
+          },
+          "actor": {
+            "state": "blink",
+            "frame": 0
+          },
+          "crop": {
+            "x": 204.41724858785426,
+            "y": 360.58022848031555,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 10.333333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 324.41724858785426,
+            "y": 578.5802284803156
+          },
+          "actor": {
+            "state": "neutral",
+            "frame": -1,
+            "blinkFrame": -1,
+            "phase": 0.7424242424242422,
+            "baseline": 1142,
+            "status": "experimental"
+          },
+          "crop": {
+            "x": 204.41724858785426,
+            "y": 360.58022848031555,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 69,
+      "elapsed": 2.875,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 10.375,
+          "phase": "walk",
+          "foot": {
+            "x": 324.44680851063833,
+            "y": 578.5744680851063
+          },
+          "actor": {
+            "state": "reach",
+            "frame": 1
+          },
+          "crop": {
+            "x": 204.44680851063833,
+            "y": 360.57446808510633,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 10.375,
+          "phase": "walk",
+          "foot": {
+            "x": 324.44680851063833,
+            "y": 578.5744680851063
+          },
+          "actor": {
+            "state": "reach",
+            "frame": 1
+          },
+          "crop": {
+            "x": 204.44680851063833,
+            "y": 360.57446808510633,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 70,
+      "elapsed": 2.9166666666666665,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 10.416666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 324.44680851063833,
+            "y": 578.5744680851063
+          },
+          "actor": {
+            "state": "reach",
+            "frame": 1
+          },
+          "crop": {
+            "x": 204.44680851063833,
+            "y": 360.57446808510633,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 10.416666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 324.44680851063833,
+            "y": 578.5744680851063
+          },
+          "actor": {
+            "state": "reach",
+            "frame": 1
+          },
+          "crop": {
+            "x": 204.44680851063833,
+            "y": 360.57446808510633,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 71,
+      "elapsed": 2.9583333333333335,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 10.458333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 324.44680851063833,
+            "y": 578.5744680851063
+          },
+          "actor": {
+            "state": "reach",
+            "frame": 1
+          },
+          "crop": {
+            "x": 204.44680851063833,
+            "y": 360.57446808510633,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 10.458333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 324.44680851063833,
+            "y": 578.5744680851063
+          },
+          "actor": {
+            "state": "reach",
+            "frame": 1
+          },
+          "crop": {
+            "x": 204.44680851063833,
+            "y": 360.57446808510633,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 72,
+      "elapsed": 3,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 10.5,
+          "phase": "walk",
+          "foot": {
+            "x": 324.44680851063833,
+            "y": 578.5744680851063
+          },
+          "actor": {
+            "state": "reach",
+            "frame": 1
+          },
+          "crop": {
+            "x": 204.44680851063833,
+            "y": 360.57446808510633,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 10.5,
+          "phase": "walk",
+          "foot": {
+            "x": 324.44680851063833,
+            "y": 578.5744680851063
+          },
+          "actor": {
+            "state": "reach",
+            "frame": 1
+          },
+          "crop": {
+            "x": 204.44680851063833,
+            "y": 360.57446808510633,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 73,
+      "elapsed": 3.0416666666666665,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 10.541666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 324.44680851063833,
+            "y": 578.5744680851063
+          },
+          "actor": {
+            "state": "reach",
+            "frame": 3
+          },
+          "crop": {
+            "x": 204.44680851063833,
+            "y": 360.57446808510633,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 10.541666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 324.44680851063833,
+            "y": 578.5744680851063
+          },
+          "actor": {
+            "state": "reach",
+            "frame": 3
+          },
+          "crop": {
+            "x": 204.44680851063833,
+            "y": 360.57446808510633,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 74,
+      "elapsed": 3.0833333333333335,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 10.583333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 324.44680851063833,
+            "y": 578.5744680851063
+          },
+          "actor": {
+            "state": "reach",
+            "frame": 3
+          },
+          "crop": {
+            "x": 204.44680851063833,
+            "y": 360.57446808510633,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 10.583333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 324.44680851063833,
+            "y": 578.5744680851063
+          },
+          "actor": {
+            "state": "reach",
+            "frame": 3
+          },
+          "crop": {
+            "x": 204.44680851063833,
+            "y": 360.57446808510633,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 75,
+      "elapsed": 3.125,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 10.625,
+          "phase": "walk",
+          "foot": {
+            "x": 324.44680851063833,
+            "y": 578.5744680851063
+          },
+          "actor": {
+            "state": "reach",
+            "frame": 3
+          },
+          "crop": {
+            "x": 204.44680851063833,
+            "y": 360.57446808510633,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 10.625,
+          "phase": "walk",
+          "foot": {
+            "x": 324.44680851063833,
+            "y": 578.5744680851063
+          },
+          "actor": {
+            "state": "reach",
+            "frame": 3
+          },
+          "crop": {
+            "x": 204.44680851063833,
+            "y": 360.57446808510633,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 76,
+      "elapsed": 3.1666666666666665,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 10.666666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 324.44680851063833,
+            "y": 578.5744680851063
+          },
+          "actor": {
+            "state": "reach",
+            "frame": 3
+          },
+          "crop": {
+            "x": 204.44680851063833,
+            "y": 360.57446808510633,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 10.666666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 324.44680851063833,
+            "y": 578.5744680851063
+          },
+          "actor": {
+            "state": "reach",
+            "frame": 3
+          },
+          "crop": {
+            "x": 204.44680851063833,
+            "y": 360.57446808510633,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 77,
+      "elapsed": 3.2083333333333335,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 10.708333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 324.44680851063833,
+            "y": 578.5744680851063
+          },
+          "actor": {
+            "state": "reach",
+            "frame": 3
+          },
+          "crop": {
+            "x": 204.44680851063833,
+            "y": 360.57446808510633,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 10.708333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 324.44680851063833,
+            "y": 578.5744680851063
+          },
+          "actor": {
+            "state": "reach",
+            "frame": 3
+          },
+          "crop": {
+            "x": 204.44680851063833,
+            "y": 360.57446808510633,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 78,
+      "elapsed": 3.25,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 10.75,
+          "phase": "walk",
+          "foot": {
+            "x": 324.44680851063833,
+            "y": 578.5744680851063
+          },
+          "actor": {
+            "state": "reach",
+            "frame": 3
+          },
+          "crop": {
+            "x": 204.44680851063833,
+            "y": 360.57446808510633,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 10.75,
+          "phase": "walk",
+          "foot": {
+            "x": 324.44680851063833,
+            "y": 578.5744680851063
+          },
+          "actor": {
+            "state": "reach",
+            "frame": 3
+          },
+          "crop": {
+            "x": 204.44680851063833,
+            "y": 360.57446808510633,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 79,
+      "elapsed": 3.2916666666666665,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 10.791666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 324.44680851063833,
+            "y": 578.5744680851063
+          },
+          "actor": {
+            "state": "reach",
+            "frame": 3
+          },
+          "crop": {
+            "x": 204.44680851063833,
+            "y": 360.57446808510633,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 10.791666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 324.44680851063833,
+            "y": 578.5744680851063
+          },
+          "actor": {
+            "state": "reach",
+            "frame": 3
+          },
+          "crop": {
+            "x": 204.44680851063833,
+            "y": 360.57446808510633,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 80,
+      "elapsed": 3.3333333333333335,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 10.833333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 324.44680851063833,
+            "y": 578.5744680851063
+          },
+          "actor": {
+            "state": "reach",
+            "frame": 3
+          },
+          "crop": {
+            "x": 204.44680851063833,
+            "y": 360.57446808510633,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 10.833333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 324.44680851063833,
+            "y": 578.5744680851063
+          },
+          "actor": {
+            "state": "reach",
+            "frame": 3
+          },
+          "crop": {
+            "x": 204.44680851063833,
+            "y": 360.57446808510633,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 81,
+      "elapsed": 3.375,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 10.875,
+          "phase": "walk",
+          "foot": {
+            "x": 324.44680851063833,
+            "y": 578.5744680851063
+          },
+          "actor": {
+            "state": "reach",
+            "frame": 3
+          },
+          "crop": {
+            "x": 204.44680851063833,
+            "y": 360.57446808510633,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 10.875,
+          "phase": "walk",
+          "foot": {
+            "x": 324.44680851063833,
+            "y": 578.5744680851063
+          },
+          "actor": {
+            "state": "reach",
+            "frame": 3
+          },
+          "crop": {
+            "x": 204.44680851063833,
+            "y": 360.57446808510633,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 82,
+      "elapsed": 3.4166666666666665,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 10.916666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 324.44680851063833,
+            "y": 578.5744680851063
+          },
+          "actor": {
+            "state": "reach",
+            "frame": 3
+          },
+          "crop": {
+            "x": 204.44680851063833,
+            "y": 360.57446808510633,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 10.916666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 324.44680851063833,
+            "y": 578.5744680851063
+          },
+          "actor": {
+            "state": "reach",
+            "frame": 3
+          },
+          "crop": {
+            "x": 204.44680851063833,
+            "y": 360.57446808510633,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 83,
+      "elapsed": 3.4583333333333335,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 10.958333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 324.44680851063833,
+            "y": 578.5744680851063
+          },
+          "actor": {
+            "state": "reach",
+            "frame": 3
+          },
+          "crop": {
+            "x": 204.44680851063833,
+            "y": 360.57446808510633,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 10.958333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 324.44680851063833,
+            "y": 578.5744680851063
+          },
+          "actor": {
+            "state": "reach",
+            "frame": 3
+          },
+          "crop": {
+            "x": 204.44680851063833,
+            "y": 360.57446808510633,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 84,
+      "elapsed": 3.5,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 11,
+          "phase": "walk",
+          "foot": {
+            "x": 324.44680851063833,
+            "y": 578.5744680851063
+          },
+          "actor": {
+            "state": "reach",
+            "frame": 2
+          },
+          "crop": {
+            "x": 204.44680851063833,
+            "y": 360.57446808510633,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 11,
+          "phase": "walk",
+          "foot": {
+            "x": 324.44680851063833,
+            "y": 578.5744680851063
+          },
+          "actor": {
+            "state": "reach",
+            "frame": 2
+          },
+          "crop": {
+            "x": 204.44680851063833,
+            "y": 360.57446808510633,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 85,
+      "elapsed": 3.5416666666666665,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 11.041666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 324.44680851063833,
+            "y": 578.5744680851063
+          },
+          "actor": {
+            "state": "reach",
+            "frame": 2
+          },
+          "crop": {
+            "x": 204.44680851063833,
+            "y": 360.57446808510633,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 11.041666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 324.44680851063833,
+            "y": 578.5744680851063
+          },
+          "actor": {
+            "state": "reach",
+            "frame": 2
+          },
+          "crop": {
+            "x": 204.44680851063833,
+            "y": 360.57446808510633,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 86,
+      "elapsed": 3.5833333333333335,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 11.083333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 324.44680851063833,
+            "y": 578.5744680851063
+          },
+          "actor": {
+            "state": "reach",
+            "frame": 2
+          },
+          "crop": {
+            "x": 204.44680851063833,
+            "y": 360.57446808510633,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 11.083333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 324.44680851063833,
+            "y": 578.5744680851063
+          },
+          "actor": {
+            "state": "reach",
+            "frame": 2
+          },
+          "crop": {
+            "x": 204.44680851063833,
+            "y": 360.57446808510633,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 87,
+      "elapsed": 3.625,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 11.125,
+          "phase": "walk",
+          "foot": {
+            "x": 324.44680851063833,
+            "y": 578.5744680851063
+          },
+          "actor": {
+            "state": "reach",
+            "frame": 2
+          },
+          "crop": {
+            "x": 204.44680851063833,
+            "y": 360.57446808510633,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 11.125,
+          "phase": "walk",
+          "foot": {
+            "x": 324.44680851063833,
+            "y": 578.5744680851063
+          },
+          "actor": {
+            "state": "reach",
+            "frame": 2
+          },
+          "crop": {
+            "x": 204.44680851063833,
+            "y": 360.57446808510633,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 88,
+      "elapsed": 3.6666666666666665,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 11.166666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 324.44680851063833,
+            "y": 578.5744680851063
+          },
+          "actor": {
+            "state": "reach",
+            "frame": 2
+          },
+          "crop": {
+            "x": 204.44680851063833,
+            "y": 360.57446808510633,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 11.166666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 324.44680851063833,
+            "y": 578.5744680851063
+          },
+          "actor": {
+            "state": "reach",
+            "frame": 2
+          },
+          "crop": {
+            "x": 204.44680851063833,
+            "y": 360.57446808510633,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 89,
+      "elapsed": 3.7083333333333335,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 11.208333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 324.44680851063833,
+            "y": 578.5744680851063
+          },
+          "actor": {
+            "state": "reach",
+            "frame": 2
+          },
+          "crop": {
+            "x": 204.44680851063833,
+            "y": 360.57446808510633,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 11.208333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 324.44680851063833,
+            "y": 578.5744680851063
+          },
+          "actor": {
+            "state": "reach",
+            "frame": 2
+          },
+          "crop": {
+            "x": 204.44680851063833,
+            "y": 360.57446808510633,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 90,
+      "elapsed": 3.75,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "sprite",
+          "time": 11.25,
+          "phase": "walk",
+          "foot": {
+            "x": 324.44680851063833,
+            "y": 578.5744680851063
+          },
+          "actor": {
+            "state": "reach",
+            "frame": 2
+          },
+          "crop": {
+            "x": 204.44680851063833,
+            "y": 360.57446808510633,
+            "size": 280
+          }
+        },
+        {
+          "mode": "poses",
+          "time": 11.25,
+          "phase": "walk",
+          "foot": {
+            "x": 324.44680851063833,
+            "y": 578.5744680851063
+          },
+          "actor": {
+            "state": "reach",
+            "frame": 2
+          },
+          "crop": {
+            "x": 204.44680851063833,
+            "y": 360.57446808510633,
+            "size": 280
+          }
+        }
+      ]
+    }
+  ]
+}

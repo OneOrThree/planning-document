@@ -18,7 +18,7 @@ const root=path.resolve(__dirname,'..');
     assert.equal(await page.locator('#choices button').nth(8).getAttribute('aria-pressed'),'true');
     const result=await page.evaluate(()=>{
       const c=document.getElementById('film');c.width=180;c.height=320;
-      const filmIds=new Set(),hashes=[],warnings=[];let packingSamples=0;
+      const filmIds=new Set(),hashes=[],warnings=[];let packingSamples=0,settlingSamples=0;
       const backgroundChecks=[];
       for(const key of ['room','sand','coastHome','shore']){
         const canvas=document.createElement('canvas');canvas.width=180;canvas.height=320;const ctx=canvas.getContext('2d');ctx.scale(.25,.25);
@@ -32,6 +32,11 @@ const root=path.resolve(__dirname,'..');
           if(p.lift>0&&p.closing<1)warnings.push(f.id+' 표지 닫기 전 들기');
           if(p.stow>0&&p.lift<1)warnings.push(f.id+' 들기 완료 전 가방에 넣기');
           if(p.shoulder>0&&p.stow<1)warnings.push(f.id+' 책 넣기 완료 전 가방 들기');
+          const s=GachisupCinema.settlingAt(f,f.timing.boardingEnd+(f.timing.departureStart-f.timing.boardingEnd)*i/500);settlingSamples++;
+          if(s.lift>0&&s.put<1)warnings.push(f.id+' 가방 내려놓기 전 책 꺼내기');
+          if(s.open>0&&s.lift<1)warnings.push(f.id+' 책 꺼내기 전 펼치기');
+          if(s.place>0&&s.open<1)warnings.push(f.id+' 책 펼치기 전 내려놓기');
+          if(s.grip>0&&s.place<1)warnings.push(f.id+' 책 내려놓기 전 노 잡기');
         }
         for(const t of [0,.8,f.timing.prepareEnd,f.timing.walkEnd,f.timing.boardingEnd,f.timing.departureStart,f.timing.seaStart,24]){
           const m=GachisupCinema.render(c,f,t);
@@ -46,10 +51,24 @@ const root=path.resolve(__dirname,'..');
         for(const r of rects)if(r.x<0||r.y<0||r.x+r.w>m.frame_layout.sheetWidth||r.y+r.h>m.frame_layout.sheetHeight)warnings.push(state+' 잘린 셀');
       }
       }
-      return{ids:filmIds.size,uniquePrepares:new Set(hashes).size,packingSamples,backgroundChecks,warnings};
+      return{ids:filmIds.size,uniquePrepares:new Set(hashes).size,packingSamples,settlingSamples,backgroundChecks,warnings};
     });
     assert.equal(result.ids,9);assert.equal(result.uniquePrepares,9);assert.deepEqual(result.warnings,[]);
     assert.ok(result.backgroundChecks.every(x=>x.stable),'배경만 움직이면 발과 바닥이 분리됩니다.');
+    const poseCheck=await page.evaluate(async()=>{
+      const data=await CutscenePoses.load(),canvas=document.createElement('canvas'),ctx=canvas.getContext('2d');
+      const steps=Array.from({length:8},(_,i)=>CutscenePoses.draw(ctx,100,180,176,0,{travel:70.4*(i+.01)/8,stride:70.4}));
+      const blinks=[-.1,.02,.1,.2,.3].map(t=>CutscenePoses.draw(ctx,100,180,176,0,{neutral:true,blinkTime:t}));
+      const jumps=[.08,.18,.3,.5,.8,1.05,1.15].map(t=>CutscenePoses.draw(ctx,100,180,176,0,{jump:t}));
+      const reaches=[1,2,3].map(reach=>CutscenePoses.draw(ctx,100,180,176,0,{reach}));
+      const gripBlinks=[-.1,.02,.1,.2,.3].map(t=>CutscenePoses.draw(ctx,100,180,176,0,{reach:1,blinkTime:t}));
+      return{kind:data.kind,frames:data.frames.length,steps:steps.map(s=>s.frame),blinkFrames:blinks.map(s=>s.blinkFrame),jumpFrames:jumps.map(s=>s.frame),reachHands:reaches.map(s=>s.hand),gripBlinkFrames:gripBlinks.map(s=>s.blinkFrame),gripHandStable:gripBlinks.every(s=>Math.abs(s.hand.x-gripBlinks[0].hand.x)<.01&&Math.abs(s.hand.y-gripBlinks[0].hand.y)<.01),finite:steps.every(s=>Number.isFinite(s.baseline)),status:data.status};
+    });
+    assert.equal(poseCheck.kind,'individual-pose-sequence');assert.equal(poseCheck.frames,8);assert.deepEqual(poseCheck.steps,[0,1,2,3,4,5,6,7]);
+    assert.deepEqual(poseCheck.blinkFrames,[-1,0,1,0,-1]);assert.ok(poseCheck.finite);
+    assert.deepEqual(poseCheck.jumpFrames,[0,1,2,3,4,1,0]);
+    assert.ok(poseCheck.reachHands.every(p=>Number.isFinite(p.x)&&Number.isFinite(p.y)));
+    assert.deepEqual(poseCheck.gripBlinkFrames,[-1,0,1,0,-1]);assert.ok(poseCheck.gripHandStable);
     await page.waitForSelector('#exports video');assert.equal(await page.locator('#exports video').count(),9);
     const playback=await page.evaluate(async()=>{
       const v=document.querySelector('#exports video');v.muted=true;await v.play();
@@ -67,7 +86,7 @@ const root=path.resolve(__dirname,'..');
     await page.waitForFunction(()=>[...document.images].every(i=>i.complete&&i.naturalWidth>0));
     assert.equal(await page.locator('[data-cat="white"] .body').getAttribute('src'),'assets/figma-cats/white-standing-generated.png');
     assert.deepEqual(errors,[]);
-    const report={result:'PASS',films:9,packingTimelineSamples:result.packingSamples,backgroundRegistration:result.backgroundChecks,exportedVersion,exportedPlayback:playback,catBodies:6,range:true,errors};
+    const report={result:'PASS',films:9,packingTimelineSamples:result.packingSamples,settlingTimelineSamples:result.settlingSamples,backgroundRegistration:result.backgroundChecks,individualPoseContract:poseCheck,exportedVersion,exportedPlayback:playback,catBodies:6,range:true,errors};
     fs.mkdirSync(path.join(root,'output/cutscenes/qa'),{recursive:true});
     fs.writeFileSync(path.join(root,'output/cutscenes/qa/browser-check.json'),JSON.stringify(report,null,2)+'\n');
     console.log(JSON.stringify(report,null,2));
