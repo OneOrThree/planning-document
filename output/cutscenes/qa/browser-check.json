@@ -64,6 +64,15 @@
         "y": 137.856558
       }
     ],
+    "recoveryFrames": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      -1
+    ],
+    "recoveryBaselineStable": true,
     "gripBlinkFrames": [
       -1,
       0,
@@ -89,6 +98,11 @@
     "handRange": 15.908024394945954,
     "finite": true,
     "defaultEnabled": true
+  },
+  "paddlePickupContract": {
+    "samples": 279,
+    "waiting": 171,
+    "maxWaitingDrift": 0
   },
   "walkPathContract": [
     {
@@ -281,10 +295,10 @@
       "experimentalWalkDisabled": true
     }
   ],
-  "exportedVersion": "draft-v06",
+  "exportedVersion": "draft-v07",
   "exportedPlayback": {
     "duration": 24,
-    "time": 0.652568,
+    "time": 0.65177,
     "width": 1080,
     "height": 1920
   },

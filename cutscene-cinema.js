@@ -3,6 +3,7 @@
   const arc=(c,points,color,width=2)=>{c.strokeStyle=color;c.lineWidth=width;c.lineCap='round';c.beginPath();points.forEach(([x,y],i)=>i?c.lineTo(x,y):c.moveTo(x,y));c.stroke();};
   function actor(c,x,y,size,t,walk=0,lean=0,pose={}){
     if(CutsceneSettings.actorMode==='rig')return CutsceneRig.draw(c,x,y,size,t,{...pose,walk,lean});
+    if(Number.isFinite(pose.recovery)&&CutsceneSettings.actorMode==='poses')return CutscenePoses.draw(c,x,y,size,t,{recovery:pose.recovery,lean});
     if(pose.look){
       // 세션에서 한 장씩 생성한 파생 자세. 아틀라스 추출물이라고 표시하지 않는다.
       const registration=.300488*size/384,texture=pose.look==='place'?A.images.lookPlace:pose.look==='hold'?A.images.lookHold:pose.look==='reach'?A.images.lookReach:A.images.lookDown;c.save();c.translate(x,y);c.rotate(lean);c.scale(registration,registration);c.drawImage(texture,-670.218,-1141);c.restore();return{state:'look-'+pose.look,frame:0};
@@ -103,7 +104,7 @@
   function phaseAt(f,t){const k=f.timing;return t<k.prepareEnd?'prepare':t<k.walkEnd?'walk':t<k.boardingEnd?'boarding':t<k.departureStart?'settle':t<k.seaStart?'depart':'sea';}
   function settlingAt(f,t){
     const elapsed=t-f.timing.boardingEnd;
-    return{elapsed,put:ease((elapsed-.24)/.4),lift:ease((elapsed-.66)/.22),open:ease((elapsed-.9)/.16),place:ease((elapsed-1.08)/.2),grip:ease((elapsed-1.3)/.35)};
+    return{elapsed,put:ease((elapsed-.24)/.4),lift:ease((elapsed-.66)/.22),open:ease((elapsed-.9)/.16),place:ease((elapsed-1.08)/.2),rise:clamp((elapsed-1.3)/.5),grip:ease((elapsed-1.85)/.35)};
   }
   function boatAt(f,t){
     const k=f.timing,journey=f.directionId==='journey',p=ease((t-k.departureStart)/(k.seaStart-k.departureStart));
@@ -162,7 +163,7 @@
         const distanceWalked=walkPath(f).total*travel/.94,startSize=journey?(f.storyIndex===2?157:141):T.catSize,size=journey?mix(startSize,155,p):T.catSize,{x,y}=walkPathAt(f,distanceWalked);
         groundShadow(c,x,y,size,T.shadowAlpha);
         // 원화 순서·프레임 길이를 고쳐 결함을 숨기지 않는다. 실제 동선 거리와 보폭으로 캐릭터의 재생 위치를 구한다.
-        const pose=t>=dockStart?{reach:dockQ<.2?1:dockQ<.65?3:2}:{gaitTime:(t-k.prepareEnd)*.8,travel:distanceWalked,stride:startSize*.4,rigStride:startSize*.27,pathAtDistance:d=>walkPathAt(f,d)};
+        const pose=t>=dockStart?{reach:dockQ<.2?1:dockQ<.65?3:2}:{gaitTime:(t-k.prepareEnd)*.8,travel:distanceWalked,stride:startSize*.4,rigStride:startSize*.27,rigSize:startSize,pathAtDistance:d=>walkPathAt(f,d)};
         carry(c,x,y,size,t,f.storyIndex);actorState=actor(c,x,y,size,t,Math.min(1,p/.1,(1-p)/.1),0,pose);catFoot={x,y};
         if(dockQ>0&&dockQ<.92){
           const hand=actorState?.hand||{x:x+size*(dockQ<.2?.28:dockQ<.65?.402:.229),y:y-size*(dockQ<.2?.057:dockQ<.65?.268:.197)},tie={x:rx-raftWidth*.27,y:ry-raftWidth*.06};

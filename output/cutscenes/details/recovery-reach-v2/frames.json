@@ -1,0 +1,1413 @@
+{
+  "label": "recovery-reach-v2",
+  "phase": "settle",
+  "actor": "production-default",
+  "paddle": "production-default",
+  "walk": "production-default",
+  "from": 0.79,
+  "to": 1,
+  "samples": 24,
+  "cropSize": 250,
+  "anchor": "actor",
+  "fingerprint": "e210578be729aa3004297ec65c51227f24fabd5658bc57732842787e408c23c4",
+  "errors": [],
+  "films": [
+    {
+      "id": "new-morning-emotion",
+      "frames": [
+        {
+          "time": 13.938,
+          "crop": {
+            "x": 334.3336227312237,
+            "y": 523.7806419155589,
+            "size": 250
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "settle",
+          "catFoot": {
+            "x": 455.9489405624798,
+            "y": 645.2158783965838
+          },
+          "seat": {
+            "x": 455.9489405624798,
+            "y": 645.2158783965838,
+            "actorState": {
+              "state": "recovery-individual-poses",
+              "frame": 4,
+              "blinkFrame": -1,
+              "phase": 0.8386363636363647,
+              "baseline": 1142,
+              "hand": null,
+              "status": "experimental"
+            },
+            "paddle": {
+              "cycle": 0.8350000000000001,
+              "stroke": 0.4376446759259257,
+              "returnLift": 0.9914448613738104,
+              "angle": -1.4838432876681278,
+              "pivot": {
+                "x": 43,
+                "y": -25
+              },
+              "grip": 0
+            }
+          },
+          "scale": 1,
+          "camera": {
+            "x": 403,
+            "y": 585,
+            "z": 1.3
+          },
+          "actorState": {
+            "state": "recovery-individual-poses",
+            "frame": 4,
+            "blinkFrame": -1,
+            "phase": 0.8386363636363647,
+            "baseline": 1142,
+            "hand": null,
+            "status": "experimental"
+          },
+          "caption": "책 한 권과, 함께하고 싶은 마음."
+        },
+        {
+          "time": 13.95808695652174,
+          "crop": {
+            "x": 334.33265867834433,
+            "y": 523.792674155507,
+            "size": 250
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "settle",
+          "catFoot": {
+            "x": 455.9481989833418,
+            "y": 645.2251339657746
+          },
+          "seat": {
+            "x": 455.9481989833418,
+            "y": 645.2251339657746,
+            "actorState": {
+              "state": "recovery-individual-poses",
+              "frame": 4,
+              "blinkFrame": -1,
+              "phase": 0.861462450592887,
+              "baseline": 1142,
+              "hand": null,
+              "status": "experimental"
+            },
+            "paddle": {
+              "cycle": 0.8421739130434783,
+              "stroke": 0.40807605347189857,
+              "returnLift": 0.9813364665057048,
+              "angle": -1.4889056777096106,
+              "pivot": {
+                "x": 43,
+                "y": -25
+              },
+              "grip": 0
+            }
+          },
+          "scale": 1,
+          "camera": {
+            "x": 403,
+            "y": 585,
+            "z": 1.3
+          },
+          "actorState": {
+            "state": "recovery-individual-poses",
+            "frame": 4,
+            "blinkFrame": -1,
+            "phase": 0.861462450592887,
+            "baseline": 1142,
+            "hand": null,
+            "status": "experimental"
+          },
+          "caption": "책 한 권과, 함께하고 싶은 마음."
+        },
+        {
+          "time": 13.978173913043479,
+          "crop": {
+            "x": 334.33173313450567,
+            "y": 523.8073819248003,
+            "size": 250
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "settle",
+          "catFoot": {
+            "x": 455.94748702654283,
+            "y": 645.2364476344618
+          },
+          "seat": {
+            "x": 455.94748702654283,
+            "y": 645.2364476344618,
+            "actorState": {
+              "state": "recovery-individual-poses",
+              "frame": 4,
+              "blinkFrame": -1,
+              "phase": 0.8842885375494074,
+              "baseline": 1142,
+              "hand": null,
+              "status": "experimental"
+            },
+            "paddle": {
+              "cycle": 0.8493478260869567,
+              "stroke": 0.37880094466589886,
+              "returnLift": 0.9673831893393512,
+              "angle": -1.4913928727574843,
+              "pivot": {
+                "x": 43,
+                "y": -25
+              },
+              "grip": 0
+            }
+          },
+          "scale": 1,
+          "camera": {
+            "x": 403,
+            "y": 585,
+            "z": 1.3
+          },
+          "actorState": {
+            "state": "recovery-individual-poses",
+            "frame": 4,
+            "blinkFrame": -1,
+            "phase": 0.8842885375494074,
+            "baseline": 1142,
+            "hand": null,
+            "status": "experimental"
+          },
+          "caption": "책 한 권과, 함께하고 싶은 마음."
+        },
+        {
+          "time": 13.998260869565218,
+          "crop": {
+            "x": 334.33084665116445,
+            "y": 523.8247484486246,
+            "size": 250
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "settle",
+          "catFoot": {
+            "x": 455.94680511628036,
+            "y": 645.249806498942
+          },
+          "seat": {
+            "x": 455.94680511628036,
+            "y": 645.249806498942,
+            "actorState": {
+              "state": "recovery-individual-poses",
+              "frame": 4,
+              "blinkFrame": -1,
+              "phase": 0.9071146245059296,
+              "baseline": 1142,
+              "hand": null,
+              "status": "experimental"
+            },
+            "paddle": {
+              "cycle": 0.856521739130435,
+              "stroke": 0.34991430980581906,
+              "returnLift": 0.9496396989003189,
+              "angle": -1.4913028264719346,
+              "pivot": {
+                "x": 43,
+                "y": -25
+              },
+              "grip": 0
+            }
+          },
+          "scale": 1,
+          "camera": {
+            "x": 403,
+            "y": 585,
+            "z": 1.3
+          },
+          "actorState": {
+            "state": "recovery-individual-poses",
+            "frame": 4,
+            "blinkFrame": -1,
+            "phase": 0.9071146245059296,
+            "baseline": 1142,
+            "hand": null,
+            "status": "experimental"
+          },
+          "caption": "책 한 권과, 함께하고 싶은 마음."
+        },
+        {
+          "time": 14.018347826086957,
+          "crop": {
+            "x": 334.3299997707979,
+            "y": 523.8447541730486,
+            "size": 250
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "settle",
+          "catFoot": {
+            "x": 455.94615366984453,
+            "y": 645.2651955177297
+          },
+          "seat": {
+            "x": 455.94615366984453,
+            "y": 645.2651955177297,
+            "actorState": {
+              "state": "neutral",
+              "frame": -1,
+              "blinkFrame": -1,
+              "phase": 0.9299407114624518,
+              "baseline": 1142,
+              "hand": null,
+              "status": "experimental"
+            },
+            "paddle": {
+              "cycle": 0.8636956521739132,
+              "stroke": 0.32151110918954984,
+              "returnLift": 0.9281755142930401,
+              "angle": -1.4886429965636214,
+              "pivot": {
+                "x": 43,
+                "y": -25
+              },
+              "grip": 0
+            }
+          },
+          "scale": 1,
+          "camera": {
+            "x": 403,
+            "y": 585,
+            "z": 1.3
+          },
+          "actorState": {
+            "state": "neutral",
+            "frame": -1,
+            "blinkFrame": -1,
+            "phase": 0.9299407114624518,
+            "baseline": 1142,
+            "hand": null,
+            "status": "experimental"
+          },
+          "caption": "책 한 권과, 함께하고 싶은 마음."
+        },
+        {
+          "time": 14.038434782608697,
+          "crop": {
+            "x": 334.329193023349,
+            "y": 523.8673767104698,
+            "size": 250
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "settle",
+          "catFoot": {
+            "x": 455.94553309488384,
+            "y": 645.2825974695921
+          },
+          "seat": {
+            "x": 455.94553309488384,
+            "y": 645.2825974695921,
+            "actorState": {
+              "state": "neutral",
+              "frame": -1,
+              "blinkFrame": -1,
+              "phase": 0.952766798418974,
+              "baseline": 1142,
+              "hand": null,
+              "status": "experimental"
+            },
+            "paddle": {
+              "cycle": 0.8708695652173915,
+              "stroke": 0.29368630311498267,
+              "returnLift": 0.9030747323245322,
+              "angle": -1.4834301704728574,
+              "pivot": {
+                "x": 43,
+                "y": -25
+              },
+              "grip": 0
+            }
+          },
+          "scale": 1,
+          "camera": {
+            "x": 403,
+            "y": 585,
+            "z": 1.3
+          },
+          "actorState": {
+            "state": "neutral",
+            "frame": -1,
+            "blinkFrame": -1,
+            "phase": 0.952766798418974,
+            "baseline": 1142,
+            "hand": null,
+            "status": "experimental"
+          },
+          "caption": "책 한 권과, 함께하고 싶은 마음."
+        },
+        {
+          "time": 14.058521739130436,
+          "crop": {
+            "x": 334.3284269229865,
+            "y": 523.8925907958836,
+            "size": 250
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "settle",
+          "catFoot": {
+            "x": 455.9449437869127,
+            "y": 645.3019929199105
+          },
+          "seat": {
+            "x": 455.9449437869127,
+            "y": 645.3019929199105,
+            "actorState": {
+              "state": "neutral",
+              "frame": -1,
+              "blinkFrame": -1,
+              "phase": 0.9755928853754945,
+              "baseline": 1142,
+              "hand": null,
+              "status": "experimental"
+            },
+            "paddle": {
+              "cycle": 0.8780434782608698,
+              "stroke": 0.26653485188000836,
+              "returnLift": 0.8744356980125912,
+              "angle": -1.4756902544948551,
+              "pivot": {
+                "x": 43,
+                "y": -25
+              },
+              "grip": 0
+            }
+          },
+          "scale": 1,
+          "camera": {
+            "x": 403,
+            "y": 585,
+            "z": 1.3
+          },
+          "actorState": {
+            "state": "neutral",
+            "frame": -1,
+            "blinkFrame": -1,
+            "phase": 0.9755928853754945,
+            "baseline": 1142,
+            "hand": null,
+            "status": "experimental"
+          },
+          "caption": "책 한 권과, 함께하고 싶은 마음."
+        },
+        {
+          "time": 14.078608695652175,
+          "crop": {
+            "x": 334.327701965204,
+            "y": 523.9203682545439,
+            "size": 250
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "settle",
+          "catFoot": {
+            "x": 455.94438612708,
+            "y": 645.3233601958029
+          },
+          "seat": {
+            "x": 455.94438612708,
+            "y": 645.3233601958029,
+            "actorState": {
+              "state": "neutral",
+              "frame": -1,
+              "blinkFrame": -1,
+              "phase": 0.9984189723320167,
+              "baseline": 1142,
+              "hand": null,
+              "status": "experimental"
+            },
+            "paddle": {
+              "cycle": 0.8852173913043481,
+              "stroke": 0.24015171578251948,
+              "returnLift": 0.8423706192694104,
+              "angle": -1.46545802717724,
+              "pivot": {
+                "x": 43,
+                "y": -25
+              },
+              "grip": 0
+            }
+          },
+          "scale": 1,
+          "camera": {
+            "x": 403,
+            "y": 585,
+            "z": 1.3
+          },
+          "actorState": {
+            "state": "neutral",
+            "frame": -1,
+            "blinkFrame": -1,
+            "phase": 0.9984189723320167,
+            "baseline": 1142,
+            "hand": null,
+            "status": "experimental"
+          },
+          "caption": "책 한 권과, 함께하고 싶은 마음."
+        },
+        {
+          "time": 14.098695652173912,
+          "crop": {
+            "x": 334.32701862427035,
+            "y": 523.9506779812571,
+            "size": 250
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "settle",
+          "catFoot": {
+            "x": 455.94386048020795,
+            "y": 645.3466753701978
+          },
+          "seat": {
+            "x": 455.94386048020795,
+            "y": 645.3466753701978,
+            "actorState": {
+              "state": "paddle-local-rig",
+              "status": "experimental",
+              "frame": 0,
+              "blinkFrame": -1,
+              "armAngle": 0.8200765028139523,
+              "cycle": 0.8923913043478258,
+              "hand": {
+                "x": 26.073065029079263,
+                "y": -5.689636179700191
+              }
+            },
+            "paddle": {
+              "cycle": 0.8923913043478258,
+              "stroke": 0.21463185512040872,
+              "returnLift": 0.8070051272702923,
+              "angle": -1.4527768579560276,
+              "pivot": {
+                "x": 43,
+                "y": -25
+              },
+              "grip": 0
+            }
+          },
+          "scale": 1,
+          "camera": {
+            "x": 403,
+            "y": 585,
+            "z": 1.3
+          },
+          "actorState": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.8200765028139523,
+            "cycle": 0.8923913043478258,
+            "hand": {
+              "x": 26.073065029079263,
+              "y": -5.689636179700191
+            }
+          },
+          "caption": "책 한 권과, 함께하고 싶은 마음."
+        },
+        {
+          "time": 14.118782608695652,
+          "crop": {
+            "x": 334.326377351032,
+            "y": 523.9834859312833,
+            "size": 250
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "settle",
+          "catFoot": {
+            "x": 455.94336719310155,
+            "y": 645.3719122548333
+          },
+          "seat": {
+            "x": 455.94336719310155,
+            "y": 645.3719122548333,
+            "actorState": {
+              "state": "paddle-local-rig",
+              "status": "experimental",
+              "frame": 0,
+              "blinkFrame": -1,
+              "armAngle": 0.7661747515924504,
+              "cycle": 0.899565217391304,
+              "hand": {
+                "x": 27.906969302609347,
+                "y": -6.593950513456734
+              }
+            },
+            "paddle": {
+              "cycle": 0.899565217391304,
+              "stroke": 0.19007023019156355,
+              "returnLift": 0.7684777842299221,
+              "angle": -1.4376983921324404,
+              "pivot": {
+                "x": 43,
+                "y": -25
+              },
+              "grip": 0
+            }
+          },
+          "scale": 1,
+          "camera": {
+            "x": 403,
+            "y": 585,
+            "z": 1.3
+          },
+          "actorState": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.7661747515924504,
+            "cycle": 0.899565217391304,
+            "hand": {
+              "x": 27.906969302609347,
+              "y": -6.593950513456734
+            }
+          },
+          "caption": "책 한 권과, 함께하고 싶은 마음."
+        },
+        {
+          "time": 14.13886956521739,
+          "crop": {
+            "x": 334.32577857105883,
+            "y": 524.0187551225828,
+            "size": 250
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "settle",
+          "catFoot": {
+            "x": 455.9429065931222,
+            "y": 645.3990424019868
+          },
+          "seat": {
+            "x": 455.9429065931222,
+            "y": 645.3990424019868,
+            "actorState": {
+              "state": "paddle-local-rig",
+              "status": "experimental",
+              "frame": 0,
+              "blinkFrame": -1,
+              "armAngle": 0.6997192315160605,
+              "cycle": 0.9067391304347823,
+              "hand": {
+                "x": 30.15266899948648,
+                "y": -7.857179641433536
+              }
+            },
+            "paddle": {
+              "cycle": 0.9067391304347823,
+              "stroke": 0.16656180129387732,
+              "returnLift": 0.726939540514778,
+              "angle": -1.420282203424846,
+              "pivot": {
+                "x": 43,
+                "y": -25
+              },
+              "grip": 0
+            }
+          },
+          "scale": 1,
+          "camera": {
+            "x": 403,
+            "y": 585,
+            "z": 1.3
+          },
+          "actorState": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.6997192315160605,
+            "cycle": 0.9067391304347823,
+            "hand": {
+              "x": 30.15266899948648,
+              "y": -7.857179641433536
+            }
+          },
+          "caption": "책 한 권과, 함께하고 싶은 마음."
+        },
+        {
+          "time": 14.15895652173913,
+          "crop": {
+            "x": 334.32522268311675,
+            "y": 524.0564456489807,
+            "size": 250
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "settle",
+          "catFoot": {
+            "x": 455.94247898701286,
+            "y": 645.4280351146006
+          },
+          "seat": {
+            "x": 455.94247898701286,
+            "y": 645.4280351146006,
+            "actorState": {
+              "state": "paddle-local-rig",
+              "status": "experimental",
+              "frame": 0,
+              "blinkFrame": -1,
+              "armAngle": 0.6238305731281932,
+              "cycle": 0.9139130434782605,
+              "hand": {
+                "x": 32.68455966472967,
+                "y": -9.499698122076008
+              }
+            },
+            "paddle": {
+              "cycle": 0.9139130434782605,
+              "stroke": 0.1442015287252414,
+              "returnLift": 0.6825531432186563,
+              "angle": -1.4005954154570959,
+              "pivot": {
+                "x": 43,
+                "y": -25
+              },
+              "grip": 0
+            }
+          },
+          "scale": 1,
+          "camera": {
+            "x": 403,
+            "y": 585,
+            "z": 1.3
+          },
+          "actorState": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.6238305731281932,
+            "cycle": 0.9139130434782605,
+            "hand": {
+              "x": 32.68455966472967,
+              "y": -9.499698122076008
+            }
+          },
+          "caption": "책 한 권과, 함께하고 싶은 마음."
+        },
+        {
+          "time": 14.17904347826087,
+          "crop": {
+            "x": 334.3247100579464,
+            "y": 524.0965147036756,
+            "size": 250
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "settle",
+          "catFoot": {
+            "x": 455.94208465995877,
+            "y": 645.4588574643658
+          },
+          "seat": {
+            "x": 455.94208465995877,
+            "y": 645.4588574643658,
+            "actorState": {
+              "state": "paddle-local-rig",
+              "status": "experimental",
+              "frame": 0,
+              "blinkFrame": -1,
+              "armAngle": 0.5416303655357537,
+              "cycle": 0.9210869565217389,
+              "hand": {
+                "x": 35.371703272001945,
+                "y": -11.518902816104315
+              }
+            },
+            "paddle": {
+              "cycle": 0.9210869565217389,
+              "stroke": 0.12308437278354689,
+              "returnLift": 0.635492498518563,
+              "angle": -1.3787122936662972,
+              "pivot": {
+                "x": 43,
+                "y": -25
+              },
+              "grip": 0
+            }
+          },
+          "scale": 1,
+          "camera": {
+            "x": 403,
+            "y": 585,
+            "z": 1.3
+          },
+          "actorState": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.5416303655357537,
+            "cycle": 0.9210869565217389,
+            "hand": {
+              "x": 35.371703272001945,
+              "y": -11.518902816104315
+            }
+          },
+          "caption": "책 한 권과, 함께하고 싶은 마음."
+        },
+        {
+          "time": 14.199130434782608,
+          "crop": {
+            "x": 334.3242410373227,
+            "y": 524.138916612426,
+            "size": 250
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "settle",
+          "catFoot": {
+            "x": 455.9417238748636,
+            "y": 645.4914743172508
+          },
+          "seat": {
+            "x": 455.9417238748636,
+            "y": 645.4914743172508,
+            "actorState": {
+              "state": "paddle-local-rig",
+              "status": "experimental",
+              "frame": 0,
+              "blinkFrame": -1,
+              "armAngle": 0.45619989895857305,
+              "cycle": 0.9282608695652171,
+              "hand": {
+                "x": 38.08460787916022,
+                "y": -13.881376377264482
+              }
+            },
+            "paddle": {
+              "cycle": 0.9282608695652171,
+              "stroke": 0.10330529376668585,
+              "returnLift": 0.5859419903092462,
+              "angle": -1.3547138092289102,
+              "pivot": {
+                "x": 43,
+                "y": -25
+              },
+              "grip": 0
+            }
+          },
+          "scale": 1,
+          "camera": {
+            "x": 403,
+            "y": 585,
+            "z": 1.3
+          },
+          "actorState": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.45619989895857305,
+            "cycle": 0.9282608695652171,
+            "hand": {
+              "x": 38.08460787916022,
+              "y": -13.881376377264482
+            }
+          },
+          "caption": "책 한 권과, 함께하고 싶은 마음."
+        },
+        {
+          "time": 14.219217391304348,
+          "crop": {
+            "x": 334.32381593336584,
+            "y": 524.1836028756816,
+            "size": 250
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "settle",
+          "catFoot": {
+            "x": 455.94139687181985,
+            "y": 645.5258483659089
+          },
+          "seat": {
+            "x": 455.94139687181985,
+            "y": 645.5258483659089,
+            "actorState": {
+              "state": "paddle-local-rig",
+              "status": "experimental",
+              "frame": 0,
+              "blinkFrame": -1,
+              "armAngle": 0.3705403205072063,
+              "cycle": 0.9354347826086954,
+              "hand": {
+                "x": 40.703588178531014,
+                "y": -16.520234147890044
+              }
+            },
+            "paddle": {
+              "cycle": 0.9354347826086954,
+              "stroke": 0.08495925197254939,
+              "returnLift": 0.5340957577859622,
+              "angle": -1.3286871767137214,
+              "pivot": {
+                "x": 43,
+                "y": -25
+              },
+              "grip": 0
+            }
+          },
+          "scale": 1,
+          "camera": {
+            "x": 403,
+            "y": 585,
+            "z": 1.3
+          },
+          "actorState": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.3705403205072063,
+            "cycle": 0.9354347826086954,
+            "hand": {
+              "x": 40.703588178531014,
+              "y": -16.520234147890044
+            }
+          },
+          "caption": "책 한 권과, 함께하고 싶은 마음."
+        },
+        {
+          "time": 14.239304347826087,
+          "crop": {
+            "x": 334.3234350280767,
+            "y": 524.2305222188887,
+            "size": 250
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "settle",
+          "catFoot": {
+            "x": 455.9411038677513,
+            "y": 645.5619401683759
+          },
+          "seat": {
+            "x": 455.9411038677513,
+            "y": 645.5619401683759,
+            "actorState": {
+              "state": "paddle-local-rig",
+              "status": "experimental",
+              "frame": 0,
+              "blinkFrame": -1,
+              "armAngle": 0.2875345889237819,
+              "cycle": 0.9426086956521738,
+              "hand": {
+                "x": 43.126789060613845,
+                "y": -19.337549076674264
+              }
+            },
+            "paddle": {
+              "cycle": 0.9426086956521738,
+              "stroke": 0.06814120769902843,
+              "returnLift": 0.4801569348059172,
+              "angle": -1.300725367273166,
+              "pivot": {
+                "x": 43,
+                "y": -25
+              },
+              "grip": 0
+            }
+          },
+          "scale": 1,
+          "camera": {
+            "x": 403,
+            "y": 585,
+            "z": 1.3
+          },
+          "actorState": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.2875345889237819,
+            "cycle": 0.9426086956521738,
+            "hand": {
+              "x": 43.126789060613845,
+              "y": -19.337549076674264
+            }
+          },
+          "caption": "책 한 권과, 함께하고 싶은 마음."
+        },
+        {
+          "time": 14.259391304347826,
+          "crop": {
+            "x": 334.32309857306524,
+            "y": 524.2796206501949,
+            "size": 250
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "settle",
+          "catFoot": {
+            "x": 455.940845056204,
+            "y": 645.5997081924577
+          },
+          "seat": {
+            "x": 455.940845056204,
+            "y": 645.5997081924577,
+            "actorState": {
+              "state": "paddle-local-rig",
+              "status": "experimental",
+              "frame": 0,
+              "blinkFrame": -1,
+              "armAngle": 0.20991157604544863,
+              "cycle": 0.949782608695652,
+              "hand": {
+                "x": 45.27598756938527,
+                "y": -22.210942373496756
+              }
+            },
+            "paddle": {
+              "cycle": 0.949782608695652,
+              "stroke": 0.052946121244014877,
+              "returnLift": 0.4243368540085717,
+              "angle": -1.27092659928032,
+              "pivot": {
+                "x": 43,
+                "y": -25
+              },
+              "grip": 0
+            }
+          },
+          "scale": 1,
+          "camera": {
+            "x": 403,
+            "y": 585,
+            "z": 1.3
+          },
+          "actorState": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.20991157604544863,
+            "cycle": 0.949782608695652,
+            "hand": {
+              "x": 45.27598756938527,
+              "y": -22.210942373496756
+            }
+          },
+          "caption": "책 한 권과, 함께하고 싶은 마음."
+        },
+        {
+          "time": 14.279478260869565,
+          "crop": {
+            "x": 334.3228067894435,
+            "y": 524.3308415247825,
+            "size": 250
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "settle",
+          "catFoot": {
+            "x": 455.94062060726424,
+            "y": 645.6391088652173
+          },
+          "seat": {
+            "x": 455.94062060726424,
+            "y": 645.6391088652173,
+            "actorState": {
+              "state": "paddle-local-rig",
+              "status": "experimental",
+              "frame": 0,
+              "blinkFrame": -1,
+              "armAngle": 0.14021262161373022,
+              "cycle": 0.9569565217391303,
+              "hand": {
+                "x": 47.09883562876874,
+                "y": -25.00280965644812
+              }
+            },
+            "paddle": {
+              "cycle": 0.9569565217391303,
+              "stroke": 0.0394689529054002,
+              "returnLift": 0.366854218813058,
+              "angle": -1.239393808407251,
+              "pivot": {
+                "x": 43.49509794832352,
+                "y": -25.00033937812319
+              },
+              "grip": 0.12078990063630417
+            }
+          },
+          "scale": 1,
+          "camera": {
+            "x": 403,
+            "y": 585,
+            "z": 1.3
+          },
+          "actorState": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.14021262161373022,
+            "cycle": 0.9569565217391303,
+            "hand": {
+              "x": 47.09883562876874,
+              "y": -25.00280965644812
+            }
+          },
+          "caption": "책 한 권과, 함께하고 싶은 마음."
+        },
+        {
+          "time": 14.299565217391304,
+          "crop": {
+            "x": 334.322559867856,
+            "y": 524.3841256150873,
+            "size": 250
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "settle",
+          "catFoot": {
+            "x": 455.94043066758155,
+            "y": 645.6800966269902
+          },
+          "seat": {
+            "x": 455.94043066758155,
+            "y": 645.6800966269902,
+            "actorState": {
+              "state": "paddle-local-rig",
+              "status": "experimental",
+              "frame": 0,
+              "blinkFrame": -1,
+              "armAngle": 0.08076080410058127,
+              "cycle": 0.9641304347826086,
+              "hand": {
+                "x": 48.56705578815325,
+                "y": -27.570428000107505
+              }
+            },
+            "paddle": {
+              "cycle": 0.9641304347826086,
+              "stroke": 0.0278046629810752,
+              "returnLift": 0.30793424653684337,
+              "angle": -1.2062340992209604,
+              "pivot": {
+                "x": 45.19640263126185,
+                "y": -26.0141257852884
+              },
+              "grip": 0.39453576806896984
+            }
+          },
+          "scale": 1,
+          "camera": {
+            "x": 403,
+            "y": 585,
+            "z": 1.3
+          },
+          "actorState": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.08076080410058127,
+            "cycle": 0.9641304347826086,
+            "hand": {
+              "x": 48.56705578815325,
+              "y": -27.570428000107505
+            }
+          },
+          "caption": "책 한 권과, 함께하고 싶은 마음."
+        },
+        {
+          "time": 14.319652173913044,
+          "crop": {
+            "x": 334.32235796862085,
+            "y": 524.4394111862046,
+            "size": 250
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "settle",
+          "catFoot": {
+            "x": 455.9402753604776,
+            "y": 645.7226239893881
+          },
+          "seat": {
+            "x": 455.9402753604776,
+            "y": 645.7226239893881,
+            "actorState": {
+              "state": "paddle-local-rig",
+              "status": "experimental",
+              "frame": 0,
+              "blinkFrame": -1,
+              "armAngle": 0.03363314381941901,
+              "cycle": 0.9713043478260869,
+              "hand": {
+                "x": 49.67098597020887,
+                "y": -29.77541276655038
+              }
+            },
+            "paddle": {
+              "cycle": 0.9713043478260869,
+              "stroke": 0.018048211768931788,
+              "returnLift": 0.24780778599290085,
+              "angle": -1.1715581804455732,
+              "pivot": {
+                "x": 47.48881882686485,
+                "y": -28.21331251905945
+              },
+              "grip": 0.6728868636376857
+            }
+          },
+          "scale": 1,
+          "camera": {
+            "x": 403,
+            "y": 585,
+            "z": 1.3
+          },
+          "actorState": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.03363314381941901,
+            "cycle": 0.9713043478260869,
+            "hand": {
+              "x": 49.67098597020887,
+              "y": -29.77541276655038
+            }
+          },
+          "caption": "책 한 권과, 함께하고 싶은 마음."
+        },
+        {
+          "time": 14.339739130434783,
+          "crop": {
+            "x": 334.3222012219576,
+            "y": 524.4966340758207,
+            "size": 250
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "settle",
+          "catFoot": {
+            "x": 455.94015478612124,
+            "y": 645.7666415967851
+          },
+          "seat": {
+            "x": 455.94015478612124,
+            "y": 645.7666415967851,
+            "actorState": {
+              "state": "paddle-local-rig",
+              "status": "experimental",
+              "frame": 0,
+              "blinkFrame": -1,
+              "armAngle": 0.000635906121912666,
+              "cycle": 0.9784782608695651,
+              "hand": {
+                "x": 50.41155941225814,
+                "y": -31.491560899022748
+              }
+            },
+            "paddle": {
+              "cycle": 0.9784782608695651,
+              "stroke": 0.010294559566861317,
+              "returnLift": 0.18671041302263713,
+              "angle": -1.135479786103412,
+              "pivot": {
+                "x": 49.455354444873834,
+                "y": -30.65404986626263
+              },
+              "grip": 0.8709846451742908
+            }
+          },
+          "scale": 1,
+          "camera": {
+            "x": 403,
+            "y": 585,
+            "z": 1.3
+          },
+          "actorState": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.000635906121912666,
+            "cycle": 0.9784782608695651,
+            "hand": {
+              "x": 50.41155941225814,
+              "y": -31.491560899022748
+            }
+          },
+          "caption": "책 한 권과, 함께하고 싶은 마음."
+        },
+        {
+          "time": 14.359826086956522,
+          "crop": {
+            "x": 334.3220897282813,
+            "y": 524.5557277780764,
+            "size": 250
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "settle",
+          "catFoot": {
+            "x": 455.9400690217548,
+            "y": 645.812098290828
+          },
+          "seat": {
+            "x": 455.9400690217548,
+            "y": 645.812098290828,
+            "actorState": {
+              "state": "paddle-local-rig",
+              "status": "experimental",
+              "frame": 0,
+              "blinkFrame": -1,
+              "armAngle": -0.01671687765007629,
+              "cycle": 0.9856521739130434,
+              "hand": {
+                "x": 50.79118757865557,
+                "y": -32.61082376261939
+              }
+            },
+            "paddle": {
+              "cycle": 0.9856521739130434,
+              "stroke": 0.00463866667275481,
+              "returnLift": 0.12488150750830614,
+              "angle": -1.0981150848029415,
+              "pivot": {
+                "x": 50.554653470277565,
+                "y": -32.37976535277631
+              },
+              "grip": 0.9696408145754307
+            }
+          },
+          "scale": 1,
+          "camera": {
+            "x": 403,
+            "y": 585,
+            "z": 1.3
+          },
+          "actorState": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.01671687765007629,
+            "cycle": 0.9856521739130434,
+            "hand": {
+              "x": 50.79118757865557,
+              "y": -32.61082376261939
+            }
+          },
+          "caption": "책 한 권과, 함께하고 싶은 마음."
+        },
+        {
+          "time": 14.379913043478261,
+          "crop": {
+            "x": 334.3220235585427,
+            "y": 524.6166235308176,
+            "size": 250
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "settle",
+          "catFoot": {
+            "x": 455.9400181219559,
+            "y": 645.858941177552
+          },
+          "seat": {
+            "x": 455.9400181219559,
+            "y": 645.858941177552,
+            "actorState": {
+              "state": "paddle-local-rig",
+              "status": "experimental",
+              "frame": 0,
+              "blinkFrame": -1,
+              "armAngle": -0.017221605168968347,
+              "cycle": 0.9928260869565217,
+              "hand": {
+                "x": 50.80509711822119,
+                "y": -33.04777181789527
+              }
+            },
+            "paddle": {
+              "cycle": 0.9928260869565217,
+              "stroke": 0.0011754933845039561,
+              "returnLift": 0.06256331548115635,
+              "angle": -1.0595820794879836,
+              "pivot": {
+                "x": 50.7881470443542,
+                "y": -33.03029473532834
+              },
+              "grip": 0.9978283327407391
+            }
+          },
+          "scale": 1,
+          "camera": {
+            "x": 403,
+            "y": 585,
+            "z": 1.3
+          },
+          "actorState": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.017221605168968347,
+            "cycle": 0.9928260869565217,
+            "hand": {
+              "x": 50.80509711822119,
+              "y": -33.04777181789527
+            }
+          },
+          "caption": "책 한 권과, 함께하고 싶은 마음."
+        },
+        {
+          "time": 14.4,
+          "crop": {
+            "x": 334.3220019319878,
+            "y": 524.6792306715107,
+            "size": 250
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "depart",
+          "catFoot": {
+            "x": 455.94000148614447,
+            "y": 645.9071005165467
+          },
+          "seat": {
+            "x": 455.94000148614447,
+            "y": 645.9071005165467,
+            "actorState": {
+              "state": "paddle-local-rig",
+              "status": "experimental",
+              "frame": 0,
+              "blinkFrame": -1,
+              "armAngle": 0,
+              "cycle": 0,
+              "hand": {
+                "x": 50.4345513611887,
+                "y": -32.74326900149839
+              }
+            },
+            "paddle": {
+              "cycle": 0,
+              "stroke": 0,
+              "returnLift": 0,
+              "angle": -1.02,
+              "pivot": {
+                "x": 50.4345513611887,
+                "y": -32.74326900149839
+              },
+              "grip": 1
+            }
+          },
+          "scale": 1,
+          "camera": {
+            "x": 403,
+            "y": 585,
+            "z": 1.3
+          },
+          "actorState": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0,
+            "cycle": 0,
+            "hand": {
+              "x": 50.4345513611887,
+              "y": -32.74326900149839
+            }
+          },
+          "caption": "책 한 권과, 함께하고 싶은 마음."
+        }
+      ]
+    }
+  ]
+}

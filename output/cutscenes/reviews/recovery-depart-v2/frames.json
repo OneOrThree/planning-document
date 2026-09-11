@@ -1,0 +1,1508 @@
+{
+  "phase": "depart",
+  "actor": null,
+  "fingerprint": "d66fcba83dfcb1e9671e1a7b27fbce19229d1dd63ca3715f040e3e6cbb2cf452",
+  "errors": [],
+  "data": [
+    {
+      "direction": 0,
+      "frames": [
+        {
+          "filmId": "new-morning-emotion",
+          "time": 14.4,
+          "phase": "depart",
+          "catFoot": {
+            "x": 455.94000148614447,
+            "y": 645.9071005165467
+          },
+          "seat": {
+            "x": 455.94000148614447,
+            "y": 645.9071005165467,
+            "actorState": {
+              "state": "paddle-local-rig",
+              "status": "experimental",
+              "frame": 0,
+              "blinkFrame": -1,
+              "armAngle": 0,
+              "cycle": 0,
+              "hand": {
+                "x": 50.4345513611887,
+                "y": -32.74326900149839
+              }
+            },
+            "paddle": {
+              "cycle": 0,
+              "stroke": 0,
+              "returnLift": 0,
+              "angle": -1.02,
+              "pivot": {
+                "x": 50.4345513611887,
+                "y": -32.74326900149839
+              },
+              "grip": 1
+            }
+          },
+          "scale": 1,
+          "camera": {
+            "x": 403,
+            "y": 585,
+            "z": 1.3
+          },
+          "actorState": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0,
+            "cycle": 0,
+            "hand": {
+              "x": 50.4345513611887,
+              "y": -32.74326900149839
+            }
+          },
+          "caption": "책 한 권과, 함께하고 싶은 마음."
+        },
+        {
+          "filmId": "new-morning-emotion",
+          "time": 17,
+          "phase": "depart",
+          "catFoot": {
+            "x": 576.0404652534348,
+            "y": 638.0451560798939
+          },
+          "seat": {
+            "x": 576.0404652534348,
+            "y": 638.0451560798939,
+            "actorState": {
+              "state": "paddle-local-rig",
+              "status": "experimental",
+              "frame": 0,
+              "blinkFrame": -1,
+              "armAngle": -0.20622966356222205,
+              "cycle": 0.9285714285714284,
+              "hand": {
+                "x": 53.87053143781705,
+                "y": -39.318210035970424
+              }
+            },
+            "paddle": {
+              "cycle": 0.9285714285714284,
+              "stroke": 0.10248073362207955,
+              "returnLift": 0.5837436722347912,
+              "angle": -1.3536284641176555,
+              "pivot": {
+                "x": 53.87053143781705,
+                "y": -39.318210035970424
+              },
+              "grip": 1
+            }
+          },
+          "scale": 0.8396692571720279,
+          "camera": {
+            "x": 385,
+            "y": 640,
+            "z": 1.12
+          },
+          "actorState": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.20622966356222205,
+            "cycle": 0.9285714285714284,
+            "hand": {
+              "x": 53.87053143781705,
+              "y": -39.318210035970424
+            }
+          },
+          "caption": "함께할 곳으로, 한 걸음 더."
+        },
+        {
+          "filmId": "new-morning-emotion",
+          "time": 19.599999999999998,
+          "phase": "depart",
+          "catFoot": {
+            "x": 565.1335012234761,
+            "y": 479.7575083163516
+          },
+          "seat": {
+            "x": 565.1335012234761,
+            "y": 479.7575083163516,
+            "actorState": {
+              "state": "paddle-local-rig",
+              "status": "experimental",
+              "frame": 0,
+              "blinkFrame": -1,
+              "armAngle": -0.2661043061238971,
+              "cycle": 0.8571428571428563,
+              "hand": {
+                "x": 55.24829856119069,
+                "y": -40.38876852865087
+              }
+            },
+            "paddle": {
+              "cycle": 0.8571428571428563,
+              "stroke": 0.3474346822797346,
+              "returnLift": 0.947927346167134,
+              "angle": -1.4911739754578692,
+              "pivot": {
+                "x": 55.24829856119069,
+                "y": -40.38876852865087
+              },
+              "grip": 1
+            }
+          },
+          "scale": 0.6703480054004312,
+          "camera": {
+            "x": 385,
+            "y": 640,
+            "z": 1.12
+          },
+          "actorState": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.2661043061238971,
+            "cycle": 0.8571428571428563,
+            "hand": {
+              "x": 55.24829856119069,
+              "y": -40.38876852865087
+            }
+          },
+          "caption": "함께할 곳으로, 한 걸음 더."
+        },
+        {
+          "filmId": "folded-promise-emotion",
+          "time": 14.4,
+          "phase": "depart",
+          "catFoot": {
+            "x": 455.94000148614447,
+            "y": 645.9071005165467
+          },
+          "seat": {
+            "x": 455.94000148614447,
+            "y": 645.9071005165467,
+            "actorState": {
+              "state": "paddle-local-rig",
+              "status": "experimental",
+              "frame": 0,
+              "blinkFrame": -1,
+              "armAngle": 0,
+              "cycle": 0,
+              "hand": {
+                "x": 50.4345513611887,
+                "y": -32.74326900149839
+              }
+            },
+            "paddle": {
+              "cycle": 0,
+              "stroke": 0,
+              "returnLift": 0,
+              "angle": -1.02,
+              "pivot": {
+                "x": 50.4345513611887,
+                "y": -32.74326900149839
+              },
+              "grip": 1
+            }
+          },
+          "scale": 1,
+          "camera": {
+            "x": 403,
+            "y": 585,
+            "z": 1.3
+          },
+          "actorState": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0,
+            "cycle": 0,
+            "hand": {
+              "x": 50.4345513611887,
+              "y": -32.74326900149839
+            }
+          },
+          "caption": "접어 둔 마음을 다시 펴고,"
+        },
+        {
+          "filmId": "folded-promise-emotion",
+          "time": 17,
+          "phase": "depart",
+          "catFoot": {
+            "x": 576.0404652534348,
+            "y": 638.0451560798939
+          },
+          "seat": {
+            "x": 576.0404652534348,
+            "y": 638.0451560798939,
+            "actorState": {
+              "state": "paddle-local-rig",
+              "status": "experimental",
+              "frame": 0,
+              "blinkFrame": -1,
+              "armAngle": -0.20622966356222205,
+              "cycle": 0.9285714285714284,
+              "hand": {
+                "x": 53.87053143781705,
+                "y": -39.318210035970424
+              }
+            },
+            "paddle": {
+              "cycle": 0.9285714285714284,
+              "stroke": 0.10248073362207955,
+              "returnLift": 0.5837436722347912,
+              "angle": -1.3536284641176555,
+              "pivot": {
+                "x": 53.87053143781705,
+                "y": -39.318210035970424
+              },
+              "grip": 1
+            }
+          },
+          "scale": 0.8396692571720279,
+          "camera": {
+            "x": 385,
+            "y": 640,
+            "z": 1.12
+          },
+          "actorState": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.20622966356222205,
+            "cycle": 0.9285714285714284,
+            "hand": {
+              "x": 53.87053143781705,
+              "y": -39.318210035970424
+            }
+          },
+          "caption": "새로운 약속을 만나러 가."
+        },
+        {
+          "filmId": "folded-promise-emotion",
+          "time": 19.599999999999998,
+          "phase": "depart",
+          "catFoot": {
+            "x": 565.1335012234761,
+            "y": 479.7575083163516
+          },
+          "seat": {
+            "x": 565.1335012234761,
+            "y": 479.7575083163516,
+            "actorState": {
+              "state": "paddle-local-rig",
+              "status": "experimental",
+              "frame": 0,
+              "blinkFrame": -1,
+              "armAngle": -0.2661043061238971,
+              "cycle": 0.8571428571428563,
+              "hand": {
+                "x": 55.24829856119069,
+                "y": -40.38876852865087
+              }
+            },
+            "paddle": {
+              "cycle": 0.8571428571428563,
+              "stroke": 0.3474346822797346,
+              "returnLift": 0.947927346167134,
+              "angle": -1.4911739754578692,
+              "pivot": {
+                "x": 55.24829856119069,
+                "y": -40.38876852865087
+              },
+              "grip": 1
+            }
+          },
+          "scale": 0.6703480054004312,
+          "camera": {
+            "x": 385,
+            "y": 640,
+            "z": 1.12
+          },
+          "actorState": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.2661043061238971,
+            "cycle": 0.8571428571428563,
+            "hand": {
+              "x": 55.24829856119069,
+              "y": -40.38876852865087
+            }
+          },
+          "caption": "새로운 약속을 만나러 가."
+        },
+        {
+          "filmId": "unfinished-pier-emotion",
+          "time": 16.1,
+          "phase": "depart",
+          "catFoot": {
+            "x": 456.027196795907,
+            "y": 648.4148983197082
+          },
+          "seat": {
+            "x": 456.027196795907,
+            "y": 648.4148983197082,
+            "actorState": {
+              "state": "paddle-local-rig",
+              "status": "experimental",
+              "frame": 0,
+              "blinkFrame": -1,
+              "armAngle": 0,
+              "cycle": 0,
+              "hand": {
+                "x": 50.14971509583767,
+                "y": -33.25489376550892
+              }
+            },
+            "paddle": {
+              "cycle": 0,
+              "stroke": 0,
+              "returnLift": 0,
+              "angle": -1.02,
+              "pivot": {
+                "x": 50.14971509583767,
+                "y": -33.25489376550892
+              },
+              "grip": 1
+            }
+          },
+          "scale": 1,
+          "camera": {
+            "x": 403,
+            "y": 585,
+            "z": 1.3
+          },
+          "actorState": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0,
+            "cycle": 0,
+            "hand": {
+              "x": 50.14971509583767,
+              "y": -33.25489376550892
+            }
+          },
+          "caption": "함께할 곳으로 갈 뗏목은 만들었어."
+        },
+        {
+          "filmId": "unfinished-pier-emotion",
+          "time": 18.25,
+          "phase": "depart",
+          "catFoot": {
+            "x": 575.6471586595351,
+            "y": 638.9910977242466
+          },
+          "seat": {
+            "x": 575.6471586595351,
+            "y": 638.9910977242466,
+            "actorState": {
+              "state": "paddle-local-rig",
+              "status": "experimental",
+              "frame": 0,
+              "blinkFrame": -1,
+              "armAngle": -0.10701350603416476,
+              "cycle": 0.7678571428571423,
+              "hand": {
+                "x": 52.37835305298316,
+                "y": -36.062343394941706
+              }
+            },
+            "paddle": {
+              "cycle": 0.7678571428571423,
+              "stroke": 0.7111846566595499,
+              "returnLift": 0.8982468465828423,
+              "angle": -1.3175159657157947,
+              "pivot": {
+                "x": 52.37835305298316,
+                "y": -36.062343394941706
+              },
+              "grip": 1
+            }
+          },
+          "scale": 0.8406240315082646,
+          "camera": {
+            "x": 385,
+            "y": 640,
+            "z": 1.12
+          },
+          "actorState": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.10701350603416476,
+            "cycle": 0.7678571428571423,
+            "hand": {
+              "x": 52.37835305298316,
+              "y": -36.062343394941706
+            }
+          },
+          "caption": "첫 조각은 만들었어."
+        },
+        {
+          "filmId": "unfinished-pier-emotion",
+          "time": 20.4,
+          "phase": "depart",
+          "catFoot": {
+            "x": 565.2267098587879,
+            "y": 478.01812686429787
+          },
+          "seat": {
+            "x": 565.2267098587879,
+            "y": 478.01812686429787,
+            "actorState": {
+              "state": "paddle-local-rig",
+              "status": "experimental",
+              "frame": 0,
+              "blinkFrame": -1,
+              "armAngle": 0.3530193695869107,
+              "cycle": 0.5357142857142847,
+              "hand": {
+                "x": 41.22739214858663,
+                "y": -25.159358543791978
+              }
+            },
+            "paddle": {
+              "cycle": 0.5357142857142847,
+              "stroke": 0.9289983410181861,
+              "returnLift": 0,
+              "angle": -0.6576906470029074,
+              "pivot": {
+                "x": 41.22739214858663,
+                "y": -25.159358543791978
+              },
+              "grip": 1
+            }
+          },
+          "scale": 0.6705036157024793,
+          "camera": {
+            "x": 385,
+            "y": 640,
+            "z": 1.12
+          },
+          "actorState": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.3530193695869107,
+            "cycle": 0.5357142857142847,
+            "hand": {
+              "x": 41.22739214858663,
+              "y": -25.159358543791978
+            }
+          },
+          "caption": "첫 조각은 만들었어."
+        }
+      ]
+    },
+    {
+      "direction": 1,
+      "frames": [
+        {
+          "filmId": "new-morning-journey",
+          "time": 12.85,
+          "phase": "depart",
+          "catFoot": {
+            "x": 447.0149951681925,
+            "y": 809.8621574926311
+          },
+          "seat": {
+            "x": 447.0149951681925,
+            "y": 809.8621574926311,
+            "actorState": {
+              "state": "paddle-local-rig",
+              "status": "experimental",
+              "frame": 0,
+              "blinkFrame": -1,
+              "armAngle": 0,
+              "cycle": 0,
+              "hand": {
+                "x": 50.18316123664589,
+                "y": -33.19544775652065
+              }
+            },
+            "paddle": {
+              "cycle": 0,
+              "stroke": 0,
+              "returnLift": 0,
+              "angle": -1.02,
+              "pivot": {
+                "x": 50.18316123664589,
+                "y": -33.19544775652065
+              },
+              "grip": 1
+            }
+          },
+          "scale": 1,
+          "camera": {
+            "x": 405,
+            "y": 680,
+            "z": 1.16
+          },
+          "actorState": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0,
+            "cycle": 0,
+            "hand": {
+              "x": 50.18316123664589,
+              "y": -33.19544775652065
+            }
+          },
+          "caption": "책 한 권과, 함께하고 싶은 마음."
+        },
+        {
+          "filmId": "new-morning-journey",
+          "time": 16.474999999999998,
+          "phase": "depart",
+          "catFoot": {
+            "x": 598.9487680307096,
+            "y": 799.6248876416073
+          },
+          "seat": {
+            "x": 598.9487680307096,
+            "y": 799.6248876416073,
+            "actorState": {
+              "state": "paddle-local-rig",
+              "status": "experimental",
+              "frame": 0,
+              "blinkFrame": -1,
+              "armAngle": 0.16746356344779048,
+              "cycle": 0.29464285714285654,
+              "hand": {
+                "x": 46.13252516853739,
+                "y": -29.27089184943829
+              }
+            },
+            "paddle": {
+              "cycle": 0.29464285714285654,
+              "stroke": 0.4406935880205013,
+              "returnLift": 0,
+              "angle": -0.8481295006720045,
+              "pivot": {
+                "x": 46.13252516853739,
+                "y": -29.27089184943829
+              },
+              "grip": 1
+            }
+          },
+          "scale": 0.8628569665637555,
+          "camera": {
+            "x": 405,
+            "y": 680,
+            "z": 1.16
+          },
+          "actorState": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.16746356344779048,
+            "cycle": 0.29464285714285654,
+            "hand": {
+              "x": 46.13252516853739,
+              "y": -29.27089184943829
+            }
+          },
+          "caption": "함께할 곳으로, 한 걸음 더."
+        },
+        {
+          "filmId": "new-morning-journey",
+          "time": 20.099999999999998,
+          "phase": "depart",
+          "catFoot": {
+            "x": 603.0304152412563,
+            "y": 578.7857433709603
+          },
+          "seat": {
+            "x": 603.0304152412563,
+            "y": 578.7857433709603,
+            "actorState": {
+              "state": "paddle-local-rig",
+              "status": "experimental",
+              "frame": 0,
+              "blinkFrame": -1,
+              "armAngle": 0.3732199224021621,
+              "cycle": 0.589285714285714,
+              "hand": {
+                "x": 40.66227421506363,
+                "y": -24.75177285475907
+              }
+            },
+            "paddle": {
+              "cycle": 0.589285714285714,
+              "stroke": 0.9821576905320056,
+              "returnLift": 0,
+              "angle": -0.6369585006925178,
+              "pivot": {
+                "x": 40.66227421506363,
+                "y": -24.75177285475907
+              },
+              "grip": 1
+            }
+          },
+          "scale": 0.720154080420636,
+          "camera": {
+            "x": 405,
+            "y": 680,
+            "z": 1.16
+          },
+          "actorState": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.3732199224021621,
+            "cycle": 0.589285714285714,
+            "hand": {
+              "x": 40.66227421506363,
+              "y": -24.75177285475907
+            }
+          },
+          "caption": "함께할 곳으로, 한 걸음 더."
+        },
+        {
+          "filmId": "folded-promise-journey",
+          "time": 12.85,
+          "phase": "depart",
+          "catFoot": {
+            "x": 447.0149951681925,
+            "y": 809.8621574926311
+          },
+          "seat": {
+            "x": 447.0149951681925,
+            "y": 809.8621574926311,
+            "actorState": {
+              "state": "paddle-local-rig",
+              "status": "experimental",
+              "frame": 0,
+              "blinkFrame": -1,
+              "armAngle": 0,
+              "cycle": 0,
+              "hand": {
+                "x": 50.18316123664589,
+                "y": -33.19544775652065
+              }
+            },
+            "paddle": {
+              "cycle": 0,
+              "stroke": 0,
+              "returnLift": 0,
+              "angle": -1.02,
+              "pivot": {
+                "x": 50.18316123664589,
+                "y": -33.19544775652065
+              },
+              "grip": 1
+            }
+          },
+          "scale": 1,
+          "camera": {
+            "x": 405,
+            "y": 680,
+            "z": 1.16
+          },
+          "actorState": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0,
+            "cycle": 0,
+            "hand": {
+              "x": 50.18316123664589,
+              "y": -33.19544775652065
+            }
+          },
+          "caption": "접어 둔 마음을 다시 펴고,"
+        },
+        {
+          "filmId": "folded-promise-journey",
+          "time": 16.474999999999998,
+          "phase": "depart",
+          "catFoot": {
+            "x": 598.9487680307096,
+            "y": 799.6248876416073
+          },
+          "seat": {
+            "x": 598.9487680307096,
+            "y": 799.6248876416073,
+            "actorState": {
+              "state": "paddle-local-rig",
+              "status": "experimental",
+              "frame": 0,
+              "blinkFrame": -1,
+              "armAngle": 0.16746356344779048,
+              "cycle": 0.29464285714285654,
+              "hand": {
+                "x": 46.13252516853739,
+                "y": -29.27089184943829
+              }
+            },
+            "paddle": {
+              "cycle": 0.29464285714285654,
+              "stroke": 0.4406935880205013,
+              "returnLift": 0,
+              "angle": -0.8481295006720045,
+              "pivot": {
+                "x": 46.13252516853739,
+                "y": -29.27089184943829
+              },
+              "grip": 1
+            }
+          },
+          "scale": 0.8628569665637555,
+          "camera": {
+            "x": 405,
+            "y": 680,
+            "z": 1.16
+          },
+          "actorState": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.16746356344779048,
+            "cycle": 0.29464285714285654,
+            "hand": {
+              "x": 46.13252516853739,
+              "y": -29.27089184943829
+            }
+          },
+          "caption": "새로운 약속을 만나러 가."
+        },
+        {
+          "filmId": "folded-promise-journey",
+          "time": 20.099999999999998,
+          "phase": "depart",
+          "catFoot": {
+            "x": 603.0304152412563,
+            "y": 578.7857433709603
+          },
+          "seat": {
+            "x": 603.0304152412563,
+            "y": 578.7857433709603,
+            "actorState": {
+              "state": "paddle-local-rig",
+              "status": "experimental",
+              "frame": 0,
+              "blinkFrame": -1,
+              "armAngle": 0.3732199224021621,
+              "cycle": 0.589285714285714,
+              "hand": {
+                "x": 40.66227421506363,
+                "y": -24.75177285475907
+              }
+            },
+            "paddle": {
+              "cycle": 0.589285714285714,
+              "stroke": 0.9821576905320056,
+              "returnLift": 0,
+              "angle": -0.6369585006925178,
+              "pivot": {
+                "x": 40.66227421506363,
+                "y": -24.75177285475907
+              },
+              "grip": 1
+            }
+          },
+          "scale": 0.720154080420636,
+          "camera": {
+            "x": 405,
+            "y": 680,
+            "z": 1.16
+          },
+          "actorState": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.3732199224021621,
+            "cycle": 0.589285714285714,
+            "hand": {
+              "x": 40.66227421506363,
+              "y": -24.75177285475907
+            }
+          },
+          "caption": "새로운 약속을 만나러 가."
+        },
+        {
+          "filmId": "unfinished-pier-journey",
+          "time": 14.549999999999999,
+          "phase": "depart",
+          "catFoot": {
+            "x": 446.9480660241747,
+            "y": 808.9031001114389
+          },
+          "seat": {
+            "x": 446.9480660241747,
+            "y": 808.9031001114389,
+            "actorState": {
+              "state": "paddle-local-rig",
+              "status": "experimental",
+              "frame": 0,
+              "blinkFrame": -1,
+              "armAngle": 0,
+              "cycle": 0,
+              "hand": {
+                "x": 50.43137030423448,
+                "y": -32.74905106721779
+              }
+            },
+            "paddle": {
+              "cycle": 0,
+              "stroke": 0,
+              "returnLift": 0,
+              "angle": -1.02,
+              "pivot": {
+                "x": 50.43137030423448,
+                "y": -32.74905106721779
+              },
+              "grip": 1
+            }
+          },
+          "scale": 1,
+          "camera": {
+            "x": 405,
+            "y": 680,
+            "z": 1.16
+          },
+          "actorState": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0,
+            "cycle": 0,
+            "hand": {
+              "x": 50.43137030423448,
+              "y": -32.74905106721779
+            }
+          },
+          "caption": "함께할 곳으로 갈 뗏목은 만들었어."
+        },
+        {
+          "filmId": "unfinished-pier-journey",
+          "time": 17.724999999999998,
+          "phase": "depart",
+          "catFoot": {
+            "x": 598.7335526492187,
+            "y": 797.8439290349329
+          },
+          "seat": {
+            "x": 598.7335526492187,
+            "y": 797.8439290349329,
+            "actorState": {
+              "state": "paddle-local-rig",
+              "status": "experimental",
+              "frame": 0,
+              "blinkFrame": -1,
+              "armAngle": 0.04295737593931623,
+              "cycle": 0.13392857142857117,
+              "hand": {
+                "x": 49.16103444554403,
+                "y": -32.21341876730665
+              }
+            },
+            "paddle": {
+              "cycle": 0.13392857142857117,
+              "stroke": 0.11304572615609534,
+              "returnLift": 0,
+              "angle": -0.9759121667991228,
+              "pivot": {
+                "x": 49.16103444554403,
+                "y": -32.21341876730665
+              },
+              "grip": 1
+            }
+          },
+          "scale": 0.8632555530866373,
+          "camera": {
+            "x": 405,
+            "y": 680,
+            "z": 1.16
+          },
+          "actorState": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.04295737593931623,
+            "cycle": 0.13392857142857117,
+            "hand": {
+              "x": 49.16103444554403,
+              "y": -32.21341876730665
+            }
+          },
+          "caption": "첫 조각은 만들었어."
+        },
+        {
+          "filmId": "unfinished-pier-journey",
+          "time": 20.9,
+          "phase": "depart",
+          "catFoot": {
+            "x": 603.0792468309933,
+            "y": 576.6992207639607
+          },
+          "seat": {
+            "x": 603.0792468309933,
+            "y": 576.6992207639607,
+            "actorState": {
+              "state": "paddle-local-rig",
+              "status": "experimental",
+              "frame": 0,
+              "blinkFrame": -1,
+              "armAngle": 0.1439712833037529,
+              "cycle": 0.2678571428571428,
+              "hand": {
+                "x": 46.87372331131769,
+                "y": -29.527912958647274
+              }
+            },
+            "paddle": {
+              "cycle": 0.2678571428571428,
+              "stroke": 0.3788717981677707,
+              "returnLift": 0,
+              "angle": -0.8722399987145695,
+              "pivot": {
+                "x": 46.87372331131769,
+                "y": -29.527912958647274
+              },
+              "grip": 1
+            }
+          },
+          "scale": 0.720199824008042,
+          "camera": {
+            "x": 405,
+            "y": 680,
+            "z": 1.16
+          },
+          "actorState": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.1439712833037529,
+            "cycle": 0.2678571428571428,
+            "hand": {
+              "x": 46.87372331131769,
+              "y": -29.527912958647274
+            }
+          },
+          "caption": "첫 조각은 만들었어."
+        }
+      ]
+    },
+    {
+      "direction": 2,
+      "frames": [
+        {
+          "filmId": "new-morning-storybook",
+          "time": 15,
+          "phase": "depart",
+          "catFoot": {
+            "x": 455.95494137509337,
+            "y": 647.64650806933
+          },
+          "seat": {
+            "x": 455.95494137509337,
+            "y": 647.64650806933,
+            "actorState": {
+              "state": "paddle-local-rig",
+              "status": "experimental",
+              "frame": 0,
+              "blinkFrame": -1,
+              "armAngle": 0,
+              "cycle": 0,
+              "hand": {
+                "x": 50.38611592182033,
+                "y": -32.83113846407955
+              }
+            },
+            "paddle": {
+              "cycle": 0,
+              "stroke": 0,
+              "returnLift": 0,
+              "angle": -1.02,
+              "pivot": {
+                "x": 50.38611592182033,
+                "y": -32.83113846407955
+              },
+              "grip": 1
+            }
+          },
+          "scale": 1,
+          "camera": {
+            "x": 360,
+            "y": 640,
+            "z": 1
+          },
+          "actorState": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0,
+            "cycle": 0,
+            "hand": {
+              "x": 50.38611592182033,
+              "y": -32.83113846407955
+            }
+          },
+          "caption": "책 한 권과, 함께하고 싶은 마음."
+        },
+        {
+          "filmId": "new-morning-storybook",
+          "time": 17.6,
+          "phase": "depart",
+          "catFoot": {
+            "x": 576.0286404970071,
+            "y": 637.3042206536502
+          },
+          "seat": {
+            "x": 576.0286404970071,
+            "y": 637.3042206536502,
+            "actorState": {
+              "state": "paddle-local-rig",
+              "status": "experimental",
+              "frame": 0,
+              "blinkFrame": -1,
+              "armAngle": -0.20622966356222036,
+              "cycle": 0.9285714285714293,
+              "hand": {
+                "x": 53.92684580942878,
+                "y": -39.22965086751403
+              }
+            },
+            "paddle": {
+              "cycle": 0.9285714285714293,
+              "stroke": 0.10248073362207721,
+              "returnLift": 0.5837436722347851,
+              "angle": -1.3536284641176524,
+              "pivot": {
+                "x": 53.92684580942878,
+                "y": -39.22965086751403
+              },
+              "grip": 1
+            }
+          },
+          "scale": 0.8396692571720279,
+          "camera": {
+            "x": 360,
+            "y": 640,
+            "z": 1
+          },
+          "actorState": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.20622966356222036,
+            "cycle": 0.9285714285714293,
+            "hand": {
+              "x": 53.92684580942878,
+              "y": -39.22965086751403
+            }
+          },
+          "caption": "함께할 곳으로, 한 걸음 더."
+        },
+        {
+          "filmId": "new-morning-storybook",
+          "time": 20.2,
+          "phase": "depart",
+          "catFoot": {
+            "x": 565.142362432562,
+            "y": 478.4449124758451
+          },
+          "seat": {
+            "x": 565.142362432562,
+            "y": 478.4449124758451,
+            "actorState": {
+              "state": "paddle-local-rig",
+              "status": "experimental",
+              "frame": 0,
+              "blinkFrame": -1,
+              "armAngle": -0.26610430612389735,
+              "cycle": 0.857142857142857,
+              "hand": {
+                "x": 55.19365335146273,
+                "y": -40.47393496074916
+              }
+            },
+            "paddle": {
+              "cycle": 0.857142857142857,
+              "stroke": 0.3474346822797322,
+              "returnLift": 0.9479273461671323,
+              "angle": -1.491173975457869,
+              "pivot": {
+                "x": 55.19365335146273,
+                "y": -40.47393496074916
+              },
+              "grip": 1
+            }
+          },
+          "scale": 0.6703480054004312,
+          "camera": {
+            "x": 360,
+            "y": 640,
+            "z": 1
+          },
+          "actorState": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.26610430612389735,
+            "cycle": 0.857142857142857,
+            "hand": {
+              "x": 55.19365335146273,
+              "y": -40.47393496074916
+            }
+          },
+          "caption": "함께할 곳으로, 한 걸음 더."
+        },
+        {
+          "filmId": "folded-promise-storybook",
+          "time": 15,
+          "phase": "depart",
+          "catFoot": {
+            "x": 455.95494137509337,
+            "y": 647.64650806933
+          },
+          "seat": {
+            "x": 455.95494137509337,
+            "y": 647.64650806933,
+            "actorState": {
+              "state": "paddle-local-rig",
+              "status": "experimental",
+              "frame": 0,
+              "blinkFrame": -1,
+              "armAngle": 0,
+              "cycle": 0,
+              "hand": {
+                "x": 50.38611592182033,
+                "y": -32.83113846407955
+              }
+            },
+            "paddle": {
+              "cycle": 0,
+              "stroke": 0,
+              "returnLift": 0,
+              "angle": -1.02,
+              "pivot": {
+                "x": 50.38611592182033,
+                "y": -32.83113846407955
+              },
+              "grip": 1
+            }
+          },
+          "scale": 1,
+          "camera": {
+            "x": 360,
+            "y": 640,
+            "z": 1
+          },
+          "actorState": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0,
+            "cycle": 0,
+            "hand": {
+              "x": 50.38611592182033,
+              "y": -32.83113846407955
+            }
+          },
+          "caption": "접어 둔 마음을 다시 펴고,"
+        },
+        {
+          "filmId": "folded-promise-storybook",
+          "time": 17.6,
+          "phase": "depart",
+          "catFoot": {
+            "x": 576.0286404970071,
+            "y": 637.3042206536502
+          },
+          "seat": {
+            "x": 576.0286404970071,
+            "y": 637.3042206536502,
+            "actorState": {
+              "state": "paddle-local-rig",
+              "status": "experimental",
+              "frame": 0,
+              "blinkFrame": -1,
+              "armAngle": -0.20622966356222036,
+              "cycle": 0.9285714285714293,
+              "hand": {
+                "x": 53.92684580942878,
+                "y": -39.22965086751403
+              }
+            },
+            "paddle": {
+              "cycle": 0.9285714285714293,
+              "stroke": 0.10248073362207721,
+              "returnLift": 0.5837436722347851,
+              "angle": -1.3536284641176524,
+              "pivot": {
+                "x": 53.92684580942878,
+                "y": -39.22965086751403
+              },
+              "grip": 1
+            }
+          },
+          "scale": 0.8396692571720279,
+          "camera": {
+            "x": 360,
+            "y": 640,
+            "z": 1
+          },
+          "actorState": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.20622966356222036,
+            "cycle": 0.9285714285714293,
+            "hand": {
+              "x": 53.92684580942878,
+              "y": -39.22965086751403
+            }
+          },
+          "caption": "새로운 약속을 만나러 가."
+        },
+        {
+          "filmId": "folded-promise-storybook",
+          "time": 20.2,
+          "phase": "depart",
+          "catFoot": {
+            "x": 565.142362432562,
+            "y": 478.4449124758451
+          },
+          "seat": {
+            "x": 565.142362432562,
+            "y": 478.4449124758451,
+            "actorState": {
+              "state": "paddle-local-rig",
+              "status": "experimental",
+              "frame": 0,
+              "blinkFrame": -1,
+              "armAngle": -0.26610430612389735,
+              "cycle": 0.857142857142857,
+              "hand": {
+                "x": 55.19365335146273,
+                "y": -40.47393496074916
+              }
+            },
+            "paddle": {
+              "cycle": 0.857142857142857,
+              "stroke": 0.3474346822797322,
+              "returnLift": 0.9479273461671323,
+              "angle": -1.491173975457869,
+              "pivot": {
+                "x": 55.19365335146273,
+                "y": -40.47393496074916
+              },
+              "grip": 1
+            }
+          },
+          "scale": 0.6703480054004312,
+          "camera": {
+            "x": 360,
+            "y": 640,
+            "z": 1
+          },
+          "actorState": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.26610430612389735,
+            "cycle": 0.857142857142857,
+            "hand": {
+              "x": 55.19365335146273,
+              "y": -40.47393496074916
+            }
+          },
+          "caption": "새로운 약속을 만나러 가."
+        },
+        {
+          "filmId": "unfinished-pier-storybook",
+          "time": 16.7,
+          "phase": "depart",
+          "catFoot": {
+            "x": 456.05571088251315,
+            "y": 646.7925752945657
+          },
+          "seat": {
+            "x": 456.05571088251315,
+            "y": 646.7925752945657,
+            "actorState": {
+              "state": "paddle-local-rig",
+              "status": "experimental",
+              "frame": 0,
+              "blinkFrame": -1,
+              "armAngle": 0,
+              "cycle": 0,
+              "hand": {
+                "x": 50.0554404424012,
+                "y": -33.42157328528999
+              }
+            },
+            "paddle": {
+              "cycle": 0,
+              "stroke": 0,
+              "returnLift": 0,
+              "angle": -1.02,
+              "pivot": {
+                "x": 50.0554404424012,
+                "y": -33.42157328528999
+              },
+              "grip": 1
+            }
+          },
+          "scale": 1,
+          "camera": {
+            "x": 360,
+            "y": 640,
+            "z": 1
+          },
+          "actorState": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0,
+            "cycle": 0,
+            "hand": {
+              "x": 50.0554404424012,
+              "y": -33.42157328528999
+            }
+          },
+          "caption": "함께할 곳으로 갈 뗏목은 만들었어."
+        },
+        {
+          "filmId": "unfinished-pier-storybook",
+          "time": 18.85,
+          "phase": "depart",
+          "catFoot": {
+            "x": 575.612899844075,
+            "y": 640.7361938176664
+          },
+          "seat": {
+            "x": 575.612899844075,
+            "y": 640.7361938176664,
+            "actorState": {
+              "state": "paddle-local-rig",
+              "status": "experimental",
+              "frame": 0,
+              "blinkFrame": -1,
+              "armAngle": -0.10701350603416881,
+              "cycle": 0.7678571428571437,
+              "hand": {
+                "x": 52.52545166305146,
+                "y": -35.81295138932147
+              }
+            },
+            "paddle": {
+              "cycle": 0.7678571428571437,
+              "stroke": 0.7111846566595449,
+              "returnLift": 0.8982468465828474,
+              "angle": -1.3175159657157998,
+              "pivot": {
+                "x": 52.52545166305146,
+                "y": -35.81295138932147
+              },
+              "grip": 1
+            }
+          },
+          "scale": 0.8406240315082643,
+          "camera": {
+            "x": 360,
+            "y": 640,
+            "z": 1
+          },
+          "actorState": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.10701350603416881,
+            "cycle": 0.7678571428571437,
+            "hand": {
+              "x": 52.52545166305146,
+              "y": -35.81295138932147
+            }
+          },
+          "caption": "첫 조각은 만들었어."
+        },
+        {
+          "filmId": "unfinished-pier-storybook",
+          "time": 21,
+          "phase": "depart",
+          "catFoot": {
+            "x": 565.2538479186135,
+            "y": 476.6005535532698
+          },
+          "seat": {
+            "x": 565.2538479186135,
+            "y": 476.6005535532698,
+            "actorState": {
+              "state": "paddle-local-rig",
+              "status": "experimental",
+              "frame": 0,
+              "blinkFrame": -1,
+              "armAngle": 0.3530193695869114,
+              "cycle": 0.535714285714286,
+              "hand": {
+                "x": 41.131739952302674,
+                "y": -25.353809686804336
+              }
+            },
+            "paddle": {
+              "cycle": 0.535714285714286,
+              "stroke": 0.9289983410181878,
+              "returnLift": 0,
+              "angle": -0.6576906470029067,
+              "pivot": {
+                "x": 41.131739952302674,
+                "y": -25.353809686804336
+              },
+              "grip": 1
+            }
+          },
+          "scale": 0.6705036157024793,
+          "camera": {
+            "x": 360,
+            "y": 640,
+            "z": 1
+          },
+          "actorState": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.3530193695869114,
+            "cycle": 0.535714285714286,
+            "hand": {
+              "x": 41.131739952302674,
+              "y": -25.353809686804336
+            }
+          },
+          "caption": "첫 조각은 만들었어."
+        }
+      ]
+    }
+  ]
+}

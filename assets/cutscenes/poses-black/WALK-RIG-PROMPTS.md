@@ -2,6 +2,12 @@
 
 세션 이미지 생성으로 기준 얼굴·몸체를 유지한 파츠를 만들었다. 아래 실험은 기본 시연 미채택이며 결과를 기존 8자세와 비교한다. 작동 중인 sprite-gen cutout으로 실제 알파를 분리했다.
 
+## walk-leg-soft-root-v2.png
+
+몸통과 겹치는 다리 위쪽의 진한 윤곽선을 덜어낸 원화. 같은 위치·발 모양을 유지하며 접합부를 비교한다. 기본 미채택 보행 실험이다.
+
+Edit this EXACT isolated charcoal kitten foreleg layer for cleaner cutout-puppet attachment. Keep the same one leg silhouette, paw, two ivory claws, scale, position and 1254 x 1254 canvas. The leg is between about x=540..755 and y=790..1126. Change ONLY the attachment area in its upper half: remove the dark brown outer stroke along BOTH SIDES above y=945 and replace that stroke with the same charcoal-gray fur color. The top edge must also have NO dark outline. The opaque gray top can overlap the identically colored torso without a visible black seam. From y=945 downward, gently resume the original warm dark line toward the ankle and paw, and preserve the bottom foot and claws EXACTLY. Do not add a body, head, joints, skeleton or another limb. Do not move, shrink or enlarge the leg. One isolated solid opaque leg layer; uniform pure #00FF00 chroma green everywhere outside it. No checkerboard, no labels, no shadows, no transparency gradients in the fur.
+
 ## walk-body-base-v1
 
 몸체가 너무 길게 남아 미채택. 생성 임시본만 보존한다.

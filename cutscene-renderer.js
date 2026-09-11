@@ -172,7 +172,8 @@
       ellipse(c,1,-4,37,10,'#4b3f3529');
       const recovering=S.actorMode==='poses'&&options.arrival>=0&&options.arrival<.22;
       const handling=settling&&settling.elapsed>=.24&&settling.elapsed<1.3,handlingPose=put<.45?'hold':lift<.4?'reach':place<.15?'hold':'place';
-      actorState=(options.drawCat||cat)(c,0,-5,S.catSize,t,0,Math.sin(t*1.2)*-.007,recovering?{jump:1+options.arrival}:handling?{look:handlingPose}:!settling&&unpack>.03&&unpack<1?{look:'reach'}:{grip:options.grip||0,paddleTime:options.paddleTime});
+      const rising=settling&&settling.elapsed>=1.3&&settling.elapsed<1.8;
+      actorState=(options.drawCat||cat)(c,0,-5,S.catSize,t,0,Math.sin(t*1.2)*-.007,recovering?{jump:1+options.arrival}:handling?{look:handlingPose}:rising?{recovery:settling.rise}:!settling&&unpack>.03&&unpack<1?{look:'reach'}:{grip:options.grip||0,paddleTime:options.paddleTime});
       if(options.book!==undefined){
         if(lift>0){
           const bx=mix(mix(54,44,lift),10,place),by=mix(mix(2,-29,lift),18,place);
@@ -181,7 +182,7 @@
         if(put>=.65)drawBag();
       }
     }
-    const grip=options.grip||0,paddleTime=options.paddleTime??t,cycle=((paddleTime/2.8)%1+1)%1;
+    const reaching=options.grip||0,grip=S.actorMode==='poses'&&S.paddleRig?ease((reaching-.65)/.35):reaching,paddleTime=options.paddleTime??t,cycle=((paddleTime/2.8)%1+1)%1;
     const stroke=cycle<.64?ease(cycle/.64):1-ease((cycle-.64)/.36);
     // 당겨 젓는 동안은 물에, 복귀할 때는 손목을 돌려 노 끝을 수면 위로 들어 올린다.
     const returnLift=cycle<.64?0:Math.sin((cycle-.64)/.36*Math.PI),paddleAngle=-1.02+stroke*.39-returnLift*.64;

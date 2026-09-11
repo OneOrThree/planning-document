@@ -1,9 +1,25 @@
 # 짐 정리 뒤 고개 들기 원화
 
-세션 imagegen으로 생성하고 작동 중인 sprite-gen cutout으로 알파만 분리했다. 단색 검사판 확인과 실제 연속 동작 검토를 구분한다. v06에는 미포함인 후속 후보 원화다.
+세션 imagegen으로 생성하고 작동 중인 sprite-gen cutout으로 알파만 분리했다. 단색 검사판 확인과 실제 연속 동작 검토를 구분한다. v06에는 미포함이며, 5개 전환 자세를 검토 39 이후 v07에 반영했다.
 
 ## place-rise-mid-v1.png
 
-기준: `place-down-v1.png`, `neutral-forward-v1.png`. 같은 두 발과 꼬리를 유지하며 고개·오른쪽 앞발의 중간 회복 자세. 기본 시연 연결 전 후보.
+기준: `place-down-v1.png`, `neutral-forward-v1.png`. 같은 두 발과 꼬리를 유지하며 고개·오른쪽 앞발의 중간 회복 자세. 아래 전환 원화와 함께 v07에서 사용한다. 작은 머리 윤곽 차이는 남아 있어 추가 다듬기 대상이다.
 
 Create ONE hand-drawn in-between animation pose between these two exact registered full-body black kitten illustrations. Reference 1 is the kitten looking down after setting a book on the ground; reference 2 is its normal upright pose looking toward the upper right. Draw the pose HALFWAY through raising its head: move the head halfway up and slightly left between the two references, gently straighten the neck, and let both pupils look toward the right at approximately eye level (neither strongly down nor up yet). Bring the rightmost extended forepaw halfway back toward its neutral planted position. Preserve the tail, torso, two other planted feet, charcoal fur, warm dark brown linework, soft ivory eyes, cute face proportions and 1254 by 1254 canvas registration. The planted toe baseline must remain at y=1142. Do not make the head larger or smaller; do not change ears or facial design. Natural little recovery after carefully setting down a book, not a different expression. One complete solid kitten, no overlap or ghosting, no props, no book. Render on perfectly uniform pure #00FF00 green outside the silhouette, no shadows, no checkerboard, no text.
+
+## place-rise-start-v1.png
+
+Edit this exact single registered kitten drawing for the NEXT very small animation drawing, just after it sets a book down. Raise the entire head by ONLY ABOUT 20 pixels on this 1254x1254 canvas, and move it left by only about 12 pixels. Tilt the muzzle upward only the tiniest amount; keep the pupils looking down-right, with a very small upward eye shift. Do not make the cat look fully forward yet. Keep the ears, head size, facial proportions, torso, tail, planted left and middle paws, and the extended right paw unchanged. Baseline y=1142, same size and exact registration. Preserve the charcoal gray fur shading and dark warm outline. One solid complete cat, no deformation, no ghosting or multiple poses. No props, no floor shadow. All background outside the silhouette perfectly flat pure #00FF00 green with no checkerboard or text.
+
+## place-rise-early-v1.png
+
+Draw ONE precise in-between pose of this exact black kitten between the two registered reference drawings. This is the first small stage of raising its head after setting a book down. Its head must be halfway between reference 1 (looking down) and reference 2 (partially raised): gently raise the chin only a little; pupils are still down-right but not as low as reference 1. Bring the lifted rightmost forepaw slightly back. Preserve the same head size, facial structure, ears, torso, tail, charcoal gray coloring, warm dark outline and two planted feet. Keep the exact full-body scale and placement on the 1254 x 1254 canvas, baseline y=1142. This is a SMALL transitional change, not a finished upright pose. Never duplicate or ghost the cat. One clean opaque game-animation drawing, no book, no props, no ground shadow. The entire outside background must be flat pure #00FF00 chroma green, no texture or checkerboard or text.
+
+## place-rise-late-v1.png
+
+Draw ONE precise in-between pose of this exact black kitten between these two registered drawings. This is the last small stage of raising its head after placing a book down. The head should be halfway between reference 1 (half-raised looking right) and reference 2 (upright looking up-right): lift and shift it gently left, preserving the SAME head size. Both pupils now look slightly up-right but not as high as reference 2. Return the rightmost paw toward its neutral planted location, almost down but still slightly lifted. Preserve the torso, tail, two other planted feet, charcoal gray coloring, warm dark outline, soft ivory eyes and facial design. Same 1254 x 1254 full-body scale and registration, baseline y=1142. One clean opaque hand-drawn animation in-between, NOT a transparency blend, not a duplicate, not a new cat. No props, no ground shadow, no text. The entire background outside the cat must be perfectly flat pure #00FF00 green, no checkerboard.
+
+## place-rise-end-v1.png
+
+Edit this exact single registered black kitten illustration into the pose immediately BEFORE it fully straightens its neck. Keep the torso, tail, all three planted paws and their baseline y=1142, colors, scale and placement unchanged. Lower the entire head by ONLY ABOUT 18 pixels and shift it right by ONLY ABOUT 16 pixels on the 1254x1254 canvas. The chin dips very slightly; both pupils still look upper-right but a little less high than the reference. This is an extremely subtle transitional pose, almost identical to this neutral pose, not a dramatic bow. Do not resize the head or ears, do not redesign the face. Same charcoal gray fur, ivory eyes, warm dark outline, clean solid opaque drawing. No book, no props, no floor shadow. Uniform pure #00FF00 green background everywhere outside the cat, no text or checkerboard.
