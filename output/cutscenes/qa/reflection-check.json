@@ -1,0 +1,295 @@
+{
+  "result": "PASS",
+  "cases": [
+    {
+      "film": "new-morning-emotion",
+      "time": 12.36,
+      "changed": 25874,
+      "outsideChanged": 0,
+      "maxDifference": 25,
+      "metadataStable": true
+    },
+    {
+      "film": "new-morning-emotion",
+      "time": 15.46,
+      "changed": 25390,
+      "outsideChanged": 0,
+      "maxDifference": 26,
+      "metadataStable": true
+    },
+    {
+      "film": "new-morning-emotion",
+      "time": 19.2,
+      "changed": 9756,
+      "outsideChanged": 0,
+      "maxDifference": 27,
+      "metadataStable": true
+    },
+    {
+      "film": "new-morning-emotion",
+      "time": 23.5,
+      "changed": 9149,
+      "outsideChanged": 0,
+      "maxDifference": 28,
+      "metadataStable": true
+    },
+    {
+      "film": "new-morning-journey",
+      "time": 10.81,
+      "changed": 17537,
+      "outsideChanged": 0,
+      "maxDifference": 29,
+      "metadataStable": true
+    },
+    {
+      "film": "new-morning-journey",
+      "time": 13.91,
+      "changed": 17487,
+      "outsideChanged": 0,
+      "maxDifference": 30,
+      "metadataStable": true
+    },
+    {
+      "film": "new-morning-journey",
+      "time": 19.7,
+      "changed": 9563,
+      "outsideChanged": 0,
+      "maxDifference": 29,
+      "metadataStable": true
+    },
+    {
+      "film": "new-morning-journey",
+      "time": 23.5,
+      "changed": 8195,
+      "outsideChanged": 0,
+      "maxDifference": 28,
+      "metadataStable": true
+    },
+    {
+      "film": "new-morning-storybook",
+      "time": 12.96,
+      "changed": 15290,
+      "outsideChanged": 0,
+      "maxDifference": 24,
+      "metadataStable": true
+    },
+    {
+      "film": "new-morning-storybook",
+      "time": 16.06,
+      "changed": 16080,
+      "outsideChanged": 0,
+      "maxDifference": 27,
+      "metadataStable": true
+    },
+    {
+      "film": "new-morning-storybook",
+      "time": 19.8,
+      "changed": 7793,
+      "outsideChanged": 0,
+      "maxDifference": 25,
+      "metadataStable": true
+    },
+    {
+      "film": "new-morning-storybook",
+      "time": 23.5,
+      "changed": 6852,
+      "outsideChanged": 0,
+      "maxDifference": 24,
+      "metadataStable": true
+    },
+    {
+      "film": "folded-promise-emotion",
+      "time": 12.36,
+      "changed": 25874,
+      "outsideChanged": 0,
+      "maxDifference": 25,
+      "metadataStable": true
+    },
+    {
+      "film": "folded-promise-emotion",
+      "time": 15.46,
+      "changed": 25390,
+      "outsideChanged": 0,
+      "maxDifference": 26,
+      "metadataStable": true
+    },
+    {
+      "film": "folded-promise-emotion",
+      "time": 19.2,
+      "changed": 9756,
+      "outsideChanged": 0,
+      "maxDifference": 27,
+      "metadataStable": true
+    },
+    {
+      "film": "folded-promise-emotion",
+      "time": 23.5,
+      "changed": 9149,
+      "outsideChanged": 0,
+      "maxDifference": 28,
+      "metadataStable": true
+    },
+    {
+      "film": "folded-promise-journey",
+      "time": 10.81,
+      "changed": 17537,
+      "outsideChanged": 0,
+      "maxDifference": 29,
+      "metadataStable": true
+    },
+    {
+      "film": "folded-promise-journey",
+      "time": 13.91,
+      "changed": 17487,
+      "outsideChanged": 0,
+      "maxDifference": 30,
+      "metadataStable": true
+    },
+    {
+      "film": "folded-promise-journey",
+      "time": 19.7,
+      "changed": 9563,
+      "outsideChanged": 0,
+      "maxDifference": 29,
+      "metadataStable": true
+    },
+    {
+      "film": "folded-promise-journey",
+      "time": 23.5,
+      "changed": 8194,
+      "outsideChanged": 0,
+      "maxDifference": 28,
+      "metadataStable": true
+    },
+    {
+      "film": "folded-promise-storybook",
+      "time": 12.96,
+      "changed": 15290,
+      "outsideChanged": 0,
+      "maxDifference": 24,
+      "metadataStable": true
+    },
+    {
+      "film": "folded-promise-storybook",
+      "time": 16.06,
+      "changed": 16080,
+      "outsideChanged": 0,
+      "maxDifference": 27,
+      "metadataStable": true
+    },
+    {
+      "film": "folded-promise-storybook",
+      "time": 19.8,
+      "changed": 7793,
+      "outsideChanged": 0,
+      "maxDifference": 25,
+      "metadataStable": true
+    },
+    {
+      "film": "folded-promise-storybook",
+      "time": 23.5,
+      "changed": 6852,
+      "outsideChanged": 0,
+      "maxDifference": 24,
+      "metadataStable": true
+    },
+    {
+      "film": "unfinished-pier-emotion",
+      "time": 14.059999999999999,
+      "changed": 25893,
+      "outsideChanged": 0,
+      "maxDifference": 27,
+      "metadataStable": true
+    },
+    {
+      "film": "unfinished-pier-emotion",
+      "time": 17.16,
+      "changed": 24855,
+      "outsideChanged": 0,
+      "maxDifference": 31,
+      "metadataStable": true
+    },
+    {
+      "film": "unfinished-pier-emotion",
+      "time": 20,
+      "changed": 10340,
+      "outsideChanged": 0,
+      "maxDifference": 26,
+      "metadataStable": true
+    },
+    {
+      "film": "unfinished-pier-emotion",
+      "time": 23.5,
+      "changed": 8589,
+      "outsideChanged": 0,
+      "maxDifference": 25,
+      "metadataStable": true
+    },
+    {
+      "film": "unfinished-pier-journey",
+      "time": 12.51,
+      "changed": 17489,
+      "outsideChanged": 0,
+      "maxDifference": 31,
+      "metadataStable": true
+    },
+    {
+      "film": "unfinished-pier-journey",
+      "time": 15.61,
+      "changed": 17388,
+      "outsideChanged": 0,
+      "maxDifference": 28,
+      "metadataStable": true
+    },
+    {
+      "film": "unfinished-pier-journey",
+      "time": 20.5,
+      "changed": 9941,
+      "outsideChanged": 0,
+      "maxDifference": 28,
+      "metadataStable": true
+    },
+    {
+      "film": "unfinished-pier-journey",
+      "time": 23.5,
+      "changed": 8460,
+      "outsideChanged": 0,
+      "maxDifference": 28,
+      "metadataStable": true
+    },
+    {
+      "film": "unfinished-pier-storybook",
+      "time": 14.66,
+      "changed": 15476,
+      "outsideChanged": 0,
+      "maxDifference": 24,
+      "metadataStable": true
+    },
+    {
+      "film": "unfinished-pier-storybook",
+      "time": 17.759999999999998,
+      "changed": 15675,
+      "outsideChanged": 0,
+      "maxDifference": 28,
+      "metadataStable": true
+    },
+    {
+      "film": "unfinished-pier-storybook",
+      "time": 20.6,
+      "changed": 8273,
+      "outsideChanged": 0,
+      "maxDifference": 25,
+      "metadataStable": true
+    },
+    {
+      "film": "unfinished-pier-storybook",
+      "time": 23.5,
+      "changed": 6684,
+      "outsideChanged": 0,
+      "maxDifference": 21,
+      "metadataStable": true
+    }
+  ],
+  "errors": [],
+  "note": "같은 willReadFrequently 표면에서 9편 × 4시점의 반사 유무 비교. 수면 마스크 밖 불변·원본 동작 메타데이터 보존. 2D 투영이며 광학 시뮬레이션이 아님. 첫 GPU/다음 CPU 표본 차이는 반사를 둘 다 꺼도 재현되어 검사에서 렌더 표면을 통일했다."
+}

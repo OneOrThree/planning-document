@@ -240,10 +240,34 @@
       tri([a,b,d],[deform(...a),deform(...b),deform(...d)]);tri([b,e,d],[deform(...b),deform(...e),deform(...d)]);
     }c.restore();
   }
+  const reflectionSurface=document.createElement('canvas');reflectionSurface.width=720;reflectionSurface.height=720;
+  function reflectionAt(width,t){
+    return{waterline:width*.19,height:width*.34,compression:.52,alpha:.14,offset:y=>Math.sin(y*.085-t*1.3)*1.7+Math.sin(y*.18+t*.6)*.7};
+  }
   function raft(c,x,y,width,t,onboard,travel,options={}){
-    const land=options.landing||0,bob=Math.sin(t*1.7)*1.8+land*3, tilt=Math.sin(t*1.2)*.012+land*.025;
+    if(S.raftReflection&&width>0){
+      const rc=reflectionSurface.getContext('2d');rc.setTransform(1,0,0,1,0,0);rc.clearRect(0,0,720,720);
+      raftBody(rc,360,440,S.raftWidth,t,onboard,travel,{...options,reflectionPass:true});
+      const state=reflectionAt(width,t),ratio=width/S.raftWidth,land=options.landing||0,bob=Math.sin(t*1.7)*1.8+land*3,tilt=Math.sin(t*1.2)*.012+land*.025;
+      c.save();
+      const boundary=CutsceneWaterMotion.boundaries[options.reflectionScene||'shore'];
+      c.beginPath();boundary.forEach(([px,py],i)=>i?c.lineTo(px,py):c.moveTo(px,py));c.closePath();c.clip();
+      c.translate(x,y+bob);c.rotate(tilt);c.filter='saturate(.35) blur(.65px)';
+      // 현재 갑판·짐·고양이의 같은 프레임을 수면 쪽으로 눕힌다. 반사 바깥 배경은 건드리지 않는다.
+      for(let dy=0;dy<state.height;dy+=2){
+        const sourceHeight=2/(ratio*state.compression),sourceY=440+state.waterline/ratio-dy/(ratio*state.compression)-sourceHeight;
+        c.save();c.translate(state.offset(dy),state.waterline+dy+2);c.scale(1,-1);
+        c.globalAlpha*=state.alpha*(1-dy/state.height)**1.5;
+        c.drawImage(reflectionSurface,0,sourceY,720,sourceHeight,-360*ratio,0,720*ratio,2.25);c.restore();
+      }
+      c.restore();
+    }
+    return raftBody(c,x,y,width,t,onboard,travel,options);
+  }
+  function raftBody(c,x,y,width,t,onboard,travel,options={}){
+    const land=options.landing||0,bob=options.reflectionPass?0:Math.sin(t*1.7)*1.8+land*3,tilt=options.reflectionPass?0:Math.sin(t*1.2)*.012+land*.025;
     c.save();c.translate(x,y+bob);c.rotate(tilt);
-    if(S.raftContact){
+    if(S.raftContact&&!options.reflectionPass){
       // 수면 접촉도 뗏목과 같은 비율로 줄어든다. 고정 반지름의 단단한 타원을 남기지 않는다.
       softShadow(c,0,width*.12,width*.48,width*.115,.17,'30,85,88');
       c.save();
@@ -252,8 +276,8 @@
       c.globalAlpha*=.38+Math.sin(t*1.65+.6)*.06;
       c.drawImage(images.raftWater,0,0,1536,1024,-width*.77,-width*.50,width*1.536,width*1.024);
       c.restore();
-    }else ellipse(c,0,31,width*.42,28,'#254f5140');
-    if(travel>0&&!options.wakeHandled){c.save();c.globalAlpha=S.wakeOpacity*travel;c.strokeStyle='#f8f9df';c.lineWidth=2.3;
+    }else if(!options.reflectionPass)ellipse(c,0,31,width*.42,28,'#254f5140');
+    if(travel>0&&!options.wakeHandled&&!options.reflectionPass){c.save();c.globalAlpha=S.wakeOpacity*travel;c.strokeStyle='#f8f9df';c.lineWidth=2.3;
       for(let i=0;i<4;i++){let p=(t*.5+i/4)%1;c.beginPath();c.ellipse(-width*.2-p*45,36,width*(.34+p*.12),12+p*18,0,.25,2.7);c.stroke();}c.restore();}
     // 1536 × 1024 원화의 배치 좌표. 런타임 알파 분석 없이 고정된 원화 영역을 쓴다.
     const deck=()=>c.drawImage(images.deck,270,280,1000,455,-width/2,-width*.22,width,width*.455);
@@ -313,7 +337,7 @@
     // 그림의 손잡이 아래(627,100)를 실제 앞발에 고정한다. 노 끝의 물결 등록점은 기존 154를 유지한다.
     if(grip>0)drawPaddle(paddleX,paddleY,mix(-1.18,paddleAngle,grip),water);
     // 힘을 주는 반 주기에만 노 끝과 같은 위치에 물결을 둔다.
-    if(onboard&&travel>0&&cycle<.64){
+    if(onboard&&travel>0&&cycle<.64&&!options.reflectionPass){
       const wet=water.wet,{x:tipX,y:tipY}=water.contact;
       c.save();c.globalAlpha=wet*.56;c.strokeStyle='#f6efcf';c.lineWidth=1.4;c.lineCap='round';
       c.beginPath();c.ellipse(tipX,tipY,10+wet*6,3+wet*2,-.1,.08,Math.PI*1.94);c.stroke();
@@ -384,5 +408,5 @@
     c.restore();return {...meta,time:t,revision:S.revision};
   }
   window.GachisupCutscene={ready,render,paths,duration:S.duration};
-  window.CutsceneActors={ready,images,paths,coastWidth,waterMotionIntegrated:true,paddleSprite,paddleRest,paddleWaterAt,clothFoldAt,clothVertex,clothFold,foldedCloth,seabirdsAt,seabirds,background,ellipse,softShadow,satchel,cat,book,islandPlan,raft,ripples,wake,clamp,ease,mix};
+  window.CutsceneActors={ready,images,paths,coastWidth,waterMotionIntegrated:true,paddleSprite,paddleRest,paddleWaterAt,reflectionAt,clothFoldAt,clothVertex,clothFold,foldedCloth,seabirdsAt,seabirds,background,ellipse,softShadow,satchel,cat,book,islandPlan,raft,ripples,wake,clamp,ease,mix};
 })();

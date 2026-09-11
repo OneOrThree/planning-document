@@ -1,0 +1,141 @@
+{
+  "result": "PASS",
+  "cases": [
+    {
+      "film": "new-morning-emotion",
+      "start": 14.56,
+      "end": 19.7,
+      "samples": 1001,
+      "monotonic": true
+    },
+    {
+      "film": "new-morning-emotion",
+      "start": 19.7,
+      "end": 24,
+      "samples": 1001,
+      "monotonic": true
+    },
+    {
+      "film": "new-morning-journey",
+      "start": 13.01,
+      "end": 20.2,
+      "samples": 1001,
+      "monotonic": true
+    },
+    {
+      "film": "new-morning-journey",
+      "start": 20.2,
+      "end": 24,
+      "samples": 1001,
+      "monotonic": true
+    },
+    {
+      "film": "new-morning-storybook",
+      "start": 15.16,
+      "end": 20.3,
+      "samples": 1001,
+      "monotonic": true
+    },
+    {
+      "film": "new-morning-storybook",
+      "start": 20.3,
+      "end": 24,
+      "samples": 1001,
+      "monotonic": true
+    },
+    {
+      "film": "folded-promise-emotion",
+      "start": 14.56,
+      "end": 19.7,
+      "samples": 1001,
+      "monotonic": true
+    },
+    {
+      "film": "folded-promise-emotion",
+      "start": 19.7,
+      "end": 24,
+      "samples": 1001,
+      "monotonic": true
+    },
+    {
+      "film": "folded-promise-journey",
+      "start": 13.01,
+      "end": 20.2,
+      "samples": 1001,
+      "monotonic": true
+    },
+    {
+      "film": "folded-promise-journey",
+      "start": 20.2,
+      "end": 24,
+      "samples": 1001,
+      "monotonic": true
+    },
+    {
+      "film": "folded-promise-storybook",
+      "start": 15.16,
+      "end": 20.3,
+      "samples": 1001,
+      "monotonic": true
+    },
+    {
+      "film": "folded-promise-storybook",
+      "start": 20.3,
+      "end": 24,
+      "samples": 1001,
+      "monotonic": true
+    },
+    {
+      "film": "unfinished-pier-emotion",
+      "start": 16.26,
+      "end": 20.5,
+      "samples": 1001,
+      "monotonic": true
+    },
+    {
+      "film": "unfinished-pier-emotion",
+      "start": 20.5,
+      "end": 24,
+      "samples": 1001,
+      "monotonic": true
+    },
+    {
+      "film": "unfinished-pier-journey",
+      "start": 14.709999999999999,
+      "end": 21,
+      "samples": 1001,
+      "monotonic": true
+    },
+    {
+      "film": "unfinished-pier-journey",
+      "start": 21,
+      "end": 24,
+      "samples": 1001,
+      "monotonic": true
+    },
+    {
+      "film": "unfinished-pier-storybook",
+      "start": 16.86,
+      "end": 21.1,
+      "samples": 1001,
+      "monotonic": true
+    },
+    {
+      "film": "unfinished-pier-storybook",
+      "start": 21.1,
+      "end": 24,
+      "samples": 1001,
+      "monotonic": true
+    }
+  ],
+  "maxDisplacement": 14.353430980243193,
+  "maxEndpointError": 0,
+  "minIncrement": 0.0007160816426423078,
+  "maxIncrement": 0.0013154361788993985,
+  "pullGain": 1.2468394207098,
+  "returnGain": 0.7531605792920892,
+  "before": 0,
+  "after": 1,
+  "errors": [],
+  "note": "같은 경로·시종점·시간에서 작은 전진 박자만 변경. 실제 항력·노 힘·유체 계산은 아님."
+}

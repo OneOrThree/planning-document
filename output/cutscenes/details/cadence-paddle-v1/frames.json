@@ -1,0 +1,17 @@
+{
+  "label": "cadence-paddle-v1",
+  "id": "new-morning-emotion",
+  "before": "draft-v17",
+  "after": "cadence-60-study-v1",
+  "fingerprint": "3b75bb3eb0f853e5f05232f37a56cc784c950a5ae94a7e0a1d130c8b10b849cd",
+  "sha256": [
+    "261fc321e67760663fe2569618e7059cdf4ef39b1a2649d1d09a6145515d18ff",
+    "5a2ab2bd50658de230eb4b5237822c2f96f6230a31c82905c615bbf937a5ab6e"
+  ],
+  "start": 16.1,
+  "duration": 1,
+  "fps": 60,
+  "frames": 60,
+  "status": "awaiting-visual-review",
+  "note": "두 실제 MP4를 같은 60개 시점에서 디코딩. 생성 자체는 검토 완료가 아니다."
+}

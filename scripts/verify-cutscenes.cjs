@@ -20,14 +20,14 @@ const root=path.resolve(__dirname,'..');
       const c=document.getElementById('film');c.width=180;c.height=320;
       const filmIds=new Set(),hashes=[],warnings=[];let packingSamples=0,settlingSamples=0;
       const backgroundChecks=[];
-      // 카메라·지면 등록 검사는 수면 효과를 끄고 기준판으로 한다. 물만의 변화는 아래에서 별도 검사한다.
-      const previousWater=CutsceneSettings.waterMotion;CutsceneSettings.waterMotion=false;
+      // 카메라·지면 등록은 정지 기준판. 물·하늘의 변경 범위는 각각 별도로 검사한다.
+      const previousWater=CutsceneSettings.waterMotion,previousBirds=CutsceneSettings.seabirds;CutsceneSettings.waterMotion=false;CutsceneSettings.seabirds=false;
       for(const key of ['room','sand','coastHome','shore']){
         const canvas=document.createElement('canvas');canvas.width=180;canvas.height=320;const ctx=canvas.getContext('2d');ctx.scale(.25,.25);
         const frames=[0,12,24].map(t=>{CutsceneActors.background(ctx,CutsceneActors.images[key],t);return canvas.toDataURL();});
         backgroundChecks.push({key,stable:new Set(frames).size===1});
       }
-      CutsceneSettings.waterMotion=previousWater;
+      CutsceneSettings.waterMotion=previousWater;CutsceneSettings.seabirds=previousBirds;
       for(const f of CutsceneProduction.films){
         filmIds.add(f.id);
         for(let i=0;i<=500;i++){
@@ -62,6 +62,7 @@ const root=path.resolve(__dirname,'..');
     assert.equal(result.ids,9);assert.equal(result.uniquePrepares,9);assert.deepEqual(result.warnings,[]);
     assert.ok(result.backgroundChecks.every(x=>x.stable),'배경만 움직이면 발과 바닥이 분리됩니다.');
     const waterSurfaceCheck=await page.evaluate(()=>{
+      const previousBirds=CutsceneSettings.seabirds;CutsceneSettings.seabirds=false;
       const results=[],canvas=()=>{const c=document.createElement('canvas');c.width=960;c.height=1280;return c;};
       for(const scene of ['shore','home']){
         const source=CutsceneActors.images[scene==='shore'?'shore':'coastHome'],mask=canvas(),m=mask.getContext('2d');
@@ -75,6 +76,7 @@ const root=path.resolve(__dirname,'..');
         }
       }
       let maxOffset=0,maxStep=0;for(let y=304;y<=1280;y+=8)for(let frame=0;frame<=576;frame++){const t=frame/24,v=CutsceneWaterMotion.offset(y,t);maxOffset=Math.max(maxOffset,Math.abs(v));maxStep=Math.max(maxStep,Math.abs(v-CutsceneWaterMotion.offset(y,t+1/24)));}
+      CutsceneSettings.seabirds=previousBirds;
       return{results,maxOffset,maxStep,defaultEnabled:CutsceneProduction.films.every(f=>f.tuning.waterMotion&&f.tuning.raftContact)};
     });
     assert.ok(waterSurfaceCheck.results.every(r=>r.outsideChanged===0),'물 마스크 밖의 집·부두·육지는 원본 픽셀을 유지해야 합니다.');

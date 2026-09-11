@@ -1,0 +1,20 @@
+{
+  "kind": "diagnostic-control",
+  "film": "new-morning-emotion",
+  "time": 12.36,
+  "region": "720 × 200 sky pixels",
+  "sequence": [false, false, true, true, false],
+  "defaultSurfaceDifferencesAgainstFirst": [
+    {"changedChannels": 2108, "maxDifference": 10},
+    {"changedChannels": 2108, "maxDifference": 10},
+    {"changedChannels": 2108, "maxDifference": 10},
+    {"changedChannels": 2108, "maxDifference": 10}
+  ],
+  "willReadFrequentlyDifferencesAgainstFirst": [
+    {"changedChannels": 0, "maxDifference": 0},
+    {"changedChannels": 0, "maxDifference": 0},
+    {"changedChannels": 0, "maxDifference": 0},
+    {"changedChannels": 0, "maxDifference": 0}
+  ],
+  "conclusion": "반사를 둘 다 꺼도 첫 기본 표면과 다음 표면의 차이가 재현된다. 읽기용 표면을 고정하면 사라진다. 반사 회귀 검사만 같은 willReadFrequently 표면으로 통일하며 배포 Canvas의 렌더러를 변경하지 않는다."
+}

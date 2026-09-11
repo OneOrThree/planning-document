@@ -247,64 +247,64 @@
       {
         "id": "new-morning-emotion",
         "samples": 241,
-        "minRightMargin": 48.44938107405221,
-        "maxCameraStep": 4.34242617942067,
+        "minRightMargin": 48.34556798921858,
+        "maxCameraStep": 5.047162887007971,
         "warnings": []
       },
       {
         "id": "new-morning-journey",
         "samples": 241,
-        "minRightMargin": 45.88842011314523,
-        "maxCameraStep": 2.250975068675416,
+        "minRightMargin": 46.59917248984061,
+        "maxCameraStep": 2.289195517586677,
         "warnings": []
       },
       {
         "id": "new-morning-storybook",
         "samples": 241,
-        "minRightMargin": 50.78184714553424,
-        "maxCameraStep": 2.5879632279164753,
+        "minRightMargin": 51.14190963785154,
+        "maxCameraStep": 3.2660719702501524,
         "warnings": []
       },
       {
         "id": "folded-promise-emotion",
         "samples": 241,
-        "minRightMargin": 48.44938107405221,
-        "maxCameraStep": 4.34242617942067,
+        "minRightMargin": 48.34556798921858,
+        "maxCameraStep": 5.047162887007971,
         "warnings": []
       },
       {
         "id": "folded-promise-journey",
         "samples": 241,
-        "minRightMargin": 45.88842011314523,
-        "maxCameraStep": 2.250975068675416,
+        "minRightMargin": 46.59917248984061,
+        "maxCameraStep": 2.289195517586677,
         "warnings": []
       },
       {
         "id": "folded-promise-storybook",
         "samples": 241,
-        "minRightMargin": 50.78184714553424,
-        "maxCameraStep": 2.5879632279164753,
+        "minRightMargin": 51.14190963785154,
+        "maxCameraStep": 3.2660719702501524,
         "warnings": []
       },
       {
         "id": "unfinished-pier-emotion",
         "samples": 241,
-        "minRightMargin": 44.841227603670745,
-        "maxCameraStep": 4.249609590697453,
+        "minRightMargin": 46.834742463572866,
+        "maxCameraStep": 4.788373743321007,
         "warnings": []
       },
       {
         "id": "unfinished-pier-journey",
         "samples": 241,
-        "minRightMargin": 41.99945363642735,
-        "maxCameraStep": 2.1749830233477496,
+        "minRightMargin": 42.65379397725383,
+        "maxCameraStep": 2.4476499759880994,
         "warnings": []
       },
       {
         "id": "unfinished-pier-storybook",
         "samples": 241,
-        "minRightMargin": 43.26932992388072,
-        "maxCameraStep": 2.7368174277209505,
+        "minRightMargin": 44.405090010737695,
+        "maxCameraStep": 3.2219934976024547,
         "warnings": []
       }
     ],
@@ -568,10 +568,10 @@
       }
     ]
   },
-  "exportedVersion": "draft-v16",
+  "exportedVersion": "draft-v17",
   "exportedPlayback": {
     "duration": 24,
-    "time": 0.652908,
+    "time": 0.652863,
     "width": 1080,
     "height": 1920
   },

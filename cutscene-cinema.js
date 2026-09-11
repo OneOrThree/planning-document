@@ -114,12 +114,17 @@
     const elapsed=t-f.timing.boardingEnd,motionElapsed=elapsed-.16;
     return{elapsed,motionElapsed,put:ease((motionElapsed-.24)/.4),lift:ease((motionElapsed-.66)/.22),open:ease((motionElapsed-.9)/.16),place:ease((motionElapsed-1.08)/.2),rise:clamp((motionElapsed-1.3)/.5),grip:ease((motionElapsed-1.85)/.35)};
   }
+  function strokeTravel(elapsed,duration,offset=0,enabled=true){
+    if(!enabled)return clamp(elapsed/duration);
+    const clock=s=>s+.11*(1-Math.cos(s*Math.PI*2/2.8)),start=clock(offset),end=clock(offset+duration);
+    return clamp((clock(offset+clamp(elapsed,0,duration))-start)/(end-start));
+  }
   function boatAt(f,t){
-    const k=f.timing,journey=f.directionId==='journey',p=ease((t-k.departureStart)/(k.seaStart-k.departureStart));
+    const k=f.timing,journey=f.directionId==='journey',p=ease(strokeTravel(t-k.departureStart,k.seaStart-k.departureStart,0,!!f.tuning.oarTravel));
     const bez=(a,b,c,d)=>a*(1-p)**3+3*b*(1-p)**2*p+3*c*(1-p)*p*p+d*p**3;
     let x=journey?bez(447,610,641,603):bez(456,580,620,565),y=journey?bez(814,921,747,581):bez(652,720,610,481);
     let scale=journey?1-.28*p:1-.33*p;
-    if(t>=k.seaStart){const q=ease((t-k.seaStart)/(24-k.seaStart));x=journey?mix(603,560,q):mix(565,535,q);y=journey?mix(581,516,q):mix(481,438,q);scale=journey?mix(.72,.68,q):mix(.67,.61,q);}
+    if(t>=k.seaStart){const q=ease(strokeTravel(t-k.seaStart,24-k.seaStart,k.seaStart-k.departureStart,!!f.tuning.oarTravel));x=journey?mix(603,560,q):mix(565,535,q);y=journey?mix(581,516,q):mix(481,438,q);scale=journey?mix(.72,.68,q):mix(.67,.61,q);}
     return{x,y,scale,progress:p};
   }
   function wakeTrailAt(f,t){
@@ -166,7 +171,7 @@
         const loose=ease((t-k.boardingEnd)/(k.departureStart-k.boardingEnd));c.save();c.globalAlpha=1-loose;c.strokeStyle='#806447';c.lineWidth=2.5;c.beginPath();c.moveTo(journey?466:343,journey?699:562);c.quadraticCurveTo(journey?451:389,(journey?751:585)+loose*20,rx-55,ry-45);c.stroke();c.restore();
       }
       const settling=settlingAt(f,t);
-      seat=A.raft(c,rx,ry,raftWidth,t,boarded,atSea?1:progress,{landing,arrival:t-k.boardingEnd,wakeHandled:true,paddleTime:t-k.departureStart,paddleAmplitude:T.paddleAmplitude,book:f.storyIndex,settling,grip:settling.grip,drawCarry:carry,drawCat:actor,uncover:f.storyIndex===1&&!clothFold?uncover:1,clothProgress:clothFold?dockQ:undefined,clothDestination:{x:clothPoint.x-rx,y:clothPoint.y-ry},build:f.storyIndex===2?build:1});
+      seat=A.raft(c,rx,ry,raftWidth,t,boarded,atSea?1:progress,{landing,arrival:t-k.boardingEnd,reflectionScene:journey?'home':'shore',wakeHandled:true,paddleTime:t-k.departureStart,paddleAmplitude:T.paddleAmplitude,book:f.storyIndex,settling,grip:settling.grip,drawCarry:carry,drawCat:actor,uncover:f.storyIndex===1&&!clothFold?uncover:1,clothProgress:clothFold?dockQ:undefined,clothDestination:{x:clothPoint.x-rx,y:clothPoint.y-ry},build:f.storyIndex===2?build:1});
       if(!clothFold&&f.storyIndex===1&&uncover===1){c.save();c.translate(clothPoint.x,clothPoint.y);const rw=T.raftWidth*(journey?.88:1);c.scale(.16,.12);c.drawImage(A.images.cloth,225,266,1090,520,-rw*.52,-rw*.22,rw*1.04,rw*.5);c.restore();}
       if(phase==='walk'){
         const p=clamp((t-k.prepareEnd)/(dockStart-k.prepareEnd));const travel=p<.12?p*p/.24:p>.88?1-(1-p)**2/.24:p-.06;
@@ -230,5 +235,5 @@
     if(f.directionId==='storybook'){c.strokeStyle='#f3e7ca';c.lineWidth=16;c.strokeRect(8,8,W-16,H-16);}
     const line=caption(c,f,t);c.restore();return{filmId:f.id,time:t,...meta,caption:line};
   }
-  window.GachisupCinema={ready:Promise.all([A.ready,CutsceneSprites.ready,CutsceneRig.ready,CutscenePoses.load(),CutscenePaddleRig.ready,CutsceneWalkRig.ready]),render,duration:24,phaseAt,boatAt,wakeTrailAt,preparationAt,settlingAt,walkPathAt};
+  window.GachisupCinema={ready:Promise.all([A.ready,CutsceneSprites.ready,CutsceneRig.ready,CutscenePoses.load(),CutscenePaddleRig.ready,CutsceneWalkRig.ready]),render,duration:24,phaseAt,strokeTravel,boatAt,wakeTrailAt,preparationAt,settlingAt,walkPathAt};
 })();

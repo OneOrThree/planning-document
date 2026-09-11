@@ -12,8 +12,9 @@ const root=path.resolve(__dirname,'..');
 const sources=['cutscenes.html','prologue-scenarios-data.js','cutscene-settings.js','cutscene-production.js','cutscene-water-motion.js','cutscene-renderer.js','cutscene-sprites.js','cutscene-fur-palette.js','cutscene-poses.js','cutscene-paddle-rig.js','cutscene-walk-rig.js','cutscene-rig.js','cutscene-cinema.js','cutscene-review-log.js','cutscene-export-catalog.js','cutscene-studio.js'];
 async function main(){
   const args=process.argv.slice(2),value=(name,otherwise)=>args.find(x=>x.startsWith('--'+name+'='))?.slice(name.length+3)??otherwise;
-  const width=Number(value('width',720)),height=width*16/9,fps=24,version=value('version','draft-v01'),selected=value('film',null);
+  const width=Number(value('width',720)),height=width*16/9,fps=Number(value('fps',24)),version=value('version','draft-v01'),selected=value('film',null);
   if(!Number.isInteger(height)||width%2||height%2||width<360||width>2160)throw Error('짝수 9:16 해상도가 필요합니다.');
+  if(![24,30,48,60].includes(fps))throw Error('지원 출력 속도는 24, 30, 48, 60fps입니다.');
   if(!/^[a-z0-9-]+$/.test(version))throw Error('안전한 버전 이름이 필요합니다.');
   const out=path.join(root,'output/cutscenes/videos',version);
   if(fs.existsSync(path.join(out,'manifest.json'))&&!args.includes('--replace'))throw Error('기존 출력 버전 보호: 새 --version을 사용하세요.');
@@ -45,6 +46,7 @@ async function main(){
       completed.catch(()=>{});ff.stdin.on('error',()=>{});
       const frameCount=Math.round(film.duration*fps);
       const colorReference=[];
+      const colorFrames=[2.5,16,23.5].map(time=>Math.round(time*fps));
       for(let frame=0;frame<frameCount;frame++){
         if(ff.exitCode!==null)throw Error(ffError||'영상 인코더가 중단되었습니다.');
         const result=await page.evaluate(({film,t,measure})=>{
@@ -54,10 +56,10 @@ async function main(){
             for(let i=0;i<data.length;i+=4)for(let ch=0;ch<3;ch++)rgb[ch]+=data[i+ch]/25;points.push({x,y,rgb});
           }}
           return{jpeg:c.toDataURL('image/jpeg',.98).split(',')[1],points};
-        },{film,t:frame/fps,measure:[60,384,564].includes(frame)});
+        },{film,t:frame/fps,measure:colorFrames.includes(frame)});
         if(result.points.length)colorReference.push({time:frame/fps,points:result.points});
         if(!ff.stdin.write(Buffer.from(result.jpeg,'base64')))await Promise.race([once(ff.stdin,'drain'),completed.then(()=>{throw Error('인코더 조기 종료');})]);
-        if(frame%144===0)console.log(film.id+' · '+frame+'/'+frameCount);
+        if(frame%(fps*6)===0)console.log(film.id+' · '+frame+'/'+frameCount);
       }
       ff.stdin.end();await completed;ff=null;
       if(errors.length)throw Error(errors.join('\n'));
@@ -65,6 +67,8 @@ async function main(){
       if(probe.status!==0)throw Error(probe.stderr);
       const stream=JSON.parse(probe.stdout).streams[0];
       if(Number(stream.nb_read_frames)!==frameCount||stream.width!==width||stream.height!==height||Math.abs(Number(stream.duration)-film.duration)>.05)throw Error('출력 영상 규격이 일치하지 않습니다.');
+      const [rateNumerator,rateDenominator]=stream.r_frame_rate.split('/').map(Number);
+      if(rateNumerator/rateDenominator!==fps)throw Error('출력 영상 프레임 속도가 일치하지 않습니다.');
       for(const [key,value]of Object.entries(videoProfile.expected))if(stream[key]!==value)throw Error('출력 색 정보 불일치: '+key);
       fs.renameSync(partial,dest);
       const poster=await page.evaluate(({film})=>{const c=document.getElementById('film');GachisupCinema.render(c,film,film.timing.boardingEnd+.5);return c.toDataURL('image/jpeg',.94).split(',')[1];},{film});

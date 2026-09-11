@@ -7,7 +7,7 @@ const videoProfile=require('./cutscene-video-profile.cjs');
   const args=process.argv.slice(2),value=(n,d)=>args.find(a=>a.startsWith('--'+n+'='))?.slice(n.length+3)??d;
   const label=value('label',''),filmId=value('film','new-morning-emotion'),phase=value('phase','walk'),paddle=value('paddle',''),walk=value('walk',''),single=args.includes('--single');
   const cropSize=Number(value('crop',280)),anchor=value('anchor','cat'),water=value('water',''),setting=value('setting','');
-  if(setting&&!['raftContact','paddleWeight','clothFold','dockRig','tailRig','seabirds'].includes(setting))throw Error('setting은 raftContact / paddleWeight / clothFold / dockRig / tailRig / seabirds입니다.');
+  if(setting&&!['raftContact','paddleWeight','clothFold','dockRig','tailRig','seabirds','oarTravel','raftReflection'].includes(setting))throw Error('setting은 raftContact / paddleWeight / clothFold / dockRig / tailRig / seabirds / oarTravel입니다.');
   if(!Number.isFinite(cropSize)||cropSize<180||cropSize>720||!['cat','water','sky'].includes(anchor))throw Error('crop은 180~720, anchor는 cat / water / sky입니다.');
   if(!['packing','walk','walk-blink','dock','boarding','settle','recovery','paddle','blink'].includes(phase))throw Error('비교 구간은 packing / walk / walk-blink / dock / boarding / settle / recovery / paddle / blink입니다.');
   if(!/^[a-z0-9-]+$/.test(label))throw Error('새 --label이 필요합니다.');
@@ -35,7 +35,7 @@ const videoProfile=require('./cutscene-video-profile.cjs');
           const focus=anchor==='sky'?CutsceneActors.seabirdsAt(time,f.directionId==='journey'?'home':'shore')[0]:m.catFoot;
           const x=360+(focus.x-cam.x)*cam.z,y=640+(focus.y-cam.y)*cam.z;
           const crop={x:Math.max(0,Math.min(720-cropSize,x-cropSize*(anchor==='water'?.38:120/280))),y:Math.max(0,Math.min(1280-cropSize,y-cropSize*(anchor==='sky'?.3:anchor==='water'?.48:218/280))),size:cropSize};
-          c.drawImage(source,crop.x*2,crop.y*2,cropSize*2,cropSize*2,12+i*420,48,396,396);c.fillStyle='#3c493c';c.font='600 17px system-ui';c.fillText(setting?(setting==='raftContact'?'뗏목 수면 접촉':setting==='clothFold'?'덮개 접기':setting==='dockRig'?'부두 앞발 관절':setting==='tailRig'?'꼬리 국소 관절':setting==='seabirds'?'먼 하늘의 갈매기':'상체 체중 이동')+(i||single?' · 수정':' · 기준'):single?'현재 시연 · '+phase:water==='compare'?(i?'수면 굴절 · 실험':'고정 수면 · 기준'):walk==='rig'?(i?'발 접지 관절 · 실험':'개별 8자세 · 기준'):paddle==='rig'?(i?'앞발 국소 관절 · 실험':'고정 앞발 · 기준'):(i?'개별 자세 · 실험':'기존 아틀라스 · 기준'),15+i*420,29);
+          c.drawImage(source,crop.x*2,crop.y*2,cropSize*2,cropSize*2,12+i*420,48,396,396);c.fillStyle='#3c493c';c.font='600 17px system-ui';c.fillText(setting?(setting==='raftContact'?'뗏목 수면 접촉':setting==='clothFold'?'덮개 접기':setting==='dockRig'?'부두 앞발 관절':setting==='tailRig'?'꼬리 국소 관절':setting==='seabirds'?'먼 하늘의 갈매기':setting==='raftReflection'?'수면에 비치는 뗏목':setting==='oarTravel'?'노와 전진의 박자':'상체 체중 이동')+(i||single?' · 수정':' · 기준'):single?'현재 시연 · '+phase:water==='compare'?(i?'수면 굴절 · 실험':'고정 수면 · 기준'):walk==='rig'?(i?'발 접지 관절 · 실험':'개별 8자세 · 기준'):paddle==='rig'?(i?'앞발 국소 관절 · 실험':'고정 앞발 · 기준'):(i?'개별 자세 · 실험':'기존 아틀라스 · 기준'),15+i*420,29);
           states.push({mode,paddleRig:f.tuning.paddleRig,walkRig:f.tuning.walkRig,setting:setting?{[setting]:f.tuning[setting]}:null,time,phase:m.phase,foot:m.catFoot,actor:m.actorState,crop});
         }
         c.fillStyle='#3c493c';c.font='15px system-ui';c.fillText(film.id+' · '+time.toFixed(3)+'s · 실제 속도',15,470);

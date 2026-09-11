@@ -16,6 +16,8 @@ const root=path.resolve(__dirname,'..');
     browser=await chromium.launch();const page=await browser.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));
     const params=new URLSearchParams();if(actor)params.set('actor',actor);if(value('paddle','')==='rig')params.set('paddle','rig');if(value('walk','')==='rig')params.set('walk','rig');
     if(['rig','still'].includes(value('tail','')))params.set('tail',value('tail',''));
+    if(['stroke','even'].includes(value('travel','')))params.set('travel',value('travel',''));
+    if(['water','off'].includes(value('reflection','')))params.set('reflection',value('reflection',''));
     await page.goto(url+'cutscenes.html?'+params);await page.waitForFunction(()=>window.cutsceneReady);
     const data=await page.evaluate(({phase,from,to,selected,samples,cropSize,anchor})=>{
       const source=document.createElement('canvas');source.width=1440;source.height=2560;
