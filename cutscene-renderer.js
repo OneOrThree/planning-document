@@ -15,6 +15,7 @@
   paths.shoreExtended='assets/cutscenes/shore-extended-v1.png';
   paths.homeExtended='assets/cutscenes/coast-home-extended-v1.png';
   paths.paddle='assets/cutscenes/wooden-paddle-v1.png';
+  paths.raftWater='assets/cutscenes/raft-water-rim-v1.png';
   paths.satchelBase='assets/cutscenes/satchel-base-layer-v1.png';
   paths.satchelFlap='assets/cutscenes/satchel-flap-layer-v1.png';
   paths.satchelFlapBack='assets/cutscenes/satchel-flap-back-layer-v1.png';
@@ -34,6 +35,7 @@
     // 카메라는 world 전체에 적용한다. 바닥만 확대하면 서 있는 발과 소품이 미끄러진다.
     const extra=img===images.shore?images.shoreExtended:img===images.coastHome?images.homeExtended:null;
     c.drawImage(extra||img,0,0,extra?coastWidth:W,H);
+    if(extra&&S.waterMotion)CutsceneWaterMotion.draw(c,extra,img===images.coastHome?'home':'shore',t);
   }
   function ellipse(c,x,y,rx,ry,color){c.fillStyle=color;c.beginPath();c.ellipse(x,y,rx,ry,0,0,Math.PI*2);c.fill();}
   function softShadow(c,x,y,rx,ry,alpha=.2,color='66,54,40'){
@@ -181,7 +183,16 @@
   function raft(c,x,y,width,t,onboard,travel,options={}){
     const land=options.landing||0,bob=Math.sin(t*1.7)*1.8+land*3, tilt=Math.sin(t*1.2)*.012+land*.025;
     c.save();c.translate(x,y+bob);c.rotate(tilt);
-    ellipse(c,0,31,width*.42,28,'#254f5140');
+    if(S.raftContact){
+      // 수면 접촉도 뗏목과 같은 비율로 줄어든다. 고정 반지름의 단단한 타원을 남기지 않는다.
+      softShadow(c,0,width*.12,width*.48,width*.115,.17,'30,85,88');
+      c.save();
+      const swell=1+Math.sin(t*1.65)*.016;
+      c.translate(0,width*.055);c.scale(swell,swell);
+      c.globalAlpha*=.38+Math.sin(t*1.65+.6)*.06;
+      c.drawImage(images.raftWater,0,0,1536,1024,-width*.77,-width*.50,width*1.536,width*1.024);
+      c.restore();
+    }else ellipse(c,0,31,width*.42,28,'#254f5140');
     if(travel>0&&!options.wakeHandled){c.save();c.globalAlpha=S.wakeOpacity*travel;c.strokeStyle='#f8f9df';c.lineWidth=2.3;
       for(let i=0;i<4;i++){let p=(t*.5+i/4)%1;c.beginPath();c.ellipse(-width*.2-p*45,36,width*(.34+p*.12),12+p*18,0,.25,2.7);c.stroke();}c.restore();}
     // 1536 × 1024 원화의 배치 좌표. 런타임 알파 분석 없이 고정된 원화 영역을 쓴다.
@@ -312,5 +323,5 @@
     c.restore();return {...meta,time:t,revision:S.revision};
   }
   window.GachisupCutscene={ready,render,paths,duration:S.duration};
-  window.CutsceneActors={ready,images,paths,coastWidth,paddleSprite,paddleRest,paddleWaterAt,background,ellipse,softShadow,satchel,cat,book,islandPlan,raft,ripples,wake,clamp,ease,mix};
+  window.CutsceneActors={ready,images,paths,coastWidth,waterMotionIntegrated:true,paddleSprite,paddleRest,paddleWaterAt,background,ellipse,softShadow,satchel,cat,book,islandPlan,raft,ripples,wake,clamp,ease,mix};
 })();

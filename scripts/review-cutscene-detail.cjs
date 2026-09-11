@@ -35,7 +35,7 @@ const root=path.resolve(__dirname,'..');
       });
     },{phase,from,to,selected,samples,cropSize,anchor});
     if(!data.length)throw Error('선택한 영상이 없습니다.');
-    const hash=crypto.createHash('sha256');for(const file of ['cutscene-renderer.js','cutscene-cinema.js','cutscene-production.js','cutscene-sprites.js','cutscene-fur-palette.js','cutscene-poses.js','cutscene-paddle-rig.js','cutscene-walk-rig.js'])hash.update(file).update(fs.readFileSync(path.join(root,file)));
+    const hash=crypto.createHash('sha256');for(const file of ['cutscene-renderer.js','cutscene-water-motion.js','cutscene-cinema.js','cutscene-production.js','cutscene-sprites.js','cutscene-fur-palette.js','cutscene-poses.js','cutscene-paddle-rig.js','cutscene-walk-rig.js'])hash.update(file).update(fs.readFileSync(path.join(root,file)));
     for(const film of data){fs.writeFileSync(path.join(out,film.id+'.png'),Buffer.from(film.png,'base64'));delete film.png;}
     const assets=dir=>{for(const item of fs.readdirSync(dir,{withFileTypes:true}).sort((a,b)=>a.name.localeCompare(b.name))){const file=path.join(dir,item.name);if(item.isDirectory())assets(file);else hash.update(path.relative(root,file)).update(fs.readFileSync(file));}};assets(path.join(root,'assets/cutscenes'));
     fs.writeFileSync(path.join(out,'frames.json'),JSON.stringify({label,phase,actor:actor||'production-default',paddle:value('paddle','production-default'),walk:value('walk','production-default'),from,to,samples,cropSize,anchor,fingerprint:hash.digest('hex'),errors,films:data},null,2)+'\n');

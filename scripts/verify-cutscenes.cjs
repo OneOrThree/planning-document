@@ -20,11 +20,14 @@ const root=path.resolve(__dirname,'..');
       const c=document.getElementById('film');c.width=180;c.height=320;
       const filmIds=new Set(),hashes=[],warnings=[];let packingSamples=0,settlingSamples=0;
       const backgroundChecks=[];
+      // 카메라·지면 등록 검사는 수면 효과를 끄고 기준판으로 한다. 물만의 변화는 아래에서 별도 검사한다.
+      const previousWater=CutsceneSettings.waterMotion;CutsceneSettings.waterMotion=false;
       for(const key of ['room','sand','coastHome','shore']){
         const canvas=document.createElement('canvas');canvas.width=180;canvas.height=320;const ctx=canvas.getContext('2d');ctx.scale(.25,.25);
         const frames=[0,12,24].map(t=>{CutsceneActors.background(ctx,CutsceneActors.images[key],t);return canvas.toDataURL();});
         backgroundChecks.push({key,stable:new Set(frames).size===1});
       }
+      CutsceneSettings.waterMotion=previousWater;
       for(const f of CutsceneProduction.films){
         filmIds.add(f.id);
         for(let i=0;i<=500;i++){
@@ -58,6 +61,24 @@ const root=path.resolve(__dirname,'..');
     });
     assert.equal(result.ids,9);assert.equal(result.uniquePrepares,9);assert.deepEqual(result.warnings,[]);
     assert.ok(result.backgroundChecks.every(x=>x.stable),'배경만 움직이면 발과 바닥이 분리됩니다.');
+    const waterSurfaceCheck=await page.evaluate(()=>{
+      const results=[],canvas=()=>{const c=document.createElement('canvas');c.width=960;c.height=1280;return c;};
+      for(const scene of ['shore','home']){
+        const source=CutsceneActors.images[scene==='shore'?'shore':'coastHome'],mask=canvas(),m=mask.getContext('2d');
+        m.beginPath();CutsceneWaterMotion.boundaries[scene].forEach(([x,y],i)=>i?m.lineTo(x,y):m.moveTo(x,y));m.closePath();m.fill();const alpha=m.getImageData(0,0,960,1280).data;
+        const base=canvas(),c=base.getContext('2d');CutsceneSettings.waterMotion=false;CutsceneActors.background(c,source,0);const original=c.getImageData(0,0,960,1280).data;
+        CutsceneSettings.waterMotion=true;
+        for(const time of [0,2,4,6]){
+          CutsceneActors.background(c,source,time);const pixels=c.getImageData(0,0,960,1280).data;let outsideChanged=0,insideChanged=0;
+          for(let i=0;i<pixels.length;i+=4){if(pixels[i]!==original[i]||pixels[i+1]!==original[i+1]||pixels[i+2]!==original[i+2]||pixels[i+3]!==original[i+3]){if(alpha[i+3]===0)outsideChanged++;else insideChanged++;}}
+          results.push({scene,time,outsideChanged,insideChanged});
+        }
+      }
+      let maxOffset=0,maxStep=0;for(let y=304;y<=1280;y+=8)for(let frame=0;frame<=576;frame++){const t=frame/24,v=CutsceneWaterMotion.offset(y,t);maxOffset=Math.max(maxOffset,Math.abs(v));maxStep=Math.max(maxStep,Math.abs(v-CutsceneWaterMotion.offset(y,t+1/24)));}
+      return{results,maxOffset,maxStep,defaultEnabled:CutsceneProduction.films.every(f=>f.tuning.waterMotion&&f.tuning.raftContact)};
+    });
+    assert.ok(waterSurfaceCheck.results.every(r=>r.outsideChanged===0),'물 마스크 밖의 집·부두·육지는 원본 픽셀을 유지해야 합니다.');
+    assert.ok(waterSurfaceCheck.results.every(r=>r.insideChanged>1000));assert.ok(waterSurfaceCheck.maxOffset<3.2);assert.ok(waterSurfaceCheck.maxStep<.11);assert.ok(waterSurfaceCheck.defaultEnabled);
     const poseCheck=await page.evaluate(async()=>{
       const data=await CutscenePoses.load(),canvas=document.createElement('canvas'),ctx=canvas.getContext('2d');
       const steps=Array.from({length:8},(_,i)=>CutscenePoses.draw(ctx,100,180,176,0,{travel:70.4*(i+.01)/8,stride:70.4}));
@@ -93,7 +114,8 @@ const root=path.resolve(__dirname,'..');
       const ctx=document.createElement('canvas').getContext('2d');
       const options={paddleTime:1.2,grip:1,lean:.08};
       const blinks=[-.1,.02,.1,.2,.3].map(blinkTime=>CutscenePaddleRig.draw(ctx,80,160,176,0,{...options,blinkTime}));
-      const loop=Array.from({length:169},(_,i)=>CutscenePaddleRig.draw(ctx,80,160,176,i/60,{grip:1,lean:.08}));
+      // 출항의 첫 0.55초는 진입 보간이다. 이후 정상 상태 한 주기의 폐합을 검사한다.
+      const loop=Array.from({length:169},(_,i)=>CutscenePaddleRig.draw(ctx,80,160,176,2.8+i/60,{grip:1,lean:.08}));
       const start=loop[0],end=loop.at(-1);
       const pickup=[0,.25,.5,.75,1].map(grip=>CutscenePaddleRig.draw(ctx,80,160,176,0,{grip}));
       return{state:start.state,blinkFrames:blinks.map(s=>s.blinkFrame),blinkHandStable:blinks.every(s=>Math.hypot(s.hand.x-blinks[0].hand.x,s.hand.y-blinks[0].hand.y)<1e-8),loopClosure:Math.hypot(start.hand.x-end.hand.x,start.hand.y-end.hand.y),handRange:Math.max(...loop.map(s=>s.hand.x))-Math.min(...loop.map(s=>s.hand.x)),finite:[...loop,...pickup].every(s=>Number.isFinite(s.hand.x)&&Number.isFinite(s.hand.y)),defaultEnabled:CutsceneProduction.films.every(f=>f.tuning.paddleRig===true)};
@@ -101,6 +123,14 @@ const root=path.resolve(__dirname,'..');
     assert.equal(paddleCheck.state,'paddle-local-rig');assert.deepEqual(paddleCheck.blinkFrames,[-1,0,1,0,-1]);
     assert.ok(paddleCheck.blinkHandStable);assert.ok(paddleCheck.loopClosure<1e-8);assert.ok(paddleCheck.handRange>5);
     assert.ok(paddleCheck.finite);assert.ok(paddleCheck.defaultEnabled);
+    const paddleWeightCheck=await page.evaluate(()=>{
+      const weights=Array.from({length:1001},(_,i)=>CutscenePaddleRig.weightAt(i*5.6/1000,1,true));
+      const baselineError=Math.max(...weights.map(w=>Math.abs(820+w.shear*1142-w.shear*w.baseline-820)));
+      const stationary=[-2,-1,0].map(t=>CutscenePaddleRig.weightAt(t,1,true));
+      const ungipped=CutscenePaddleRig.weightAt(1.4,0,true),disabled=CutscenePaddleRig.weightAt(1.4,1,false);
+      return{samples:weights.length,baselineError,maxShear:Math.max(...weights.map(w=>Math.abs(w.shear))),maxAdjacentShear:Math.max(...weights.slice(1).map((w,i)=>Math.abs(w.shear-weights[i].shear))),stationary:stationary.every(w=>w.shear===0),ungripped:ungipped.shear===0,disabled:disabled.shear===0,defaultEnabled:CutsceneProduction.films.every(f=>f.tuning.paddleWeight===true)};
+    });
+    assert.ok(paddleWeightCheck.baselineError<1e-8);assert.ok(paddleWeightCheck.maxShear<=.0375);assert.ok(paddleWeightCheck.maxAdjacentShear<.002);assert.ok(paddleWeightCheck.stationary&&paddleWeightCheck.ungripped&&paddleWeightCheck.disabled&&paddleWeightCheck.defaultEnabled);
     const pickupCheck=await page.evaluate(()=>{
       const c=document.createElement('canvas');c.width=90;c.height=160;let samples=0,waiting=0,maxWaitingDrift=0;
       for(const f of CutsceneProduction.films)for(let i=0;i<=30;i++){
@@ -207,7 +237,7 @@ const root=path.resolve(__dirname,'..');
     await page.waitForFunction(()=>[...document.images].every(i=>i.complete&&i.naturalWidth>0));
     assert.equal(await page.locator('[data-cat="white"] .body').getAttribute('src'),'assets/figma-cats/white-standing-generated.png');
     assert.deepEqual(errors,[]);
-    const report={result:'PASS',films:9,packingTimelineSamples:result.packingSamples,settlingTimelineSamples:result.settlingSamples,backgroundRegistration:result.backgroundChecks,individualPoseContract:poseCheck,landingContract:landingCheck,paddleRigContract:paddleCheck,paddlePickupContract:pickupCheck,paddleWaterContract:paddleWaterCheck,coastCameraContract:coastCameraCheck,walkPathContract:pathCheck,walkPlantContract:walkPlantCheck,walkBlinkContract:walkBlinkCheck,exportedVersion,exportedPlayback:playback,catBodies:6,range:true,errors};
+    const report={result:'PASS',films:9,packingTimelineSamples:result.packingSamples,settlingTimelineSamples:result.settlingSamples,backgroundRegistration:result.backgroundChecks,waterSurfaceContract:waterSurfaceCheck,individualPoseContract:poseCheck,landingContract:landingCheck,paddleRigContract:paddleCheck,paddleWeightContract:paddleWeightCheck,paddlePickupContract:pickupCheck,paddleWaterContract:paddleWaterCheck,coastCameraContract:coastCameraCheck,walkPathContract:pathCheck,walkPlantContract:walkPlantCheck,walkBlinkContract:walkBlinkCheck,exportedVersion,exportedPlayback:playback,catBodies:6,range:true,errors};
     fs.mkdirSync(path.join(root,'output/cutscenes/qa'),{recursive:true});
     fs.writeFileSync(path.join(root,'output/cutscenes/qa/browser-check.json'),JSON.stringify(report,null,2)+'\n');
     console.log(JSON.stringify(report,null,2));

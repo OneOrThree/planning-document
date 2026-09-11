@@ -1,0 +1,66 @@
+{
+  "label": "water-surface-mask-v1",
+  "fingerprint": "66bff012b4f07ac08a1eae83be82b270b22039b6f784f8d78619fc7af4c2ec2d",
+  "status": "unreviewed-experiment",
+  "errors": [],
+  "results": [
+    {
+      "scene": "shore",
+      "measured": [
+        {
+          "time": 0,
+          "outsideChanged": 0,
+          "insideChanged": 318615,
+          "maxDelta": 92
+        },
+        {
+          "time": 2,
+          "outsideChanged": 0,
+          "insideChanged": 312721,
+          "maxDelta": 134
+        },
+        {
+          "time": 4,
+          "outsideChanged": 0,
+          "insideChanged": 322145,
+          "maxDelta": 77
+        },
+        {
+          "time": 6,
+          "outsideChanged": 0,
+          "insideChanged": 315093,
+          "maxDelta": 150
+        }
+      ]
+    },
+    {
+      "scene": "home",
+      "measured": [
+        {
+          "time": 0,
+          "outsideChanged": 0,
+          "insideChanged": 284444,
+          "maxDelta": 112
+        },
+        {
+          "time": 2,
+          "outsideChanged": 0,
+          "insideChanged": 284644,
+          "maxDelta": 158
+        },
+        {
+          "time": 4,
+          "outsideChanged": 0,
+          "insideChanged": 287515,
+          "maxDelta": 80
+        },
+        {
+          "time": 6,
+          "outsideChanged": 0,
+          "insideChanged": 283026,
+          "maxDelta": 138
+        }
+      ]
+    }
+  ]
+}

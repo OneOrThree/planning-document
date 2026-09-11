@@ -21,6 +21,61 @@
       "stable": true
     }
   ],
+  "waterSurfaceContract": {
+    "results": [
+      {
+        "scene": "shore",
+        "time": 0,
+        "outsideChanged": 0,
+        "insideChanged": 318615
+      },
+      {
+        "scene": "shore",
+        "time": 2,
+        "outsideChanged": 0,
+        "insideChanged": 312721
+      },
+      {
+        "scene": "shore",
+        "time": 4,
+        "outsideChanged": 0,
+        "insideChanged": 322145
+      },
+      {
+        "scene": "shore",
+        "time": 6,
+        "outsideChanged": 0,
+        "insideChanged": 315093
+      },
+      {
+        "scene": "home",
+        "time": 0,
+        "outsideChanged": 0,
+        "insideChanged": 284444
+      },
+      {
+        "scene": "home",
+        "time": 2,
+        "outsideChanged": 0,
+        "insideChanged": 284644
+      },
+      {
+        "scene": "home",
+        "time": 4,
+        "outsideChanged": 0,
+        "insideChanged": 287515
+      },
+      {
+        "scene": "home",
+        "time": 6,
+        "outsideChanged": 0,
+        "insideChanged": 283026
+      }
+    ],
+    "maxOffset": 3.1751641604322685,
+    "maxStep": 0.0867798194701233,
+    "defaultEnabled": true
+  },
   "individualPoseContract": {
     "kind": "individual-pose-sequence",
     "frames": 8,
@@ -159,8 +214,18 @@
     ],
     "blinkHandStable": true,
     "loopClosure": 0,
-    "handRange": 15.908024394945954,
+    "handRange": 17.254851216160915,
     "finite": true,
+    "defaultEnabled": true
+  },
+  "paddleWeightContract": {
+    "samples": 1001,
+    "baselineError": 0,
+    "maxShear": 0.0375,
+    "maxAdjacentShear": 0.0006249742798354579,
+    "stationary": true,
+    "ungripped": true,
+    "disabled": true,
     "defaultEnabled": true
   },
   "paddlePickupContract": {
@@ -182,63 +247,63 @@
       {
         "id": "new-morning-emotion",
         "samples": 241,
-        "minRightMargin": 48.47738579571342,
+        "minRightMargin": 48.44938107405221,
         "maxCameraStep": 4.34242617942067,
         "warnings": []
       },
       {
         "id": "new-morning-journey",
         "samples": 241,
-        "minRightMargin": 46.34743362228801,
+        "minRightMargin": 45.88842011314523,
         "maxCameraStep": 2.250975068675416,
         "warnings": []
       },
       {
         "id": "new-morning-storybook",
         "samples": 241,
-        "minRightMargin": 51.23301295116221,
+        "minRightMargin": 50.78184714553424,
         "maxCameraStep": 2.5879632279164753,
         "warnings": []
       },
       {
         "id": "folded-promise-emotion",
         "samples": 241,
-        "minRightMargin": 48.47738579571342,
+        "minRightMargin": 48.44938107405221,
         "maxCameraStep": 4.34242617942067,
         "warnings": []
       },
       {
         "id": "folded-promise-journey",
         "samples": 241,
-        "minRightMargin": 46.34743362228801,
+        "minRightMargin": 45.88842011314523,
         "maxCameraStep": 2.250975068675416,
         "warnings": []
       },
       {
         "id": "folded-promise-storybook",
         "samples": 241,
-        "minRightMargin": 51.23301295116221,
+        "minRightMargin": 50.78184714553424,
         "maxCameraStep": 2.5879632279164753,
         "warnings": []
       },
       {
         "id": "unfinished-pier-emotion",
         "samples": 241,
-        "minRightMargin": 45.632372281147354,
+        "minRightMargin": 44.841227603670745,
         "maxCameraStep": 4.249609590697453,
         "warnings": []
       },
       {
         "id": "unfinished-pier-journey",
         "samples": 241,
-        "minRightMargin": 42.21792596652665,
+        "minRightMargin": 41.99945363642735,
         "maxCameraStep": 2.1749830233477496,
         "warnings": []
       },
       {
         "id": "unfinished-pier-storybook",
         "samples": 241,
-        "minRightMargin": 43.625807922262425,
+        "minRightMargin": 43.26932992388072,
         "maxCameraStep": 2.7368174277209505,
         "warnings": []
       }
@@ -503,10 +568,10 @@
       }
     ]
   },
-  "exportedVersion": "draft-v13",
+  "exportedVersion": "draft-v14",
   "exportedPlayback": {
     "duration": 24,
-    "time": 0.653387,
+    "time": 0.65304,
     "width": 1080,
     "height": 1920
   },

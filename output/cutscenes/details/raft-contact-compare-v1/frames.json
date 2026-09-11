@@ -1,0 +1,5008 @@
+{
+  "filmId": "new-morning-emotion",
+  "phase": "paddle",
+  "single": false,
+  "water": null,
+  "setting": "raftContact",
+  "cropSize": 420,
+  "anchor": "water",
+  "duration": 3,
+  "fps": 24,
+  "frames": 72,
+  "videoProfile": {
+    "id": "srgb-bt709-limited-v1",
+    "args": [
+      "-vf",
+      "scale=in_range=pc:out_range=tv:in_color_matrix=bt601:out_color_matrix=bt709,setparams=range=limited:color_primaries=bt709:color_trc=iec61966-2-1:colorspace=bt709",
+      "-color_range",
+      "tv",
+      "-colorspace",
+      "bt709",
+      "-color_primaries",
+      "bt709",
+      "-color_trc",
+      "iec61966-2-1"
+    ],
+    "expected": {
+      "pix_fmt": "yuv420p",
+      "color_range": "tv",
+      "color_space": "bt709",
+      "color_transfer": "iec61966-2-1",
+      "color_primaries": "bt709"
+    }
+  },
+  "fingerprint": "9710b320bf72372447cae4fe00ff64ce428b81b5fd127705707bfea4b9f440df",
+  "status": "unreviewed-experiment",
+  "note": "실제 속도의 선택 구간. 전체 컷신이나 동작의 자동 통과 판정이 아니다. 연락표는 24개 시간 표본.",
+  "errors": [],
+  "states": [
+    {
+      "frame": 0,
+      "elapsed": 0,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 15.46,
+          "phase": "depart",
+          "foot": {
+            "x": 484.5352550046426,
+            "y": 661.910416686659
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.19127231297618114,
+            "cycle": 0.3214285714285716,
+            "hand": {
+              "x": 45.69686497920519,
+              "y": -28.39538541945527
+            }
+          },
+          "crop": {
+            "x": 215.36341259055965,
+            "y": 519.1219826584282,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 15.46,
+          "phase": "depart",
+          "foot": {
+            "x": 484.5352550046426,
+            "y": 661.910416686659
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.19127231297618114,
+            "cycle": 0.3214285714285716,
+            "hand": {
+              "x": 45.69686497920519,
+              "y": -28.39538541945527
+            }
+          },
+          "crop": {
+            "x": 215.36341259055965,
+            "y": 519.1219826584282,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 1,
+      "elapsed": 0.041666666666666664,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 15.501666666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 486.89129510681516,
+            "y": 662.8059495243355
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.204513092050541,
+            "cycle": 0.3363095238095237,
+            "hand": {
+              "x": 45.33930101758406,
+              "y": -28.12617127144378
+            }
+          },
+          "crop": {
+            "x": 217.32334246270548,
+            "y": 517.4853716821954,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 15.501666666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 486.89129510681516,
+            "y": 662.8059495243355
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.204513092050541,
+            "cycle": 0.3363095238095237,
+            "hand": {
+              "x": 45.33930101758406,
+              "y": -28.12617127144378
+            }
+          },
+          "crop": {
+            "x": 217.32334246270548,
+            "y": 517.4853716821954,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 2,
+      "elapsed": 0.08333333333333333,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 15.543333333333335,
+          "phase": "depart",
+          "foot": {
+            "x": 489.3020869621398,
+            "y": 663.6696263630377
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.21769104682527782,
+            "cycle": 0.3511904761904765,
+            "hand": {
+              "x": 44.97977156370524,
+              "y": -27.862883000902308
+            }
+          },
+          "crop": {
+            "x": 219.41657251657372,
+            "y": 515.716586383067,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 15.543333333333335,
+          "phase": "depart",
+          "foot": {
+            "x": 489.3020869621398,
+            "y": 663.6696263630377
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.21769104682527782,
+            "cycle": 0.3511904761904765,
+            "hand": {
+              "x": 44.97977156370524,
+              "y": -27.862883000902308
+            }
+          },
+          "crop": {
+            "x": 219.41657251657372,
+            "y": 515.716586383067,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 3,
+      "elapsed": 0.125,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 15.585,
+          "phase": "depart",
+          "foot": {
+            "x": 491.762723678872,
+            "y": 664.4955583897505
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.2307488558591283,
+            "cycle": 0.3660714285714288,
+            "hand": {
+              "x": 44.61995960288452,
+              "y": -27.606640869082078
+            }
+          },
+          "crop": {
+            "x": 221.63130308439284,
+            "y": 513.8278738211553,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 15.585,
+          "phase": "depart",
+          "foot": {
+            "x": 491.762723678872,
+            "y": 664.4955583897505
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.2307488558591283,
+            "cycle": 0.3660714285714288,
+            "hand": {
+              "x": 44.61995960288452,
+              "y": -27.606640869082078
+            }
+          },
+          "crop": {
+            "x": 221.63130308439284,
+            "y": 513.8278738211553,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 4,
+      "elapsed": 0.16666666666666666,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 15.626666666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 494.2683003638447,
+            "y": 665.27799334118
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.24362919771083033,
+            "cycle": 0.38095238095238093,
+            "hand": {
+              "x": 44.26160516838735,
+              "y": -27.35848550229266
+            }
+          },
+          "crop": {
+            "x": 223.95566296139506,
+            "y": 511.83144209338855,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 15.626666666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 494.2683003638447,
+            "y": 665.27799334118
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.24362919771083033,
+            "cycle": 0.38095238095238093,
+            "hand": {
+              "x": 44.26160516838735,
+              "y": -27.35848550229266
+            }
+          },
+          "crop": {
+            "x": 223.95566296139506,
+            "y": 511.83144209338855,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 5,
+      "elapsed": 0.20833333333333334,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 15.668333333333335,
+          "phase": "depart",
+          "foot": {
+            "x": 496.8139217978755,
+            "y": 666.0113339660346
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.2562747509391223,
+            "cycle": 0.3958333333333337,
+            "hand": {
+              "x": 43.90650110067528,
+              "y": -27.11937859321275
+            }
+          },
+          "crop": {
+            "x": 226.37774019839796,
+            "y": 509.73943149271224,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 15.668333333333335,
+          "phase": "depart",
+          "foot": {
+            "x": 496.8139217978755,
+            "y": 666.0113339660346
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.2562747509391223,
+            "cycle": 0.3958333333333337,
+            "hand": {
+              "x": 43.90650110067528,
+              "y": -27.11937859321275
+            }
+          },
+          "crop": {
+            "x": 226.37774019839796,
+            "y": 509.73943149271224,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 6,
+      "elapsed": 0.25,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 15.71,
+          "phase": "depart",
+          "foot": {
+            "x": 499.394709935405,
+            "y": 666.690155387063
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.2686281941027406,
+            "cycle": 0.4107142857142858,
+            "hand": {
+              "x": 43.5564883178247,
+              "y": -26.890204673450818
+            }
+          },
+          "crop": {
+            "x": 228.8856122305091,
+            "y": 507.5638877822613,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 15.71,
+          "phase": "depart",
+          "foot": {
+            "x": 499.394709935405,
+            "y": 666.690155387063
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.2686281941027406,
+            "cycle": 0.4107142857142858,
+            "hand": {
+              "x": 43.5564883178247,
+              "y": -26.890204673450818
+            }
+          },
+          "crop": {
+            "x": 228.8856122305091,
+            "y": 507.5638877822613,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 7,
+      "elapsed": 0.2916666666666667,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 15.751666666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 502.0058112292208,
+            "y": 667.3092213465534
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.28063220576042364,
+            "cycle": 0.42559523809523814,
+            "hand": {
+              "x": 43.21345067442716,
+              "y": -26.67177399920635
+            }
+          },
+          "crop": {
+            "x": 231.46737524406902,
+            "y": 505.31673778339996,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 15.751666666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 502.0058112292208,
+            "y": 667.3092213465534
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.28063220576042364,
+            "cycle": 0.42559523809523814,
+            "hand": {
+              "x": 43.21345067442716,
+              "y": -26.67177399920635
+            }
+          },
+          "crop": {
+            "x": 231.46737524406902,
+            "y": 505.31673778339996,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 8,
+      "elapsed": 0.3333333333333333,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 15.793333333333335,
+          "phase": "depart",
+          "foot": {
+            "x": 504.6424037809501,
+            "y": 667.8634993226342
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.29222946447090925,
+            "cycle": 0.4404761904761909,
+            "hand": {
+              "x": 42.87930948211603,
+              "y": -26.464826584711243
+            }
+          },
+          "crop": {
+            "x": 234.11117268785162,
+            "y": 503.0097675214897,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 15.793333333333335,
+          "phase": "depart",
+          "foot": {
+            "x": 504.6424037809501,
+            "y": 667.8634993226342
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.29222946447090925,
+            "cycle": 0.4404761904761909,
+            "hand": {
+              "x": 42.87930948211603,
+              "y": -26.464826584711243
+            }
+          },
+          "crop": {
+            "x": 234.11117268785162,
+            "y": 503.0097675214897,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 9,
+      "elapsed": 0.375,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 15.835,
+          "phase": "depart",
+          "foot": {
+            "x": 507.2997043178363,
+            "y": 668.3481745073117
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.30336264879293423,
+            "cycle": 0.455357142857143,
+            "hand": {
+              "x": 42.55601775876512,
+              "y": -26.270037410592693
+            }
+          },
+          "crop": {
+            "x": 236.80522283843973,
+            "y": 500.65460321440173,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 15.835,
+          "phase": "depart",
+          "foot": {
+            "x": 507.2997043178363,
+            "y": 668.3481745073117
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.30336264879293423,
+            "cycle": 0.455357142857143,
+            "hand": {
+              "x": 42.55601775876512,
+              "y": -26.270037410592693
+            }
+          },
+          "crop": {
+            "x": 236.80522283843973,
+            "y": 500.65460321440173,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 10,
+      "elapsed": 0.4166666666666667,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 15.876666666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 509.9729749961589,
+            "y": 668.7586626406742
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.3139744372852367,
+            "cycle": 0.4702380952380951,
+            "hand": {
+              "x": 42.245554265320145,
+              "y": -26.088022826539472
+            }
+          },
+          "crop": {
+            "x": 239.53784533360746,
+            "y": 498.26269542597527,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 15.876666666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 509.9729749961589,
+            "y": 668.7586626406742
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.3139744372852367,
+            "cycle": 0.4702380952380951,
+            "hand": {
+              "x": 42.245554265320145,
+              "y": -26.088022826539472
+            }
+          },
+          "crop": {
+            "x": 239.53784533360746,
+            "y": 498.26269542597527,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 11,
+      "elapsed": 0.4583333333333333,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 15.918333333333335,
+          "phase": "depart",
+          "foot": {
+            "x": 512.6575300314905,
+            "y": 669.0906216991546
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.3240075085065547,
+            "cycle": 0.4851190476190479,
+            "hand": {
+              "x": 41.9499173791326,
+              "y": -25.919348159793238
+            }
+          },
+          "crop": {
+            "x": 242.29748659144755,
+            "y": 495.84530673992424,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 15.918333333333335,
+          "phase": "depart",
+          "foot": {
+            "x": 512.6575300314905,
+            "y": 669.0906216991546
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.3240075085065547,
+            "cycle": 0.4851190476190479,
+            "hand": {
+              "x": 41.9499173791326,
+              "y": -25.919348159793238
+            }
+          },
+          "crop": {
+            "x": 242.29748659144755,
+            "y": 495.84530673992424,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 12,
+      "elapsed": 0.5,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 15.96,
+          "phase": "depart",
+          "foot": {
+            "x": 515.3487421558434,
+            "y": 669.3399624390929
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.333404541015625,
+            "cycle": 0.5,
+            "hand": {
+              "x": 41.67111884055727,
+              "y": -25.76453653312069
+            }
+          },
+          "crop": {
+            "x": 245.0727440369324,
+            "y": 493.4135033389597,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 15.96,
+          "phase": "depart",
+          "foot": {
+            "x": 515.3487421558434,
+            "y": 669.3399624390929
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.333404541015625,
+            "cycle": 0.5,
+            "hand": {
+              "x": 41.67111884055727,
+              "y": -25.76453653312069
+            }
+          },
+          "crop": {
+            "x": 245.0727440369324,
+            "y": 493.4135033389597,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 13,
+      "elapsed": 0.5416666666666666,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 16.00166666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 518.0420489016067,
+            "y": 669.5028578001251
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.34210821337118613,
+            "cycle": 0.514880952380953,
+            "hand": {
+              "x": 41.41117739546893,
+              "y": -25.624078888102204
+            }
+          },
+          "crop": {
+            "x": 247.85238906154987,
+            "y": 490.978150899217,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 16.00166666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 518.0420489016067,
+            "y": 669.5028578001251
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.34210821337118613,
+            "cycle": 0.514880952380953,
+            "hand": {
+              "x": 41.41117739546893,
+              "y": -25.624078888102204
+            }
+          },
+          "crop": {
+            "x": 247.85238906154987,
+            "y": 490.978150899217,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 14,
+      "elapsed": 0.5833333333333334,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 16.043333333333333,
+          "phase": "depart",
+          "foot": {
+            "x": 520.7329587120331,
+            "y": 669.5757511761117
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.3500612041319746,
+            "cycle": 0.5297619047619047,
+            "hand": {
+              "x": 41.17211234028259,
+              "y": -25.498445201811663
+            }
+          },
+          "crop": {
+            "x": 250.6253886456495,
+            "y": 488.54991523144645,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 16.043333333333333,
+          "phase": "depart",
+          "foot": {
+            "x": 520.7329587120331,
+            "y": 669.5757511761117
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.3500612041319746,
+            "cycle": 0.5297619047619047,
+            "hand": {
+              "x": 41.17211234028259,
+              "y": -25.498445201811663
+            }
+          },
+          "crop": {
+            "x": 250.6253886456495,
+            "y": 488.54991523144645,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 15,
+      "elapsed": 0.625,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 16.085,
+          "phase": "depart",
+          "foot": {
+            "x": 523.4170568779047,
+            "y": 669.5553635644172
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.3572061918567291,
+            "cycle": 0.5446428571428572,
+            "hand": {
+              "x": 40.955936958079604,
+              "y": -25.388096877220867
+            }
+          },
+          "crop": {
+            "x": 253.38092557716087,
+            "y": 486.1392681178704,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 16.085,
+          "phase": "depart",
+          "foot": {
+            "x": 523.4170568779047,
+            "y": 669.5553635644172
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.3572061918567291,
+            "cycle": 0.5446428571428572,
+            "hand": {
+              "x": 40.955936958079604,
+              "y": -25.388096877220867
+            }
+          },
+          "crop": {
+            "x": 253.38092557716087,
+            "y": 486.1392681178704,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 16,
+      "elapsed": 0.6666666666666666,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 16.12666666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 526.0900112998653,
+            "y": 669.4386996073395
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.36348585510418696,
+            "cycle": 0.5595238095238102,
+            "hand": {
+              "x": 40.76465181462156,
+              "y": -25.293500279847468
+            }
+          },
+          "crop": {
+            "x": 256.10841720441385,
+            "y": 483.75649880722574,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 16.12666666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 526.0900112998653,
+            "y": 669.4386996073395
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.36348585510418696,
+            "cycle": 0.5595238095238102,
+            "hand": {
+              "x": 40.76465181462156,
+              "y": -25.293500279847468
+            }
+          },
+          "crop": {
+            "x": 256.10841720441385,
+            "y": 483.75649880722574,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 17,
+      "elapsed": 0.7083333333333334,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 16.168333333333333,
+          "phase": "depart",
+          "foot": {
+            "x": 528.7475780757933,
+            "y": 669.2230525423822
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.36884287243308517,
+            "cycle": 0.5744047619047616,
+            "hand": {
+              "x": 40.60023786146389,
+              "y": -25.215141385123395
+            }
+          },
+          "crop": {
+            "x": 258.7975326649005,
+            "y": 481.4117316403547,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 16.168333333333333,
+          "phase": "depart",
+          "foot": {
+            "x": 528.7475780757933,
+            "y": 669.2230525423822
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.36884287243308517,
+            "cycle": 0.5744047619047616,
+            "hand": {
+              "x": 40.60023786146389,
+              "y": -25.215141385123395
+            }
+          },
+          "crop": {
+            "x": 258.7975326649005,
+            "y": 481.4117316403547,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 18,
+      "elapsed": 0.75,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 16.21,
+          "phase": "depart",
+          "foot": {
+            "x": 531.3856069124597,
+            "y": 668.9060080808407
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.37321992240216234,
+            "cycle": 0.5892857142857144,
+            "hand": {
+              "x": 40.464649270175684,
+              "y": -25.15354149246963
+            }
+          },
+          "crop": {
+            "x": 261.4382085359849,
+            "y": 479.11495028488446,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 16.21,
+          "phase": "depart",
+          "foot": {
+            "x": 531.3856069124597,
+            "y": 668.9060080808407
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.37321992240216234,
+            "cycle": 0.5892857142857144,
+            "hand": {
+              "x": 40.464649270175684,
+              "y": -25.15354149246963
+            }
+          },
+          "crop": {
+            "x": 261.4382085359849,
+            "y": 479.11495028488446,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 19,
+      "elapsed": 0.7916666666666666,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 16.25166666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 534.0000463605961,
+            "y": 668.485447236823
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.3765596835701555,
+            "cycle": 0.6041666666666674,
+            "hand": {
+              "x": 40.35980589696226,
+              "y": -25.10927395283416
+            }
+          },
+          "crop": {
+            "x": 264.0206628577723,
+            "y": 476.8760290601649,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 16.25166666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 534.0000463605961,
+            "y": 668.485447236823
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.3765596835701555,
+            "cycle": 0.6041666666666674,
+            "hand": {
+              "x": 40.35980589696226,
+              "y": -25.10927395283416
+            }
+          },
+          "crop": {
+            "x": 264.0206628577723,
+            "y": 476.8760290601649,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 20,
+      "elapsed": 0.8333333333333334,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 16.293333333333333,
+          "phase": "depart",
+          "foot": {
+            "x": 536.5869488724032,
+            "y": 667.9595481313919
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.37880483449580227,
+            "cycle": 0.6190476190476186,
+            "hand": {
+              "x": 40.28758525093292,
+              "y": -25.082981846116752
+            }
+          },
+          "crop": {
+            "x": 266.53540748263947,
+            "y": 474.7047718328615,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 16.293333333333333,
+          "phase": "depart",
+          "foot": {
+            "x": 536.5869488724032,
+            "y": 667.9595481313919
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.37880483449580227,
+            "cycle": 0.6190476190476186,
+            "hand": {
+              "x": 40.28758525093292,
+              "y": -25.082981846116752
+            }
+          },
+          "crop": {
+            "x": 266.53540748263947,
+            "y": 474.7047718328615,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 21,
+      "elapsed": 0.875,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 16.335,
+          "phase": "depart",
+          "foot": {
+            "x": 539.1424756803987,
+            "y": 667.3267867989022
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.3798980537378406,
+            "cycle": 0.6339285714285716,
+            "hand": {
+              "x": 40.249813812052174,
+              "y": -25.07539653302313
+            }
+          },
+          "crop": {
+            "x": 268.97325871023827,
+            "y": 472.61095895952053,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 16.335,
+          "phase": "depart",
+          "foot": {
+            "x": 539.1424756803987,
+            "y": 667.3267867989022
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.3798980537378406,
+            "cycle": 0.6339285714285716,
+            "hand": {
+              "x": 40.249813812052174,
+              "y": -25.07539653302313
+            }
+          },
+          "crop": {
+            "x": 268.97325871023827,
+            "y": 472.61095895952053,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 22,
+      "elapsed": 0.9166666666666666,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 16.37666666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 541.6629014964262,
+            "y": 666.585937024925
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.34707168105770647,
+            "cycle": 0.6488095238095244,
+            "hand": {
+              "x": 41.2123791235143,
+              "y": -25.64501913798095
+            }
+          },
+          "crop": {
+            "x": 271.32534617121223,
+            "y": 470.6044027452948,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 16.37666666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 541.6629014964262,
+            "y": 666.585937024925
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.34707168105770647,
+            "cycle": 0.6488095238095244,
+            "hand": {
+              "x": 41.2123791235143,
+              "y": -25.64501913798095
+            }
+          },
+          "crop": {
+            "x": 271.32534617121223,
+            "y": 470.6044027452948,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 23,
+      "elapsed": 0.9583333333333334,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 16.418333333333333,
+          "phase": "depart",
+          "foot": {
+            "x": 544.1446190295316,
+            "y": 665.7360692472878
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.28906684329167015,
+            "cycle": 0.6636904761904758,
+            "hand": {
+              "x": 42.87014501575418,
+              "y": -26.720469296465744
+            }
+          },
+          "crop": {
+            "x": 273.58311992730023,
+            "y": 468.6950118778883,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 16.418333333333333,
+          "phase": "depart",
+          "foot": {
+            "x": 544.1446190295316,
+            "y": 665.7360692472878
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.28906684329167015,
+            "cycle": 0.6636904761904758,
+            "hand": {
+              "x": 42.87014501575418,
+              "y": -26.720469296465744
+            }
+          },
+          "crop": {
+            "x": 273.58311992730023,
+            "y": 468.6950118778883,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 24,
+      "elapsed": 1,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 16.46,
+          "phase": "depart",
+          "foot": {
+            "x": 546.5841433213338,
+            "y": 664.7765485537893
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.2291308260487997,
+            "cycle": 0.6785714285714288,
+            "hand": {
+              "x": 44.51512851473392,
+              "y": -27.930924605567895
+            }
+          },
+          "crop": {
+            "x": 275.73835576007207,
+            "y": 466.8928652829526,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 16.46,
+          "phase": "depart",
+          "foot": {
+            "x": 546.5841433213338,
+            "y": 664.7765485537893
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.2291308260487997,
+            "cycle": 0.6785714285714288,
+            "hand": {
+              "x": 44.51512851473392,
+              "y": -27.930924605567895
+            }
+          },
+          "crop": {
+            "x": 275.73835576007207,
+            "y": 466.8928652829526,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 25,
+      "elapsed": 1.0416666666666667,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 16.50166666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 548.9781158974201,
+            "y": 663.7070318120303
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.16846987849102252,
+            "cycle": 0.6934523809523816,
+            "hand": {
+              "x": 46.103552988327486,
+              "y": -29.25440730866893
+            }
+          },
+          "crop": {
+            "x": 277.7831586251117,
+            "y": 465.2082958317544,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 16.50166666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 548.9781158974201,
+            "y": 663.7070318120303
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.16846987849102252,
+            "cycle": 0.6934523809523816,
+            "hand": {
+              "x": 46.103552988327486,
+              "y": -29.25440730866893
+            }
+          },
+          "crop": {
+            "x": 277.7831586251117,
+            "y": 465.2082958317544,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 26,
+      "elapsed": 1.0833333333333333,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 16.543333333333333,
+          "phase": "depart",
+          "foot": {
+            "x": 551.3233087332201,
+            "y": 662.5274639685407
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.10825091090742456,
+            "cycle": 0.708333333333333,
+            "hand": {
+              "x": 47.598479153807055,
+              "y": -30.661441403006336
+            }
+          },
+          "crop": {
+            "x": 279.70996425318276,
+            "y": 463.65198431418594,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 16.543333333333333,
+          "phase": "depart",
+          "foot": {
+            "x": 551.3233087332201,
+            "y": 662.5274639685407
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.10825091090742456,
+            "cycle": 0.708333333333333,
+            "hand": {
+              "x": 47.598479153807055,
+              "y": -30.661441403006336
+            }
+          },
+          "crop": {
+            "x": 279.70996425318276,
+            "y": 463.65198431418594,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 27,
+      "elapsed": 1.125,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 16.585,
+          "phase": "depart",
+          "foot": {
+            "x": 553.6166280327344,
+            "y": 661.2380735559799
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.049587267473086394,
+            "cycle": 0.723214285714286,
+            "hand": {
+              "x": 48.971038162430816,
+              "y": -32.11660269008274
+            }
+          },
+          "crop": {
+            "x": 281.53971029219963,
+            "y": 462.1866423826974,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 16.585,
+          "phase": "depart",
+          "foot": {
+            "x": 553.6166280327344,
+            "y": 661.2380735559799
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.049587267473086394,
+            "cycle": 0.723214285714286,
+            "hand": {
+              "x": 48.971038162430816,
+              "y": -32.11660269008274
+            }
+          },
+          "crop": {
+            "x": 281.53971029219963,
+            "y": 462.1866423826974,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 28,
+      "elapsed": 1.1666666666666667,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 16.62666666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 555.8551178184151,
+            "y": 659.8393674486426
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.006474598930981679,
+            "cycle": 0.7380952380952386,
+            "hand": {
+              "x": 50.20102102171308,
+              "y": -33.58051654599518
+            }
+          },
+          "crop": {
+            "x": 283.3831633019446,
+            "y": 460.6200915424797,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 16.62666666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 555.8551178184151,
+            "y": 659.8393674486426
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.006474598930981679,
+            "cycle": 0.7380952380952386,
+            "hand": {
+              "x": 50.20102102171308,
+              "y": -33.58051654599518
+            }
+          },
+          "crop": {
+            "x": 283.3831633019446,
+            "y": 460.6200915424797,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 29,
+      "elapsed": 1.2083333333333333,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 16.668333333333333,
+          "phase": "depart",
+          "foot": {
+            "x": 558.0359633304337,
+            "y": 658.3321249078035
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.05896732543897021,
+            "cycle": 0.7529761904761902,
+            "hand": {
+              "x": 51.27676695312849,
+              "y": -35.01205347807674
+            }
+          },
+          "crop": {
+            "x": 285.25030104345717,
+            "y": 458.9319798967399,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 16.668333333333333,
+          "phase": "depart",
+          "foot": {
+            "x": 558.0359633304337,
+            "y": 658.3321249078035
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.05896732543897021,
+            "cycle": 0.7529761904761902,
+            "hand": {
+              "x": 51.27676695312849,
+              "y": -35.01205347807674
+            }
+          },
+          "crop": {
+            "x": 285.25030104345717,
+            "y": 458.9319798967399,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 30,
+      "elapsed": 1.25,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 16.71,
+          "phase": "depart",
+          "foot": {
+            "x": 560.1564942335056,
+            "y": 656.717390959581
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.10701350603416676,
+            "cycle": 0.767857142857143,
+            "hand": {
+              "x": 52.19438493733757,
+              "y": -36.370483367988854
+            }
+          },
+          "crop": {
+            "x": 287.13867726418937,
+            "y": 457.1234778747307,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 16.71,
+          "phase": "depart",
+          "foot": {
+            "x": 560.1564942335056,
+            "y": 656.717390959581
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.10701350603416676,
+            "cycle": 0.767857142857143,
+            "hand": {
+              "x": 52.19438493733757,
+              "y": -36.370483367988854
+            }
+          },
+          "crop": {
+            "x": 287.13867726418937,
+            "y": 457.1234778747307,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 31,
+      "elapsed": 1.2916666666666667,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 16.75166666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 562.2141876293807,
+            "y": 654.9964691490293
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.14983504349657734,
+            "cycle": 0.7827380952380958,
+            "hand": {
+              "x": 52.95642268741868,
+              "y": -37.61739308463662
+            }
+          },
+          "crop": {
+            "x": 289.0458240932883,
+            "y": 455.19604544691276,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 16.75166666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 562.2141876293807,
+            "y": 654.9964691490293
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.14983504349657734,
+            "cycle": 0.7827380952380958,
+            "hand": {
+              "x": 52.95642268741868,
+              "y": -37.61739308463662
+            }
+          },
+          "crop": {
+            "x": 289.0458240932883,
+            "y": 455.19604544691276,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 32,
+      "elapsed": 1.3333333333333333,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 16.793333333333333,
+          "phase": "depart",
+          "foot": {
+            "x": 564.2066708730571,
+            "y": 653.1709137149874
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.18676082897618543,
+            "cycle": 0.7976190476190474,
+            "hand": {
+              "x": 53.57015355369292,
+              "y": -38.718237635785876
+            }
+          },
+          "crop": {
+            "x": 290.9692545517803,
+            "y": 453.15142336078577,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 16.793333333333333,
+          "phase": "depart",
+          "foot": {
+            "x": 564.2066708730571,
+            "y": 653.1709137149874
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.18676082897618543,
+            "cycle": 0.7976190476190474,
+            "hand": {
+              "x": 53.57015355369292,
+              "y": -38.718237635785876
+            }
+          },
+          "crop": {
+            "x": 290.9692545517803,
+            "y": 453.15142336078577,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 33,
+      "elapsed": 1.375,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 16.835,
+          "phase": "depart",
+          "foot": {
+            "x": 566.131724190724,
+            "y": 651.2425212309511
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.2172326198666953,
+            "cycle": 0.8125000000000002,
+            "hand": {
+              "x": 54.04567887283003,
+              "y": -39.643467928113466
+            }
+          },
+          "crop": {
+            "x": 292.90646508829855,
+            "y": 450.99162377866514,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 16.835,
+          "phase": "depart",
+          "foot": {
+            "x": 566.131724190724,
+            "y": 651.2425212309511
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.2172326198666953,
+            "cycle": 0.8125000000000002,
+            "hand": {
+              "x": 54.04567887283003,
+              "y": -39.643467928113466
+            }
+          },
+          "crop": {
+            "x": 292.90646508829855,
+            "y": 450.99162377866514,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 34,
+      "elapsed": 1.4166666666666667,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 16.87666666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 567.9872830973949,
+            "y": 649.21332175777
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.24080901699550403,
+            "cycle": 0.827380952380953,
+            "hand": {
+              "x": 54.39404197696036,
+              "y": -40.36924473430204
+            }
+          },
+          "crop": {
+            "x": 294.85493814063807,
+            "y": 448.71892036870236,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 16.87666666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 567.9872830973949,
+            "y": 649.21332175777
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.24080901699550403,
+            "cycle": 0.827380952380953,
+            "hand": {
+              "x": 54.39404197696036,
+              "y": -40.36924473430204
+            }
+          },
+          "crop": {
+            "x": 294.85493814063807,
+            "y": 448.71892036870236,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 35,
+      "elapsed": 1.4583333333333333,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 16.918333333333333,
+          "phase": "depart",
+          "foot": {
+            "x": 569.7714406121531,
+            "y": 647.0855695543783
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.2571674741535021,
+            "cycle": 0.8422619047619047,
+            "hand": {
+              "x": 54.62552625023946,
+              "y": -40.877798180343184
+            }
+          },
+          "crop": {
+            "x": 296.81214472336626,
+            "y": 446.3358379009036,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 16.918333333333333,
+          "phase": "depart",
+          "foot": {
+            "x": 569.7714406121531,
+            "y": 647.0855695543783
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.2571674741535021,
+            "cycle": 0.8422619047619047,
+            "hand": {
+              "x": 54.62552625023946,
+              "y": -40.877798180343184
+            }
+          },
+          "crop": {
+            "x": 296.81214472336626,
+            "y": 446.3358379009036,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 36,
+      "elapsed": 1.5,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 16.96,
+          "phase": "depart",
+          "foot": {
+            "x": 571.4824492688955,
+            "y": 644.8617333930306
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.26610430612389746,
+            "cycle": 0.8571428571428572,
+            "hand": {
+              "x": 54.748271395063746,
+              "y": -41.15751942726908
+            }
+          },
+          "crop": {
+            "x": 298.77554704166266,
+            "y": 443.8451414001943,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 16.96,
+          "phase": "depart",
+          "foot": {
+            "x": 571.4824492688955,
+            "y": 644.8617333930306
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.26610430612389746,
+            "cycle": 0.8571428571428572,
+            "hand": {
+              "x": 54.748271395063746,
+              "y": -41.15751942726908
+            }
+          },
+          "crop": {
+            "x": 298.77554704166266,
+            "y": 443.8451414001943,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 37,
+      "elapsed": 1.5416666666666667,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 17.00166666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 573.1187229204277,
+            "y": 642.5444865256278
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.2675326950748553,
+            "cycle": 0.8720238095238102,
+            "hand": {
+              "x": 54.76729752181461,
+              "y": -41.20287577621982
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 441.2498249087031,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 17.00166666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 573.1187229204277,
+            "y": 642.5444865256278
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.2675326950748553,
+            "cycle": 0.8720238095238102,
+            "hand": {
+              "x": 54.76729752181461,
+              "y": -41.20287577621982
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 441.2498249087031,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 38,
+      "elapsed": 1.5833333333333333,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 17.043333333333333,
+          "phase": "depart",
+          "foot": {
+            "x": 574.6788383337384,
+            "y": 640.1366963476644
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.2614787288886099,
+            "cycle": 0.8869047619047616,
+            "hand": {
+              "x": 54.683982103619975,
+              "y": -41.01422592321604
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 438.55309990938406,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 17.043333333333333,
+          "phase": "depart",
+          "foot": {
+            "x": 574.6788383337384,
+            "y": 640.1366963476644
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.2614787288886099,
+            "cycle": 0.8869047619047616,
+            "hand": {
+              "x": 54.683982103619975,
+              "y": -41.01422592321604
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 438.55309990938406,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 39,
+      "elapsed": 1.625,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 17.085,
+          "phase": "depart",
+          "foot": {
+            "x": 576.1615365742632,
+            "y": 637.6414138061788
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.2480755381421339,
+            "cycle": 0.9017857142857144,
+            "hand": {
+              "x": 54.49599405424608,
+              "y": -40.59758501721212
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 435.75838346292016,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 17.085,
+          "phase": "depart",
+          "foot": {
+            "x": 576.1615365742632,
+            "y": 637.6414138061788
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.2480755381421339,
+            "cycle": 0.9017857142857144,
+            "hand": {
+              "x": 54.49599405424608,
+              "y": -40.59758501721212
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 435.75838346292016,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 40,
+      "elapsed": 1.6666666666666667,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 17.12666666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 577.5657241769171,
+            "y": 635.0618625977518
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.22755563047346522,
+            "cycle": 0.9166666666666674,
+            "hand": {
+              "x": 54.197653748263306,
+              "y": -39.964357170651006
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 432.869286109482,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 17.12666666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 577.5657241769171,
+            "y": 635.0618625977518
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.22755563047346522,
+            "cycle": 0.9166666666666674,
+            "hand": {
+              "x": 54.197653748263306,
+              "y": -39.964357170651006
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 432.869286109482,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 41,
+      "elapsed": 1.7083333333333333,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 17.168333333333333,
+          "phase": "depart",
+          "foot": {
+            "x": 578.8904741016854,
+            "y": 632.4014282021559
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.20024155142405953,
+            "cycle": 0.9315476190476188,
+            "hand": {
+              "x": 53.78065785402323,
+              "y": -39.131023522945846
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 429.88959958641453,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 17.168333333333333,
+          "phase": "depart",
+          "foot": {
+            "x": 578.8904741016854,
+            "y": 632.4014282021559
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.20024155142405953,
+            "cycle": 0.9315476190476188,
+            "hand": {
+              "x": 53.78065785402323,
+              "y": -39.131023522945846
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 429.88959958641453,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 42,
+      "elapsed": 1.75,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 17.21,
+          "phase": "depart",
+          "foot": {
+            "x": 580.135026471527,
+            "y": 629.663646796662
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.1665350290299082,
+            "cycle": 0.9464285714285716,
+            "hand": {
+              "x": 53.23508317076197,
+              "y": -38.118752912097044
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 426.8232844122614,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 17.21,
+          "phase": "depart",
+          "foot": {
+            "x": 580.135026471527,
+            "y": 629.663646796662
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.1665350290299082,
+            "cycle": 0.9464285714285716,
+            "hand": {
+              "x": 53.23508317076197,
+              "y": -38.118752912097044
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 426.8232844122614,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 43,
+      "elapsed": 1.7916666666666667,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 17.25166666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 581.2987890903639,
+            "y": 626.8521940953091
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.12690478496810811,
+            "cycle": 0.9613095238095244,
+            "hand": {
+              "x": 52.55056450564416,
+              "y": -36.952893623492855
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 423.6744573867461,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 17.25166666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 581.2987890903639,
+            "y": 626.8521940953091
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.12690478496810811,
+            "cycle": 0.9613095238095244,
+            "hand": {
+              "x": 52.55056450564416,
+              "y": -36.952893623492855
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 423.6744573867461,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 44,
+      "elapsed": 1.8333333333333333,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 17.293333333333333,
+          "phase": "depart",
+          "foot": {
+            "x": 582.3813377389183,
+            "y": 623.970874156583
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.08187321752087633,
+            "cycle": 0.9761904761904758,
+            "hand": {
+              "x": 51.71752910075508,
+              "y": -35.66230998616476
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 420.44737905537295,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 17.293333333333333,
+          "phase": "depart",
+          "foot": {
+            "x": 582.3813377389183,
+            "y": 623.970874156583
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": -0.08187321752087633,
+            "cycle": 0.9761904761904758,
+            "hand": {
+              "x": 51.71752910075508,
+              "y": -35.66230998616476
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 420.44737905537295,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 45,
+      "elapsed": 1.875,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 17.335,
+          "phase": "depart",
+          "foot": {
+            "x": 583.3824162461692,
+            "y": 621.023608201999
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": 0,
+            "armAngle": -0.03200218061781826,
+            "cycle": 0.9910714285714288,
+            "hand": {
+              "x": 50.72836600498359,
+              "y": -34.27854556774871
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 417.1464411862388,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 17.335,
+          "phase": "depart",
+          "foot": {
+            "x": 583.3824162461692,
+            "y": 621.023608201999
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": 0,
+            "armAngle": -0.03200218061781826,
+            "cycle": 0.9910714285714288,
+            "hand": {
+              "x": 50.72836600498359,
+              "y": -34.27854556774871
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 417.1464411862388,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 46,
+      "elapsed": 1.9166666666666667,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 17.37666666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 584.3019363342089,
+            "y": 618.0144234869999
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": 1,
+            "armAngle": 0.00009799979312570553,
+            "cycle": 0.005952380952381597,
+            "hand": {
+              "x": 50.057367245732095,
+              "y": -33.411884208101235
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 413.77615430543995,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 17.37666666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 584.3019363342089,
+            "y": 618.0144234869999
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": 1,
+            "armAngle": 0.00009799979312570553,
+            "cycle": 0.005952380952381597,
+            "hand": {
+              "x": 50.057367245732095,
+              "y": -33.411884208101235
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 413.77615430543995,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 47,
+      "elapsed": 1.9583333333333333,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 17.418333333333333,
+          "phase": "depart",
+          "foot": {
+            "x": 585.1399772342955,
+            "y": 614.9474422643856
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": 1,
+            "armAngle": 0.0011817724616438922,
+            "cycle": 0.020833333333333037,
+            "hand": {
+              "x": 50.0384759680657,
+              "y": -33.3755205228161
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 410.34113533611185,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 17.418333333333333,
+          "phase": "depart",
+          "foot": {
+            "x": 585.1399772342955,
+            "y": 614.9474422643856
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": 1,
+            "armAngle": 0.0011817724616438922,
+            "cycle": 0.020833333333333037,
+            "hand": {
+              "x": 50.0384759680657,
+              "y": -33.3755205228161
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 410.34113533611185,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 48,
+      "elapsed": 2,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 17.46,
+          "phase": "depart",
+          "foot": {
+            "x": 585.8967850719177,
+            "y": 611.8268708791894
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": 0,
+            "armAngle": 0.003417935385300902,
+            "cycle": 0.03571428571428581,
+            "hand": {
+              "x": 49.9951622573499,
+              "y": -33.308019730608606
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 406.84609538469215,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 17.46,
+          "phase": "depart",
+          "foot": {
+            "x": 585.8967850719177,
+            "y": 611.8268708791894
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": 0,
+            "armAngle": 0.003417935385300902,
+            "cycle": 0.03571428571428581,
+            "hand": {
+              "x": 49.9951622573499,
+              "y": -33.308019730608606
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 406.84609538469215,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 49,
+      "elapsed": 2.0416666666666665,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 17.50166666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 586.5727720187081,
+            "y": 608.6569890325244
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": 0,
+            "armAngle": 0.0067491671228343715,
+            "cycle": 0.050595238095238804,
+            "hand": {
+              "x": 49.92843275616742,
+              "y": -33.211091254359964
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 403.2958277164273,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 17.50166666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 586.5727720187081,
+            "y": 608.6569890325244
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": 0,
+            "armAngle": 0.0067491671228343715,
+            "cycle": 0.050595238095238804,
+            "hand": {
+              "x": 49.92843275616742,
+              "y": -33.211091254359964
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 403.2958277164273,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 50,
+      "elapsed": 2.0833333333333335,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 17.543333333333333,
+          "phase": "depart",
+          "foot": {
+            "x": 587.1685152090749,
+            "y": 605.4421392504084
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.01111814623298139,
+            "cycle": 0.06547619047619024,
+            "hand": {
+              "x": 49.83921481842892,
+              "y": -33.08651298398392
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 399.69519596045745,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 17.543333333333333,
+          "phase": "depart",
+          "foot": {
+            "x": 587.1685152090749,
+            "y": 605.4421392504084
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.01111814623298139,
+            "cycle": 0.06547619047619024,
+            "hand": {
+              "x": 49.83921481842892,
+              "y": -33.08651298398392
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 399.69519596045745,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 51,
+      "elapsed": 2.125,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 17.585,
+          "phase": "depart",
+          "foot": {
+            "x": 587.6847554194522,
+            "y": 602.186716591996
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.016467551274480404,
+            "cycle": 0.08035714285714302,
+            "hand": {
+              "x": 49.728374173681146,
+              "y": -32.93611910689109
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 396.04912258303546,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 17.585,
+          "phase": "depart",
+          "foot": {
+            "x": 587.6847554194522,
+            "y": 602.186716591996
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.016467551274480404,
+            "cycle": 0.08035714285714302,
+            "hand": {
+              "x": 49.728374173681146,
+              "y": -32.93611910689109
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 396.04912258303546,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 52,
+      "elapsed": 2.1666666666666665,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 17.62666666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 588.1223955081053,
+            "y": 598.8951586299715
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.022740060806068708,
+            "cycle": 0.09523809523809579,
+            "hand": {
+              "x": 49.59673181257799,
+              "y": -32.7617887066569
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 392.3625776655681,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 17.62666666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 588.1223955081053,
+            "y": 598.8951586299715
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.022740060806068708,
+            "cycle": 0.09523809523809579,
+            "hand": {
+              "x": 49.59673181257799,
+              "y": -32.7617887066569
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 392.3625776655681,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 53,
+      "elapsed": 2.2083333333333335,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 17.668333333333333,
+          "phase": "depart",
+          "foot": {
+            "x": 588.4824986134729,
+            "y": 595.5719357340911
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.029878353386483345,
+            "cycle": 0.11011904761904745,
+            "hand": {
+              "x": 49.44507998139367,
+              "y": -32.565434987043155
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 388.64056802218204,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 17.668333333333333,
+          "phase": "depart",
+          "foot": {
+            "x": 588.4824986134729,
+            "y": 595.5719357340911
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.029878353386483345,
+            "cycle": 0.11011904761904745,
+            "hand": {
+              "x": 49.44507998139367,
+              "y": -32.565434987043155
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 388.64056802218204,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 54,
+      "elapsed": 2.25,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 17.71,
+          "phase": "depart",
+          "foot": {
+            "x": 588.7662861090733,
+            "y": 592.2215416870363
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.03782510757446301,
+            "cycle": 0.12500000000000022,
+            "hand": {
+              "x": 49.27419719065218,
+              "y": -32.34899500507091
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 384.8881266894806,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 17.71,
+          "phase": "depart",
+          "foot": {
+            "x": 588.7662861090733,
+            "y": 592.2215416870363
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.03782510757446301,
+            "cycle": 0.12500000000000022,
+            "hand": {
+              "x": 49.27419719065218,
+              "y": -32.34899500507091
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 384.8881266894806,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 55,
+      "elapsed": 2.2916666666666665,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 17.75166666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 588.9751353130516,
+            "y": 588.8484846598476
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.04652300192874484,
+            "cycle": 0.139880952380953,
+            "hand": {
+              "x": 49.08486215849219,
+              "y": -32.114419822540164
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 381.11030281902924,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 17.75166666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 588.9751353130516,
+            "y": 588.8484846598476
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.04652300192874484,
+            "cycle": 0.139880952380953,
+            "hand": {
+              "x": 49.08486215849219,
+              "y": -32.114419822540164
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 381.11030281902924,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 56,
+      "elapsed": 2.3333333333333335,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 17.793333333333333,
+          "phase": "depart",
+          "foot": {
+            "x": 589.110576950505,
+            "y": 585.4572785722295
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.055914715008065566,
+            "cycle": 0.15476190476190443,
+            "hand": {
+              "x": 48.877866623706154,
+              "y": -31.86366500992758
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 377.31215200089696,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 17.793333333333333,
+          "phase": "depart",
+          "foot": {
+            "x": 589.110576950505,
+            "y": 585.4572785722295
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.055914715008065566,
+            "cycle": 0.15476190476190443,
+            "hand": {
+              "x": 48.877866623706154,
+              "y": -31.86366500992758
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 377.31215200089696,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 57,
+      "elapsed": 2.375,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 17.835,
+          "phase": "depart",
+          "foot": {
+            "x": 589.174292366779,
+            "y": 582.0524348610109
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.06594292537116468,
+            "cycle": 0.16964285714285743,
+            "hand": {
+              "x": 48.65402697682897,
+              "y": -31.598681459708818
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 373.4987270443321,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 17.835,
+          "phase": "depart",
+          "foot": {
+            "x": 589.174292366779,
+            "y": 582.0524348610109
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.06594292537116468,
+            "cycle": 0.16964285714285743,
+            "hand": {
+              "x": 48.65402697682897,
+              "y": -31.598681459708818
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 373.4987270443321,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 58,
+      "elapsed": 2.4166666666666665,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 17.87666666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 589.168110489996,
+            "y": 578.6384546779706
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.07655031157677868,
+            "cycle": 0.1845238095238102,
+            "hand": {
+              "x": 48.41419467048029,
+              "y": -31.321406487622053
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 369.67506923932706,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 17.87666666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 589.168110489996,
+            "y": 578.6384546779706
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.07655031157677868,
+            "cycle": 0.1845238095238102,
+            "hand": {
+              "x": 48.41419467048029,
+              "y": -31.321406487622053
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 369.67506923932706,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 59,
+      "elapsed": 2.4583333333333335,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 17.918333333333333,
+          "phase": "depart",
+          "foot": {
+            "x": 589.0940045411476,
+            "y": 575.2198215361093
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.08767955218364432,
+            "cycle": 0.19940476190476164,
+            "hand": {
+              "x": 48.15926538257505,
+              "y": -31.03375522003217
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 365.8462001204424,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 17.918333333333333,
+          "phase": "depart",
+          "foot": {
+            "x": 589.0940045411476,
+            "y": 575.2198215361093
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.08767955218364432,
+            "cycle": 0.19940476190476164,
+            "hand": {
+              "x": 48.15926538257505,
+              "y": -31.03375522003217
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 365.8462001204424,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 60,
+      "elapsed": 2.5,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 17.96,
+          "phase": "depart",
+          "foot": {
+            "x": 588.9540884901543,
+            "y": 571.8009944213039
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.09927332575050118,
+            "cycle": 0.2142857142857144,
+            "hand": {
+              "x": 47.89018691814483,
+              "y": -30.737612283223257
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 362.0171137518604,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 17.96,
+          "phase": "depart",
+          "foot": {
+            "x": 588.9540884901543,
+            "y": 571.8009944213039
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.09927332575050118,
+            "cycle": 0.2142857142857144,
+            "hand": {
+              "x": 47.89018691814483,
+              "y": -30.737612283223257
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 362.0171137518604,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 61,
+      "elapsed": 2.5416666666666665,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 18.00166666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 588.7506132563769,
+            "y": 568.3864013840792
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.11127431083608601,
+            "cycle": 0.22916666666666718,
+            "hand": {
+              "x": 47.60796584741957,
+              "y": -30.434823826023347
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 358.1927695501687,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 18.00166666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 588.7506132563769,
+            "y": 568.3864013840792
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.11127431083608601,
+            "cycle": 0.22916666666666718,
+            "hand": {
+              "x": 47.60796584741957,
+              "y": -30.434823826023347
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 358.1927695501687,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 62,
+      "elapsed": 2.5833333333333335,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 18.043333333333333,
+          "phase": "depart",
+          "foot": {
+            "x": 588.4859626521496,
+            "y": 564.9804336240021
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.12362518599913538,
+            "cycle": 0.24404761904761885,
+            "hand": {
+              "x": 47.31367288951471,
+              "y": -30.127189920568313
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 354.37808565888236,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 18.043333333333333,
+          "phase": "depart",
+          "foot": {
+            "x": 588.4859626521496,
+            "y": 564.9804336240021
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.12362518599913538,
+            "cycle": 0.24404761904761885,
+            "hand": {
+              "x": 47.31367288951471,
+              "y": -30.127189920568313
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 354.37808565888236,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 63,
+      "elapsed": 2.625,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 18.085,
+          "phase": "depart",
+          "foot": {
+            "x": 588.1626490679881,
+            "y": 561.5874400769612
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.13626862979838883,
+            "cycle": 0.2589285714285716,
+            "hand": {
+              "x": 47.00844706250804,
+              "y": -29.816457397191876
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 350.57793288619655,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 18.085,
+          "phase": "depart",
+          "foot": {
+            "x": 588.1626490679881,
+            "y": 561.5874400769612
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.13626862979838883,
+            "cycle": 0.2589285714285716,
+            "hand": {
+              "x": 47.00844706250804,
+              "y": -29.816457397191876
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 350.57793288619655,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 64,
+      "elapsed": 2.6666666666666665,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 18.12666666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 587.7833088982271,
+            "y": 558.211722513319
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.14914732079258314,
+            "cycle": 0.2738095238095244,
+            "hand": {
+              "x": 46.69349863179244,
+              "y": -29.50431317836881
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 346.7971292149173,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 18.12666666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 587.7833088982271,
+            "y": 558.211722513319
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.14914732079258314,
+            "cycle": 0.2738095238095244,
+            "hand": {
+              "x": 46.69349863179244,
+              "y": -29.50431317836881
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 346.7971292149173,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 65,
+      "elapsed": 2.7083333333333335,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 18.168333333333333,
+          "phase": "depart",
+          "foot": {
+            "x": 587.35069770593,
+            "y": 554.8575311526347
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.16220393754045478,
+            "cycle": 0.28869047619047605,
+            "hand": {
+              "x": 46.37011089922505,
+              "y": -29.1923781833542
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 343.0404348909508,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 18.168333333333333,
+          "phase": "depart",
+          "foot": {
+            "x": 587.35069770593,
+            "y": 554.8575311526347
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.16220393754045478,
+            "cycle": 0.28869047619047605,
+            "hand": {
+              "x": 46.37011089922505,
+              "y": -29.1923781833542
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 343.0404348909508,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 66,
+      "elapsed": 2.75,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 18.21,
+          "phase": "depart",
+          "foot": {
+            "x": 586.8676851260269,
+            "y": 551.5290607983532
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.17538115860074344,
+            "cycle": 0.3035714285714288,
+            "hand": {
+              "x": 46.03964088561577,
+              "y": -28.882201879700865
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 339.31254809415555,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 18.21,
+          "phase": "depart",
+          "foot": {
+            "x": 586.8676851260269,
+            "y": 551.5290607983532
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.17538115860074344,
+            "cycle": 0.3035714285714288,
+            "hand": {
+              "x": 46.03964088561577,
+              "y": -28.882201879700865
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 339.31254809415555,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 67,
+      "elapsed": 2.7916666666666665,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 18.25166666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 586.337249505735,
+            "y": 548.230447493559
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.18862166253218582,
+            "cycle": 0.3184523809523816,
+            "hand": {
+              "x": 45.703518968332965,
+              "y": -28.575257560282974
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 335.61810119278607,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 18.25166666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 586.337249505735,
+            "y": 548.230447493559
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.18862166253218582,
+            "cycle": 0.3184523809523816,
+            "hand": {
+              "x": 45.703518968332965,
+              "y": -28.575257560282974
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 335.61810119278607,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 68,
+      "elapsed": 2.8333333333333335,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 18.293333333333333,
+          "phase": "depart",
+          "foot": {
+            "x": 585.7624722814334,
+            "y": 544.9657656965593
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.2018681278935182,
+            "cycle": 0.33333333333333304,
+            "hand": {
+              "x": 45.36324754406616,
+              "y": -28.272938424910816
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 331.9616575801464,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 18.293333333333333,
+          "phase": "depart",
+          "foot": {
+            "x": 585.7624722814334,
+            "y": 544.9657656965593
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.2018681278935182,
+            "cycle": 0.33333333333333304,
+            "hand": {
+              "x": 45.36324754406616,
+              "y": -28.272938424910816
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 331.9616575801464,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 69,
+      "elapsed": 2.875,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 18.335,
+          "phase": "depart",
+          "foot": {
+            "x": 585.1465320912795,
+            "y": 541.739025972765
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.21506323324348103,
+            "cycle": 0.34821428571428603,
+            "hand": {
+              "x": 45.02039879388339,
+              "y": -27.976554544234112
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 328.3477090894968,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 18.335,
+          "phase": "depart",
+          "foot": {
+            "x": 585.1465320912795,
+            "y": 541.739025972765
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.21506323324348103,
+            "cycle": 0.34821428571428603,
+            "hand": {
+              "x": 45.02039879388339,
+              "y": -27.976554544234112
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 328.3477090894968,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 70,
+      "elapsed": 2.9166666666666665,
+      "sampled": false,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 18.37666666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 584.492698622976,
+            "y": 538.5541731970137
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.2281496571408101,
+            "cycle": 0.3630952380952388,
+            "hand": {
+              "x": 44.67661163346447,
+              "y": -27.687330780559343
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 324.78067398065537,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 18.37666666666667,
+          "phase": "depart",
+          "foot": {
+            "x": 584.492698622976,
+            "y": 538.5541731970137
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.2281496571408101,
+            "cycle": 0.3630952380952388,
+            "hand": {
+              "x": 44.67661163346447,
+              "y": -27.687330780559343
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 324.78067398065537,
+            "size": 420
+          }
+        }
+      ]
+    },
+    {
+      "frame": 71,
+      "elapsed": 2.9583333333333335,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": false
+          },
+          "time": 18.418333333333333,
+          "phase": "depart",
+          "foot": {
+            "x": 583.8043261962242,
+            "y": 535.4150852581696
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.2410700781442422,
+            "cycle": 0.37797619047619024,
+            "hand": {
+              "x": 44.333587935593464,
+              "y": -27.406405735632777
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 321.2648954891499,
+            "size": 420
+          }
+        },
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "setting": {
+            "raftContact": true
+          },
+          "time": 18.418333333333333,
+          "phase": "depart",
+          "foot": {
+            "x": 583.8043261962242,
+            "y": 535.4150852581696
+          },
+          "actor": {
+            "state": "paddle-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "armAngle": 0.2410700781442422,
+            "cycle": 0.37797619047619024,
+            "hand": {
+              "x": 44.333587935593464,
+              "y": -27.406405735632777
+            }
+          },
+          "crop": {
+            "x": 300,
+            "y": 321.2648954891499,
+            "size": 420
+          }
+        }
+      ]
+    }
+  ]
+}

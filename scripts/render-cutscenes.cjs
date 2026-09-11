@@ -9,7 +9,7 @@ const {chromium}=require('playwright');
 const {startServer}=require('./serve.cjs');
 const videoProfile=require('./cutscene-video-profile.cjs');
 const root=path.resolve(__dirname,'..');
-const sources=['cutscenes.html','prologue-scenarios-data.js','cutscene-settings.js','cutscene-production.js','cutscene-renderer.js','cutscene-sprites.js','cutscene-fur-palette.js','cutscene-poses.js','cutscene-paddle-rig.js','cutscene-walk-rig.js','cutscene-rig.js','cutscene-cinema.js','cutscene-review-log.js','cutscene-export-catalog.js','cutscene-studio.js'];
+const sources=['cutscenes.html','prologue-scenarios-data.js','cutscene-settings.js','cutscene-production.js','cutscene-water-motion.js','cutscene-renderer.js','cutscene-sprites.js','cutscene-fur-palette.js','cutscene-poses.js','cutscene-paddle-rig.js','cutscene-walk-rig.js','cutscene-rig.js','cutscene-cinema.js','cutscene-review-log.js','cutscene-export-catalog.js','cutscene-studio.js'];
 async function main(){
   const args=process.argv.slice(2),value=(name,otherwise)=>args.find(x=>x.startsWith('--'+name+'='))?.slice(name.length+3)??otherwise;
   const width=Number(value('width',720)),height=width*16/9,fps=24,version=value('version','draft-v01'),selected=value('film',null);

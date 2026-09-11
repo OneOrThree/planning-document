@@ -6,35 +6,36 @@ const videoProfile=require('./cutscene-video-profile.cjs');
 (async()=>{
   const args=process.argv.slice(2),value=(n,d)=>args.find(a=>a.startsWith('--'+n+'='))?.slice(n.length+3)??d;
   const label=value('label',''),filmId=value('film','new-morning-emotion'),phase=value('phase','walk'),paddle=value('paddle',''),walk=value('walk',''),single=args.includes('--single');
-  const cropSize=Number(value('crop',280)),anchor=value('anchor','cat'),water=value('water','');
+  const cropSize=Number(value('crop',280)),anchor=value('anchor','cat'),water=value('water',''),setting=value('setting','');
+  if(setting&&!['raftContact','paddleWeight'].includes(setting))throw Error('setting은 raftContact / paddleWeight입니다.');
   if(!Number.isFinite(cropSize)||cropSize<180||cropSize>720||!['cat','water'].includes(anchor))throw Error('crop은 180~720, anchor는 cat / water입니다.');
-  if(!['packing','walk','walk-blink','boarding','settle','recovery','paddle','blink'].includes(phase))throw Error('비교 구간은 packing / walk / walk-blink / boarding / settle / recovery / paddle / blink입니다.');
+  if(!['packing','walk','walk-blink','dock','boarding','settle','recovery','paddle','blink'].includes(phase))throw Error('비교 구간은 packing / walk / walk-blink / dock / boarding / settle / recovery / paddle / blink입니다.');
   if(!/^[a-z0-9-]+$/.test(label))throw Error('새 --label이 필요합니다.');
   const out=path.join(root,'output/cutscenes/details',label);if(fs.existsSync(out))throw Error('기존 비교 결과는 덮어쓰지 않습니다.');fs.mkdirSync(out,{recursive:true});
   const {server,url}=await startServer({prefix:'/planning-document/'});let browser,ff;
   try{
     browser=await chromium.launch();const page=await browser.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
     await page.goto(url+'cutscenes.html');await page.waitForFunction(()=>window.cutsceneReady);await page.evaluate(()=>CutscenePoses.load());
-    if(water==='compare'){
+    if(water==='compare'&&!await page.evaluate(()=>CutsceneActors.waterMotionIntegrated)){
       await page.addScriptTag({path:path.join(root,'cutscene-water-motion.js')});
       await page.evaluate(()=>{const background=CutsceneActors.background;CutsceneActors.background=(c,img,t)=>{background(c,img,t);if(!CutsceneSettings.waterMotion)return;const scene=img===CutsceneActors.images.coastHome?'home':img===CutsceneActors.images.shore?'shore':null;if(scene)CutsceneWaterMotion.draw(c,scene==='home'?CutsceneActors.images.homeExtended:CutsceneActors.images.shoreExtended,scene,t);};});
     }
-    const duration=await page.evaluate(({filmId,phase,paddle,walk,single,cropSize,anchor,water})=>{
+    const duration=await page.evaluate(({filmId,phase,paddle,walk,single,cropSize,anchor,water,setting})=>{
       const film=CutsceneProduction.films.find(f=>f.id===filmId);if(!film)throw Error('없는 영상 ID');
       const k=film.timing,blinkAt=Math.ceil((k.departureStart+1-3.2)/4.7)*4.7+3.2;
-      const [start,end]={packing:[k.prepareEnd*.44,k.prepareEnd],walk:[k.prepareEnd,k.walkEnd],'walk-blink':[k.prepareEnd+.8,k.prepareEnd+1.3],boarding:[k.walkEnd-.25,k.boardingEnd+.45],settle:[k.boardingEnd,k.departureStart],recovery:[k.boardingEnd+1.15,k.departureStart+.2],paddle:[k.departureStart+.9,k.departureStart+3.9],blink:[blinkAt-.1,blinkAt+.4]}[phase];
+      const [start,end]={packing:[k.prepareEnd*.44,k.prepareEnd],walk:[k.prepareEnd,k.walkEnd],'walk-blink':[k.prepareEnd+.8,k.prepareEnd+1.3],dock:[k.walkEnd-1.5,k.walkEnd+.1],boarding:[k.walkEnd-.25,k.boardingEnd+.45],settle:[k.boardingEnd,k.departureStart],recovery:[k.boardingEnd+1.15,k.departureStart+.2],paddle:[k.departureStart+.9,k.departureStart+3.9],blink:[blinkAt-.1,blinkAt+.4]}[phase];
       const source=document.createElement('canvas');source.width=1440;source.height=2560;
       const output=document.createElement('canvas');output.width=single?420:840;output.height=480;const tileWidth=output.width/2;
       const sheet=document.createElement('canvas');sheet.width=tileWidth*3;sheet.height=1920;const sc=sheet.getContext('2d');sc.fillStyle='#f3ecda';sc.fillRect(0,0,sheet.width,sheet.height);
       const adjacent=[];
       window.walkPoseFrame=(elapsed,sample,frameIndex)=>{
         const c=output.getContext('2d');c.fillStyle='#f3ecda';c.fillRect(0,0,840,480);const time=start+elapsed,states=[];
-        for(const [i,mode] of (single?['poses']:paddle==='rig'||walk==='rig'||water==='compare'?['poses','poses']:['sprite','poses']).entries()){
-          const f={...film,tuning:{...film.tuning,actorMode:mode,waterMotion:water==='compare'&&(single||i===1),paddleRig:paddle==='rig'?(single||i===1):film.tuning.paddleRig,walkRig:walk==='rig'?(single||i===1):single||water==='compare'?film.tuning.walkRig:false}},m=GachisupCinema.render(source,f,time),cam=m.camera;
+        for(const [i,mode] of (single?['poses']:paddle==='rig'||walk==='rig'||water==='compare'||setting?['poses','poses']:['sprite','poses']).entries()){
+          const f={...film,tuning:{...film.tuning,actorMode:mode,waterMotion:water==='compare'?(single||i===1):film.tuning.waterMotion,paddleRig:paddle==='rig'?(single||i===1):film.tuning.paddleRig,walkRig:walk==='rig'?(single||i===1):single||water==='compare'||setting?film.tuning.walkRig:false,...(setting?{[setting]:single||i===1}:{})}},m=GachisupCinema.render(source,f,time),cam=m.camera;
           const x=360+(m.catFoot.x-cam.x)*cam.z,y=640+(m.catFoot.y-cam.y)*cam.z;
           const crop={x:Math.max(0,Math.min(720-cropSize,x-cropSize*(anchor==='water'?.38:120/280))),y:Math.max(0,Math.min(1280-cropSize,y-cropSize*(anchor==='water'?.48:218/280))),size:cropSize};
-          c.drawImage(source,crop.x*2,crop.y*2,cropSize*2,cropSize*2,12+i*420,48,396,396);c.fillStyle='#3c493c';c.font='600 17px system-ui';c.fillText(single?'현재 시연 · '+phase:water==='compare'?(i?'수면 굴절 · 실험':'고정 수면 · 기준'):walk==='rig'?(i?'발 접지 관절 · 실험':'개별 8자세 · 기준'):paddle==='rig'?(i?'앞발 국소 관절 · 실험':'고정 앞발 · 기준'):(i?'개별 자세 · 실험':'기존 아틀라스 · 기준'),15+i*420,29);
-          states.push({mode,paddleRig:f.tuning.paddleRig,walkRig:f.tuning.walkRig,time,phase:m.phase,foot:m.catFoot,actor:m.actorState,crop});
+          c.drawImage(source,crop.x*2,crop.y*2,cropSize*2,cropSize*2,12+i*420,48,396,396);c.fillStyle='#3c493c';c.font='600 17px system-ui';c.fillText(setting?(setting==='raftContact'?'뗏목 수면 접촉':'상체 체중 이동')+(i||single?' · 수정':' · 기준'):single?'현재 시연 · '+phase:water==='compare'?(i?'수면 굴절 · 실험':'고정 수면 · 기준'):walk==='rig'?(i?'발 접지 관절 · 실험':'개별 8자세 · 기준'):paddle==='rig'?(i?'앞발 국소 관절 · 실험':'고정 앞발 · 기준'):(i?'개별 자세 · 실험':'기존 아틀라스 · 기준'),15+i*420,29);
+          states.push({mode,paddleRig:f.tuning.paddleRig,walkRig:f.tuning.walkRig,setting:setting?{[setting]:f.tuning[setting]}:null,time,phase:m.phase,foot:m.catFoot,actor:m.actorState,crop});
         }
         c.fillStyle='#3c493c';c.font='15px system-ui';c.fillText(film.id+' · '+time.toFixed(3)+'s · 실제 속도',15,470);
         if(sample>=0)sc.drawImage(output,0,0,output.width,480,(sample%3)*tileWidth,Math.floor(sample/3)*240,tileWidth,240);
@@ -45,7 +46,7 @@ const videoProfile=require('./cutscene-video-profile.cjs');
       };
       window.walkAdjacentSheets=()=>adjacent.map(c=>c.toDataURL('image/png').split(',')[1]);
       window.walkPoseSheet=()=>sheet.toDataURL('image/png').split(',')[1];return end-start;
-    },{filmId,phase,paddle,walk,single,cropSize,anchor,water});
+    },{filmId,phase,paddle,walk,single,cropSize,anchor,water,setting});
     const fps=24,frames=Math.round(duration*fps),dest=path.join(out,'comparison.mp4'),sampleFrames=new Map(Array.from({length:24},(_,i)=>[Math.round(i*(frames-1)/23),i]));
     ff=spawn('ffmpeg',['-hide_banner','-loglevel','error','-y','-f','image2pipe','-vcodec','mjpeg','-framerate',String(fps),'-i','pipe:0','-an',...videoProfile.args,'-c:v','libx264','-crf','18','-pix_fmt','yuv420p','-movflags','+faststart',dest]);
     let stderr='';ff.stderr.on('data',d=>{stderr+=d;});const done=new Promise((resolve,reject)=>{ff.on('error',reject);ff.on('close',code=>code?reject(Error(stderr)):resolve());});done.catch(()=>{});ff.stdin.on('error',()=>{});
@@ -59,11 +60,10 @@ const videoProfile=require('./cutscene-video-profile.cjs');
     ff.stdin.end();await done;ff=null;
     fs.writeFileSync(path.join(out,'contact-sheet.png'),Buffer.from(await page.evaluate(()=>walkPoseSheet()),'base64'));
     if(args.includes('--adjacent')){const adjacent=await page.evaluate(()=>walkAdjacentSheets());for(const [i,png]of adjacent.entries())fs.writeFileSync(path.join(out,'adjacent-'+String(i).padStart(2,'0')+'.png'),Buffer.from(png,'base64'));}
-    const hash=crypto.createHash('sha256');for(const file of ['cutscene-cinema.js','cutscene-renderer.js','cutscene-fur-palette.js','cutscene-poses.js','cutscene-paddle-rig.js','cutscene-walk-rig.js','cutscene-sprites.js','cutscene-production.js'])hash.update(file).update(fs.readFileSync(path.join(root,file)));
+    const hash=crypto.createHash('sha256');for(const file of ['cutscene-cinema.js','cutscene-renderer.js','cutscene-water-motion.js','cutscene-fur-palette.js','cutscene-poses.js','cutscene-paddle-rig.js','cutscene-walk-rig.js','cutscene-sprites.js','cutscene-production.js'])hash.update(file).update(fs.readFileSync(path.join(root,file)));
     hash.update('encoder-profile').update(JSON.stringify(videoProfile));
-    if(water==='compare')hash.update('cutscene-water-motion.js').update(fs.readFileSync(path.join(root,'cutscene-water-motion.js')));
     const assets=dir=>{for(const e of fs.readdirSync(dir,{withFileTypes:true}).sort((a,b)=>a.name.localeCompare(b.name))){const file=path.join(dir,e.name);if(e.isDirectory())assets(file);else hash.update(path.relative(root,file)).update(fs.readFileSync(file));}};assets(path.join(root,'assets/cutscenes'));
-    fs.writeFileSync(path.join(out,'frames.json'),JSON.stringify({filmId,phase,single,water:water||null,cropSize,anchor,duration:frames/fps,fps,frames,videoProfile,fingerprint:hash.digest('hex'),status:'unreviewed-experiment',note:'실제 속도의 선택 구간. 전체 컷신이나 동작의 자동 통과 판정이 아니다. 연락표는 24개 시간 표본.',errors,states},null,2)+'\n');
+    fs.writeFileSync(path.join(out,'frames.json'),JSON.stringify({filmId,phase,single,water:water||null,setting:setting||null,cropSize,anchor,duration:frames/fps,fps,frames,videoProfile,fingerprint:hash.digest('hex'),status:'unreviewed-experiment',note:'실제 속도의 선택 구간. 전체 컷신이나 동작의 자동 통과 판정이 아니다. 연락표는 24개 시간 표본.',errors,states},null,2)+'\n');
     console.log(JSON.stringify({filmId,duration:frames/fps,frames,path:path.relative(root,dest),errors}));if(errors.length)process.exitCode=1;
   }finally{if(ff)ff.kill('SIGTERM');if(browser)await browser.close();await new Promise(r=>server.close(r));}
 })().catch(e=>{console.error(e);process.exitCode=1;});
