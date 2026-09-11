@@ -34,6 +34,7 @@
       const archived=versions.indexOf(version)>=CutsceneExportCatalog.inlineCount;
       if(version==='draft-v08')document.getElementById('export-note').textContent='여덟 번째 초안 · 1080 × 1920. 같은 얼굴을 유지하며 발을 딛고 걸어요. 갑판에 착지한 뒤 앞발로 무게를 받고, 몸을 세운 다음 짐을 정리해요. 보행은 국소 관절, 도약·착지는 개별 원화 방식이에요.';
       if(version==='draft-v09')document.getElementById('export-note').textContent='아홉 번째 초안 · 1080 × 1920. 걷는 중 눈을 자연스럽게 깜빡여요. 얼굴 바탕과 눈을 분리해 색 자국을 없애고, 딛는 발 아래의 작은 그림자와 부드러운 몸 그림자로 바닥 접촉을 맞췄어요. 자세 사이의 털색은 계속 보완 중이에요.';
+      if(version==='draft-v10')document.getElementById('export-note').textContent='열 번째 초안 · 1080 × 1920. 30개 파츠의 털·외곽선·동공 색을 기준 고양이에 맞춰 걷기·착지·노 젓기 사이의 붉고 밝은 변화를 줄였어요. 원본 그림·알파·등록점은 유지하며, 소품 재질과 자세 연결은 계속 개선 중이에요.';
       if(archived)document.getElementById('export-note').textContent+=' 초기 버전 보관본입니다. 원본 MP4를 GitHub에서 내려받아 비교할 수 있어요.';
       grid.innerHTML=batch.films.map(f=>{
         const original='https://github.com/OneOrThree/planning-document/blob/main/'+f.path+'?raw=1';

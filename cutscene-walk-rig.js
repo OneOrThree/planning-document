@@ -1,7 +1,7 @@
 /* 검토 40 이후 시연 보행: 같은 머리·몸체와 분리한 발 레이어. 완성형 전신 리깅은 아니다. */
 (() => {
   const base='assets/cutscenes/poses-black/',images={};
-  const ready=Promise.all(Object.entries({body:'walk-body-no-eyes-v1.png',open:'walk-eyes-open-layer-v1.png',half:'walk-eyes-half-layer-v1.png',closed:'walk-eyes-closed-layer-v1.png',leg:'walk-leg-soft-root-v2.png',farLeg:'walk-front-paw-layer-v1.png'}).map(([key,file])=>new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>{images[key]=im;resolve();};im.onerror=()=>reject(Error('보행 레이어 로드 실패: '+file));im.src=base+file;}))).then(()=>{
+  const ready=Promise.all(Object.entries({body:'walk-body-no-eyes-v1.png',open:'walk-eyes-open-layer-v1.png',half:'walk-eyes-half-layer-v1.png',closed:'walk-eyes-closed-layer-v1.png',leg:'walk-leg-soft-root-v2.png',farLeg:'walk-front-paw-layer-v1.png'}).map(([key,file])=>new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>{images[key]=CutsceneFurPalette.prepare(im,file);resolve();};im.onerror=()=>reject(Error('보행 레이어 로드 실패: '+file));im.src=base+file;}))).then(()=>{
     // 원화는 보존하고 관절이 몸통과 겹치는 구간만 런타임 합성 마스크로 잇는다.
     const layer=document.createElement('canvas');layer.width=images.leg.width;layer.height=images.leg.height;
     const c=layer.getContext('2d');c.drawImage(images.leg,0,0);c.globalCompositeOperation='destination-in';

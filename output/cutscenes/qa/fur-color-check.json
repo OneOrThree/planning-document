@@ -1,0 +1,726 @@
+{
+  "result": "PASS",
+  "enabled": true,
+  "unchangedNeutral": true,
+  "unchangedUnlisted": true,
+  "records": [
+    {
+      "file": "neutral-blink-half-v1.png",
+      "alphaChanges": 0,
+      "furMedian": [
+        77,
+        68,
+        68
+      ],
+      "lineMedian": [
+        43,
+        0,
+        0
+      ],
+      "meanWhiteDifference": 1.2984428052921533,
+      "whiteSamples": 2847,
+      "profile": {
+        "redMix": 0.8504867471463058,
+        "gamma": [
+          1.062899586013061,
+          1.0681347302654447,
+          1.0681347302654447
+        ]
+      }
+    },
+    {
+      "file": "neutral-blink-closed-v1.png",
+      "alphaChanges": 0,
+      "furMedian": [
+        76,
+        68,
+        68
+      ],
+      "lineMedian": [
+        42,
+        0,
+        0
+      ],
+      "meanWhiteDifference": 1.1465798045602609,
+      "whiteSamples": 307,
+      "profile": {
+        "redMix": 0.8479982274186568,
+        "gamma": [
+          1.0723601531317448,
+          1.0681347302654447,
+          1.0798219121672237
+        ]
+      }
+    },
+    {
+      "file": "jump-crouch-mid-v1.png",
+      "alphaChanges": 0,
+      "furMedian": [
+        77,
+        68,
+        68
+      ],
+      "lineMedian": [
+        42,
+        0,
+        0
+      ],
+      "meanWhiteDifference": 1.096659272702821,
+      "whiteSamples": 4959,
+      "profile": {
+        "redMix": 0.9659292549511065,
+        "gamma": [
+          1.1090938161393842,
+          1.0798219121672237,
+          1.0798219121672237
+        ]
+      }
+    },
+    {
+      "file": "jump-crouch-v1.png",
+      "alphaChanges": 0,
+      "furMedian": [
+        77,
+        68,
+        68
+      ],
+      "lineMedian": [
+        42,
+        0,
+        0
+      ],
+      "meanWhiteDifference": 0.9637123971401502,
+      "whiteSamples": 4942,
+      "profile": {
+        "redMix": 1.0471845456211213,
+        "gamma": [
+          1.0954934127562652,
+          1.0681347302654447,
+          1.0681347302654447
+        ]
+      }
+    },
+    {
+      "file": "jump-takeoff-v1.png",
+      "alphaChanges": 0,
+      "furMedian": [
+        76,
+        68,
+        68
+      ],
+      "lineMedian": [
+        43,
+        0,
+        0
+      ],
+      "meanWhiteDifference": 0.8997604959143314,
+      "whiteSamples": 4732,
+      "profile": {
+        "redMix": 1.0374737487898074,
+        "gamma": [
+          1.1313787025859985,
+          1.0681347302654447,
+          1.0681347302654447
+        ]
+      }
+    },
+    {
+      "file": "jump-air-v1.png",
+      "alphaChanges": 0,
+      "furMedian": [
+        77,
+        68,
+        69
+      ],
+      "lineMedian": [
+        43,
+        0,
+        0
+      ],
+      "meanWhiteDifference": 0.9266092660926549,
+      "whiteSamples": 4878,
+      "profile": {
+        "redMix": 1.0544449033329784,
+        "gamma": [
+          1.085933812676737,
+          1.033654674237811,
+          1.0450533671663422
+        ]
+      }
+    },
+    {
+      "file": "jump-landing-reach-v1.png",
+      "alphaChanges": 0,
+      "furMedian": [
+        76,
+        68,
+        68
+      ],
+      "lineMedian": [
+        43,
+        0,
+        0
+      ],
+      "meanWhiteDifference": 0.891373801916921,
+      "whiteSamples": 4695,
+      "profile": {
+        "redMix": 1.1472604324869735,
+        "gamma": [
+          1.1280220421706066,
+          1.022347675131917,
+          1.033654674237811
+        ]
+      }
+    },
+    {
+      "file": "reach-low-v1.png",
+      "alphaChanges": 0,
+      "furMedian": [
+        77,
+        69,
+        69
+      ],
+      "lineMedian": [
+        43,
+        0,
+        0
+      ],
+      "meanWhiteDifference": 1.2972860990262556,
+      "whiteSamples": 4827,
+      "profile": {
+        "redMix": 0.8638117386042268,
+        "gamma": [
+          1.0611606644995575,
+          1.0450533671663422,
+          1.0450533671663422
+        ]
+      }
+    },
+    {
+      "file": "reach-pull-v1.png",
+      "alphaChanges": 0,
+      "furMedian": [
+        76,
+        69,
+        68
+      ],
+      "lineMedian": [
+        42,
+        0,
+        0
+      ],
+      "meanWhiteDifference": 1.3082896117523395,
+      "whiteSamples": 4765,
+      "profile": {
+        "redMix": 0.9231781585938279,
+        "gamma": [
+          1.0792607598364712,
+          1.0450533671663422,
+          1.056545971663968
+        ]
+      }
+    },
+    {
+      "file": "reach-forward-v1.png",
+      "alphaChanges": 0,
+      "furMedian": [
+        77,
+        68,
+        69
+      ],
+      "lineMedian": [
+        43,
+        0,
+        0
+      ],
+      "meanWhiteDifference": 1.2883375385477487,
+      "whiteSamples": 4756,
+      "profile": {
+        "redMix": 0.8813045308299934,
+        "gamma": [
+          1.0620012927906932,
+          1.033654674237811,
+          1.0450533671663422
+        ]
+      }
+    },
+    {
+      "file": "reach-low-blink-half-v1.png",
+      "alphaChanges": 0,
+      "furMedian": [
+        77,
+        68,
+        68
+      ],
+      "lineMedian": [
+        43,
+        0,
+        0
+      ],
+      "meanWhiteDifference": 1.2350710900473851,
+      "whiteSamples": 2110,
+      "profile": {
+        "redMix": 0.8873435739217257,
+        "gamma": [
+          1.0427385262809985,
+          1.033654674237811,
+          1.056545971663968
+        ]
+      }
+    },
+    {
+      "file": "reach-low-blink-closed-v1.png",
+      "alphaChanges": 0,
+      "furMedian": [
+        77,
+        68,
+        68
+      ],
+      "lineMedian": [
+        43,
+        0,
+        0
+      ],
+      "meanWhiteDifference": 1.1030126336248791,
+      "whiteSamples": 343,
+      "profile": {
+        "redMix": 0.9034730042710635,
+        "gamma": [
+          1.0776428832237375,
+          1.056545971663968,
+          1.0681347302654447
+        ]
+      }
+    },
+    {
+      "file": "place-rise-start-v1.png",
+      "alphaChanges": 0,
+      "furMedian": [
+        77,
+        68,
+        68
+      ],
+      "lineMedian": [
+        42,
+        0,
+        0
+      ],
+      "meanWhiteDifference": 0.9602589863808817,
+      "whiteSamples": 4479,
+      "profile": {
+        "redMix": 0.783184700265565,
+        "gamma": [
+          1.2488180709197332,
+          1.2026290359336735,
+          1.215558138587676
+        ]
+      }
+    },
+    {
+      "file": "place-rise-early-v1.png",
+      "alphaChanges": 0,
+      "furMedian": [
+        77,
+        68,
+        68
+      ],
+      "lineMedian": [
+        42,
+        0,
+        0
+      ],
+      "meanWhiteDifference": 0.9568728926527027,
+      "whiteSamples": 4251,
+      "profile": {
+        "redMix": 0.8502894127680065,
+        "gamma": [
+          1.2376288156473965,
+          1.1898256136802219,
+          1.1898256136802219
+        ]
+      }
+    },
+    {
+      "file": "place-rise-mid-v1.png",
+      "alphaChanges": 0,
+      "furMedian": [
+        76,
+        69,
+        69
+      ],
+      "lineMedian": [
+        43,
+        0,
+        0
+      ],
+      "meanWhiteDifference": 1.3385356005901066,
+      "whiteSamples": 4293,
+      "profile": {
+        "redMix": 0.9339968393785512,
+        "gamma": [
+          1.2017125451410202,
+          1.1521427968809859,
+          1.1398156941571256
+        ]
+      }
+    },
+    {
+      "file": "place-rise-late-v1.png",
+      "alphaChanges": 0,
+      "furMedian": [
+        76,
+        68,
+        69
+      ],
+      "lineMedian": [
+        42,
+        0,
+        0
+      ],
+      "meanWhiteDifference": 1.930695333943265,
+      "whiteSamples": 4372,
+      "profile": {
+        "redMix": 0.8645962328153018,
+        "gamma": [
+          1.2029659423694081,
+          1.1645851105230818,
+          1.1521427968809859
+        ]
+      }
+    },
+    {
+      "file": "place-rise-end-v1.png",
+      "alphaChanges": 0,
+      "furMedian": [
+        77,
+        69,
+        68
+      ],
+      "lineMedian": [
+        42,
+        1,
+        0
+      ],
+      "meanWhiteDifference": 0.9483459489767349,
+      "whiteSamples": 4756,
+      "profile": {
+        "redMix": 0.8688289671065377,
+        "gamma": [
+          1.0074873119412235,
+          1,
+          1.0111301750031272
+        ]
+      }
+    },
+    {
+      "file": "jump-touchdown-soft-v2.png",
+      "alphaChanges": 0,
+      "furMedian": [
+        77,
+        69,
+        68
+      ],
+      "lineMedian": [
+        42,
+        0,
+        0
+      ],
+      "meanWhiteDifference": 0.8812765334504337,
+      "whiteSamples": 4554,
+      "profile": {
+        "redMix": 1.1849429325918663,
+        "gamma": [
+          1.2506319052278208,
+          1.0450533671663422,
+          1.0681347302654447
+        ]
+      }
+    },
+    {
+      "file": "jump-recover-mid-v2.png",
+      "alphaChanges": 0,
+      "furMedian": [
+        77,
+        68,
+        68
+      ],
+      "lineMedian": [
+        42,
+        0,
+        0
+      ],
+      "meanWhiteDifference": 0.955082742316785,
+      "whiteSamples": 3807,
+      "profile": {
+        "redMix": 1.0798186706499564,
+        "gamma": [
+          1.2204904118185724,
+          1.056545971663968,
+          1.0798219121672237
+        ]
+      }
+    },
+    {
+      "file": "jump-recover-late-v1.png",
+      "alphaChanges": 0,
+      "furMedian": [
+        76,
+        68,
+        69
+      ],
+      "lineMedian": [
+        43,
+        0,
+        0
+      ],
+      "meanWhiteDifference": 1.5620035304501936,
+      "whiteSamples": 4532,
+      "profile": {
+        "redMix": 0.878141545468452,
+        "gamma": [
+          1.1305174652732846,
+          1.0916098150920532,
+          1.1035007671497095
+        ]
+      }
+    },
+    {
+      "file": "walk-body-no-eyes-v1.png",
+      "alphaChanges": 0,
+      "furMedian": [
+        76,
+        68,
+        69
+      ],
+      "lineMedian": [
+        42,
+        0,
+        0
+      ],
+      "meanWhiteDifference": 0,
+      "whiteSamples": 0,
+      "profile": {
+        "redMix": 0.7690342172702458,
+        "gamma": [
+          1.1900665780434563,
+          1.1771451849436403,
+          1.268586876158255
+        ]
+      }
+    },
+    {
+      "file": "walk-leg-soft-root-v2.png",
+      "alphaChanges": 0,
+      "furMedian": [
+        77,
+        69,
+        69
+      ],
+      "lineMedian": [
+        43,
+        0,
+        0
+      ],
+      "meanWhiteDifference": 1.0519125683060104,
+      "whiteSamples": 122,
+      "profile": {
+        "redMix": 1.1537846026405987,
+        "gamma": [
+          1.2117457956272795,
+          1.0450533671663422,
+          1.115497128698552
+        ]
+      }
+    },
+    {
+      "file": "walk-front-paw-layer-v1.png",
+      "alphaChanges": 0,
+      "furMedian": [
+        76,
+        68,
+        68
+      ],
+      "lineMedian": [
+        42,
+        0,
+        0
+      ],
+      "meanWhiteDifference": 0.9475308641975305,
+      "whiteSamples": 108,
+      "profile": {
+        "redMix": 1.026240386256859,
+        "gamma": [
+          1.0823071789686627,
+          1.022347675131917,
+          1.056545971663968
+        ]
+      }
+    },
+    {
+      "file": "paddle-body-base-v1.png",
+      "alphaChanges": 0,
+      "furMedian": [
+        77,
+        68,
+        68
+      ],
+      "lineMedian": [
+        42,
+        0,
+        0
+      ],
+      "meanWhiteDifference": 2.2989690721649785,
+      "whiteSamples": 4753,
+      "profile": {
+        "redMix": 0.8340641378279088,
+        "gamma": [
+          1.2215387107275675,
+          1.1771451849436403,
+          1.1645851105230818
+        ]
+      }
+    },
+    {
+      "file": "paddle-body-blink-half-v1.png",
+      "alphaChanges": 0,
+      "furMedian": [
+        76,
+        68,
+        68
+      ],
+      "lineMedian": [
+        43,
+        0,
+        0
+      ],
+      "meanWhiteDifference": 2.4189371980676304,
+      "whiteSamples": 1725,
+      "profile": {
+        "redMix": 0.8946131808918381,
+        "gamma": [
+          1.2563837387465553,
+          1.1771451849436403,
+          1.1771451849436403
+        ]
+      }
+    },
+    {
+      "file": "paddle-body-blink-closed-v1.png",
+      "alphaChanges": 0,
+      "furMedian": [
+        76,
+        68,
+        68
+      ],
+      "lineMedian": [
+        43,
+        0,
+        0
+      ],
+      "meanWhiteDifference": 1.896124031007752,
+      "whiteSamples": 215,
+      "profile": {
+        "redMix": 0.8946131808918381,
+        "gamma": [
+          1.2563837387465553,
+          1.1771451849436403,
+          1.1771451849436403
+        ]
+      }
+    },
+    {
+      "file": "paddle-arm-layer-v1.png",
+      "alphaChanges": 0,
+      "furMedian": [
+        76,
+        68,
+        68
+      ],
+      "lineMedian": [
+        43,
+        0,
+        0
+      ],
+      "meanWhiteDifference": 1.4289617486338804,
+      "whiteSamples": 122,
+      "profile": {
+        "redMix": 0.8294687906375202,
+        "gamma": [
+          1.1028929147361937,
+          1.033654674237811,
+          1.0798219121672237
+        ]
+      }
+    },
+    {
+      "file": "walk-eyes-open-layer-v1.png",
+      "alphaChanges": 0,
+      "furMedian": [
+        54,
+        76,
+        81
+      ],
+      "lineMedian": [
+        42,
+        3,
+        1
+      ],
+      "meanWhiteDifference": 0.41566052390028896,
+      "whiteSamples": 4721,
+      "profile": {
+        "redMix": 1,
+        "gamma": [
+          1.8221265770264963,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "file": "walk-eyes-half-layer-v1.png",
+      "alphaChanges": 0,
+      "furMedian": [
+        81,
+        84,
+        85
+      ],
+      "lineMedian": [
+        42,
+        2,
+        1
+      ],
+      "meanWhiteDifference": 0.42646867265859545,
+      "whiteSamples": 2559,
+      "profile": {
+        "redMix": 1,
+        "gamma": [
+          1.5521809320081195,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "file": "walk-eyes-closed-layer-v1.png",
+      "alphaChanges": 0,
+      "furMedian": null,
+      "lineMedian": [
+        42,
+        1,
+        0
+      ],
+      "meanWhiteDifference": 0,
+      "whiteSamples": 0,
+      "profile": {
+        "redMix": 1,
+        "gamma": [
+          1.6030155749222512,
+          1,
+          1
+        ]
+      }
+    }
+  ],
+  "sourceComparisonAvailable": true,
+  "errors": []
+}

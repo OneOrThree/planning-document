@@ -377,7 +377,7 @@
     ],
     "feetStable": true,
     "changedOutsideEyes": 0,
-    "changedInsideEyes": 14580,
+    "changedInsideEyes": 14234,
     "actualFilms": [
       {
         "id": "new-morning-emotion",
@@ -426,10 +426,10 @@
       }
     ]
   },
-  "exportedVersion": "draft-v09",
+  "exportedVersion": "draft-v10",
   "exportedPlayback": {
     "duration": 24,
-    "time": 0.652578,
+    "time": 0.65396,
     "width": 1080,
     "height": 1920
   },

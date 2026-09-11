@@ -4,7 +4,7 @@
   function load(){
     if(loaded)return loaded;
     loaded=fetch(base+'walk-v1.json').then(r=>{if(!r.ok)throw Error('보행 자세 명세 로드 실패');return r.json();}).then(async spec=>{
-      data=spec;await Promise.all([spec.neutral,...spec.frames,...(spec.blink||[]),...(spec.jump||[]),...(spec.reach||[]),...(spec.reachBlink||[]),...(spec.recovery||[]),...(spec.landing||[])].map(f=>new Promise((resolve,reject)=>{const img=new Image();img.onload=()=>{images.set(f.file,img);resolve();};img.onerror=()=>reject(Error('개별 자세 로드 실패: '+f.file));img.src=base+f.file;})));return spec;
+      data=spec;await Promise.all([spec.neutral,...spec.frames,...(spec.blink||[]),...(spec.jump||[]),...(spec.reach||[]),...(spec.reachBlink||[]),...(spec.recovery||[]),...(spec.landing||[])].map(f=>new Promise((resolve,reject)=>{const img=new Image();img.onload=()=>{images.set(f.file,CutsceneFurPalette.prepare(img,f.file));resolve();};img.onerror=()=>reject(Error('개별 자세 로드 실패: '+f.file));img.src=base+f.file;})));return spec;
     });return loaded;
   }
   function draw(c,x,foot,size,time,options={}){

@@ -1,7 +1,7 @@
 /* 같은 전신에서 움직이는 앞발만 분리한 국소 관절 실험. 전체 몸 파츠 실험과 별개다. */
 (() => {
   const base='assets/cutscenes/poses-black/',images={};
-  const ready=Promise.all(Object.entries({body:'paddle-body-base-v1.png',half:'paddle-body-blink-half-v1.png',closed:'paddle-body-blink-closed-v1.png',arm:'paddle-arm-layer-v1.png'}).map(([key,file])=>new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>{images[key]=im;resolve();};im.onerror=()=>reject(Error('노 젓기 레이어 로드 실패: '+file));im.src=base+file;})));
+  const ready=Promise.all(Object.entries({body:'paddle-body-base-v1.png',half:'paddle-body-blink-half-v1.png',closed:'paddle-body-blink-closed-v1.png',arm:'paddle-arm-layer-v1.png'}).map(([key,file])=>new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>{images[key]=CutsceneFurPalette.prepare(im,file);resolve();};im.onerror=()=>reject(Error('노 젓기 레이어 로드 실패: '+file));im.src=base+file;})));
   const clamp=x=>Math.max(0,Math.min(1,x)),ease=x=>{const p=clamp(x);return p*p*(3-2*p);};
   function motionAt(time){
     const cycle=((time/2.8)%1+1)%1,stroke=cycle<.64?ease(cycle/.64):1-ease((cycle-.64)/.36),lift=cycle<.64?0:Math.sin((cycle-.64)/.36*Math.PI);

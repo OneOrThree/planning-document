@@ -24,7 +24,7 @@ async function main(){
       }return results;
     },{phase,actor});
     const hash=crypto.createHash('sha256');
-    for(const f of ['cutscene-cinema.js','cutscene-renderer.js','cutscene-production.js','cutscene-sprites.js','cutscene-poses.js','cutscene-paddle-rig.js','cutscene-walk-rig.js','cutscene-rig.js'])hash.update(f).update(fs.readFileSync(path.join(root,f)));
+    for(const f of ['cutscene-cinema.js','cutscene-renderer.js','cutscene-production.js','cutscene-sprites.js','cutscene-fur-palette.js','cutscene-poses.js','cutscene-paddle-rig.js','cutscene-walk-rig.js','cutscene-rig.js'])hash.update(f).update(fs.readFileSync(path.join(root,f)));
     function hashAssets(dir){for(const item of fs.readdirSync(dir,{withFileTypes:true}).sort((a,b)=>a.name.localeCompare(b.name))){const f=path.join(dir,item.name);if(item.isDirectory())hashAssets(f);else hash.update(path.relative(root,f)).update(fs.readFileSync(f));}}
     hashAssets(path.join(root,'assets/cutscenes'));const fingerprint=hash.digest('hex');
     for(const r of data){fs.writeFileSync(path.join(out,`direction-${r.direction}.png`),Buffer.from(r.png,'base64'));delete r.png;}

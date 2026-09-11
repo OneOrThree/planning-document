@@ -1,0 +1,420 @@
+[
+  {
+    "file": "neutral-forward-v1.png",
+    "samples": 17976,
+    "outline": [
+      43,
+      1,
+      0
+    ],
+    "fur": null
+  },
+  {
+    "file": "neutral-blink-half-v1.png",
+    "samples": 17092,
+    "outline": [
+      56,
+      1,
+      0
+    ],
+    "fur": [
+      84,
+      75,
+      75
+    ]
+  },
+  {
+    "file": "neutral-blink-closed-v1.png",
+    "samples": 16406,
+    "outline": [
+      57,
+      1,
+      0
+    ],
+    "fur": [
+      85,
+      75,
+      76
+    ]
+  },
+  {
+    "file": "jump-crouch-mid-v1.png",
+    "samples": 18045,
+    "outline": [
+      53,
+      1,
+      0
+    ],
+    "fur": [
+      87,
+      76,
+      76
+    ]
+  },
+  {
+    "file": "jump-crouch-v1.png",
+    "samples": 17187,
+    "outline": [
+      48,
+      1,
+      0
+    ],
+    "fur": [
+      85,
+      75,
+      75
+    ]
+  },
+  {
+    "file": "jump-takeoff-v1.png",
+    "samples": 17313,
+    "outline": [
+      51,
+      1,
+      0
+    ],
+    "fur": [
+      88,
+      75,
+      75
+    ]
+  },
+  {
+    "file": "jump-air-v1.png",
+    "samples": 16931,
+    "outline": [
+      47,
+      1,
+      0
+    ],
+    "fur": [
+      84,
+      72,
+      73
+    ]
+  },
+  {
+    "file": "jump-landing-reach-v1.png",
+    "samples": 17259,
+    "outline": [
+      46,
+      1,
+      0
+    ],
+    "fur": [
+      86,
+      71,
+      72
+    ]
+  },
+  {
+    "file": "reach-low-v1.png",
+    "samples": 17615,
+    "outline": [
+      55,
+      1,
+      0
+    ],
+    "fur": [
+      84,
+      73,
+      73
+    ]
+  },
+  {
+    "file": "reach-pull-v1.png",
+    "samples": 17574,
+    "outline": [
+      53,
+      1,
+      0
+    ],
+    "fur": [
+      85,
+      73,
+      74
+    ]
+  },
+  {
+    "file": "reach-forward-v1.png",
+    "samples": 17894,
+    "outline": [
+      54,
+      1,
+      0
+    ],
+    "fur": [
+      84,
+      72,
+      73
+    ]
+  },
+  {
+    "file": "reach-low-blink-half-v1.png",
+    "samples": 17580,
+    "outline": [
+      52,
+      1,
+      0
+    ],
+    "fur": [
+      82,
+      72,
+      74
+    ]
+  },
+  {
+    "file": "reach-low-blink-closed-v1.png",
+    "samples": 16096,
+    "outline": [
+      54,
+      1,
+      0
+    ],
+    "fur": [
+      85,
+      74,
+      75
+    ]
+  },
+  {
+    "file": "place-rise-start-v1.png",
+    "samples": 17668,
+    "outline": [
+      78,
+      1,
+      0
+    ],
+    "fur": [
+      101,
+      86,
+      87
+    ]
+  },
+  {
+    "file": "place-rise-early-v1.png",
+    "samples": 17547,
+    "outline": [
+      71,
+      1,
+      0
+    ],
+    "fur": [
+      99,
+      85,
+      85
+    ]
+  },
+  {
+    "file": "place-rise-mid-v1.png",
+    "samples": 17480,
+    "outline": [
+      62,
+      1,
+      0
+    ],
+    "fur": [
+      95,
+      82,
+      81
+    ]
+  },
+  {
+    "file": "place-rise-late-v1.png",
+    "samples": 17717,
+    "outline": [
+      67,
+      1,
+      0
+    ],
+    "fur": [
+      96,
+      83,
+      82
+    ]
+  },
+  {
+    "file": "place-rise-end-v1.png",
+    "samples": 18236,
+    "outline": [
+      50,
+      1,
+      0
+    ],
+    "fur": [
+      79,
+      69,
+      70
+    ]
+  },
+  {
+    "file": "jump-touchdown-soft-v2.png",
+    "samples": 17631,
+    "outline": [
+      52,
+      1,
+      0
+    ],
+    "fur": [
+      94,
+      73,
+      75
+    ]
+  },
+  {
+    "file": "jump-recover-mid-v2.png",
+    "samples": 17107,
+    "outline": [
+      55,
+      1,
+      0
+    ],
+    "fur": [
+      94,
+      74,
+      76
+    ]
+  },
+  {
+    "file": "jump-recover-late-v1.png",
+    "samples": 17519,
+    "outline": [
+      60,
+      1,
+      0
+    ],
+    "fur": [
+      90,
+      77,
+      78
+    ]
+  },
+  {
+    "file": "walk-body-no-eyes-v1.png",
+    "samples": 11420,
+    "outline": [
+      74,
+      1,
+      0
+    ],
+    "fur": [
+      96,
+      84,
+      91
+    ]
+  },
+  {
+    "file": "walk-leg-soft-root-v2.png",
+    "samples": 1405,
+    "outline": [
+      51,
+      1,
+      0
+    ],
+    "fur": [
+      92,
+      73,
+      79
+    ]
+  },
+  {
+    "file": "walk-front-paw-layer-v1.png",
+    "samples": 1863,
+    "outline": [
+      48,
+      1,
+      0
+    ],
+    "fur": [
+      84,
+      71,
+      74
+    ]
+  },
+  {
+    "file": "paddle-body-base-v1.png",
+    "samples": 16819,
+    "outline": [
+      71,
+      1,
+      0
+    ],
+    "fur": [
+      98,
+      84,
+      83
+    ]
+  },
+  {
+    "file": "paddle-body-blink-half-v1.png",
+    "samples": 16705,
+    "outline": [
+      69,
+      1,
+      0
+    ],
+    "fur": [
+      100,
+      84,
+      84
+    ]
+  },
+  {
+    "file": "paddle-body-blink-closed-v1.png",
+    "samples": 15204,
+    "outline": [
+      69,
+      1,
+      0
+    ],
+    "fur": [
+      100,
+      84,
+      84
+    ]
+  },
+  {
+    "file": "paddle-arm-layer-v1.png",
+    "samples": 2234,
+    "outline": [
+      61,
+      1,
+      0
+    ],
+    "fur": [
+      89,
+      72,
+      76
+    ]
+  },
+  {
+    "file": "walk-eyes-open-layer-v1.png",
+    "samples": 2248,
+    "outline": [
+      96,
+      3,
+      1
+    ],
+    "fur": null
+  },
+  {
+    "file": "walk-eyes-half-layer-v1.png",
+    "samples": 1480,
+    "outline": [
+      81,
+      2,
+      1
+    ],
+    "fur": null
+  },
+  {
+    "file": "walk-eyes-closed-layer-v1.png",
+    "samples": 765,
+    "outline": [
+      84,
+      1,
+      0
+    ],
+    "fur": null
+  }
+]
