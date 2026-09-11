@@ -1,0 +1,806 @@
+{
+  "filmId": "new-morning-emotion",
+  "phase": "walk-blink",
+  "single": true,
+  "duration": 0.5,
+  "fps": 24,
+  "frames": 12,
+  "fingerprint": "b2ba1f64df69aee886a6a316a68c641b78e5bd4ddd0198f6fe5d7e2f8e59a04e",
+  "status": "unreviewed-experiment",
+  "note": "실제 속도의 선택 구간. 전체 컷신이나 동작의 자동 통과 판정이 아니다. 연락표는 24개 시간 표본.",
+  "errors": [],
+  "states": [
+    {
+      "frame": 0,
+      "elapsed": 0,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 7.6,
+          "phase": "walk",
+          "foot": {
+            "x": 208.4073944890129,
+            "y": 600.6198116498082
+          },
+          "actor": {
+            "state": "walk-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "phase": 0.6084257856619812,
+            "bob": -0.4188227216256496,
+            "feet": [
+              {
+                "id": "far-front",
+                "foot": {
+                  "x": 220.88681746711728,
+                  "y": 601.0551529192328
+                },
+                "stance": true,
+                "step": 0,
+                "phase": 0.6084257856619812,
+                "angle": 0.3963208561260364
+              },
+              {
+                "id": "near-hind",
+                "foot": {
+                  "x": 186.20159057096336,
+                  "y": 588.990080935402
+                },
+                "stance": false,
+                "step": 0,
+                "phase": 0.8584257856619812,
+                "angle": -0.18024607659698297
+              },
+              {
+                "id": "near-front",
+                "foot": {
+                  "x": 215.03439566031722,
+                  "y": 598.8373309179955
+                },
+                "stance": true,
+                "step": 1,
+                "phase": 0.10842578566198124,
+                "angle": -0.24161606328482535
+              }
+            ]
+          },
+          "crop": {
+            "x": 42.21628182769442,
+            "y": 377.8941890477852,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 1,
+      "elapsed": 0.041666666666666664,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 7.641666666666667,
+          "phase": "walk",
+          "foot": {
+            "x": 210.3257760725497,
+            "y": 600.2564818044414
+          },
+          "actor": {
+            "state": "walk-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "phase": 0.649513426508955,
+            "bob": -0.6880875167041055,
+            "feet": [
+              {
+                "id": "far-front",
+                "foot": {
+                  "x": 221.68799207125292,
+                  "y": 599.3302207444242
+                },
+                "stance": false,
+                "step": 0,
+                "phase": 0.649513426508955,
+                "angle": 0.4301192286756626
+              },
+              {
+                "id": "near-hind",
+                "foot": {
+                  "x": 192.74682183618825,
+                  "y": 588.9387706457543
+                },
+                "stance": false,
+                "step": 0,
+                "phase": 0.899513426508955,
+                "angle": -0.31252085446821976
+              },
+              {
+                "id": "near-front",
+                "foot": {
+                  "x": 215.03439566031722,
+                  "y": 598.8373309179955
+                },
+                "stance": true,
+                "step": 1,
+                "phase": 0.14951342650895505,
+                "angle": -0.19167177730937834
+              }
+            ]
+          },
+          "crop": {
+            "x": 44.36486920125566,
+            "y": 377.4872596209743,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 2,
+      "elapsed": 0.08333333333333333,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 7.683333333333333,
+          "phase": "walk",
+          "foot": {
+            "x": 212.24415765608646,
+            "y": 599.8931519590745
+          },
+          "actor": {
+            "state": "walk-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "phase": 0.6906010673559279,
+            "bob": -0.9156144778693558,
+            "feet": [
+              {
+                "id": "far-front",
+                "foot": {
+                  "x": 225.12298512312512,
+                  "y": 596.6640757061231
+                },
+                "stance": false,
+                "step": 0,
+                "phase": 0.6906010673559279,
+                "angle": 0.3843552577739144
+              },
+              {
+                "id": "near-hind",
+                "foot": {
+                  "x": 197.74905695826791,
+                  "y": 589.7292429415202
+                },
+                "stance": false,
+                "step": 0,
+                "phase": 0.9406010673559279,
+                "angle": -0.4037791719263461
+              },
+              {
+                "id": "near-front",
+                "foot": {
+                  "x": 215.03439566031722,
+                  "y": 598.8373309179955
+                },
+                "stance": true,
+                "step": 1,
+                "phase": 0.19060106735592797,
+                "angle": -0.14220741082632057
+              }
+            ]
+          },
+          "crop": {
+            "x": 46.513456574816814,
+            "y": 377.0803301941635,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 3,
+      "elapsed": 0.125,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 7.725,
+          "phase": "walk",
+          "foot": {
+            "x": 214.16253923962327,
+            "y": 599.5298221137077
+          },
+          "actor": {
+            "state": "walk-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": 0,
+            "phase": 0.7316887082029014,
+            "bob": -1.0420830365261555,
+            "feet": [
+              {
+                "id": "far-front",
+                "foot": {
+                  "x": 230.61612855255007,
+                  "y": 594.0182588774654
+                },
+                "stance": false,
+                "step": 0,
+                "phase": 0.7316887082029014,
+                "angle": 0.2795497184944596
+              },
+              {
+                "id": "near-hind",
+                "foot": {
+                  "x": 200.50004384776364,
+                  "y": 591.2970310638151
+                },
+                "stance": false,
+                "step": 0,
+                "phase": 0.9816887082029014,
+                "angle": -0.42900227644686056
+              },
+              {
+                "id": "near-front",
+                "foot": {
+                  "x": 215.03439566031722,
+                  "y": 598.8373309179955
+                },
+                "stance": true,
+                "step": 1,
+                "phase": 0.23168870820290133,
+                "angle": -0.09309124635333171
+              }
+            ]
+          },
+          "crop": {
+            "x": 48.662043948378056,
+            "y": 376.67340076735263,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 4,
+      "elapsed": 0.16666666666666666,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 7.766666666666667,
+          "phase": "walk",
+          "foot": {
+            "x": 216.08092082316008,
+            "y": 599.1664922683409
+          },
+          "actor": {
+            "state": "walk-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": 1,
+            "phase": 0.772776349049875,
+            "bob": -1.0345204549799303,
+            "feet": [
+              {
+                "id": "far-front",
+                "foot": {
+                  "x": 237.45917027008875,
+                  "y": 591.7103815949579
+                },
+                "stance": false,
+                "step": 0,
+                "phase": 0.772776349049875,
+                "angle": 0.13994167297733176
+              },
+              {
+                "id": "near-hind",
+                "foot": {
+                  "x": 200.81484409025055,
+                  "y": 592.2194732507102
+                },
+                "stance": true,
+                "step": 1,
+                "phase": 0.022776349049875133,
+                "angle": -0.3806634820244433
+              },
+              {
+                "id": "near-front",
+                "foot": {
+                  "x": 215.03439566031722,
+                  "y": 598.8373309179955
+                },
+                "stance": true,
+                "step": 1,
+                "phase": 0.27277634904987513,
+                "angle": -0.04419950375415903
+              }
+            ]
+          },
+          "crop": {
+            "x": 50.81063132193927,
+            "y": 376.2664713405418,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 5,
+      "elapsed": 0.20833333333333334,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 7.808333333333333,
+          "phase": "walk",
+          "foot": {
+            "x": 217.99930240669687,
+            "y": 598.8031624229741
+          },
+          "actor": {
+            "state": "walk-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": 1,
+            "phase": 0.8138639898968478,
+            "bob": -0.8948984408255669,
+            "feet": [
+              {
+                "id": "far-front",
+                "foot": {
+                  "x": 244.94385818630207,
+                  "y": 589.99021760774
+                },
+                "stance": false,
+                "step": 0,
+                "phase": 0.8138639898968478,
+                "angle": -0.014729474485336926
+              },
+              {
+                "id": "near-hind",
+                "foot": {
+                  "x": 200.81484409025055,
+                  "y": 592.2194732507102
+                },
+                "stance": true,
+                "step": 1,
+                "phase": 0.06386398989684783,
+                "angle": -0.32402835273745356
+              },
+              {
+                "id": "near-front",
+                "foot": {
+                  "x": 215.03439566031722,
+                  "y": 598.8373309179955
+                },
+                "stance": true,
+                "step": 1,
+                "phase": 0.31386398989684783,
+                "angle": 0.004586638540051803
+              }
+            ]
+          },
+          "crop": {
+            "x": 52.95921869550048,
+            "y": 375.85954191373094,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 6,
+      "elapsed": 0.25,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 7.85,
+          "phase": "walk",
+          "foot": {
+            "x": 219.91768399023368,
+            "y": 598.4398325776073
+          },
+          "actor": {
+            "state": "walk-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": 1,
+            "phase": 0.8549516307438215,
+            "bob": -0.6596190856026044,
+            "feet": [
+              {
+                "id": "far-front",
+                "foot": {
+                  "x": 252.36194021175126,
+                  "y": 589.0264881548152
+                },
+                "stance": false,
+                "step": 0,
+                "phase": 0.8549516307438215,
+                "angle": -0.16788547443501328
+              },
+              {
+                "id": "near-hind",
+                "foot": {
+                  "x": 200.81484409025055,
+                  "y": 592.2194732507102
+                },
+                "stance": true,
+                "step": 1,
+                "phase": 0.10495163074382141,
+                "angle": -0.268451964431122
+              },
+              {
+                "id": "near-front",
+                "foot": {
+                  "x": 215.03439566031722,
+                  "y": 598.8373309179955
+                },
+                "stance": true,
+                "step": 1,
+                "phase": 0.3549516307438214,
+                "angle": 0.05338371080017825
+              }
+            ]
+          },
+          "crop": {
+            "x": 55.107806069061695,
+            "y": 375.4526124869201,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 7,
+      "elapsed": 0.2916666666666667,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 7.891666666666667,
+          "phase": "walk",
+          "foot": {
+            "x": 221.83606557377047,
+            "y": 598.0765027322404
+          },
+          "actor": {
+            "state": "walk-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": 0,
+            "phase": 0.8960392715907951,
+            "bob": -0.39002415320167616,
+            "feet": [
+              {
+                "id": "far-front",
+                "foot": {
+                  "x": 259.00516425699726,
+                  "y": 588.9029098240867
+                },
+                "stance": false,
+                "step": 0,
+                "phase": 0.8960392715907951,
+                "angle": -0.30259625434591725
+              },
+              {
+                "id": "near-hind",
+                "foot": {
+                  "x": 200.81484409025055,
+                  "y": 592.2194732507102
+                },
+                "stance": true,
+                "step": 1,
+                "phase": 0.14603927159079522,
+                "angle": -0.21371360960764357
+              },
+              {
+                "id": "near-front",
+                "foot": {
+                  "x": 215.03439566031722,
+                  "y": 598.8373309179955
+                },
+                "stance": true,
+                "step": 1,
+                "phase": 0.3960392715907952,
+                "angle": 0.10230847921861883
+              }
+            ]
+          },
+          "crop": {
+            "x": 57.25639344262291,
+            "y": 375.04568306010924,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 8,
+      "elapsed": 0.3333333333333333,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 7.933333333333333,
+          "phase": "walk",
+          "foot": {
+            "x": 223.75444715730725,
+            "y": 597.7131728868736
+          },
+          "actor": {
+            "state": "walk-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": 0,
+            "phase": 0.9371269124377679,
+            "bob": -0.1564021254735478,
+            "feet": [
+              {
+                "id": "far-front",
+                "foot": {
+                  "x": 264.16527823260094,
+                  "y": 589.6239568487887
+                },
+                "stance": false,
+                "step": 0,
+                "phase": 0.9371269124377679,
+                "angle": -0.3982561664337638
+              },
+              {
+                "id": "near-hind",
+                "foot": {
+                  "x": 200.81484409025055,
+                  "y": 592.2194732507102
+                },
+                "stance": true,
+                "step": 1,
+                "phase": 0.1871269124377679,
+                "angle": -0.15961872716255823
+              },
+              {
+                "id": "near-front",
+                "foot": {
+                  "x": 215.03439566031722,
+                  "y": 598.8373309179955
+                },
+                "stance": true,
+                "step": 1,
+                "phase": 0.4371269124377679,
+                "angle": 0.15148048743476294
+              }
+            ]
+          },
+          "crop": {
+            "x": 59.40498081618412,
+            "y": 374.6387536332984,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 9,
+      "elapsed": 0.375,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 7.975,
+          "phase": "walk",
+          "foot": {
+            "x": 225.67282874084407,
+            "y": 597.3498430415068
+          },
+          "actor": {
+            "state": "walk-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "phase": 0.9782145532847416,
+            "bob": -0.01966266978349559,
+            "feet": [
+              {
+                "id": "far-front",
+                "foot": {
+                  "x": 267.1340300491235,
+                  "y": 591.1296793189018
+                },
+                "stance": false,
+                "step": 0,
+                "phase": 0.9782145532847416,
+                "angle": -0.43004536837325963
+              },
+              {
+                "id": "near-hind",
+                "foot": {
+                  "x": 200.81484409025055,
+                  "y": 592.2194732507102
+                },
+                "stance": true,
+                "step": 1,
+                "phase": 0.2282145532847415,
+                "angle": -0.10599144829814404
+              },
+              {
+                "id": "near-front",
+                "foot": {
+                  "x": 215.03439566031722,
+                  "y": 598.8373309179955
+                },
+                "stance": true,
+                "step": 1,
+                "phase": 0.4782145532847415,
+                "angle": 0.2010247684506004
+              }
+            ]
+          },
+          "crop": {
+            "x": 61.553568189745334,
+            "y": 374.23182420648766,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 10,
+      "elapsed": 0.4166666666666667,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 8.016666666666666,
+          "phase": "walk",
+          "foot": {
+            "x": 227.59121032438082,
+            "y": 596.98651319614
+          },
+          "actor": {
+            "state": "walk-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "phase": 1.0193021941317144,
+            "bob": -0.015456340331333923,
+            "feet": [
+              {
+                "id": "far-front",
+                "foot": {
+                  "x": 267.5768085201838,
+                  "y": 592.2123515834248
+                },
+                "stance": true,
+                "step": 1,
+                "phase": 0.019302194131714412,
+                "angle": -0.3855086601751738
+              },
+              {
+                "id": "near-hind",
+                "foot": {
+                  "x": 200.81484409025055,
+                  "y": 592.2194732507102
+                },
+                "stance": true,
+                "step": 1,
+                "phase": 0.2693021941317144,
+                "angle": -0.052668765272667936
+              },
+              {
+                "id": "near-front",
+                "foot": {
+                  "x": 215.03439566031722,
+                  "y": 598.8373309179955
+                },
+                "stance": true,
+                "step": 1,
+                "phase": 0.5193021941317144,
+                "angle": 0.2510749039334287
+              }
+            ]
+          },
+          "crop": {
+            "x": 63.70215556330652,
+            "y": 373.8248947796768,
+            "size": 280
+          }
+        }
+      ]
+    },
+    {
+      "frame": 11,
+      "elapsed": 0.4583333333333333,
+      "sampled": true,
+      "actors": [
+        {
+          "mode": "poses",
+          "paddleRig": true,
+          "walkRig": true,
+          "time": 8.058333333333334,
+          "phase": "walk",
+          "foot": {
+            "x": 229.50959190791767,
+            "y": 596.6231833507732
+          },
+          "actor": {
+            "state": "walk-local-rig",
+            "status": "experimental",
+            "frame": 0,
+            "blinkFrame": -1,
+            "phase": 1.0603898349786889,
+            "bob": -0.144879806511864,
+            "feet": [
+              {
+                "id": "far-front",
+                "foot": {
+                  "x": 267.5768085201838,
+                  "y": 592.2123515834248
+                },
+                "stance": true,
+                "step": 1,
+                "phase": 0.06038983497868888,
+                "angle": -0.32877282652002204
+              },
+              {
+                "id": "near-hind",
+                "foot": {
+                  "x": 200.81484409025055,
+                  "y": 592.2194732507102
+                },
+                "stance": true,
+                "step": 1,
+                "phase": 0.3103898349786889,
+                "angle": 0.0005042688678999095
+              },
+              {
+                "id": "near-front",
+                "foot": {
+                  "x": 215.03439566031722,
+                  "y": 598.8373309179955
+                },
+                "stance": true,
+                "step": 1,
+                "phase": 0.5603898349786889,
+                "angle": 0.30177665235498863
+              }
+            ]
+          },
+          "crop": {
+            "x": 65.85074293686776,
+            "y": 373.41796535286596,
+            "size": 280
+          }
+        }
+      ]
+    }
+  ]
+}

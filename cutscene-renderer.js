@@ -18,6 +18,12 @@
     c.drawImage(img,0,0,W,H);
   }
   function ellipse(c,x,y,rx,ry,color){c.fillStyle=color;c.beginPath();c.ellipse(x,y,rx,ry,0,0,Math.PI*2);c.fill();}
+  function softShadow(c,x,y,rx,ry,alpha=.2,color='66,54,40'){
+    if(rx<=0||ry<=0||alpha<=0)return;
+    c.save();c.translate(x,y);c.scale(rx,ry);const g=c.createRadialGradient(0,0,0,0,0,1);
+    g.addColorStop(0,`rgba(${color},${alpha})`);g.addColorStop(.42,`rgba(${color},${alpha*.72})`);g.addColorStop(1,`rgba(${color},0)`);
+    c.fillStyle=g;c.fillRect(-1,-1,2,2);c.restore();
+  }
   function waterMask(c,scene){
     if(scene!=='sea'){
       const edge=scene==='home'?[[720,280],[220,280],[350,380],[332,426],[391,485],[457,562],[490,644],[489,665],[489,812],[298,836],[268,912],[297,979],[340,1072],[480,1186],[562,1280],[720,1280]]:[[720,280],[244,280],[261,345],[136,390],[188,491],[399,535],[414,733],[176,800],[169,892],[233,994],[285,1090],[429,1180],[465,1280],[720,1280]];
@@ -169,7 +175,7 @@
       const bagX=mix(0,14,put),bagY=mix(-5,52,put);
       const drawBag=()=>{if(options.drawCarry)options.drawCarry(c,bagX,bagY,S.catSize,t,options.book,1,{worn:put<.2,empty:lift>=1,open:put*(1-place)});};
       if(options.book!==undefined&&put<.65)drawBag();
-      ellipse(c,1,-4,37,10,'#4b3f3529');
+      softShadow(c,1,-4,43,12,.2,'75,63,53');
       const recovering=S.actorMode==='poses'&&options.arrival>=0&&options.arrival<.36;
       const handling=settling&&settling.motionElapsed>=.24&&settling.motionElapsed<1.3,handlingPose=put<.45?'hold':lift<.4?'reach':place<.15?'hold':'place';
       const rising=settling&&settling.motionElapsed>=1.3&&settling.motionElapsed<1.8;
@@ -259,5 +265,5 @@
     c.restore();return {...meta,time:t,revision:S.revision};
   }
   window.GachisupCutscene={ready,render,paths,duration:S.duration};
-  window.CutsceneActors={ready,images,paths,background,ellipse,cat,book,islandPlan,raft,ripples,wake,clamp,ease,mix};
+  window.CutsceneActors={ready,images,paths,background,ellipse,softShadow,cat,book,islandPlan,raft,ripples,wake,clamp,ease,mix};
 })();

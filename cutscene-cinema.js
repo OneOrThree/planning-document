@@ -9,7 +9,7 @@
       // 세션에서 한 장씩 생성한 파생 자세. 아틀라스 추출물이라고 표시하지 않는다.
       const registration=.300488*size/384,texture=pose.look==='place'?A.images.lookPlace:pose.look==='hold'?A.images.lookHold:pose.look==='reach'?A.images.lookReach:A.images.lookDown;c.save();c.translate(x,y);c.rotate(lean);c.scale(registration,registration);c.drawImage(texture,-670.218,-1141);c.restore();return{state:'look-'+pose.look,frame:0};
     }
-    if(walk>.1&&CutsceneSettings.actorMode==='poses'&&CutsceneSettings.walkRig)return CutsceneWalkRig.draw(c,x,y,size,t,{...pose,walk,lean});
+    if(walk>.1&&CutsceneSettings.actorMode==='poses'&&CutsceneSettings.walkRig)return CutsceneWalkRig.draw(c,x,y,size,t,{...pose,walk,lean,blinkTime:pose.walkBlinkTime??t%4.7-3.2});
     if(walk>.1)return CutsceneSettings.actorMode==='poses'?CutscenePoses.draw(c,x,y,size,pose.gaitTime??t,{lean,travel:pose.travel,stride:pose.stride}):CutsceneSprites.draw(c,x,y,size,'walk',pose.gaitTime??t,{lean});
     if(pose.jump!==undefined)return CutsceneSettings.actorMode==='poses'?CutscenePoses.draw(c,x,y,size,t,{jump:pose.jump,lean}):CutsceneSprites.draw(c,x,y,size,'jump',0,{frame:Math.min(3,Math.floor(pose.jump*4)),lean});
     if(pose.reach!==undefined)return CutsceneSettings.actorMode==='poses'?CutscenePoses.draw(c,x,y,size,t,{reach:pose.reach,lean}):CutsceneSprites.draw(c,x,y,size,'reach',0,{frame:pose.reach,lean});
@@ -34,7 +34,7 @@
     }
     return{x:360,y:640,z:1};
   }
-  function groundShadow(c,x,y,size,alpha){A.ellipse(c,x,y+1,size*.19,size*.044,`rgba(66,54,40,${alpha})`);}
+  function groundShadow(c,x,y,size,alpha){A.softShadow(c,x,y+1,size*.24,size*.06,alpha);}
   function floorBook(c,x,y,size,t,story,options={}){c.save();c.transform(1,.11,-.2,.66,x,y);A.book(c,0,0,size,t,story,options);c.restore();}
   function carry(c,x,y,size,t,story,alpha=1,options={}){
     c.save();c.globalAlpha*=alpha;c.translate(x+size*.23,y-size*.22);c.rotate(-.12+Math.sin(t*2)*.018);c.scale(size/176,size/176);
@@ -164,7 +164,7 @@
         const distanceWalked=walkPath(f).total*travel/.94,startSize=journey?(f.storyIndex===2?157:141):T.catSize,size=journey?mix(startSize,155,p):T.catSize,{x,y}=walkPathAt(f,distanceWalked);
         groundShadow(c,x,y,size,T.shadowAlpha);
         // 원화 순서·프레임 길이를 고쳐 결함을 숨기지 않는다. 실제 동선 거리와 보폭으로 캐릭터의 재생 위치를 구한다.
-        const pose=t>=dockStart?{reach:dockQ<.2?1:dockQ<.65?3:2}:{gaitTime:(t-k.prepareEnd)*.8,travel:distanceWalked,stride:startSize*.4,rigStride:startSize*.27,rigSize:startSize,pathAtDistance:d=>walkPathAt(f,d)};
+        const pose=t>=dockStart?{reach:dockQ<.2?1:dockQ<.65?3:2}:{gaitTime:(t-k.prepareEnd)*.8,walkBlinkTime:(t-k.prepareEnd)%4.7-.9,travel:distanceWalked,stride:startSize*.4,rigStride:startSize*.27,rigSize:startSize,pathAtDistance:d=>walkPathAt(f,d)};
         carry(c,x,y,size,t,f.storyIndex);actorState=actor(c,x,y,size,t,Math.min(1,p/.1,(1-p)/.1),0,pose);catFoot={x,y};
         if(dockQ>0&&dockQ<.92){
           const hand=actorState?.hand||{x:x+size*(dockQ<.2?.28:dockQ<.65?.402:.229),y:y-size*(dockQ<.2?.057:dockQ<.65?.268:.197)},tie={x:rx-raftWidth*.27,y:ry-raftWidth*.06};

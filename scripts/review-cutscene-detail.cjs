@@ -20,10 +20,11 @@ const root=path.resolve(__dirname,'..');
       const source=document.createElement('canvas');source.width=1440;source.height=2560;
       return CutsceneProduction.films.filter(f=>!selected||f.id===selected).map(f=>{
         const k=f.timing,blinkAt=Math.ceil((k.departureStart+1-3.2)/4.7)*4.7+3.2,range={prepare:[0,k.prepareEnd],walk:[k.prepareEnd,k.walkEnd],boarding:[k.walkEnd,k.boardingEnd],'boarding-link':[k.walkEnd-.25,k.boardingEnd+.45],'book-lift':[k.prepareEnd*.46,k.prepareEnd*.85],'walk-link':[k.prepareEnd-.25,k.prepareEnd+.8],'paddle-loop':[k.departureStart+1,k.departureStart+3.8],blink:[blinkAt-.08,blinkAt+.32],settle:[k.boardingEnd,k.departureStart],depart:[k.departureStart,k.seaStart],sea:[k.seaStart,24]}[phase];
-        if(!range)throw Error('없는 검토 구간');
+        const selectedRange=phase==='walk-blink'?[k.prepareEnd+.8,k.prepareEnd+1.3]:range;
+        if(!selectedRange)throw Error('없는 검토 구간');
         const sheet=document.createElement('canvas');sheet.width=960;sheet.height=Math.ceil(samples/3)*350;const c=sheet.getContext('2d');c.fillStyle='#f3edde';c.fillRect(0,0,sheet.width,sheet.height);const frames=[];
         for(let i=0;i<samples;i++){
-          const t=range[0]+(range[1]-range[0])*(from+(to-from)*i/(samples-1)),m=GachisupCinema.render(source,f,t),cam=m.camera;
+          const t=selectedRange[0]+(selectedRange[1]-selectedRange[0])*(from+(to-from)*i/(samples-1)),m=GachisupCinema.render(source,f,t),cam=m.camera;
           const sx=360+(m.catFoot.x-cam.x)*cam.z,sy=640+(m.catFoot.y-cam.y)*cam.z;
           const crop={x:Math.max(0,Math.min(720-cropSize,sx-cropSize*.378)),y:Math.max(0,Math.min(1280-cropSize,sy-cropSize*(anchor==='ground'?.5:.778))),size:cropSize};
           c.drawImage(source,crop.x*2,crop.y*2,cropSize*2,cropSize*2,(i%3)*320,Math.floor(i/3)*350,320,320);

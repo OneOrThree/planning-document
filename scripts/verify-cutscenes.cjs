@@ -139,6 +139,20 @@ const root=path.resolve(__dirname,'..');
     assert.deepEqual(walkPlantCheck.warnings,[]);assert.ok(walkPlantCheck.stancePairs>0);
     assert.ok(walkPlantCheck.maxPlantDrift<1e-8,'몸체 원근 크기가 변해도 심어 둔 발 목표는 움직이지 않아야 합니다.');
     assert.ok(walkPlantCheck.maxTargetStep<3,'0.5 거리 이동에서 발 목표가 순간 이동하면 안 됩니다.');
+    const walkBlinkCheck=await page.evaluate(()=>{
+      const c=document.createElement('canvas');c.width=600;c.height=600;const ctx=c.getContext('2d'),times=[-1,.02,.1,.19,.3],states=[],pixels=[];
+      for(const blinkTime of times){ctx.clearRect(0,0,600,600);states.push(CutsceneWalkRig.draw(ctx,280,450,384,2,{travel:20,walk:1,blinkTime}));pixels.push(ctx.getImageData(0,0,600,600).data);}
+      const reg=.300488,allowed={left:280+(580-670.218)*reg,right:280+(1020-670.218)*reg,top:450+(400-1142)*reg-3,bottom:450+(695-1142)*reg};
+      let changedOutsideEyes=0,changedInsideEyes=0;
+      for(const frame of pixels.slice(1))for(let i=0;i<frame.length;i+=4){
+        if(frame[i]===pixels[0][i]&&frame[i+1]===pixels[0][i+1]&&frame[i+2]===pixels[0][i+2]&&frame[i+3]===pixels[0][i+3])continue;
+        const x=(i/4)%600,y=Math.floor(i/4/600);if(x<allowed.left||x>allowed.right||y<allowed.top||y>allowed.bottom)changedOutsideEyes++;else changedInsideEyes++;
+      }
+      const actualFilms=CutsceneProduction.films.map(f=>{const m=GachisupCinema.render(c,f,f.timing.prepareEnd+1.0);return{id:f.id,state:m.actorState.state,blinkFrame:m.actorState.blinkFrame};});
+      return{blinkFrames:states.map(s=>s.blinkFrame),feetStable:states.every(s=>JSON.stringify(s.feet)===JSON.stringify(states[0].feet)),changedOutsideEyes,changedInsideEyes,actualFilms};
+    });
+    assert.deepEqual(walkBlinkCheck.blinkFrames,[-1,0,1,0,-1]);assert.ok(walkBlinkCheck.feetStable);assert.equal(walkBlinkCheck.changedOutsideEyes,0);assert.ok(walkBlinkCheck.changedInsideEyes>0);
+    for(const f of walkBlinkCheck.actualFilms){assert.equal(f.state,'walk-local-rig');assert.equal(f.blinkFrame,1);}
     await page.waitForSelector('#exports video');assert.equal(await page.locator('#exports video').count(),9);
     const playback=await page.evaluate(async()=>{
       const v=document.querySelector('#exports video');v.muted=true;await v.play();
@@ -157,7 +171,7 @@ const root=path.resolve(__dirname,'..');
     await page.waitForFunction(()=>[...document.images].every(i=>i.complete&&i.naturalWidth>0));
     assert.equal(await page.locator('[data-cat="white"] .body').getAttribute('src'),'assets/figma-cats/white-standing-generated.png');
     assert.deepEqual(errors,[]);
-    const report={result:'PASS',films:9,packingTimelineSamples:result.packingSamples,settlingTimelineSamples:result.settlingSamples,backgroundRegistration:result.backgroundChecks,individualPoseContract:poseCheck,landingContract:landingCheck,paddleRigContract:paddleCheck,paddlePickupContract:pickupCheck,walkPathContract:pathCheck,walkPlantContract:walkPlantCheck,exportedVersion,exportedPlayback:playback,catBodies:6,range:true,errors};
+    const report={result:'PASS',films:9,packingTimelineSamples:result.packingSamples,settlingTimelineSamples:result.settlingSamples,backgroundRegistration:result.backgroundChecks,individualPoseContract:poseCheck,landingContract:landingCheck,paddleRigContract:paddleCheck,paddlePickupContract:pickupCheck,walkPathContract:pathCheck,walkPlantContract:walkPlantCheck,walkBlinkContract:walkBlinkCheck,exportedVersion,exportedPlayback:playback,catBodies:6,range:true,errors};
     fs.mkdirSync(path.join(root,'output/cutscenes/qa'),{recursive:true});
     fs.writeFileSync(path.join(root,'output/cutscenes/qa/browser-check.json'),JSON.stringify(report,null,2)+'\n');
     console.log(JSON.stringify(report,null,2));

@@ -367,10 +367,69 @@
     "warnings": [],
     "note": "접지 목표 좌표 검사. 원화의 윤곽·관절 연결을 시각 승인하지 않음."
   },
-  "exportedVersion": "draft-v08",
+  "walkBlinkContract": {
+    "blinkFrames": [
+      -1,
+      0,
+      1,
+      0,
+      -1
+    ],
+    "feetStable": true,
+    "changedOutsideEyes": 0,
+    "changedInsideEyes": 14580,
+    "actualFilms": [
+      {
+        "id": "new-morning-emotion",
+        "state": "walk-local-rig",
+        "blinkFrame": 1
+      },
+      {
+        "id": "new-morning-journey",
+        "state": "walk-local-rig",
+        "blinkFrame": 1
+      },
+      {
+        "id": "new-morning-storybook",
+        "state": "walk-local-rig",
+        "blinkFrame": 1
+      },
+      {
+        "id": "folded-promise-emotion",
+        "state": "walk-local-rig",
+        "blinkFrame": 1
+      },
+      {
+        "id": "folded-promise-journey",
+        "state": "walk-local-rig",
+        "blinkFrame": 1
+      },
+      {
+        "id": "folded-promise-storybook",
+        "state": "walk-local-rig",
+        "blinkFrame": 1
+      },
+      {
+        "id": "unfinished-pier-emotion",
+        "state": "walk-local-rig",
+        "blinkFrame": 1
+      },
+      {
+        "id": "unfinished-pier-journey",
+        "state": "walk-local-rig",
+        "blinkFrame": 1
+      },
+      {
+        "id": "unfinished-pier-storybook",
+        "state": "walk-local-rig",
+        "blinkFrame": 1
+      }
+    ]
+  },
+  "exportedVersion": "draft-v09",
   "exportedPlayback": {
     "duration": 24,
-    "time": 0.653915,
+    "time": 0.652578,
     "width": 1080,
     "height": 1920
   },
