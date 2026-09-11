@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#faf7ef">
+<title>같이숲 · 앞으로 어떻게 달라질까?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Jua&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#faf7ef;--ink:#354b46;--muted:#626e64;--line:#dedfd1;--teal:#48736b;--sand:#f0e5ca}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:'Gowun Dodum',sans-serif;line-height:1.65}button,a{-webkit-tap-highlight-color:transparent}button{font:inherit;color:inherit;cursor:pointer}a{color:var(--teal)}button:focus-visible,a:focus-visible{outline:3px solid #aa712f;outline-offset:3px}
+header,main,footer{width:min(1160px,calc(100% - 64px));margin-inline:auto}header{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-bottom:1px solid var(--line);gap:16px}header a{text-decoration:none;min-height:44px;display:flex;align-items:center}.brand{font:24px 'Jua',sans-serif}.document-kind{font-size:13px;color:var(--muted)}
+.intro{padding:34px 0 24px}.eyebrow{font-size:13px;letter-spacing:.06em;color:var(--muted);margin:0 0 8px}h1{font:clamp(32px,4.2vw,48px)/1.25 'Jua',sans-serif;margin:0 0 14px;letter-spacing:-.03em}h1 em{font-style:normal;color:var(--teal)}.intro p:last-child{margin:0;font-size:18px;max-width:760px;word-break:keep-all}
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-bottom:1px solid var(--line);margin-bottom:24px}.steps button{border:0;background:transparent;min-height:58px;font-size:16px;text-align:left;padding:10px 16px;position:relative;display:flex;align-items:center;gap:10px}.steps button>span{display:grid;place-items:center;width:25px;height:25px;flex:none;border-radius:50%;border:1px solid #b7c4b9;font-size:13px}.steps button[aria-selected=true]{color:var(--teal);font-weight:bold}.steps button[aria-selected=true]:after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:3px;background:var(--teal)}.steps button[aria-selected=true]>span{background:var(--teal);border-color:var(--teal);color:#fff}
+.story{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(290px,1fr);min-height:440px;gap:32px;align-items:center}.picture{position:relative;overflow:hidden;border-radius:22px;background:#e4ede4;aspect-ratio:1.45;display:grid;place-items:center}.picture svg{display:block;width:100%;height:100%;font-family:'Gowun Dodum',sans-serif}.picture img{max-width:100%}.picture-label{position:absolute;top:16px;left:18px;background:#fffaf0ed;color:var(--ink);border-radius:8px;padding:5px 10px;font-size:12px}.chapter{font-size:13px;color:var(--teal);margin:0 0 8px}.story h2{font:32px/1.3 'Jua',sans-serif;margin:0 0 14px;word-break:keep-all}.story-copy{font-size:18px;margin:0 0 22px;word-break:keep-all}.meaning{border-left:3px solid #9bb6a3;padding:0 0 0 15px;margin:0}.meaning small{display:block;font-size:12px;color:var(--muted);margin-bottom:5px}.meaning p{font-size:16px;margin:0;word-break:keep-all}.scene-note{font-size:12px;color:var(--muted);margin:15px 0 0;word-break:keep-all}
+.story-controls{display:flex;align-items:center;justify-content:flex-end;gap:14px;margin:16px 0 36px}.story-controls button{border:1px solid #bdc9bb;background:transparent;border-radius:12px;min-height:48px;padding:10px 20px}.story-controls .next{background:var(--teal);border-color:var(--teal);color:#fffaf0}.story-controls button:disabled{opacity:.45;cursor:default}.position{font-size:14px;color:var(--muted);margin-right:auto}
+.difference{border-top:1px solid var(--line);padding:28px 0}.section-title{font:25px 'Jua',sans-serif;margin:0 0 20px}.comparison{display:grid;grid-template-columns:1fr 1fr;gap:32px}.comparison article{padding:0 0 8px}.comparison h3{font-size:13px;color:var(--muted);margin:0 0 7px;font-weight:normal}.comparison p{font-size:21px;margin:0;word-break:keep-all}.comparison .future p{color:var(--teal);font-weight:bold}.comparison small{font-size:14px;color:var(--muted);display:block;margin-top:8px}
+.effects{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;padding:24px 0 34px;border-bottom:1px solid var(--line)}.effects article+article{border-left:1px solid var(--line);padding-left:24px}.effects strong{font:21px 'Jua',sans-serif;display:block;margin-bottom:8px}.effects p{font-size:16px;margin:0;word-break:keep-all}.effects .effect-number{display:block;font:30px 'Jua',sans-serif;color:#759782;margin-bottom:10px}.hypothesis{font-size:13px;color:var(--muted);margin:12px 0 28px}
+.boundaries{background:#eceee3;padding:22px 26px;border-radius:16px;margin:24px 0 32px}.boundaries h2{font:22px 'Jua',sans-serif;margin:0 0 12px}.boundaries ul{margin:0;padding-left:20px;font-size:15px}.boundaries li+li{margin-top:8px}footer{border-top:1px solid var(--line);padding:22px 0 32px;display:flex;gap:24px;justify-content:space-between;color:var(--muted);font-size:12px}footer p{margin:0}footer a{display:inline-block;min-height:44px}
+@media(max-width:760px){header,main,footer{width:calc(100% - 32px)}header{padding:12px 0}.document-kind{font-size:11px}.intro{padding:26px 0 20px}.intro p:last-child{font-size:16px}.steps button{font-size:14px;flex-direction:column;gap:5px;padding:8px 3px;min-height:70px}.story{grid-template-columns:1fr;gap:20px;min-height:0}.picture{aspect-ratio:1.38}.story h2{font-size:28px}.story-copy{font-size:17px;margin-bottom:18px}.picture-label{top:10px;left:12px;font-size:11px}.story-controls{margin-top:20px;margin-bottom:26px;gap:8px}.story-controls button{padding-inline:15px}.comparison{gap:22px}.comparison p{font-size:18px}.effects{grid-template-columns:1fr;gap:20px}.effects article{display:grid;grid-template-columns:36px 1fr;column-gap:12px}.effects article+article{border-left:0;border-top:1px solid var(--line);padding:20px 0 0}.effects .effect-number{grid-row:1/3;margin:0}.effects strong{margin:0 0 5px}.boundaries{padding:20px}footer{display:block}footer p{margin-bottom:12px}}
+@media print{.steps,.story-controls,header a,footer{display:none}.story{break-inside:avoid}.picture{print-color-adjust:exact}.effects{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<header><a class="brand" href="./">같이숲</a><span class="document-kind">쉽게 보는 기획 · 실제 앱 기능 아님</span></header>
+<main>
+<section class="intro"><p class="eyebrow">ELI5 · 네 장면으로 이해하기</p><h1>같이 만든 장소에,<br><em>다시 모이는 앱.</em></h1><p>친구들과 놀이터를 만들고, 다음 날 그 놀이터에서 다시 만나는 것과 같아요.</p></section>
+<nav class="steps" role="tablist" aria-label="기획 이야기 순서">
+<button id="step-0" role="tab" aria-selected="true" aria-controls="story" tabindex="0" data-step="0"><span>1</span>각자 집중</button>
+<button id="step-1" role="tab" aria-selected="false" aria-controls="story" tabindex="-1" data-step="1"><span>2</span>장소 완성</button>
+<button id="step-2" role="tab" aria-selected="false" aria-controls="story" tabindex="-1" data-step="2"><span>3</span>함께 모임</button>
+<button id="step-3" role="tab" aria-selected="false" aria-controls="story" tabindex="-1" data-step="3"><span>4</span>다시 만남</button>
+</nav>
+<section class="story" id="story" role="tabpanel" aria-labelledby="step-0">
+<div class="picture" id="picture" role="img" aria-label=""></div>
+<div class="explanation"><p class="chapter" id="chapter"></p><h2 id="scene-title"></h2><p class="story-copy" id="scene-copy"></p><aside class="meaning"><small>이 장면에서 달라지는 것</small><p id="scene-meaning"></p></aside><p class="scene-note" id="scene-note"></p></div>
+</section>
+<div class="story-controls"><span class="position" id="position" aria-live="polite">1 / 4</span><button id="previous" disabled>← 이전</button><button id="next" class="next">다음 장면 →</button></div>
+<section class="difference"><h2 class="section-title">그래서 지금과 뭐가 달라져요?</h2><div class="comparison"><article><h3>지금의 중심</h3><p>건물을 누르면<br>그 건물의 기능을 써요.</p><small>공부 기록과 재화도 이미 쌓여요.</small></article><article class="future"><h3>더하려는 중심 경험</h3><p>장소를 마련하면<br>함께할 일이 새로 생겨요.</p><small>방장의 퀘스트가 그곳의 모임 약속이 돼요.</small></article></div></section>
+<section aria-labelledby="effect-title"><h2 class="section-title" id="effect-title">우리가 기대하는 변화</h2><div class="effects"><article><span class="effect-number">01</span><strong>시작할 이유</strong><p>“25분 채워야지”에<br>“친구들이 부두에 있네”가 더해져요.</p></article><article><span class="effect-number">02</span><strong>함께 만든 보람</strong><p>숫자뿐 아니라<br>내가 보탠 장소가 남아요.</p></article><article><span class="effect-number">03</span><strong>다시 올 이유</strong><p>“오늘도 우리가 만든<br>부두에서 하자”가 가능해져요.</p></article></div><p class="hypothesis">기대하는 효과예요. 실제로 집중 시작과 재방문이 늘어나는지는 사용해보며 확인해야 해요.</p></section>
+<section class="boundaries"><h2>게임하느라 공부를 놓치면 안 되니까.</h2><ul><li>낚시 화면이어도 실제 기록은 <strong>공부 25분</strong>일 수 있어요. 휴식 기록은 따로예요.</li><li>집중 중에는 낚아채기·수확 버튼을 누르지 않아요. 캐릭터가 자동으로 움직여요.</li><li>늦게 와도 합류할 수 있고, 먼저 나간다고 친구의 성과나 섬을 망가뜨리지 않아요.</li><li>기본 집중과 무료 휴식 낚시는 계속 가능해요. 성장하면 <strong>새 공동 액션</strong>이 열리는 거예요.</li></ul></section>
+</main>
+<footer><div><p>ELI5 스킬 적용 · 원화 재사용 + 설명용 도식 · 실시간 다인 기능·새 건물은 아직 미구현</p><p>건설 비용·기여 방식·보상 수치는 미정이에요.</p></div><div><a href="cooperative-places-planning.md">기획 메모 ↗</a> · <a href="mobile.html">현재 앱 보기 ↗</a></div></footer>
+<script src="eli5-raft-art.js?v=20260910-raft1"></script>
+<script>
+'use strict';
+const cat=(x,y,size)=>'<image href="assets/momo-rig-source.png" x="'+x+'" y="'+y+'" width="'+size+'" height="'+size+'"/>';
+const frontCat=(x,y,size)=>'<image href="assets/momo-walk-front.png" x="'+x+'" y="'+y+'" width="'+size+'" height="'+size+'"/>';
+const label=(x,y,text,size=18,color='#354b46')=>'<text x="'+x+'" y="'+y+'" fill="'+color+'" text-anchor="middle" font-size="'+size+'">'+text+'</text>';
+const sea='<rect width="720" height="480" fill="#9bc5c4"/><path d="M0 310Q80 282 160 307T320 307T480 307T720 307M40 400q55-20 110 0m320-18q55-20 110 0M60 182q40-15 80 0m350-30q55-20 110 0" fill="none" stroke="#dceee0" stroke-width="4" stroke-linecap="round"/>';
+const shore='<path d="M-80-30H405Q475 80 350 137T250 265Q118 327-30 274Z" fill="#e9dcbb"/><path d="M-80-40H360Q420 55 320 103T210 231Q100 278-20 239Z" fill="#a8ba83"/>';
+const pier='<g stroke="#866a4d" stroke-width="3" stroke-linejoin="round"><path d="M183 186 428 280 387 344 142 250Z" fill="#c9a878"/><path d="m142 250 245 94v15L142 265Z" fill="#a8865d"/><path d="m185 202-28 48m66-34-30 48m68-34-31 49m69-35-31 50m69-35-32 51m70-36-31 50" fill="none"/><path d="M165 253v54m224 38v43M210 191v49M432 278v48" stroke-width="12" stroke-linecap="round"/></g>';
+const sharedRaft='<g transform="translate(23 9) scale(.88)">'+GachisupRaftArt.group()+'</g>';
+const svg=body=>'<svg viewBox="0 0 720 480" aria-hidden="true">'+body+'</svg>';
+const scenes=[
+{chapter:'01 · 오늘 낮',title:'나도 25분.<br>친구도 25분.',copy:'각자 현실에서 공부해요.<br>함께 모은 기여로 부두를 마련하기로 했어요.',meaning:'“내가 집중한 시간이 우리 섬에도 도움이 되는구나.”',note:'설명용 예시예요. 부두 완성에 필요한 비용과 기여 방식은 아직 미정이에요.',alt:'각자 책을 읽는 세 친구의 기여가 우리 부두 만들기로 모이는 그림',art:svg('<rect width="720" height="480" fill="#e3ebdc"/>'+cat(52,58,180)+cat(270,58,180)+cat(488,58,180)+label(142,263,'나 · 공부 25분')+label(360,263,'두부 · 독서 25분')+label(578,263,'모모 · 공부 25분')+'<g fill="none" stroke="#799b81" stroke-width="3" stroke-linecap="round"><path d="M142 285v28q0 20 24 20h169M578 285v28q0 20-24 20H385M360 285v67m-7-8 7 8 7-8"/></g><rect x="134" y="365" width="452" height="67" rx="16" fill="#fff9eb" stroke="#c4d0bb"/>'+label(360,407,'우리 부두를 만드는 데 보태요',23))},
+{chapter:'02 · 여러 번의 기여가 모이면',title:'우리 섬에<br>부두가 생겨요.',copy:'보상 숫자만 바뀌는 게 아니에요.<br>친구들과 함께 쓸 장소가 남아요.',meaning:'부두와 공동 뗏목이 생기면 “함께 낚시하기”를 할 수 있어요.',note:'부두를 만드는 과정과 공동 뗏목은 앞으로 만들 기능이에요.',alt:'섬의 해안에 새 나무 부두가 생기고 함께 낚시하기가 가능해지는 그림',art:svg(sea+shore+pier+frontCat(125,82,126)+'<rect x="319" y="52" width="324" height="76" rx="16" fill="#fff9eb"/>'+label(481,83,'우리가 만든 작은 부두',23)+label(481,109,'새로운 공동 액션 · 함께 낚시하기',16)+'<g transform="translate(440 188) scale(.28)">'+GachisupRaftArt.deck()+'</g>')},
+{chapter:'03 · 오늘 저녁 8시',title:'방장이 “여기서<br>같이 하자”고 해요.',copy:'“8시~9시 사이에 각자 25분 집중하자.”<br>참여한 친구들의 캐릭터가 같은 뗏목에 모여요.',meaning:'나는 현실에서 공부하고, 내 캐릭터는 친구들과 낚시해요.',note:'한 시간 내내 전원 출석하는 조건은 아니에요. 늦게 와도 합류할 수 있어요.',alt:'오늘 20시에서 21시 사이 각자 25분 집중하자는 약속 아래 세 캐릭터가 한 뗏목에서 낚시하는 그림',art:svg(sea+'<rect x="61" y="43" width="598" height="74" rx="16" fill="#fff9eb"/>'+label(360,75,'새 부두에서 첫 낚시 모임',25)+label(360,102,'20:00–21:00 중 각자 25분 · 예시',17)+sharedRaft)},
+{chapter:'04 · 다음 모임 날',title:'“오늘도<br>우리 부두에서 하자.”',copy:'완성한 장소는 사라지지 않아요.<br>모임을 반복하며 우리만의 기억이 쌓여요.',meaning:'꾸며놓고 끝나는 섬이 아니라, 다시 만나고 싶은 장소가 돼요.',note:'다음에는 정원·온실처럼 다른 공동 액션이 있는 장소도 마련할 수 있어요.',alt:'우리가 만든 부두에 첫 모임의 기억이 남고 친구들이 같은 뗏목에 다시 모이는 그림',art:svg(sea+shore+pier+'<rect x="31" y="40" width="296" height="82" rx="14" fill="#fff9eb"/>'+label(179,72,'우리가 만든 작은 부두',22)+label(179,99,'지난번 그 친구들과, 다시',16)+'<g transform="translate(98 81) scale(.81)">'+sharedRaft+'</g><path d="M82 302v-58m-20 12 20-20 20 20" stroke="#7d8b65" stroke-width="6" fill="none" stroke-linecap="round"/>'+label(112,370,'다음 목표는',17)+label(112,398,'작은 정원',22))}
+];
+let current=0;
+function show(index,focus=false){
+ current=Math.max(0,Math.min(scenes.length-1,index));const s=scenes[current];
+ document.querySelector('#picture').innerHTML=s.art+'<span class="picture-label">앞으로의 모습 · 설명용 그림</span>';
+ document.querySelector('#picture').setAttribute('aria-label',s.alt);
+ document.querySelector('#chapter').textContent=s.chapter;document.querySelector('#scene-title').innerHTML=s.title;document.querySelector('#scene-copy').innerHTML=s.copy;document.querySelector('#scene-meaning').textContent=s.meaning;document.querySelector('#scene-note').textContent=s.note;
+ document.querySelector('#position').textContent=(current+1)+' / 4';document.querySelector('#previous').disabled=current===0;document.querySelector('#next').textContent=current===3?'처음부터 다시 ↺':'다음 장면 →';
+ document.querySelector('#story').setAttribute('aria-labelledby','step-'+current);
+ document.querySelectorAll('[data-step]').forEach(b=>{const selected=Number(b.dataset.step)===current;b.setAttribute('aria-selected',String(selected));b.tabIndex=selected?0:-1;});
+ if(focus)document.querySelector('#step-'+current).focus({preventScroll:true});
+ history.replaceState(null,'','#step-'+(current+1));
+}
+document.querySelectorAll('[data-step]').forEach(b=>b.addEventListener('click',()=>show(Number(b.dataset.step))));
+document.querySelector('.steps').addEventListener('keydown',e=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;e.preventDefault();show(e.key==='Home'?0:e.key==='End'?3:(current+(e.key==='ArrowRight'?1:-1)+4)%4,true);});
+document.querySelector('#previous').addEventListener('click',()=>show(current-1));
+document.querySelector('#next').addEventListener('click',()=>show((current+1)%4));
+const match=location.hash.match(/^#step-([1-4])$/);show(match?Number(match[1])-1:0);
+</script>
+</body>
+</html>

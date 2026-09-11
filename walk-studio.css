@@ -1,0 +1,11 @@
+.motion-nav{display:flex;gap:5px;background:#e5e0d2;padding:4px;border-radius:24px;font-size:12px}.motion-nav a{display:flex;align-items:center;min-height:36px;padding:0 17px;border-radius:20px}.motion-nav a[aria-current=page]{background:#faf6eb;color:#486344;box-shadow:0 1px 3px #5546210f}
+.walk-stage{background:#f6f1e3}.walk-mount{position:absolute;width:390px;height:390px;left:50%;top:44%;transform:translate(-50%,-50%)}.walk-ground{position:absolute;width:55%;height:8%;left:22.5%;top:77%;border-radius:50%;background:#cbd2b733;filter:blur(10px)}
+.step-indicator{position:absolute;left:20px;top:19px;display:flex;align-items:center;gap:8px;font-size:10px;color:#948977}.step-indicator span{padding:5px 9px;border:1px solid #ded6c4;border-radius:20px;transition:background 120ms}.step-indicator span[data-grounded=true]{background:#657855;color:#fbf5e9;border-color:#657855}.step-indicator i{width:12px;height:1px;background:#c5bba5}
+#walk-bones{position:absolute;bottom:13px;right:15px;border:0;background:#eee7d6;border-radius:20px;font-size:11px;min-height:36px}#walk-bones[aria-pressed=true]{background:#67594b;color:#fff5e5}.walk-stage:has(.show-walk-bones) .stage-grid{opacity:.35}
+.direction-controls{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:22px 0}.direction-controls button{font-size:12px;padding:0 8px;background:transparent}.direction-controls [aria-pressed=true]{background:#667958;color:#fff8e8;border-color:#667958}
+.walk-island-link{display:flex;justify-content:center;align-items:center;min-height:48px;background:#526848;color:#fff7e4;border-radius:12px;font-size:13px}.walk-island-link:hover{background:#405737}
+.asset-tag{word-break:keep-all}
+.walk-character-options{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media(max-width:900px){.walk-mount{width:330px;height:330px;max-width:96%;height:auto;aspect-ratio:1}}
+@media(max-width:650px){.motion-nav{gap:0}.motion-nav a{padding:0 10px;font-size:11px}.studio-header{gap:8px;flex-wrap:wrap}.studio-header>button{font-size:10px;min-height:38px}.walk-mount{top:45%;width:315px}.walk-stage .stage-caption{bottom:50px}.asset-tag{max-width:104px;text-align:center;line-height:1.6}.walk-stage{height:440px}}
+@media(prefers-reduced-motion:reduce){.step-indicator span{transition:none}}

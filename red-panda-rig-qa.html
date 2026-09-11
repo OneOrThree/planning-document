@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>레서판다 관절 검증</title>
+  <link rel="stylesheet" href="momo-rig.css">
+  <style>
+    body { margin: 20px; background: #f3f0e5; color: #403b31; font-family: sans-serif; }
+    main { display: grid; grid-template-columns: repeat(3, 360px); gap: 20px; }
+    article { border: 1px solid #ccc9bb; background: #e2eee1; padding: 8px; }
+    h2 { margin: 0 0 8px; font-size: 16px; }
+    .mount { position: relative; width: 344px; height: 344px; }
+    .mount .momo-shadow { display: none; }
+  </style>
+</head>
+<body>
+  <main></main>
+  <script src="reading-profile-red-panda.js"></script>
+  <script src="momo-rig.js"></script>
+  <script>
+    (async () => {
+      const states = [['read', 0, '독서 시작'], ['read', 4.96, '눈 감기 최대'], ['read', 10.2, '책장 넘김'], ['idle', 3, '쉬는 중'], ['nod', 0.75, '끄덕임'], ['read', 0, '관절 위치']];
+      window.redPandaQaRigs = states.map(([clip, time, label], index) => {
+        const card = document.createElement('article');
+        card.innerHTML = `<h2>${label} · ${time}초</h2><div class="mount" id="sample-${index}"></div>`;
+        document.querySelector('main').append(card);
+        const rig = GachisupCatRig.create(card.querySelector('.mount'), {profile: GachisupReadingProfiles['red-panda'], label: '레서판다', clip, paused: true, resolution: 1254});
+        rig.ready.then(() => { rig.seek(time); if (index === 5) rig.setDebug(true); });
+        return rig;
+      });
+      await Promise.all(window.redPandaQaRigs.map(rig => rig.ready));
+      document.body.dataset.ready = 'true';
+    })();
+  </script>
+</body>
+</html>

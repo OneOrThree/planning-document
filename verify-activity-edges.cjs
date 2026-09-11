@@ -1,0 +1,51 @@
+/* 시작 링크·접근성·이동 중 종료·휴식 복원 경계 검증. 격리 저장소만 사용한다. */
+const assert=require('node:assert/strict');
+const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
+const base=process.env.VILLAGE_URL||(process.env.BASE_URL || 'http://127.0.0.1:4173/').replace(/\/$/, '');
+let passed=0;const errors=[];
+const check=(value,label)=>{assert.ok(value,label);passed++;console.log('✓ '+label);};
+const ready=page=>page.waitForFunction(()=>document.querySelector('#load-state')?.hidden&&document.querySelector('.avatar-walker')?.dataset.walkState==='ready');
+const state=page=>page.evaluate(()=>JSON.parse(localStorage.getItem(GachisupStore.KEY)));
+const finish=async page=>{await page.locator('[data-action=finish]').click();await page.locator('[data-action=confirm-finish]').click();};
+(async()=>{
+  const browser=await chromium.launch();
+  const context=await browser.newContext({viewport:{width:390,height:844},reducedMotion:'reduce'}),page=await context.newPage();
+  page.on('pageerror',e=>errors.push(e.message));
+  await page.addInitScript(()=>{if(!sessionStorage.getItem('activity.edge.clock'))sessionStorage.setItem('activity.edge.clock',String(Date.parse('2026-09-09T10:00:00+09:00')));Date.now=()=>Number(sessionStorage.getItem('activity.edge.clock'));window.advanceActivityClock=s=>sessionStorage.setItem('activity.edge.clock',String(Date.now()+s*1000));});
+  try{
+    await page.goto(base+'/?activity=study');await ready(page);
+    check(await page.locator('#focus-task').inputValue()==='공부'&&!await page.locator('#session-hud').isVisible(),'공부 직접 링크는 세션을 자동 시작하지 않고 준비 화면 표시');
+    await page.locator('#focus-task').focus();await page.locator('#focus-task').selectOption('휴식');
+    check(await page.evaluate(()=>document.activeElement.id==='focus-task'),'활동 변경 후 키보드 포커스 유지');
+    await page.locator('[data-action=start]').click();
+    await page.waitForFunction(()=>document.querySelector('#rest-boat .boat-rig')?.dataset.rigState==='ready');
+    check(await page.locator('#village-app').getAttribute('data-phase')==='settled'&&await page.locator('[data-action=motion]').isDisabled(),'OS 동작 줄임 시 출항 이동 건너뛰고 제어 상태 일치');
+    const time=await page.locator('#rest-boat .boat-rig').getAttribute('data-rig-time');await page.waitForTimeout(350);
+    check(time===await page.locator('#rest-boat .boat-rig').getAttribute('data-rig-time')&&await page.locator('.boat-rig').evaluate(e=>getComputedStyle(e).animationName==='none'),'OS 동작 줄임 시 관절과 배 흔들림 모두 정지');
+    const session=(await state(page)).activeSession;await page.evaluate(()=>advanceActivityClock(9999));await page.reload();await ready(page);
+    const expired=await state(page),row=expired.sessions.find(s=>s.id===session.id);
+    check(!expired.activeSession&&row.kind==='rest'&&row.seconds===session.duration&&!await page.locator('#map-viewport').evaluate(e=>e.inert),'만료 휴식 새로고침은 설정 시간까지만 한 번 기록하고 지도 복구');
+    await page.goto(base+'/?activity=rest');await ready(page);
+    check((await state(page)).sessions.length===1&&await page.locator('#focus-task').inputValue()==='휴식','휴식 직접 링크와 완료 후 중복 방지');
+    await page.locator('#building-panel [data-action=close-panel]').click();
+    await page.locator('.dock-building[data-select=cabin]').click();await page.locator('[data-feature=tab-stats][data-value=me]').click();
+    const downloadPromise=page.waitForEvent('download');await page.locator('[data-feature=export-stats]').click();
+    const stream=await(await downloadPromise).createReadStream();let json='';for await(const part of stream)json+=part.toString();const exported=JSON.parse(json);
+    check(exported.restSessions.length===1&&exported.sessions.every(s=>s.kind!=='rest'&&s.tag!=='휴식'),'내 기록 내보내기도 휴식·집중 항목 분리');
+    await page.goto(base);await ready(page);await page.locator('.study-location').focus();await page.keyboard.press('Enter');
+    check(await page.locator('#focus-task').inputValue()==='공부','마을 공부 테이블 키보드 진입');
+    await page.emulateMedia({reducedMotion:'no-preference'});await page.locator('[data-action=start]').click();
+    await page.waitForFunction(()=>document.querySelector('#village-app').dataset.phase==='settled');
+    check(await page.locator('#study-actor').isVisible(),'걷기 도착 후 공부 장면으로 자연 전환');
+    await finish(page);await page.locator('#building-panel [data-action=close-panel]').first().click();
+    await page.locator('[data-action=mobile-more]').click();await page.locator('.mobile-place-list [data-select=harbor]').click();await page.locator('.harbor-rest-link').click();
+    check(await page.locator('#focus-task').inputValue()==='휴식','항구의 휴식 버튼이 같은 활동 선택에 연결');
+    await page.locator('[data-action=start]').click();await page.waitForFunction(()=>document.querySelector('#village-app').dataset.phase==='sailing');
+    await finish(page);const count=(await state(page)).sessions.length;await page.waitForTimeout(4200);
+    check(!await page.locator('#rest-boat').isVisible()&&!await page.locator('#session-hud').isVisible()&&(await state(page)).sessions.length===count,'출항 중 종료 후 지연 콜백으로 배·세션 재등장하지 않음');
+    await page.goto(base);await ready(page);await page.locator('.study-location').click();
+    check(await page.locator('#focus-task').inputValue()==='공부','마을 공부 테이블 포인터 클릭 진입');
+    check(errors.length===0,'경계 흐름 브라우저 오류 없음 '+errors.join(';'));
+    console.log(passed+'개 활동 경계 검증 통과');
+  }finally{await context.close();await browser.close();}
+})().catch(e=>{console.error(e);process.exitCode=1;});

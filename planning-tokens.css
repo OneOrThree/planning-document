@@ -1,0 +1,20 @@
+/* 기획 작업대 전용. 앱 풍경에는 적용하지 않는 저채도·고대비 읽기 토큰. */
+:root{
+  --paper:oklch(97% .004 220);--ink:oklch(26% .024 230);
+  --sea:oklch(40% .065 225);--muted:oklch(43% .02 230);
+  --rule:oklch(82% .013 220);--sage:oklch(93% .022 215);
+  --rust:oklch(44% .095 55);--warm:oklch(95% .027 80);
+  --color-planning-surface:oklch(99.5% .005 220);
+  --color-planning-inverse:oklch(99% .003 220);
+  --color-planning-rule-strong:oklch(66% .025 220);
+  --color-planning-confirmed:oklch(37% .066 165);
+  --color-planning-confirmed-bg:oklch(95% .022 165);
+  --color-planning-history:oklch(44% .009 240);
+  --color-planning-history-bg:oklch(93% .005 240);
+  --font-planning:'Apple SD Gothic Neo','Noto Sans KR',system-ui,sans-serif;
+  --space-xs:.5rem;--space-sm:.75rem;--space-md:1rem;--space-lg:1.5rem;--space-xl:2rem;--space-2xl:3rem;
+  --space-planning-anchor:calc(var(--planning-nav-height,10rem) + var(--space-md));--z-planning-nav:100;
+  --text-workbench-title:clamp(1.5rem,2.5vw,2rem);
+  --text-planning-heading:clamp(1.5rem,2.3vw,1.875rem);
+  --text-planning-subhead:1.125rem;--text-planning-body:1rem;--text-planning-small:.875rem;--text-planning-caption:.8125rem;
+}

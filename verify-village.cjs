@@ -1,0 +1,104 @@
+/* 실행: PLAYWRIGHT_MODULE=/path/to/playwright node verify-village.cjs */
+const assert=require('node:assert/strict');
+const path=require('node:path');
+const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
+const base=process.env.VILLAGE_URL||(process.env.BASE_URL || 'http://127.0.0.1:4173/').replace(/\/$/, '');
+const screenshots=path.join(__dirname,'tmp/verification');
+const errors=[];
+const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+let passed=0;
+function ok(condition,label){assert.ok(condition,label);console.log('✓ '+label);passed++;}
+(async()=>{
+ const browser=await chromium.launch();
+ try {
+  const page=await browser.newPage({viewport:{width:1440,height:960}});
+  page.on('pageerror',e=>errors.push(e.message));
+  await page.goto(base);await page.locator('#load-state').waitFor({state:'hidden'});
+  await page.evaluate(()=>window.testMap=document.querySelector('#map-image'));
+  const source=await page.locator('#map-image').getAttribute('src');
+  const transform=()=>page.locator('#map-layer').getAttribute('style');
+  const before=await transform();
+  await page.locator('[data-action=zoom-in]').click();await sleep(480);
+  ok(before!==await transform(),'확대가 실제 카메라 transform을 변경');
+  await page.locator('[data-action=overview]').click();await sleep(480);
+  ok(await page.evaluate(()=>window.testMap===document.querySelector('#map-image')),'축소해도 동일 지도 DOM과 원화 유지');
+  ok(await page.locator('.resident-cat [data-bone]').count()===36,'하나의 12관절 리그를 세 캐릭터에 재사용');
+  for(const key of ['town','camp','board','cabin','tower','post','harbor']){
+   await page.locator(`.dock-building[data-select=${key}]`).click();await sleep(470);
+   ok(await page.locator(`#building-panel .scene-detail image`).getAttribute('href')===source,`${key} 상세 미리보기가 동일 원화 참조`);
+   ok(await page.locator(`[data-building=${key}]`).getAttribute('aria-expanded')==='true',`${key} 실제 건물 선택 상태 연결`);
+  }
+  await page.locator('[data-action=overview]').click();await sleep(500);
+  await page.locator('[data-action=quiet]').click();
+  ok(!await page.locator('.village-dock').isVisible(),'마을만 보기에서 메뉴 숨김');
+  await page.locator('[data-building=board]').click();await sleep(480);
+  ok(await page.locator('#building-panel').isVisible(),'마을만 보기에서도 지도 위 건물 직접 터치 가능');
+  await page.locator('[data-action=close-panel]').click();await sleep(480);
+  const preDrag=await transform();
+  await page.mouse.move(250,700);await page.mouse.down();await page.mouse.move(360,690,{steps:8});await page.mouse.up();
+  ok(preDrag!==await transform(),'드래그로 지도 이동');
+  await page.locator('[data-action=overview]').click();await sleep(480);
+  const avatar=await page.locator('#avatar-position').getAttribute('style');
+  const target=await page.evaluate(()=>{const m=new DOMMatrix(getComputedStyle(document.querySelector('#map-layer')).transform);return {x:774*m.a+m.e,y:699*m.d+m.f};});
+  await page.mouse.click(target.x,target.y);await sleep(350);
+  ok(avatar!==await page.locator('#avatar-position').getAttribute('style'),'길 클릭으로 캐릭터 이동');
+  await page.locator('.dock-building[data-select=camp]').click();await sleep(480);
+  await page.locator('[data-action=start]').click();await sleep(1100);
+  ok(await page.locator('#session-hud').isVisible(),'같은 모닥불 위에서 집중 세션 시작');
+  ok(await page.locator('#map-image').getAttribute('src')===source,'집중 중에도 다른 배경으로 교체하지 않음');
+  await page.locator('[data-action=finish]').click();await page.locator('[data-action=confirm-finish]').click();
+  ok((await page.locator('#building-panel').innerText()).includes('나의 집중 기록'),'집중 종료 실제 경과 시간 결과');
+  await page.locator('[data-action=close-panel]').click();await sleep(480);
+  await page.locator('.dock-building[data-select=harbor]').click();await page.locator('[data-action=visit]').click();await sleep(480);
+  await page.locator('.dock-building[data-select=camp]').click();
+  ok(!await page.locator('[data-action=start]').count(),'방문한 섬에서는 집중 시작 불가');
+  await page.locator('[data-action=return]').click();await sleep(480);
+  await page.locator('[data-action=night]').click();await sleep(480);
+  ok(await page.evaluate(()=>getComputedStyle(document.querySelector('#map-viewport'),'::after').opacity==='0.6'),'밤 조명을 지도 사각형이 아닌 전체 카메라에 적용');
+  await page.screenshot({path:path.join(screenshots,'village-night-final.png')});
+  await page.locator('[data-action=night]').click();await sleep(480);
+  await page.screenshot({path:path.join(screenshots,'village-desktop-final.png')});
+  for(const [width,height] of [[320,740],[390,844],[768,1024]]){
+   await page.setViewportSize({width,height});await page.goto(base);await page.locator('#load-state').waitFor({state:'hidden'});
+   ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`${width}px 가로 오버플로 없음`);
+   await page.locator('.dock-building[data-select=town]').click();await sleep(500);
+   const box=await page.locator('#building-panel').boundingBox();
+   ok(box.x>=0&&box.x+box.width<=width&&box.y>=0,`${width}px 건물 패널 화면 안에 배치`);
+   await page.locator('[data-action=overview]').click();await sleep(480);
+   ok(await page.locator('#map-image').getAttribute('src')===source,`${width}px 전체 보기 동일 원화`);
+   if(width===390)await page.screenshot({path:path.join(screenshots,'village-mobile-overview.png')});
+  }
+  const touch=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
+  touch.on('pageerror',e=>errors.push(e.message));await touch.goto(base);await touch.locator('#load-state').waitFor({state:'hidden'});
+  const client=await touch.context().newCDPSession(touch);const touchBefore=await touch.locator('#map-layer').getAttribute('style');
+  await client.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:130,y:350,id:0},{x:230,y:450,id:1}]});
+  await client.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:85,y:305,id:0},{x:275,y:495,id:1}]});
+  await client.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
+  ok(touchBefore!==await touch.locator('#map-layer').getAttribute('style'),'두 손가락 핀치 줌으로 실제 카메라 배율 변경');
+  await touch.close();
+  await page.setViewportSize({width:1440,height:1000});await page.goto(base+'/rig.html');
+  const head=page.locator('#character-mount [data-bone=head]');const first=await head.getAttribute('transform');await sleep(300);
+  ok(first!==await head.getAttribute('transform'),'리그 머리 관절이 자동 애니메이션');
+  await page.locator('#joint-head').fill('24');
+  ok((await head.getAttribute('transform')).includes('rotate(24 '),'슬라이더로 머리 관절을 독립 조절');
+  await page.locator('#bones-toggle').click();
+  ok(await page.locator('.cat-rig.show-bones').count()===1,'12개 관절 시각화 토글');
+  await page.locator('#play-toggle').click();const paused=await head.getAttribute('transform');await sleep(250);
+  ok(paused===await head.getAttribute('transform'),'애니메이션 일시정지');
+  await page.locator('#reset-pose').click();await page.locator('#timeline').fill('7.5');
+  ok(await page.locator('[data-page]').evaluate(n=>Number(n.style.opacity)>0),'타임라인으로 실제 책장 변형 포즈 탐색');
+  await page.locator('[data-clip=wave]').click();await sleep(300);
+  ok((await page.locator('[data-bone=armR]').getAttribute('transform')).includes('rotate(-'),'인사 동작에서 어깨 관절 회전');
+  const svgDownload=page.waitForEvent('download');await page.locator('#export-svg').click();
+  ok((await svgDownload).suggestedFilename()==='momo-pose.svg','포즈 SVG 다운로드');
+  const jsonDownload=page.waitForEvent('download');await page.locator('#export-rig').click();
+  ok((await jsonDownload).suggestedFilename()==='momo-rig.json','리그 JSON 다운로드');
+  await page.locator('[data-clip=read]').click();await page.locator('#bones-toggle').click();
+  await page.screenshot({path:path.join(screenshots,'rig-desktop-final.png'),fullPage:true});
+  await page.setViewportSize({width:390,height:844});
+  ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'모바일 리깅 작업실 가로 오버플로 없음');
+  await page.screenshot({path:path.join(screenshots,'rig-mobile-final.png'),fullPage:true});
+  ok(errors.length===0,'전체 경로에서 브라우저 런타임 오류 없음');
+  console.log(`\n${passed}개 검증 통과`);
+ } finally {await browser.close();}
+})().catch(error=>{console.error(error);process.exitCode=1;});

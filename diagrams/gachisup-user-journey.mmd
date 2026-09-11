@@ -1,0 +1,20 @@
+%%{init: {"theme":"base","fontFamily":"Apple SD Gothic Neo, Arial, sans-serif","themeVariables":{"fontSize":"19px","primaryColor":"#F7F9F8","primaryTextColor":"#243D40","primaryBorderColor":"#9BAEAA","lineColor":"#5B7671","edgeLabelBackground":"#FFFFFF","background":"#FFFFFF"},"flowchart":{"htmlLabels":false,"curve":"stepBefore","nodeSpacing":35,"rankSpacing":48,"padding":22,"useMaxWidth":false},"themeCSS":".node rect {rx:0;ry:0} .edgeLabel {font-size:14px} .flowchart-link {stroke-width:1.5px}"}}%%
+graph LR
+  FIND["01  찾아오다<br/>망원경 · 초대 편지<br/>함께할 섬을 만난다"]
+  TOGETHER["02  함께하다<br/>공통의 약속에 참여<br/>오늘의 목표를 함께 채운다"]
+  BUILD["03  만들다<br/>여러 날의 기여가 쌓여<br/>함께 쓸 장소를 마련한다"]
+  GATHER["04  모이다<br/>우리가 만든 곳에서<br/>새로운 공동 활동을 한다"]
+  RETURN["05  돌아오다<br/>함께 해낸 기억을 남기고<br/>편지 · 해도로 돌아온다"]
+
+  FIND --> TOGETHER
+  TOGETHER --> BUILD
+  BUILD --> GATHER
+  GATHER --> RETURN
+  RETURN -. 다음 만남의 약속 .-> TOGETHER
+
+  classDef plain fill:#F7F9F8,stroke:#9BAEAA,stroke-width:1.4px,color:#243D40;
+  classDef shared fill:#E4F0EB,stroke:#527E70,stroke-width:2px,color:#1F493C;
+  classDef memory fill:#F4EEE2,stroke:#A3916D,stroke-width:1.4px,color:#564831;
+  class FIND plain;
+  class TOGETHER,BUILD,GATHER shared;
+  class RETURN memory;

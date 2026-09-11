@@ -1,0 +1,29 @@
+%%{init: {"theme":"base","fontFamily":"Apple SD Gothic Neo, Arial, sans-serif","themeVariables":{"fontSize":"18px","primaryColor":"#F7F9F8","primaryTextColor":"#243D40","primaryBorderColor":"#9BAEAA","lineColor":"#5B7671","edgeLabelBackground":"#FFFFFF","background":"#FFFFFF"},"flowchart":{"htmlLabels":false,"curve":"stepBefore","nodeSpacing":45,"rankSpacing":55,"padding":20,"useMaxWidth":false},"themeCSS":".node rect {rx:0;ry:0} .edgeLabel {font-size:13px} .flowchart-link {stroke-width:1.5px}"}}%%
+graph TD
+  SEARCH["직접 발견<br/>망원경 · 바람"]
+  INVITE["친구의 초대<br/>편지의 목적지 확인"]
+  CREATE["새 섬 만들기<br/>함께할 공간 마련"]
+  ARRIVE["뗏목으로 입항<br/>방문 후 가입 · 승인 확인"]
+  PROMISE["공통의 목표와 약속<br/>함께할 활동에 참여"]
+  FOCUS["함께 집중하기<br/>공부 · 독서와 공동 액션"]
+  REST["함께 쉬기<br/>모닥불에 둘러앉기"]
+  RESULT["우리가 보탠 시간 확인<br/>개인 기록 · 공동 기여"]
+  NEXT["다음 만남으로<br/>같은 장소의 약속과 귀환"]
+
+  SEARCH --> ARRIVE
+  INVITE --> ARRIVE
+  CREATE --> PROMISE
+  ARRIVE -->|가입 완료 후| PROMISE
+  PROMISE --> FOCUS
+  FOCUS -->|집중 마침| RESULT
+  RESULT --> NEXT
+  NEXT -. 다시 참여 .-> PROMISE
+  FOCUS -. 휴식 선택 .-> REST
+  REST -. 다음 집중 .-> PROMISE
+
+  classDef entry fill:#F7F9F8,stroke:#9BAEAA,stroke-width:1.4px,color:#243D40;
+  classDef shared fill:#E4F0EB,stroke:#527E70,stroke-width:2px,color:#1F493C;
+  classDef rest fill:#F4EEE2,stroke:#A3916D,stroke-width:1.4px,color:#564831;
+  class SEARCH,INVITE,CREATE,ARRIVE entry;
+  class PROMISE,FOCUS,RESULT,NEXT shared;
+  class REST rest;

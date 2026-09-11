@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  <!-- back ears and tail -->
+  <path d="M67 83 C60 66 62 49 72 42 C82 48 89 59 91 73 Z" fill="#FBF4E4" stroke="#8A6F5E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M149 73 C153 57 164 46 175 43 C182 55 179 70 171 84 Z" fill="#FBF4E4" stroke="#8A6F5E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M70 69 C67 60 68 54 72 50 C78 55 81 61 82 67 Z" fill="#F2C4BA"/>
+  <path d="M160 69 C163 59 168 53 174 50 C177 57 174 64 170 70 Z" fill="#F2C4BA"/>
+  <path d="M160 174 C181 161 199 171 194 187 C190 199 176 202 163 194" fill="none" stroke="#8A6F5E" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M190 176 C198 184 191 196 181 198" fill="none" stroke="#9B7967" stroke-width="9" stroke-linecap="round"/>
+
+  <!-- seated body -->
+  <path d="M82 141 C89 129 102 124 120 124 C140 124 153 131 159 143 C165 158 164 184 156 201 C146 207 134 209 119 208 C102 209 89 207 80 201 C75 181 76 155 82 141 Z" fill="#FBF4E4" stroke="#8A6F5E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M140 133 C154 137 160 149 159 167 C150 166 141 160 137 150 C135 143 136 136 140 133 Z" fill="#EFB27C"/>
+  <path d="M99 154 C111 149 128 151 136 161 C140 172 138 190 132 200 C122 205 110 204 101 200 C95 188 94 166 99 154 Z" fill="#F9E7B7"/>
+  <path d="M78 205 C85 193 97 190 108 197 C112 200 113 205 112 210 C101 209 91 211 82 210 C78 209 76 207 78 205 Z" fill="#FBF4E4" stroke="#8A6F5E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M128 209 C126 203 129 198 135 195 C146 190 157 196 161 206 C161 209 158 210 154 210 Z" fill="#FBF4E4" stroke="#8A6F5E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- head -->
+  <path d="M70 76 C78 60 96 51 119 51 C144 51 163 61 171 79 C179 95 174 120 160 133 C149 143 136 147 118 146 C97 147 82 141 72 129 C61 116 60 92 70 76 Z" fill="#FBF4E4" stroke="#8A6F5E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M84 62 C94 54 107 51 120 52 C124 60 121 71 114 77 C104 84 90 80 80 72 C80 68 81 65 84 62 Z" fill="#EFB27C"/>
+  <path d="M137 56 C150 60 160 68 166 80 C163 88 154 92 145 88 C137 84 132 75 134 65 C134 61 135 58 137 56 Z" fill="#9B7967"/>
+  <!-- face -->
+  <path d="M87 103 C92 105 97 105 102 103 M136 103 C141 105 146 105 151 102" fill="none" stroke="#3D3833" stroke-width="3.5" stroke-linecap="round"/>
+  <ellipse cx="80" cy="116" rx="10" ry="5.4" fill="#F2B8AC" opacity="0.48"/>
+  <ellipse cx="157" cy="115" rx="9.5" ry="5.1" fill="#F2B8AC" opacity="0.48"/>
+  <path d="M117 111 C119 109 122 110 123 112 C122 114 120 115 118 114" fill="#3D3833"/>
+  <path d="M113 119 C117 117 123 117 127 119" fill="none" stroke="#3D3833" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M84 113 C75 110 69 110 63 112 M84 118 C75 119 69 122 64 125 M153 112 C162 109 168 110 174 112 M153 118 C162 119 168 122 173 125" fill="none" stroke="#8A6F5E" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- front arms -->
+  <path d="M87 153 C78 157 76 172 83 181 C89 186 97 181 100 172 C102 164 98 156 92 153 C90 152 89 152 87 153 Z" fill="#FBF4E4" stroke="#8A6F5E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M151 153 C160 158 162 172 155 181 C149 186 141 181 138 172 C136 164 140 156 146 153 C148 152 150 152 151 153 Z" fill="#FBF4E4" stroke="#8A6F5E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- open book -->
+  <path d="M52 176 C70 170 91 173 118 185 C143 173 165 170 187 177 C186 187 184 197 181 207 C159 202 140 204 119 212 C97 204 78 202 57 207 C55 197 53 187 52 176 Z" fill="#FBF4E4" stroke="#8A6F5E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M118 185 C117 193 118 202 119 212" fill="none" stroke="#8A6F5E" stroke-width="3" stroke-linecap="round"/>
+  <path d="M64 181 C81 178 96 181 108 187 M130 187 C143 181 158 178 176 181" fill="none" stroke="#EFB27C" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

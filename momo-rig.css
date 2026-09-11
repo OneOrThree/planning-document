@@ -1,0 +1,6 @@
+.momo-rig-host{isolation:isolate}
+.momo-canvas,.momo-overlay,.momo-fallback{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:contain;display:block;pointer-events:none}
+.momo-canvas{opacity:0}.momo-fallback{opacity:1}
+[data-rig-state=ready]>.momo-canvas{opacity:1}[data-rig-state=ready]>.momo-fallback{opacity:0}
+.momo-shadow{position:absolute;left:22%;top:86%;width:68%;height:7%;border-radius:50%;background:#4c4324;opacity:.12;filter:blur(4px);pointer-events:none}
+.momo-overlay{overflow:visible}.momo-guides{display:none}.show-bones .momo-guides{display:block}

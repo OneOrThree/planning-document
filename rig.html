@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#efebdf">
+  <title>숲 친구들의 작업실 · 같이숲 캐릭터 리그</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Jua&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="rig-studio.css?v=animal-rigs-3">
+  <link rel="stylesheet" href="momo-rig.css">
+  <link rel="stylesheet" href="walk-studio.css">
+</head>
+<body>
+  <header class="studio-header"><a href="./" class="back-link">← 마을로 돌아가기</a><nav class="motion-nav" aria-label="캐릭터 동작"><a href="rig.html" aria-current="page">책 읽기</a><a href="walk.html">산책하기</a></nav><button id="export-rig">리그 JSON 받기 ↗</button></header>
+  <main class="studio">
+    <section class="stage-section" aria-label="리깅 캐릭터 미리보기">
+      <div class="stage-heading"><div><p class="eyebrow">같은 책, 다섯 친구</p><h1 id="character-title">책 읽는 모모</h1></div><span class="asset-tag" id="asset-tag">승인 원화 · 12관절</span></div>
+      <section class="character-picker" aria-labelledby="character-picker-title">
+        <div class="character-picker-heading"><div><h2 id="character-picker-title">캐릭터 선택</h2><p>아래 친구를 누르면 바로 바뀌어요.</p></div><label for="character-select">지금 볼 친구<select id="character-select"><option value="momo">모모</option><option value="puppy">강아지</option><option value="golden">골든리트리버</option><option value="capybara">카피바라</option><option value="red-panda">레서판다</option></select></label></div>
+        <div class="character-options" id="character-options" role="group" aria-label="캐릭터 원화 선택">
+          <button type="button" data-character="momo" data-mode="full" data-reference="assets/momo-reading-concept-v3.png" aria-pressed="true"><img src="assets/momo-rig-source.png" alt="" width="76" height="76"><span>모모</span><small>승인 리깅</small></button>
+          <button type="button" data-character="puppy" data-mode="species" aria-pressed="false"><img src="assets/puppy-reading-rig-v2.png" alt="" width="76" height="76"><span>강아지</span><small>12관절 리깅</small></button>
+          <button type="button" data-character="golden" data-mode="species" aria-pressed="false"><img src="assets/golden-retriever-rig-source.png" alt="" width="76" height="76"><span>골든리트리버</span><small>12관절 리깅</small></button>
+          <button type="button" data-character="capybara" data-mode="species" aria-pressed="false"><img src="assets/capybara-reading-rig-v2.png" alt="" width="76" height="76"><span>카피바라</span><small>8관절 리깅</small></button>
+          <button type="button" data-character="red-panda" data-mode="species" aria-pressed="false"><img src="assets/red-panda-reading-rig-v2.png" alt="" width="76" height="76"><span>레서판다</span><small>12관절 리깅</small></button>
+        </div>
+        <noscript>캐릭터를 전환하려면 브라우저에서 JavaScript를 켜 주세요. <a href="assets/capybara-reading-rig-v2.png">카피바라 원화 보기</a> · <a href="assets/red-panda-reading-rig-v2.png">레서판다 원화 보기</a></noscript>
+      </section>
+      <p class="character-note" id="character-note">모모는 승인한 원화에 눈 깜빡임과 책장 움직임을 연결했어요.</p>
+      <div class="rig-stage" id="rig-stage">
+        <div class="stage-grid" aria-hidden="true"></div>
+        <div class="character-mount" id="character-mount"></div>
+        <button id="reference-toggle" aria-pressed="false">승인 원화와 비교</button>
+        <div class="stage-caption"><span class="live-dot"></span><span id="stage-status">책을 읽고 있어요</span></div>
+        <span class="stage-note">원화의 색과 질감을 그대로</span>
+        <button id="bones-toggle" aria-pressed="false">관절 보기</button>
+      </div>
+      <div class="playback">
+        <button id="play-toggle" class="play-button" aria-label="애니메이션 일시정지">Ⅱ</button>
+        <label class="timeline-label" for="timeline">타임라인 <output id="time-output">0.00초</output><input id="timeline" type="range" min="0" max="12" step="0.01" value="0"></label>
+        <label class="speed-label" for="speed">속도<select id="speed"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label>
+      </div>
+      <div class="clip-options" role="group" aria-label="동작 선택"><button data-clip="read" aria-pressed="true"><b>01</b> 책 읽기<small>호흡 · 눈 깜빡임 · 책장</small></button><button data-clip="idle" aria-pressed="false"><b>02</b> 잠깐 쉬기<small>귀 · 꼬리 · 호흡</small></button><button data-clip="nod" aria-pressed="false"><b>03</b> 고개 끄덕<small>작게 답하는 인사</small></button></div>
+    </section>
+    <aside class="inspector" aria-label="관절 조절">
+      <p class="eyebrow">마음에 든 그 모습 그대로</p><h2>조금씩 살아나는 모모</h2><p class="intro">눈을 깜빡이고, 조용히 숨을 쉬어요.<br>승인한 원화에 작은 움직임을 연결했습니다.</p>
+      <div class="action-pair"><button id="blink">눈 깜빡</button><button id="turn-page">책장 넘기기</button></div>
+      <div class="section-heading"><h3>관절 직접 조절</h3><button id="reset-pose">초기화 ↺</button></div>
+      <div id="joint-controls"></div>
+      <div class="rig-info"><h3>원화에 연결된 12개 관절</h3><p>3,200개 삼각형으로 이루어진 메시가 관절을 따라 움직입니다. 작은 각도 안에서 볼·책·앞발의 형태를 유지해요.</p><div class="bone-tree">몸통 → 머리 → 양쪽 귀<br><span>　└ 책 → 앞발 → 손목</span><br>기준 → 꼬리 → 꼬리 끝</div></div>
+      <button class="export-svg" id="export-png">지금 포즈 PNG 받기 ↓</button>
+      <p class="implementation-note">원화 기반 WebGL 메시 리그입니다. 진짜 벡터나 Spine·Rive 전용 파일은 아닙니다. 원화와 관절·가중치 데이터를 함께 재사용할 수 있어요.</p>
+      <a class="camp-link" href="./?screen=camp">모닥불에서 만나기 →</a>
+    </aside>
+  </main>
+  <script src="reading-profile-puppy.js?v=animal-rigs-7"></script><script src="reading-profile-capybara.js?v=animal-rigs-7"></script><script src="reading-profile-red-panda.js?v=animal-rigs-7"></script><script src="reading-profile-golden.js?v=animal-rigs-7"></script>
+  <script src="momo-rig.js?v=animal-rigs-7"></script><script src="rig-studio.js?v=animal-rigs-7"></script>
+</body>
+</html>

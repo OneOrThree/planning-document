@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  <!-- back ears and tail -->
+  <path d="M67 82 C60 65 62 48 72 41 C82 47 89 58 91 72 Z" fill="#FBF4E4" stroke="#8A6F5E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M149 72 C153 56 164 45 175 42 C182 54 179 69 171 83 Z" fill="#FBF4E4" stroke="#8A6F5E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M70 68 C67 59 68 53 72 49 C78 54 81 60 82 66 Z" fill="#F2C4BA"/>
+  <path d="M160 68 C163 58 168 52 174 49 C177 56 174 63 170 69 Z" fill="#F2C4BA"/>
+  <path d="M165 159 C185 148 199 158 195 174 C192 185 181 190 170 184" fill="none" stroke="#8A6F5E" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M191 163 C197 172 191 181 183 184" fill="none" stroke="#9B7967" stroke-width="9" stroke-linecap="round"/>
+
+  <!-- body -->
+  <path d="M82 139 C88 128 101 123 119 123 C139 123 152 129 158 141 C164 154 165 181 158 204 C150 209 137 210 120 209 C102 210 88 209 80 204 C75 183 75 154 82 139 Z" fill="#FBF4E4" stroke="#8A6F5E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M139 132 C153 136 159 147 159 165 C149 164 140 158 136 148 C134 141 135 135 139 132 Z" fill="#EFB27C"/>
+  <path d="M101 151 C112 147 127 149 135 158 C141 168 140 193 133 205 C124 208 111 207 103 203 C96 191 95 164 101 151 Z" fill="#F9E7B7"/>
+  <path d="M92 208 C94 199 101 195 110 199 C114 202 114 207 113 210 Z" fill="#FBF4E4" stroke="#8A6F5E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M127 210 C126 203 130 198 137 197 C146 196 151 202 151 209 Z" fill="#FBF4E4" stroke="#8A6F5E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- head -->
+  <path d="M70 75 C78 59 96 50 119 50 C144 50 163 60 171 78 C179 94 174 119 160 132 C149 142 136 146 118 145 C97 146 82 140 72 128 C61 115 60 91 70 75 Z" fill="#FBF4E4" stroke="#8A6F5E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M84 61 C94 53 107 50 120 51 C124 59 121 70 114 76 C104 83 90 79 80 71 C80 67 81 64 84 61 Z" fill="#EFB27C"/>
+  <path d="M137 55 C150 59 160 67 166 79 C163 87 154 91 145 87 C137 83 132 74 134 64 C134 60 135 57 137 55 Z" fill="#9B7967"/>
+  <!-- face -->
+  <ellipse cx="94" cy="101" rx="4.3" ry="7" fill="#3D3833"/>
+  <ellipse cx="143" cy="100" rx="4.1" ry="6.8" fill="#3D3833"/>
+  <ellipse cx="92.8" cy="98.5" rx="1.15" ry="1.45" fill="#FFFFFF"/>
+  <ellipse cx="141.8" cy="97.6" rx="1.1" ry="1.4" fill="#FFFFFF"/>
+  <ellipse cx="80" cy="115" rx="10" ry="5.4" fill="#F2B8AC" opacity="0.52"/>
+  <ellipse cx="157" cy="114" rx="9.5" ry="5.1" fill="#F2B8AC" opacity="0.52"/>
+  <path d="M117 110 C119 108 122 109 123 111 C122 113 120 114 118 113" fill="#3D3833"/>
+  <path d="M120 114 C118 118 114 120 110 117 M120 114 C122 119 127 120 130 116" fill="none" stroke="#3D3833" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M84 112 C75 109 69 109 63 111 M84 117 C75 118 69 121 64 124 M153 111 C162 108 168 109 174 111 M153 117 C162 118 168 121 173 124" fill="none" stroke="#8A6F5E" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- front arms -->
+  <path d="M85 151 C76 157 74 174 78 184 C82 190 89 188 92 181 C94 171 94 159 91 153 C89 151 87 150 85 151 Z" fill="#FBF4E4" stroke="#8A6F5E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M153 151 C161 158 164 173 160 184 C157 190 149 188 147 181 C144 169 145 158 148 153 C149 151 151 150 153 151 Z" fill="#FBF4E4" stroke="#8A6F5E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

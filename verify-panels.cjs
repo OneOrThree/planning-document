@@ -1,0 +1,78 @@
+const assert=require('node:assert/strict');
+const path=require('node:path');
+const fs=require('node:fs/promises');
+const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
+const base=process.env.VILLAGE_URL||(process.env.BASE_URL || 'http://127.0.0.1:4173/').replace(/\/$/, '');
+const buildings={camp:'오늘의 활동',town:'마을회관',board:'게시판',cabin:'오두막',harbor:'항구',tower:'전망대',post:'우체국'};
+let count=0;const errors=[];const ok=(v,s)=>{assert.ok(v,s);console.log('✓ '+s);count++;};
+(async()=>{const browser=await chromium.launch();try{
+  const page=await browser.newPage({viewport:{width:1440,height:1000},reducedMotion:'reduce'});
+  page.on('pageerror',e=>errors.push(e.message));
+  await fs.mkdir(path.join(__dirname,'tmp/verification/panels'),{recursive:true});
+  const goto=async key=>{await page.goto(base+'/?screen='+key);await page.locator('#building-panel:not([hidden])').waitFor();await page.locator('.avatar-walker[data-walk-state=ready]').waitFor();};
+  const select=key=>page.locator('.dock-building[data-select='+key+']').click();
+  const act=key=>page.locator('[data-action='+key+']').last().click();
+  for(const [width,height] of [[1440,1000],[768,844],[390,844],[320,640]]){
+    await page.setViewportSize({width,height});
+    for(const [key,title] of Object.entries(buildings)){
+      await goto(key);
+      const layout=await page.locator('#building-panel').evaluate(e=>{const b=e.querySelector('.building-content'),f=e.querySelector('.panel-footer'),r=e.getBoundingClientRect(),fr=f.getBoundingClientRect();return {children:[...e.children].map(n=>n.className),overflow:Math.max(e.scrollWidth-e.clientWidth,b.scrollWidth-b.clientWidth,document.documentElement.scrollWidth-innerWidth),visible:r.top>=0&&r.right<=innerWidth+1&&fr.bottom<=innerHeight+1&&fr.top>=r.top,action:f.querySelector('button').getBoundingClientRect().height};});
+      ok(await page.locator('#building-panel-title').textContent()===title&&layout.children.includes('panel-footer')&&layout.children.length===4&&layout.visible&&layout.overflow<=1&&layout.action>=44,width+'px '+title+' · 본문 분리·고정 버튼·가로 넘침 없음');
+      if(width===390||width===1440)await page.screenshot({path:path.join(__dirname,'tmp/verification/panels',key+'-'+(width===390?'mobile':'desktop')+'.png')});
+    }
+  }
+
+  await page.setViewportSize({width:1440,height:1000});await goto('camp');
+  const map=await page.locator('#map-image').getAttribute('src');
+  await page.locator('#duration-50').click();
+  ok(await page.locator('.activity-duration-heading b').textContent()==='50분'&&(await page.locator('[data-action=start]').textContent()).includes('50분'),'집중 시간·시간 표시·시작 버튼 동기화');
+  await act('start');ok((await page.locator('#session-timer').textContent()).startsWith('50:'),'선택한 50분으로 실제 세션 시작');
+  await page.locator('.dock-building[data-select=harbor]').evaluate(e=>e.click());
+  ok(await page.locator('#building-panel').isHidden(),'집중 중 다른 건물 진입 차단');
+  await page.evaluate(()=>{const now=Date.now;Date.now=()=>now()+65000;});
+  await act('finish');await act('confirm-finish');
+  ok((await page.locator('.receipt-number').textContent()).includes('1분')&&(await page.locator('.receipt-row').last().textContent()).includes('느티나무 섬'),'세션 결과에 실제 경과 시간과 시작한 섬 표시');
+  await page.locator('.building-content [data-select=cabin]').click();
+  await page.locator('#stats-tab-me').click();await page.locator('[data-feature=period][data-value=DAY]').click();
+  ok((await page.locator('.record-number').textContent()).includes('36분'),'종료한 세션이 개인 오늘 기록에 반영');
+  await page.locator('#stats-tab-me').focus();await page.keyboard.press('ArrowLeft');
+  ok(await page.locator('#stats-tab-group').getAttribute('aria-selected')==='true'&&await page.locator('#stats-tab-group').evaluate(e=>e===document.activeElement),'기록 탭 방향키 전환과 포커스 유지');
+  await select('board');await page.locator('#board-tab-quests').focus();await page.keyboard.press('End');
+  ok(await page.locator('#board-tab-share').getAttribute('aria-selected')==='true','자료 탭 End 키 전환');
+  await page.keyboard.press('Home');await page.locator('[data-feature=read-quest][data-value=focus-home]').click();
+  ok((await page.locator('.quest-large').textContent()).includes('36'),'퀘스트 상세에 현재 개인 기록 반영');
+  await page.locator('[data-feature=go-camp]').click();ok(await page.locator('#building-panel-title').textContent()==='오늘의 활동','퀘스트에서 집중 시작 화면으로 연결');
+  await select('town');await act('members');ok(await page.locator('#village-dialog .friend-row').count()===5,'마을회관 친구 목록 열기');await act('close-dialog');
+  await act('rename');await page.locator('#rename-input').fill('숲');await act('save-name');ok(await page.locator('#rename-input').getAttribute('aria-invalid')==='true','섬 이름 길이 검증');
+  await page.locator('#rename-input').fill('새벽의 서재');await act('save-name');ok((await page.locator('#rename-error').textContent()).includes('같은 이름'),'중복 섬 이름 거부');
+  await page.locator('#rename-input').fill('<작은 숲>');await act('save-name');
+  ok(await page.locator('#island-name').textContent()==='<작은 숲>'&&await page.locator('.building-intro h3').textContent()==='<작은 숲>','이름 변경 반영 및 HTML 문자 이스케이프');
+  await select('harbor');ok(await page.locator('[data-action=travel]').isDisabled()&&(await page.locator('#destination-home').textContent()).includes('<작은 숲>'),'이름 변경이 항구 목록에도 반영·이동 전 선택 필수');
+  await page.locator('#destination-home').evaluate(e=>e.click());ok(await page.locator('[data-action=travel]').isDisabled(),'현재 섬으로 중복 이동 방지');
+  await page.locator('#destination-dawn').click();ok(await page.locator('#island-name').textContent()==='<작은 숲>'&&await page.locator('[data-action=travel]').isEnabled(),'목적지 선택만으로 현재 섬이 바뀌지 않음');
+  await act('travel');ok(await page.locator('#island-name').textContent()==='새벽의 서재'&&(await page.locator('.island-meta').textContent()).includes('친구 4명'),'이동 확인 후 섬 이름·친구 수 갱신');
+  await select('cabin');ok(await page.locator('.member-stat').count()===4,'이동한 섬 구성원 기록 표시');
+  ok(await page.evaluate(()=>{const m=GachisupStore.create(localStorage);return m.get().sessions[0].islandId==='home';}),'이전 섬의 집중 세션이 이동한 섬으로 옮겨가지 않음');
+  await select('town');ok(await page.locator('.level-display strong').textContent()==='2','마을회관도 현재 섬 레벨로 표시');
+  await select('harbor');await page.locator('#harbor-tab-explore').click();await act('visit');await select('camp');
+  ok((await page.locator('.visiting-content').textContent()).includes('읽기 전용')&&await page.locator('[data-action=start]').count()===0,'다른 섬 방문 시 집중·설정 조작 없는 읽기 전용 화면');
+  await act('return');ok(await page.locator('#island-name').textContent()==='새벽의 서재','방문 종료 후 내가 머물던 섬으로 복귀');
+  await select('tower');await page.locator('#ranking-tab-islands').click();ok((await page.locator('.ranking-preview').textContent()).includes('새벽의 서재')&&await page.locator('[data-feature=preview-tower]').count()===0,'전망대 기본 개방과 섬 간 랭킹');
+  await select('post');ok(await page.locator('#feature-letter').count()===1&&await page.locator('[data-feature=preview-post]').count()===0,'우체국 기본 개방과 편지 작성 폼');
+  ok(await page.locator('#map-image').getAttribute('src')===map&&await page.locator('.building-content img[src*=panel-references]').count()===0,'모든 건물에서 같은 마을 원화 유지');
+  await page.keyboard.press('Escape');await page.locator('.dock-building[data-select=camp]').focus();await page.keyboard.press('Enter');await page.keyboard.press('Escape');
+  ok(await page.locator('#building-panel').isHidden()&&await page.locator('.dock-building[data-select=camp]').evaluate(e=>e===document.activeElement),'패널 닫으면 원래 건물 버튼으로 키보드 포커스 복원');
+  await page.setViewportSize({width:390,height:844});await goto('camp');
+  ok(await page.locator('.duration-options').evaluate(e=>e.getBoundingClientRect().bottom<document.querySelector('.panel-footer').getBoundingClientRect().top),'모바일 기본 시트에서 세 시간 선택이 가려지지 않음');
+  await page.locator('#panel-expand').click();ok(await page.locator('#building-panel').evaluate(e=>e.classList.contains('is-expanded')&&e.getBoundingClientRect().top<25),'모바일 화면 크게 보기');
+  await page.locator('#panel-grip').click();ok(await page.locator('#building-panel').evaluate(e=>!e.classList.contains('is-expanded')),'손잡이 탭으로 기본 높이 복원');
+  const grip=await page.locator('#panel-grip').boundingBox();await page.mouse.move(grip.x+grip.width/2,grip.y+8);await page.mouse.down();await page.mouse.move(grip.x+grip.width/2,grip.y-100,{steps:8});await page.mouse.up();
+  ok(await page.locator('#building-panel').evaluate(e=>e.classList.contains('is-expanded')),'손잡이 위로 스와이프하면 확장');
+  await page.waitForTimeout(400);const raised=await page.locator('#panel-grip').boundingBox();await page.mouse.move(raised.x+raised.width/2,raised.y+8);await page.mouse.down();await page.mouse.move(raised.x+raised.width/2,raised.y+120,{steps:8});await page.mouse.up();
+  ok(await page.locator('#building-panel').evaluate(e=>!e.classList.contains('is-expanded')),'손잡이 아래로 스와이프하면 축소');
+  await goto('cabin');ok(await page.locator('#building-panel').evaluate(e=>e.classList.contains('is-expanded')),'오두막은 모바일 진입 시 확장');
+  const footer=await page.locator('.panel-footer').boundingBox();await page.locator('.building-content').evaluate(e=>e.scrollTop=e.scrollHeight);const footerAfter=await page.locator('.panel-footer').boundingBox();
+  ok(footer.y===footerAfter.y&&await page.locator('.building-content').evaluate(e=>e.scrollTop>0),'모바일 본문 스크롤에도 주 버튼은 제자리 유지');
+  await page.screenshot({path:path.join(__dirname,'tmp/verification/panels/cabin-mobile-expanded.png')});
+  ok(errors.length===0,'건물 화면 브라우저 런타임 오류 없음');console.log('\n'+count+'개 검증 통과');
+}finally{await browser.close();}})().catch(error=>{console.error(error);process.exitCode=1;});

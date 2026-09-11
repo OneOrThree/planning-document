@@ -1,0 +1,6 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>레서판다 산책 검증</title>
+<link rel="stylesheet" href="momo-walk.css"><style>body{margin:20px;background:#f5f1e6;font:14px sans-serif;color:#493b31}main{display:grid;grid-template-columns:repeat(4,280px);gap:16px}article{padding:10px;background:#e1eedd;border:1px solid #c8cfbe}h2{font-size:16px;margin:0 0 12px}.mount{width:260px;height:260px}article:nth-child(n+5){background:#efe8df}</style></head><body><main></main>
+<script src="walk-profile-red-panda.js"></script><script src="momo-walk.js"></script><script>
+(async()=>{window.redPandaWalkQaRigs=[];for(const [i,direction] of ['sw','se','ne','nw','sw','sw','ne','ne'].entries()){const card=document.createElement('article');card.innerHTML=`<h2>${direction} · ${i<4?'중립':i%2?'오른발':'왼발'}</h2><div class="mount"></div>`;document.querySelector('main').append(card);const rig=GachisupWalkRig.create(card.querySelector('.mount'),{profile:GachisupWalkProfiles['red-panda'],preview:true,resolution:1254});rig.paused=true;redPandaWalkQaRigs.push(rig);await rig.ready;rig.setDirection(direction);rig.setWalking(true);rig.seek(i<4?0:i%2?.75:.25);}document.body.dataset.ready='true';})();
+</script></body></html>

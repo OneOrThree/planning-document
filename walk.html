@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#efebdf"><title>숲 친구들의 산책 작업실 · 같이숲</title>
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Jua&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="rig-studio.css?v=walk-friends-1"><link rel="stylesheet" href="momo-walk.css?v=walk-friends-1"><link rel="stylesheet" href="walk-studio.css?v=walk-friends-1">
+</head>
+<body>
+  <header class="studio-header"><a href="./" class="back-link">← 마을로 돌아가기</a><nav class="motion-nav" aria-label="캐릭터 동작"><a href="rig.html">책 읽기</a><a href="walk.html" aria-current="page">산책하기</a></nav><button id="export-walk">리그 JSON 받기 ↗</button></header>
+  <main class="studio">
+    <section class="stage-section" aria-label="걷기 리그 미리보기">
+      <div class="stage-heading"><div><p class="eyebrow">책을 내려놓고, 잠깐 바람 쐬기</p><h1>산책하는 모모</h1></div><span class="asset-tag">앞·뒤 원화 · 20관절</span></div>
+      <section class="character-picker" aria-labelledby="walk-picker-title">
+        <div class="character-picker-heading"><div><h2 id="walk-picker-title">캐릭터 선택</h2><p>같은 친구의 새로운 발걸음.</p></div><label for="walk-character-select">함께 걸을 친구<select id="walk-character-select"><option value="momo">모모</option><option value="puppy">강아지</option><option value="capybara">카피바라</option><option value="red-panda">레서판다</option></select></label></div>
+        <div class="character-options walk-character-options" id="walk-character-options" role="group" aria-label="산책 캐릭터 선택">
+          <button type="button" data-walk-character="momo" aria-pressed="true"><img src="assets/momo-walk-front.png" alt="" width="76" height="76"><span>모모</span><small>20관절 리깅</small></button>
+          <button type="button" data-walk-character="puppy" aria-pressed="false"><img src="assets/puppy-walk-front-v1.png" alt="" width="76" height="76"><span>강아지</span><small>20관절 리깅</small></button>
+          <button type="button" data-walk-character="capybara" aria-pressed="false"><img src="assets/capybara-walk-front-v1.png" alt="" width="76" height="76"><span>카피바라</span><small>18관절 리깅</small></button>
+          <button type="button" data-walk-character="red-panda" aria-pressed="false"><img src="assets/red-panda-walk-front-v1.png" alt="" width="76" height="76"><span>레서판다</span><small>20관절 리깅</small></button>
+        </div>
+      </section>
+      <div class="rig-stage walk-stage" id="walk-stage">
+        <div class="stage-grid" aria-hidden="true"></div><div class="walk-ground" aria-hidden="true"></div>
+        <div class="walk-mount" id="walk-mount"></div>
+        <div class="step-indicator" aria-label="발 디딤 상태"><span id="left-contact">왼발</span><i></i><span id="right-contact">오른발</span></div>
+        <div class="stage-caption"><span class="live-dot"></span><span id="walk-status">가벼운 발걸음으로 걸어요</span></div>
+        <span class="stage-note">발 디딤 → 무게 이동 → 다음 걸음</span><button id="walk-bones" aria-pressed="false">관절 보기</button>
+      </div>
+      <div class="playback"><button id="walk-play" class="play-button" aria-label="걷기 일시정지">Ⅱ</button><label class="timeline-label" for="walk-cycle">한 걸음 주기 <output id="cycle-output">0%</output><input id="walk-cycle" type="range" min="0" max="1" step="0.001" value="0"></label><label class="speed-label" for="walk-speed">이동 속도<select id="walk-speed"><option value="56">느긋하게</option><option value="100" selected>보통</option><option value="144">사뿐사뿐</option></select></label></div>
+      <div class="clip-options walk-clips" role="group" aria-label="걷기 동작"><button data-walk-clip="walk" aria-pressed="true"><b>01</b> 산책하기<small>양발 · 팔 · 몸통 · 꼬리</small></button><button data-walk-clip="idle" aria-pressed="false"><b>02</b> 잠깐 멈추기<small>발을 내려놓고 편안하게</small></button></div>
+    </section>
+    <aside class="inspector" aria-label="걷기 관절 조절">
+      <p class="eyebrow">같은 모모, 새로운 하루</p><h2>한 걸음씩, 우리 섬을</h2><p class="intro">가는 쪽으로 몸을 돌리고,<br>두 발을 번갈아 디디며 걸어요.<br>섬에서는 실제 이동 거리와 보폭이 연결됩니다.</p>
+      <div class="direction-controls" role="group" aria-label="걷는 방향"><button data-direction="nw" aria-pressed="false">↖ 뒤·왼쪽</button><button data-direction="ne" aria-pressed="false">뒤·오른쪽 ↗</button><button data-direction="sw" aria-pressed="true">↙ 앞·왼쪽</button><button data-direction="se" aria-pressed="false">앞·오른쪽 ↘</button></div>
+      <div class="section-heading"><h3>관절 직접 조절</h3><button id="walk-reset">초기화 ↺</button></div><div id="walk-joints"></div>
+      <div class="rig-info"><h3>이미지가 살아나는 보행</h3><p>20개 관절과 4,608개 삼각형으로 원화를 변형합니다. 발을 들 때 무릎이 접히고, 팔과 꼬리는 반대 박자로 따라와요.</p><div class="bone-tree">골반 → 몸통 → 머리·귀<br>　├ 양팔 → 팔꿈치 → 앞발<br>　├ 양다리 → 무릎 → 발목<br>　└ 꼬리 → 꼬리 끝</div></div>
+      <a class="walk-island-link" href="./?walk=1">섬에서 직접 걸어보기 →</a><p class="implementation-note">2D 원화 메시 리그입니다. 앞·뒤 두 원화와 좌우 반전으로 네 방향을 표현합니다. 3D 회전이나 Spine·Rive 파일은 아닙니다.</p>
+    </aside>
+  </main>
+  <script src="walk-profile-puppy.js?v=walk-friends-4"></script>
+  <script src="walk-profile-capybara.js?v=walk-friends-4"></script>
+  <script src="walk-profile-red-panda.js?v=walk-friends-4"></script>
+  <script src="momo-walk.js?v=walk-friends-4"></script><script src="walk-studio.js?v=walk-friends-4"></script>
+</body>
+</html>
