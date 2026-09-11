@@ -1,0 +1,281 @@
+{
+  "label": "sand-action-storybook-v1",
+  "phase": "prepare",
+  "from": 0.1,
+  "to": 0.48,
+  "samples": 12,
+  "cropSize": 420,
+  "fingerprint": "f11f5f54b58541a32bc5a3de94f67a807b6dadc3da63c251c81ad4b7bf92a981",
+  "errors": [],
+  "films": [
+    {
+      "id": "unfinished-pier-storybook",
+      "frames": [
+        {
+          "time": 0.75,
+          "crop": {
+            "x": 138.24,
+            "y": 472.24,
+            "size": 420
+          },
+          "filmId": "unfinished-pier-storybook",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 297,
+            "y": 799
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 360,
+            "y": 640,
+            "z": 1
+          },
+          "caption": "모두의 배가 쉬어 갈 부두를 그렸어."
+        },
+        {
+          "time": 1.009090909090909,
+          "crop": {
+            "x": 138.24,
+            "y": 472.24,
+            "size": 420
+          },
+          "filmId": "unfinished-pier-storybook",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 297,
+            "y": 799
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 360,
+            "y": 640,
+            "z": 1
+          },
+          "caption": "모두의 배가 쉬어 갈 부두를 그렸어."
+        },
+        {
+          "time": 1.2681818181818183,
+          "crop": {
+            "x": 138.24,
+            "y": 472.24,
+            "size": 420
+          },
+          "filmId": "unfinished-pier-storybook",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 297,
+            "y": 799
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 360,
+            "y": 640,
+            "z": 1
+          },
+          "caption": "모두의 배가 쉬어 갈 부두를 그렸어."
+        },
+        {
+          "time": 1.5272727272727276,
+          "crop": {
+            "x": 138.24,
+            "y": 472.24,
+            "size": 420
+          },
+          "filmId": "unfinished-pier-storybook",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 297,
+            "y": 799
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 360,
+            "y": 640,
+            "z": 1
+          },
+          "caption": "모두의 배가 쉬어 갈 부두를 그렸어."
+        },
+        {
+          "time": 1.7863636363636364,
+          "crop": {
+            "x": 138.24,
+            "y": 472.24,
+            "size": 420
+          },
+          "filmId": "unfinished-pier-storybook",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 297,
+            "y": 799
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 360,
+            "y": 640,
+            "z": 1
+          },
+          "caption": "모두의 배가 쉬어 갈 부두를 그렸어."
+        },
+        {
+          "time": 2.0454545454545454,
+          "crop": {
+            "x": 138.24,
+            "y": 472.24,
+            "size": 420
+          },
+          "filmId": "unfinished-pier-storybook",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 297,
+            "y": 799
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 360,
+            "y": 640,
+            "z": 1
+          },
+          "caption": "모두의 배가 쉬어 갈 부두를 그렸어."
+        },
+        {
+          "time": 2.3045454545454547,
+          "crop": {
+            "x": 138.24,
+            "y": 472.24,
+            "size": 420
+          },
+          "filmId": "unfinished-pier-storybook",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 297,
+            "y": 799
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 360,
+            "y": 640,
+            "z": 1
+          },
+          "caption": "모두의 배가 쉬어 갈 부두를 그렸어."
+        },
+        {
+          "time": 2.5636363636363635,
+          "crop": {
+            "x": 138.24,
+            "y": 472.24,
+            "size": 420
+          },
+          "filmId": "unfinished-pier-storybook",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 297,
+            "y": 799
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 360,
+            "y": 640,
+            "z": 1
+          },
+          "caption": "모두의 배가 쉬어 갈 부두를 그렸어."
+        },
+        {
+          "time": 2.8227272727272728,
+          "crop": {
+            "x": 138.24,
+            "y": 472.24,
+            "size": 420
+          },
+          "filmId": "unfinished-pier-storybook",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 297,
+            "y": 799
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 360,
+            "y": 640,
+            "z": 1
+          },
+          "caption": "모두의 배가 쉬어 갈 부두를 그렸어."
+        },
+        {
+          "time": 3.0818181818181816,
+          "crop": {
+            "x": 138.24,
+            "y": 472.24,
+            "size": 420
+          },
+          "filmId": "unfinished-pier-storybook",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 297,
+            "y": 799
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 360,
+            "y": 640,
+            "z": 1
+          },
+          "caption": "모두의 배가 쉬어 갈 부두를 그렸어."
+        },
+        {
+          "time": 3.340909090909091,
+          "crop": {
+            "x": 138.24,
+            "y": 472.24,
+            "size": 420
+          },
+          "filmId": "unfinished-pier-storybook",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 297,
+            "y": 799
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 360,
+            "y": 640,
+            "z": 1
+          },
+          "caption": "모두의 배가 쉬어 갈 부두를 그렸어."
+        },
+        {
+          "time": 3.5999999999999996,
+          "crop": {
+            "x": 138.24,
+            "y": 472.24,
+            "size": 420
+          },
+          "filmId": "unfinished-pier-storybook",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 297,
+            "y": 799
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 360,
+            "y": 640,
+            "z": 1
+          },
+          "caption": "모두의 배가 쉬어 갈 부두를 그렸어."
+        }
+      ]
+    }
+  ]
+}

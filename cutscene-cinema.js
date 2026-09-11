@@ -5,7 +5,7 @@
     if(CutsceneSettings.actorMode==='rig')return CutsceneRig.draw(c,x,y,size,t,{...pose,walk,lean});
     if(pose.look){
       // 세션에서 한 장씩 생성한 파생 자세. 아틀라스 추출물이라고 표시하지 않는다.
-      const registration=.300488*size/384;c.save();c.translate(x,y);c.rotate(lean);c.scale(registration,registration);c.drawImage(pose.look==='reach'?A.images.lookReach:A.images.lookDown,-670.218,-1141);c.restore();return{state:'look-'+pose.look,frame:0};
+      const registration=.300488*size/384,texture=pose.look==='hold'?A.images.lookHold:pose.look==='reach'?A.images.lookReach:A.images.lookDown;c.save();c.translate(x,y);c.rotate(lean);c.scale(registration,registration);c.drawImage(texture,-670.218,-1141);c.restore();return{state:'look-'+pose.look,frame:0};
     }
     if(walk>.1)return CutsceneSprites.draw(c,x,y,size,'walk',pose.gaitTime??t,{lean});
     if(pose.jump!==undefined)return CutsceneSprites.draw(c,x,y,size,'jump',0,{frame:Math.min(3,Math.floor(pose.jump*4)),lean});
@@ -40,14 +40,29 @@
     if(open){c.fillStyle='#65533c';c.beginPath();c.ellipse(-1,-11,14,3*open,0,0,Math.PI*2);c.fill();}
     arc(c,[[-14,-6],[0,mix(0,-10,open)],[13,-6]],'#68563e',1.5);c.restore();
   }
-  function ledgerSketch(c,x,y,size,t,story){
-    c.save();c.translate(x,y);c.scale(size,size);c.lineWidth=2;c.strokeStyle='#8a7755';
-    const points=[[-56,12],[-21,-22],[56,12],[21,46],[-56,12]];arc(c,points.slice(0,Math.min(5,Math.floor(t*2)+1)),'#8a7755',2.5);
-    for(let i=0;i<Math.min(6,Math.floor(t*2));i++)arc(c,[[-39+i*14,2+i*3],[-17+i*14,17+i*3]],'#8a7755',1.7);
-    if(t>2){c.font='600 18px system-ui';c.fillStyle='#725c40';c.fillText(story===2?'우리':'다시, 같이',-19,71);}c.restore();
+  function sandDrawing(c,x,y,size,p,bookTip){
+    const progress=ease((p-.06)/.32),tip=A.islandPlan(c,x+size*.56,y+size*.27,size/234,progress,{sand:true});
+    const hand={x:x+size*.28,y:y-size*.10};
+    const rod=(point,length,rest,restX,restY,restAngle,pencil=false)=>{
+      const angle=Math.atan2(point.y-hand.y,point.x-hand.x),cx=mix(point.x-Math.cos(angle)*length/2,restX,rest),cy=mix(point.y-Math.sin(angle)*length/2,restY,rest);
+      c.save();c.translate(cx,cy);c.rotate(mix(angle,restAngle,rest));c.lineCap='round';
+      c.strokeStyle=pencil?'#6d6350':'#806042';c.lineWidth=size*(pencil?.009:.012);c.beginPath();c.moveTo(-length/2,0);c.lineTo(length/2,0);c.stroke();
+      c.strokeStyle=pencil?'#c7ac74':'#c09b66';c.lineWidth=size*.004;c.beginPath();c.moveTo(-length/2+3,-.7);c.lineTo(length/2-3,-.7);c.stroke();
+      if(pencil){c.strokeStyle='#4c463b';c.lineWidth=size*.008;c.beginPath();c.moveTo(length/2-3,0);c.lineTo(length/2,0);c.stroke();}c.restore();
+    };
+    // 모래용 나뭇가지와 공책 옆의 짧은 연필은 다른 도구다. 긴 가지가 머리 뒤로 솟지 않는다.
+    rod(tip,size*.82,ease((p-.38)/.025),x+size*.49,y+size*.66,-.24);
+    const pencilRest={x:x+size*.66,y:y+size*.095},active=bookTip?ease((p-.397)/.008)*(1-ease((p-.5)/.03)):0;
+    rod(bookTip||pencilRest,size*.34,1-active,pencilRest.x,pencilRest.y,.1,true);
+    return{progress,tip};
+  }
+  function preparationAt(f,t){
+    const p=clamp(t/f.timing.prepareEnd),drawing=f.storyIndex===2,closeAt=f.storyIndex===1?.48:drawing?.54:.36;
+    const liftAt=closeAt+(drawing?.12:.13),stowAt=closeAt+(drawing?.21:.25),shoulderAt=closeAt+(drawing?.28:.35);
+    return{p,closeAt,liftAt,stowAt,shoulderAt,closing:ease((p-closeAt)/.12),lift:ease((p-liftAt)/(drawing?.08:.1)),stow:ease((p-stowAt)/(drawing?.06:.08)),shoulder:ease((p-shoulderAt)/.12)};
   }
   function preparation(c,f,t){
-    const id=f.storyIndex,dir=f.directionId,p=clamp(t/f.timing.prepareEnd);let x,y,size,bookSize;
+    const id=f.storyIndex,dir=f.directionId,{p,closeAt,stowAt,shoulderAt,closing,lift,stow,shoulder}=preparationAt(f,t);let x,y,size,bookSize;
     if(dir==='journey'){
       A.background(c,A.images.coastHome,t);
       x=id===2?182:112;y=id===2?520:423;size=id===2?157:141;bookSize=id===1?.72:.57;
@@ -57,22 +72,24 @@
       A.background(c,A.images.room,t);x=id===1?314:382;y=id===1?844:866;size=238;bookSize=id===1?1.48:1.15;
     }
     bookSize=size/238*.57;
-    const closeAt=id===1?.48:.36,closing=ease((p-closeAt)/.15),lift=ease((p-closeAt-.16)/.13),stow=ease((p-.73)/.09),shoulder=ease((p-.84)/.12);
-    const bx=mix(x+size*.4,x+size*.23,lift),by=mix(y-size*.02,y-size*.17,lift)+stow*size*.25;
+    const bx=mix(x+size*.4,x+size*.23,lift),by=mix(y-size*.02,y-size*.17,lift)+stow*size*.31;
     const bagY=y+size*.28*(1-shoulder),bs=bookSize;
-    const intro=dir==='storybook'?ease((t-1.4)/1.25):1;
-    const bookOptions={opening:1-closing,turn:id===1?clamp((p-.13)/.29):0,blank:id===1?ease((p-.35)/.12):0};
-    const drawBook=()=>{if(intro<1)return;c.save();c.globalAlpha=1-stow;c.translate(bx,by);c.transform(1,.11*(1-lift),-.2*(1-lift),mix(.66,1,lift),0,0);A.book(c,-39*bs*closing,0,bs,t,id,bookOptions);c.restore();};
+    const intro=dir==='storybook'&&id!==2?ease((t-1.4)/1.25):1;
+    const bookOptions={opening:1-closing,turn:id===1?clamp((p-.13)/.29):0,blank:id===1?ease((p-.35)/.12):0,planProgress:id===2?ease((p-.405)/.095):1};
+    let bookTip=null;
+    const drawBook=()=>{if(intro<1||stow>=1)return;c.save();if(stow>0){const openingY=bagY-size*.22-size/176*11;c.beginPath();c.rect(-W,-H,W*3,H+openingY);c.clip();}c.translate(bx,by);c.transform(1,.11*(1-lift),-.2*(1-lift),mix(.66,1,lift),0,0);const ink=A.book(c,-39*bs*closing,0,bs,t,id,bookOptions);c.restore();if(ink)bookTip=c.getTransform().inverse().transformPoint(ink);};
     groundShadow(c,x,y,size,.17);
-    if(id===2)ledgerSketch(c,x+size*.52,y+size*.18,size/195,t,2);
     if(lift===0)drawBook();
+    if(id===2)sandDrawing(c,x,y,size,p,bookTip);
     // 시선→앞발→표지→들어 올리기 순서로 이어 출발 전에 가방에 넣는다.
-    let reach=p<.12?0:p<closeAt?1:p<closeAt+.16?4:p<.73?2:p<.84?4:p<.97?2:0;
-    if(id===2)reach=p<.12?0:p<.58?4:p<.82?2:0;
-    const look=p<(id===2?.58:closeAt+.16)?(p<.12?'down':'reach'):null;
+    const reach=p<.97?2:0;
+    const look=p<(id===2?0:.12)?'down':p<stowAt?(lift<.48?'reach':'hold'):p<shoulderAt?'reach':p<.97?(shoulder<.36?'reach':'hold'):null;
+    const bagX=id===2?mix(x-size*.54,x,ease((p-.57)/.13)):x;
+    const drawBag=()=>carry(c,bagX,bagY,size,t,id,1,{open:1-ease((p-stowAt-.07)/.04),worn:shoulder>.85});
+    if(shoulder>.4)drawBag();
     actor(c,x,y,size,t,0,Math.sin(t*.7)*.004,{reach,look,nod:p<closeAt?.055:0});
     if(lift>0)drawBook();
-    carry(c,x,bagY,size,t,id,1,{open:1-ease((p-.8)/.06),worn:shoulder>.85});
+    if(shoulder<=.4)drawBag();
     if(dir==='storybook'&&intro<1){
       // 같은 공책 한 권을 크기·원근으로 연결한다. 두 공책을 겹쳐 디졸브하지 않는다.
       const cover=1-ease((t-1.4)/.7);c.save();c.globalAlpha=cover;c.fillStyle='#f4ebd5';c.fillRect(0,0,W,H);c.restore();
@@ -89,6 +106,15 @@
     if(t>=k.seaStart){const q=ease((t-k.seaStart)/(24-k.seaStart));x=journey?mix(603,560,q):mix(565,535,q);y=journey?mix(581,516,q):mix(481,438,q);scale=journey?mix(.72,.68,q):mix(.67,.61,q);}
     return{x,y,scale,progress:p};
   }
+  function wakeTrailAt(f,t){
+    const trail=[];
+    for(let i=0;i<7;i++){
+      const age=.1+i*.22,at=t-age;if(at<=f.timing.departureStart)continue;
+      const position=boatAt(f,at),before=boatAt(f,at-.035),after=boatAt(f,at+.035);
+      trail.push({...position,age,vx:(after.x-before.x)/.07,vy:(after.y-before.y)/.07,opacity:ease((age-.18)/.18)*(1-ease((age-1.36)/.36))});
+    }
+    return trail;
+  }
   function world(c,f,t){
     const k=f.timing,T=f.tuning,phase=phaseAt(f,t);let catFoot,seat=null,scale=1;
     const cam=camera(f,t,phase);if(f.storyIndex===2&&phase==='prepare'&&f.directionId==='emotion')Object.assign(cam,{x:369,y:749,z:1.35});
@@ -100,22 +126,24 @@
       // 출항 마지막까지 같은 해안. 서로 다른 수평선과 태양을 겹치지 않는다.
       A.background(c,journey?A.images.coastHome:A.images.shore,t);
       A.ripples(c,t,journey?'home':'shore');
+      if(journey&&f.storyIndex===2)sandDrawing(c,182,520,157,1,null);
       const boat=boatAt(f,t),rx=boat.x,ry=boat.y,progress=boat.progress;scale=boat.scale;
       const dockStart=k.walkEnd-.95,dockQ=clamp((t-dockStart)/.95),dockCat=journey?{x:407,y:714}:{x:312,y:581},uncover=ease((dockQ-.08)/.84),build=ease((dockQ-.12)/.73);
       const clothPoint={x:dockCat.x-28,y:dockCat.y+15};
       const boarded=['settle','depart','sea'].includes(phase),landing=phase==='settle'?Math.sin((t-k.boardingEnd)*7)*Math.exp(-(t-k.boardingEnd)*5):0;
       const raftWidth=T.raftWidth*scale*(journey?.88:1);
+      A.wake(c,raftWidth,wakeTrailAt(f,t),journey?'home':'shore');
       if(t<k.departureStart&&!(dockQ>0&&dockQ<.92)){
         // 밧줄은 갑판·캐릭터 뒤의 깊이. 얼굴 앞을 지나가지 않는다.
         const loose=ease((t-k.boardingEnd)/(k.departureStart-k.boardingEnd));c.save();c.globalAlpha=1-loose;c.strokeStyle='#806447';c.lineWidth=2.5;c.beginPath();c.moveTo(journey?466:369,journey?708:575);c.quadraticCurveTo(journey?451:412,(journey?751:585)+loose*20,rx-55,ry-45);c.stroke();c.restore();
       }
-      seat=A.raft(c,rx,ry,raftWidth,t,boarded,atSea?1:progress,{landing,paddleTime:t-k.departureStart,paddleAmplitude:T.paddleAmplitude,book:f.storyIndex,grip:ease((t-k.boardingEnd-.55)/.65),unpack:ease((t-k.boardingEnd-.05)/.6),drawCarry:carry,drawCat:actor,uncover:f.storyIndex===1?uncover:1,clothDestination:{x:clothPoint.x-rx,y:clothPoint.y-ry},build:f.storyIndex===2?build:1});
+      seat=A.raft(c,rx,ry,raftWidth,t,boarded,atSea?1:progress,{landing,wakeHandled:true,paddleTime:t-k.departureStart,paddleAmplitude:T.paddleAmplitude,book:f.storyIndex,grip:ease((t-k.boardingEnd-.55)/.65),unpack:ease((t-k.boardingEnd-.05)/.6),drawCarry:carry,drawCat:actor,uncover:f.storyIndex===1?uncover:1,clothDestination:{x:clothPoint.x-rx,y:clothPoint.y-ry},build:f.storyIndex===2?build:1});
       if(f.storyIndex===1&&uncover===1){c.save();c.translate(clothPoint.x,clothPoint.y);const rw=T.raftWidth*(journey?.88:1);c.scale(.16,.12);c.drawImage(A.images.cloth,225,266,1090,520,-rw*.52,-rw*.22,rw*1.04,rw*.5);c.restore();}
       if(phase==='walk'){
         const p=clamp((t-k.prepareEnd)/(dockStart-k.prepareEnd));const travel=p<.12?p*p/.24:p>.88?1-(1-p)**2/.24:p-.06;
         let x=mix(117,312,travel/.94),y=mix(619,581,travel/.94),size=T.catSize;
         if(journey){
-          const nodes=f.storyIndex===2?[[182,520],[220,597],[290,681],[360,713],[407,714]]:[[112,423],[131,478],[165,534],[231,623],[297,681],[360,713],[407,714]];
+          const nodes=f.storyIndex===2?[[182,520],[155,598],[178,639],[290,681],[360,713],[407,714]]:[[112,423],[131,478],[165,534],[231,623],[297,681],[360,713],[407,714]];
           const lengths=nodes.slice(1).map((n,i)=>Math.hypot(n[0]-nodes[i][0],n[1]-nodes[i][1])),total=lengths.reduce((a,b)=>a+b,0);
           let distance=travel/.94*total,part=0;while(part<lengths.length-1&&distance>lengths[part])distance-=lengths[part++];
           const q=clamp(distance/lengths[part]);x=mix(nodes[part][0],nodes[part+1][0],q);y=mix(nodes[part][1],nodes[part+1][1],q);size=mix(f.storyIndex===2?157:141,155,p);
@@ -145,7 +173,7 @@
   ];
   function caption(c,f,t){
     const k=f.timing,stops=[.4,k.prepareEnd*.51,k.prepareEnd+.25,k.departureStart+.25,k.seaStart+.3,24];
-    const i=stops.findIndex((a,j)=>j<5&&t>=a&&t<stops[j+1]);
+    const i=stops.findIndex((a,j)=>j<5&&t>=a&&(j===4?t<=stops[j+1]:t<stops[j+1]));
     const text=i<0?null:copy[f.storyIndex][i],opacity=i<0?0:Math.min(ease((t-stops[i])/.3),i===4?1:ease((stops[i+1]-t)/.22));
     const paper=f.directionId==='storybook',light=f.directionId!=='emotion',y=paper?1156:f.tuning.captionY+42;c.save();
     const top=paper?1082:1010,g=c.createLinearGradient(0,top,0,H);
@@ -180,5 +208,5 @@
     if(f.directionId==='storybook'){c.strokeStyle='#f3e7ca';c.lineWidth=16;c.strokeRect(8,8,W-16,H-16);}
     const line=caption(c,f,t);c.restore();return{filmId:f.id,time:t,...meta,caption:line};
   }
-  window.GachisupCinema={ready:Promise.all([A.ready,CutsceneSprites.ready,CutsceneRig.ready]),render,duration:24,phaseAt,boatAt};
+  window.GachisupCinema={ready:Promise.all([A.ready,CutsceneSprites.ready,CutsceneRig.ready]),render,duration:24,phaseAt,boatAt,wakeTrailAt,preparationAt};
 })();

@@ -1,0 +1,150 @@
+{
+  "label": "sand-pencil-emotion-v1",
+  "phase": "prepare",
+  "from": 0.5,
+  "to": 0.9,
+  "samples": 6,
+  "cropSize": 540,
+  "anchor": "ground",
+  "fingerprint": "85d8036517975aaff245bd7e442c4e828d5766cebbc8707bead3a72a36735722",
+  "errors": [],
+  "films": [
+    {
+      "id": "unfinished-pier-emotion",
+      "frames": [
+        {
+          "time": 4.25,
+          "crop": {
+            "x": 58.68000000000001,
+            "y": 437.5,
+            "size": 540
+          },
+          "filmId": "unfinished-pier-emotion",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 297,
+            "y": 799
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 369,
+            "y": 749,
+            "z": 1.35
+          },
+          "caption": "모두의 배가 쉬어 갈 부두를 그렸어."
+        },
+        {
+          "time": 4.93,
+          "crop": {
+            "x": 58.68000000000001,
+            "y": 437.5,
+            "size": 540
+          },
+          "filmId": "unfinished-pier-emotion",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 297,
+            "y": 799
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 369,
+            "y": 749,
+            "z": 1.35
+          },
+          "caption": "혼자 완성할 수는 없겠지만,"
+        },
+        {
+          "time": 5.61,
+          "crop": {
+            "x": 58.68000000000001,
+            "y": 437.5,
+            "size": 540
+          },
+          "filmId": "unfinished-pier-emotion",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 297,
+            "y": 799
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 369,
+            "y": 749,
+            "z": 1.35
+          },
+          "caption": "혼자 완성할 수는 없겠지만,"
+        },
+        {
+          "time": 6.29,
+          "crop": {
+            "x": 58.68000000000001,
+            "y": 437.5,
+            "size": 540
+          },
+          "filmId": "unfinished-pier-emotion",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 297,
+            "y": 799
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 369,
+            "y": 749,
+            "z": 1.35
+          },
+          "caption": "혼자 완성할 수는 없겠지만,"
+        },
+        {
+          "time": 6.970000000000001,
+          "crop": {
+            "x": 58.68000000000001,
+            "y": 437.5,
+            "size": 540
+          },
+          "filmId": "unfinished-pier-emotion",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 297,
+            "y": 799
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 369,
+            "y": 749,
+            "z": 1.35
+          },
+          "caption": "혼자 완성할 수는 없겠지만,"
+        },
+        {
+          "time": 7.65,
+          "crop": {
+            "x": 58.68000000000001,
+            "y": 437.5,
+            "size": 540
+          },
+          "filmId": "unfinished-pier-emotion",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 297,
+            "y": 799
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 369,
+            "y": 749,
+            "z": 1.35
+          },
+          "caption": "혼자 완성할 수는 없겠지만,"
+        }
+      ]
+    }
+  ]
+}

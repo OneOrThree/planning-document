@@ -18,12 +18,25 @@ const root=path.resolve(__dirname,'..');
     assert.equal(await page.locator('#choices button').nth(8).getAttribute('aria-pressed'),'true');
     const result=await page.evaluate(()=>{
       const c=document.getElementById('film');c.width=180;c.height=320;
-      const filmIds=new Set(),hashes=[],warnings=[];
+      const filmIds=new Set(),hashes=[],warnings=[];let packingSamples=0;
+      const backgroundChecks=[];
+      for(const key of ['room','sand','coastHome','shore']){
+        const canvas=document.createElement('canvas');canvas.width=180;canvas.height=320;const ctx=canvas.getContext('2d');ctx.scale(.25,.25);
+        const frames=[0,12,24].map(t=>{CutsceneActors.background(ctx,CutsceneActors.images[key],t);return canvas.toDataURL();});
+        backgroundChecks.push({key,stable:new Set(frames).size===1});
+      }
       for(const f of CutsceneProduction.films){
         filmIds.add(f.id);
+        for(let i=0;i<=500;i++){
+          const p=GachisupCinema.preparationAt(f,f.timing.prepareEnd*i/500);packingSamples++;
+          if(p.lift>0&&p.closing<1)warnings.push(f.id+' 표지 닫기 전 들기');
+          if(p.stow>0&&p.lift<1)warnings.push(f.id+' 들기 완료 전 가방에 넣기');
+          if(p.shoulder>0&&p.stow<1)warnings.push(f.id+' 책 넣기 완료 전 가방 들기');
+        }
         for(const t of [0,.8,f.timing.prepareEnd,f.timing.walkEnd,f.timing.boardingEnd,f.timing.departureStart,f.timing.seaStart,24]){
           const m=GachisupCinema.render(c,f,t);
           if(!m.phase||!Number.isFinite(m.catFoot.x)||!Number.isFinite(m.catFoot.y))warnings.push(f.id+' 상태 오류');
+          if(t===24&&!m.caption)warnings.push(f.id+' 마지막 프레임 자막 누락');
         }
         GachisupCinema.render(c,f,2.5);hashes.push(c.toDataURL());
       }
@@ -33,15 +46,17 @@ const root=path.resolve(__dirname,'..');
         for(const r of rects)if(r.x<0||r.y<0||r.x+r.w>m.frame_layout.sheetWidth||r.y+r.h>m.frame_layout.sheetHeight)warnings.push(state+' 잘린 셀');
       }
       }
-      return{ids:filmIds.size,uniquePrepares:new Set(hashes).size,warnings};
+      return{ids:filmIds.size,uniquePrepares:new Set(hashes).size,packingSamples,backgroundChecks,warnings};
     });
     assert.equal(result.ids,9);assert.equal(result.uniquePrepares,9);assert.deepEqual(result.warnings,[]);
+    assert.ok(result.backgroundChecks.every(x=>x.stable),'배경만 움직이면 발과 바닥이 분리됩니다.');
     await page.waitForSelector('#exports video');assert.equal(await page.locator('#exports video').count(),9);
     const playback=await page.evaluate(async()=>{
       const v=document.querySelector('#exports video');v.muted=true;await v.play();
       await new Promise(r=>setTimeout(r,650));v.pause();return{duration:v.duration,time:v.currentTime,width:v.videoWidth,height:v.videoHeight};
     });
     const exported=await page.evaluate(()=>window.cutsceneExportBatch.films[0]);
+    const exportedVersion=await page.evaluate(()=>window.cutsceneExportBatch.version);
     assert.equal(playback.duration,exported.duration);assert.ok(playback.time>.2);assert.equal(playback.width,exported.width);assert.equal(playback.height,exported.height);
     const mp4=await page.locator('#exports video source').first().getAttribute('src');
     const range=await fetch(url+mp4,{headers:{Range:'bytes=0-63'}});assert.equal(range.status,206);assert.equal(range.headers.get('content-type'),'video/mp4');assert.equal((await range.arrayBuffer()).byteLength,64);
@@ -52,7 +67,7 @@ const root=path.resolve(__dirname,'..');
     await page.waitForFunction(()=>[...document.images].every(i=>i.complete&&i.naturalWidth>0));
     assert.equal(await page.locator('[data-cat="white"] .body').getAttribute('src'),'assets/figma-cats/white-standing-generated.png');
     assert.deepEqual(errors,[]);
-    const report={result:'PASS',films:9,exportedPlayback:playback,catBodies:6,range:true,errors};
+    const report={result:'PASS',films:9,packingTimelineSamples:result.packingSamples,backgroundRegistration:result.backgroundChecks,exportedVersion,exportedPlayback:playback,catBodies:6,range:true,errors};
     fs.mkdirSync(path.join(root,'output/cutscenes/qa'),{recursive:true});
     fs.writeFileSync(path.join(root,'output/cutscenes/qa/browser-check.json'),JSON.stringify(report,null,2)+'\n');
     console.log(JSON.stringify(report,null,2));

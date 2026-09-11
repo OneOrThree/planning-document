@@ -1,0 +1,282 @@
+{
+  "label": "sand-action-journey-v3",
+  "phase": "prepare",
+  "from": 0.04,
+  "to": 0.58,
+  "samples": 12,
+  "cropSize": 380,
+  "anchor": "ground",
+  "fingerprint": "62b3586481a0da41f423d356479b1337e7cd53f40b2dbcc20332e4e18bf82466",
+  "errors": [],
+  "films": [
+    {
+      "id": "unfinished-pier-journey",
+      "frames": [
+        {
+          "time": 0.264,
+          "crop": {
+            "x": 63.91999999999999,
+            "y": 479.6,
+            "size": 380
+          },
+          "filmId": "unfinished-pier-journey",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 182,
+            "y": 520
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 285,
+            "y": 500,
+            "z": 1.48
+          },
+          "caption": null
+        },
+        {
+          "time": 0.588,
+          "crop": {
+            "x": 63.91999999999999,
+            "y": 479.6,
+            "size": 380
+          },
+          "filmId": "unfinished-pier-journey",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 182,
+            "y": 520
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 285,
+            "y": 500,
+            "z": 1.48
+          },
+          "caption": "모두의 배가 쉬어 갈 부두를 그렸어."
+        },
+        {
+          "time": 0.9119999999999999,
+          "crop": {
+            "x": 63.91999999999999,
+            "y": 479.6,
+            "size": 380
+          },
+          "filmId": "unfinished-pier-journey",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 182,
+            "y": 520
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 285,
+            "y": 500,
+            "z": 1.48
+          },
+          "caption": "모두의 배가 쉬어 갈 부두를 그렸어."
+        },
+        {
+          "time": 1.236,
+          "crop": {
+            "x": 63.91999999999999,
+            "y": 479.6,
+            "size": 380
+          },
+          "filmId": "unfinished-pier-journey",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 182,
+            "y": 520
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 285,
+            "y": 500,
+            "z": 1.48
+          },
+          "caption": "모두의 배가 쉬어 갈 부두를 그렸어."
+        },
+        {
+          "time": 1.5599999999999998,
+          "crop": {
+            "x": 63.91999999999999,
+            "y": 479.6,
+            "size": 380
+          },
+          "filmId": "unfinished-pier-journey",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 182,
+            "y": 520
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 285,
+            "y": 500,
+            "z": 1.48
+          },
+          "caption": "모두의 배가 쉬어 갈 부두를 그렸어."
+        },
+        {
+          "time": 1.884,
+          "crop": {
+            "x": 63.91999999999999,
+            "y": 479.6,
+            "size": 380
+          },
+          "filmId": "unfinished-pier-journey",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 182,
+            "y": 520
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 285,
+            "y": 500,
+            "z": 1.48
+          },
+          "caption": "모두의 배가 쉬어 갈 부두를 그렸어."
+        },
+        {
+          "time": 2.2079999999999997,
+          "crop": {
+            "x": 63.91999999999999,
+            "y": 479.6,
+            "size": 380
+          },
+          "filmId": "unfinished-pier-journey",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 182,
+            "y": 520
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 285,
+            "y": 500,
+            "z": 1.48
+          },
+          "caption": "모두의 배가 쉬어 갈 부두를 그렸어."
+        },
+        {
+          "time": 2.5319999999999996,
+          "crop": {
+            "x": 63.91999999999999,
+            "y": 479.6,
+            "size": 380
+          },
+          "filmId": "unfinished-pier-journey",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 182,
+            "y": 520
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 285,
+            "y": 500,
+            "z": 1.48
+          },
+          "caption": "모두의 배가 쉬어 갈 부두를 그렸어."
+        },
+        {
+          "time": 2.8559999999999994,
+          "crop": {
+            "x": 63.91999999999999,
+            "y": 479.6,
+            "size": 380
+          },
+          "filmId": "unfinished-pier-journey",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 182,
+            "y": 520
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 285,
+            "y": 500,
+            "z": 1.48
+          },
+          "caption": "모두의 배가 쉬어 갈 부두를 그렸어."
+        },
+        {
+          "time": 3.1799999999999997,
+          "crop": {
+            "x": 63.91999999999999,
+            "y": 479.6,
+            "size": 380
+          },
+          "filmId": "unfinished-pier-journey",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 182,
+            "y": 520
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 285,
+            "y": 500,
+            "z": 1.48
+          },
+          "caption": "모두의 배가 쉬어 갈 부두를 그렸어."
+        },
+        {
+          "time": 3.504,
+          "crop": {
+            "x": 63.91999999999999,
+            "y": 479.6,
+            "size": 380
+          },
+          "filmId": "unfinished-pier-journey",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 182,
+            "y": 520
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 285,
+            "y": 500,
+            "z": 1.48
+          },
+          "caption": "혼자 완성할 수는 없겠지만,"
+        },
+        {
+          "time": 3.828,
+          "crop": {
+            "x": 63.91999999999999,
+            "y": 479.6,
+            "size": 380
+          },
+          "filmId": "unfinished-pier-journey",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 182,
+            "y": 520
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 285,
+            "y": 500,
+            "z": 1.48
+          },
+          "caption": "혼자 완성할 수는 없겠지만,"
+        }
+      ]
+    }
+  ]
+}

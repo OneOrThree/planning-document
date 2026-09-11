@@ -1,0 +1,1245 @@
+{
+  "label": "book-lift-v6",
+  "phase": "book-lift",
+  "from": 0,
+  "to": 1,
+  "samples": 6,
+  "cropSize": 320,
+  "fingerprint": "a3adbe1c3e3143b6ee57ab720c80e7f92e9bc6ccea024328ba71ad05c891aa0a",
+  "errors": [],
+  "films": [
+    {
+      "id": "new-morning-emotion",
+      "frames": [
+        {
+          "time": 3.128,
+          "crop": {
+            "x": 169.09254524472888,
+            "y": 484.3032730070281,
+            "size": 320
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 382,
+            "y": 866
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 430,
+            "y": 802,
+            "z": 1.4572386407348148
+          },
+          "caption": "오늘 할 일은, 어제와 비슷해."
+        },
+        {
+          "time": 3.6584,
+          "crop": {
+            "x": 168.65582342796856,
+            "y": 484.88556876270854,
+            "size": 320
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 382,
+            "y": 866
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 430,
+            "y": 802,
+            "z": 1.4663370119173214
+          },
+          "caption": "그래도 오늘은 같이 시작하고 싶어."
+        },
+        {
+          "time": 4.1888,
+          "crop": {
+            "x": 168.25367672557113,
+            "y": 485.4217643659051,
+            "size": 320
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 382,
+            "y": 866
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 430,
+            "y": 802,
+            "z": 1.474715068217268
+          },
+          "caption": "그래도 오늘은 같이 시작하고 싶어."
+        },
+        {
+          "time": 4.7192,
+          "crop": {
+            "x": 167.9139584799698,
+            "y": 485.8747220267069,
+            "size": 320
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 382,
+            "y": 866
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 430,
+            "y": 802,
+            "z": 1.4817925316672949
+          },
+          "caption": "그래도 오늘은 같이 시작하고 싶어."
+        },
+        {
+          "time": 5.249599999999999,
+          "crop": {
+            "x": 167.664522033598,
+            "y": 486.20730395520263,
+            "size": 320
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 382,
+            "y": 866
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 430,
+            "y": 802,
+            "z": 1.4869891243000415
+          },
+          "caption": "그래도 오늘은 같이 시작하고 싶어."
+        },
+        {
+          "time": 5.779999999999999,
+          "crop": {
+            "x": 167.5332207288889,
+            "y": 486.38237236148143,
+            "size": 320
+          },
+          "filmId": "new-morning-emotion",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 382,
+            "y": 866
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 430,
+            "y": 802,
+            "z": 1.4897245681481481
+          },
+          "caption": "그래도 오늘은 같이 시작하고 싶어."
+        }
+      ]
+    },
+    {
+      "id": "new-morning-journey",
+      "frames": [
+        {
+          "time": 2.2540000000000004,
+          "crop": {
+            "x": 0,
+            "y": 277.0799999999999,
+            "size": 320
+          },
+          "filmId": "new-morning-journey",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 112,
+            "y": 423
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 285,
+            "y": 500,
+            "z": 1.48
+          },
+          "caption": "오늘 할 일은, 어제와 비슷해."
+        },
+        {
+          "time": 2.6362000000000005,
+          "crop": {
+            "x": 0,
+            "y": 277.0799999999999,
+            "size": 320
+          },
+          "filmId": "new-morning-journey",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 112,
+            "y": 423
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 285,
+            "y": 500,
+            "z": 1.48
+          },
+          "caption": "그래도 오늘은 같이 시작하고 싶어."
+        },
+        {
+          "time": 3.0184,
+          "crop": {
+            "x": 0,
+            "y": 277.0799999999999,
+            "size": 320
+          },
+          "filmId": "new-morning-journey",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 112,
+            "y": 423
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 285,
+            "y": 500,
+            "z": 1.48
+          },
+          "caption": "그래도 오늘은 같이 시작하고 싶어."
+        },
+        {
+          "time": 3.4006,
+          "crop": {
+            "x": 0,
+            "y": 277.0799999999999,
+            "size": 320
+          },
+          "filmId": "new-morning-journey",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 112,
+            "y": 423
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 285,
+            "y": 500,
+            "z": 1.48
+          },
+          "caption": "그래도 오늘은 같이 시작하고 싶어."
+        },
+        {
+          "time": 3.7828,
+          "crop": {
+            "x": 0,
+            "y": 277.0799999999999,
+            "size": 320
+          },
+          "filmId": "new-morning-journey",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 112,
+            "y": 423
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 285,
+            "y": 500,
+            "z": 1.48
+          },
+          "caption": "그래도 오늘은 같이 시작하고 싶어."
+        },
+        {
+          "time": 4.165,
+          "crop": {
+            "x": 0,
+            "y": 277.0799999999999,
+            "size": 320
+          },
+          "filmId": "new-morning-journey",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 112,
+            "y": 423
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 285,
+            "y": 500,
+            "z": 1.48
+          },
+          "caption": "그래도 오늘은 같이 시작하고 싶어."
+        }
+      ]
+    },
+    {
+      "id": "new-morning-storybook",
+      "frames": [
+        {
+          "time": 3.45,
+          "crop": {
+            "x": 261.03999999999996,
+            "y": 617.04,
+            "size": 320
+          },
+          "filmId": "new-morning-storybook",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 382,
+            "y": 866
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 360,
+            "y": 640,
+            "z": 1
+          },
+          "caption": "오늘 할 일은, 어제와 비슷해."
+        },
+        {
+          "time": 4.035,
+          "crop": {
+            "x": 261.03999999999996,
+            "y": 617.04,
+            "size": 320
+          },
+          "filmId": "new-morning-storybook",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 382,
+            "y": 866
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 360,
+            "y": 640,
+            "z": 1
+          },
+          "caption": "그래도 오늘은 같이 시작하고 싶어."
+        },
+        {
+          "time": 4.62,
+          "crop": {
+            "x": 261.03999999999996,
+            "y": 617.04,
+            "size": 320
+          },
+          "filmId": "new-morning-storybook",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 382,
+            "y": 866
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 360,
+            "y": 640,
+            "z": 1
+          },
+          "caption": "그래도 오늘은 같이 시작하고 싶어."
+        },
+        {
+          "time": 5.205,
+          "crop": {
+            "x": 261.03999999999996,
+            "y": 617.04,
+            "size": 320
+          },
+          "filmId": "new-morning-storybook",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 382,
+            "y": 866
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 360,
+            "y": 640,
+            "z": 1
+          },
+          "caption": "그래도 오늘은 같이 시작하고 싶어."
+        },
+        {
+          "time": 5.79,
+          "crop": {
+            "x": 261.03999999999996,
+            "y": 617.04,
+            "size": 320
+          },
+          "filmId": "new-morning-storybook",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 382,
+            "y": 866
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 360,
+            "y": 640,
+            "z": 1
+          },
+          "caption": "그래도 오늘은 같이 시작하고 싶어."
+        },
+        {
+          "time": 6.375,
+          "crop": {
+            "x": 261.03999999999996,
+            "y": 617.04,
+            "size": 320
+          },
+          "filmId": "new-morning-storybook",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 382,
+            "y": 866
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 360,
+            "y": 640,
+            "z": 1
+          },
+          "caption": "그래도 오늘은 같이 시작하고 싶어."
+        }
+      ]
+    },
+    {
+      "id": "folded-promise-emotion",
+      "frames": [
+        {
+          "time": 3.128,
+          "crop": {
+            "x": 70.00031767476148,
+            "y": 452.2440229108622,
+            "size": 320
+          },
+          "filmId": "folded-promise-emotion",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 314,
+            "y": 844
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 430,
+            "y": 802,
+            "z": 1.4572386407348148
+          },
+          "caption": "오래된 공책에서, 약속을 만났어."
+        },
+        {
+          "time": 3.6584,
+          "crop": {
+            "x": 68.9449066175907,
+            "y": 452.6261545005275,
+            "size": 320
+          },
+          "filmId": "folded-promise-emotion",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 314,
+            "y": 844
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 430,
+            "y": 802,
+            "z": 1.4663370119173214
+          },
+          "caption": "함께 만들던 부두. 아직 기억나."
+        },
+        {
+          "time": 4.1888,
+          "crop": {
+            "x": 67.97305208679691,
+            "y": 452.9780328651252,
+            "size": 320
+          },
+          "filmId": "folded-promise-emotion",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 314,
+            "y": 844
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 430,
+            "y": 802,
+            "z": 1.474715068217268
+          },
+          "caption": "함께 만들던 부두. 아직 기억나."
+        },
+        {
+          "time": 4.7192,
+          "crop": {
+            "x": 67.1520663265938,
+            "y": 453.27528633002635,
+            "size": 320
+          },
+          "filmId": "folded-promise-emotion",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 314,
+            "y": 844
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 430,
+            "y": 802,
+            "z": 1.4817925316672949
+          },
+          "caption": "함께 만들던 부두. 아직 기억나."
+        },
+        {
+          "time": 5.249599999999999,
+          "crop": {
+            "x": 66.54926158119517,
+            "y": 453.49354322060174,
+            "size": 320
+          },
+          "filmId": "folded-promise-emotion",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 314,
+            "y": 844
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 430,
+            "y": 802,
+            "z": 1.4869891243000415
+          },
+          "caption": "함께 만들던 부두. 아직 기억나."
+        },
+        {
+          "time": 5.779999999999999,
+          "crop": {
+            "x": 66.2319500948148,
+            "y": 453.60843186222223,
+            "size": 320
+          },
+          "filmId": "folded-promise-emotion",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 314,
+            "y": 844
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 430,
+            "y": 802,
+            "z": 1.4897245681481481
+          },
+          "caption": "함께 만들던 부두. 아직 기억나."
+        }
+      ]
+    },
+    {
+      "id": "folded-promise-journey",
+      "frames": [
+        {
+          "time": 2.2540000000000004,
+          "crop": {
+            "x": 0,
+            "y": 277.0799999999999,
+            "size": 320
+          },
+          "filmId": "folded-promise-journey",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 112,
+            "y": 423
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 285,
+            "y": 500,
+            "z": 1.48
+          },
+          "caption": "오래된 공책에서, 약속을 만났어."
+        },
+        {
+          "time": 2.6362000000000005,
+          "crop": {
+            "x": 0,
+            "y": 277.0799999999999,
+            "size": 320
+          },
+          "filmId": "folded-promise-journey",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 112,
+            "y": 423
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 285,
+            "y": 500,
+            "z": 1.48
+          },
+          "caption": "함께 만들던 부두. 아직 기억나."
+        },
+        {
+          "time": 3.0184,
+          "crop": {
+            "x": 0,
+            "y": 277.0799999999999,
+            "size": 320
+          },
+          "filmId": "folded-promise-journey",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 112,
+            "y": 423
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 285,
+            "y": 500,
+            "z": 1.48
+          },
+          "caption": "함께 만들던 부두. 아직 기억나."
+        },
+        {
+          "time": 3.4006,
+          "crop": {
+            "x": 0,
+            "y": 277.0799999999999,
+            "size": 320
+          },
+          "filmId": "folded-promise-journey",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 112,
+            "y": 423
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 285,
+            "y": 500,
+            "z": 1.48
+          },
+          "caption": "함께 만들던 부두. 아직 기억나."
+        },
+        {
+          "time": 3.7828,
+          "crop": {
+            "x": 0,
+            "y": 277.0799999999999,
+            "size": 320
+          },
+          "filmId": "folded-promise-journey",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 112,
+            "y": 423
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 285,
+            "y": 500,
+            "z": 1.48
+          },
+          "caption": "함께 만들던 부두. 아직 기억나."
+        },
+        {
+          "time": 4.165,
+          "crop": {
+            "x": 0,
+            "y": 277.0799999999999,
+            "size": 320
+          },
+          "filmId": "folded-promise-journey",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 112,
+            "y": 423
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 285,
+            "y": 500,
+            "z": 1.48
+          },
+          "caption": "함께 만들던 부두. 아직 기억나."
+        }
+      ]
+    },
+    {
+      "id": "folded-promise-storybook",
+      "frames": [
+        {
+          "time": 3.45,
+          "crop": {
+            "x": 193.04,
+            "y": 595.04,
+            "size": 320
+          },
+          "filmId": "folded-promise-storybook",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 314,
+            "y": 844
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 360,
+            "y": 640,
+            "z": 1
+          },
+          "caption": "오래된 공책에서, 약속을 만났어."
+        },
+        {
+          "time": 4.035,
+          "crop": {
+            "x": 193.04,
+            "y": 595.04,
+            "size": 320
+          },
+          "filmId": "folded-promise-storybook",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 314,
+            "y": 844
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 360,
+            "y": 640,
+            "z": 1
+          },
+          "caption": "함께 만들던 부두. 아직 기억나."
+        },
+        {
+          "time": 4.62,
+          "crop": {
+            "x": 193.04,
+            "y": 595.04,
+            "size": 320
+          },
+          "filmId": "folded-promise-storybook",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 314,
+            "y": 844
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 360,
+            "y": 640,
+            "z": 1
+          },
+          "caption": "함께 만들던 부두. 아직 기억나."
+        },
+        {
+          "time": 5.205,
+          "crop": {
+            "x": 193.04,
+            "y": 595.04,
+            "size": 320
+          },
+          "filmId": "folded-promise-storybook",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 314,
+            "y": 844
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 360,
+            "y": 640,
+            "z": 1
+          },
+          "caption": "함께 만들던 부두. 아직 기억나."
+        },
+        {
+          "time": 5.79,
+          "crop": {
+            "x": 193.04,
+            "y": 595.04,
+            "size": 320
+          },
+          "filmId": "folded-promise-storybook",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 314,
+            "y": 844
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 360,
+            "y": 640,
+            "z": 1
+          },
+          "caption": "함께 만들던 부두. 아직 기억나."
+        },
+        {
+          "time": 6.375,
+          "crop": {
+            "x": 193.04,
+            "y": 595.04,
+            "size": 320
+          },
+          "filmId": "folded-promise-storybook",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 314,
+            "y": 844
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 360,
+            "y": 640,
+            "z": 1
+          },
+          "caption": "함께 만들던 부두. 아직 기억나."
+        }
+      ]
+    },
+    {
+      "id": "unfinished-pier-emotion",
+      "frames": [
+        {
+          "time": 3.128,
+          "crop": {
+            "x": 141.84,
+            "y": 458.53999999999996,
+            "size": 320
+          },
+          "filmId": "unfinished-pier-emotion",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 297,
+            "y": 799
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 369,
+            "y": 749,
+            "z": 1.35
+          },
+          "caption": "모두의 배가 쉬어 갈 부두를 그렸어."
+        },
+        {
+          "time": 3.6584,
+          "crop": {
+            "x": 141.84,
+            "y": 458.53999999999996,
+            "size": 320
+          },
+          "filmId": "unfinished-pier-emotion",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 297,
+            "y": 799
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 369,
+            "y": 749,
+            "z": 1.35
+          },
+          "caption": "혼자 완성할 수는 없겠지만,"
+        },
+        {
+          "time": 4.1888,
+          "crop": {
+            "x": 141.84,
+            "y": 458.53999999999996,
+            "size": 320
+          },
+          "filmId": "unfinished-pier-emotion",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 297,
+            "y": 799
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 369,
+            "y": 749,
+            "z": 1.35
+          },
+          "caption": "혼자 완성할 수는 없겠지만,"
+        },
+        {
+          "time": 4.7192,
+          "crop": {
+            "x": 141.84,
+            "y": 458.53999999999996,
+            "size": 320
+          },
+          "filmId": "unfinished-pier-emotion",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 297,
+            "y": 799
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 369,
+            "y": 749,
+            "z": 1.35
+          },
+          "caption": "혼자 완성할 수는 없겠지만,"
+        },
+        {
+          "time": 5.249599999999999,
+          "crop": {
+            "x": 141.84,
+            "y": 458.53999999999996,
+            "size": 320
+          },
+          "filmId": "unfinished-pier-emotion",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 297,
+            "y": 799
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 369,
+            "y": 749,
+            "z": 1.35
+          },
+          "caption": "혼자 완성할 수는 없겠지만,"
+        },
+        {
+          "time": 5.779999999999999,
+          "crop": {
+            "x": 141.84,
+            "y": 458.53999999999996,
+            "size": 320
+          },
+          "filmId": "unfinished-pier-emotion",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 297,
+            "y": 799
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 369,
+            "y": 749,
+            "z": 1.35
+          },
+          "caption": "혼자 완성할 수는 없겠지만,"
+        }
+      ]
+    },
+    {
+      "id": "unfinished-pier-journey",
+      "frames": [
+        {
+          "time": 2.2540000000000004,
+          "crop": {
+            "x": 86.6,
+            "y": 420.64,
+            "size": 320
+          },
+          "filmId": "unfinished-pier-journey",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 182,
+            "y": 520
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 285,
+            "y": 500,
+            "z": 1.48
+          },
+          "caption": "모두의 배가 쉬어 갈 부두를 그렸어."
+        },
+        {
+          "time": 2.6362000000000005,
+          "crop": {
+            "x": 86.6,
+            "y": 420.64,
+            "size": 320
+          },
+          "filmId": "unfinished-pier-journey",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 182,
+            "y": 520
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 285,
+            "y": 500,
+            "z": 1.48
+          },
+          "caption": "혼자 완성할 수는 없겠지만,"
+        },
+        {
+          "time": 3.0184,
+          "crop": {
+            "x": 86.6,
+            "y": 420.64,
+            "size": 320
+          },
+          "filmId": "unfinished-pier-journey",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 182,
+            "y": 520
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 285,
+            "y": 500,
+            "z": 1.48
+          },
+          "caption": "혼자 완성할 수는 없겠지만,"
+        },
+        {
+          "time": 3.4006,
+          "crop": {
+            "x": 86.6,
+            "y": 420.64,
+            "size": 320
+          },
+          "filmId": "unfinished-pier-journey",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 182,
+            "y": 520
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 285,
+            "y": 500,
+            "z": 1.48
+          },
+          "caption": "혼자 완성할 수는 없겠지만,"
+        },
+        {
+          "time": 3.7828,
+          "crop": {
+            "x": 86.6,
+            "y": 420.64,
+            "size": 320
+          },
+          "filmId": "unfinished-pier-journey",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 182,
+            "y": 520
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 285,
+            "y": 500,
+            "z": 1.48
+          },
+          "caption": "혼자 완성할 수는 없겠지만,"
+        },
+        {
+          "time": 4.165,
+          "crop": {
+            "x": 86.6,
+            "y": 420.64,
+            "size": 320
+          },
+          "filmId": "unfinished-pier-journey",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 182,
+            "y": 520
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 285,
+            "y": 500,
+            "z": 1.48
+          },
+          "caption": "혼자 완성할 수는 없겠지만,"
+        }
+      ]
+    },
+    {
+      "id": "unfinished-pier-storybook",
+      "frames": [
+        {
+          "time": 3.45,
+          "crop": {
+            "x": 176.04,
+            "y": 550.04,
+            "size": 320
+          },
+          "filmId": "unfinished-pier-storybook",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 297,
+            "y": 799
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 360,
+            "y": 640,
+            "z": 1
+          },
+          "caption": "모두의 배가 쉬어 갈 부두를 그렸어."
+        },
+        {
+          "time": 4.035,
+          "crop": {
+            "x": 176.04,
+            "y": 550.04,
+            "size": 320
+          },
+          "filmId": "unfinished-pier-storybook",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 297,
+            "y": 799
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 360,
+            "y": 640,
+            "z": 1
+          },
+          "caption": "혼자 완성할 수는 없겠지만,"
+        },
+        {
+          "time": 4.62,
+          "crop": {
+            "x": 176.04,
+            "y": 550.04,
+            "size": 320
+          },
+          "filmId": "unfinished-pier-storybook",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 297,
+            "y": 799
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 360,
+            "y": 640,
+            "z": 1
+          },
+          "caption": "혼자 완성할 수는 없겠지만,"
+        },
+        {
+          "time": 5.205,
+          "crop": {
+            "x": 176.04,
+            "y": 550.04,
+            "size": 320
+          },
+          "filmId": "unfinished-pier-storybook",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 297,
+            "y": 799
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 360,
+            "y": 640,
+            "z": 1
+          },
+          "caption": "혼자 완성할 수는 없겠지만,"
+        },
+        {
+          "time": 5.79,
+          "crop": {
+            "x": 176.04,
+            "y": 550.04,
+            "size": 320
+          },
+          "filmId": "unfinished-pier-storybook",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 297,
+            "y": 799
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 360,
+            "y": 640,
+            "z": 1
+          },
+          "caption": "혼자 완성할 수는 없겠지만,"
+        },
+        {
+          "time": 6.375,
+          "crop": {
+            "x": 176.04,
+            "y": 550.04,
+            "size": 320
+          },
+          "filmId": "unfinished-pier-storybook",
+          "phase": "prepare",
+          "catFoot": {
+            "x": 297,
+            "y": 799
+          },
+          "seat": null,
+          "scale": 1,
+          "camera": {
+            "x": 360,
+            "y": 640,
+            "z": 1
+          },
+          "caption": "혼자 완성할 수는 없겠지만,"
+        }
+      ]
+    }
+  ]
+}

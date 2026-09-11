@@ -1,5 +1,14 @@
 # 컷신 이미지 생성 프롬프트 기록
 
+## prompt-look-hold-v1
+
+기존 도입 자세와 몸·머리 위치를 유지한 들어 올리기 파생 자세. 내장 이미지 생성 → 단색 배경 cutout. 아틀라스 추출 아님.
+
+```text
+Use case: identity-preserve. Image 1 is the exact edit target, a down-looking cat on pure green. Make the next single animation pose for lifting a small book. Change ONLY the nearest front leg, which is currently extended diagonally down-right: bend that leg at the elbow and bring its paw upward and slightly inward, to the lower chest just BELOW the chin. The curled palm should face gently upward, ready to support a closed book; the paw tip should be around x=960, y=900 on this 1254 square image. Do NOT draw the book. Keep absolutely the same head position, face, down-right pupils, eyes fully open, body and head size, charcoal palette, outline, other planted legs, curled tail, full-body registration and canvas dimensions. No extra arms, fingers, accessories, shadow, text or scene. Retain perfectly flat pure GREEN #00FF00 opaque background. This is a precise follow-through texture of the SAME cat, not a redraw or style change.
+```
+
+
 ## 책을 보는 전신 자세 · 세션 이미지 생성
 
 sprite-gen `prepare`에서 색상 인자 오류가 발생해 사용자 지시대로 복구·디버깅하지 않았다. 아래 세션 내장 이미지 생성으로 한 장씩 만들었다. 최초 투명 요청은 배경 무늬가 픽셀로 들어가 미채택. 단색 녹색판을 다시 생성했고, 기존에 동작하던 `cutout` 유틸리티만 사용해 실제 알파 PNG로 분리했다. 이 두 장은 아틀라스 파이프라인 결과가 아니다. 시선·얼굴·몸의 원본은 Figma 검정 고양이이며 파생 자세로 구분한다.
@@ -406,6 +415,20 @@ Use case: precise-object-edit. Image 1 is the EDIT TARGET, a transparent cat hea
 
 ```text
 Use case: background-extraction. Image 1 is the edit target. Keep this exact cat head, pose, eye expression, colors, silhouette, all whiskers, ears, and placement completely unchanged. Replace ONLY every gray checkerboard BACKGROUND area around the head with a perfectly FLAT OPAQUE pure GREEN #00FF00 chroma-key background. This is a production key plate, not a transparent image. Do NOT draw transparency grid or checkerboard anywhere. GREEN, flat and solid, edge to edge behind cat. Preserve all head details; no shadows; same canvas and same head position and size.
+```
+
+## neutral-forward-v1 · 개별 동작 기준 실험
+
+세션 내장 이미지 생성. `poses-black/look-down-v1.png`를 편집 대상으로, Figma 검정 전신을 정체성 참고로 사용했다. `poses-black/neutral-forward-v1.png`는 기존 `cutout`으로 알파를 분리하고 자홍색 검사판에서 확인했다. 아직 기본 컷신에 채택하지 않은 보행·도약 기준 이미지다. 아틀라스 추출물이나 완성된 보행이라고 표시하지 않는다.
+
+```text
+Use case: identity-preserve.
+Asset type: a single high-resolution animation anchor PNG, not a sprite sheet.
+Image 1 is the edit target: the accepted charcoal-black kitten used in the current film. Image 2 is the original Figma character, identity reference only.
+Change ONLY the pupils' gaze: the kitten now looks gently forward and slightly upward toward screen-right, as in Image 2, ready to walk. Keep both eyes fully open.
+Lock every other aspect of Image 1: identical head outline and angle, exact face and ear placement, identical body, planted paws, tail curve, whiskers, charcoal colors, warm dark outline, tiny cream claws, line width, lighting, and framing. Do not make the head smaller, raise it, or change the silhouette. No new anatomy, no accessories.
+Keep the same square 1254 x 1254 composition, same object scale, same ground foot baseline, same 90px-or-more outer padding.
+Replace the transparent empty backdrop with a perfectly flat pure chroma green #00FF00. No texture, checkerboard, ground plane, shadow, labels, grids, borders or additional objects. Exactly one full-body kitten.
 ```
 
 ## rig-head-down-green-prompt

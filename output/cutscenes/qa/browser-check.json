@@ -1,9 +1,29 @@
 {
   "result": "PASS",
   "films": 9,
+  "packingTimelineSamples": 4509,
+  "backgroundRegistration": [
+    {
+      "key": "room",
+      "stable": true
+    },
+    {
+      "key": "sand",
+      "stable": true
+    },
+    {
+      "key": "coastHome",
+      "stable": true
+    },
+    {
+      "key": "shore",
+      "stable": true
+    }
+  ],
+  "exportedVersion": "draft-v04",
   "exportedPlayback": {
     "duration": 24,
-    "time": 0.654502,
+    "time": 0.653125,
     "width": 1080,
     "height": 1920
   },
