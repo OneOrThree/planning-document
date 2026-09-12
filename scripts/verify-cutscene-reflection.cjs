@@ -16,15 +16,19 @@ const root=path.resolve(__dirname,'..');
           const a=GachisupCinema.render(before,{...f,tuning:{...f.tuning,raftReflection:false}},time),b=GachisupCinema.render(after,{...f,tuning:{...f.tuning,raftReflection:true}},time);
           const cam=b.camera,mc=mask.getContext('2d');mc.setTransform(1,0,0,1,0,0);mc.clearRect(0,0,720,1280);mc.translate(360,640);mc.scale(cam.z,cam.z);mc.translate(-cam.x,-cam.y);
           const boundary=CutsceneWaterMotion.boundaries[f.directionId==='journey'?'home':'shore'];mc.fillStyle='#fff';mc.beginPath();boundary.forEach(([x,y],i)=>i?mc.lineTo(x,y):mc.moveTo(x,y));mc.closePath();mc.fill();
-          const d0=before.getContext('2d').getImageData(0,0,720,1280).data,d1=after.getContext('2d').getImageData(0,0,720,1280).data,m=mc.getImageData(0,0,720,1280).data;let outsideChanged=0,changed=0,maxDifference=0;
-          for(let i=0;i<d0.length;i+=4){const delta=Math.max(...[0,1,2,3].map(ch=>Math.abs(d0[i+ch]-d1[i+ch])));if(delta){changed++;if(m[i+3]===0)outsideChanged++;maxDifference=Math.max(maxDifference,delta);}}
-          results.push({film:f.id,time,changed,outsideChanged,maxDifference,metadataStable:JSON.stringify(a)===JSON.stringify(b)});
+          const filled=mc.getImageData(0,0,720,1280).data;let maskPixels=0;for(let i=3;i<filled.length;i+=4)if(filled[i])maskPixels++;
+          // 렌더러는 같은 경계를 clip()으로, 검사는 fill()로 래스터화한다. 두 커버리지가 갈리는 경계 한 줄은 누수가 아니므로 마스크를 화면 1픽셀만 넓혀 면제한다.
+          mc.strokeStyle='#fff';mc.lineWidth=2/cam.z;mc.lineJoin='round';mc.stroke();
+          const d0=before.getContext('2d').getImageData(0,0,720,1280).data,d1=after.getContext('2d').getImageData(0,0,720,1280).data,m=mc.getImageData(0,0,720,1280).data;let outsideChanged=0,changed=0,maxDifference=0,seamPixels=0;const outsideSamples=[];
+          for(let i=3;i<m.length;i+=4)if(m[i]&&!filled[i])seamPixels++;
+          for(let i=0;i<d0.length;i+=4){const delta=Math.max(...[0,1,2,3].map(ch=>Math.abs(d0[i+ch]-d1[i+ch])));if(delta){changed++;if(m[i+3]===0){outsideChanged++;if(outsideSamples.length<8)outsideSamples.push({x:i/4%720,y:Math.floor(i/4/720),delta});}maxDifference=Math.max(maxDifference,delta);}}
+          results.push({film:f.id,time,changed,outsideChanged,maxDifference,maskPixels,seamPixels,outsideSamples,metadataStable:JSON.stringify(a)===JSON.stringify(b)});
         }
       }
       return results;
     });
-    for(const c of cases){assert.equal(c.outsideChanged,0,c.film+' 육지·하늘 영역 변경');assert.ok(c.changed>0,c.film+' 반사가 나오지 않음');assert.ok(c.metadataStable,c.film+' 원본 동작 좌표 변경');assert.ok(c.maxDifference<55,c.film+' 반사가 너무 진함');}
-    assert.deepEqual(errors,[]);const report={result:'PASS',cases,errors,note:'같은 willReadFrequently 표면에서 9편 × 4시점의 반사 유무 비교. 수면 마스크 밖 불변·원본 동작 메타데이터 보존. 2D 투영이며 광학 시뮬레이션이 아님. 첫 GPU/다음 CPU 표본 차이는 반사를 둘 다 꺼도 재현되어 검사에서 렌더 표면을 통일했다.'};
+    for(const c of cases){assert.equal(c.outsideChanged,0,c.film+' '+c.time+'초 육지·하늘 영역 변경 '+JSON.stringify(c.outsideSamples));assert.ok(c.changed>0,c.film+' 반사가 나오지 않음');assert.ok(c.metadataStable,c.film+' 원본 동작 좌표 변경');assert.ok(c.maxDifference<55,c.film+' 반사가 너무 진함');assert.ok(c.seamPixels<c.maskPixels*.008,c.film+' 경계 면제 폭이 한 픽셀을 넘음');}
+    assert.deepEqual(errors,[]);const report={result:'PASS',cases,errors,note:'같은 willReadFrequently 표면에서 9편 × 4시점의 반사 유무 비교. 수면 마스크 밖 불변·원본 동작 메타데이터 보존. 2D 투영이며 광학 시뮬레이션이 아님. 첫 GPU/다음 CPU 표본 차이는 반사를 둘 다 꺼도 재현되어 검사에서 렌더 표면을 통일했다. 렌더러의 clip()과 검사의 fill()이 갈리는 경계 한 줄(seamPixels, 마스크의 0.5% 남짓)은 면제하며 그 폭 자체를 함께 검사한다 — 경계에서 한 픽셀 떨어진 육지·하늘 누수는 그대로 잡힌다.'};
     fs.writeFileSync(path.join(root,'output/cutscenes/qa/reflection-check.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
   }finally{if(browser)await browser.close();if(own)await new Promise(r=>own.server.close(r));}
 })().catch(e=>{console.error(e);process.exitCode=1;});

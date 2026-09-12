@@ -7,6 +7,9 @@
       "changed": 19895,
       "outsideChanged": 0,
       "maxDifference": 15,
+      "maskPixels": 520735,
+      "seamPixels": 1999,
+      "outsideSamples": [],
       "metadataStable": true
     },
     {
@@ -15,6 +18,9 @@
       "changed": 20722,
       "outsideChanged": 0,
       "maxDifference": 15,
+      "maskPixels": 615087,
+      "seamPixels": 1992,
+      "outsideSamples": [],
       "metadataStable": true
     },
     {
@@ -23,6 +29,9 @@
       "changed": 8576,
       "outsideChanged": 0,
       "maxDifference": 16,
+      "maskPixels": 516752,
+      "seamPixels": 2114,
+      "outsideSamples": [],
       "metadataStable": true
     },
     {
@@ -31,6 +40,9 @@
       "changed": 8235,
       "outsideChanged": 0,
       "maxDifference": 15,
+      "maskPixels": 489138,
+      "seamPixels": 1924,
+      "outsideSamples": [],
       "metadataStable": true
     },
     {
@@ -39,6 +51,9 @@
       "changed": 14697,
       "outsideChanged": 0,
       "maxDifference": 16,
+      "maskPixels": 356797,
+      "seamPixels": 1812,
+      "outsideSamples": [],
       "metadataStable": true
     },
     {
@@ -47,6 +62,9 @@
       "changed": 14959,
       "outsideChanged": 0,
       "maxDifference": 18,
+      "maskPixels": 371512,
+      "seamPixels": 1830,
+      "outsideSamples": [],
       "metadataStable": true
     },
     {
@@ -55,6 +73,9 @@
       "changed": 8409,
       "outsideChanged": 0,
       "maxDifference": 17,
+      "maskPixels": 440620,
+      "seamPixels": 1895,
+      "outsideSamples": [],
       "metadataStable": true
     },
     {
@@ -63,6 +84,9 @@
       "changed": 7612,
       "outsideChanged": 0,
       "maxDifference": 19,
+      "maskPixels": 376989,
+      "seamPixels": 1838,
+      "outsideSamples": [],
       "metadataStable": true
     },
     {
@@ -71,6 +95,9 @@
       "changed": 12050,
       "outsideChanged": 0,
       "maxDifference": 14,
+      "maskPixels": 396094,
+      "seamPixels": 1950,
+      "outsideSamples": [],
       "metadataStable": true
     },
     {
@@ -79,6 +106,9 @@
       "changed": 13243,
       "outsideChanged": 0,
       "maxDifference": 16,
+      "maskPixels": 451628,
+      "seamPixels": 1918,
+      "outsideSamples": [],
       "metadataStable": true
     },
     {
@@ -87,6 +117,9 @@
       "changed": 6924,
       "outsideChanged": 0,
       "maxDifference": 15,
+      "maskPixels": 433655,
+      "seamPixels": 1956,
+      "outsideSamples": [],
       "metadataStable": true
     },
     {
@@ -95,6 +128,9 @@
       "changed": 6448,
       "outsideChanged": 0,
       "maxDifference": 16,
+      "maskPixels": 396094,
+      "seamPixels": 1950,
+      "outsideSamples": [],
       "metadataStable": true
     },
     {
@@ -103,6 +139,9 @@
       "changed": 19894,
       "outsideChanged": 0,
       "maxDifference": 15,
+      "maskPixels": 520735,
+      "seamPixels": 1999,
+      "outsideSamples": [],
       "metadataStable": true
     },
     {
@@ -111,6 +150,9 @@
       "changed": 20721,
       "outsideChanged": 0,
       "maxDifference": 15,
+      "maskPixels": 615087,
+      "seamPixels": 1992,
+      "outsideSamples": [],
       "metadataStable": true
     },
     {
@@ -119,6 +161,9 @@
       "changed": 8576,
       "outsideChanged": 0,
       "maxDifference": 16,
+      "maskPixels": 516752,
+      "seamPixels": 2114,
+      "outsideSamples": [],
       "metadataStable": true
     },
     {
@@ -127,6 +172,9 @@
       "changed": 8235,
       "outsideChanged": 0,
       "maxDifference": 16,
+      "maskPixels": 489138,
+      "seamPixels": 1924,
+      "outsideSamples": [],
       "metadataStable": true
     },
     {
@@ -135,6 +183,9 @@
       "changed": 14695,
       "outsideChanged": 0,
       "maxDifference": 16,
+      "maskPixels": 356797,
+      "seamPixels": 1812,
+      "outsideSamples": [],
       "metadataStable": true
     },
     {
@@ -143,6 +194,9 @@
       "changed": 14958,
       "outsideChanged": 0,
       "maxDifference": 18,
+      "maskPixels": 371512,
+      "seamPixels": 1830,
+      "outsideSamples": [],
       "metadataStable": true
     },
     {
@@ -151,6 +205,9 @@
       "changed": 8408,
       "outsideChanged": 0,
       "maxDifference": 17,
+      "maskPixels": 440620,
+      "seamPixels": 1895,
+      "outsideSamples": [],
       "metadataStable": true
     },
     {
@@ -159,6 +216,9 @@
       "changed": 7610,
       "outsideChanged": 0,
       "maxDifference": 19,
+      "maskPixels": 376989,
+      "seamPixels": 1838,
+      "outsideSamples": [],
       "metadataStable": true
     },
     {
@@ -167,6 +227,9 @@
       "changed": 12049,
       "outsideChanged": 0,
       "maxDifference": 14,
+      "maskPixels": 396094,
+      "seamPixels": 1950,
+      "outsideSamples": [],
       "metadataStable": true
     },
     {
@@ -175,6 +238,9 @@
       "changed": 13244,
       "outsideChanged": 0,
       "maxDifference": 16,
+      "maskPixels": 451628,
+      "seamPixels": 1918,
+      "outsideSamples": [],
       "metadataStable": true
     },
     {
@@ -183,6 +249,9 @@
       "changed": 6925,
       "outsideChanged": 0,
       "maxDifference": 14,
+      "maskPixels": 433655,
+      "seamPixels": 1956,
+      "outsideSamples": [],
       "metadataStable": true
     },
     {
@@ -191,6 +260,9 @@
       "changed": 6448,
       "outsideChanged": 0,
       "maxDifference": 16,
+      "maskPixels": 396094,
+      "seamPixels": 1950,
+      "outsideSamples": [],
       "metadataStable": true
     },
     {
@@ -199,6 +271,9 @@
       "changed": 19970,
       "outsideChanged": 0,
       "maxDifference": 14,
+      "maskPixels": 520735,
+      "seamPixels": 1999,
+      "outsideSamples": [],
       "metadataStable": true
     },
     {
@@ -207,6 +282,9 @@
       "changed": 20592,
       "outsideChanged": 0,
       "maxDifference": 16,
+      "maskPixels": 627598,
+      "seamPixels": 1941,
+      "outsideSamples": [],
       "metadataStable": true
     },
     {
@@ -215,6 +293,9 @@
       "changed": 9155,
       "outsideChanged": 0,
       "maxDifference": 15,
+      "maskPixels": 516802,
+      "seamPixels": 2108,
+      "outsideSamples": [],
       "metadataStable": true
     },
     {
@@ -223,6 +304,9 @@
       "changed": 7650,
       "outsideChanged": 0,
       "maxDifference": 15,
+      "maskPixels": 488845,
+      "seamPixels": 1892,
+      "outsideSamples": [],
       "metadataStable": true
     },
     {
@@ -231,6 +315,9 @@
       "changed": 14627,
       "outsideChanged": 0,
       "maxDifference": 16,
+      "maskPixels": 356797,
+      "seamPixels": 1812,
+      "outsideSamples": [],
       "metadataStable": true
     },
     {
@@ -239,6 +326,9 @@
       "changed": 14898,
       "outsideChanged": 0,
       "maxDifference": 18,
+      "maskPixels": 385958,
+      "seamPixels": 1838,
+      "outsideSamples": [],
       "metadataStable": true
     },
     {
@@ -247,6 +337,9 @@
       "changed": 9003,
       "outsideChanged": 0,
       "maxDifference": 16,
+      "maskPixels": 440661,
+      "seamPixels": 1889,
+      "outsideSamples": [],
       "metadataStable": true
     },
     {
@@ -255,6 +348,9 @@
       "changed": 7658,
       "outsideChanged": 0,
       "maxDifference": 17,
+      "maskPixels": 377034,
+      "seamPixels": 1827,
+      "outsideSamples": [],
       "metadataStable": true
     },
     {
@@ -263,6 +359,9 @@
       "changed": 12147,
       "outsideChanged": 0,
       "maxDifference": 15,
+      "maskPixels": 396094,
+      "seamPixels": 1950,
+      "outsideSamples": [],
       "metadataStable": true
     },
     {
@@ -271,6 +370,9 @@
       "changed": 13265,
       "outsideChanged": 0,
       "maxDifference": 16,
+      "maskPixels": 462423,
+      "seamPixels": 1999,
+      "outsideSamples": [],
       "metadataStable": true
     },
     {
@@ -279,6 +381,9 @@
       "changed": 7397,
       "outsideChanged": 0,
       "maxDifference": 14,
+      "maskPixels": 433691,
+      "seamPixels": 1951,
+      "outsideSamples": [],
       "metadataStable": true
     },
     {
@@ -287,9 +392,12 @@
       "changed": 5998,
       "outsideChanged": 0,
       "maxDifference": 15,
+      "maskPixels": 396094,
+      "seamPixels": 1950,
+      "outsideSamples": [],
       "metadataStable": true
     }
   ],
   "errors": [],
-  "note": "같은 willReadFrequently 표면에서 9편 × 4시점의 반사 유무 비교. 수면 마스크 밖 불변·원본 동작 메타데이터 보존. 2D 투영이며 광학 시뮬레이션이 아님. 첫 GPU/다음 CPU 표본 차이는 반사를 둘 다 꺼도 재현되어 검사에서 렌더 표면을 통일했다."
+  "note": "같은 willReadFrequently 표면에서 9편 × 4시점의 반사 유무 비교. 수면 마스크 밖 불변·원본 동작 메타데이터 보존. 2D 투영이며 광학 시뮬레이션이 아님. 첫 GPU/다음 CPU 표본 차이는 반사를 둘 다 꺼도 재현되어 검사에서 렌더 표면을 통일했다. 렌더러의 clip()과 검사의 fill()이 갈리는 경계 한 줄(seamPixels, 마스크의 0.5% 남짓)은 면제하며 그 폭 자체를 함께 검사한다 — 경계에서 한 픽셀 떨어진 육지·하늘 누수는 그대로 잡힌다."
 }
