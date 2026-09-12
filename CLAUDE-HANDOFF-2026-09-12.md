@@ -30,6 +30,7 @@
 - [초대장으로 시작하기](invite-story-plan.md)
 - [집중 이후 반복 루프](story-loop-plan.md)
 - [표현 보드](feature-inventory.html?tab=story#prologue-scenarios)
+- [컷신 제작 프롬프트 아카이브](cutscene-prompts.html) — 영상 자체는 AI 비디오 생성물이 아니라 Canvas 조합 렌더링이며, 여기에 기록된 것은 원화·배경·소품·파츠 생성 프롬프트다.
 
 프롤로그 3안은 아직 **후보**다. 하나가 최종 선택됐다고 기록하거나 UI를 한 안으로 잠그지 않는다.
 
