@@ -15,12 +15,20 @@ function check(ok,message){assert.ok(ok,message);checks++;}
   const ids=data.features.map(f=>f.id),screens=[...ia.screens,...ia.sheets];
   const activeScreens=screens.filter(s=>!data.retiredScreens[s.id]);
   check(new Set(ids).size===ids.length,'기능 ID 중복 없음');
-  check(data.groups.length===16&&data.features.length===170,'현재 목록 16개 영역 / 170개 항목');
+  check(data.groups.length===16&&data.features.length===167,'현재 목록 16개 영역 / 167개 항목');
   check(!ids.includes('I07'),'별도 콕찌르기는 현행 기능에서 제외');
   check(Object.keys(data.retiredScreens).join() === 'po3'&&activeScreens.length===44,'기존 콕찌르기 화면만 제외 이력으로 분리');
   const letter=data.features.find(f=>f.id==='I06');
   check(letter.decision==='chosen'&&letter.proof==='pending'&&letter.title.includes('우리 섬에 편지 쓰기'),'편지 통합은 사용자 결정·실제 연결 전');
   check(letter.note.includes('개인 수신자 선택')&&letter.note.includes('실제 전송'),'섬 전체 편지·개인 수신자 없음·실제 전송 경계');
+  check(data.sources.current0914&&data.sources.current0914.path==='policy-2026-09-14.md','2026-09-14 현재 정책 출처 등록');
+  for(const id of ['D04','D06','H08','L04','L10','L13','M01','M02'])check(!ids.includes(id)&&Boolean(data.retiredFeatures[id]),id+' 현재 정책으로 제외 이력 보존');
+  for(const id of ['D22','F13','H12','N09','I09']){const f=data.features.find(x=>x.id===id);check(f&&f.decision==='chosen'&&f.proof==='pending'&&f.sources.includes('current0914'),id+' 새 정책 기능은 사용자 결정·연결 전·현재 정책 근거');}
+  check(data.features.find(f=>f.id==='M03').screens.includes('ob1'),'OB-1 이전 시연 화면은 섬 간 랭킹에 연결');
+  const friendAdd=data.features.find(f=>f.id==='I01'),friendManage=data.features.find(f=>f.id==='I02'),friendChat=data.features.find(f=>f.id==='I09');
+  check(friendAdd.decision==='chosen'&&friendAdd.proof==='legacy'&&friendAdd.action.includes('내 뗏목')&&friendAdd.note.includes('수락해야'),'친구 요청은 내 뗏목·상대 수락, 원앱 참조 증거 유지');
+  check(['수락','거절','취소','삭제'].every(word=>friendManage.action.includes(word))&&friendManage.note.includes('다시 신청')&&friendManage.decision==='chosen'&&friendManage.proof==='legacy','친구 요청 수락·거절·취소·재신청·삭제');
+  check(friendChat.note.includes('다른 섬')&&friendChat.note.includes('섬 전체로 보내지 않는다')&&friendChat.note.includes('추가 결정')&&friendChat.screens.length===0,'친구 1:1 채팅은 섬 전체와 분리·미정 조건 명시');
   for(const f of data.features){
     check(Boolean(data.decisions[f.decision]&&data.proofs[f.proof]),f.id+' 상태 유효');
     check(f.sources.length>0&&f.sources.every(s=>data.sources[s]),f.id+' 근거 키 유효');
@@ -65,32 +73,35 @@ function check(ok,message){assert.ok(ok,message);checks++;}
       const noOverflow=async()=>check(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),width+' 가로 넘침 없음');
       const reset=async()=>{await page.locator('#reset').click();check(await rows().count()===data.features.length,'초기화하면 전체');};
       const capture=async suffix=>{if([1440,390].includes(width))await page.screenshot({path:path.join(__dirname,'tmp/verification/feature-inventory',width+'-'+suffix+'.png')});};
-      check(await rows().count()===170,width+' 처음부터 전체 기능 노출');
+      check(await rows().count()===167,width+' 처음부터 전체 기능 노출');
       check(await page.locator('#feature-I07').count()===0,'콕찌르기 행 제거');
+      for(const id of ['D04','D06','H08','L04','L10','L13','M01','M02'])check(await page.locator('#feature-'+id).count()===0,'현재 정책으로 제외한 '+id+' 행 제거');
       check(await page.locator('.feature-group:visible').count()===16,'모든 영역 노출');
       check(await page.locator('#total-screens').textContent()==='44','현행 연결 화면·시트 수 44');
+      for(const id of ['D22','F13','H12','N09','I09'])check(await page.locator('#feature-'+id).isVisible(),width+' 새 정책 기능 '+id+' 노출');
       await noOverflow();await capture('all');
-      await page.locator('#search').fill('포모도로');
-      check(await rows().count()>0,'과거 앱 기능 검색');
-      check(await page.locator('#feature-D06').isVisible(),'수정본 포모도로 노출');
+      await page.locator('#search').fill('5분마다');
+      check(await rows().count()>0,'현재 정책 기능 검색');
+      check(await page.locator('#feature-D22').isVisible(),'5분마다 물고기 1마리 노출');
       check(await page.locator('#search').evaluate(e=>document.activeElement===e),'검색해도 입력 포커스 유지');
       await page.reload();
-      check(await page.locator('#search').inputValue()==='포모도로','새로고침 검색 유지');
-      await page.locator('#feature-D06 summary').click();
-      check(await page.locator('#feature-D06').getAttribute('open')!==null,'근거 펼치기');
-      check((await page.locator('#feature-D06 .source-list').textContent()).includes('04-island-growth.html'),'실제 원앱 근거 경로 노출');
-      await noOverflow();await capture('legacy');
+      check(await page.locator('#search').inputValue()==='5분마다','새로고침 검색 유지');
+      await page.locator('#feature-D22 summary').click();
+      check(await page.locator('#feature-D22').getAttribute('open')!==null,'근거 펼치기');
+      check((await page.locator('#feature-D22 .source-list').textContent()).includes('policy-2026-09-14.md'),'현재 정책 근거 경로 노출');
+      await noOverflow();await capture('policy');
       await page.locator('#search').fill('뗏목');
-      check(await page.locator('#feature-N06').isVisible(),'뗏목 교체 상태 검색');
+      check(await page.locator('#feature-N06').isVisible(),'기본 뗏목 원화 검색');
       await page.locator('#feature-N06 summary').click();
-      check((await page.locator('#feature-N06 .feature-note').textContent()).includes('뗏목→돛단배→배'),'개인 배 단계 방향과 구현 경계 명시');
-      check(await page.locator('#feature-N06 a[href="revisions/07-personal-shared-decoration.html"]').count()===1,'최신 개인 배 기획 연결');
+      const raftNote=await page.locator('#feature-N06 .feature-note').textContent();
+      check(raftNote.includes('기본 뗏목')&&!raftNote.includes('돛단배'),'모두 같은 기본 뗏목, 배 단계 없음');
+      check(await page.locator('#feature-N06 a[href="revisions/07-personal-shared-decoration.html"]').count()===1,'기존 07 뗏목 기획 연결 유지');
       await noOverflow();
       await page.locator('#search').fill('검증용존재하지않는기능');
       check(await rows().count()===0,'검색 0개');
       check(await page.locator('#empty').isVisible(),'빈 검색 안내');
       await page.locator('#empty-reset').click();
-      check(await rows().count()===170,'빈 결과에서 복구');
+      check(await rows().count()===167,'빈 결과에서 복구');
       await page.locator('[data-view=decide]').click();
       check(await rows().count()===data.features.filter(f=>['proposal','review'].includes(f.decision)).length,'결정할 항목 필터');
       await page.reload();check(await page.locator('[data-view=decide]').getAttribute('aria-pressed')==='true','빠른 필터 새로고침 유지');
@@ -100,7 +111,7 @@ function check(ok,message){assert.ok(ok,message);checks++;}
       check(await rows().count()===data.features.filter(f=>f.proof==='pending').length,'연결 전 필터');
       await reset();
       await page.locator('#group-filter').selectOption('focus');
-      check(await rows().count()===19,'집중 19개 영역 필터');
+      check(await rows().count()===18,'집중 18개 영역 필터');
       check(await page.locator('.feature-domain:visible').count()===4,'집중 영역 4개 가치 묶음');
       check(await page.locator('#feature-D15').count()===0,'기본 낚싯대 제외');
       check(await page.locator('#feature-D18').isVisible()&&await page.locator('#feature-D19').isVisible(),'스크린타임·후기 별도 항목');
@@ -124,8 +135,8 @@ function check(ok,message){assert.ok(ok,message);checks++;}
       check(await page.locator('#feature-N06').getAttribute('open')!==null,'직접 기능 링크 펼침');
       await noOverflow();
       await page.locator('#group-filter').selectOption('focus');
-      await page.reload();check(await rows().count()===19,'항목 바로가기 이후에도 새 필터 유지');
-      await reset();await page.reload();check(await rows().count()===170,'필터 초기화 후에도 세부 보기 유지');
+      await page.reload();check(await rows().count()===18,'항목 바로가기 이후에도 새 필터 유지');
+      await reset();await page.reload();check(await rows().count()===167,'필터 초기화 후에도 세부 보기 유지');
       await page.goto(base+'/eli5-journey.html',{waitUntil:'networkidle'});
       await noOverflow();
       await page.locator('.view-nav a[href="feature-inventory.html"]').click();
@@ -136,7 +147,7 @@ function check(ok,message){assert.ok(ok,message);checks++;}
       await context.close();
     }
     const context=await browser.newContext();
-    for(const file of ['feature-inventory.html','feature-inventory-notes.md','eli5-journey.html','rig.html','walk.html','revisions/04-island-growth.html','revisions/07-personal-shared-decoration.html','growth-decoration-revision-20260911.md','story-loop-plan.md']){
+    for(const file of ['feature-inventory.html','feature-inventory-notes.md','eli5-journey.html','rig.html','walk.html','revisions/04-island-growth.html','revisions/07-personal-shared-decoration.html','growth-decoration-revision-20260911.md','story-loop-plan.md','policy-2026-09-14.md']){
       const response=await context.request.get(base+'/'+file);check(response.ok(),file+' 링크 응답');
     }
     for(const screen of screens){const response=await context.request.get(base+'/ia.html?screen='+screen.id);check(response.ok(),screen.id+' IA 응답');}
