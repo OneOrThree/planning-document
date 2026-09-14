@@ -71,15 +71,12 @@ html{scroll-padding-top:0}
 .growth-steps{list-style:none;padding:0;margin:var(--space-lg) 0}
 .growth-steps>li{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--space-md);padding-block:var(--space-lg);border-top:1px solid var(--rule)}
 .growth-stage span{font-size:var(--text-planning-caption);color:var(--sea)}
-.growth-stage h3,.growth-sidepath h3,.growth-loop h3{font-size:var(--text-planning-subhead);letter-spacing:-.03em;margin:var(--space-xs) 0}
-.growth-steps p,.growth-sidepath p,.growth-loop p,.growth-open p{font-size:var(--text-planning-body);color:var(--muted);margin:var(--space-xs) 0 0;max-width:75ch}
+.growth-stage h3,.growth-loop h3{font-size:var(--text-planning-subhead);letter-spacing:-.03em;margin:var(--space-xs) 0}
+.growth-steps p,.growth-loop p,.growth-open p{font-size:var(--text-planning-body);color:var(--muted);margin:var(--space-xs) 0 0;max-width:75ch}
 .growth-steps strong{font-size:var(--text-planning-body)}
 .growth-steps .growth-resource{font-size:var(--text-planning-small);margin:0}
 .growth-steps .growth-pivot{color:var(--sea);font-size:var(--text-planning-small)}
 .growth-branches{display:grid;gap:var(--space-md)}
-.growth-sidepath{padding:var(--space-lg);border-block:1px dashed var(--sea)}
-.growth-sidepath h3{margin-top:0}
-.growth-sidepath p{margin:0}
 .growth-loop{padding-block:var(--space-lg)}
 .growth-open{margin-bottom:var(--space-lg)}
 .growth-open summary{min-height:44px;align-content:center;font-size:var(--text-planning-body);color:var(--sea)}
@@ -204,9 +201,6 @@ html{scroll-padding-top:0}
 .growth-facility-details{margin-block:var(--space-md)}
 .growth-facility-details>summary,.growth-reward-proposals>summary{min-height:52px;align-content:center;font-size:var(--text-planning-body);font-weight:700;color:var(--sea);padding:var(--space-sm) 0}
 .growth-steps{margin:0}
-.growth-sidepath{padding:var(--space-md) var(--space-lg);border:0;border-left:3px solid var(--sea);background:var(--sage)}
-.growth-sidepath h3{font-size:var(--text-planning-body)}
-.growth-sidepath p{font-size:var(--text-planning-small)}
 .growth-table-wrap{overflow-x:auto;border:1px solid var(--rule);background:var(--color-planning-surface)}
 .growth-cost-table{border-collapse:collapse;width:100%;font-size:var(--text-planning-small);text-align:left}
 .growth-cost-table caption{text-align:left;padding:var(--space-md);color:var(--muted);border-bottom:1px solid var(--rule);font-size:var(--text-planning-caption)}
@@ -261,7 +255,6 @@ html{scroll-padding-top:0}
  .growth-cost-table th,.growth-cost-table td{padding:var(--space-sm)}
  .growth-reward-proposals dl>div,.growth-polish-list>div{grid-template-columns:1fr;gap:var(--space-xs)}
  .growth-reward-proposals>summary .planning-status{display:table;margin:var(--space-xs) 0 0}
- .growth-sidepath{padding:var(--space-md)}
  .growth-block-heading{gap:var(--space-xs)}
  .decision-entry{padding-inline:var(--space-md)}
 }

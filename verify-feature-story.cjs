@@ -34,6 +34,7 @@ function check(value,note){assert.ok(value,note);checks++;}
       check(await page.locator('#letter-decision').getAttribute('data-state')==='confirmed','콕찌르기 제외·편지 유지 결정 명시');
       const letterDecision=await page.locator('#letter-decision').textContent();
       check(letterDecision.includes('콕찌르기(I07)는 제외')&&letterDecision.includes('그룹 전체에 자유롭게'),'콕찌르기 제외·섬 전체 자유 편지');
+      check(letterDecision.includes('친구 1:1 채팅')&&letterDecision.includes('내 뗏목'),'우체통에 섬 편지방과 친구 1:1 채팅·친구 관리는 내 뗏목');
       check(letterDecision.includes('교체 전')&&letterDecision.includes('미구현'),'결정과 기존 시연의 차이 명시');
       check(await page.locator('[data-chapter=stay]').textContent()==='02함께하다','두 번째 단계는 함께하다');
       const together=await page.evaluate(()=>GachisupFeatureStory.find(s=>s.id==='stay'));
@@ -42,11 +43,17 @@ function check(value,note){assert.ok(value,note);checks++;}
       const focus=await page.evaluate(()=>GachisupFeatureOverview.find(f=>f.id==='focus'));
       check(focus.action.includes('실제 할 일')&&focus.action.includes('동료의 존재'),'실제 할 일과 낚시·동료의 존재 우선');
       check(focus.boundary.includes('같은 모닥불')&&focus.boundary.includes('책 읽기'),'섬 홈의 같은 모닥불 독서 휴식');
+      const [grow,decorate]=await page.evaluate(()=>['grow','decorate'].map(id=>GachisupFeatureOverview.find(f=>f.id===id)));
+      check(grow.action.includes('건물 건설 퀘스트')&&grow.action.includes('상점은 마지막')&&!/마을 포인트|\d+P\b|개인 ?80%/.test(JSON.stringify(grow)),'섬 물고기 하나·건물 건설 퀘스트·상점 마지막');
+      check(decorate.action.includes('기본 뗏목')&&decorate.action.includes('주민 누구나')&&!/돛단배|마을 포인트|섬 포인트/.test(JSON.stringify(decorate)),'모두 같은 기본 뗏목·주민 누구나 구매');
       check(await page.locator('#story-ledger [data-state=confirmed]').count()===3,'진입·초대장·뗏목 방향 확정');
       check(await page.locator('#story-ledger [data-story-step]').count()===6,'대화 기록의 여섯 단계');
       check(await page.locator('[data-quest-candidate]').count()===5,'과거 퀘스트 후보 다섯 개 보존');
       check(!(await page.locator('#previous-growth-proposals').evaluate(e=>e.open)),'이전 80:20·성장 논의는 접힌 과거 기록');
       check(await page.locator('#latest-growth-decoration').isVisible(),'04·07 최신 결정을 현재 화면에 표시');
+      const latest=await page.locator('#latest-growth-decoration').textContent();
+      check(!/마을 포인트|\d+P\b|돛단배|배 위 낚시|개인 물고기/.test(latest)&&latest.includes('건물 건설 퀘스트')&&latest.includes('작은 낚시 섬 부두'),'최신 결정 요약을 현재 정책으로 갱신');
+      check(await page.locator('#latest-growth-decoration a[href="revisions/04-island-growth.html"]').count()===1&&await page.locator('#latest-growth-decoration a[href="revisions/07-personal-shared-decoration.html"]').count()===1&&await page.locator('#latest-growth-decoration a[href="policy-2026-09-14.md"]').count()===1,'04·07 원문 링크 유지·정책 원문 연결');
       check((await page.locator('#quest-ideas').textContent()).includes('아직 선택하거나 구현한 퀘스트가 아니에요'),'퀘스트는 채택·구현 전 후보임을 명시');
       check(await page.locator('[data-reward-path]').count()===2,'두 판정 유형과 보상 연결');
       check(await page.locator('#quest-rewards').getAttribute('data-state')==='proposal','보상 분리는 아직 제안');
@@ -62,7 +69,8 @@ function check(value,note){assert.ok(value,note);checks++;}
       check(raftProposal.includes('흩어져 집중하는 구조로 바꾸지 않아요')&&raftProposal.includes('현재 접속 중이라고 표시하지 않아요'),'공동 집중 유지·가짜 접속 표시 방지');
       check((await page.locator('[data-reward-path=screen]').textContent()).includes('n시간 이하'),'폰 사용 목표는 상한 이하');
       check(!(await page.locator('.earlier-quest-ideas').evaluate(e=>e.open)),'이전 다섯 아이디어는 접힌 참고로 보존');
-      check(focus.boundary.includes('후속 검토')&&focus.boundary.includes('구현 완료가 아니에요'),'이전 포모도로·출항의 측정 연결과 구현 경계 명시');
+      check(focus.boundary.includes('카운트업')&&focus.boundary.includes('휴식 시간')&&focus.action.includes('작은 낚시 섬 부두')&&!/포모도로|배 위/.test(focus.action+focus.place+focus.boundary),'카운트업·작은 낚시 섬 부두·휴식 그룹원 표시');
+      check(focus.boundary.includes('후속 검토')&&focus.boundary.includes('구현 완료가 아니에요'),'측정 시작·최종 낚시 장소와 구현 경계 명시');
       for(const id of ['find','stay','build','gather','return']){
         await page.locator('[data-chapter='+id+']').click();
         check(await page.locator('[data-chapter='+id+']').getAttribute('aria-current')==='step',id+' 장면 선택');
@@ -93,8 +101,9 @@ function check(value,note){assert.ok(value,note);checks++;}
         await page.screenshot({path:path.join(__dirname,'tmp/verification/feature-story',width+'-wrapping.png')});
       }
       await page.locator('.story-decisions summary').click();
-      check((await page.locator('.story-decisions').textContent()).includes('물고기 지급량·경계 정산'),'지급량·정산의 제안 상태 표시');
-      check((await page.locator('.story-decisions').textContent()).includes('채택하지 않았어요'),'미채택 아이디어 경계');
+      const storyDecisions=await page.locator('.story-decisions').textContent();
+      check(storyDecisions.includes('가격은 미정')&&storyDecisions.includes('조정할 수 있는 초기값')&&!/마을 포인트|\d+P\b|배 위 낚시|포모도로/.test(storyDecisions),'미정 가격·조정 가능한 건설 초기값 표시');
+      check(storyDecisions.includes('채택하지 않았어요'),'미채택 아이디어 경계');
       await noOverflow();
       check(await page.evaluate(()=>JSON.stringify({...localStorage}))===before,'제품 저장소 미변경');
       const notes=await context.request.get(((process.env.BASE_URL || 'http://127.0.0.1:4173/').replace(/\/$/, '') + '/story-wrapping-notes.md'));check(notes.ok(),'제안 근거 문서 연결');
