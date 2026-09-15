@@ -1,0 +1,2 @@
+/* 확인 모달 · UI별 스타일 */
+.confirm-body{text-align:center;padding:20px 4px 12px}.dialog-symbol{width:52px;height:52px;display:grid;place-items:center;margin:0 auto 18px;background:var(--soft);border-radius:50%;color:var(--ink)}.dialog-symbol .icon{width:26px;height:26px}.confirm-body h3{font-size:24px;line-height:1.5}.confirm-body p{font-size:14px;line-height:1.9;color:var(--muted);margin:14px 0 26px}.confirm-body .row>.btn{flex:1}.danger-text{color:var(--danger)}
