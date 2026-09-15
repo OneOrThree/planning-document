@@ -80,12 +80,12 @@ function check(ok,message){assert.ok(ok,message);checks++;}
       check(await page.locator('#total-screens').textContent()==='44','현행 연결 화면·시트 수 44');
       for(const id of ['D22','F13','H12','N09','I09'])check(await page.locator('#feature-'+id).isVisible(),width+' 새 정책 기능 '+id+' 노출');
       await noOverflow();await capture('all');
-      await page.locator('#search').fill('5분마다');
+      await page.locator('#search').fill('1분마다');
       check(await rows().count()>0,'현재 정책 기능 검색');
-      check(await page.locator('#feature-D22').isVisible(),'5분마다 물고기 1마리 노출');
+      check(await page.locator('#feature-D22').isVisible(),'1분마다 물고기 1마리 노출');
       check(await page.locator('#search').evaluate(e=>document.activeElement===e),'검색해도 입력 포커스 유지');
       await page.reload();
-      check(await page.locator('#search').inputValue()==='5분마다','새로고침 검색 유지');
+      check(await page.locator('#search').inputValue()==='1분마다','새로고침 검색 유지');
       await page.locator('#feature-D22 summary').click();
       check(await page.locator('#feature-D22').getAttribute('open')!==null,'근거 펼치기');
       check((await page.locator('#feature-D22 .source-list').textContent()).includes('policy-2026-09-14.md'),'현재 정책 근거 경로 노출');

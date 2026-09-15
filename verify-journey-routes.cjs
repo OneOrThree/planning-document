@@ -57,7 +57,7 @@ const check = (value, note) => {assert.ok(value, note); checks++;};
       check(create.next.includes('생성 성공')&&create.next.includes('방금 이름 붙인 섬'),'B1에서 B2의 같은 섬으로');
       check(routes.create.steps.find(step=>step.id==='arrival').boundary.includes('우체통 건설 전'),'우체통 전 초기 초대');
       const loop=Object.fromEntries(routes.invite.steps.map(step=>[step.id,step]));
-      check(loop.focus.scene.includes('작은 낚시 섬 부두')&&loop.focus.scene.includes('카운트업')&&loop.focus.action.includes('5분마다 물고기 1마리'),'집중: 작은 낚시 섬 부두·카운트업·5분 1마리');
+      check(loop.focus.scene.includes('작은 낚시 섬 부두')&&loop.focus.scene.includes('카운트업')&&loop.focus.action.includes('1분마다 물고기 1마리'),'집중: 작은 낚시 섬 부두·카운트업·1분 1마리');
       check(loop.rest.scene.includes('모닥불')&&loop.rest.scene.includes('각자 휴식 시간')&&loop.rest.next.includes('작은 낚시 섬 부두'),'휴식: 원래 섬 모닥불·쉬는 그룹원 이름과 휴식 시간·재개 시 낚시 섬 부두');
       check(!JSON.stringify(routes.public).includes('초대 코드'),'공개 섬 둘러보기에는 초대 코드 입력 없음');
       check(loop.prepare.scene.includes('목표 시간은 정하지 않는다')&&loop.finish.boundary.includes('일일 퀘스트'),'준비는 목표 시간 없음·마무리는 섬 물고기와 일일 퀘스트 보상');
