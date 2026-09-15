@@ -39,7 +39,7 @@ const check=(value,note)=>{assert.ok(value,note);checks++;};
    check(await page.locator('#growth-pending a[href="?tab=decisions#decision-policy-building-quest"]').count()===1&&await page.locator('#growth-pending a[href="?tab=decisions#decision-growth-tab"]').count()===1,'건설 퀘스트·탭 분리 결정 로그 연결');
    check((await page.locator('.journey-return').textContent()).includes('작은 낚시 섬 부두')&&!(await page.locator('.journey-return').textContent()).includes('배로'),'휴식 뒤 작은 낚시 섬 부두로 복귀');
    const mailboxBranch=await page.locator('[data-growth-branch=mailbox]').textContent();
-   check(mailboxBranch.includes('친구와는 1:1 채팅')&&mailboxBranch.includes('내 뗏목')&&mailboxBranch.includes('콕찌르기가 없어요'),'우체통: 섬 편지방 + 친구 1:1 채팅·친구 관리는 내 뗏목');
+   check(mailboxBranch.includes('친구와는 편지를 주고받아요')&&mailboxBranch.includes('내 뗏목')&&mailboxBranch.includes('콕찌르기가 없어요')&&!mailboxBranch.includes('1:1 채팅'),'우체통: 섬 편지방 + 친구 편지·친구 관리는 내 뗏목');
    check(await page.locator('#no-invite-start a[href="no-invite-story-plan.md"]').count()===1,'초대 없는 이야기 검토 초안 연결');
    await page.locator('#tab-growth').click();
    await page.locator('.growth-roadmap a[href="#growth-facility-connections"]').click();

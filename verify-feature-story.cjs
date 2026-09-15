@@ -34,7 +34,7 @@ function check(value,note){assert.ok(value,note);checks++;}
       check(await page.locator('#letter-decision').getAttribute('data-state')==='confirmed','콕찌르기 제외·편지 유지 결정 명시');
       const letterDecision=await page.locator('#letter-decision').textContent();
       check(letterDecision.includes('콕찌르기(I07)는 제외')&&letterDecision.includes('그룹 전체에 자유롭게'),'콕찌르기 제외·섬 전체 자유 편지');
-      check(letterDecision.includes('친구 1:1 채팅')&&letterDecision.includes('내 뗏목'),'우체통에 섬 편지방과 친구 1:1 채팅·친구 관리는 내 뗏목');
+      check(letterDecision.includes('친구에게 편지')&&letterDecision.includes('내 뗏목')&&!letterDecision.includes('1:1 채팅'),'우체통에 섬 편지방과 친구 편지·친구 관리는 내 뗏목');
       check(letterDecision.includes('교체 전')&&letterDecision.includes('미구현'),'결정과 기존 시연의 차이 명시');
       check(await page.locator('[data-chapter=stay]').textContent()==='02함께하다','두 번째 단계는 함께하다');
       const together=await page.evaluate(()=>GachisupFeatureStory.find(s=>s.id==='stay'));
