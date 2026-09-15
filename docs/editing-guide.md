@@ -8,7 +8,8 @@
 | --- | --- | --- |
 | 결정·설명 | 왜 그렇게 정했는지, 확정과 제안의 경계 | `decision-log.md`, `*-story-plan.md`, `*-revision-20260911.md` |
 | 기획 작업대 | 팀이 읽는 6개 탭과 기능 목록 | `feature-inventory.html`, `*-data.js`, `planning-workbench.js` |
-| 조작 시연 | 마을·IA·모바일·모션의 동작 실험 | `index.html`, `ia.html`, `mobile.html`, `rig.html`, `walk.html` |
+| 디자인 작업실 | 확정 에셋 보관함·딸기 소다 UI 킷 | `index.html`, `assets/gachisup-r61/` |
+| 조작 시연 | 리깅·걷기 모션의 동작 실험 | `rig.html`, `walk.html` |
 
 최신 사용자 결정과 그 결정을 반영한 수정 메모가 과거 설계보다 우선한다. `revisions/`는 제공된 수정본 보관본, `references/legacy-design/`은 초기 제품 설계, `prototype-history.md`와 보고서는 과거 제작 기록이다. 날짜만 보고 제안을 확정으로 바꾸지 않는다. 충돌을 찾으면 결정 로그의 근거를 확인하고, 근거가 없으면 미정으로 남긴다.
 
@@ -61,21 +62,21 @@
 
 | 영역 키 · ID 계열 | 내용 | 시연 관련 코드 |
 | --- | --- | --- |
-| `start` · A | 첫 시작·계정 | `ia-onboarding.js`, `ia-model.js` |
-| `discover` · B | 섬 발견·초대·이동 | `journey-route-data.js`, `ia-onboarding.js`, `ia-sheets.js`, `ia-world.js` |
-| `world` · C | 마을 둘러보기 | `village.js`, `village-background.js`, `world-polish.js` |
+| `start` · A | 첫 시작·계정 | 시연 코드 삭제(2026-09-15) |
+| `discover` · B | 섬 발견·초대·이동 | `journey-route-data.js` |
+| `world` · C | 마을 둘러보기 | `village.js` |
 | `focus` · D | 집중·휴식·개인 목표 | `village-features.js`, `village-activities.js`, `village-store.js` |
-| `together` · E | 섬 건설·공동 모임 | `cooperative-places.js`, `cooperative-art.js` |
-| `quest` · F | 두 종류 퀘스트 | `ia-board.js`, `village-features.js`, `village-store.js` |
-| `board` · G | 공지·댓글·자료 | `ia-board.js`, `village-features.js`, `local-attachments.js` |
+| `together` · E | 섬 건설·공동 모임 | `cooperative-places.js` |
+| `quest` · F | 두 종류 퀘스트 | `village-features.js`, `village-store.js` |
+| `board` · G | 공지·댓글·자료 | `village-features.js` |
 | `stats` · H | 집중·사용량 통계 | `village-features.js`, `village-store.js` |
 | `friends` · I | 친구·섬 전체 편지방 | `ia-community.js`, `village-features.js` (기존 우편 시연과 차이 확인) |
-| `notifications` · J | 알림·재방문 | `ia-sheets.js`, `ia-profile.js` (실제 푸시 미연결) |
-| `manage` · K | 운영·권한 | `ia-model.js`, `ia-community.js`, `village-store.js` |
-| `economy` · L | 성장·재화·구매·배치 | `ia-profile.js`, `cooperative-places.js`, `village-store.js` |
-| `ranking` · M | 랭킹·비교 | `village-features.js`, `ia-world.js` |
+| `notifications` · J | 알림·재방문 | 시연 코드 삭제(2026-09-15) |
+| `manage` · K | 운영·권한 | `ia-community.js`, `village-store.js` |
+| `economy` · L | 성장·재화·구매·배치 | `cooperative-places.js`, `village-store.js` |
+| `ranking` · M | 랭킹·비교 | `village-features.js` |
 | `characters` · N | 고양이·모션 | `momo-rig.js`, `momo-walk.js`, `reading-profile-*.js`, `walk-profile-*.js` |
-| `system` · O | 권한·안전·복구 | `ia-model.js`, `village-store.js`, `local-attachments.js` |
+| `system` · O | 권한·안전·복구 | `village-store.js` |
 | `later` · P | 후보·보류 | 목록·원문만 수정. 채택 없이 시연 기능으로 추가하지 않는다. |
 
 ## 자주 하는 수정의 순서
@@ -104,7 +105,7 @@
 
 ### IA 화면 또는 모션을 바꾼다
 
-IA는 `ia-manifest.js`의 등록과 `ia-structure.js`의 분류, `ia-catalog.js`의 탐색을 함께 확인한다. 화면 본문은 `ia-*.js`, `village-features.js` 등에 있다. `ia.html`과 `mobile.html`은 `index.html`을 iframe으로 보여주므로 실제 본문 수정은 그쪽에 반영한다.
+IA 화면 ID는 `ia-manifest.js`의 등록과 `ia-structure.js`의 분류로 확인한다. 기능 목록의 `screens`가 이 ID를 쓴다. 옛 마을·IA·모바일 시연 페이지(`index.html`의 마을, `ia.html`, `mobile.html`)와 화면 본문 코드는 2026-09-15에 지웠고 Git 기록에 남아 있다. 사이트 첫 화면은 디자인 작업실(확정 에셋 보관함)이다.
 
 독서는 `rig-studio.js`가 캐릭터 선택을, `momo-rig.js`와 `reading-profile-*.js`가 리깅을 담당한다. 걷기는 `walk-studio.js`, `momo-walk.js`, `walk-profile-*.js`다. 새 에셋은 상대경로로 참조하고 alpha·색상·눈·관절·저속 재생을 확인한다. 과거 동물 시안 보존과 현재 고양이 플레이어 정책은 별개다.
 

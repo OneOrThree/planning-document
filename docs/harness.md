@@ -29,7 +29,7 @@ BASE_URL=https://oneorthree.github.io/planning-document/ npm run smoke
 
 - 정적 검사: 끊어진 정적 리소스·개인 경로·기능 ID 중복·상태 키·출처·제외 화면 연결·장면 필수 필드.
 - 기획 회귀 검사: 전체 목록, 6개 탭, 필터·검색, 3개 시작 경로, 성장·결정 로그, 새로고침·뒤로가기·키보드·모바일 폭.
-- 스모크 검사: 마을·IA·모바일·이야기·리깅·걷기·문서/PDF가 실제로 열리고 리소스 오류가 없는지.
+- 스모크 검사: 디자인 작업실(에셋 보관함)·기획 문서·이야기·리깅·걷기·문서/PDF가 실제로 열리고 리소스 오류가 없는지.
 - 컷신 검사: 9개 ID·선택 복원·서로 다른 도입부·아틀라스 범위·개별 자세 순서·눈 감김·앞발 접점·준비/짐 정리 시간표·배경 등록·MP4 실제 재생·바이트 Range·고양이 여섯 전신. 미술·전체 동작의 자연스러움은 자동 통과 범위가 아니다. 제작·출력은 [별도 하네스](cutscene-production.md)를 따른다.
 - 별도 검사: `verify-*.cjs`에는 집중·저장·게시판·리깅 등 과거 기능별 테스트가 있다. 관련 시연을 바꿀 때 추가 실행한다. 기본 `npm test`가 실제 앱 전체를 검증하는 것은 아니다.
 
@@ -54,7 +54,7 @@ gh run list --repo OneOrThree/planning-document --limit 5
 gh run view <실행-ID> --repo OneOrThree/planning-document --log-failed
 ```
 
-사이트 루트의 `index.html`은 기존 마을 시연이다. 문서 공유에는 `feature-inventory.html`을 사용한다. 상대경로를 유지해야 Pages 프로젝트 경로와 로컬에서 모두 동작한다.
+사이트 루트의 `index.html`은 디자인 작업실(확정 에셋 보관함)이다. 옛 마을·IA·모바일 시연은 2026-09-15에 지웠고 Git 기록에 남아 있다. 문서 공유에는 `feature-inventory.html`을 사용한다. 상대경로를 유지해야 Pages 프로젝트 경로와 로컬에서 모두 동작한다.
 
 ## 원본과 공개 범위
 

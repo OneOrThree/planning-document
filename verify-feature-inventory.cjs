@@ -150,7 +150,7 @@ function check(ok,message){assert.ok(ok,message);checks++;}
     for(const file of ['feature-inventory.html','feature-inventory-notes.md','eli5-journey.html','rig.html','walk.html','revisions/04-island-growth.html','revisions/07-personal-shared-decoration.html','growth-decoration-revision-20260911.md','story-loop-plan.md','policy-2026-09-14.md']){
       const response=await context.request.get(base+'/'+file);check(response.ok(),file+' 링크 응답');
     }
-    for(const screen of screens){const response=await context.request.get(base+'/ia.html?screen='+screen.id);check(response.ok(),screen.id+' IA 응답');}
+    
     await context.close();
     check(errors.length===0,'브라우저 오류 없음: '+errors.join(', '));
     console.log(JSON.stringify({checks,features:data.features.length,groups:data.groups.length,mappedScreens:activeScreens.length,retiredScreens:Object.keys(data.retiredScreens),errors,screenshots:'tmp/verification/feature-inventory'},null,2));

@@ -1,10 +1,10 @@
 # 같이숲 기획 작업대
 
-[기획 문서 열기](https://oneorthree.github.io/planning-document/feature-inventory.html) · [마을 프로토타입](https://oneorthree.github.io/planning-document/) · [수정 가이드](docs/editing-guide.md) · [검증·배포 하네스](docs/harness.md)
+[기획 문서 열기](https://oneorthree.github.io/planning-document/feature-inventory.html) · [디자인 작업실](https://oneorthree.github.io/planning-document/) · [수정 가이드](docs/editing-guide.md) · [검증·배포 하네스](docs/harness.md)
 
 유저 저니, 이야기, 기능 표현, 세부 기능, 섬의 발전, 결정 로그를 함께 관리한다. 이 저장소가 팀 공동 수정의 원본이다. 기존 `phone` 저장소의 디자인 폴더는 이전 작업 백업이며 양쪽을 동시에 수정하지 않는다.
 
-**기획 반영과 앱 구현은 다르다.** 기획의 최신 결정은 작업대에서 확인한다. 마을·IA·리깅 화면과 과거 보고서는 제작 당시의 시연이므로 최신 정책과 차이가 있을 수 있다. 실제 로그인·푸시·결제·OS 스크린타임·서버 동기화는 연결되어 있지 않다.
+**기획 반영과 앱 구현은 다르다.** 기획의 최신 결정은 작업대에서 확인한다. 리깅·걷기 화면과 과거 보고서는 제작 당시의 시연이므로 최신 정책과 차이가 있을 수 있다. 실제 로그인·푸시·결제·OS 스크린타임·서버 동기화는 연결되어 있지 않다.
 
 ## 먼저 볼 곳
 
@@ -14,7 +14,7 @@
 | 전체 기획·6개 탭 | [feature-inventory.html](https://oneorthree.github.io/planning-document/feature-inventory.html) |
 | 첫 초대부터 집중 루프 | [초대 경로](https://oneorthree.github.io/planning-document/feature-inventory.html?tab=journey&route=invite#journey-route) |
 | 시설 순서·재화·비용 | [섬의 발전](https://oneorthree.github.io/planning-document/feature-inventory.html?tab=growth) |
-| 화면 구조·모바일 | [IA](https://oneorthree.github.io/planning-document/ia.html) · [모바일](https://oneorthree.github.io/planning-document/mobile.html) |
+| 확정 에셋·UI 킷 | [디자인 작업실](https://oneorthree.github.io/planning-document/) · [딸기 소다 UI 킷](https://oneorthree.github.io/planning-document/assets/gachisup-r61/ui-kit/foundations/index.html) · [에셋 설명](assets/gachisup-r61/README.md) |
 | 캐릭터 원화·애니메이션 | [리깅](https://oneorthree.github.io/planning-document/rig.html) · [걷기](https://oneorthree.github.io/planning-document/walk.html) |
 | 멘토링 보고 | [2026-09-09 PDF](output/pdf/gachisup-mentor-report-2026-09-09-compact.pdf) |
 | 수정 위치·정보 구조 | [기능별 수정 가이드](docs/editing-guide.md) |

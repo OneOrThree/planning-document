@@ -11,7 +11,7 @@
   const searchable=new Map(data.features.map(f=>[f.id,[f.id,f.title,f.action,f.world,f.note,...Object.values(f.revision||{}),...f.sources.map(s=>data.sources[s].name)].join(' ').normalize('NFKC').toLocaleLowerCase()]));
   const revisionHTML=f=>f.revision?`<div class="revision-detail"><p class="revision-change">2026.09.11 수정본 · 원본 ${escape(f.revision.ref)} · ${escape(f.revision.change)}</p><dl>${['의도','필요한 이유','기능·지킬 선','유저 플로우','감성 표현'].map(key=>`<div><dt>${escape(key)}</dt><dd>${escape(f.revision[key])}</dd></div>`).join('')}</dl><a href="focus-revision-20260911.md" target="_blank" rel="noopener">수정본 전체 기록 ↗</a></div>`:'';
   const detailLinks=f=>[
-    ...f.screens.map(id=>`<a href="ia.html?screen=${encodeURIComponent(id)}" target="_blank" rel="noopener">${f.document?'이전 시연 · ':''}${escape(labels.get(id)||id.toUpperCase())} ↗</a>`),
+    ...f.screens.map(id=>`<span>${f.document?'이전 시연 · ':''}${escape(labels.get(id)||id.toUpperCase())} ↗</span>`),
     ...(f.document?[`<a href="${escape(f.document)}" target="_blank" rel="noopener">제공된 최신 기획 보기 ↗</a>`]:[]),
     ...(f.story?[`<a href="eli5-journey.html#${encodeURIComponent(f.story)}">이야기 그림 보기 ↗</a>`]:[]),
     ...(f.studio?[`<a href="${escape(f.studio)}" target="_blank" rel="noopener">모션 작업실 보기 ↗</a>`]:[])
