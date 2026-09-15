@@ -3,7 +3,7 @@ const path = require('node:path');
 const vm = require('node:vm');
 const {spawnSync} = require('node:child_process');
 const root = path.resolve(__dirname, '..');
-const ignored = new Set(['.git','node_modules','_site','tmp','.hallmark']);
+const ignored = new Set(['.git','node_modules','_site','tmp','.hallmark','.omc']);
 function filesIn(dir) {
   return fs.readdirSync(dir, {withFileTypes:true}).filter(e => !ignored.has(e.name) && e.name !== '.DS_Store')
     .flatMap(e => e.isDirectory() ? filesIn(path.join(dir,e.name)) : [path.join(dir,e.name)]);
@@ -53,5 +53,11 @@ for (const [key,route] of Object.entries(sandbox.window.GachisupJourneyRoutes)) 
   check(new Set(route.steps.map(s=>s.id)).size === route.steps.length, key + ': 장면 ID 중복');
   check(route.steps.every(s=>s.title && s.scene && s.action && s.next && s.state && s.boundary), key + ': 장면 필수 필드 누락');
 }
+const apiSpec = fs.readFileSync(path.join(root,'docs/api/v1/gromo-api-spec.md'),'utf8');
+const apiKeys = [...apiSpec.matchAll(/^#### ([a-z][a-z0-9-]*) · /gm)].map(match=>match[1]);
+check(/^버전: [^\n]*proposed[^\n]*$/m.test(apiSpec), 'API v1은 협의안 버전으로 표시');
+check(apiKeys.length === 98, 'API v1 기능 계약 98개 유지');
+check(new Set(apiKeys).size === apiKeys.length, 'API v1 기능 계약 키 중복');
+for (const marker of ['## 문서 상태','### 공통 오류 코드 제안','### 건물별 권장 읽기 모델','## 미정 정책']) check(apiSpec.includes(marker), 'API v1 필수 구분 누락: '+marker);
 if (failures.length) {console.error(failures.join('\n')); process.exitCode = 1;}
 else console.log(JSON.stringify({result:'PASS',files:files.length,syntax,links,features:ids.length,groups:data.groups.length},null,2));

@@ -12,6 +12,10 @@
 
 최신 사용자 결정과 그 결정을 반영한 수정 메모가 과거 설계보다 우선한다. `revisions/`는 제공된 수정본 보관본, `references/legacy-design/`은 초기 제품 설계, `prototype-history.md`와 보고서는 과거 제작 기록이다. 날짜만 보고 제안을 확정으로 바꾸지 않는다. 충돌을 찾으면 결정 로그의 근거를 확인하고, 근거가 없으면 미정으로 남긴다.
 
+## API 명세
+
+백엔드 전달 협의안은 [`api/v1/gromo-api-spec.md`](api/v1/gromo-api-spec.md)가 단일 원본이다. 화면별 스펙과 도메인별 전달 메모를 다시 따로 수정하지 않는다. 확정 정책과 제안 계약·미정 정책을 구분하고, 현재 운영 API나 구현 완료로 표시하지 않는다. 수정 후 `python3 scripts/render-api-spec.py`로 [HTML](api/v1/index.html)을 갱신한다. 버전 추가와 검증 방법은 [API 문서 안내](api/README.md)를 따른다.
+
 ## 6개 탭 수정 지도
 
 | 화면에서 바꿀 것 | 먼저 수정 | 함께 확인 |
