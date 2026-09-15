@@ -1,0 +1,2 @@
+/* 회관과 모임 관리 · UI별 스타일 */
+.community-heading{text-align:center;padding:10px}.community-heading>.icon{width:30px;height:30px;color:var(--ink);margin-bottom:16px}.community-heading>small{display:block;font-size:12px;color:var(--muted)}.community-heading h3{font-size:28px;margin:8px 0 16px}.community-heading p{color:var(--muted);font-size:14px;line-height:1.9}

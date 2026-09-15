@@ -1,0 +1,2 @@
+/* 진행과 시간 · UI별 스타일 */
+.timer-heading{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px;gap:12px}.timer-heading>span{font-size:13px;color:var(--muted)}.timer-heading strong{font-size:36px}.progress-block{display:grid;gap:12px}.progress-block .spread{font-size:13px}.progress-track{height:6px;background:var(--soft);border-radius:6px;overflow:hidden}.progress-track>span{display:block;height:100%;background:var(--primary);border-radius:inherit}

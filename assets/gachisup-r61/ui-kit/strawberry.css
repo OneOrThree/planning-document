@@ -1,0 +1,29 @@
+/* Shared across product examples and foundation controls. */
+body{background:var(--canvas);color:var(--ink);font-family:var(--font-body);line-height:1.6}
+h1,h2,h3,.display{font-family:var(--font-display);font-weight:850;letter-spacing:-.025em}.muted,small,.small{color:var(--muted)}
+button,.btn{border:2px solid var(--outline);border-radius:var(--radius-button);background:var(--surface);color:var(--ink);font-family:var(--font-body);font-weight:800;box-shadow:var(--shadow-sticker);min-height:44px;transition:transform var(--duration-fast) var(--ease),box-shadow var(--duration-fast),background var(--duration-fast)}
+button:hover:not(:disabled),.btn:hover:not(:disabled){filter:none;transform:translateY(-1px);background:var(--selected)}
+button:active:not(:disabled),.btn:active:not(:disabled),.btn.is-pressed{transform:translateY(3px);box-shadow:0 1px 0 var(--outline)}
+button:disabled,.btn:disabled{opacity:.45;box-shadow:none;transform:none;cursor:not-allowed}
+button.primary,.btn.primary{background:var(--primary);border-color:var(--outline);color:var(--on-primary)}
+button.primary:hover:not(:disabled),.btn.primary:hover:not(:disabled),.btn.primary.is-pressed{background:var(--primary-hover);border-color:var(--outline);color:var(--on-primary)}
+.btn.secondary{background:var(--canvas)}.btn.ghost,.btn.danger-text{background:var(--surface);color:var(--ink);border-color:var(--outline);box-shadow:none}.btn.danger,.btn.danger:hover{background:var(--danger);border-color:var(--outline);color:var(--surface)}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--ink);outline-offset:4px}
+input:not([type=checkbox]):not([type=radio]):not([type=range]),textarea,select,.input{background:var(--field);color:var(--ink);border:2px solid var(--outline);border-radius:12px;min-height:44px;box-shadow:none}
+input[type=checkbox],input[type=radio],input[type=range],progress{accent-color:var(--primary)}
+.card,.specimen,.tile,.screen,.demo-dialog{background:var(--surface);border:2px solid var(--outline);border-radius:var(--radius-card);box-shadow:var(--shadow-sticker)}
+.specimen-head{background:var(--secondary);border-bottom:2px solid var(--outline)}.specimen-head h3{font-weight:800}.topbar{background:var(--secondary);border-bottom:2px solid var(--outline)}.brand>.icon{color:var(--ink)}
+.card .value,.value,.focus-time,.time-sample,.mono{font-family:var(--font-number);font-weight:800;font-variant-numeric:tabular-nums}
+.badge,.chip{background:var(--accent);border:2px solid var(--outline);border-radius:999px;color:var(--ink);font-weight:750}
+.chip{background:var(--surface)}.chip[aria-pressed=true],.seat[aria-pressed=true],.mail-preset[aria-pressed=true],.garment[aria-pressed=true]{background:var(--primary);border-color:var(--outline);color:var(--on-primary)}
+.chip[aria-pressed=true] .icon,.mail-preset[aria-pressed=true] .icon{color:inherit}
+.badge.error{background:var(--danger-soft);color:var(--danger)}.badge.wait{background:var(--accent);color:var(--ink)}
+.states,.harbor-visual,.avatar-stage{background:var(--secondary);color:var(--ink)}.letter,.letter-card{background:var(--letter);color:var(--letter-ink);border:2px solid var(--outline);border-radius:15px}
+.list,.list-row,.member-row,.toggle-row{border-bottom-color:var(--outline)}.notice{border-left-color:var(--outline)}.notice-card{border-left-color:var(--outline)}
+.progress-track{background:var(--surface);border:2px solid var(--outline);height:12px;border-radius:999px}.progress-track>span{background:var(--primary)}
+.scene{border:2px solid var(--outline);border-radius:20px}.hud .timer{font-weight:850;font-size:48px;letter-spacing:-1px}.hud .task,.hud .timer{text-shadow:0 2px 6px #263D48}
+.theme-toggle{background:var(--surface);color:var(--ink)}.switch{border:0;box-shadow:none;background:transparent}.switch:hover:not(:disabled){background:transparent;transform:none}.switch:before{border:2px solid var(--outline)}.switch[aria-checked=true]:before{background:var(--primary)}
+.feedback-line{color:var(--ink);border:2px solid var(--outline);background:var(--selected)}.feedback-line.error{color:var(--danger);background:var(--danger-soft)}
+.icon{stroke-width:2}.sidebar{background:var(--canvas)}.sidebar>a.is-active{background:var(--selected);color:var(--ink)}.sheet{background:var(--surface);border:2px solid var(--outline);border-radius:26px 26px 12px 12px}
+[style*="--"]{accent-color:var(--primary)}
+@media(prefers-reduced-motion:reduce){button,.btn{transition:none}}
