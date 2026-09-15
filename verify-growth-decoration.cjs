@@ -22,7 +22,7 @@ const base=((process.env.BASE_URL || 'http://127.0.0.1:4173/').replace(/\/$/, ''
   check(feature('E03').decision==='chosen'&&feature('E03').note.includes('건설하기')&&feature('E03').note.includes('초기 밸런스')&&feature('L14').decision==='proposal','건설 차감은 채택한 초기값, 테마 가격은 미정 유지');
   check(data.retiredFeatures.L13.includes('기본 뗏목')&&data.retiredFeatures.L10.includes('기본 뗏목'),'배 업그레이드·배 소품 폐지 이력');
   check(feature('L17').note.includes('개인별 다른 ASMR은 두지 않는다')&&feature('L17').note.includes('상점은 필요하지 않다'),'공동 음원은 축음기에서 직접 구매');
-  check(feature('I06').action.includes('그룹 전체')&&feature('I06').note.includes('개인 수신자 선택')&&feature('I06').note.includes('I09'),'섬 전체 자유 편지와 친구 1:1 채팅 구분');
+  check(feature('I06').action.includes('그룹 전체')&&feature('I06').note.includes('개인 수신자 선택')&&feature('I06').note.includes('I09'),'섬 전체 자유 편지와 친구 편지 구분');
   check(feature('I05').note.includes('읽음 표시는 없다'),'읽음 표시 제외');
   check(feature('N01').note.includes('플레이어는 고양이만')&&feature('N01').action.includes('삼색'),'고양이6색 플레이어');
   check(feature('E14').note.includes('강아지 NPC 전용')&&feature('E14').note.includes('1인당 250마리'),'강아지 상점 NPC·마지막 상점 요구량');

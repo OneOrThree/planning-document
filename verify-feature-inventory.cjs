@@ -25,10 +25,10 @@ function check(ok,message){assert.ok(ok,message);checks++;}
   for(const id of ['D04','D06','H08','L04','L10','L13','M01','M02'])check(!ids.includes(id)&&Boolean(data.retiredFeatures[id]),id+' 현재 정책으로 제외 이력 보존');
   for(const id of ['D22','F13','H12','N09','I09']){const f=data.features.find(x=>x.id===id);check(f&&f.decision==='chosen'&&f.proof==='pending'&&f.sources.includes('current0914'),id+' 새 정책 기능은 사용자 결정·연결 전·현재 정책 근거');}
   check(data.features.find(f=>f.id==='M03').screens.includes('ob1'),'OB-1 이전 시연 화면은 섬 간 랭킹에 연결');
-  const friendAdd=data.features.find(f=>f.id==='I01'),friendManage=data.features.find(f=>f.id==='I02'),friendChat=data.features.find(f=>f.id==='I09');
+  const friendAdd=data.features.find(f=>f.id==='I01'),friendManage=data.features.find(f=>f.id==='I02'),friendLetter=data.features.find(f=>f.id==='I09');
   check(friendAdd.decision==='chosen'&&friendAdd.proof==='legacy'&&friendAdd.action.includes('내 뗏목')&&friendAdd.note.includes('수락해야'),'친구 요청은 내 뗏목·상대 수락, 원앱 참조 증거 유지');
   check(['수락','거절','취소','삭제'].every(word=>friendManage.action.includes(word))&&friendManage.note.includes('다시 신청')&&friendManage.decision==='chosen'&&friendManage.proof==='legacy','친구 요청 수락·거절·취소·재신청·삭제');
-  check(friendChat.note.includes('다른 섬')&&friendChat.note.includes('섬 전체로 보내지 않는다')&&friendChat.note.includes('추가 결정')&&friendChat.screens.length===0,'친구 1:1 채팅은 섬 전체와 분리·미정 조건 명시');
+  check(friendLetter.title==='친구 편지'&&friendLetter.note.includes('다른 섬')&&friendLetter.note.includes('섬 전체로 보내지 않는다')&&friendLetter.note.includes('기록으로 남기지 않는다')&&friendLetter.note.includes('우체통이 없어도 보낼 수 있고')&&friendLetter.screens.length===0,'친구 편지는 섬 전체와 분리·기록 없이 확인 후 삭제·받는 섬 우체통 조건 없음');
   for(const f of data.features){
     check(Boolean(data.decisions[f.decision]&&data.proofs[f.proof]),f.id+' 상태 유효');
     check(f.sources.length>0&&f.sources.every(s=>data.sources[s]),f.id+' 근거 키 유효');
