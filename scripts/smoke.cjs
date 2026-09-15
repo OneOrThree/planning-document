@@ -10,7 +10,7 @@ const base = process.env.BASE_URL || 'http://127.0.0.1:4173/';
     page.on('pageerror',error=>errors.push(error.message));
     page.on('response',res=>{if(res.url().startsWith(base) && res.status()>=400)errors.push(res.status()+' '+res.url());});
     page.on('requestfailed',req=>{if(req.url().startsWith(base) && !req.failure()?.errorText.includes('ERR_ABORTED'))errors.push(req.url()+' '+req.failure()?.errorText);});
-    for(const route of ['index.html','ia.html','mobile.html','feature-inventory.html','user-journey.html','eli5.html','eli5-journey.html']) {
+    for(const route of ['index.html','ia.html','mobile.html','feature-inventory.html','user-journey.html','eli5.html','eli5-journey.html','docs/api/v1/index.html']) {
       const response = await page.goto(new URL(route,base).href,{waitUntil:'networkidle'});
       assert(response.ok(),route+' 응답');
       assert((await page.locator('body').innerText()).trim().length>30,route+' 빈 화면');
@@ -21,6 +21,15 @@ const base = process.env.BASE_URL || 'http://127.0.0.1:4173/';
           assert.equal(await page.locator('[role=tabpanel]:visible').count(),1);
           assert.equal(await page.locator('[data-planning-tab='+tab+']').getAttribute('aria-selected'),'true');
         }
+      }
+      if(route==='docs/api/v1/index.html') {
+        assert((await page.title()).includes('협의안'),'API 문서 상태 표시');
+        assert.equal(await page.locator('.endpoint').count(),98,'API 기능 계약 수');
+        assert((await page.locator('body').innerText()).includes('미정 정책'),'API 미정 정책 표시');
+        await page.locator('#search').fill('게스트 회원 전환');
+        assert((await page.locator('.endpoint:visible').count())>0,'API 검색');
+        await page.locator('#clear').click();
+        assert.equal(await page.locator('.endpoint:visible').count(),98,'API 검색 초기화');
       }
       results.push(route);
     }

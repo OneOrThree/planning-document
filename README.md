@@ -10,6 +10,7 @@
 
 | 목적 | 페이지 / 원본 |
 | --- | --- |
+| 백엔드 API v1 협의안 | [HTML 명세](https://oneorthree.github.io/planning-document/docs/api/v1/index.html) · [Markdown 원문](docs/api/v1/gromo-api-spec.md) |
 | 전체 기획·6개 탭 | [feature-inventory.html](https://oneorthree.github.io/planning-document/feature-inventory.html) |
 | 첫 초대부터 집중 루프 | [초대 경로](https://oneorthree.github.io/planning-document/feature-inventory.html?tab=journey&route=invite#journey-route) |
 | 시설 순서·재화·비용 | [섬의 발전](https://oneorthree.github.io/planning-document/feature-inventory.html?tab=growth) |
