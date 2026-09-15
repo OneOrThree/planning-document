@@ -198,6 +198,49 @@
 |84|섬에서 축음기 열기|gramophone, audio-catalog, audio-purchase, playback, wallet|상점 없이 공동 구매; 개인 미리듣기·음량 분리|
 |85|축음기 · 음원 미리듣기와 구매|gramophone, audio-catalog, audio-purchase, playback, wallet|상점 없이 공동 구매; 개인 미리듣기·음량 분리|
 
+## 화면 집계 13종과 실제 화면 비교
+
+GROMO-1784(2026-09-12, phone 저장소 PR #749)는 진입 때 조회 계약을 2개 이상 부르던 화면 13곳을 서버 집계 GET `/screens/...`으로 묶었다. 설계 기준은 화면별 API 스펙 v0.3-proposed(도메인 66계약, 다중 조회 화면 그룹 14개를 13개로 합침)라 9/14 정책 변경 뒤 이 문서의 화면 구성과 비교했다.
+기준 문서는 phone 저장소 `docs/prd/bff-screens/`(13화면 적용표·필수/생략 조각·외부 TTL 0·트리거 행동 제외 B12)다. 상태: 차이 확인 완료 · BE 합의 전. 구현 1785~1787의 현재 진행 상태는 확인하지 않았다.
+`지금 필요한 계약`은 위 화면 표 API 참조에서 조회 계약만 뽑은 것이다. 앱이 진입 때 실제로 동시에 부르는지는 확인하지 못했고, 추측한 곳은 (추론)으로 표시했다.
+
+|집계 화면(1784)|1784 조합 계약|지금 화면(번호)|지금 필요한 계약|차이|제안|
+|---|---|---|---|---|---|
+|home `/screens/home`|island·home-summary·session; build 제외|18 함께 자란 우리 섬, 14 건물 없는 첫 섬|18: island·home-summary·current-session / 14: island·home-summary·construction·wallet|18은 조합 같음(session `/focus-sessions/current` → current-session `/v1/me/focus-session`). 14는 construction·wallet 추가: 초기 건설 기여가 island 응답 안(initialConstruction)에서 construction 계약·섬 잔액 합산으로 분리됨|home에 construction·wallet 조각을 넣어 14~17·31까지 한 집계로 볼지 결정|
+|travel `/screens/travel/{islandId}`|island(목적지 주민 상세)·playback; switch 제외|62 배를 타고 섬 사이 이동|visit·memberships; switch 행동|목적지 island 대신 visit(공개 요약)·memberships. 이동 중 음악은 지금 화면 표에 없음(필요 여부 확인 못 함)|소속 섬 이동은 island, 비소속 방문은 visit로 나눌지 확정. playback 조각은 화면 확인 뒤|
+|focus `/screens/focus`|session·focus-group·playback; emote·pause·finish 제외|22 낚시섬에서 함께 집중, 23 내 낚시 자리 가까이|session·focus-members·gramophone(완공 시 현재 곡); progress는 PUT|focus-group → focus-members(같은 경로). 재생 상태 조회가 gramophone에 합쳐졌고 지금 `playback`은 변경(PUT) 이름. 목표 시간 없는 카운트업·배 외양 없음|조합을 session·focus-members·gramophone으로 갱신. 19도 같은 집계 재사용 검토|
+|sound `/screens/sound`|shared-inventory·playback; playback-save 제외|84 섬에서 축음기 열기, 85 음원 미리듣기와 구매|gramophone·audio-catalog·wallet; audio-purchase·playback 행동|보유 음원·현재 곡이 gramophone 하나로 합쳐짐. 축음기 직접 구매로 판매 음원·섬 잔액 추가. 섬·건물 테마 보유는 상점 themes로 분리|조합을 gramophone·audio-catalog·wallet으로 갱신|
+|rest `/screens/rest`|session·rest-members; resume·finish 제외|26 모닥불에서 쉬기|current-session·rest-members; pause 행동|조합 같음(session 경로만 바뀜). 휴식 자리 번호 대신 표시 위치|경로 이름만 갱신. 휴식 경과 기준은 P-SESSION-TIME 뒤|
+|hall `/screens/hall`|focus-stats·screen-stats(회관 통계, from·to·scope)|34·35 내 일기장, 36·37 이웃 일기장|library-status·focus-stats·screen-stats(`/library/statistics/*`, period·기준 날짜·대상 userId)|기록 조회가 회관에서 도서관으로 이동. 경로·입력·해금(도서관 완공)·다른 섬 주민 열람이 바뀜. 지금 39 마을회관 책상은 island·construction·ledger|hall 집계를 도서관 일기장 집계로 바꾸고 새 입력에 맞춤|
+|island-manage `/screens/island-manage`|island·members·requests(방장만)|40 섬 정보, 41 주민, 41A 가입 신청|island·members·join-incoming(방장만)|조합 같음(requests → join-incoming, 같은 경로). 탭 3개라 탭마다 조회 1개일 수 있음(추론). 정원·현재 주민 수 표시 필요|island 응답에 정원(maxResidents)·주민 수가 있는지 확인|
+|board `/screens/board`|quests·notices|45~47 퀘스트 카드, 52 건설 퀘스트 카드, 55 우리 섬 공지|quests·notices; claim 행동|quests 경로 `/quests/current` → `/quests`. 보상 통화가 마을 포인트에서 섬 물고기(개인 10마리·전원 대상×5)로 바뀜. 건설 퀘스트 카드 추가(quests의 연결 카드로 받는지 확인 필요)|보상 DTO를 섬 물고기로 갱신. 건설 카드를 quests 안에 둘지 construction 조각으로 넣을지 결정|
+|tower `/screens/tower`|rank(섬 안 주민 랭킹)·rank-islands|58 섬 간 랭킹|rankings(rank-islands와 같은 경로)|섬 내부 주민 랭킹이 없어져 조회 1개만 남음|tower 집계 폐지, rankings 단일 GET 사용|
+|explore `/screens/explore`|islands·memberships; invite-resolve 제외|59 섬 찾기|search·memberships·my-requests; invite-resolve 행동|`/v1/islands?q` → search `/v1/islands/search`, `/v1/me/islands` → `/v1/me/memberships`. 신청 대기 표시용 my-requests 추가. 가득 찬 섬은 검색 결과에서 제외|조합에 my-requests 추가 검토. 첫 섬 찾기(03·06)는 아래 목록|
+|visit `/screens/visit/{islandId}`|island(공개 whitelist)·join-status; join·join-cancel 제외|60 다른 섬 구경, 61 참여 신청 완료 토스트|visit·my-requests; join·join-cancel 행동|방문 전용 visit가 공개 장면·가입 상태를 이미 포함해 1개로 충분할 수 있음(추론). 신청 단건 조회 → my-requests 목록. 가득 찬 섬 입장 불가 상태 필요|visit 응답에 본인 신청·정원 상태가 있으면 집계 폐지 검토|
+|shop `/screens/shop`|wallet(개인 물고기·마을 포인트)·catalog·shared-inventory|68~70 내 꾸미기 상품, 71~73 섬·건물 테마|wallet(섬 물고기)·catalog·themes; product·purchase·theme-save는 선택 뒤|단일 재화로 두 지갑이 섬 물고기 하나가 됨(`/shop/wallets` → `/wallet`, `/shop/products` → `/shop/catalog`). 음원은 축음기로 옮겨 공동 보유 음원 불필요, 테마 보유는 themes|조합을 wallet·catalog·themes로 갱신|
+|boat `/screens/boat`|me·inventory(배 종류 포함)|76 나의 뗏목, 77 옷·장신구 선택|me·inventory·friend-requests; appearance 행동|배 종류·배 꾸미기 상품 없음. 로그인 수단 목록 → 단일 authProvider. 친구 요청 요약 추가|조합에 friend-requests 요약 추가, 배 종류 제거|
+
+13종에 없는데 집계가 필요해 보이는 화면. 화면 목적에 맞는 조회 계약이 2개 이상인 곳이며, 참조를 공유하는 화면 묶음은 화면별로 나눠 셌다(모두 추론).
+
+- 첫 시작·첫 참여: 01 첫 시작(terms·account, 로그인 전후로 나뉘면 1개씩), 03 혼자 시작 / 기존 섬 참여(memberships·discover), 06 함께할 섬 찾기(discover·search, 검색어 입력 전엔 discover 1개), 08 처음 떠나는 항해(island·memberships)
+- 초기 건설: 15~17 첫 마을회관 건설·공사 중·게시판(construction·wallet), 31 첫 집중 후 · 마을회관 안내(home-summary·construction·me)
+- 집중: 19 낚시섬으로 출발(current-session·focus-members), 29 낚시섬에서 이번 집중 결과(session·reward-notifications, finish 응답으로 충분하면 불필요)
+- 마을회관: 39 책상(island·construction·ledger), 42 공동 가계부(wallet·ledger, ledger가 현재 잔액을 주면 1개)
+- 게시판·우체통·친구: 56 공지 내용과 댓글(notice·comments), 63 우체통(island-messages·letters-received·letters-sent), 66 친구 편지함(letters-received·letters-sent·friends), 67 편지 상세·작성(letter·friends), 78 친구 관리(friends·friend-requests)
+- 계정: 80 내 프로필과 계정(me·account)
+- 잔액·건설 진행·인가를 같은 시점에 읽어야 하는 15~17·31·39·42는 1784 방식(단일 조회 묶음) 후보, 나머지는 기존 계약을 Business에서 묶는 후보다(추론).
+
+13종 중 바뀌거나 사라진 화면.
+
+- tower: 섬 내부 주민 랭킹이 없어져 조회 1개만 남아 집계 대상에서 사실상 사라짐.
+- hall: 회관 통계가 도서관 일기장(33~37)으로 이동. 지금 마을회관은 섬 관리·건설·가계부.
+- shop: 개인 물고기·마을 포인트 두 지갑이 섬 공동 물고기 하나로 바뀌고 음원 판매는 축음기로 이동.
+- sound: 공동 보유 인벤토리 조회가 축음기(gramophone)·판매 음원·잔액으로 바뀜.
+- board: 퀘스트 보상이 섬 물고기로 바뀌고 건설 퀘스트 카드가 추가됨.
+- boat: 배 종류·배 꾸미기 상품이 없어짐.
+
+트리거 행동 제외(B12) 확인: 구매·건설·목표 선택·가입·전송·종료·휴식 전환·보상받기는 지금도 별도 명령 계약이라 기준과 맞다. 다만 `progress`(PUT 진행 검증, 22·23)·`letter-read`(PATCH 읽음, 67)·`invite-resolve`(POST 코드 확인, 04·59)는 화면에 머무는 중 부를 수 있어 집계 GET에 넣지 않는다고 명시가 필요하고, `playback`은 1784에선 재생 상태 조회·지금은 재생 변경(PUT)이라 이름을 구분해야 한다.
+
 ## 집중·휴식·이동 계약
 
 섬 홈 → 부두까지 걷기 → 항해 → 낚시섬 도착 → 자유 위치까지 걷기 → 할 일 준비 → 집중 시작. 앞의 모든 이동·준비는 집중 시간에서 제외한다. 배를 눌러 준비 전 귀환할 때는 집중 정산이 없다.
