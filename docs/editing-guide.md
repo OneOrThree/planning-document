@@ -17,6 +17,12 @@
 
 백엔드 전달 협의안은 [`api/v1/gromo-api-spec.md`](api/v1/gromo-api-spec.md)가 단일 원본이다. 화면별 스펙과 도메인별 전달 메모를 다시 따로 수정하지 않는다. 확정 정책과 제안 계약·미정 정책을 구분하고, 현재 운영 API나 구현 완료로 표시하지 않는다. 수정 후 `python3 scripts/render-api-spec.py`로 [HTML](api/v1/index.html)을 갱신한다. 버전 추가와 검증 방법은 [API 문서 안내](api/README.md)를 따른다.
 
+## IA·사용자 여정 v5
+
+- IA v5의 상세 원본은 [`docs/ia/v5/ia.md`](ia/v5/ia.md), 공개 트리는 [`docs/ia/v5/index.html`](ia/v5/index.html)이다.
+- 사용자 여정 v5의 단일 원본은 [`docs/user-journey/v5/user-journey.md`](user-journey/v5/user-journey.md)다. 수정 후 `node scripts/render-user-journey-v5.cjs`로 [HTML](user-journey/v5/index.html)을 갱신한다.
+- 기존 `user-journey.html`과 기획 작업대의 여정 탭은 과거 다이어그램·기획 흐름으로 유지한다. v5를 추가하거나 수정할 때 기존 문서를 삭제하거나 자동으로 확정 상태로 바꾸지 않는다.
+
 ## 6개 탭 수정 지도
 
 | 화면에서 바꿀 것 | 먼저 수정 | 함께 확인 |
