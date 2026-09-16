@@ -63,7 +63,7 @@ for (const marker of ['## 문서 상태','### 공통 오류 코드 제안','### 
 const journeyV5Source = fs.readFileSync(path.join(root,'docs/user-journey/v5/user-journey.md'),'utf8');
 const journeyV5Html = fs.readFileSync(path.join(root,'docs/user-journey/v5/index.html'),'utf8');
 const journeyV5Hash = createHash('sha256').update(journeyV5Source).digest('hex');
-check((journeyV5Source.match(/^## /gm)||[]).length === 9, '사용자 여정 v5는 9개 여정을 유지');
+check((journeyV5Source.match(/^## /gm)||[]).length === 10, '사용자 여정 v5는 10개 여정을 유지');
 check(journeyV5Html.includes(`name="source-sha256" content="${journeyV5Hash}"`), '사용자 여정 v5 HTML 재생성 필요');
 for (const file of ['docs/ia/v5/ia.md','docs/ia/v5/index.html','docs/user-journey/v5/user-journey.md','docs/user-journey/v5/index.html']) {
   check(!fs.readFileSync(path.join(root,file),'utf8').includes('편지방'), file+': 이전 편지방 명칭 제거');

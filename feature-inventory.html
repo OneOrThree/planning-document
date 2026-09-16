@@ -33,7 +33,7 @@
     <nav aria-label="관련 페이지"><a href="feature-atlas.html">기능 × 감성 아틀라스</a><a href="story-loop-plan.md">계획 원문 ↗</a><a href="docs/ia/v5/">IA v5</a><a href="docs/user-journey/v5/">유저저니 v5</a><a href="https://github.com/OneOrThree/planning-document/blob/main/docs/editing-guide.md" target="_blank" rel="noopener">수정 가이드 ↗</a><a href="docs/api/v1/index.html">API-스펙</a></nav>
   </header>
   <main>
-    <div class="workbench-heading"><div><h1>같이숲, 함께 정하는 설계.</h1><p>들어오는 길부터 다시 만날 이유까지. 흐름 · 장면 · 기능 · 결정을 나눠 봐요.</p></div><span class="workbench-date">2026.09.14 갱신<br>기획 반영 ≠ 앱 구현 완료</span></div>
+    <div class="workbench-heading"><div><h1>같이숲, 함께 정하는 설계.</h1><p>들어오는 길부터 다시 만날 이유까지. 흐름 · 장면 · 기능 · 결정을 나눠 봐요.</p></div><span class="workbench-date">2026.09.17 갱신<br>기획 반영 ≠ 앱 구현 완료</span></div>
     <nav class="planning-tabs" role="tablist" aria-label="기획 문서 보기">
       <a id="tab-journey" role="tab" href="?tab=journey" data-planning-tab="journey" aria-controls="journey-view" aria-selected="true"><strong>유저 저니</strong><span>첫 합류부터 집중 루프</span></a>
       <a id="tab-growth" role="tab" href="?tab=growth" data-planning-tab="growth" aria-controls="growth-view" aria-selected="false" tabindex="-1"><strong>섬의 발전</strong><span>발전 순서 · 조건 · 비용</span></a>
@@ -42,7 +42,7 @@
       <a id="tab-detail" role="tab" href="?mode=detail" data-planning-tab="detail" data-mode="detail" aria-controls="detail-view" aria-selected="false" tabindex="-1"><strong>세부 기능</strong><span>목록 및 표현 · 동작 기준</span></a>
       <a id="tab-decisions" role="tab" href="?tab=decisions" data-planning-tab="decisions" aria-controls="decisions-view" aria-selected="false" tabindex="-1"><strong>결정 로그</strong><span>확정 · 논의 중 · 이전안</span></a>
     </nav>
-    <p class="workbench-latest"><strong>최근 반영 · 09.17</strong><span>게스트 전환 · 고정 총액 건설 · 전용 휴식 화면 · 메인 섬과 탈퇴 · 친구 비동기 편지 · 마을회관 명세를 반영했어요.</span><a href="?tab=decisions">최신 결정 보기 →</a></p>
+    <p class="workbench-latest"><strong>최근 반영 · 09.17</strong><span>게스트 전환 · 낚시섬 자유 위치 · 식빵 굽기 휴식 · 회관 역할별 화면 · 친구 비동기 편지 · 방장 1인 섬 삭제를 반영했어요.</span><a href="decision-log.md">결정 로그 →</a></p>
     <section id="journey-view" class="planning-panel" role="tabpanel" aria-labelledby="tab-journey" tabindex="0">
       <div id="people-journey" class="panel-heading"><div><h2>들어오는 길은 달라도,<br>함께할 섬으로 이어져요.</h2><p>친구 초대가 없는 첫 시작도 같은 이야기 안에 담아요.</p></div><a href="?tab=story#story-ledger">장면별 이야기 읽기 →</a></div>
       <div class="journey-entry" data-entry-flow="telescope-map"><strong>초대 없이 시작한다면</strong><p>망원경으로 발견 → 지도에서 기존 섬·빈 섬 후보 보기 → 합류하거나 새 모임 만들기</p><small>발견·선택·합류·생성 흐름 확정. 가입 전 공개 범위와 초기 초대까지 반영했으며, 전환 상세·검증 규칙은 후속 명세예요.</small></div>
@@ -56,10 +56,10 @@
       <ol class="journey-loop" aria-label="섬 합류 이후의 집중 루프">
         <li><span>01</span><h3>섬과 동료 만나기</h3><p>실제 있는 사람과<br>함께할 일을 살펴봐요.</p></li>
         <li><span>02</span><h3>내 일 준비하기</h3><p>할 일을 적고 목표 시간 없이<br>직접 집중을 시작해요.</p></li>
-        <li><span>03</span><h3>함께 낚시하며 집중</h3><p>낚시섬에서 원하는 자리를 선택.<br>풍경을 넓히면 동료들이.</p></li>
+        <li><span>03</span><h3>함께 낚시하며 집중</h3><p>낚시섬에서 원하는 위치를 선택.<br>풍경을 넓히면 동료들이.</p></li>
         <li><span>04</span><h3>쉬거나 마무리하기</h3><p>전용 모닥불 화면에서 식빵 굽기.<br>마치면 실제 기록을 돌아봐요.</p></li>
       </ol>
-      <div class="journey-return"><strong>다시, 함께 만든 곳으로</strong><p>휴식 뒤에는 낚시섬의 같은 자리·같은 세션으로 돌아가 집중을 이어가요. 휴식 종료는 결과창 뒤 섬 화면으로 이어져요.</p></div>
+      <div class="journey-return"><strong>다시, 함께 만든 곳으로</strong><p>휴식 뒤에는 낚시섬의 기존 위치로 돌아가 집중을 이어가고, 다음 방문에는 더 짧은 항해로 돌아와요.</p></div>
       <section id="no-invite-start" class="planning-question" data-state="confirmed" aria-labelledby="no-invite-title"><h3 id="no-invite-title">망원경 다음, 지도에서 두 길을 만나요.</h3><p>초대 없는 두 시작의 흐름을 확정했어요. 기존 공개 섬은 풍경·모임 소개·참여 조건을 읽고 가입 성공 또는 승인 후 이동해요. 빈 섬은 새 공유 섬 후보이며, 최소 설정 → 생성 성공 → 짧은 뗏목 이동 → 같은 섬의 첫 시간으로 이어져요.</p><p><a href="no-invite-story-plan.md">확정한 두 이야기와 후속 명세 ↗</a> · <a href="?tab=story#prologue-scenarios">그전에, 고양이는 어떻게 출발했을까? →</a></p><details><summary>확정한 예외·대안과 후속 명세</summary><p>이미 소속 섬이 있는 사람의 다른 섬 탐색·이동은 전망대 해금 뒤예요. 아직 소속 섬이 없는 신규 사용자의 첫 공개 섬 발견·가입은 예외이며 첫 발견에 유료 지도를 요구하지 않아요. 가입 조건·승인은 유지해요. 탈퇴·강퇴 후 재가입과 귀환까지 예외를 넓히지는 않아요.</p><p>바로 합류 가능 여부를 표시하고, 승인 대기에는 기다리기·취소·다른 길 선택을 제공해요. 후보가 없으면 다시 찾기·새 섬 만들기로 연결해요. 가입 전에는 멤버 개인 정보·할 일·편지방을 공개하지 않고, 가입 후에도 공개 권한을 지켜요.</p><p>이름 검증·공개 범위 기본값·늦은 승인 충돌·재시도 정책·지도 전환 상세·초대 운영 권한은 후속 명세예요. 장면을 확정한 것이 실제 앱 구현 완료를 뜻하지는 않아요.</p></details></section>
       <p class="planning-footnote">확정한 흐름을 읽는 기획도예요. 대사·전환 시간·측정 경계는 후속 명세이며, 모든 단계가 의무 온보딩은 아니에요. <a href="docs/user-journey/v5/">v5 전체 사용자 여정 ↗</a> · <a href="user-journey.html">이전 전체 다이어그램 ↗</a></p>
       <p class="planning-crosslink">함께한 시간이 어떤 시설로 남는지는 <a href="?tab=growth">섬의 발전 →</a>에서 따로 정리해요.</p>
@@ -81,29 +81,29 @@
         <p class="planning-footnote">새 섬의 발전 순서예요. 이미 자란 섬에 초대받은 사람의 온보딩 단계가 아니며, 기본 집중·휴식은 처음부터 가능해요. 게시판 다음에는 방장이 회관에서 목표를 고르고, 공사가 끝나야 다음 건물 퀘스트가 열려요. 각 시설을 누르면 새로 할 수 있는 일을 볼 수 있어요.</p>
         <details class="growth-facility-details"><summary>시설이 생기면 무엇을 함께할 수 있나?</summary>
         <ol class="growth-steps" aria-label="시설의 발전 순서와 새로 할 수 있는 일">
-          <li id="growth-facility-start" data-growth-step="start"><div class="growth-stage"><span>시작</span><h3>모닥불 · 낚시섬 · 기본 뗏목</h3></div><div><strong>함께할 자리가 생겨요</strong><p>집중을 시작하면 기본 뗏목으로 낚시섬에 가서 원하는 자리를 고르고, 쉴 때는 전용 모닥불 화면에서 식빵을 구워요. 혼자 시작해도 기본 활동은 가능해요.</p></div><p class="growth-resource">시작 시설<br>건설 해금 불필요</p></li>
-          <li id="growth-facility-hall" data-growth-step="hall"><div class="growth-stage"><span>첫 건설 ↓</span><h3>마을회관</h3></div><div><strong>섬 운영과 공동 자원의 중심</strong><p>한 장의 섬 등록증에서 섬 정보·주민·가입 신청·초대를 관리하고, 목각 건물과 가계부에서 건설·공동 원장을 확인해요.</p></div><p class="growth-resource">섬 통장 합산 60마리<br>공사 1분</p></li>
-          <li id="growth-facility-board" data-growth-step="board"><div class="growth-stage"><span>다음 건설 ↓</span><h3>게시판</h3></div><div><strong>다음 약속을 함께 정해요</strong><p>공지와 집중·스크린타임 일일 퀘스트를 만나요. 방장이 회관에서 다음 건물을 고르면 게시판에 건물 건설 퀘스트가 올라와요.</p><p class="growth-pivot">전환점: 섬 통장 합산 초기 건설 → 고정 총액을 대상 주민의 각자 몫으로 채우는 건물 퀘스트</p></div><p class="growth-resource">섬 통장 합산 추가 240마리<br>공사 15분</p></li>
-          <li id="growth-facility-connections" data-growth-step="connections"><div class="growth-stage"><span>짓는 순서 자유 · 한 번에 하나 ↓</span><h3>도서관 · 전망대 · 우체통 · 축음기</h3></div><div class="growth-branches"><article data-growth-branch="library"><strong>도서관 → 함께한 기록 조회</strong><p>같은 섬 모든 주민의 집중·스크린타임 기록과 주민별 물고기 획득 기록을 일·주·월로 봐요. 전체 공개 고정이라 다른 섬 주민도 볼 수 있어요.</p></article><article data-growth-branch="observatory"><strong>전망대 → 다른 섬과 연결</strong><p>다른 섬 랭킹·검색·가입을 열고 우리 섬 내부 주민 랭킹은 두지 않아요.</p></article><article data-growth-branch="mailbox"><strong>우체통 → 우리 섬 소식과 친구 편지</strong><p>우리 섬 편지방은 전체 대화이고 친구 편지는 비동기예요. 친구 편지는 읽고 닫으면 양쪽에서 사라지며, 수신자의 현재 섬에 우체통이 없어도 보낼 수 있어요.</p></article><article data-growth-branch="gramophone"><strong>축음기 → 같은 섬의 음악</strong><p>주민 누구나 공동 음원을 바꾸고 완공된 축음기에서 직접 구매해요. 장치 이름은 축음기로 통일해요.</p></article></div><p class="growth-resource">고정 총액 1,360~5,440마리<br>총액 ÷ 대상 인원(올림)</p></li>
-          <li id="growth-facility-shop" data-growth-step="shop"><div class="growth-stage"><span>다른 모든 건물 완공 ↓</span><h3>강아지 NPC의 상점</h3></div><div><strong>우리 취향으로 채워요</strong><p>주민 누구나 섬 물고기로 상품을 사요. 개인 의상·장신구는 산 주민이 가지고 내 배에서 착용하며, 공동 테마는 주민 누구나 적용·해제해요.</p></div><p class="growth-resource">총액 6,800마리 · 공사 4시간<br>구매: 섬 물고기</p></li>
+          <li id="growth-facility-start" data-growth-step="start"><div class="growth-stage"><span>시작</span><h3>모닥불 · 부두 · 기본 뗏목</h3></div><div><strong>함께할 자리가 생겨요</strong><p>기본 뗏목으로 낚시섬에 가서 원하는 위치를 고르고 같은 섬 주민과 낚시해요. 쉴 때는 전용 모닥불 화면에서 의자 없이 식빵을 구워요. 혼자 시작해도 기본 활동은 가능해요.</p></div><p class="growth-resource">시작 시설<br>건설 해금 불필요</p></li>
+          <li id="growth-facility-hall" data-growth-step="hall"><div class="growth-stage"><span>첫 건설 ↓</span><h3>마을회관</h3></div><div><strong>섬 운영과 공동 자원의 중심</strong><p>섬 등록증·주민·가입 신청·공동 가계부와 다음 건물 선택을 회관에서 다뤄요. 집중·스크린타임 기록 조회는 도서관이 맡아요.</p></div><p class="growth-resource">섬 잔액 60마리<br>공사 1분</p></li>
+          <li id="growth-facility-board" data-growth-step="board"><div class="growth-stage"><span>다음 건설 ↓</span><h3>게시판</h3></div><div><strong>다음 약속을 함께 정해요</strong><p>공지와 집중·스크린타임 일일 퀘스트를 만나요. 방장이 회관에서 다음 건물을 고르면 게시판에 건물 건설 퀘스트가 올라와요.</p><p class="growth-pivot">전환점: 섬 잔액으로 짓는 초기 건설 → 고정 총액과 각자 몫을 채우는 건물 건설 퀘스트</p></div><p class="growth-resource">섬 잔액 추가 240마리<br>공사 15분</p></li>
+          <li id="growth-facility-connections" data-growth-step="connections"><div class="growth-stage"><span>짓는 순서 자유 · 한 번에 하나 ↓</span><h3>도서관 · 전망대 · 우체통 · 축음기</h3></div><div class="growth-branches"><article data-growth-branch="library"><strong>도서관 → 함께한 기록 조회</strong><p>같은 섬 모든 주민의 집중·스크린타임 기록과 주민별 물고기 획득 기록을 일·주·월로 봐요. 전체 공개 고정이라 다른 섬 주민도 볼 수 있고, 완공 전에는 이전 기록을 조회할 수 없어요.</p></article><article data-growth-branch="observatory"><strong>전망대 → 다른 섬과 연결</strong><p>별도 작은 섬에 다리로 이어져요. 다른 섬 랭킹·검색·가입을 열고, 우리 섬 내부 주민 랭킹은 두지 않아요. 신규 사용자의 첫 공개 섬 발견·가입은 해금 예외예요.</p></article><article data-growth-branch="mailbox"><strong>우체통 → 우리 섬 소식과 친구 편지</strong><p>우리 섬 편지방에서 섬 전체와 소식을 나누고, 친구에게는 열람 후 사라지는 비동기 편지를 보내요. 받는 친구의 섬에 우체통이 없어도 발송할 수 있어요. 친구 검색·추가·관리는 내 뗏목에서 하고 실시간 1:1 채팅방은 두지 않아요.</p></article><article data-growth-branch="gramophone"><strong>축음기 → 같은 섬의 음악</strong><p>같은 섬의 공동 음원을 주민 누구나 바꾸고, 음원은 완공된 축음기에서 직접 구매해요. 상점은 필요하지 않고 외형·명칭은 나팔 달린 축음기로 통일해요.</p></article></div><p class="growth-resource">고정 총액 건설 퀘스트<br>총액÷대상 인원(올림)의 각자 몫</p></li>
+          <li id="growth-facility-shop" data-growth-step="shop"><div class="growth-stage"><span>다른 모든 건물 완공 ↓</span><h3>강아지 NPC의 상점</h3></div><div><strong>우리 취향으로 채워요</strong><p>주민 누구나 섬 물고기로 상품을 사요. 개인 의상·장신구는 산 주민이 가지고 내 배에서 착용하며, 공동 섬·건물 테마는 주민 누구나 적용·해제해요.</p></div><p class="growth-resource">고정 총액 6,800마리 · 공사 4시간<br>구매: 섬 물고기</p></li>
         </ol>
         </details>
         </section>
         <section id="growth-costs" class="growth-block" aria-labelledby="growth-costs-title">
-          <div class="growth-block-heading"><h3 id="growth-costs-title">무엇이 있어야 지을 수 있나?</h3><span class="planning-status">현재 정책 확정 · 운영 후 조정 가능</span></div>
-          <p class="growth-section-description">정책 원문의 순서·고정 총액·공사 시간을 옮겼어요. 게시판 다음 건물은 인원수와 무관한 총액을 대상 주민이 나눠 채워요.</p>
+          <div class="growth-block-heading"><h3 id="growth-costs-title">무엇이 있어야 지을 수 있나?</h3><span class="planning-status">초기값 채택 · 조정 가능</span></div>
+          <p class="growth-section-description">정책 원문의 순서·물고기 요구량·공사 시간을 옮겼어요. 수치는 사용자 위임에 따라 채택한 초기 밸런스이며 운영 후 조정할 수 있어요.</p>
           <p class="growth-table-hint">표를 좌우로 밀면 공사 시간과 수치 상태까지 볼 수 있어요.</p>
           <div class="growth-table-wrap" role="region" aria-label="시설별 건설 조건과 물고기 요구량" tabindex="0"><table class="growth-cost-table"><caption>시설별 선행 조건 · 물고기 요구량 · 공사 시간 · 수치 상태</caption><thead><tr><th scope="col">시설</th><th scope="col">선행 조건</th><th scope="col">물고기 요구량</th><th scope="col">공사 시간</th><th scope="col">수치 상태</th></tr></thead><tbody>
             <tr data-cost="start"><th scope="row">시작 시설</th><td>새 섬 시작</td><td>기본 제공</td><td>없음</td><td><span class="planning-status">확정</span></td></tr>
-            <tr data-cost="hall"><th scope="row">마을회관</th><td>시작 시설</td><td>섬 통장 합산 60마리</td><td>1분</td><td><span class="planning-status">확정</span></td></tr>
-            <tr data-cost="board"><th scope="row">게시판</th><td>마을회관 완공</td><td>섬 통장 합산 추가 240마리</td><td>15분</td><td><span class="planning-status">확정</span></td></tr>
-            <tr data-cost="gramophone"><th scope="row">축음기</th><td>게시판 완공 · 순서 자유</td><td>총액 1,360마리</td><td>30분</td><td><span class="planning-status">확정</span></td></tr>
-            <tr data-cost="library"><th scope="row">도서관</th><td>게시판 완공 · 순서 자유</td><td>총액 2,720마리</td><td>1시간</td><td><span class="planning-status">확정</span></td></tr>
-            <tr data-cost="mailbox"><th scope="row">우체통 <small>섬 편지방 · 친구 비동기 편지</small></th><td>게시판 완공 · 순서 자유<br>친구 검색·추가·관리는 건설 조건 없음</td><td>총액 4,080마리</td><td>1시간 30분</td><td><span class="planning-status">확정</span></td></tr>
-            <tr data-cost="observatory"><th scope="row">전망대</th><td>게시판 완공 · 순서 자유</td><td>총액 5,440마리</td><td>2시간 30분</td><td><span class="planning-status">확정</span></td></tr>
-            <tr data-cost="shop"><th scope="row">상점</th><td>다른 모든 건물 완공</td><td>총액 6,800마리</td><td>4시간</td><td><span class="planning-status">확정</span></td></tr>
+            <tr data-cost="hall"><th scope="row">마을회관</th><td>시작 시설</td><td>섬 잔액 60마리</td><td>1분</td><td><span class="planning-status">확정</span></td></tr>
+            <tr data-cost="board"><th scope="row">게시판</th><td>마을회관 완공</td><td>섬 잔액 추가 240마리</td><td>15분</td><td><span class="planning-status">확정</span></td></tr>
+            <tr data-cost="gramophone"><th scope="row">축음기</th><td>게시판 완공 · 순서 자유</td><td>고정 총액 1,360마리</td><td>30분</td><td><span class="planning-status">확정</span></td></tr>
+            <tr data-cost="library"><th scope="row">도서관</th><td>게시판 완공 · 순서 자유</td><td>고정 총액 2,720마리</td><td>1시간</td><td><span class="planning-status">확정</span></td></tr>
+            <tr data-cost="mailbox"><th scope="row">우체통 <small>섬 편지방 · 친구 비동기 편지</small></th><td>게시판 완공 · 순서 자유<br>친구 검색·추가·관리는 건설 조건 없음</td><td>고정 총액 4,080마리</td><td>1시간 30분</td><td><span class="planning-status">확정</span></td></tr>
+            <tr data-cost="observatory"><th scope="row">전망대</th><td>게시판 완공 · 순서 자유</td><td>고정 총액 5,440마리</td><td>2시간 30분</td><td><span class="planning-status">확정</span></td></tr>
+            <tr data-cost="shop"><th scope="row">상점</th><td>다른 모든 건물 완공</td><td>고정 총액 6,800마리</td><td>4시간</td><td><span class="planning-status">확정</span></td></tr>
           </tbody></table></div>
-          <p class="planning-footnote">목표를 고른 시점의 주민이 총액 ÷ 대상 인원(올림)을 그때부터 각자 모아요. 기존 보유분·이전 건물 기록은 인정하지 않고 탈퇴·강퇴한 주민은 빼요. 전원이 몫을 채우고 섬 잔액도 총액 이상이면 완료 도장이 찍히며, 차감은 방장이 ‘건설하기’를 누를 때 고정 총액으로 해요. 목표 변경 때 모은 몫의 이월과 일일 퀘스트 보상의 몫 포함 여부는 아직 정하지 않았어요.</p>
+          <p class="planning-footnote">회관·게시판 다음 건물은 목표를 고른 시점의 주민이 대상이에요. 고정 총액을 대상 인원으로 나눈 값(올림)이 각자 몫이고 목표 선택 뒤 모은 양만 인정해요. 전원 각자 몫과 섬 잔액 총액을 모두 충족하면 도장이 찍히며, 방장이 ‘건설하기’를 누를 때 고정 총액을 차감해요. 탈퇴·강퇴자는 대상에서 빼고 새 가입자는 자동 추가하지 않아요.</p>
         </section>
         <section id="growth-economy" class="growth-block" aria-labelledby="growth-economy-title">
           <div class="growth-block-heading"><h3 id="growth-economy-title">집중과 퀘스트는 어디에 쌓이나?</h3><span class="planning-status">재화 역할 확정</span></div>
@@ -134,13 +134,13 @@
         <p class="quest-scope"><strong>평가할 것:</strong> 가장 끌리는 안 · 남기고 싶은 장면 · 빼고 싶은 설정. 실제 초대가 있으면 섬 그림 초대장으로, 없으면 망원경·지도로 이어져요. 세 안은 확정한 합류 흐름을 바꾸지 않으며 제작·보상 같은 새 기능을 약속하지 않아요. <a href="prologue-scenarios.md">도입 이야기 원문 ↗</a></p>
       </section>
       <section id="latest-growth-decoration" class="quest-ideas" aria-labelledby="latest-growth-decoration-title" data-state="current">
-        <p class="eyebrow">2026.09.17 · 현재 정책·회관·휴식 명세 반영</p><h2 id="latest-growth-decoration-title">함께 낚시해 섬을 만들고, 내 취향과 우리 살림을 나눠요.</h2>
+        <p class="eyebrow">2026.09.17 · 현재 정책 반영</p><h2 id="latest-growth-decoration-title">함께 낚시해 섬을 만들고, 내 취향과 우리 살림을 나눠요.</h2>
         <div class="reward-paths">
-          <article><span class="ledger-state">04 · 성장</span><h3>섬 물고기로 짓고, 건물 건설 퀘스트로 넓혀요</h3><p>회관 60마리 → 게시판 추가 240마리를 섬 통장에서 함께 모으고, 이후 건물은 고정 총액을 목표 선택 당시 주민이 나눠 채워요. 도서관·전망대·우체통·축음기는 순서가 자유이고 상점은 마지막이에요.</p><p>전원이 목표 선택 뒤의 각자 몫을 채우고 섬 잔액도 총액 이상이면 완료 도장이 찍혀요. 방장이 건설하기를 누를 때 고정 총액을 차감해요.</p><a href="policy-2026-09-14.md">현재 정책 원문 ↗</a></article>
+          <article><span class="ledger-state">04 · 성장</span><h3>섬 물고기로 짓고, 건물 건설 퀘스트로 넓혀요</h3><p>회관 60마리 → 게시판 추가 240마리를 섬 잔액으로 짓고, 이후 방장이 회관에서 고른 건물이 게시판의 건물 건설 퀘스트가 돼요. 도서관·전망대·우체통·축음기는 순서가 자유이고 상점은 마지막이에요.</p><p>후속 건물은 고정 총액과 목표 대상 주민의 각자 몫을 함께 채워요. 방장이 건설하기를 누를 때 총액을 차감해요.</p><a href="policy-2026-09-14.md">현재 건설 정책 보기 ↗</a></article>
           <article><span class="ledger-state">07 · 꾸미기</span><h3>상점에서 사고, 내 배에서 입어요</h3><p>주민 누구나 섬 물고기로 상품·음원을 사요. 개인 의상·장신구는 산 주민이 가지고 내 배에서 착용하며, 공동 섬·건물 테마는 주민 누구나 적용·해제해요. 배는 모두 같은 기본 뗏목이고 상품 가격은 미정이에요.</p><p>플레이어는 6색 고양이, 강아지는 상점 NPC 전용이에요. 음원은 완공된 축음기에서 직접 사고, 같은 섬 공동 음원을 함께 들으며 기기 음량·음소거만 개인에게 적용해요.</p><a href="revisions/07-personal-shared-decoration.html" target="_blank" rel="noopener">07 수정본 전체 보기 ↗</a></article>
         </div>
-        <p class="quest-intro"><strong>집중에서는 동료의 존재가 먼저.</strong> 목표 시간 없이 카운트업으로 집중하고, 고양이는 낚시섬의 원하는 곳을 눌러 자리를 잡아요. ‘휴식하기’를 누른 순간부터 전환 연출도 휴식으로 세고, 전용 모닥불 화면에서 의자 없이 식빵을 구워요. 재개하면 같은 자리·같은 세션으로 돌아가요.</p>
-        <p class="quest-scope"><strong>편지는 기러기가 전해요.</strong> 우체통에는 우리 섬 편지방과 친구 비동기 편지가 있어요. 친구 편지는 읽고 닫으면 양쪽에서 사라지고, 받는 친구의 현재 섬에 우체통이 없어도 보낼 수 있어요. 실시간 1:1 채팅방과 2.0.0 차단 기능은 제공하지 않아요.</p>
+        <p class="quest-intro"><strong>집중에서는 동료의 존재가 먼저.</strong> 목표 시간 없이 카운트업으로 집중하고, 낚시섬에서 원하는 위치를 골라요. 핀치로 내 자리와 지금 집중 중인 주민 전체를 오가요. 휴식 버튼을 누른 순간부터 쉬는 시간으로 기록하고 전용 모닥불 화면에서 의자 없이 식빵을 구워요.</p>
+        <p class="quest-scope"><strong>편지는 기러기가 전해요.</strong> 우체통에는 우리 섬 편지방과 열람 후 사라지는 친구 비동기 편지가 있어요. 친구 검색·추가·관리는 내 뗏목에서 하고, 받는 친구의 섬에 우체통이 없어도 편지를 보낼 수 있어요. 실시간 1:1 채팅방은 제공하지 않아요.</p>
         <p class="quest-scope">기획 반영이지 실제 앱·타이머·리깅·전송·공동 오디오 구현 완료가 아니에요. <a href="policy-2026-09-14.md">현재 정책 원문 ↗</a> · <a href="growth-decoration-revision-20260911.md">04·07 확정·제안·충돌과 반영 메모 ↗</a> · <a href="story-loop-plan.md">피드백을 반영한 6단계 계획 ↗</a></p>
       </section>
       <section id="story-ledger" class="story-ledger" aria-labelledby="ledger-title">
@@ -151,8 +151,8 @@
           <li data-story-step="letter" data-state="confirmed"><span class="ledger-number">02</span><div><span class="ledger-state">방향 확정</span><h3>기러기가 가져온 초대장</h3><p>기러기가 전달한 편지를 펼치면 섬의 모습이 담겨 있다. 지도부터 시작하지 않는다. 우편 장소는 새 건물 없이 우체통으로 통일한다.</p></div></li>
           <li data-story-step="raft" data-state="confirmed"><span class="ledger-number">03</span><div><span class="ledger-state">방향 확정</span><h3>짧은 뗏목 이동</h3><p>첫 합류는 포탈 대신 기본 뗏목의 짧은 이동이다. 재방문 항해는 줄인다. 정확한 길이·건너뛰기 방식은 미정이다.</p></div></li>
           <li data-story-step="together" data-state="discussing"><span class="ledger-number">04</span><div><span class="ledger-state">최신 기준 반영 · 도착 장면은 논의 중</span><h3>내 배와 같은 섬의 동료들</h3><p>내 배는 개인 정보·설정과 친구 검색·추가·관리, 보유한 의상을 착용하는 자리다. 배는 모두 같은 기본 뗏목이며 별도 개인 섬·전용 집중방은 아니다. 도착 후 무엇부터 만날지는 이어서 정한다.</p><a href="revisions/07-personal-shared-decoration.html">새 개인 배 기준 보기 ↗</a></div></li>
-          <li data-story-step="focus" data-state="next"><span class="ledger-number">05</span><div><span class="ledger-state">최신 집중 기준 · 동료가 우선</span><h3>동료의 존재를 느끼며 집중하기</h3><p>기본 뗏목으로 낚시섬에 도착해 원하는 곳을 누르고 할 일을 입력한다. 같은 섬 주민은 각자 고른 자리에서 낚시한다.</p></div></li>
-          <li data-story-step="loop" data-state="next"><span class="ledger-number">06</span><div><span class="ledger-state">GROMO-1862 · 전용 휴식 화면</span><h3>모닥불에서 식빵을 굽고 같은 자리로 돌아가기</h3><p>‘휴식하기’를 누른 순간부터 휴식을 세고 전용 모닥불 화면으로 이동한다. 자동 배정된 자리에서 식빵을 굽다가 재개하면 낚시섬의 같은 자리·같은 세션으로, 종료하면 결과 뒤 섬 화면으로 간다.</p></div></li>
+          <li data-story-step="focus" data-state="confirmed"><span class="ledger-number">05</span><div><span class="ledger-state">자유 위치 집중 확정</span><h3>동료의 존재를 느끼며 집중하기</h3><p>낚시섬에 도착해 원하는 위치를 누르고 오늘의 할 일을 적는다. 풍경을 넓히면 같은 섬에서 지금 집중 중인 실제 동료들이 보인다.</p></div></li>
+          <li data-story-step="loop" data-state="confirmed"><span class="ledger-number">06</span><div><span class="ledger-state">전용 휴식 화면 확정</span><h3>식빵을 구우며 쉬고 하던 자리로 돌아가기</h3><p>‘휴식하기’를 누른 순간부터 휴식이 시작된다. 전용 모닥불 화면에서 식빵을 굽고 이름·휴식 시간을 본 뒤, 재개하면 낚시섬의 기존 위치로 돌아간다.</p></div></li>
         </ol>
         <details class="ledger-prose"><summary>친구 초대 경로 · 이어 쓴 장면 초안</summary><blockquote><p>오늘 끝내기로 한 일이 아직 남아 있었다. 그때 기러기가 친구의 초대 편지를 가져왔다.</p><p>“우리 섬에서 오늘 같이하자.”</p><p>편지를 펼치자 친구가 초대한 작은 섬의 모습이 나타났다. 초대를 받아들이자 뗏목이 물살을 갈랐다. 짧은 항해 끝에, 편지에서 보았던 바로 그 섬에 도착했다.</p></blockquote><p>진입 경로·섬의 모습이 담긴 초대장·짧은 뗏목 이동은 확정한 방향이에요. 대사와 세부 연출은 수정 가능한 초안이에요.</p></details>
       </section>
@@ -178,8 +178,8 @@
           <p class="quest-next"><strong>우선 작게 시작할 제안</strong>‘직접 고르는 손 인사’와 ‘스쳐갈 때의 짧은 눈인사’부터 이야기로 정해요. 인사 목록, 캐릭터 선택 방식, 주변 누구에게 보일지는 이어서 정해요.</p>
         </section>
         <section id="letter-decision" class="quest-rewards" data-state="confirmed" aria-labelledby="letter-decision-title">
-          <p class="eyebrow">최신 결정 · 섬 전체 편지방·친구 비동기 편지와 기러기의 전달</p><h3 id="letter-decision-title">같은 섬에 한 장 남기고, 친구에게는 한 번 전해요.</h3>
-          <p class="quest-intro">우리 섬 편지방은 그룹 전체 대화이고 친구 편지는 선택한 친구의 받은 편지함으로 가요. 편지는 수신자가 열었다가 닫으면 삭제되고 발신자 목록에도 확인 전까지만 남아요. 수신자의 현재 섬에 우체통이 없어도 보내며, 우체통이 완공된 소속 섬에서 읽어요. 실시간 1:1 채팅방은 제공하지 않아요.</p>
+          <p class="eyebrow">최신 결정 · 섬 전체 편지방·친구 비동기 편지와 기러기의 전달</p><h3 id="letter-decision-title">같은 섬에 한 장 남기고, 기러기가 전해요.</h3>
+          <p class="quest-intro">우체통의 우리 섬 편지방에서는 그룹 전체에 자유롭게 쓰고, 친구에게는 한 번 보내고 열람 뒤 사라지는 비동기 편지를 보내요. 콕찌르기(I07)는 제외하고, 친구 검색·추가·관리는 내 뗏목에서 하며 실시간 1:1 채팅방은 만들지 않아요.</p>
           <p class="quest-scope">편지 수신만으로 자동 이동·집중 시작·방문 권한 부여를 하지 않아요. 새 우체국 건물은 만들지 않고 우체통으로 통일해요. 기존 프리셋 시연은 교체 전, 실제 전송과 기러기 연출은 미구현이에요. <a href="feature-inventory.html?mode=detail#feature-I06">I06 편지 기능 보기 ↗</a></p>
         </section>
         <p class="quest-next"><strong>첫 번째로 같이 정할 장면</strong>부두에 도착했을 때, ‘친구들이 지금 함께하는 일’을 풍경에서 먼저 알아볼 수 있게 하면 어떨까요? 예를 들어 모두가 새 부두의 같은 부분을 함께 만들고 있고, 그곳을 누르면 오늘의 약속과 합류 방법을 볼 수 있어요. 이 장면은 아직 제안이에요.</p>
@@ -189,9 +189,9 @@
         <div class="section-label"><h2 id="story-section-title">우리 앱에 넣을 이야기</h2><p>줄거리를 강제로 따라가는 대신, 함께한 일이 이야기가 돼요.</p></div>
         <ol id="story-chapters" class="story-chapters" aria-label="이야기의 다섯 장"></ol>
         <div class="story-spread"><div id="story-world" class="story-world" role="img" aria-label=""></div><div class="story-copy"><p id="story-kicker" class="story-kicker"></p><h3 id="story-title"></h3><p id="story-description"></p><blockquote id="story-voice"></blockquote><p id="story-bridge" class="story-bridge"></p></div></div>
-        <p class="story-note">아래 그림은 이전 이야기 설명용이에요. 현재 정책의 낚시섬 자유 자리 집중·전용 휴식 화면·고정 총액 건설 퀘스트로 그림을 교체한 것은 아니며, 현행 기준은 위 최신 결정과 현재 정책 원문을 따라요.</p>
+        <p class="story-note">아래 그림은 이전 이야기 설명용이에요. 현재 정책의 낚시섬 자유 위치 집중·식빵 굽기 휴식·고정 총액 건설 퀘스트로 그림을 교체한 것은 아니며, 현행 기준은 위 최신 결정과 현재 정책 원문을 따라요.</p>
       </section>
-      <section class="story-thesis" aria-labelledby="thesis-title"><h2 id="thesis-title">이야기의 중심에는 동료와 함께 만든 섬이 있어요.</h2><p>처음부터 있는 부두에서 함께 집중하고, 회관과 게시판을 세워요.<br>다음 방문의 이유는 새 보상뿐 아니라 <strong>“오늘도 우리 섬에서 같이하자”</strong>는 초대예요.</p></section>
+      <section class="story-thesis" aria-labelledby="thesis-title"><h2 id="thesis-title">이야기의 중심에는 동료와 함께 만든 섬이 있어요.</h2><p>낚시섬에서 각자 고른 자리에 함께 집중하고, 회관과 게시판을 세워요.<br>다음 방문의 이유는 새 보상뿐 아니라 <strong>“오늘도 우리 섬에서 같이하자”</strong>는 초대예요.</p></section>
     </section>
     <section id="wrapping-view" class="planning-panel" role="tabpanel" aria-labelledby="tab-wrapping" tabindex="0" hidden>
       <div id="wrapping" class="section-label wrapping-heading"><div><p class="eyebrow">8개 큰 기능은 그대로</p><h2>기능을 어떤 일상으로 감쌀까?</h2></div><p>사물 이름에 더해, 하는 행동과 이야기 속 역할까지.</p></div>
@@ -199,7 +199,7 @@
       <details id="previous-growth-proposals" class="legacy-planning"><summary>이전 성장·80:20 배분·최소 뗏목 논의 보기 · 현재 기획 아님</summary><p>아래는 04·07 수정본 전의 대화 이력이에요. 현재 결정으로 읽지 않으며, 기존 기록을 보존하기 위해 접어두었어요.</p>
       <section id="quest-ideas" class="quest-ideas" aria-labelledby="quest-ideas-title">
         <div class="section-label"><div><p class="eyebrow">04단계 · 지금 함께 정할 것</p><h2 id="quest-ideas-title">같이 만든 섬을, 우리답게 꾸민다.</h2></div><span class="ledger-state">판정 유형은 확인 · 보상 연결은 논의 중</span></div>
-        <div class="space-principle"><strong>새로 정한 원칙 · 할 일의 종류로 모임을 나누지 않는다.</strong><p>공부·독서·작업은 개인의 실제 기록이다. 공동 활동에 참여할 때도 실제 할 일과 캐릭터 액션은 구분한다. 공동 퀘스트의 기여·보상은 아래에서 별도로 논의한다.</p><p><strong>2026.09.11 집중 수정본:</strong> 그늘 탁자에서 집중하고 같은 풍경의 가까운 모닥불에서 쉰다. 사전에 동의한 본인만 포모도로 휴식에 자동 이동하며, 다음 집중은 직접 확인한 뒤 탁자 도착부터 기록한다. 다른 동료까지 이동시키지 않는다. 거리·카메라·이동 예외는 후속 설계다.</p></div>
+        <div class="space-principle"><strong>이전 논의 · 할 일의 종류로 모임을 나누지 않는다.</strong><p>공부·독서·작업은 개인의 실제 기록이다. 공동 활동에 참여할 때도 실제 할 일과 캐릭터 액션은 구분한다. 공동 퀘스트의 기여·보상은 아래에서 별도로 논의했다.</p><p><strong>2026.09.11 이전안:</strong> 그늘 탁자 집중과 가까운 모닥불 휴식을 검토했다. 현재는 낚시섬 자유 위치 집중과 전용 모닥불 화면의 식빵 굽기 휴식으로 대체했다.</p></div>
         <p class="quest-intro">③ 집중하기·쉬기는 <strong>한 번 함께하는 시간의 흐름</strong>, ④ 공동 도전·성장은 <strong>그 시간에 공동의 이유와 결과를 붙이는 것</strong>으로 구분해요. 장소를 둘로 나누는 뜻은 아니에요.</p>
         <section id="quest-rewards" class="quest-rewards" aria-labelledby="quest-rewards-title" data-state="proposal">
           <h3 id="quest-rewards-title">퀘스트는 두 가지, 섬에 남는 결과는 다르게.</h3>
@@ -245,7 +245,7 @@
       </section>
       </details>
       <section class="wrapping-boundaries" aria-labelledby="boundaries-title"><div class="section-label"><h2 id="boundaries-title">감싸는 깊이는 다르게.</h2><p>감성을 살리되 기능의 의미는 알아볼 수 있게.</p></div><div class="boundary-grid"><article><h3>풍경 속에서 하는 일</h3><p>탐색·집중·공동 활동·꾸미기.<br>이동하고, 머물고, 장소가 달라지는 일로 표현해요.</p></article><article><h3>물건에 담아 꺼내는 일</h3><p>공지·자료·통계·랭킹.<br>메모와 기록장에 담되, 긴 글과 정확한 숫자는 읽기 쉽게 남겨요.</p></article><article><h3>분명히 말해야 하는 일</h3><p>계정·권한·구매·차단·탈퇴.<br>무엇에 동의하고 무엇이 바뀌는지 실제 기능 이름으로 알려줘요.</p></article></div></section>
-      <div class="story-decisions"><p><strong>함께 정한 중심</strong> 동료의 존재 · 우리 섬에서 같이하자는 초대 · 짧아지는 재방문</p><p><strong>활동의 표현</strong> 낚시섬 자유 자리 집중 · 전용 모닥불 화면의 식빵 굽기 휴식 · 같은 섬 공동 음원</p><p><strong>성장과 꾸미기</strong> 섬 소유 물고기 하나 · 고정 총액 건설 퀘스트 · 상점에서 산 의상을 내 배에서 착용</p><details><summary>아직 정하지 않은 설정</summary><ul><li>상점 상품·음원 가격은 미정이에요.</li><li>목표 건물을 바꿀 때 모은 몫을 이월할지, 일일 퀘스트 보상을 건설 몫으로 셀지는 미정이에요.</li><li>마지막 섬에서 강퇴된 사용자의 처리, 휴식 자리 초과 표시, 백그라운드·앱 종료 뒤 휴식 복구는 미정이에요.</li><li>신규 사용자의 첫 공개 섬 발견·가입은 해금 예외예요. 귀환·재가입·기술적 전달은 후속 설계예요.</li></ul></details></div>
+      <div class="story-decisions"><p><strong>함께 정한 중심</strong> 동료의 존재 · 우리 섬에서 같이하자는 초대 · 짧아지는 재방문</p><p><strong>활동의 표현</strong> 낚시섬 자유 위치 집중 · 전용 모닥불 화면의 식빵 굽기 휴식 · 같은 섬 공동 음원</p><p><strong>성장과 꾸미기</strong> 섬 소유 물고기 하나 · 고정 총액 건설 퀘스트(순서 자유·상점 마지막) · 상점에서 산 의상을 내 배에서 착용</p><details><summary>아직 정하지 않은 설정</summary><ul><li>상점 상품·음원 가격은 미정이에요.</li><li>건설 총액과 공사 시간은 채택한 초기값이며 운영 후 조정할 수 있어요.</li><li>휴대폰 사용을 섬의 쓰레기·공동 피해로 연결하는 방식은 채택하지 않았어요.</li><li>화면 잠금·백그라운드·앱 종료 때 집중과 휴식을 처리하는 기준은 확인이 필요해요.</li><li>신규 사용자의 첫 공개 섬 발견·가입은 해금 예외예요. 귀환·재가입·초기 운영 진입·기술적 전달은 후속 설계예요.</li></ul></details></div>
       <div class="overview-bottom"><p>집중 중 수확이나 답장을 요구하지 않고, 자리를 비워도 섬을 벌주지 않는 방향.<br>이야기의 정서는 ‘계속 접속해야 한다’보다 ‘돌아올 곳이 있다’에 둬요.</p><a href="feature-inventory.html?mode=detail&group=later">보류·추가 검토 아이디어 ↗</a></div>
     </section>
     <section id="detail-view" class="planning-panel" role="tabpanel" aria-labelledby="tab-detail" tabindex="0" hidden>

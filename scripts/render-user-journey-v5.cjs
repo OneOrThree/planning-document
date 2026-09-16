@@ -44,7 +44,7 @@ for (const line of lines) {
   }
 }
 
-if (sections.length !== 9) throw new Error(`유저저니 9개가 필요하지만 ${sections.length}개를 찾았습니다.`);
+if (sections.length !== 10) throw new Error(`유저저니 10개가 필요하지만 ${sections.length}개를 찾았습니다.`);
 
 const renderSection = (section, index) => {
   const start = section.items.find(item => item.label === '시작');
@@ -89,7 +89,7 @@ const html = `<!doctype html>
       <nav class="index" aria-label="사용자 여정 목차">${sections.map((section, index) => `<a href="#journey-${index + 1}"><span>${String(index + 1).padStart(2, '0')}</span>${inline(section.title)}</a>`).join('')}</nav>
       <div id="journeys">${sections.map(renderSection).join('')}</div>
     </main>
-    <footer><span>R61 정책 반영본 · 2026.09.16</span><span>기획 반영 ≠ 앱 구현 완료</span></footer>
+    <footer><span>R61 정책 반영본 · 2026.09.17</span><span>기획 반영 ≠ 앱 구현 완료</span></footer>
   </div>
 </body>
 </html>`;

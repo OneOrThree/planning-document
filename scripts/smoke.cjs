@@ -42,7 +42,8 @@ const base = process.env.BASE_URL || 'http://127.0.0.1:4173/';
       }
       if(route==='docs/user-journey/v5/index.html') {
         assert((await page.title()).includes('사용자 여정 v5'),'사용자 여정 v5 제목');
-        assert.equal(await page.locator('[data-journey]').count(),9,'사용자 여정 9개');
+        assert.equal(await page.locator('[data-journey]').count(),10,'사용자 여정 10개');
+        assert((await page.locator('body').innerText()).includes('게스트로 시작'),'게스트·회원 전환 여정 표시');
         assert((await page.locator('body').innerText()).includes('우리 섬 채팅방'),'사용자 여정 채팅방 명칭');
         assert(!(await page.locator('body').innerText()).includes('편지방'),'사용자 여정 이전 명칭 제거');
       }
