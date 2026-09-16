@@ -1,6 +1,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const vm = require('node:vm');
+const {createHash} = require('node:crypto');
 const {spawnSync} = require('node:child_process');
 const root = path.resolve(__dirname, '..');
 const ignored = new Set(['.git','node_modules','_site','tmp','.hallmark','.omc']);
@@ -59,5 +60,13 @@ check(/^버전: [^\n]*proposed[^\n]*$/m.test(apiSpec), 'API v1은 협의안 버�
 check(apiKeys.length === 98, 'API v1 기능 계약 98개 유지');
 check(new Set(apiKeys).size === apiKeys.length, 'API v1 기능 계약 키 중복');
 for (const marker of ['## 문서 상태','### 공통 오류 코드 제안','### 건물별 권장 읽기 모델','## 미정 정책']) check(apiSpec.includes(marker), 'API v1 필수 구분 누락: '+marker);
+const journeyV5Source = fs.readFileSync(path.join(root,'docs/user-journey/v5/user-journey.md'),'utf8');
+const journeyV5Html = fs.readFileSync(path.join(root,'docs/user-journey/v5/index.html'),'utf8');
+const journeyV5Hash = createHash('sha256').update(journeyV5Source).digest('hex');
+check((journeyV5Source.match(/^## /gm)||[]).length === 9, '사용자 여정 v5는 9개 여정을 유지');
+check(journeyV5Html.includes(`name="source-sha256" content="${journeyV5Hash}"`), '사용자 여정 v5 HTML 재생성 필요');
+for (const file of ['docs/ia/v5/ia.md','docs/ia/v5/index.html','docs/user-journey/v5/user-journey.md','docs/user-journey/v5/index.html']) {
+  check(!fs.readFileSync(path.join(root,file),'utf8').includes('편지방'), file+': 이전 편지방 명칭 제거');
+}
 if (failures.length) {console.error(failures.join('\n')); process.exitCode = 1;}
 else console.log(JSON.stringify({result:'PASS',files:files.length,syntax,links,features:ids.length,groups:data.groups.length},null,2));
