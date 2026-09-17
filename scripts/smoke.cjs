@@ -10,7 +10,7 @@ const base = process.env.BASE_URL || 'http://127.0.0.1:4173/';
     page.on('pageerror',error=>errors.push(error.message));
     page.on('response',res=>{if(res.url().startsWith(base) && res.status()>=400)errors.push(res.status()+' '+res.url());});
     page.on('requestfailed',req=>{if(req.url().startsWith(base) && !req.failure()?.errorText.includes('ERR_ABORTED'))errors.push(req.url()+' '+req.failure()?.errorText);});
-    for(const route of ['index.html','feature-inventory.html','user-journey.html','eli5.html','eli5-journey.html','docs/api/v1/index.html','docs/ia/v5/index.html','docs/user-journey/v5/index.html']) {
+    for(const route of ['index.html','emote-review.html','feature-inventory.html','user-journey.html','eli5.html','eli5-journey.html','docs/api/v1/index.html','docs/ia/v5/index.html','docs/user-journey/v5/index.html']) {
       const response = await page.goto(new URL(route,base).href,{waitUntil:'networkidle'});
       assert(response.ok(),route+' 응답');
       assert((await page.locator('body').innerText()).trim().length>30,route+' 빈 화면');
@@ -21,6 +21,10 @@ const base = process.env.BASE_URL || 'http://127.0.0.1:4173/';
           assert.equal(await page.locator('[role=tabpanel]:visible').count(),1);
           assert.equal(await page.locator('[data-planning-tab='+tab+']').getAttribute('aria-selected'),'true');
         }
+      }
+      if(route==='emote-review.html') {
+        assert.equal(await page.locator('.emote').count(),5,'집중 이모티콘 5종');
+        assert.equal(await page.locator('.bubble img').getAttribute('src'),'assets/gachisup-r61/ui/emotes/cheer.png','고양이 위 말풍선 예시');
       }
       if(route==='docs/api/v1/index.html') {
         assert((await page.title()).includes('협의안'),'API 문서 상태 표시');
