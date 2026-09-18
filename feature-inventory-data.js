@@ -181,7 +181,7 @@
   ]);
   group('manage','섬 운영·권한','마을회관','한 장의 섬 등록증에서 함께 사는 사람과 운영 상태를 읽고, 방장만 별도 편집창에서 바꿔요.',{sources:['current0914','hallSpec'],screens:['vh3']},[
     ['K01','섬 이름·소개·가입 방식·정원 수정','방장이 별도 편집창에서 섬 정보를 한 번에 수정한다.','읽기 등록증과 분리된 섬 정보 수정 창.',{decision:'chosen',proof:'pending',sources:['current0914','hallSpec'],document:'specs/town-hall-modal-spec.md',note:'기본 등록증은 읽기 상태예요. 이름 옆 편집 버튼으로 이름·소개·가입 방식·정원을 함께 수정하고 정원은 현재 주민 수보다 작게 줄일 수 없어요.'}],
-    ['K02','주민 목록·역할별 열람','누가 함께하는지 보고 역할에 맞는 행동만 본다.','등록증의 2열 주민 카드와 프로필 안내.',{decision:'chosen',proof:'pending',sources:['hallSpec'],screens:['vh1','vh3'],document:'specs/town-hall-modal-spec.md',note:'주민은 이름·소개·주민 목록·본인 탈퇴만 보고 가입 설정·초대·신청·강퇴·위임은 보지 않아요. 방장 역할 배지는 표시하지 않아요.'}],
+    ['K02','주민 목록·역할별 열람','누가 함께하는지 보고 역할에 맞는 행동만 본다.','등록증의 2열 주민 카드와 프로필 안내.',{decision:'chosen',proof:'pending',sources:['hallSpec'],screens:['vh1','vh3'],document:'specs/town-hall-modal-spec.md',note:'주민은 이름·소개·주민 목록·본인 탈퇴만 보고 가입 설정·초대·신청·강퇴·위임은 보지 않아요. 방장 역할 배지는 표시하지 않아요. 다른 섬 방문자 뷰에서는 방장 아바타에 왕관을 씌워 표시해요.'}],
     ['K03','가입 승인·거절','방장이 같은 섬 등록증 안에서 대기 신청을 처리한다.','등록증의 점선 가입 신청 영역.',{decision:'chosen',proof:'pending',sources:['hallSpec'],screens:['sh8'],document:'specs/town-hall-modal-spec.md',note:'별도 가입 신청 탭이나 권한 없음 화면을 만들지 않아요. 신청이 없으면 빈 상태를 보여줘요.'}],
     ['K04','멤버 강퇴·재가입 제한','문제가 있는 멤버를 내보내고 정책을 적용한다.','명확한 사유와 확인이 있는 주민 관리.',{sources:['current0914','policy','ia'],note:'강퇴 후 재가입 금지는 설계 정책이에요. 강퇴된 주민은 진행 중인 건물 건설 퀘스트 대상에서 제외해요. 실제 서버 권한 확인이 필요해요.'}],
     ['K05','방장 위임','편집창에서 본인을 제외한 주민을 고르고 확인한 뒤 방장을 넘긴다.','섬 열쇠를 넘기기.',{decision:'chosen',proof:'pending',sources:['current0914','hallSpec'],document:'specs/town-hall-modal-spec.md',note:'주민이 남은 섬의 방장은 탈퇴 전에 위임해야 해요. 방장 혼자면 위임을 비활성화해요.'}],
