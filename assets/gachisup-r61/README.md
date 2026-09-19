@@ -29,8 +29,8 @@
 - 집중 중 고양이 옆 물고기 더미는 같은 1024×1024 투명 캔버스와 하단 기준선을 쓴다.
 - 1단계 `catch/single.png`: 집중 1~59분, 바구니 없이 물고기 한 마리.
 - 2단계 `catch/pile-small.png`: 집중 60~119분, 얕은 바구니에 세 마리.
-- 3단계 `catch/pile-medium.png`: 집중 120~179분, 바구니에 여섯 마리.
-- 4단계 `catch/pile-large.png`: 집중 180분 이상, 물고기가 바구니 위와 양옆으로 넘치는 최종 더미. 4시간 집중까지 이 단계를 유지한다.
+- 3단계 `catch/pile-medium.png`: 집중 120~239분, 바구니에 여섯 마리.
+- 4단계 `catch/pile-large.png`: 집중 240분 이상, 물고기가 바구니 위와 양옆으로 넘치는 최종 더미.
 - 실제 앱 적용 캡처: [`focus-catch-stages.png`](../../screenshots/GROMO-1920/focus-catch-stages.png), [`focus-result.png`](../../screenshots/GROMO-1920/focus-result.png).
 
 ## UI 킷 · 딸기 소다 기본 (`ui-kit/`)
