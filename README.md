@@ -14,7 +14,7 @@
 | 전체 기획·6개 탭 | [feature-inventory.html](https://oneorthree.github.io/planning-document/feature-inventory.html) |
 | 첫 초대부터 집중 루프 | [초대 경로](https://oneorthree.github.io/planning-document/feature-inventory.html?tab=journey&route=invite#journey-route) |
 | 시설 순서·재화·비용 | [섬의 발전](https://oneorthree.github.io/planning-document/feature-inventory.html?tab=growth) |
-| 확정 에셋·UI 킷 | [디자인 작업실](https://oneorthree.github.io/planning-document/) · [딸기 소다 UI 킷](https://oneorthree.github.io/planning-document/assets/gachisup-r61/ui-kit/foundations/index.html) · [에셋 설명](assets/gachisup-r61/README.md) |
+| 확정 에셋·UI 킷 | [디자인 작업실](https://oneorthree.github.io/planning-document/) · [확정 NPC 4종](npc-assets.html) · [딸기 소다 UI 킷](https://oneorthree.github.io/planning-document/assets/gachisup-r61/ui-kit/foundations/index.html) · [에셋 설명](assets/gachisup-r61/README.md) |
 | 캐릭터 원화·애니메이션 | [리깅](https://oneorthree.github.io/planning-document/rig.html) · [걷기](https://oneorthree.github.io/planning-document/walk.html) |
 | 멘토링 보고 | [2026-09-09 PDF](output/pdf/gachisup-mentor-report-2026-09-09-compact.pdf) |
 | 수정 위치·정보 구조 | [기능별 수정 가이드](docs/editing-guide.md) |

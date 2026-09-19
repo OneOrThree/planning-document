@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="860" viewBox="0 0 1200 860" role="img" aria-labelledby="title desc">
+  <title id="title">방장 1인 섬 탈퇴 화면</title>
+  <desc id="desc">방장 위임 비활성화, 다른 섬으로 이동하는 탈퇴, 04번 섬 선택 화면로 이동하는 탈퇴 상태</desc>
+  <defs>
+    <linearGradient id="page" x2="1" y2="1"><stop stop-color="#463932"/><stop offset="1" stop-color="#201b19"/></linearGradient>
+    <linearGradient id="hall" x2="1" y2="1"><stop stop-color="#d0af7d"/><stop offset=".48" stop-color="#7f9d7e"/><stop offset="1" stop-color="#755443"/></linearGradient>
+    <filter id="shadow"><feDropShadow dy="14" stdDeviation="13" flood-color="#100b09" flood-opacity=".45"/></filter>
+    <style>
+      text{font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;fill:#3e352e}
+      .eyebrow{fill:#ead4ba;font-size:14px;font-weight:800;letter-spacing:1.4px}.headline{fill:#fff6eb;font-size:27px;font-weight:850}
+      .phone{fill:#f6f0e9;stroke:#9e806c;stroke-width:3}.stage{fill:url(#hall)}.paper{fill:#fff3d8;stroke:#80634d;stroke-width:2}
+      .field{fill:#fffaf0;stroke:#b3977b;stroke-width:1.5}.title{font-size:21px;font-weight:850}.strong{font-size:14px;font-weight:850}
+      .body{font-size:13px}.muted{fill:#756354;font-size:11.5px}.screenLabel{fill:#fff5e8;font-size:14px;font-weight:800}
+      .button{fill:#fffaf0;stroke:#80634d;stroke-width:1.5}.dangerButton{fill:#b9574e;stroke:#763830;stroke-width:1.5}.buttonText{font-size:13px;font-weight:850}
+    </style>
+  </defs>
+  <rect width="1200" height="860" fill="url(#page)"/>
+  <text x="28" y="40" class="eyebrow">GROMO / 마을회관 / 방장 1인 섬 탈퇴</text>
+  <text x="28" y="76" class="headline">삭제되는 것과 다음 도착지를 확인한 뒤 나간다</text>
+
+  <g transform="translate(18 96)">
+    <rect width="364" height="738" rx="50" class="phone" filter="url(#shadow)"/><rect x="8" y="8" width="348" height="722" rx="43" class="stage"/>
+    <rect x="129" y="17" width="106" height="27" rx="14" fill="#403733"/><circle cx="39" cy="35" r="14" fill="#efd070"/><text x="39" y="40" text-anchor="middle" font-size="13" font-weight="900">1</text><text x="61" y="40" class="screenLabel">1인 방장</text>
+    <rect x="27" y="66" width="310" height="608" rx="19" class="paper"/>
+    <text x="48" y="105" class="title">섬 정보 수정</text><text x="304" y="105" text-anchor="middle" font-size="25">×</text>
+    <text x="48" y="137" class="muted">섬 이름</text><rect x="48" y="146" width="268" height="44" rx="9" class="field"/><text x="62" y="174" class="body">소다 섬</text>
+    <text x="48" y="216" class="muted">섬 소개</text><rect x="48" y="225" width="268" height="64" rx="9" class="field"/><text x="62" y="251" class="body">함께 집중하고, 느긋하게</text><text x="62" y="273" class="body">쉬어가는 섬.</text>
+    <rect x="48" y="307" width="268" height="55" rx="9" class="field"/><text x="62" y="331" class="strong">가입 방식</text><text x="62" y="349" class="muted">방장 승인 후 가입</text><rect x="266" y="322" width="38" height="24" rx="12" fill="#8ab7a1"/><circle cx="292" cy="334" r="9" fill="#fff"/>
+    <rect x="48" y="373" width="268" height="55" rx="9" class="field"/><text x="62" y="397" class="strong">주민 정원</text><text x="62" y="415" class="muted">현재 1명</text><text x="300" y="406" text-anchor="end" class="strong">1 / 15명</text>
+    <g opacity=".4"><rect x="48" y="439" width="268" height="66" rx="9" class="field"/><text x="62" y="465" class="strong">방장 위임</text><text x="62" y="486" class="muted">위임할 주민이 없어요.</text><text x="300" y="482" text-anchor="end" font-size="24">›</text></g>
+    <rect x="48" y="522" width="268" height="48" rx="10" fill="#b9d9c9" stroke="#80634d" stroke-width="1.5"/><text x="182" y="552" text-anchor="middle" class="strong">저장하기</text>
+    <line x1="48" y1="589" x2="316" y2="589" stroke="#b89a7f"/><text x="304" y="624" text-anchor="end" fill="#a0443d" font-size="14" font-weight="850">섬 탈퇴</text>
+  </g>
+
+  <g transform="translate(418 96)">
+    <rect width="364" height="738" rx="50" class="phone" filter="url(#shadow)"/><rect x="8" y="8" width="348" height="722" rx="43" class="stage"/>
+    <rect x="129" y="17" width="106" height="27" rx="14" fill="#403733"/><circle cx="39" cy="35" r="14" fill="#efd070"/><text x="39" y="40" text-anchor="middle" font-size="13" font-weight="900">2</text><text x="61" y="40" class="screenLabel">다른 섬 있음</text>
+    <rect x="27" y="66" width="310" height="608" rx="19" class="paper"/><rect x="8" y="55" width="348" height="675" fill="#342824" opacity=".56"/>
+    <rect x="40" y="220" width="284" height="300" rx="19" class="paper" filter="url(#shadow)"/>
+    <text x="182" y="267" text-anchor="middle" class="title">소다 섬을 떠날까요?</text>
+    <text x="182" y="300" text-anchor="middle" class="body">현재 이 섬에는 나만 남아 있어요.</text><text x="182" y="323" text-anchor="middle" class="body">탈퇴하면 섬의 공동 데이터가</text><text x="182" y="346" text-anchor="middle" class="body">모두 삭제돼요.</text>
+    <rect x="62" y="368" width="240" height="58" rx="10" fill="#f0e0bd" stroke="#b3977b"/><text x="78" y="391" class="muted">다음 이동</text><text x="78" y="414" class="strong">딸기 섬으로 이동해요</text>
+    <rect x="62" y="448" width="108" height="48" rx="10" class="button"/><text x="116" y="478" text-anchor="middle" class="buttonText">취소</text><rect x="178" y="448" width="124" height="48" rx="10" class="dangerButton"/><text x="240" y="478" text-anchor="middle" fill="#fff8ef" class="buttonText">삭제하고 탈퇴</text>
+  </g>
+
+  <g transform="translate(818 96)">
+    <rect width="364" height="738" rx="50" class="phone" filter="url(#shadow)"/><rect x="8" y="8" width="348" height="722" rx="43" class="stage"/>
+    <rect x="129" y="17" width="106" height="27" rx="14" fill="#403733"/><circle cx="39" cy="35" r="14" fill="#efd070"/><text x="39" y="40" text-anchor="middle" font-size="13" font-weight="900">3</text><text x="61" y="40" class="screenLabel">마지막 섬</text>
+    <rect x="27" y="66" width="310" height="608" rx="19" class="paper"/><rect x="8" y="55" width="348" height="675" fill="#342824" opacity=".56"/>
+    <rect x="40" y="196" width="284" height="350" rx="19" class="paper" filter="url(#shadow)"/>
+    <text x="182" y="242" text-anchor="middle" class="title">소다 섬을 떠날까요?</text>
+    <text x="182" y="275" text-anchor="middle" class="body">현재 이 섬에는 나만 남아 있어요.</text><text x="182" y="298" text-anchor="middle" class="body">탈퇴하면 섬의 공동 데이터가</text><text x="182" y="321" text-anchor="middle" class="body">모두 삭제돼요.</text>
+    <rect x="62" y="343" width="240" height="84" rx="10" fill="#f0e0bd" stroke="#b3977b"/><text x="78" y="366" class="muted">다음 이동</text><text x="78" y="389" class="strong">새 섬을 만들거나</text><text x="78" y="410" class="strong">기존 섬에 참여할 수 있어요</text>
+    <rect x="62" y="438" width="240" height="29" rx="15" fill="#b9d9c9"/><text x="182" y="458" text-anchor="middle" font-size="11.5" font-weight="850">04 · 혼자 시작 / 기존 섬 참여</text>
+    <rect x="62" y="482" width="108" height="48" rx="10" class="button"/><text x="116" y="512" text-anchor="middle" class="buttonText">취소</text><rect x="178" y="482" width="124" height="48" rx="10" class="dangerButton"/><text x="240" y="512" text-anchor="middle" fill="#fff8ef" class="buttonText">삭제하고 나가기</text>
+  </g>
+</svg>

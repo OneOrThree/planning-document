@@ -23,12 +23,13 @@ function check(ok,message){assert.ok(ok,message);checks++;}
   check(letter.note.includes('개인 수신자 선택')&&letter.note.includes('실제 전송'),'섬 전체 편지·개인 수신자 없음·실제 전송 경계');
   check(data.sources.current0914&&data.sources.current0914.path==='policy-2026-09-14.md','2026-09-14 현재 정책 출처 등록');
   for(const id of ['D04','D06','H08','L04','L10','L13','M01','M02'])check(!ids.includes(id)&&Boolean(data.retiredFeatures[id]),id+' 현재 정책으로 제외 이력 보존');
-  for(const id of ['D22','F13','H12','N09','I09']){const f=data.features.find(x=>x.id===id);check(f&&f.decision==='chosen'&&f.proof==='pending'&&f.sources.includes('current0914'),id+' 새 정책 기능은 사용자 결정·연결 전·현재 정책 근거');}
+  for(const id of ['D22','F13','H12','I09']){const f=data.features.find(x=>x.id===id);check(f&&f.decision==='chosen'&&f.proof==='pending'&&f.sources.includes('current0914'),id+' 새 정책 기능은 사용자 결정·연결 전·현재 정책 근거');}
+  {const f=data.features.find(x=>x.id==='N09');check(f&&f.decision==='chosen'&&f.proof==='pending'&&f.sources.includes('artRules'),'N09 안내 앵무새는 사용자 결정·연결 전·아트 규칙 근거');}
   check(data.features.find(f=>f.id==='M03').screens.includes('ob1'),'OB-1 이전 시연 화면은 섬 간 랭킹에 연결');
-  const friendAdd=data.features.find(f=>f.id==='I01'),friendManage=data.features.find(f=>f.id==='I02'),friendLetter=data.features.find(f=>f.id==='I09');
-  check(friendAdd.decision==='chosen'&&friendAdd.proof==='legacy'&&friendAdd.action.includes('내 뗏목')&&friendAdd.note.includes('수락해야'),'친구 요청은 내 뗏목·상대 수락, 원앱 참조 증거 유지');
-  check(['수락','거절','취소','삭제'].every(word=>friendManage.action.includes(word))&&friendManage.note.includes('다시 신청')&&friendManage.decision==='chosen'&&friendManage.proof==='legacy','친구 요청 수락·거절·취소·재신청·삭제');
-  check(friendLetter.title==='친구 편지'&&friendLetter.note.includes('다른 섬')&&friendLetter.note.includes('섬 전체로 보내지 않는다')&&friendLetter.note.includes('기록으로 남기지 않는다')&&friendLetter.note.includes('우체통이 없어도 보낼 수 있고')&&friendLetter.screens.length===0,'친구 편지는 섬 전체와 분리·기록 없이 확인 후 삭제·받는 섬 우체통 조건 없음');
+  const friendAdd=data.features.find(f=>f.id==='I01'),friendManage=data.features.find(f=>f.id==='I02'),friendChat=data.features.find(f=>f.id==='I09');
+  check(friendAdd.decision==='chosen'&&friendAdd.proof==='pending'&&friendAdd.action.includes('내 뗏목')&&friendAdd.note.includes('수락해야'),'친구 요청은 내 뗏목·상대 수락, 현재 정책 채택·연결 전');
+  check(['수락','거절','취소','삭제'].every(word=>friendManage.action.includes(word))&&friendManage.note.includes('재신청')&&friendManage.decision==='chosen'&&friendManage.proof==='pending','친구 요청 수락·거절·취소·재신청·삭제');
+  check(friendChat.note.includes('실시간 채팅방')&&friendChat.note.includes('양쪽에서 사라지고')&&friendChat.note.includes('우체통이 없어도')&&friendChat.screens.length===0,'친구 편지는 비동기·열람 종료 후 삭제·수신 섬 우체통 불필요');
   for(const f of data.features){
     check(Boolean(data.decisions[f.decision]&&data.proofs[f.proof]),f.id+' 상태 유효');
     check(f.sources.length>0&&f.sources.every(s=>data.sources[s]),f.id+' 근거 키 유효');
@@ -95,7 +96,7 @@ function check(ok,message){assert.ok(ok,message);checks++;}
       await page.locator('#feature-N06 summary').click();
       const raftNote=await page.locator('#feature-N06 .feature-note').textContent();
       check(raftNote.includes('기본 뗏목')&&!raftNote.includes('돛단배'),'모두 같은 기본 뗏목, 배 단계 없음');
-      check(await page.locator('#feature-N06 a[href="revisions/07-personal-shared-decoration.html"]').count()===1,'기존 07 뗏목 기획 연결 유지');
+      check(await page.locator('#feature-N06 a[href="specs/art-character-rules.md"]').count()===1,'현재 뗏목·낚시섬 아트 규칙 연결');
       await noOverflow();
       await page.locator('#search').fill('검증용존재하지않는기능');
       check(await rows().count()===0,'검색 0개');
@@ -147,7 +148,7 @@ function check(ok,message){assert.ok(ok,message);checks++;}
       await context.close();
     }
     const context=await browser.newContext();
-    for(const file of ['feature-inventory.html','feature-inventory-notes.md','eli5-journey.html','rig.html','walk.html','revisions/04-island-growth.html','revisions/07-personal-shared-decoration.html','growth-decoration-revision-20260911.md','story-loop-plan.md','policy-2026-09-14.md']){
+    for(const file of ['feature-inventory.html','feature-inventory-notes.md','eli5-journey.html','rig.html','walk.html','revisions/04-island-growth.html','revisions/07-personal-shared-decoration.html','growth-decoration-revision-20260911.md','story-loop-plan.md','policy-2026-09-14.md','specs/art-character-rules.md','specs/rest-screen-spec.md','specs/town-hall-modal-spec.md']){
       const response=await context.request.get(base+'/'+file);check(response.ok(),file+' 링크 응답');
     }
     
