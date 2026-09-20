@@ -18,7 +18,7 @@
 
 ## 우리 섬과 건물
 
-- 빈 섬과 성장 단계는 `assets/gachisup-r61/backgrounds/island/`, 건물은 `assets/gachisup-r61/buildings/`의 확정 자산을 기준으로 한다.
+- 빈 섬과 성장 단계는 `assets/gachisup-r61/island/`, 건물은 `assets/gachisup-r61/buildings/`의 확정 자산을 기준으로 한다.
 - 도서관은 세이지 녹색 지붕의 팔각형 2층 책탑이다.
 - 회관은 테라코타 지붕, 상점은 파란 줄무늬 차양, 전망대는 망원경이 달린 크림색 돔 지붕 탑이다.
 - 공동 음악 장치의 이름과 외형은 나팔이 달린 `축음기`로 통일한다. `꽃나팔 방송기`는 이전안이다.
