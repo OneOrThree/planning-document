@@ -8,7 +8,7 @@
  --text-xs:12px;--text-sm:14px;--text-md:16px;--text-lg:20px;--text-xl:26px;--text-display:32px;
  --space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:20px;--space-6:24px;--space-8:32px;--space-10:40px;--space-12:48px;--space-16:64px;
  --radius-button:8px;--radius-card:12px;--radius-sheet:20px;--tap-min:44px;--stroke:1px;--duration-fast:140ms;--duration-normal:220ms;--ease:cubic-bezier(.2,.6,.3,1);
- --scene-day:url("../../backgrounds/island/base/day.png");--scene-night:url("../../backgrounds/island/base/night.png");--cat:url("../../characters/cat/black/idle.png");--dog:url("../../characters/dog/idle.png");--scarf:url("../../characters/cat/black/idle.png");--clothes:none;
+ --scene-day:url("../../island/base/day.png");--scene-night:url("../../island/base/night.png");--cat:url("../../characters/cat/black/idle.png");--dog:url("../../characters/npc/dog.png");--scarf:url("../../characters/cat/black/idle.png");--clothes:none;
  color-scheme:light;
 }
 html[data-theme=night]{--canvas:#1d2521;--surface:#26302a;--soft:#313c33;--field:#212b25;--ink:#f0f0e4;--muted:#b6c2b0;--line:#424e43;--control-line:#81917e;--primary:#bed3b4;--primary-hover:#d0e1c7;--on-primary:#23382a;--selected:#354837;--danger:#f1ac98;--danger-soft:#493b33;--letter:#393d2e;--letter-ink:#e8ddbb;color-scheme:dark}

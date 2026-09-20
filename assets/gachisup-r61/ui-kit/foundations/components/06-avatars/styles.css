@@ -1,11 +1,11 @@
 /* 캐릭터와 아바타 · UI별 스타일 */
-.avatar{display:inline-block;width:44px;height:54px;position:relative;flex:0 0 auto;vertical-align:middle}.sprite{display:block;width:100%;height:100%;background-size:400% 200%;background-repeat:no-repeat;background-position:0 0}.cat-base{background-image:url("../../../../characters/cat/black/idle.png")}.dog-base{background-image:url("../../../../characters/dog/idle.png")}.cat-scarf{background-image:url("../../../../characters/cat/black/idle.png")}.pose-read{background-position:100% 0}.pose-music{background-position:0 100%}.avatar.small{width:32px;height:42px}.avatar.medium{width:64px;height:84px}.avatar.large{width:110px;height:146px}.avatar-stage{display:flex;justify-content:space-evenly;gap:20px;padding:12px 0;background:var(--soft);border-radius:12px;margin-bottom:16px}.avatar-sizes{min-height:146px;align-items:end}
+.avatar{display:inline-block;width:44px;height:54px;position:relative;flex:0 0 auto;vertical-align:middle}.sprite{display:block;width:100%;height:100%;background-size:400% 200%;background-repeat:no-repeat;background-position:0 0}.cat-base{background-image:url("../../../../characters/cat/black/idle.png")}.dog-base{background-image:url("../../../../characters/npc/dog.png")}.cat-scarf{background-image:url("../../../../characters/cat/black/idle.png")}.pose-read{background-position:100% 0}.pose-music{background-position:0 100%}.avatar.small{width:32px;height:42px}.avatar.medium{width:64px;height:84px}.avatar.large{width:110px;height:146px}.avatar-stage{display:flex;justify-content:space-evenly;gap:20px;padding:12px 0;background:var(--soft);border-radius:12px;margin-bottom:16px}.avatar-sizes{min-height:146px;align-items:end}
 .cat-base.pose-read,.dog-base.pose-read{clip-path:inset(0 0 0 4.6875%)}.cat-scarf.pose-read{clip-path:polygon(9.375% 0,100% 0,100% 100%,0 100%,0 58.594%,9.375% 58.594%)}
 
 
 /* Current R61 single-frame assets replace the legacy 4x2 sheet. */
 .sprite{background-size:contain;background-position:center!important}
-.cat-base.pose-read,.cat-scarf.pose-read{background-image:url('../../../../characters/cat/black/poses/reading.png');clip-path:none}
-.dog-base.pose-read{background-image:url('../../../../characters/cat/black/poses/reading.png');clip-path:none}
-.cat-base.pose-music,.cat-scarf.pose-music{background-image:url('../../../../characters/cat/black/poses/guitar.png')}
-.dog-base.pose-music{background-image:url('../../../../characters/cat/black/poses/guitar.png')}
+.cat-base.pose-read,.cat-scarf.pose-read{background-image:url('../../../../characters/cat/black/reading.png');clip-path:none}
+.dog-base.pose-read{background-image:url('../../../../characters/cat/black/reading.png');clip-path:none}
+.cat-base.pose-music,.cat-scarf.pose-music{background-image:url('../../../../characters/cat/black/guitar.png')}
+.dog-base.pose-music{background-image:url('../../../../characters/cat/black/guitar.png')}
