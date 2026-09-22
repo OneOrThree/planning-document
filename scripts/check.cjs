@@ -57,7 +57,7 @@ for (const [key,route] of Object.entries(sandbox.window.GachisupJourneyRoutes)) 
 const apiSpec = fs.readFileSync(path.join(root,'docs/api/v1/gromo-api-spec.md'),'utf8');
 const apiKeys = [...apiSpec.matchAll(/^#### ([a-z][a-z0-9-]*) · /gm)].map(match=>match[1]);
 check(/^버전: [^\n]*proposed[^\n]*$/m.test(apiSpec), 'API v1은 협의안 버전으로 표시');
-check(apiKeys.length === 98, 'API v1 기능 계약 98개 유지');
+check(apiKeys.length === 101, 'API v1 기능 계약 101개 유지');
 check(new Set(apiKeys).size === apiKeys.length, 'API v1 기능 계약 키 중복');
 for (const marker of ['## 문서 상태','### 공통 오류 코드 제안','### 건물별 권장 읽기 모델','## 미정 정책']) check(apiSpec.includes(marker), 'API v1 필수 구분 누락: '+marker);
 const journeyV5Source = fs.readFileSync(path.join(root,'docs/user-journey/v5/user-journey.md'),'utf8');
