@@ -31,12 +31,12 @@ const base = process.env.BASE_URL || 'http://127.0.0.1:4173/';
         assert.equal(await page.locator('.api-header .back-link').getAttribute('href'),'../../../feature-inventory.html?tab=growth','API 문서 기획 화면 복귀 링크');
         assert.equal(await page.locator('.api-header a[aria-current=page]').innerText(),'API-스펙','API 문서 현재 위치 표시');
         assert.equal(await page.locator('body > aside').count(),0,'API 문서 고정 포털 사이드바 제거');
-        assert.equal(await page.locator('.endpoint').count(),98,'API 기능 계약 수');
+        assert.equal(await page.locator('.endpoint').count(),101,'API 기능 계약 수');
         assert((await page.locator('body').innerText()).includes('미정 정책'),'API 미정 정책 표시');
         await page.locator('#search').fill('게스트 회원 전환');
         assert((await page.locator('.endpoint:visible').count())>0,'API 검색');
         await page.locator('#clear').click();
-        assert.equal(await page.locator('.endpoint:visible').count(),98,'API 검색 초기화');
+        assert.equal(await page.locator('.endpoint:visible').count(),101,'API 검색 초기화');
       }
       if(route==='docs/ia/v5/index.html') {
         assert((await page.title()).includes('IA v5'),'IA v5 제목');
