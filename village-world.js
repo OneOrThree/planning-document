@@ -148,12 +148,10 @@ function drawCrossings() {
 }
 
 function inLand(x, y) {
-  return [
-    land,
-    crossings.dock.polygon,
-    crossings.bridge.polygon,
-    crossings.grove,
-  ].some((p) => insidePolygon(x, y, p));
+  const polygons = [land, crossings.grove];
+  if (state.layers.buildings)
+    polygons.push(crossings.dock.polygon, crossings.bridge.polygon);
+  return polygons.some((p) => insidePolygon(x, y, p));
 }
 const visible = (o) => state.layers[kinds[o.kind].layer];
 function blocked(o, x, y, pad = 10) {
@@ -988,7 +986,7 @@ function render() {
     }
   });
   if (state.mode !== "explode") {
-    drawCrossings();
+    if (state.layers.buildings) drawCrossings();
     if (state.layers.roads) ctx.drawImage(roadCanvas, 0, 0);
     if (state.collision) {
       nav.forEach((v, i) => {
