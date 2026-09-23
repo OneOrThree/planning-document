@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="ko">
+  <meta charset="utf-8" /><meta
+    name="viewport"
+    content="width=device-width,initial-scale=1"
+  /><title>같이숲 · 부드러운 숲길</title
+  ><link rel="stylesheet" href="village-world.css" />
+  <header>
+    <div>
+      <div class="eyebrow">GACHISUP / WORLD STUDY 04</div>
+      <h1>발걸음이 쌓인, 작은 숲길</h1>
+    </div>
+    <p>가느다란 길 · 스며드는 가장자리 · 흙의 결</p>
+  </header>
+  <main>
+    <section>
+      <div class="stage-tabs">
+        <button data-stage="bare">① 빈 지형</button
+        ><button data-stage="green">② 풀과 꽃</button
+        ><button data-stage="village" class="active">③ 마을 완성</button>
+      </div>
+      <div class="toolbar">
+        <div class="tabs">
+          <button data-mode="play" class="active">산책하기</button
+          ><button data-mode="grid">64px 경계</button
+          ><button data-mode="explode">조각 펼치기</button>
+        </div>
+        <select id="time" aria-label="시간대">
+          <option value="day">☀ 낮</option>
+          <option value="night">☾ 밤 · 색감 실험</option>
+        </select>
+      </div>
+      <div class="world-wrap">
+        <div id="loading">빈 지형에 숲을 올리는 중…</div>
+        <canvas
+          id="world"
+          width="1536"
+          height="1024"
+          tabindex="0"
+          aria-label="소품을 배치하고 고양이를 움직이는 섬"
+        ></canvas>
+        <div class="scene-tag" id="scene-tag">64 × 64 px · 384개 타일</div>
+        <div class="hint" id="hint">땅을 눌러 이동 · 방향키 / WASD</div>
+      </div>
+      <div class="below">
+        <span id="message" role="status"
+          >‘① 빈 지형’부터 차례로 눌러 레이어를 비교해 보세요.</span
+        ><label class="zoom"
+          >확대
+          <input
+            id="zoom"
+            aria-label="화면 확대"
+            type="range"
+            min="1"
+            max="2"
+            step=".1"
+            value="1"
+          /><span id="zoom-value">1.0×</span></label
+        >
+      </div>
+      <div class="dpad">
+        <span></span><button data-key="ArrowUp" aria-label="위로">↑</button
+        ><span></span
+        ><button data-key="ArrowLeft" aria-label="왼쪽으로">←</button
+        ><button data-key="ArrowDown" aria-label="아래로">↓</button
+        ><button data-key="ArrowRight" aria-label="오른쪽으로">→</button>
+      </div>
+    </section>
+    <aside>
+      <section class="section">
+        <div class="eyebrow">01 / PLACE OBJECTS</div>
+        <h2 style="margin-top: 8px">내 손으로 배치하기</h2>
+        <div class="palette" id="palette"></div>
+        <div class="edit-bar">
+          <button id="edit">배치 모드 켜기</button
+          ><button id="delete" disabled>선택 삭제</button
+          ><button id="restore">배치 초기화</button>
+        </div>
+        <label class="row layer-row"
+          >32px에 맞춰 놓기<input id="snap" type="checkbox" checked
+        /></label>
+        <div id="selection">
+          소품을 고른 뒤 빈 곳을 누르면 추가됩니다.<br />배치 모드에서는 기존
+          소품을 끌어 옮길 수 있어요.
+        </div>
+      </section>
+      <section class="section">
+        <div class="eyebrow">02 / INDEPENDENT LAYERS</div>
+        <h2 style="margin-top: 8px">하나씩 올려보기</h2>
+        <div class="layers">
+          <label class="row layer-row"
+            >흙길 · 마당<input
+              data-layer="roads"
+              type="checkbox"
+              checked /></label
+          ><label class="row layer-row"
+            >풀<input data-layer="grass" type="checkbox" checked /></label
+          ><label class="row layer-row"
+            >꽃<input data-layer="flowers" type="checkbox" checked /></label
+          ><label class="row layer-row"
+            >나무 · 수풀<input
+              data-layer="trees"
+              type="checkbox"
+              checked /></label
+          ><label class="row layer-row"
+            >모닥불<input data-layer="fire" type="checkbox" checked /></label
+          ><label class="row layer-row"
+            >건물 · 시설<input
+              data-layer="buildings"
+              type="checkbox"
+              checked /></label
+          ><label class="row layer-row"
+            >고양이<input data-layer="cat" type="checkbox" checked
+          /></label>
+        </div>
+        <label class="row layer-row"
+          >바람 · 불꽃 애니메이션<input
+            id="effects"
+            type="checkbox"
+            checked /></label
+        ><label class="row layer-row"
+          >이동 가능 영역<input id="collision" type="checkbox"
+        /></label>
+        <div class="controls">
+          <button id="auto">자동 산책</button
+          ><button id="reset">고양이 처음 위치</button>
+        </div>
+        <div class="stat">
+          <div><small>보이는 오브젝트</small><strong id="count">—</strong></div>
+          <div><small>고양이 위치</small><strong id="position">—</strong></div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="eyebrow">03 / TERRAIN TILES</div>
+        <label class="row"
+          >지형 타일 크기<select id="tile-size">
+            <option value="32">32 px · 1,536개</option>
+            <option value="64" selected>64 px · 384개</option>
+            <option value="128">128 px · 96개</option>
+          </select></label
+        >
+        <div class="controls">
+          <button id="export">타일 + 소품 + 배치 ZIP ↓</button
+          ><button id="save">배치 JSON ↓</button>
+        </div>
+        <p class="note">
+          길은 별도 곡선 레이어와 32px 길 정보로 보관해요. 건물을 옮기면 문 앞
+          샛길도 다시 연결돼요.
+        </p>
+      </section>
+    </aside>
+  </main>
+  <div class="footer">
+    <a href="index.html">디자인 작업실</a> ·
+    <a href="docs/village-world/README.md">출처·검토 범위·작업 로그</a
+    ><br />검토용 v4 · 앱 개발 미리보기 연결 · 해안과 바다는 지형에 포함.
+    풀·꽃·나무·모닥불·건물은 독립 소품. 충돌 범위와 밤 색감은 실험용입니다.
+    수정은 메모리에만 유지되니 필요한 배치는 다운로드하세요.
+  </div>
+  <script id="asset-data" type="application/json">
+    {
+      "terrain": "assets/village-world/terrain.png",
+      "atlas": "assets/village-world/atlas.png",
+      "hall": "assets/village-world/hall.png",
+      "notice-board": "assets/village-world/notice-board.png",
+      "gramophone": "assets/village-world/gramophone.png",
+      "library": "assets/village-world/library.png",
+      "mailbox": "assets/village-world/mailbox.png",
+      "observatory": "assets/village-world/observatory.png",
+      "shop": "assets/village-world/shop.png",
+      "idle": "assets/village-world/idle.png",
+      "walk-0": "assets/village-world/walk-0.png",
+      "walk-1": "assets/village-world/walk-1.png",
+      "walk-2": "assets/village-world/walk-2.png",
+      "walk-3": "assets/village-world/walk-3.png",
+      "walk-4": "assets/village-world/walk-4.png",
+      "walk-5": "assets/village-world/walk-5.png",
+      "dock-back": "assets/village-world/dock-back.png",
+      "dock-front": "assets/village-world/dock-front.png",
+      "bridge": "assets/village-world/bridge.png"
+    }
+  </script>
+  <script src="village-world.js"></script>
+</html>
