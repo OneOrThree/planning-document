@@ -32,7 +32,9 @@ const base=((process.env.BASE_URL || 'http://127.0.0.1:4173/').replace(/\/$/, ''
   check(!JSON.stringify(data.groups).includes('마을 포인트'),'현행 기능·영역 설명에 마을 포인트 없음');
   check(feature('F13').note.includes('완료 도장')&&feature('F13').note.includes('건설하기')&&feature('F13').note.includes('일일 초기화하지 않아요')&&feature('D22').note.includes('1분(60초)')&&feature('D22').note.includes('하루 최대 480마리'),'건물 건설 퀘스트·1분 1마리·하루 최대 480마리 기준');
   check(feature('F03').note.includes('물고기 10마리')&&feature('F04').note.includes('물고기 10마리')&&feature('F03').note.includes('대상 주민 수×5마리')&&feature('F04').note.includes('대상 주민 수×5마리')&&feature('L05').title==='일일 퀘스트 물고기 보상','집중·스크린타임 일일 퀘스트 보상 동일');
-  check(feature('H01').title==='도서관 기록·조회 범위'&&feature('H01').note.includes('전체 공개 고정')&&feature('M03').note.includes('일요일 00시')&&feature('M03').note.includes('전체 주민 수'),'도서관 전체 공개·섬 간 랭킹 공식');
+  check(feature('H01').title==='도서관 기록·조회 범위'&&feature('H01').note.includes('같은 섬 주민 전체')&&feature('H01').note.includes('다른 섬 방문자는 도서관을 이용하지 않는다')&&feature('M03').note.includes('일요일 00시')&&feature('M03').note.includes('전체 주민 수'),'도서관 같은 섬 전체 공개·방문자 비공개·섬 간 랭킹 공식');
+  check(feature('H10').note.includes('하루 총 스크린타임만 같은 섬 주민 전체')&&feature('H10').note.includes('앱별 사용 시간')&&feature('H12').note.includes('다른 섬 방문자는 조회할 수 없다')&&feature('I04').note.includes('친구라는 이유만으로')&&feature('O08').decision==='chosen'&&feature('O08').proof==='pending','사용량·물고기·친구 공개 범위와 개인정보 동의 결정/구현 상태 분리');
+  check(feature('A03').decision==='chosen'&&feature('A03').title==='별도 신규 앱 안내'&&feature('O02').decision==='chosen'&&feature('O02').note.includes('단일 진실원'),'Catus 별도 신규 앱·앱별 사용시간 서버 저장 결정');
   check(feature('L09').decision==='chosen'&&feature('L18').decision==='chosen'&&feature('D21').world.includes('하트뿅뿅'),'주민 누구나 공동 외양·개인 의상 유지·이모티콘 5종');
   check(feature('D12').note.includes('이번 휴식 경과 시간')&&feature('D07').note.includes('현재 음악')&&feature('B06').note.includes('공개 섬 둘러보기에는 초대 코드 입력을 두지 않아요'),'휴식 그룹원·현재 음악 선택·초대 코드 진입 위치');
   for(const f of data.features.filter(f=>f.document))check(fs.existsSync(path.join(__dirname,f.document)),f.id+' 최신 문서 링크');
