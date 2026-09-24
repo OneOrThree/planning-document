@@ -503,33 +503,48 @@ function paintRoads() {
       const wear = ease(Math.max(0, Math.min(1, (-d + 2) / 20))),
         warm = fieldNoise(x, y, 27, 91) - 0.5;
       const j = (y * W + x) * 4,
-        variation = broad * 18 + mottle * 12 + grain * 9;
-      pixels[j] = 218 + wear * 13 + variation + warm * 3;
-      pixels[j + 1] = 187 + wear * 13 + variation * 0.87;
-      pixels[j + 2] = 139 + wear * 14 + variation * 0.68 - warm * 3;
+        variation = broad * 18 + mottle * 12 + grain * 11;
+      pixels[j] = 230 + wear * 12 + variation + warm * 3;
+      pixels[j + 1] = 201 + wear * 13 + variation * 0.87;
+      pixels[j + 2] = 157 + wear * 15 + variation * 0.68 - warm * 3;
       pixels[j + 3] = Math.round(
         coverage * (0.93 + wear * 0.035 + mottle * 0.025) * 255,
       );
     }
   g.clearRect(0, 0, W, H);
   g.putImageData(image, 0, 0);
-  // 드문드문 놓인 작은 돌과 물감 자국. 중앙은 이동을 읽기 쉽도록 비워둔다.
+  // 다져진 밝은 흙에 2~4px 자갈을 드문드문 섞는다. 고정 노이즈로 매번 같은 위치에 놓는다.
   for (let y = 3; y < H - 3; y += 7)
     for (let x = 3; x < W - 3; x += 7) {
-      const d = field[y * W + x],
-        chance = hashNoise(x, y, 61);
-      if (d > -0.5 || d < -17 || chance > 0.12) continue;
-      const px = x + hashNoise(x, y, 2) * 4,
-        py = y + hashNoise(x, y, 3) * 4,
-        r = 0.85 + hashNoise(x, y, 5) * 1.3;
-      g.fillStyle = "#ae926158";
+      if (hashNoise(x, y, 61) > 0.085) continue;
+      const px = x + (hashNoise(x, y, 2) - 0.5) * 4,
+        py = y + (hashNoise(x, y, 3) - 0.5) * 4,
+        r = 1 + hashNoise(x, y, 5) * 1.15;
+      if (field[Math.round(py) * W + Math.round(px)] > -r - 1.5) continue;
+      g.save();
+      g.translate(px, py);
+      g.rotate((hashNoise(x, y, 83) - 0.5) * Math.PI);
+      g.fillStyle = "#9f8e7338";
       g.beginPath();
-      g.ellipse(px, py + 0.7, r * 1.2, r * 0.55, -0.2, 0, Math.PI * 2);
+      g.ellipse(0.2, 0.65, r * 1.08, r * 0.62, 0, 0, Math.PI * 2);
       g.fill();
-      g.fillStyle = "#fff0c0a0";
+      g.fillStyle = hashNoise(x, y, 84) > 0.55 ? "#bfb5a3c2" : "#d7c9afda";
       g.beginPath();
-      g.ellipse(px, py, r, r * 0.5, -0.2, 0, Math.PI * 2);
+      g.moveTo(-r, 0);
+      g.lineTo(-r * 0.5, -r * 0.63);
+      g.lineTo(r * 0.46, -r * 0.51);
+      g.lineTo(r, r * 0.12);
+      g.lineTo(r * 0.18, r * 0.64);
+      g.lineTo(-r * 0.68, r * 0.45);
+      g.closePath();
       g.fill();
+      g.strokeStyle = "#fff0d3b5";
+      g.lineWidth = 0.55;
+      g.beginPath();
+      g.moveTo(-r * 0.53, -r * 0.48);
+      g.lineTo(r * 0.4, -r * 0.39);
+      g.stroke();
+      g.restore();
     }
   // 가장자리에 작은 잔디 결을 흩뿌려 흙과 바닥이 섞이게 한다.
   for (let y = 4; y < H - 5; y += 6)
@@ -623,7 +638,9 @@ function clearRoadCenters() {
 function roadData() {
   return {
     surface: {
-      version: 4,
+      version: 5,
+      palette: "light-warm-earth",
+      gravel: "sparse-2-4px",
       render: "distance-field-watercolor",
       edge: "irregular-feather",
       seed: 919,
