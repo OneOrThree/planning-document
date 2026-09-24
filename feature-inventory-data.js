@@ -11,8 +11,8 @@
     decorationRevision:{name:'07 내 취향은 뗏목에, 우리 살림은 섬에 · 사용자 수정본',path:'revisions/07-personal-shared-decoration.html',basis:'개인/공동 꾸미기·배 단계·고양이 플레이어·공동 음원'},
     revisionNotes:{name:'04·07 반영·충돌·피드백 메모',path:'growth-decoration-revision-20260911.md',basis:'최신 우선순위·미정 사항·Plannotator 피드백과 구현 경계'},
     focusRevision:{name:'사용자 집중·휴식 수정본 · 2026-09-11',path:'focus-revision-20260911.md',basis:'제공한 index-standalone.html의 TO-BE 18개 기능·4개 가치 묶음. 기획 반영이며 구현 완료 아님'},
-    prd:{name:'같이숲 제품 설계',path:'references/legacy-design/prd.md',basis:'제품 범위·역할·기존 결정 D1~D36'},
-    policy:{name:'같이숲 정책',path:'references/legacy-design/policy.md',basis:'재화·권한·퀘스트·소통·소속·랭킹'},
+    prd:{name:'Catus 제품 설계',path:'references/legacy-design/prd.md',basis:'제품 범위·역할·기존 결정 D1~D36'},
+    policy:{name:'Catus 정책',path:'references/legacy-design/policy.md',basis:'재화·권한·퀘스트·소통·소속·랭킹'},
     questions:{name:'미결 장부',path:'references/legacy-design/open-questions.md',basis:'이관·수치·개인 차단·미룬 기능'},
     ia:{name:'현재 IA v5',path:'docs/ia/v5/ia.md',basis:'안정 ID를 유지한 현재 화면·기능 구조와 권한·해금 기준'},
     coverage:{name:'IA 시연 범위',path:'ia-coverage.md',basis:'실제 인증·푸시·결제·OS 차단·원격 접속은 미연결'},
@@ -30,7 +30,8 @@
     account:{name:'gromo 계정 화면',repository:'phone',path:'app/app-dev/src/screens/settings/AccountScreen.tsx',basis:'로그아웃·연동 해제·회원 탈퇴·소유 그룹 위임 안내'},
     pin:{name:'gromo 친구 고정',repository:'phone',path:'app/app-dev/src/screens/league/usePinned.ts',basis:'친구 고정·해제와 재조회'},
     friends:{name:'gromo 친구 목록',repository:'phone',path:'app/app-dev/src/screens/league/useFriends.ts',basis:'친구 및 받은 요청 조회'},
-    notes:{name:'이번 목록의 범위·판단',path:'feature-inventory-notes.md',basis:'이 대화의 제안·후보와 분류 기준. 새 기능 승인 문서가 아님'}
+    notes:{name:'이번 목록의 범위·판단',path:'feature-inventory-notes.md',basis:'이 대화의 제안·후보와 분류 기준. 새 기능 승인 문서가 아님'},
+    legalDocs:{name:'Catus 법률 문서 정본 후보',path:'docs/legal/README.md',basis:'한국어 개인정보처리방침·이용약관 정본 후보와 앱 반영·공개 체크리스트. 운영값 확인·앱 구현 전'}
   };
   const decisions={base:'기존 설계',chosen:'사용자 결정',proposal:'제안·미정',review:'승계 검토',later:'보류·비목표'};
   const proofs={local:'로컬 시연',mock:'시안만',illustration:'설명만',legacy:'원앱 참조',studio:'작업실',pending:'연결 전'};
@@ -41,7 +42,7 @@
   group('start','처음 시작·계정','선착장 · 이름표','섬을 만나기 전, 계정과 나를 준비해요.',{sources:['prd','ia','routes']},[
     ['A01','첫 시작 안내','앱의 목적을 알고 시작한다.','선착장에 도착한 여행자의 첫 장면.',{screens:['on1'],proof:'mock'}],
     ['A02','게스트 시작·소셜 로그인','게스트로 시작하거나 플랫폼·배포 구성에서 제공하는 소셜 로그인 한 가지로 회원 계정에 들어온다.','출항을 막지 않는 게스트 시작과 명확한 로그인 화면.',{screens:['on2'],decision:'chosen',proof:'pending',sources:['current0914'],note:'iOS 카카오 구성은 카카오·Apple·Google·게스트, iOS LINE 구성은 LINE·Apple·Google·게스트예요. Android 카카오 구성은 카카오·Google·게스트, Android LINE 구성은 LINE·Google·게스트예요. 게스트도 고양이 선택·섬·집중까지 이용하고 친구 추가·편지 발송·상점 구매에서 회원 전환을 요청해요. 앱 삭제·기기 변경·인증 정보 상실 시 게스트 복구를 보장하지 않으므로 중요한 기록 전 회원 전환을 안내해요. 현재 웹 시연은 실제 인증을 하지 않아요.'}],
-    ['A03','별도 신규 앱 안내','Catus가 기존 GroMo의 업데이트나 계정 이전이 없는 별도 앱임을 구분한다.','새 여행을 시작하는 Catus 안내.',{screens:['on3'],decision:'chosen',proof:'pending',sources:['ia','questions'],note:'기존 GroMo 계정·기록·자산을 이전하지 않으므로 기존 사용자 재동의 대상은 없어요. 화면이 꼭 필요한지는 구현 범위에서 정하되 자동 승계는 제공하지 않아요.'}],
+    ['A03','별도 신규 앱 안내','Catus가 기존 GroMo의 업데이트나 계정 이전이 없는 별도 앱임을 구분한다.','새 여행을 시작하는 Catus 안내.',{screens:['on3'],decision:'chosen',proof:'pending',sources:['ia','questions'],note:'기존 GroMo 계정·기록·자산을 이전하지 않아요. 기존 사용자 고지·재동의는 GROMO-1869 완료조건에서 삭제하며 자동 승계도 제공하지 않아요.'}],
     ['A04','닉네임·첫 캐릭터 이름','내 이름을 입력하고 검증한다.','캐릭터의 이름표 달기.',{screens:['on4','pr1']}],
     ['A05','첫 소속 선택','섬 만들기와 기존 섬 참여 중 고른다.','새 깃발 또는 초대장 고르기.',{screens:['on5'],note:'개인 월드가 따로 생기지 않아요. 혼자 시작해도 하나의 섬이에요.'}],
     ["A06","내 배의 내 정보","내 배에서 닉네임·프로필·메인 섬·연동 계정 정보를 관리한다.","내 배 → 내 정보.",{"note":"개인 정보·설정·보유품 꾸미기와 친구 검색·추가·목록 관리를 내 배에 둔다. 마을 운영·통계·건설·집중 시작을 모으는 전체 메뉴로 확장하지 않는다. 모든 사용자는 메인 섬을 하나 가지며, 첫 섬을 만들거나 가입하면 그 섬이 메인 섬이 되고 내 정보에서 내가 속한 섬 중 하나로 바꿀 수 있다. 메인 섬은 물고기·집중 기록 적립과 랭킹에 영향을 주지 않는다.","decision":"chosen","proof":"pending","sources":["current0914","growthRevision","revisionNotes"],"screens":["pr1"],"document":"revisions/04-island-growth.html"}],
@@ -187,7 +188,7 @@
     ['K05','방장 위임','편집창에서 본인을 제외한 주민을 고르고 확인한 뒤 방장을 넘긴다.','섬 열쇠를 넘기기.',{decision:'chosen',proof:'pending',sources:['current0914','hallSpec'],document:'specs/town-hall-modal-spec.md',note:'주민이 남은 섬의 방장은 탈퇴 전에 위임해야 해요. 방장 혼자면 위임을 비활성화해요.'}],
     ['K06','섬 탈퇴·방장 1인 섬 삭제','역할과 남은 주민 수에 맞는 탈퇴 결과와 삭제 범위를 확인한다.','소속 깃발을 내리고 남은 섬 또는 첫 섬 선택으로 이동하기.',{decision:'chosen',proof:'pending',sources:['current0914','hallSpec'],document:'specs/town-hall-modal-spec.md',note:'주민은 마지막 소속 섬에서도 탈퇴할 수 있어요. 주민이 남은 방장은 먼저 위임해요. 혼자 남은 방장은 파괴적 확인 뒤 섬 공동 데이터를 삭제하고 탈퇴할 수 있어요. 다른 소속이 있으면 남은 메인 섬으로, 마지막 섬이면 04 섬 선택 화면으로 가며 계정·고양이·닉네임·친구·개인 보유품·개인 집중 기록은 유지해요.'}],
     ['K07','그룹장 기록 삭제 권한','삭제 대상과 권한을 확인한다.','회관에서 기록 삭제를 명확하게 확인.',{proof:'pending',screens:[],sources:['policy'],note:'기존 설계에는 전권이 있지만, 실제 데이터 삭제·영향 범위는 별도 구현이 필요해요.'}],
-    ['K08','공지 작성 권한 위임','멤버에게 공지 권한을 줄지 검토한다.','특정 주민에게 게시판 관리 권한 주기.',{decision:'review',proof:'legacy',screens:[],sources:['routeTypes','policy'],note:'원앱에는 멤버별 공지 권한이 있어요. 같이숲의 방장 전용 정책과 충돌해 결정이 필요해요.'}],
+    ['K08','공지 작성 권한 위임','멤버에게 공지 권한을 줄지 검토한다.','특정 주민에게 게시판 관리 권한 주기.',{decision:'review',proof:'legacy',screens:[],sources:['routeTypes','policy'],note:'원앱에는 멤버별 공지 권한이 있어요. Catus의 방장 전용 정책과 충돌해 결정이 필요해요.'}],
     ['K09','섬별 상태·권한 분리','섬을 바꿔도 지갑·역할·자료가 섞이지 않는다.','각 섬의 회관·금고는 독립된 살림.',{sources:['coverage','complete']}]
   ]);
   group('economy','성장·재화·구매·배치','섬 물고기 · 건설 퀘스트 · 상점 · 내 배','재화는 섬 소유 물고기 하나예요. 건물 건설 퀘스트로 시설을 열고, 상점에서 구매한 물건은 따로 적용해요.',{sources:['policy','ia','polish']},[
@@ -229,7 +230,7 @@
     ['O05','접속·자리 비움 상태','연결이 끊긴 사람을 계속 집중 중으로 표시하지 않는다.','활동 중·자리 비움·확인 불가의 다른 표시.',{decision:'proposal',note:'1분 갱신 설계와 자리 비움 임계값 제안이 있어요. 웹 예시 폴링은 실제 presence가 아니에요.'}],
     ['O06','네트워크·저장 실패·재시도','저장되지 않은 작업과 복구 방법을 알려준다.','기록을 지우지 않는 실패 안내.',{proof:'local',sources:['coverage'],note:'로컬 저장 실패 처리는 있어요. 실제 오프라인 동기화·업로드 재시도는 별도예요.'}],
     ['O07','첨부 업로드·보관·삭제','공유 파일의 실제 수명과 접근을 관리한다.','자료함에서 원본과 보관 상태를 확인.',{decision:'chosen',proof:'pending',sources:['policy','complete'],note:'탈퇴 뒤 공유 게시물이 남으면 첨부파일도 작성자 연결을 끊어 남겨요. 게시물 삭제 시 첨부파일도 삭제하고 백업은 최대 7일 안에 만료해요. 개인정보가 든 남은 콘텐츠는 본인 확인 후 이메일 삭제 요청을 처리해요. 실제 저장소·검사·권한·삭제 배선은 검증이 필요해요.'}],
-    ['O08','개인정보·약관·동의','데이터 사용과 서비스 규칙을 항목별로 확인하고 선택 동의를 관리한다.','실제 문서 이름과 분리된 동의 화면.',{decision:'chosen',proof:'pending',sources:['routeTypes','current0914'],document:'onboarding-privacy-consent-2026-09-21.md',note:'만 14세 이상·약관·필수 개인정보·섬 기록 공개 확인·스크린타임·PostHog 일반 분석·Session Replay 동의를 구분해요. PostHog 처리는 모두 선택 동의 뒤에만 시작하고 거부해도 핵심 서비스를 이용할 수 있어요. 실제 문서·버전 이력·거부·철회 흐름은 아직 앱 구현 완료가 아니에요.'}],
+    ['O08','개인정보·약관·동의','데이터 사용과 서비스 규칙을 항목별로 확인하고 선택 동의를 관리한다.','실제 문서 이름과 분리된 동의 화면.',{decision:'chosen',proof:'pending',sources:['routeTypes','current0914','legalDocs'],document:'docs/legal/README.md',note:'한국어 개인정보처리방침·이용약관 정본 후보와 앱 반영 체크리스트를 작성했어요. 만 14세 이상·약관·필수 개인정보·섬 기록 공개 확인·스크린타임·PostHog 일반 분석·Session Replay 동의를 구분해요. 세 언어 정본 공개·문서 버전 이력·거부·철회 흐름은 아직 앱 구현 완료가 아니에요.'}],
     ['O09','언어·접근성','읽기와 조작에 필요한 환경을 정한다.','명확한 글자·터치·동작 줄이기.',{decision:'review',proof:'legacy',sources:['routeTypes','activity'],note:'원앱 표시 언어와 웹 동작 줄이기가 있어요. 섬 전체 접근성 검증은 별도예요.'}],
     ['O10','문의·버전·문제 안내','도움을 요청하고 앱 버전을 확인한다.','설정의 도움말과 문의.',{decision:'review',proof:'legacy',sources:['routeTypes']}]
   ]);

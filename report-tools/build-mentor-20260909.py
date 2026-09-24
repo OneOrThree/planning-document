@@ -19,8 +19,8 @@ M = 28
 CW = W - 2 * M
 INK, MUTED, LINE, ACCENT = map(HexColor, ["#303D38", "#657168", "#DDE1D7", "#497A70"])
 C = canvas.Canvas(str(OUT), pagesize=A4, pageCompression=1)
-C.setTitle("같이숲 디자인 작업 보고 | 2026.09.09")
-C.setAuthor("같이숲 프로젝트")
+C.setTitle("Catus 디자인 작업 보고 | 2026.09.09")
+C.setAuthor("Catus 프로젝트")
 C.setSubject("멘토링 검토용 - 실제 화면 캡처 중심, A4 5쪽")
 C.setViewerPreference("DisplayDocTitle", "true")
 DATA = json.loads((TMP / "captures.json").read_text())
@@ -55,7 +55,7 @@ def page(title,note):
     PAGE+=1
     C.bookmarkPage("p"+str(PAGE))
     C.addOutlineEntry(title,"p"+str(PAGE))
-    text("같이숲 / 디자인 작업 보고",M,18,8.5,MUTED)
+    text("Catus / 디자인 작업 보고",M,18,8.5,MUTED)
     text("2026.09.09",W-M-55,18,8.5,MUTED)
     text(title,M,35,16)
     text(note,M,58,8.3,MUTED)
@@ -143,7 +143,7 @@ C.save()
 reader=PdfReader(OUT)
 assert len(reader.pages)==5
 texts=[p.extract_text() for p in reader.pages]
-assert all("같이숲" in t and "\ufffd" not in t and "\u25a0" not in t for t in texts)
+assert all("Catus" in t and "\ufffd" not in t and "\u25a0" not in t for t in texts)
 assert len({i["name"] for i in IMAGES})==16
 manifest={"pdf":str(OUT),"pages":5,"bytes":OUT.stat().st_size,"images":IMAGES,"texts":texts,"captureChecks":DATA["checks"]}
 (TMP/"report-manifest.json").write_text(json.dumps(manifest,ensure_ascii=False,indent=2))

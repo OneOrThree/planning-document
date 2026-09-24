@@ -2,7 +2,7 @@
   "name": "planning-document",
   "version": "1.0.0",
   "private": true,
-  "description": "같이숲 기획 작업대와 디자인 프로토타입",
+  "description": "Catus 기획 작업대와 디자인 프로토타입",
   "engines": { "node": ">=22" },
   "scripts": {
     "dev": "node scripts/serve.cjs",

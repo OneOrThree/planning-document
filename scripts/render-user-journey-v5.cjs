@@ -72,7 +72,7 @@ const html = `<!doctype html>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#f7f8f4">
   <meta name="source-sha256" content="${sourceHash}">
-  <title>같이숲 — 사용자 여정 v5</title>
+  <title>Catus — 사용자 여정 v5</title>
   <link rel="icon" href="data:,">
   <link rel="stylesheet" href="../../../planning-tokens.css">
   <link rel="stylesheet" href="styles.css">
@@ -81,11 +81,11 @@ const html = `<!doctype html>
   <a class="skip" href="#journeys">사용자 여정으로 건너뛰기</a>
   <div class="shell">
     <header class="masthead">
-      <div class="identity"><a class="brand" href="../../../feature-inventory.html?tab=journey">같이숲</a><span>사용자 여정 v5</span></div>
+      <div class="identity"><a class="brand" href="../../../feature-inventory.html?tab=journey">Catus</a><span>사용자 여정 v5</span></div>
       <nav aria-label="관련 문서"><a href="../../../feature-inventory.html?tab=journey">기획 작업대</a><a href="../../ia/v5/">IA v5</a><a href="user-journey.md">Markdown 원본 ↗</a></nav>
     </header>
     <main>
-      <section class="hero" aria-labelledby="page-title"><div><p class="eyebrow">GROMO / R61 / VERSION 5</p><h1 id="page-title">${inline(title)}</h1></div><p>${inline(intro)}</p></section>
+      <section class="hero" aria-labelledby="page-title"><div><p class="eyebrow">Catus / R61 / VERSION 5</p><h1 id="page-title">${inline(title)}</h1></div><p>${inline(intro)}</p></section>
       <nav class="index" aria-label="사용자 여정 목차">${sections.map((section, index) => `<a href="#journey-${index + 1}"><span>${String(index + 1).padStart(2, '0')}</span>${inline(section.title)}</a>`).join('')}</nav>
       <div id="journeys">${sections.map(renderSection).join('')}</div>
     </main>

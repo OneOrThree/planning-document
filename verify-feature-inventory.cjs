@@ -22,6 +22,8 @@ function check(ok,message){assert.ok(ok,message);checks++;}
   check(letter.decision==='chosen'&&letter.proof==='pending'&&letter.title.includes('우리 섬에 편지 쓰기'),'편지 통합은 사용자 결정·실제 연결 전');
   check(letter.note.includes('개인 수신자 선택')&&letter.note.includes('실제 전송'),'섬 전체 편지·개인 수신자 없음·실제 전송 경계');
   check(data.sources.current0914&&data.sources.current0914.path==='policy-2026-09-14.md','2026-09-14 현재 정책 출처 등록');
+  check(data.sources.legalDocs&&data.sources.legalDocs.path==='docs/legal/README.md','Catus 법률 문서 정본 후보 출처 등록');
+  {const f=data.features.find(x=>x.id==='O08');check(f&&f.decision==='chosen'&&f.proof==='pending'&&f.sources.includes('legalDocs')&&f.document==='docs/legal/README.md','O08 정본 후보 연결과 앱 구현 pending 분리');}
   for(const id of ['D04','D06','H08','L04','L10','L13','M01','M02'])check(!ids.includes(id)&&Boolean(data.retiredFeatures[id]),id+' 현재 정책으로 제외 이력 보존');
   for(const id of ['D22','F13','H12','I09']){const f=data.features.find(x=>x.id===id);check(f&&f.decision==='chosen'&&f.proof==='pending'&&f.sources.includes('current0914'),id+' 새 정책 기능은 사용자 결정·연결 전·현재 정책 근거');}
   {const f=data.features.find(x=>x.id==='N09');check(f&&f.decision==='chosen'&&f.proof==='pending'&&f.sources.includes('artRules'),'N09 안내 앵무새는 사용자 결정·연결 전·아트 규칙 근거');}

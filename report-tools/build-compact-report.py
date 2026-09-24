@@ -23,8 +23,8 @@ INK = HexColor('#30392E')
 MUTED = HexColor('#677060')
 LINE = HexColor('#DDE1D7')
 C = canvas.Canvas(str(OUT), pagesize=A4, pageCompression=1)
-C.setTitle('같이숲 작업 결과 | 2026.09.08')
-C.setAuthor('같이숲 프로젝트')
+C.setTitle('Catus 작업 결과 | 2026.09.08')
+C.setAuthor('Catus 프로젝트')
 C.setSubject('실제 화면 캡처 중심의 4쪽 작업 보고서')
 PAGE = 0
 BOUNDS = []
@@ -52,7 +52,7 @@ def page(title, note):
     PAGE += 1
     C.bookmarkPage(f'p{PAGE}')
     C.addOutlineEntry(title, f'p{PAGE}')
-    text('같이숲  /  작업 결과', M, 19, 9, MUTED)
+    text('Catus  /  작업 결과', M, 19, 9, MUTED)
     text('2026.09.08', W - M - 54, 19, 9, MUTED)
     text(title, M, 36, 15)
     text(note, M, 58, 8.5, MUTED)
@@ -127,7 +127,7 @@ C.save()
 reader = PdfReader(OUT)
 assert len(reader.pages) == 4
 texts = [page.extract_text() for page in reader.pages]
-assert all('같이숲' in content for content in texts)
+assert all('Catus' in content for content in texts)
 assert all('\ufffd' not in content for content in texts)
 manifest = {
     'pdf': str(OUT),

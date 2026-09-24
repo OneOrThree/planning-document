@@ -1,4 +1,4 @@
-# 같이숲 R61 전체 에셋
+# Catus R61 전체 에셋
 
 2026-09-20 기준 앱이 쓰는 그림과 원본 작업 폴더 `gachisup-R61-assets/assets/`의 에셋 158개, 딸기 소다 UI 킷 기본을 공개한다. Jira: GROMO-1887, GROMO-1833, GROMO-1843, GROMO-1920, GROMO-1963
 

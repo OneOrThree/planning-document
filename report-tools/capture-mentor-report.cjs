@@ -46,7 +46,7 @@ async function main() {
         await feature('tab-board','notice');await shot('board-notices','#building-panel');
         await feature('compose','notice');
         await page.locator('#compose-title').fill('이번 주에는 하루 25분, 함께 읽어요');
-        await page.locator('#compose-content').fill('같이숲 프로토타입 시연용 공지입니다.\n\n매일 부담 없이 한 번, 모닥불에 모여 책을 읽어요. 집중을 마치면 오두막에서 각자의 기록을 확인할 수 있어요.');
+        await page.locator('#compose-content').fill('Catus 프로토타입 시연용 공지입니다.\n\n매일 부담 없이 한 번, 모닥불에 모여 책을 읽어요. 집중을 마치면 오두막에서 각자의 기록을 확인할 수 있어요.');
         await page.locator('[name=pinned]').check();await shot('board-compose','#building-panel');
         await feature('preview');await shot('board-preview','#building-panel');
         await feature('publish-preview');await shot('board-detail','#building-panel');
