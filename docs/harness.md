@@ -88,3 +88,11 @@ gh run view <실행-ID> --repo OneOrThree/planning-document --log-failed
 남은 미정·미구현:
 배포 커밋·확인 URL (배포 요청인 경우):
 ```
+
+## 타일 마을 시연
+
+`village-world.html`은 개발 검토용 타일·소품·길 시연이다. `npm test`에 포함한
+`scripts/verify-village-world.cjs`는 프로젝트 하위 경로 로딩, 레이어/타일 크기 전환,
+문·부두·다리 경로와 ZIP의 필수 에셋을 확인한다.
+`node scripts/export-village-world.cjs`로 앱 전달 파일을 재생성한다.
+범위와 검증 증거는 [타일 마을 기록](village-world/README.md)을 따른다.

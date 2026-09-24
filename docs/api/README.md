@@ -2,7 +2,7 @@
 
 | 버전 | HTML | Markdown | 상태 |
 | --- | --- | --- | --- |
-| v1 | [명세 열기](v1/index.html) | [원문](v1/gromo-api-spec.md) | 0.6-proposed · 백엔드 협의안 · 미정 정책 포함 |
+| v1 | [명세 열기](v1/index.html) | [원문](v1/gromo-api-spec.md) | 0.8-proposed · 백엔드 협의안 · 미정 정책 포함 |
 
 ## 원본 관계
 
