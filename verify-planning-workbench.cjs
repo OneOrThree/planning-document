@@ -54,9 +54,9 @@ const check=(value,note)=>{assert.ok(value,note);checks++;};
     check(await page.locator('[role=tab] strong').evaluateAll(es=>es.every(e=>{const range=document.createRange();range.selectNodeContents(e);return range.getClientRects().length===1;})),'탭 제목 줄바꿈 없음');
    }
    const entries=await page.evaluate(()=>GachisupDecisionLog);
-   check(entries.length===51,'결정 로그 51건');
+   check(entries.length===52,'결정 로그 52건');
    check(entries.find(e=>e.id==='catus-global-terms-jurisdiction')?.link==='docs/legal/README.md','글로벌 약관 결정에서 정본 후보 연결');
-   for(const id of ['catus-global-terms-jurisdiction','privacy-observability-consent','user-content-rights-removal','catus-separate-app-policy-date','privacy-storage-baseline','auth-provider-platform-matrix','withdrawal-data-disposition','onboarding-privacy-consent','policy-user-blocking','policy-golden-fish','focus-emote-symbol-stickers','policy-fish-currency','policy-building-quest','policy-daily-quest-reward','policy-focus-fishing-island','policy-library','policy-join-capacity','policy-observatory-ranking','policy-shop-anyone','policy-art-guides','policy-friends','policy-mailbox-friend-chat'])check(entries.find(e=>e.id===id)?.status==='confirmed','현재 정책 확정 로그 '+id);
+   for(const id of ['policy-board-notice-comment','catus-global-terms-jurisdiction','privacy-observability-consent','user-content-rights-removal','catus-separate-app-policy-date','privacy-storage-baseline','auth-provider-platform-matrix','withdrawal-data-disposition','onboarding-privacy-consent','policy-user-blocking','policy-golden-fish','focus-emote-symbol-stickers','policy-fish-currency','policy-building-quest','policy-daily-quest-reward','policy-focus-fishing-island','policy-library','policy-join-capacity','policy-observatory-ranking','policy-shop-anyone','policy-art-guides','policy-friends','policy-mailbox-friend-chat'])check(entries.find(e=>e.id===id)?.status==='confirmed','현재 정책 확정 로그 '+id);
    for(const id of ['focus-rest','growth','decoration','letters','music','open-policy','old-rooms'])check(entries.find(e=>e.id===id)?.status==='superseded','현재 정책으로 대체한 이전안 '+id);
    for(const state of ['confirmed','discussing','superseded']){
     await page.locator('[data-log-filter='+state+']').click();

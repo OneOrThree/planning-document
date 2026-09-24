@@ -9,6 +9,7 @@ let p=model.savePost({kind:'notice',islandId:'home',title:'새 공지',content:'
 ok(model.get().posts.filter(p=>p.islandId==='home'&&p.pinned).length===1,'섬별 고정 공지 최대 한 개');
 ok(api.create(storage).get().posts.some(x=>x.id===p),'새 모델에서도 로컬 게시글 복원');
 model.savePost({id:p,kind:'notice',islandId:'home',title:'수정',content:'수정된 내용'});ok(model.get().posts.find(x=>x.id===p).content==='수정된 내용','공지 수정');
+throws(()=>model.comment(p,'가'.repeat(501)),'500');ok(true,'댓글 500자 상한');
 model.comment(p,'댓글');ok(model.get().comments.filter(c=>c.postId===p).length===1,'댓글 저장');model.report(p,'광고');throws(()=>model.report(p,'광고'),'이미');ok(true,'중복 신고 거부');
 model.configure({role:'MEMBER'});throws(()=>model.savePost({kind:'notice',islandId:'home',title:'안돼',content:'안돼'}),'그룹장');throws(()=>model.saveQuest({islandId:'home'}),'그룹장');throws(()=>model.deletePost('welcome-home'),'작성자');ok(true,'멤버의 공지·퀘스트 작성과 타인 글 삭제 거부');
 const share=model.savePost({kind:'share',islandId:'home',title:'자료',content:'배웠어요'});model.deletePost(share);ok(!model.get().posts.some(p=>p.id===share),'멤버의 자료 작성·자기 글 삭제');
