@@ -1,4 +1,4 @@
-# GROMO API 명세
+# Catus API 명세
 
 | 버전 | HTML | Markdown | 상태 |
 | --- | --- | --- | --- |

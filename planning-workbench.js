@@ -38,7 +38,7 @@
     if (selected === 'detail') detailURL = location.search + location.hash;
     document.body.dataset.level = selected === 'detail' ? 'detail' : 'overview';
     document.body.dataset.planningView = selected;
-    document.title = '같이숲 — ' + labels[selected];
+    document.title = 'Catus — ' + labels[selected];
     $('.skip').href = '#' + panels.get(selected).id;
     if (location.hash.startsWith('#decision-')) {
       const target = document.getElementById(location.hash.slice(1));
@@ -83,8 +83,8 @@
   }
 
   const entries = [
-    {"id":"catus-separate-app-policy-date","status":"confirmed","title":"Catus는 GroMo와 별도 신규 앱으로 출시한다","body":"서비스명은 Catus다. 기존 GroMo 계정·기록·자산을 이전하지 않는 별도 신규 앱이므로 기존 GroMo 사용자 고지·재동의는 적용하지 않는다. 개인정보처리방침·이용약관 시행일은 문서가 공식 사이트에 공개되는 날로 한다.","link":"onboarding-privacy-consent-2026-09-21.md","date":"2026.09.21","source":"GROMO-1869 완료조건 4·5 · 사용자 결정"},
-    {"id":"catus-global-terms-jurisdiction","status":"confirmed","title":"Catus는 글로벌 서비스 약관에 대한민국 법을 기준으로 둔다","body":"Catus는 글로벌 배포를 전제로 대한민국 법을 이용약관의 준거법으로 정한다. 다만 이용자가 거주하는 국가의 강행적인 소비자 보호·개인정보 보호 권리를 제한하지 않는다. 분쟁은 먼저 상호 협의하고, 해결되지 않으면 적용 법령이 정한 관할 법원에서 해결하며 서울의 특정 법원을 전속 관할로 강제하지 않는다. 운영자는 oneorthree, 개인정보 보호 담당 표시는 Oneorthree_team, 문의 이메일은 nappaegonoljima@gmail.com으로 하고 한국어·영어·일본어 문서를 제공한다. 실제 문서 공개와 법률 검토는 구현 증거로 별도 확인한다.","link":"policy-2026-09-14.md","date":"2026.09.22","source":"GROMO-1869 완료조건 4 · 사용자 결정"},
+    {"id":"catus-separate-app-policy-date","status":"confirmed","title":"Catus는 GroMo와 별도 신규 앱으로 출시한다","body":"서비스명은 Catus다. 기존 GroMo 계정·기록·자산을 이전하지 않는 별도 신규 앱이다. 기존 사용자 고지·재동의는 GROMO-1869 완료조건에서 삭제하고 자동 승계도 제공하지 않는다. 개인정보처리방침·이용약관 시행일은 문서가 공식 사이트에 공개되는 날로 한다.","link":"onboarding-privacy-consent-2026-09-21.md","date":"2026.09.24","source":"Catus 별도 앱 출시 · 사용자 결정"},
+    {"id":"catus-global-terms-jurisdiction","status":"confirmed","title":"Catus는 글로벌 서비스 약관에 대한민국 법을 기준으로 둔다","body":"Catus는 글로벌 배포를 전제로 대한민국 법을 이용약관의 준거법으로 정한다. 다만 이용자가 거주하는 국가의 강행적인 소비자 보호·개인정보 보호 권리를 제한하지 않는다. 분쟁은 먼저 상호 협의하고, 해결되지 않으면 적용 법령이 정한 관할 법원에서 해결하며 서울의 특정 법원을 전속 관할로 강제하지 않는다. 운영자는 oneorthree, 개인정보 보호 담당 표시는 Oneorthree_team, 문의 이메일은 nappaegonoljima@gmail.com으로 한다. 2026.09.24 한국어 개인정보처리방침·이용약관 정본 후보와 앱 반영 체크리스트를 작성했다. GROMO-1869 완료조건 4는 두 문서 작성으로 한정하며 외부 법률 검토는 포함하지 않는다. 한국어/영어/일본어 공개·앱 구현은 증거로 별도 확인한다.","link":"docs/legal/README.md","date":"2026.09.24","source":"GROMO-1869 완료조건 4·6 · 사용자 결정"},
     {"id":"privacy-observability-consent","status":"confirmed","title":"분석·오류·알림 데이터의 처리 경계를 확정한다","body":"PostHog 일반 분석과 Session Replay는 모두 선택 동의를 받은 사용자에게만 켠다. 일반 이벤트는 1년, Replay는 30일 보관하고 미국 리전을 사용하며 원시 IP는 저장하지 않는다. Replay의 텍스트·입력값·이미지는 기본적으로 모두 마스킹한다. Sentry와 Datadog은 필수 안정성 처리로 고지하고 실제 보존기간은 기존 GroMo 운영 설정을 확인해 적용한다. 세 도구에는 Catus 내부 UUID만 전달한다. 푸시는 서비스 알림에만 쓰고 로그아웃·탈퇴 시 토큰 연결을 즉시 해제한다.","link":"privacy-data-inventory-2026-09-21.md","date":"2026.09.22","source":"GROMO-1869 완료조건 1·2·3 · 사용자 결정"},
     {"id":"user-content-rights-removal","status":"confirmed","title":"사용자 콘텐츠의 권리·삭제·운영 원칙을 확정한다","body":"게시물 저작권은 작성자에게 남고 Catus는 서비스 저장·전송·표시에 필요한 범위의 이용허락만 받는다. 불법·권리침해·괴롭힘·악성 콘텐츠는 삭제하거나 이용을 제한할 수 있고, 긴급한 경우를 제외하고 사유와 이메일 이의 제기 경로를 제공한다. 공유 게시물이 탈퇴 후 남으면 첨부파일도 작성자 연결을 끊어 남기되, 게시물을 삭제할 때 첨부파일도 삭제하고 백업에서는 최대 7일 안에 만료한다. 개인정보가 남은 콘텐츠는 본인 확인 후 이메일 삭제 요청을 처리한다.","link":"withdrawal-data-disposition-2026-09-21.md","date":"2026.09.22","source":"GROMO-1869 완료조건 3·4 · 사용자 결정"},
     {"id":"privacy-storage-baseline","status":"confirmed","title":"인증·사용량·분석 데이터의 저장 기준을 확정한다","body":"소셜 로그인에서는 제공자 고유 ID만 저장하고 이메일·이름은 저장하지 않는다. 시간 기반 보상의 단일 진실원으로 앱별 사용 시간을 서버에 저장하되 차단·허용 앱 목록은 기기에만 저장한다. 앱별 사용 원본은 탈퇴 처리 중 즉시 삭제하고 사용자와 분리된 최소 보상 근거만 남길 수 있다. 데이터베이스 백업은 최대 7일 보관한다.","link":"privacy-data-inventory-2026-09-21.md","date":"2026.09.22","source":"GROMO-1869 완료조건 1·3 · 사용자 결정"},

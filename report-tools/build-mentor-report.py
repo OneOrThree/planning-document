@@ -26,10 +26,10 @@ INK, MUTED, OLIVE, LINE = '#343B2E', '#68705F', '#566B46', '#D9DFCF'
 TINT, BUTTER = '#E7ECDf', '#EEE6CB'
 PAGE_COUNT = 21
 C = canvas.Canvas(str(OUT), pagesize=(W,H), pageCompression=1)
-C.setTitle('같이숲 | 2026.09.08 멘토링 작업 결과 보고')
-C.setAuthor('같이숲 프로젝트')
+C.setTitle('Catus | 2026.09.08 멘토링 작업 결과 보고')
+C.setAuthor('Catus 프로젝트')
 C.setSubject('마을 중심 디자인, 7개 건물 기능, 집중·통계·게시판, 캐릭터 리깅 및 앱 이식 계획')
-C.setKeywords('같이숲, gromo, 프로토타입, 멘토링, 캐릭터 리깅')
+C.setKeywords('Catus, gromo, 프로토타입, 멘토링, 캐릭터 리깅')
 PAGE = 0
 BOUNDS = []
 IMAGES = []
@@ -83,7 +83,7 @@ def page(section,title,subtitle=''):
     if PAGE:C.showPage()
     PAGE+=1;rect(0,0,W,H,PAPER)
     C.bookmarkPage('p'+str(PAGE));C.addOutlineEntry(title,'p'+str(PAGE),level=0,closed=False)
-    text('같이숲 / '+section,40,23,10,OLIVE)
+    text('Catus / '+section,40,23,10,OLIVE)
     text('2026.09.08  ·  멘토링 공유',744,23,10,MUTED)
     text(title,40,52,28)
     if subtitle:para(subtitle,40,94,880,12,MUTED,17)
@@ -113,7 +113,7 @@ def table(headers,rows,x,y,widths,rowh=46):
     return yy
 
 # 01 / 표지
-page('작업 결과','같이숲')
+page('작업 결과','Catus')
 shot('village-only',430,116,490,422,fill=True,frame=True)
 text('마을 중심',40,148,43)
 text('프로토타입',40,201,43)

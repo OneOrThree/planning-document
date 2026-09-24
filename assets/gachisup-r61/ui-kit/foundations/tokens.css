@@ -14,7 +14,7 @@
 html[data-theme=night]{--canvas:#1d2521;--surface:#26302a;--soft:#313c33;--field:#212b25;--ink:#f0f0e4;--muted:#b6c2b0;--line:#424e43;--control-line:#81917e;--primary:#bed3b4;--primary-hover:#d0e1c7;--on-primary:#23382a;--selected:#354837;--danger:#f1ac98;--danger-soft:#493b33;--letter:#393d2e;--letter-ink:#e8ddbb;color-scheme:dark}
 
 /* Approved shared theme overrides */
-/* GROMO · 딸기 소다 — 사용자 확정 주간 컬러 / 2026-09-11 */
+/* Catus · 딸기 소다 — 사용자 확정 주간 컬러 / 2026-09-11 */
 :root{
  --pink:#FFA6BC;--sky:#ADE1F8;--butter:#FFE08A;--cream:#FFF7EB;--paper:#FFFDFA;--brown:#8B6956;
  --canvas:var(--cream);--surface:var(--paper);--soft:#FFF0F3;--field:var(--paper);--ink:#493B39;--muted:#796256;--line:var(--brown);--control-line:var(--brown);
